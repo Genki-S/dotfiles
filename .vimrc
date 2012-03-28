@@ -7,6 +7,7 @@ if has('vim_starting')
 endif
 
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 
 filetype plugin on
 filetype indent on
