@@ -27,6 +27,7 @@ NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 " Vim functions
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
+NeoBundle 'git://github.com/Shougo/unite.vim.git'
 
 " Web Creation
 NeoBundle 'git://github.com/tpope/vim-haml.git'
