@@ -20,11 +20,11 @@ if has('vim_starting')
 	call neobundle#rc(expand('~/.bundle'))
 endif
 
-" my vimrc
-NeoBundle 'vimrc'
+
+" Vim management
+NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 
 " Vim functions
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
 
@@ -33,6 +33,9 @@ NeoBundle 'git://github.com/tpope/vim-haml.git'
 
 " Other Utilities
 NeoBundle 'git://github.com/fuenor/qfixhowm.git'
+
+" my vimrc
+NeoBundle 'vimrc'
 
 filetype plugin on
 filetype indent on
