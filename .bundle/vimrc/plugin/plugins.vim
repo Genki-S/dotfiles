@@ -25,3 +25,7 @@ imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 " NeoComplCache End
+
+" SingleCompile Start
+nmap <F9> :SCCompileRun<CR>
+" SingleCompile End
