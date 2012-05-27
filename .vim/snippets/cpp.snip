@@ -1,0 +1,15 @@
+include programming_contest.snip
+
+snippet inc
+abbr include<>
+	#include <${1:iostream}>${0}
+
+snippet uns
+abbr using namespace std;
+	using namespace std;
+
+snippet fori
+abbr for (int) {}
+	for (int ${1} = 0; $1 < ${2}; ++$1) {
+		${0}
+	}

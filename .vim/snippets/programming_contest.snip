@@ -1,0 +1,58 @@
+snippet header
+        #include <string>/*{{{*/
+        #include <vector>
+        #include <sstream>
+        #include <iostream>
+        #include <algorithm>
+        #include <map>
+        #include <list>
+        #include <set>
+        #include <numeric>
+        #include <queue>
+        #include <stack>
+        #include <cstdio>
+	#include <cassert>
+        #include <cmath>
+        #include <cstdlib>
+        #include <cctype>
+        #include <cstring>
+        #define FOR(i, b, e) for (typeof(b) i = (b); i != (e); ++i)
+	
+        using namespace std;
+        typedef long long LL;
+        typedef pair<int,int> P;/*}}}*/
+        
+        ${0}
+
+snippet FOR
+abbr FOR(i,0,N)
+	FOR(${1:iterator}, ${2:start}, ${3:end(exclusive)}) {
+		${4}
+	}
+
+snippet FORDEF
+abbr FOR definition
+	#define FOR(i, b, e) for(typeof(b) i = (b); i != (e); ++i)
+
+snippet ICPCmain
+	int main(int argc, char const* argv[])
+	{
+		while (cin >> ${1}, ${2}) {
+			FOR(i, 0, ${3}) {
+				${0}
+			}
+		}
+		return 0;
+	}
+
+snippet GCJmain
+	int main(int argc, char const* argv[])
+	{
+		int T; cin >> T;
+		FOR(tt, 0, T) {
+			${0}
+			printf("Case #%d: ${1}\n", tt + 1, ${2});
+		}
+		return 0;
+	}
+
