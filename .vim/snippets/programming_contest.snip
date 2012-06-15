@@ -27,6 +27,7 @@ snippet header
 	#define S second
 	#define MP(a, b) make_pair(a, b)
 	#define BIT(n) (1ULL << (n))
+	#define RANGE(a, b, c) ((a) <= (b) && (b) <= (c))
 
 	static const double PI (3.14159265358979323846);
 	static const double EPS (1e-10);
@@ -50,6 +51,10 @@ abbr FOR definition
 snippet dxdy
 abbr int dx[] = {...}, dy[] = {...}
 	int dx[] = {0, 1, 0, -1}, dy[] = {1, 0, -1, 0};
+
+snippet RANGE
+abbr a <= b <= c
+	RANGE(${1:a}, ${2:b}, ${3:c})${0}
 
 snippet ICPCmain
 	int main(int argc, char const* argv[])
