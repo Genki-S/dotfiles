@@ -40,6 +40,7 @@ NeoBundle 'git://github.com/tpope/vim-haml.git'
 
 " Other Utilities
 NeoBundle 'git://github.com/fuenor/qfixhowm.git'
+NeoBundle 'git://github.com/thinca/vim-ref.git'
 
 " my vimrc
 NeoBundle 'vimrc'
