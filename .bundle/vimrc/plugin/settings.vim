@@ -1,4 +1,7 @@
 set foldmethod=marker
+set tabstop=4
+set shiftwidth=4
+set cursorline
 
 set laststatus=2
 set statusline=   " clear the statusline for when vimrc is reloaded
