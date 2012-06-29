@@ -1,13 +1,16 @@
 snippet header
+	#define DEBUG_ON
 	#include <algorithm>/*{{{*/
 	#include <cassert>
 	#include <cctype>
 	#include <climits>
 	#include <cmath>
+	#include <complex>
 	#include <cstdio>
 	#include <cstdlib>
 	#include <cstring>
 	#include <iostream>
+	#include <iterator>
 	#include <list>
 	#include <map>
 	#include <numeric>
@@ -18,31 +21,78 @@ snippet header
 	#include <string>
 	#include <vector>
 
+	static const double PI (3.14159265358979323846);
+	static const double EPS (1e-10);
+	
+	typedef long long int ll;
+	typedef unsigned long long int ull;
+	typedef vector<int> vi;
+	typedef vector<vi> vvi;
+	typedef vector<string> vs;
+	typedef pair<int, int> pii;
+	
+	inline int toInt(string s) {int v; istringstream sin(s);sin>>v;return v;}
+	template<class T> inline string toString(T x) {ostringstream sout;sout<<x;return sout.str();}
+	
 	#define FOR(i, b, e) for (typeof(b) i = (b); assert((i) <= (e)), i != (e); ++i)
-	#define SZ(a) ((int)a.size())
-	#define PB(e) push_back(e)
-	#define SORT(v) sort((v).begin(), (v).end())
-	#define RSORT(v) sort((v).rbegin(),(v).rend())
+	#define REP(i, n) FOR(i, 0, n)
+	
+	#define OPOVER(_op, _type) inline bool operator _op (const _type &t) const
+	
+	#define arrsz(a) ( sizeof(a) / sizeof(a[0]) )
+	
 	#define F first
 	#define S second
 	#define MP(a, b) make_pair(a, b)
-	#define BIT(n) (1ULL << (n))
-	#define RANGE(a, b, c) ((a) <= (b) && (b) <= (c))
-
-	static const double PI (3.14159265358979323846);
-	static const double EPS (1e-10);
-
-	using namespace std;
-	typedef long long int LL;
-	typedef pair<int,int> P;/*}}}*/
 	
+	#define SZ(a) ((ll)a.size())
+	#define PB(e) push_back(e)
+	#define SORT(v) sort((v).begin(), (v).end())
+	#define RSORT(v) sort((v).rbegin(), (v).rend())
+	
+	#define ALL(a) (a).begin(), (a).end()
+	#define RALL(a) (a).rbegin(), (a).rend()
+	#define EACH(t,i,c) for(t::iterator i=(c).begin(); i!=(c).end(); ++i)
+	#define EXIST(s,e) ((s).find(e)!=(s).end())
+	
+	#define BIT(n) (1ULL << (n))
+	#define BITOF(n, m) ((n) >> (m) & 1)
+	
+	#define RANGE(a, b, c) ((a) <= (b) && (b) <= (c))
+	
+	#ifdef DEBUG_ON
+		#define dprt(fmt, ...) fprintf(stderr, fmt, __VA_ARGS__)
+		#define darr(a) copy( (a), (a) + arrsz(a), ostream_iterator<int>(cerr, " ") ); cerr << endl
+		#define darr_range(a, f, t) copy( (a) + (f), (a) + (t), ostream_iterator<int>(cerr, " ") ); cerr << endl
+		#define dvec(v) copy( ALL(v), ostream_iterator<int>(cerr, " ") ); cerr << endl
+		#define darr2(a, n, m) FOR(i, 0, (n)){ darr_range( (a)[i], 0, (m) ); }
+		#define dvec2(v) FOR(i, 0, SZ(v)){ dvec( (v)[i] ); }
+		#define WAIT() { string _wait_; cerr << "(hit return to continue)" << endl; getline(cin, _wait_); }
+	#else
+		#define cerr if(0) cerr
+		#define dprt(fmt, ...)
+		#define darr(a)
+		#define darr_range(a, f, t)
+		#define dvec(v)
+		#define darr2(a, n, m)
+		#define dvec2(v)
+		#define WAIT()
+	#endif
+	/*}}}*/
+
 	${0}
 
 snippet FOR
 abbr FOR(i,0,N)
-	FOR(${1:iterator}, ${2:start}, ${3:end(exclusive)}) {
+	FOR (${1:iterator}, ${2:start}, ${3:end(exclusive)}) {
 		${4}
 	}
+
+snippet REP
+abbr REP(i, N)
+    REP (${1:iterator}, ${2:end(exclusive)}) {
+        ${0}
+    }
 
 snippet FORDEF
 abbr FOR definition
@@ -73,8 +123,7 @@ snippet GCJmain
 		int T; cin >> T;
 		FOR(tt, 0, T) {
 			${0}
-			printf("Case #%d: ${1}\n", tt + 1, ${2});
-		}
+			printf("Case #%d: ${1}		}
 		return 0;
 	}
 
