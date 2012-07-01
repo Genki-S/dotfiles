@@ -1,6 +1,9 @@
 snippet header
 	#define DEBUG_ON
-	#include <algorithm>/*{{{*/
+    #define CONDITION true
+    using namespace std;/*{{{*/
+
+	#include <algorithm>
 	#include <cassert>
 	#include <cctype>
 	#include <climits>
@@ -30,6 +33,7 @@ snippet header
 	typedef vector<vi> vvi;
 	typedef vector<string> vs;
 	typedef pair<int, int> pii;
+    typedef complex<double> P;
 	
 	inline int toInt(string s) {int v; istringstream sin(s);sin>>v;return v;}
 	template<class T> inline string toString(T x) {ostringstream sout;sout<<x;return sout.str();}
@@ -61,13 +65,13 @@ snippet header
 	#define RANGE(a, b, c) ((a) <= (b) && (b) <= (c))
 	
 	#ifdef DEBUG_ON
-		#define dprt(fmt, ...) fprintf(stderr, fmt, __VA_ARGS__)
-		#define darr(a) copy( (a), (a) + arrsz(a), ostream_iterator<int>(cerr, " ") ); cerr << endl
-		#define darr_range(a, f, t) copy( (a) + (f), (a) + (t), ostream_iterator<int>(cerr, " ") ); cerr << endl
-		#define dvec(v) copy( ALL(v), ostream_iterator<int>(cerr, " ") ); cerr << endl
-		#define darr2(a, n, m) FOR(i, 0, (n)){ darr_range( (a)[i], 0, (m) ); }
-		#define dvec2(v) FOR(i, 0, SZ(v)){ dvec( (v)[i] ); }
-		#define WAIT() { string _wait_; cerr << "(hit return to continue)" << endl; getline(cin, _wait_); }
+	    #define dprt(fmt, ...) if (CONDITION) fprintf(stderr, fmt, __VA_ARGS__)
+	    #define darr(a) if (CONDITION) copy( (a), (a) + arrsz(a), ostream_iterator<int>(cerr, " ") ); cerr << endl
+	    #define darr_range(a, f, t) if (CONDITION) copy( (a) + (f), (a) + (t), ostream_iterator<int>(cerr, " ") ); cerr << endl
+	    #define dvec(v) if (CONDITION) copy( ALL(v), ostream_iterator<int>(cerr, " ") ); cerr << endl
+	    #define darr2(a, n, m) if (CONDITION) FOR(i, 0, (n)){ darr_range( (a)[i], 0, (m) ); }
+	    #define dvec2(v) if (CONDITION) FOR(i, 0, SZ(v)){ dvec( (v)[i] ); }
+	    #define WAIT() if (CONDITION) { string _wait_; cerr << "(hit return to continue)" << endl; getline(cin, _wait_); }
 	#else
 		#define cerr if(0) cerr
 		#define dprt(fmt, ...)
