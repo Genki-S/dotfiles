@@ -24,6 +24,7 @@ snippet header
 	#include <string>
 	#include <vector>
 
+    #define INF (1e9)
 	static const double PI (3.14159265358979323846);
 	static const double EPS (1e-10);
 	
@@ -56,7 +57,7 @@ snippet header
 	
 	#define ALL(a) (a).begin(), (a).end()
 	#define RALL(a) (a).rbegin(), (a).rend()
-	#define EACH(t,i,c) for(t::iterator i=(c).begin(); i!=(c).end(); ++i)
+    #define EACH(c,it) for(__typeof((c).begin()) it=(c).begin(); it!=(c).end(); ++it)
 	#define EXIST(s,e) ((s).find(e)!=(s).end())
 	
 	#define BIT(n) (1ULL << (n))
@@ -65,13 +66,13 @@ snippet header
 	#define RANGE(a, b, c) ((a) <= (b) && (b) <= (c))
 	
 	#ifdef DEBUG_ON
-	    #define dprt(fmt, ...) if (CONDITION) fprintf(stderr, fmt, __VA_ARGS__)
-	    #define darr(a) if (CONDITION) copy( (a), (a) + arrsz(a), ostream_iterator<int>(cerr, " ") ); cerr << endl
-	    #define darr_range(a, f, t) if (CONDITION) copy( (a) + (f), (a) + (t), ostream_iterator<int>(cerr, " ") ); cerr << endl
-	    #define dvec(v) if (CONDITION) copy( ALL(v), ostream_iterator<int>(cerr, " ") ); cerr << endl
-	    #define darr2(a, n, m) if (CONDITION) FOR(i, 0, (n)){ darr_range( (a)[i], 0, (m) ); }
-	    #define dvec2(v) if (CONDITION) FOR(i, 0, SZ(v)){ dvec( (v)[i] ); }
-	    #define WAIT() if (CONDITION) { string _wait_; cerr << "(hit return to continue)" << endl; getline(cin, _wait_); }
+		#define dprt(fmt, ...) if (CONDITION) fprintf(stderr, fmt, __VA_ARGS__)
+		#define darr(a) if (CONDITION) copy( (a), (a) + arrsz(a), ostream_iterator<int>(cerr, " ") ); cerr << endl
+		#define darr_range(a, f, t) if (CONDITION) copy( (a) + (f), (a) + (t), ostream_iterator<int>(cerr, " ") ); cerr << endl
+		#define dvec(v) if (CONDITION) copy( ALL(v), ostream_iterator<int>(cerr, " ") ); cerr << endl
+		#define darr2(a, n, m) if (CONDITION) FOR(i, 0, (n)){ darr_range( (a)[i], 0, (m) ); }
+		#define dvec2(v) if (CONDITION) FOR(i, 0, SZ(v)){ dvec( (v)[i] ); }
+		#define WAIT() if (CONDITION) { string _wait_; cerr << "(hit return to continue)" << endl; getline(cin, _wait_); }
 	#else
 		#define cerr if(0) cerr
 		#define dprt(fmt, ...)
