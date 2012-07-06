@@ -1,8 +1,18 @@
-set foldmethod=marker
-set tabstop=4
-set shiftwidth=4
+" Visual
 set cursorline
 
+" Tabs
+set tabstop=4
+set shiftwidth=4
+
+" Folding
+set foldmethod=marker
+
+" Search
+set incsearch
+set smartcase
+
+" Statusline
 set laststatus=2
 set statusline=   " clear the statusline for when vimrc is reloaded
 set statusline+=%-3.3n\                      " buffer number
