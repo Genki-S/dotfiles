@@ -12,6 +12,7 @@ snippet header
 	#include <cstdio>
 	#include <cstdlib>
 	#include <cstring>
+	#include <ctime>
 	#include <iostream>
 	#include <iterator>
 	#include <list>
@@ -22,6 +23,7 @@ snippet header
 	#include <sstream>
 	#include <stack>
 	#include <string>
+	#include <sys/time.h>
 	#include <vector>
 
     #define INF (1e9)
@@ -38,10 +40,15 @@ snippet header
 	
 	inline int toInt(string s) {int v; istringstream sin(s);sin>>v;return v;}
 	template<class T> inline string toString(T x) {ostringstream sout;sout<<x;return sout.str();}
+	inline double now(){ struct timeval tv; gettimeofday(&tv, NULL); return ((double)(tv.tv_sec) + (double)(tv.tv_usec) * 1e-6); }
 	
 	#define FOR(i, b, e) for (typeof(b) i = (b); assert((i) <= (e)), i != (e); ++i)
 	#define REP(i, n) FOR(i, 0, n)
 	
+	#define IFC(c) if(c) continue;
+	#define IFB(c) if(c) break;
+	#define IFR(c, r) if(c) return r;
+
 	#define OPOVER(_op, _type) inline bool operator _op (const _type &t) const
 	
 	#define arrsz(a) ( sizeof(a) / sizeof(a[0]) )
