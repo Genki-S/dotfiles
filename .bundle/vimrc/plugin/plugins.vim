@@ -37,12 +37,3 @@
 " SingleCompile Start
 	nmap <F9> :SCCompileRun<CR>
 " SingleCompile End
-
-" Vim-LaTeX Start
-	filetype plugin on
-	set shellslash
-	set grepprg=grep\-nH\$*
-	filetype indent on
-	let g:Tex_CompileRule_dvi='platex $*'
-	let g:Tex_ViewRule_dvi='xdvi'
-" Vim-LaTeX End
