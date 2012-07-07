@@ -2,8 +2,9 @@
 	nnoremap [unite] <Nop>
 	nmap <Space> [unite]
 
+	nnoremap <silent> [unite]c :UniteWithCurrentDir -buffer-name=current_dir buffer file file_mru<CR>
+	nnoremap <silent> [unite]b :UniteWithBufferDir -buffer-name=buffer_dir buffer file file_mru<CR>
 	nnoremap <silent> [unite]f :Unite -buffer-name=file file<CR>
-	nnoremap <silent> [unite]b :Unite -buffer-name=buffer buffer<CR>
 	nnoremap <silent> [unite]m :Unite -buffer-name=mru file_mru<CR>
 	nnoremap <silent> [unite]r :Unite -buffer-name=register register<CR>
 	nnoremap <silent> [unite]<Space> :Unite -buffer-name=source source<CR>
