@@ -1,0 +1,3 @@
+.bundle/*
+!.bundle/vimrc
+.bundle/vimrc/.netrwhist
