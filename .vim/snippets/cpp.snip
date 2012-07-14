@@ -13,3 +13,18 @@ abbr for (int) {}
 	for (int ${1} = 0; $1 < ${2}; ++$1) {
 		${0}
 	}
+
+snippet cls
+	class ${1} {
+		private:
+			${2}
+		public:
+			$1(${3});
+			~$1();
+			${0}
+	}
+
+snippet each
+	for(${1:type}::iterator ${2:it} = ${3:var}.begin(); $2 != $3.end(); ++it) {
+		${0}
+	}
