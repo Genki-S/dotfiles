@@ -6,7 +6,7 @@ set tabstop=4
 set shiftwidth=4
 
 " Folding
-set foldmethod=marker
+set foldmethod=syntax
 
 " Search
 set incsearch
