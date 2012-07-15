@@ -38,3 +38,20 @@
 " SingleCompile Start
 	nmap <F9> :SCCompileRun<CR>
 " SingleCompile End
+
+" vim-fugitive Start
+	nmap <Leader>g<Space> :Git! 
+	nmap <Leader>gs :Gstatus<CR>
+	nmap <Leader>gc :Gcommit<CR>
+	nmap <Leader>gg :Ggrep 
+	nmap <Leader>gl :Git! log<CR>
+	nmap <Leader>ge :Gedit 
+	nmap <Leader>gv :Gvsplit 
+	nmap <Leader>gt :Gtabedit 
+	nmap <Leader>gre :Gread<CR>
+	nmap <Leader>gw :Gwrite<CR>
+	nmap <Leader>gd :Gdiff 
+	nmap <Leader>gm :Gmove 
+	nmap <Leader>grm :Gremove<CR>
+	nmap <Leader>gb :Gblame<CR>
+" vim-fugitive End
