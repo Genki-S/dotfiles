@@ -36,7 +36,7 @@ NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 NeoBundle 'git://github.com/ujihisa/quicklearn.git'
 
 " Git integration
-NeoBundle 'git://github.com/vim-scripts/vcscommand.vim.git'
+NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 
 " Web Creation
 NeoBundle 'git://github.com/tpope/vim-haml.git'
