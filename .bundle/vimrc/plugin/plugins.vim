@@ -40,7 +40,7 @@
 " SingleCompile End
 
 " vim-fugitive Start
-	nmap <Leader>g<Space> :Git! 
+	nmap <Leader>g<Space> :Git 
 	nmap <Leader>gs :Gstatus<CR>
 	nmap <Leader>gc :Gcommit<CR>
 	nmap <Leader>gg :Ggrep 
