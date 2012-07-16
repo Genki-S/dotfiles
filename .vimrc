@@ -18,6 +18,7 @@ NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
+NeoBundle 'YankRing.vim'
 
 " Programming Features
 NeoBundle 'git://github.com/vim-scripts/SingleCompile.git'
