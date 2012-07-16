@@ -1,25 +1,15 @@
-" Vim Settings
-" .bundle/vimrc/plugin/settings.vim
-"
-" Vim Mappings
-" .bundle/vimrc/plugin/mappings.vim
-"
-" Vim Syntax
-" .bundle/vimrc/plugin/syntax.vim
-"
-" Vim Plugin Settings
-" .bundle/vimrc/plugin/plugins.vim
-
+" --------------------------------------------------
+" NeoBundle
+" --------------------------------------------------
 
 " use NeoBundle
 set nocompatible
 filetype off
 
 if has('vim_starting')
-	set runtimepath+=~/.bundle/neobundle.vim
-	call neobundle#rc(expand('~/.bundle'))
+	set runtimepath+=~/.vim/bundle/neobundle.vim
+	call neobundle#rc(expand('~/.vim/bundle'))
 endif
-
 
 " Vim management
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
@@ -45,8 +35,26 @@ NeoBundle 'git://github.com/tpope/vim-haml.git'
 NeoBundle 'git://github.com/fuenor/qfixhowm.git'
 NeoBundle 'git://github.com/thinca/vim-ref.git'
 
-" my vimrc
-NeoBundle 'vimrc'
-
 filetype plugin on
 filetype indent on
+
+" --------------------------------------------------
+" My vimrc
+" --------------------------------------------------
+
+for f in split(glob('~/.vim/vimrc/*.vim'), '\n')
+	execute 'source' f
+endfor
+
+" Vim Settings
+" .vim/vimrc/settings.vim
+
+" Vim Mappings
+" .vim/vimrc/mappings.vim
+
+" Vim Syntax
+" .vim/vimrc/syntax.vim
+
+" Vim Plugin Settings
+" .vim/vimrc/plugins.vim
+
