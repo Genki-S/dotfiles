@@ -32,10 +32,14 @@ if has('vim_starting')
 	call neobundle#rc(expand('~/.vim/.bundle'))
 endif
 
-" Vim management
+" --------------------------------------------------
+" Common
+" --------------------------------------------------
+
+" Vim plugins management
 NeoBundle 'Shougo/neobundle.vim.git'
 
-" Vim functions
+" Acceleration of Vim functionalities
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/neocomplcache-snippets-complete.git'
 NeoBundle 'Shougo/unite.vim.git'
@@ -43,15 +47,27 @@ NeoBundle 'YankRing.vim'
 
 " Programming Features
 NeoBundle 'SingleCompile.git'
-NeoBundle 'thinca/vim-quickrun.git'
-NeoBundle 'ujihisa/quicklearn.git'
-NeoBundle 'gerw/vim-latex-suite.git'
+NeoBundleLazy 'thinca/vim-quickrun.git'
+NeoBundleLazy 'ujihisa/quicklearn.git'
 
-" Git integration
+" Integration with outer softwares
 NeoBundle 'tpope/vim-fugitive.git'
 
 " Other Utilities
-NeoBundle 'fuenor/qfixhowm.git'
+NeoBundleLazy 'fuenor/qfixhowm.git'
+
+" --------------------------------------------------
+" for Specific filetypes
+" --------------------------------------------------
+
+" TeX
+NeoBundleLazy 'gerw/vim-latex-suite.git'
+
+" Sourcings
+autocmd FileType tex call SourceTexPlugins()
+function! SourceTexPlugins()
+	NeoBundleSource vim-latex-suite.git
+endfunction
 
 filetype plugin on
 filetype indent on
