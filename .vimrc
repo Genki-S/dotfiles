@@ -12,25 +12,25 @@ if has('vim_starting')
 endif
 
 " Vim management
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'Shougo/neobundle.vim.git'
 
 " Vim functions
-NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
-NeoBundle 'git://github.com/Shougo/unite.vim.git'
+NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'Shougo/neocomplcache-snippets-complete.git'
+NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'YankRing.vim'
 
 " Programming Features
-NeoBundle 'git://github.com/vim-scripts/SingleCompile.git'
-NeoBundle 'git://github.com/gerw/vim-latex-suite.git'
-NeoBundle 'git://github.com/thinca/vim-quickrun.git'
-NeoBundle 'git://github.com/ujihisa/quicklearn.git'
+NeoBundle 'vim-scripts/SingleCompile.git'
+NeoBundle 'gerw/vim-latex-suite.git'
+NeoBundle 'thinca/vim-quickrun.git'
+NeoBundle 'ujihisa/quicklearn.git'
 
 " Git integration
-NeoBundle 'git://github.com/tpope/vim-fugitive.git'
+NeoBundle 'tpope/vim-fugitive.git'
 
 " Other Utilities
-NeoBundle 'git://github.com/fuenor/qfixhowm.git'
+NeoBundle 'fuenor/qfixhowm.git'
 
 filetype plugin on
 filetype indent on
