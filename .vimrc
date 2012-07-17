@@ -55,6 +55,7 @@ NeoBundle 'tpope/vim-fugitive.git'
 
 " Other Utilities
 NeoBundleLazy 'fuenor/qfixhowm.git'
+NeoBundle 'h1mesuke/unite-outline'
 
 " --------------------------------------------------
 " for Specific filetypes

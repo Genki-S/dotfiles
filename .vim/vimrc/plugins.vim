@@ -11,6 +11,11 @@ nnoremap <silent> [unite]r :Unite -buffer-name=register register<CR>
 nnoremap <silent> [unite]<Space> :Unite -buffer-name=source source<CR>
 
 " --------------------------------------------------
+" unite-outline
+" --------------------------------------------------
+nnoremap <silent> [unite]o :Unite -buffer-name=outline outline<CR>
+
+" --------------------------------------------------
 " NeoComplCache
 " --------------------------------------------------
 let g:neocomplcache_enable_at_startup = 1
