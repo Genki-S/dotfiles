@@ -74,7 +74,7 @@ NeoBundleLazy 'gerw/vim-latex-suite.git'
 " Sourcings
 autocmd FileType tex call SourceTexPlugins()
 function! SourceTexPlugins()
-	NeoBundleSource vim-latex-suite.git
+	NeoBundleSource vim-latex-suite
 endfunction
 
 filetype plugin on
