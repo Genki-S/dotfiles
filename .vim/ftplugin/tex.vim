@@ -1,12 +1,26 @@
-" Vim-LaTeX Start
-	filetype plugin on
-	set shellslash
-	set grepprg=grep\-nH\$*
-	filetype indent on
-	let g:Tex_CompileRule_dvi='platex $*'
-	let g:Tex_ViewRule_dvi='xdvi'
-" Vim-LaTeX End
+" --------------------------------------------------
+" Text writing setting
+" --------------------------------------------------
+set spell
+set thesaurus+=~/.vim/resources/thesaurus/mthesaur.txt
 
+
+" --------------------------------------------------
+" Vim-LaTeX Settings
+" --------------------------------------------------
+filetype plugin on
+set shellslash
+set grepprg=grep\-nH\$*
+filetype indent on
+let g:Tex_CompileRule_dvi='platex $*'
+let g:Tex_ViewRule_dvi='xdvi'
+
+
+" --------------------------------------------------
+" Helpful Functions / Mappings
+" --------------------------------------------------
+
+" Auto insertion of '\item'
 function! AddItem()
 	if searchpair('\\begin{itemize}', '', '\\end{itemize}', '')
 		return "\\item "
