@@ -46,7 +46,7 @@ NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'YankRing.vim'
 
 " Programming Features
-NeoBundle 'SingleCompile.git'
+NeoBundle 'vim-scripts/SingleCompile.git'
 NeoBundleLazy 'thinca/vim-quickrun.git'
 NeoBundleLazy 'ujihisa/quicklearn.git'
 
