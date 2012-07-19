@@ -1,7 +1,7 @@
 " --------------------------------------------------
 " Text writing setting
 " --------------------------------------------------
-set spell
+set spell spelllang=en_gb
 set thesaurus+=~/.vim/resources/thesaurus/mthesaur.txt
 
 
