@@ -1,8 +1,8 @@
 " --------------------------------------------------
 " Text writing setting
 " --------------------------------------------------
-set spell spelllang=en_gb
-set thesaurus+=~/.vim/resources/thesaurus/mthesaur.txt
+setlocal spell spelllang=en_gb
+setlocal thesaurus+=~/.vim/resources/thesaurus/mthesaur.txt
 
 
 " --------------------------------------------------
