@@ -47,6 +47,7 @@ NeoBundle 'YankRing.vim'
 NeoBundle 'vim-scripts/SingleCompile.git'
 NeoBundleLazy 'thinca/vim-quickrun.git'
 NeoBundleLazy 'ujihisa/quicklearn.git'
+NeoBundle 'scrooloose/syntastic'
 
 " Integration with outer softwares
 NeoBundle 'tpope/vim-fugitive.git'
