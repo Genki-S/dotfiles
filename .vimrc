@@ -34,6 +34,9 @@ endif
 " Common
 " --------------------------------------------------
 
+" Libraries
+NeoBundle 'mattn/webapi-vim'
+
 " Vim plugins management
 NeoBundle 'Shougo/neobundle.vim.git'
 
@@ -49,8 +52,9 @@ NeoBundleLazy 'thinca/vim-quickrun.git'
 NeoBundleLazy 'ujihisa/quicklearn.git'
 NeoBundle 'scrooloose/syntastic'
 
-" Integration with outer softwares
+" Integration with outer softwares / services
 NeoBundle 'tpope/vim-fugitive.git'
+NeoBundle 'mattn/gist-vim'
 
 " Visual
 NeoBundle 'altercation/vim-colors-solarized'
