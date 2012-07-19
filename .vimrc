@@ -14,9 +14,7 @@
 " Vim Plugin Settings
 " .vim/vimrc/plugins.vim
 
-for f in split(glob('~/.vim/vimrc/*.vim'), '\n')
-	execute 'source' f
-endfor
+" Sourcing them at the bottom of this file
 
 
 " ==================================================
@@ -77,6 +75,15 @@ function! SourceTexPlugins()
 	NeoBundleSource vim-latex-suite
 endfunction
 
+
+" ==================================================
+" My vimrc sourcing
+" ==================================================
+for f in split(glob('~/.vim/vimrc/*.vim'), '\n')
+	execute 'source' f
+endfor
+
+
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 filetype plugin on
 filetype indent on
-
