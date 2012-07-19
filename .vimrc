@@ -2,16 +2,16 @@
 " My vimrc (in '~/.vim/vimrc/')
 " ==================================================
 
-" Vim Settings
+" Settings
 " .vim/vimrc/settings.vim
 
-" Vim Mappings
+" Mappings
 " .vim/vimrc/mappings.vim
 
-" Vim Syntax
-" .vim/vimrc/syntax.vim
+" Visual
+" .vim/vimrc/visual.vim
 
-" Vim Plugin Settings
+" Plugin Settings
 " .vim/vimrc/plugins.vim
 
 " Sourcing them at the bottom of this file
