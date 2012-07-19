@@ -53,10 +53,6 @@ NeoBundle 'tpope/vim-fugitive.git'
 
 " Visual
 NeoBundle 'altercation/vim-colors-solarized'
-syntax enable
-set t_Co=16
-set background=dark
-colorscheme solarized
 
 " Other Utilities
 NeoBundleLazy 'fuenor/qfixhowm.git'
