@@ -70,10 +70,18 @@ NeoBundle 'h1mesuke/unite-outline'
 " TeX
 NeoBundleLazy 'gerw/vim-latex-suite.git'
 
+" HTML, Haml
+NeoBundleLazy 'mattn/zencoding-vim.git'
+
 " Sourcings
 autocmd FileType tex call SourceTexPlugins()
 function! SourceTexPlugins()
 	NeoBundleSource vim-latex-suite
+endfunction
+
+autocmd FileType html,haml call SourceWebPlugins()
+function! SourceWebPlugins()
+	NeoBundleSource zencoding-vim
 endfunction
 
 
