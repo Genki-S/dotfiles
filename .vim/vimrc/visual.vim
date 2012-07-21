@@ -13,6 +13,10 @@ colorscheme solarized
 set number
 set cursorline
 
+" Special Characters
+set list
+set listchars=tab:-\ ,trail:_,extends:>,precedes:<
+
 
 " ==================================================
 " Statusline
