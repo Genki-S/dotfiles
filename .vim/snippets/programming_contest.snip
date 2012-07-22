@@ -1,8 +1,8 @@
 snippet header
-    /* `strftime("%Y-%m-%dT%H:%M:%S")` */
+	/* `strftime("%Y-%m-%dT%H:%M:%S")` */
 	#define DEBUG_ON
-    #define CONDITION true
-    using namespace std;/*{{{*/
+	#define CONDITION true
+	using namespace std;/*{{{*/
 
 	#include <algorithm>
 	#include <cassert>
@@ -27,23 +27,19 @@ snippet header
 	#include <sys/time.h>
 	#include <vector>
 
-    #define INF (1e9)
-	static const double PI (3.14159265358979323846);
-	static const double EPS (1e-10);
+	#define INF (1e9)
+	static const double PI = acos(-1.0);
+	static const double EPS = 1e-10;
 	
-	typedef long long int ll;
-	typedef unsigned long long int ull;
-	typedef vector<int> vi;
-	typedef vector<vi> vvi;
-	typedef vector<string> vs;
-	typedef pair<int, int> pii;
-    typedef complex<double> P;
+	typedef long long int LL;
+	typedef unsigned long long int ULL;
+	typedef vector<int> VI;
+	typedef vector<VI> VVI;
+	typedef vector<string> VS;
+	typedef pair<int, int> PII;
+	typedef complex<double> P;
 	
-	inline int toInt(string s) {int v; istringstream sin(s);sin>>v;return v;}
-	template<class T> inline string toString(T x) {ostringstream sout;sout<<x;return sout.str();}
-	inline double now(){ struct timeval tv; gettimeofday(&tv, NULL); return ((double)(tv.tv_sec) + (double)(tv.tv_usec) * 1e-6); }
-	
-	#define FOR(i, b, e) for (typeof(b) i = (b); assert((i) <= (e)), i != (e); ++i)
+	#define FOR(i, b, e) for (typeof(b) i = (b); i != (e); i < (e)? ++i : --i)
 	#define REP(i, n) FOR(i, 0, n)
 	
 	#define IFC(c) if(c) continue;
@@ -65,7 +61,7 @@ snippet header
 	
 	#define ALL(a) (a).begin(), (a).end()
 	#define RALL(a) (a).rbegin(), (a).rend()
-    #define EACH(c,it) for(__typeof((c).begin()) it=(c).begin(); it!=(c).end(); ++it)
+	#define EACH(c,it) for(__typeof((c).begin()) it=(c).begin(); it!=(c).end(); ++it)
 	#define EXIST(s,e) ((s).find(e)!=(s).end())
 	
 	#define BIT(n) (1ULL << (n))
@@ -81,6 +77,10 @@ snippet header
 		#define darr2(a, n, m) if (CONDITION) FOR(i, 0, (n)){ darr_range( (a)[i], 0, (m) ); }
 		#define dvec2(v) if (CONDITION) FOR(i, 0, SZ(v)){ dvec( (v)[i] ); }
 		#define WAIT() if (CONDITION) { string _wait_; cerr << "(hit return to continue)" << endl; getline(cin, _wait_); }
+		#define dump(x) if (CONDITION) cerr << " [L" << __LINE__ << "] " << #x << " = " << (x) << endl;
+		#define dumpf() if (CONDITION) cerr << __PRETTY_FUNCTION__ << endl;
+		#define dumpv(x) if (CONDITION) cerr << " [L:" << __LINE__ << "] " << #x << " = "; REP(q, (x).size()) cerr << (x)[q] << " "; cerr << endl;
+		#define where() if (CONDITION) cerr << __FILE__ << ": " << __PRETTY_FUNCTION__ << " [L: " << __LINE__ << "]" << endl;
 	#else
 		#define cerr if(0) cerr
 		#define dprt(fmt, ...)
@@ -90,7 +90,18 @@ snippet header
 		#define darr2(a, n, m)
 		#define dvec2(v)
 		#define WAIT()
+		#define dump(x)
+		#define dumpf()
+		#define dumpv(x)
+		#define where()
 	#endif
+
+	inline int toInt(string s) { int v; istringstream sin(s);sin>>v;return v; }
+	template<class T> inline string toString(T x) { ostringstream sout;sout<<x;return sout.str(); }
+	inline double now(){ struct timeval tv; gettimeofday(&tv, NULL); return ((double)(tv.tv_sec) + (double)(tv.tv_usec) * 1e-6); }
+	inline VS split(string s, char delimiter) { VS v; string t; REP(i, s.length()) { IFC(s[i] == ' '); if(s[i] == delimiter) v.PB(t), t = ""; else t += s[i]; } v.PB(t); return v; }
+
+    template<typename T1, typename T2> ostream& operator<<(ostream& s, const pair<T1, T2>& d) {return s << "(" << d.first << ", " << d.second << ")";}
 	/*}}}*/
 
 	${0}
@@ -103,13 +114,9 @@ abbr FOR(i,0,N)
 
 snippet REP
 abbr REP(i, N)
-    REP (${1:iterator}, ${2:end(exclusive)}) {
-        ${0}
-    }
-
-snippet FORDEF
-abbr FOR definition
-	#define FOR(i, b, e) for(typeof(b) i = (b); i != (e); ++i)
+	REP (${1:iterator}, ${2:end(exclusive)}) {
+		${0}
+	}
 
 snippet dxdy
 abbr int dx[] = {...}, dy[] = {...}
@@ -118,25 +125,3 @@ abbr int dx[] = {...}, dy[] = {...}
 snippet RANGE
 abbr a <= b <= c
 	RANGE(${1:a}, ${2:b}, ${3:c})${0}
-
-snippet ICPCmain
-	int main(int argc, char const* argv[])
-	{
-		while (cin >> ${1}, ${2}) {
-			FOR(i, 0, ${3}) {
-				${0}
-			}
-		}
-		return 0;
-	}
-
-snippet GCJmain
-	int main(int argc, char const* argv[])
-	{
-		int T; cin >> T;
-		FOR(tt, 0, T) {
-			${0}
-			printf("Case #%d: ${1}		}
-		return 0;
-	}
-
