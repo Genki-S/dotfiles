@@ -60,6 +60,7 @@ NeoBundle 'mattn/gist-vim'
 
 " Visual
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'Lokaltog/vim-powerline'
 
 " Other Utilities
 NeoBundleLazy 'fuenor/qfixhowm.git'
