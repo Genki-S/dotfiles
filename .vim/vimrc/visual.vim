@@ -8,6 +8,12 @@ colorscheme solarized
 
 
 " ==================================================
+" vim-indent-guides settings
+" ==================================================
+let g:indent_guides_enable_on_vim_startup=1
+
+
+" ==================================================
 " Screen Visual
 " ==================================================
 set number
@@ -15,7 +21,7 @@ set cursorline
 
 " Special Characters
 set list
-set listchars=tab:-\ ,trail:_,extends:>,precedes:<
+set listchars=tab:\ \ ,trail:_,extends:>,precedes:<
 
 
 " ==================================================

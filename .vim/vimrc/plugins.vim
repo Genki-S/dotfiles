@@ -8,6 +8,7 @@ nnoremap <silent> [unite]b :Unite -buffer-name=buffer buffer<CR>
 nnoremap <silent> [unite]f :Unite -buffer-name=file file<CR>
 nnoremap <silent> [unite]m :Unite -buffer-name=mru file_mru<CR>
 nnoremap <silent> [unite]r :Unite -buffer-name=register register<CR>
+nnoremap <silent> [unite]c :Unite -buffer-name=command command<CR>
 nnoremap <silent> [unite]<Space> :Unite -buffer-name=source source<CR>
 
 " --------------------------------------------------
@@ -35,7 +36,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Snippet
-let g:neocomplcache_snippets_dir = '~/.bundle/neocomplcache-snippets-complete/snippets'
+let g:neocomplcache_snippets_dir = '~/.vim/snippets'
 
 " Plugin key-mappings.
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
@@ -63,3 +64,38 @@ nmap <Leader>gd :Gdiff
 nmap <Leader>gm :Gmove 
 nmap <Leader>grm :Gremove<CR>
 nmap <Leader>gb :Gblame<CR>
+
+" --------------------------------------------------
+" vim-ref
+" --------------------------------------------------
+
+" mappings
+nnoremap [ref] <Nop>
+nmap , [ref]
+nmap [ref]a :Ref webdict alc 
+nmap [ref]w :Ref webdict wikipedia 
+
+" sources
+let g:ref_source_webdict_sites = {
+\	'alc': {
+\		'url': 'http://eow.alc.co.jp/search?q=%s',
+\		'keyword_encoding': 'utf-8',
+\		'cache': 1,
+\	},
+\	'wikipedia': {
+\		'url': 'http://en.wikipedia.org/wiki/%s',
+\		'keyword_encoding': 'utf-8',
+\		'cache': 1,
+\	}
+\}
+
+" alc output modulation
+function! g:ref_source_webdict_sites.alc.filter(output)
+	return join(split(a:output, "\n")[35 :], "\n")
+endfunction
+
+" --------------------------------------------------
+" open-browser
+" --------------------------------------------------
+nmap <Leader>K <Plug>(openbrowser-smart-search)
+vmap <Leader>K <Plug>(openbrowser-smart-search)

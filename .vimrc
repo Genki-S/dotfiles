@@ -57,10 +57,13 @@ NeoBundle 'scrooloose/syntastic'
 " Integration with outer softwares / services
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'mattn/gist-vim'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'tyru/open-browser.vim'
 
 " Visual
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " Other Utilities
 NeoBundleLazy 'fuenor/qfixhowm.git'
