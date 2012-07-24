@@ -35,7 +35,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Snippet
-let g:neocomplcache_snippets_dir = '~/.bundle/neocomplcache-snippets-complete/snippets'
+let g:neocomplcache_snippets_dir = '~/.vim/snippets'
 
 " Plugin key-mappings.
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
