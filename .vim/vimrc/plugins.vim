@@ -64,3 +64,32 @@ nmap <Leader>gd :Gdiff
 nmap <Leader>gm :Gmove 
 nmap <Leader>grm :Gremove<CR>
 nmap <Leader>gb :Gblame<CR>
+
+" --------------------------------------------------
+" vim-ref
+" --------------------------------------------------
+
+" mappings
+nnoremap [ref] <Nop>
+nmap , [ref]
+nmap [ref]a :Ref webdict alc 
+nmap [ref]w :Ref webdict wikipedia 
+
+" sources
+let g:ref_source_webdict_sites = {
+\	'alc': {
+\		'url': 'http://eow.alc.co.jp/search?q=%s',
+\		'keyword_encoding': 'utf-8',
+\		'cache': 1,
+\	},
+\	'wikipedia': {
+\		'url': 'http://en.wikipedia.org/wiki/%s',
+\		'keyword_encoding': 'utf-8',
+\		'cache': 1,
+\	}
+\}
+
+" alc output modulation
+function! g:ref_source_webdict_sites.alc.filter(output)
+	return join(split(a:output, "\n")[35 :], "\n")
+endfunction
