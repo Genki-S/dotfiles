@@ -21,7 +21,7 @@ set cursorline
 
 " Special Characters
 set list
-set listchars=trail:_,extends:>,precedes:<
+set listchars=tab:\ \ ,trail:_,extends:>,precedes:<
 
 
 " ==================================================
