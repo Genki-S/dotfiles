@@ -61,6 +61,7 @@ NeoBundle 'mattn/gist-vim'
 " Visual
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " Other Utilities
 NeoBundleLazy 'fuenor/qfixhowm.git'
