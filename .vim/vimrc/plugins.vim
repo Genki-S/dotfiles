@@ -8,6 +8,7 @@ nnoremap <silent> [unite]b :Unite -buffer-name=buffer buffer<CR>
 nnoremap <silent> [unite]f :Unite -buffer-name=file file<CR>
 nnoremap <silent> [unite]m :Unite -buffer-name=mru file_mru<CR>
 nnoremap <silent> [unite]r :Unite -buffer-name=register register<CR>
+nnoremap <silent> [unite]c :Unite -buffer-name=command command<CR>
 nnoremap <silent> [unite]<Space> :Unite -buffer-name=source source<CR>
 
 " --------------------------------------------------
