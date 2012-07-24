@@ -93,3 +93,9 @@ let g:ref_source_webdict_sites = {
 function! g:ref_source_webdict_sites.alc.filter(output)
 	return join(split(a:output, "\n")[35 :], "\n")
 endfunction
+
+" --------------------------------------------------
+" open-browser
+" --------------------------------------------------
+nmap <Leader>K <Plug>(openbrowser-smart-search)
+vmap <Leader>K <Plug>(openbrowser-smart-search)

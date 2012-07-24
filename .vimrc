@@ -58,6 +58,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'thinca/vim-ref'
+NeoBundle 'tyru/open-browser.vim'
 
 " Visual
 NeoBundle 'altercation/vim-colors-solarized'
