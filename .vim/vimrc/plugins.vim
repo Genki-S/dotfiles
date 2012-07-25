@@ -74,6 +74,7 @@ nnoremap [ref] <Nop>
 nmap , [ref]
 nmap [ref]a :Ref webdict alc 
 nmap [ref]w :Ref webdict wikipedia 
+nmap <silent> [ref]K :execute 'Ref webdict alc ' . expand('<cword>')<CR>
 
 " sources
 let g:ref_source_webdict_sites = {
