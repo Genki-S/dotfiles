@@ -44,9 +44,9 @@ NeoBundle 'Shougo/neobundle.vim.git'
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/neocomplcache-snippets-complete.git'
 NeoBundle 'Shougo/unite.vim.git'
-NeoBundle 'YankRing.vim'
 NeoBundle 'tpope/vim-surround.git'
 NeoBundle 'kshenoy/vim-signature'
+NeoBundle 'sjl/gundo.vim'
 
 " Programming Features
 NeoBundle 'vim-scripts/SingleCompile.git'

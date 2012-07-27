@@ -54,7 +54,7 @@ snippet header
 	#define S second
 	#define MP(a, b) make_pair(a, b)
 	
-	#define SZ(a) ((ll)a.size())
+	#define SZ(a) ((LL)a.size())
 	#define PB(e) push_back(e)
 	#define SORT(v) sort((v).begin(), (v).end())
 	#define RSORT(v) sort((v).rbegin(), (v).rend())
@@ -120,7 +120,11 @@ abbr REP(i, N)
 
 snippet dxdy
 abbr int dx[] = {...}, dy[] = {...}
-	int dx[] = {0, 1, 0, -1}, dy[] = {1, 0, -1, 0};
+    int dx[] = {1, 0, -1, 0}; int dy[] = {0, -1, 0, 1};
+
+snippet dxdy8
+abbr int dx[] = {...}, dy[] = {...}
+    int dx[] = {1, 1, 0, -1, -1, -1, 0, 1}; int dy[] = {0, -1, -1, -1, 0, 1, 1, 1};
 
 snippet RANGE
 abbr a <= b <= c
