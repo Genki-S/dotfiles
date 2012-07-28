@@ -65,7 +65,7 @@ snippet header
 	#define EXIST(s,e) ((s).find(e)!=(s).end())
 	
 	#define BIT(n) (1ULL << (n))
-	#define BITOF(n, m) ((n) >> (m) & 1)
+	#define BITOF(n, m) ((ULL)(n) >> (m) & 1)
 	
 	#define RANGE(a, b, c) ((a) <= (b) && (b) <= (c))
 	
@@ -81,6 +81,7 @@ snippet header
 		#define dumpf() if (CONDITION) cerr << __PRETTY_FUNCTION__ << endl;
 		#define dumpv(x) if (CONDITION) cerr << " [L:" << __LINE__ << "] " << #x << " = "; REP(q, (x).size()) cerr << (x)[q] << " "; cerr << endl;
 		#define where() if (CONDITION) cerr << __FILE__ << ": " << __PRETTY_FUNCTION__ << " [L: " << __LINE__ << "]" << endl;
+        #define show_bits(b, s) if(CONDITION) { REP(i, s) { cerr << BITOF(b, s-1-i); if(i%4 == 3) cerr << ' '; } cerr << endl; }
 	#else
 		#define cerr if(0) cerr
 		#define dprt(fmt, ...)
@@ -94,6 +95,7 @@ snippet header
 		#define dumpf()
 		#define dumpv(x)
 		#define where()
+        #define show_bits(b, s)
 	#endif
 
 	inline int toInt(string s) { int v; istringstream sin(s);sin>>v;return v; }
