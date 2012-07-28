@@ -100,3 +100,12 @@ endfunction
 " --------------------------------------------------
 nmap <Leader>K <Plug>(openbrowser-smart-search)
 vmap <Leader>K <Plug>(openbrowser-smart-search)
+
+" --------------------------------------------------
+" AsyncCommand
+" --------------------------------------------------
+nnoremap [async] <Nop>
+nmap <Leader>a [async]
+nmap <silent> [async]m :AsyncMake<CR>
+nmap <silent> [async]s :AsyncShell 
+nmap <silent> [async]g :AsyncGrep 
