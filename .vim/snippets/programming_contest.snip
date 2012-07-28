@@ -98,6 +98,7 @@ snippet header
         #define show_bits(b, s)
 	#endif
 
+    inline int bits_count(ULL b) { int c = 0; while(b != 0) { c += (b & 1); b >>= 1; } return c; }
 	inline int toInt(string s) { int v; istringstream sin(s);sin>>v;return v; }
 	template<class T> inline string toString(T x) { ostringstream sout;sout<<x;return sout.str(); }
 	inline double now(){ struct timeval tv; gettimeofday(&tv, NULL); return ((double)(tv.tv_sec) + (double)(tv.tv_usec) * 1e-6); }
