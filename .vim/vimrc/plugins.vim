@@ -73,6 +73,7 @@ nmap <Leader>gb :Gblame<CR>
 nnoremap [ref] <Nop>
 nmap , [ref]
 nmap [ref]a :Ref webdict alc 
+nmap [ref]l :Ref webdict longman 
 nmap [ref]w :Ref webdict wikipedia 
 nmap <silent> [ref]K :execute 'Ref webdict alc ' . expand('<cword>')<CR>
 
@@ -83,6 +84,11 @@ let g:ref_source_webdict_sites = {
 \		'keyword_encoding': 'utf-8',
 \		'cache': 1,
 \	},
+\	'longman': {
+\		'url': 'http://www.ldoceonline.com/dictionary/%s',
+\		'keyword_encoding': 'utf-8',
+\		'cache': 1,
+\	},
 \	'wikipedia': {
 \		'url': 'http://en.wikipedia.org/wiki/%s',
 \		'keyword_encoding': 'utf-8',
@@ -90,7 +96,7 @@ let g:ref_source_webdict_sites = {
 \	}
 \}
 
-" alc output modulation
+" output modulations
 function! g:ref_source_webdict_sites.alc.filter(output)
 	return join(split(a:output, "\n")[35 :], "\n")
 endfunction
