@@ -69,6 +69,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 " Other Utilities
 NeoBundleLazy 'fuenor/qfixhowm.git'
 NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'tpope/vim-unimpaired'
 
 " --------------------------------------------------
 " for Specific filetypes
