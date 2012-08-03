@@ -54,7 +54,7 @@ nmap <Leader>g<Space> :Git
 nmap <Leader>gs :Gstatus<CR>
 nmap <Leader>gc :Gcommit<CR>
 nmap <Leader>gg :Ggrep 
-nmap <Leader>gl :Git! log<CR>
+nmap <Leader>gl :Glog 
 nmap <Leader>ge :Gedit 
 nmap <Leader>gv :Gvsplit 
 nmap <Leader>gt :Gtabedit 
