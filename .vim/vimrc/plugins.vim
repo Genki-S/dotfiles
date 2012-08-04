@@ -43,11 +43,6 @@ imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 " --------------------------------------------------
-" SingleCompile
-" --------------------------------------------------
-nmap <F9> :SCCompileRun<CR>
-
-" --------------------------------------------------
 " vim-fugitive
 " --------------------------------------------------
 nmap <Leader>g<Space> :Git 
@@ -115,3 +110,5 @@ nmap <Leader>a [async]
 nmap <silent> [async]m :AsyncMake<CR>
 nmap <silent> [async]s :AsyncShell 
 nmap <silent> [async]g :AsyncGrep 
+nmap <F9> :AsyncMake<CR>:echo "making..."<CR>
+nmap <F8> :!./a.out<CR>

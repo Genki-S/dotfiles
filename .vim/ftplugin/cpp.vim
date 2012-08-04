@@ -1,5 +1,5 @@
 if filereadable('Makefile')
 	setlocal makeprg=make
 else
-	setlocal makeprg=make\ -f\ ~/programming/tools/makefiles/cpp.mk
+	setlocal makeprg=g++\ -g\ %
 endif

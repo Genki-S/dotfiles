@@ -49,7 +49,6 @@ NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'sjl/gundo.vim'
 
 " Programming Features
-NeoBundle 'vim-scripts/SingleCompile.git'
 NeoBundleLazy 'thinca/vim-quickrun.git'
 NeoBundleLazy 'ujihisa/quicklearn.git'
 NeoBundle 'scrooloose/syntastic'
