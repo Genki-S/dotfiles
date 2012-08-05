@@ -15,7 +15,15 @@ compinit
 # Add: path to texlive
 export PATH=$PATH:/usr/local/texlive/2011/bin/i386-linux/
 
+
+# ==================================================
+# Aliases
+# ==================================================
+alias vim="vim --servername genki" # in order to use AsyncCommand
+
+# ==================================================
 # Linux 101 Hacks
+# ==================================================
 alias cd1="cd .."
 alias cd2="cd ../.."
 alias cd3="cd ../../.."
@@ -26,6 +34,7 @@ function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 # dirs, pushd, popd
 # shopt -s cdspell (not for zsh)
 
-# Linux 101 Hacks End
-
+# ==================================================
+# Environment Variables
+# ==================================================
 export HTTP_HOME=http://vim.wikia.com/wiki/Special:Random
