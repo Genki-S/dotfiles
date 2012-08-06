@@ -39,8 +39,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 let g:neocomplcache_snippets_dir = '~/.vim/snippets'
 
 " Plugin key-mappings.
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
+imap <C-m> <Plug>(neocomplcache_snippets_expand)
+smap <C-m> <Plug>(neocomplcache_snippets_expand)
 
 " --------------------------------------------------
 " vim-fugitive
