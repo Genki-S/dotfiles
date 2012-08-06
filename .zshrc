@@ -22,6 +22,11 @@ export PATH=$PATH:/usr/local/texlive/2011/bin/i386-linux/
 alias vim="vim --servername genki" # in order to use AsyncCommand
 
 # ==================================================
+# Functions
+# ==================================================
+function clear() { echo "Don't bother to type \"clear\"! Just use <C-L>." }
+
+# ==================================================
 # Linux 101 Hacks
 # ==================================================
 alias cd1="cd .."
