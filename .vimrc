@@ -52,6 +52,7 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundleLazy 'thinca/vim-quickrun.git'
 NeoBundleLazy 'ujihisa/quicklearn.git'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/nerdcommenter'
 
 " Integration with outer softwares / services
 NeoBundle 'tpope/vim-fugitive.git'
@@ -99,6 +100,11 @@ for f in split(glob('~/.vim/vimrc/*.vim'), '\n')
 	execute 'source' f
 endfor
 
+" ==================================================
+" Other sources
+" ==================================================
+" To make the ":Man" command available
+source /usr/share/vim/vim73/ftplugin/man.vim
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 filetype plugin on
