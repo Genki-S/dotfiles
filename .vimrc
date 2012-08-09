@@ -60,6 +60,7 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'pydave/AsyncCommand'
+NeoBundle 'wannesm/wmgraphviz.vim'
 
 " Visual
 NeoBundle 'altercation/vim-colors-solarized'
