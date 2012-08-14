@@ -101,13 +101,18 @@ snippet header
     inline int bits_count(ULL b) { int c = 0; while(b != 0) { c += (b & 1); b >>= 1; } return c; }
 	inline int toInt(string s) { int v; istringstream sin(s);sin>>v;return v; }
 	template<class T> inline string toString(T x) { ostringstream sout;sout<<x;return sout.str(); }
-	inline double now(){ struct timeval tv; gettimeofday(&tv, NULL); return ((double)(tv.tv_sec) + (double)(tv.tv_usec) * 1e-6); }
+    inline double now(){ struct timeval tv; gettimeofday(&tv, NULL); return (static_cast<double>(tv.tv_sec) + static_cast<double>(tv.tv_usec) * 1e-6); }
 	inline VS split(string s, char delimiter) { VS v; string t; REP(i, s.length()) { IFC(s[i] == ' '); if(s[i] == delimiter) v.PB(t), t = ""; else t += s[i]; } v.PB(t); return v; }
 
     template<typename T1, typename T2> ostream& operator<<(ostream& s, const pair<T1, T2>& d) {return s << "(" << d.first << ", " << d.second << ")";}
 	/*}}}*/
 
 	${0}
+
+snippet main
+    int main() {
+        ${0}
+    }
 
 snippet FOR
 abbr FOR(i,0,N)
@@ -120,6 +125,12 @@ abbr REP(i, N)
 	REP (${1:iterator}, ${2:end(exclusive)}) {
 		${0}
 	}
+
+snippet EACH
+abbr EACH(container, iterator)
+    EACH (${1:container}, ${2:iterator}) {
+        ${0}
+    }
 
 snippet dxdy
 abbr int dx[] = {...}, dy[] = {...}
