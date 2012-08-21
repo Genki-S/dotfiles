@@ -115,3 +115,16 @@ nmap <silent> [async]s :AsyncShell
 nmap <silent> [async]g :AsyncGrep 
 nmap <F9> :AsyncMake<CR>:echo "making..."<CR>
 nmap <F8> :!./a.out<CR>
+
+" --------------------------------------------------
+" Quickhl
+" --------------------------------------------------
+nnoremap [quickhl] <Nop>
+nmap <Leader>h [quickhl]
+nmap [quickhl]t <Plug>(quickhl-toggle)
+xmap [quickhl]t <Plug>(quickhl-toggle)
+nmap [quickhl]r <Plug>(quickhl-reset)
+xmap [quickhl]r <Plug>(quickhl-reset)
+nmap <silent> [quickhl]l :QuickhlLock<CR>
+nmap <silent> [quickhl]u :QuickhlUnLock<CR>
+nmap <silent> [quickhl]s :QuickhlList<CR>
