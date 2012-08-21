@@ -9,6 +9,7 @@ nnoremap <silent> [unite]f :Unite -buffer-name=file file<CR>
 nnoremap <silent> [unite]m :Unite -buffer-name=mru file_mru<CR>
 nnoremap <silent> [unite]r :Unite -buffer-name=register register<CR>
 nnoremap <silent> [unite]c :Unite -buffer-name=command command<CR>
+nnoremap <silent> [unite]l :Unite -buffer-name=line line<CR>
 nnoremap <silent> [unite]<Space> :Unite -buffer-name=source source<CR>
 
 " --------------------------------------------------
@@ -21,7 +22,6 @@ nnoremap <silent> [unite]o :Unite -buffer-name=outline outline<CR>
 " --------------------------------------------------
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_disable_auto_complete = 1
 
