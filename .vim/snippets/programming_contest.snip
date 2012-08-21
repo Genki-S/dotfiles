@@ -35,6 +35,10 @@ snippet header
 	typedef unsigned long long int ULL;
 	typedef vector<int> VI;
 	typedef vector<VI> VVI;
+    typedef vector<double> VD;
+    typedef vector<VD> VVD;
+    typedef vector<bool> VB;
+    typedef vector<VB> VVB;
 	typedef vector<string> VS;
 	typedef pair<int, int> PII;
 	typedef complex<double> P;
@@ -49,6 +53,8 @@ snippet header
 	#define OPOVER(_op, _type) inline bool operator _op (const _type &t) const
 	
 	#define arrsz(a) ( sizeof(a) / sizeof(a[0]) )
+
+    #define PQ priority_queue
 	
 	#define F first
 	#define S second
@@ -98,7 +104,8 @@ snippet header
         #define show_bits(b, s)
 	#endif
 
-    inline int bits_count(ULL b) { int c = 0; while(b != 0) { c += (b & 1); b >>= 1; } return c; }
+    inline int onbits_count(ULL b) { int c = 0; while(b != 0) { c += (b & 1); b >>= 1; } return c; }
+    inline int bits_count(ULL b) { int c = 0; while(b != 0) { ++c; b >>= 1; } return c; }
 	inline int toInt(string s) { int v; istringstream sin(s);sin>>v;return v; }
 	template<class T> inline string toString(T x) { ostringstream sout;sout<<x;return sout.str(); }
     inline double now(){ struct timeval tv; gettimeofday(&tv, NULL); return (static_cast<double>(tv.tv_sec) + static_cast<double>(tv.tv_usec) * 1e-6); }
