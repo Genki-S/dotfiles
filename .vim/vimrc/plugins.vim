@@ -46,20 +46,22 @@ smap <C-j> <Plug>(neocomplcache_snippets_expand)
 " --------------------------------------------------
 " vim-fugitive
 " --------------------------------------------------
-nmap <Leader>g<Space> :Git 
-nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>gc :Gcommit<CR>
-nmap <Leader>gg :Ggrep 
-nmap <Leader>gl :Glog 
-nmap <Leader>ge :Gedit 
-nmap <Leader>gv :Gvsplit 
-nmap <Leader>gt :Gtabedit 
-nmap <Leader>gre :Gread<CR>
-nmap <Leader>gw :Gwrite<CR>
-nmap <Leader>gd :Gdiff 
-nmap <Leader>gm :Gmove 
-nmap <Leader>grm :Gremove<CR>
-nmap <Leader>gb :Gblame<CR>
+nnoremap [fugitive] <Nop>
+nmap <Leader>g [fugitive]
+nmap [fugitive]<Space> :Git 
+nmap [fugitive]s :Gstatus<CR>
+nmap [fugitive]c :Gcommit<CR>
+nmap [fugitive]g :Ggrep 
+nmap [fugitive]l :Glog 
+nmap [fugitive]e :Gedit 
+nmap [fugitive]v :Gvsplit 
+nmap [fugitive]t :Gtabedit 
+nmap [fugitive]re :Gread<CR>
+nmap [fugitive]w :Gwrite<CR>
+nmap [fugitive]d :Gdiff 
+nmap [fugitive]m :Gmove 
+nmap [fugitive]rm :Gremove<CR>
+nmap [fugitive]b :Gblame<CR>
 
 " --------------------------------------------------
 " vim-ref
