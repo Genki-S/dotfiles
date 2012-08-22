@@ -51,6 +51,7 @@ nmap <Leader>g [fugitive]
 nmap [fugitive]<Space> :Git 
 nmap [fugitive]s :Gstatus<CR>
 nmap [fugitive]c :Gcommit<CR>
+nmap [fugitive]C :Git commit --amend<CR>
 nmap [fugitive]g :Ggrep 
 nmap [fugitive]l :Glog 
 nmap [fugitive]e :Gedit 
