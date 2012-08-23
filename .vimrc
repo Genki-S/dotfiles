@@ -43,6 +43,7 @@ NeoBundle 'Shougo/neobundle.vim.git'
 " Acceleration of Vim functionalities
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/neocomplcache-snippets-complete.git'
+NeoBundle 'ujihisa/neco-look'
 NeoBundle 'Shougo/unite.vim.git'
 NeoBundle 'tpope/vim-surround.git'
 NeoBundle 'kshenoy/vim-signature'
