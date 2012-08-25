@@ -8,6 +8,9 @@
 " Mappings
 " .vim/vimrc/mappings.vim
 
+" Commands
+" .vim/vimrc/commands.vim
+
 " Visual
 " .vim/vimrc/visual.vim
 
