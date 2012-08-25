@@ -21,6 +21,15 @@ set smartcase
 set wildmenu
 
 " --------------------------------------------------
+" File manipulations
+" --------------------------------------------------
+set autoread
+augroup vimrc-checktime
+	autocmd!
+	autocmd WinEnter * checktime
+augroup END
+
+" --------------------------------------------------
 " Others
 " --------------------------------------------------
 set keywordprg=:help
