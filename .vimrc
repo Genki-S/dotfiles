@@ -89,6 +89,7 @@ NeoBundleLazy 'gerw/vim-latex-suite.git'
 
 " HTML, Haml
 NeoBundleLazy 'mattn/zencoding-vim.git'
+NeoBundleLazy 'tpope/vim-haml'
 
 " Sourcings
 autocmd FileType tex call SourceTexPlugins()
@@ -99,6 +100,7 @@ endfunction
 autocmd FileType html,haml call SourceWebPlugins()
 function! SourceWebPlugins()
 	NeoBundleSource zencoding-vim
+	NeoBundleSource vim-haml
 endfunction
 
 
