@@ -38,3 +38,9 @@ augroup END
 " Others
 " --------------------------------------------------
 set keywordprg=:help
+
+" --------------------------------------------------
+" For specific filetypes
+" --------------------------------------------------
+" CSS
+autocmd FileType css,scss setlocal iskeyword+=-
