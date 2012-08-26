@@ -72,9 +72,12 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
+" Unite sources
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'tsukkee/unite-help'
+
 " Other Utilities
 NeoBundleLazy 'fuenor/qfixhowm.git'
-NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'tpope/vim-unimpaired'
 
 " --------------------------------------------------
