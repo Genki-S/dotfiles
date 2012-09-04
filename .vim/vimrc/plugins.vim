@@ -69,21 +69,21 @@ let g:neocomplcache_snippets_dir = '~/.vim/snippets'
 " --------------------------------------------------
 nnoremap [fugitive] <Nop>
 nmap <Leader>g [fugitive]
-nmap [fugitive]<Space> :Git 
-nmap [fugitive]s :Gstatus<CR>
-nmap [fugitive]c :Gcommit<CR>
-nmap [fugitive]C :Git commit --amend<CR>
-nmap [fugitive]g :Ggrep 
-nmap [fugitive]l :Glog 
-nmap [fugitive]e :Gedit 
-nmap [fugitive]v :Gvsplit 
-nmap [fugitive]t :Gtabedit 
-nmap [fugitive]re :Gread<CR>
-nmap [fugitive]w :Gwrite<CR>
-nmap [fugitive]d :Gdiff 
-nmap [fugitive]m :Gmove 
-nmap [fugitive]rm :Gremove<CR>
-nmap [fugitive]b :Gblame<CR>
+nnoremap [fugitive]<Space> :Git 
+nnoremap [fugitive]s :Gstatus<CR>
+nnoremap [fugitive]c :Gcommit<CR>
+nnoremap [fugitive]C :Git commit --amend<CR>
+nnoremap [fugitive]g :Ggrep 
+nnoremap [fugitive]l :Glog 
+nnoremap [fugitive]e :Gedit 
+nnoremap [fugitive]v :Gvsplit 
+nnoremap [fugitive]t :Gtabedit 
+nnoremap [fugitive]re :Gread<CR>
+nnoremap [fugitive]w :Gwrite<CR>
+nnoremap [fugitive]d :Gdiff 
+nnoremap [fugitive]m :Gmove 
+nnoremap [fugitive]rm :Gremove<CR>
+nnoremap [fugitive]b :Gblame<CR>
 
 " --------------------------------------------------
 " vim-ref
@@ -92,10 +92,10 @@ nmap [fugitive]b :Gblame<CR>
 " mappings
 nnoremap [ref] <Nop>
 nmap , [ref]
-nmap [ref]a :Ref webdict alc 
-nmap [ref]l :Ref webdict longman 
-nmap [ref]w :Ref webdict wikipedia 
-nmap <silent> [ref]K :execute 'Ref webdict alc ' . expand('<cword>')<CR>
+nnoremap [ref]a :Ref webdict alc 
+nnoremap [ref]l :Ref webdict longman 
+nnoremap [ref]w :Ref webdict wikipedia 
+nnoremap <silent> [ref]K :execute 'Ref webdict alc ' . expand('<cword>')<CR>
 
 " sources
 let g:ref_source_webdict_sites = {
@@ -132,11 +132,11 @@ vmap <Leader>K <Plug>(openbrowser-smart-search)
 " --------------------------------------------------
 nnoremap [async] <Nop>
 nmap <Leader>a [async]
-nmap <silent> [async]m :AsyncMake<CR>
-nmap <silent> [async]s :AsyncShell 
-nmap <silent> [async]g :AsyncGrep 
-nmap <F9> :AsyncMake<CR>:echo "making..."<CR>
-nmap <F8> :!./a.out<CR>
+nnoremap <silent> [async]m :AsyncMake<CR>
+nnoremap <silent> [async]s :AsyncShell 
+nnoremap <silent> [async]g :AsyncGrep 
+nnoremap <F9> :AsyncMake<CR>:echo "making..."<CR>
+nnoremap <F8> :!./a.out<CR>
 
 " --------------------------------------------------
 " Quickhl
@@ -147,6 +147,6 @@ nmap [quickhl]t <Plug>(quickhl-toggle)
 xmap [quickhl]t <Plug>(quickhl-toggle)
 nmap [quickhl]r <Plug>(quickhl-reset)
 xmap [quickhl]r <Plug>(quickhl-reset)
-nmap <silent> [quickhl]l :QuickhlLock<CR>
-nmap <silent> [quickhl]u :QuickhlUnLock<CR>
-nmap <silent> [quickhl]s :QuickhlList<CR>
+nnoremap <silent> [quickhl]l :QuickhlLock<CR>
+nnoremap <silent> [quickhl]u :QuickhlUnLock<CR>
+nnoremap <silent> [quickhl]s :QuickhlList<CR>

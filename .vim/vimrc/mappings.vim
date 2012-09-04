@@ -10,4 +10,4 @@ vnoremap ( t(
 " ==================================================
 " Insert Mode Mappings
 " ==================================================
-imap <Leader><C-u> <Esc>gUiWEa
+inoremap <Leader><C-u> <Esc>gUiWEa
