@@ -35,6 +35,14 @@ augroup vimrc-checktime
 augroup END
 
 " --------------------------------------------------
+" Undo
+" --------------------------------------------------
+if has('persistent_undo')
+	set undodir=~/.vimundo
+	set undofile
+endif
+
+" --------------------------------------------------
 " Others
 " --------------------------------------------------
 set keywordprg=:help
