@@ -15,7 +15,6 @@ compinit
 # Add: path to texlive
 export PATH=$PATH:/usr/local/texlive/2011/bin/i386-linux/
 
-
 # ==================================================
 # Aliases
 # ==================================================
@@ -30,15 +29,19 @@ function touch() { echo "Don't bother to type \"touch\"! Just use \"> filename\"
 # ==================================================
 # Linux 101 Hacks
 # ==================================================
-alias cd1="cd .."
-alias cd2="cd ../.."
-alias cd3="cd ../../.."
-alias cd4="cd ../../../.."
-alias cd5="cd ../../../../.."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
 function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 # cd -
 # dirs, pushd, popd
 # shopt -s cdspell (not for zsh)
+
+# ==================================================
+# History settings
+# ==================================================
+setopt EXTENDED_HISTORY
 
 # ==================================================
 # Environment Variables
