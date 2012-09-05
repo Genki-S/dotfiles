@@ -91,7 +91,7 @@ nnoremap [fugitive]b :Gblame<CR>
 
 " mappings
 nnoremap [ref] <Nop>
-nmap , [ref]
+nmap <Leader>, [ref]
 nnoremap [ref]a :Ref webdict alc 
 nnoremap [ref]l :Ref webdict longman 
 nnoremap [ref]w :Ref webdict wikipedia 
