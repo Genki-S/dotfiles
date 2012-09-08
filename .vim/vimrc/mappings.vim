@@ -4,6 +4,7 @@
 nnoremap [edit] <Nop>
 nmap <Leader>e [edit]
 nnoremap [edit]v :tabnew $MYVIMRC<CR>
+nnoremap [edit]s :NeoComplCacheEditSnippet<CR>
 
 nnoremap [source] <Nop>
 nmap <Leader>s [source]
