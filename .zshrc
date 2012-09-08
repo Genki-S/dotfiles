@@ -18,6 +18,9 @@ export PATH=$PATH:/usr/local/texlive/2011/bin/i386-linux/
 # Aliases
 # ==================================================
 alias vim="vim --servername genki" # in order to use AsyncCommand
+alias hist="fc -liD 1"
+alias ev="vim ~/dotfiles/.vimrc"
+alias ez="vim ~/dotfiles/.zshrc"
 
 # ==================================================
 # Functions
