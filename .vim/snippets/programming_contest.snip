@@ -43,7 +43,7 @@ snippet header
 	typedef pair<int, int> PII;
 	typedef complex<double> P;
 	
-	#define FOR(i, b, e) for (typeof(b) i = (b); i != (e); i < (e)? ++i : --i)
+	#define FOR(i, b, e) for (typeof(e) i = (b); i != (e); i < (e)? ++i : --i)
 	#define REP(i, n) FOR(i, 0, n)
 	
 	#define IFC(c) if(c) continue;
@@ -54,8 +54,6 @@ snippet header
 	
 	#define arrsz(a) ( sizeof(a) / sizeof(a[0]) )
 
-    #define PQ priority_queue
-	
 	#define F first
 	#define S second
 	#define MP(a, b) make_pair(a, b)
@@ -74,6 +72,9 @@ snippet header
 	#define BITOF(n, m) ((ULL)(n) >> (m) & 1)
 	
 	#define RANGE(a, b, c) ((a) <= (b) && (b) <= (c))
+
+    #define PQ priority_queue
+    #define SC static_cast
 	
 	#ifdef DEBUG_ON
 		#define dprt(fmt, ...) if (CONDITION) fprintf(stderr, fmt, __VA_ARGS__)
