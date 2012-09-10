@@ -13,6 +13,7 @@ compinit
 # PATH setting
 # Add: path to texlive
 export PATH=$PATH:/usr/local/texlive/2011/bin/i386-linux/
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # ==================================================
 # Aliases
