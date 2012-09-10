@@ -27,6 +27,7 @@
 " use NeoBundle
 set nocompatible
 filetype off
+filetype plugin indent off
 
 if has('vim_starting')
 	set runtimepath+=~/.vim/.bundle/neobundle.vim
@@ -94,12 +95,16 @@ NeoBundleLazy 'mattn/zencoding-vim.git'
 NeoBundleLazy 'tpope/vim-haml'
 
 " Sourcings
-autocmd FileType tex call SourceTexPlugins()
+augroup sourcings
+	autocmd!
+	autocmd FileType tex call SourceTexPlugins()
+	autocmd FileType html,haml call SourceWebPlugins()
+augroup END
+
 function! SourceTexPlugins()
 	NeoBundleSource vim-latex-suite
 endfunction
 
-autocmd FileType html,haml call SourceWebPlugins()
 function! SourceWebPlugins()
 	NeoBundleSource zencoding-vim
 	NeoBundleSource vim-haml
