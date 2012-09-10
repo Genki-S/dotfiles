@@ -150,3 +150,8 @@ xmap [quickhl]r <Plug>(quickhl-reset)
 nnoremap <silent> [quickhl]l :QuickhlLock<CR>
 nnoremap <silent> [quickhl]u :QuickhlUnLock<CR>
 nnoremap <silent> [quickhl]s :QuickhlList<CR>
+
+" --------------------------------------------------
+" dry.vim
+" --------------------------------------------------
+let g:dry_key_lists = ['h', 'j', 'k', 'l', 'w', 'e', 'b', 'W', 'E', 'B']

@@ -80,6 +80,7 @@ NeoBundle 'tsukkee/unite-help'
 " Other Utilities
 NeoBundleLazy 'fuenor/qfixhowm.git'
 NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'Genki-S/dry.vim'
 
 " --------------------------------------------------
 " for Specific filetypes
