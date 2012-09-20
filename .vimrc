@@ -102,14 +102,29 @@ augroup sourcings
 augroup END
 
 function! SourceTexPlugins()
-	NeoBundleSource vim-latex-suite
+	let l:plugins = [
+\		'vim-latex-suite',
+\	]
+	call SourcePlugins(l:plugins)
 endfunction
 
 function! SourceWebPlugins()
-	NeoBundleSource zencoding-vim
-	NeoBundleSource vim-haml
+	let l:plugins = [
+\		'zencoding-vim',
+\		'vim-haml',
+\	]
+	call SourcePlugins(l:plugins)
 endfunction
 
+function! SourcePlugins(plugins)
+	for plugin in a:plugins
+		try
+			execute 'NeoBundleSource' plugin
+		catch /^Vim\%((\a\+)\)\?:E127/
+			" TODO: inspect what is going on about E127
+		endtry
+	endfor
+endfunction
 
 " ==================================================
 " My vimrc sourcing
