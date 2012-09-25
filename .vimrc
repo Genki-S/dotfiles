@@ -135,6 +135,16 @@ for [plugin, ftlist] in items(s:plugin_filetypes)
 	augroup END
 endfor
 
+" --------------------------------------------------
+" Installation check
+" --------------------------------------------------
+if neobundle#exists_not_installed_bundles()
+	echomsg 'Not installed bundles : ' .
+\		string(neobundle#get_not_installed_bundle_names())
+	echomsg 'Please execute ":NeoBundleInstall" command.'
+endif
+
+
 " ==================================================
 " My vimrc sourcing
 " ==================================================
