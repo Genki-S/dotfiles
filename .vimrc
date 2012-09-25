@@ -95,6 +95,7 @@ NeoBundleLazy 'gerw/vim-latex-suite.git'
 " --------------------------------------------------
 NeoBundleLazy 'mattn/zencoding-vim.git'
 NeoBundleLazy 'tpope/vim-haml'
+NeoBundleLazy 'Valloric/MatchTagAlways'
 
 " Sourcings
 " --------------------------------------------------
@@ -102,13 +103,16 @@ NeoBundleLazy 'tpope/vim-haml'
 " plugin - filetype dictionary
 let s:plugin_filetypes = {
 \	 'vim-latex-suite': [
-\		 'tex', 'plaintex'
+\		'tex', 'plaintex'
 \	],
 \	 'zencoding-vim': [
-\		 'html', 'haml'
+\		'html', 'haml'
 \	],
 \	 'vim-haml': [
-\		 'haml'
+\		'haml'
+\	],
+\	'MatchTagAlways': [
+\		'html', 'xhtml', 'xml'
 \	],
 \}
 
