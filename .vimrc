@@ -88,43 +88,48 @@ NeoBundle 'Genki-S/dry.vim'
 " --------------------------------------------------
 
 " TeX
+" --------------------------------------------------
 NeoBundleLazy 'gerw/vim-latex-suite.git'
 
-" HTML, Haml
+" Web
+" --------------------------------------------------
 NeoBundleLazy 'mattn/zencoding-vim.git'
 NeoBundleLazy 'tpope/vim-haml'
 
 " Sourcings
+" --------------------------------------------------
+
+" plugin - filetype dictionary
+let s:plugin_filetypes = {
+\	 'vim-latex-suite': [
+\		 'tex', 'plaintex'
+\	],
+\	 'zencoding-vim': [
+\		 'html', 'haml'
+\	],
+\	 'vim-haml': [
+\		 'haml'
+\	],
+\}
+
+" helper function
+function! s:source_lazy_plugin(plugin)
+	try
+		execute 'NeoBundleSource' a:plugin
+	catch /^Vim\%((\a\+)\)\?:E127/
+		" TODO: inspect what is going on about E127
+	endtry
+endfunction
+
+" define sourcing autocmd
 augroup sourcings
 	autocmd!
-	autocmd FileType tex call SourceTexPlugins()
-	autocmd FileType html,haml call SourceWebPlugins()
 augroup END
-
-function! SourceTexPlugins()
-	let l:plugins = [
-\		'vim-latex-suite',
-\	]
-	call SourcePlugins(l:plugins)
-endfunction
-
-function! SourceWebPlugins()
-	let l:plugins = [
-\		'zencoding-vim',
-\		'vim-haml',
-\	]
-	call SourcePlugins(l:plugins)
-endfunction
-
-function! SourcePlugins(plugins)
-	for plugin in a:plugins
-		try
-			execute 'NeoBundleSource' plugin
-		catch /^Vim\%((\a\+)\)\?:E127/
-			" TODO: inspect what is going on about E127
-		endtry
-	endfor
-endfunction
+for [plugin, ftlist] in items(s:plugin_filetypes)
+	augroup sourcings
+		execute "autocmd FileType" join(ftlist, ',') "call s:source_lazy_plugin('".plugin."')"
+	augroup END
+endfor
 
 " ==================================================
 " My vimrc sourcing
