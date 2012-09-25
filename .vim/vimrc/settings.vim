@@ -1,8 +1,13 @@
 " --------------------------------------------------
 " Indentation
 " --------------------------------------------------
+" default style
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
+set noexpandtab
+
+set autoindent
 
 " --------------------------------------------------
 " Folding
@@ -19,6 +24,7 @@ set smartcase
 " Command Mode Options
 " --------------------------------------------------
 set wildmenu
+set wildmode=list:longest
 
 " --------------------------------------------------
 " Motions
@@ -45,6 +51,8 @@ endif
 " --------------------------------------------------
 " Others
 " --------------------------------------------------
+set encoding=utf-8
+set backspace=indent,eol,start
 set keywordprg=:help
 
 " --------------------------------------------------
