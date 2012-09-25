@@ -21,10 +21,16 @@ set relativenumber
 set cursorline
 set showcmd
 set noshowmode
+set showmatch
+
+set wrap
+set colorcolumn=80
+set textwidth=80
+set formatoptions=rqnmB1
 
 " Special Characters
 set list
-set listchars=tab:\ \ ,trail:_,extends:>,precedes:<
+set listchars=tab:▸\ ,trail:_,extends:>,precedes:<
 
 
 " ==================================================

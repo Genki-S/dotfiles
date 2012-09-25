@@ -17,8 +17,9 @@ set foldmethod=marker
 " --------------------------------------------------
 " Search
 " --------------------------------------------------
-set incsearch
+set ignorecase
 set smartcase
+set incsearch
 
 " --------------------------------------------------
 " Command Mode Options
