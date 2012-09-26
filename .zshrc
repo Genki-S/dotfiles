@@ -22,6 +22,7 @@ alias vim="vim --servername genki" # in order to use AsyncCommand
 alias hist="fc -liD 1"
 alias ev="vim ~/dotfiles/.vimrc"
 alias ez="vim ~/dotfiles/.zshrc"
+alias ack="ack-grep"
 
 # ==================================================
 # Functions
