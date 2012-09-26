@@ -56,6 +56,7 @@ NeoBundle 't9md/vim-quickhl'
 NeoBundle 'austintaylor/vim-indentobject'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-speeddating'
 
 " Programming Features
 NeoBundleLazy 'thinca/vim-quickrun.git'
