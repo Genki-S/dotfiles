@@ -59,7 +59,7 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-speeddating'
 
 " Programming Features
-NeoBundleLazy 'thinca/vim-quickrun.git'
+NeoBundle 'thinca/vim-quickrun.git'
 NeoBundleLazy 'ujihisa/quicklearn.git'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdcommenter'
