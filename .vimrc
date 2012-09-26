@@ -54,6 +54,7 @@ NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 't9md/vim-quickhl'
 NeoBundle 'austintaylor/vim-indentobject'
+NeoBundle 'mileszs/ack.vim'
 
 " Programming Features
 NeoBundleLazy 'thinca/vim-quickrun.git'

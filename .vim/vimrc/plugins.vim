@@ -130,11 +130,6 @@ vmap <Leader>K <Plug>(openbrowser-smart-search)
 " --------------------------------------------------
 " AsyncCommand
 " --------------------------------------------------
-nnoremap [async] <Nop>
-nmap <Leader>a [async]
-nnoremap <silent> [async]m :AsyncMake<CR>
-nnoremap <silent> [async]s :AsyncShell 
-nnoremap <silent> [async]g :AsyncGrep 
 nnoremap <F9> :AsyncMake<CR>:echo "making..."<CR>
 nnoremap <F8> :!./a.out<CR>
 
@@ -150,6 +145,12 @@ xmap [quickhl]r <Plug>(quickhl-reset)
 nnoremap <silent> [quickhl]l :QuickhlLock<CR>
 nnoremap <silent> [quickhl]u :QuickhlUnLock<CR>
 nnoremap <silent> [quickhl]s :QuickhlList<CR>
+
+" --------------------------------------------------
+" ack.vim
+" --------------------------------------------------
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+nnoremap <Leader>a :Ack 
 
 " --------------------------------------------------
 " dry.vim
