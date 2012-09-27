@@ -99,6 +99,10 @@ NeoBundleLazy 'gerw/vim-latex-suite.git'
 NeoBundleLazy 'mattn/zencoding-vim.git'
 NeoBundleLazy 'tpope/vim-haml'
 NeoBundleLazy 'Valloric/MatchTagAlways'
+NeoBundleLazy 'othree/html5.vim'
+NeoBundleLazy 'pangloss/vim-javascript'
+NeoBundleLazy 'hail2u/vim-css3-syntax'
+NeoBundleLazy 'cakebaker/scss-syntax.vim'
 
 " Sourcings
 " --------------------------------------------------
@@ -109,13 +113,25 @@ let s:plugin_filetypes = {
 \		'tex', 'plaintex'
 \	],
 \	 'zencoding-vim': [
-\		'html', 'haml'
+\		'html', 'haml', 'php'
 \	],
 \	 'vim-haml': [
 \		'haml'
 \	],
 \	'MatchTagAlways': [
-\		'html', 'xhtml', 'xml'
+\		'html', 'xhtml', 'xml', 'php'
+\	],
+\	'html5.vim': [
+\		'html', 'php'
+\	],
+\	'vim-javascript': [
+\		'js'
+\	],
+\	'vim-css3-syntax': [
+\		'css', 'scss'
+\	],
+\	'scss-syntax': [
+\		'scss'
 \	],
 \}
 
@@ -160,6 +176,8 @@ endfor
 " ==================================================
 " To make the ":Man" command available
 source /usr/share/vim/vim73/ftplugin/man.vim
+" Matchit.vim
+source /usr/share/vim/vim73/macros/matchit.vim
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 filetype plugin on

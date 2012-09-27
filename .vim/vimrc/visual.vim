@@ -37,3 +37,9 @@ set listchars=tab:▸\ ,trail:_,extends:>,precedes:<
 " Statusline
 " ==================================================
 set laststatus=2
+
+
+" ==================================================
+" For specific filetypes
+" ==================================================
+autocmd BufRead,BufNewFile *.css,*.scss, setlocal foldmethod=marker foldmarker={,}
