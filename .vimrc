@@ -76,7 +76,6 @@ NeoBundle 'wannesm/wmgraphviz.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'kien/rainbow_parentheses.vim'
 
 " Unite sources
 NeoBundle 'h1mesuke/unite-outline'

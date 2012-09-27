@@ -14,16 +14,6 @@ let g:indent_guides_enable_on_vim_startup=1
 
 
 " ==================================================
-" vim-indent-guides settings
-" ==================================================
-autocmd VimEnter * RainbowParenthesesToggle
-autocmd Syntax * RainbowParenthesesLoadRound
-autocmd Syntax * RainbowParenthesesLoadSquare
-autocmd Syntax * RainbowParenthesesLoadBraces
-autocmd Syntax * RainbowParenthesesLoadChevrons
-
-
-" ==================================================
 " Screen Visual
 " ==================================================
 set scrolloff=3
