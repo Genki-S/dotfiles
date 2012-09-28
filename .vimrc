@@ -24,6 +24,8 @@
 " NeoBundle
 " ==================================================
 
+"let g:neobundle_default_git_protocol = 'https'
+
 " use NeoBundle
 set nocompatible
 filetype off
