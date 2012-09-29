@@ -42,10 +42,16 @@ augroup vimrc-checktime
 augroup END
 
 " --------------------------------------------------
+" Backup
+" --------------------------------------------------
+set swapfile
+set backup
+
+" --------------------------------------------------
 " Undo
 " --------------------------------------------------
 if has('persistent_undo')
-	set undodir=~/.vimundo
+	set undodir=~/.tmp/vim/undo
 	set undofile
 endif
 
