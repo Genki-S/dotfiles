@@ -105,7 +105,7 @@ NeoBundleLazy 'othree/html5.vim'
 NeoBundleLazy 'pangloss/vim-javascript'
 NeoBundleLazy 'hail2u/vim-css3-syntax'
 NeoBundleLazy 'cakebaker/scss-syntax.vim'
-NeoBundle 'miripiruni/CSScomb-for-Vim'
+NeoBundleLazy 'miripiruni/CSScomb-for-Vim'
 
 " Sourcings
 " --------------------------------------------------
