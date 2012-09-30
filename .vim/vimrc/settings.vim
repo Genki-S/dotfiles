@@ -35,6 +35,7 @@ set virtualedit=block
 " --------------------------------------------------
 " File manipulations
 " --------------------------------------------------
+set hidden
 set autoread
 augroup vimrc-checktime
 	autocmd!
