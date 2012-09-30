@@ -95,6 +95,13 @@ augroup vimrcAutoView
 augroup end
 
 " --------------------------------------------------
+" Sessions
+" --------------------------------------------------
+if has('mksession')
+	set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize
+endif
+
+" --------------------------------------------------
 " Others
 " --------------------------------------------------
 set encoding=utf-8
