@@ -51,3 +51,4 @@ setopt EXTENDED_HISTORY
 # Environment Variables
 # ==================================================
 export HTTP_HOME=http://vim.wikia.com/wiki/Special:Random
+export TERM=xterm-256color
