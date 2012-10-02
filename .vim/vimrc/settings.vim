@@ -20,12 +20,14 @@ set foldmethod=manual
 set ignorecase
 set smartcase
 set incsearch
+set magic
 
 " --------------------------------------------------
 " Command Mode Options
 " --------------------------------------------------
 set wildmenu
 set wildmode=list:longest
+set wildignore=*~
 
 " --------------------------------------------------
 " Motions
@@ -108,6 +110,7 @@ endif
 set encoding=utf-8
 set backspace=indent,eol,start
 set keywordprg=:help
+set lazyredraw " for better performance
 
 " --------------------------------------------------
 " For specific filetypes
