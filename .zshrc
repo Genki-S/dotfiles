@@ -53,7 +53,18 @@ setopt EXTENDED_HISTORY
 export HTTP_HOME=http://vim.wikia.com/wiki/Special:Random
 export TERM=xterm-256color
 
+# ==================================================
+# Miscellaneous
+# ==================================================
+# RescueTime
 ps -e | grep rescuetime &> /dev/null
 if [ $? -ne 0 ]; then
 	rescuetime &
+fi
+
+# AutoJump
+if [ -f /usr/share/autojump/autojump.zsh ]; then
+	source /usr/share/autojump/autojump.zsh
+else
+	echo "You should install autojump, really."
 fi
