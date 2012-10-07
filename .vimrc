@@ -22,7 +22,7 @@
 " ==================================================
 
 "let g:neobundle_default_git_protocol = 'https'
-let g:plugin_setting_dir = '~/.vim/vimrc/plugins'
+let g:plugin_setting_dir = expand('~/.vim/vimrc/plugins')
 
 " use NeoBundle
 set nocompatible

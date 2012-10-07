@@ -7,19 +7,6 @@ else
 	set t_Co=16
 endif
 
-" ==================================================
-" Solarized settings
-" ==================================================
-syntax enable
-set background=dark
-colorscheme solarized
-
-
-" ==================================================
-" vim-indent-guides settings
-" ==================================================
-let g:indent_guides_enable_on_vim_startup=1
-
 
 " ==================================================
 " Screen Visual
