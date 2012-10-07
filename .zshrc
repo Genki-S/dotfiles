@@ -52,3 +52,8 @@ setopt EXTENDED_HISTORY
 # ==================================================
 export HTTP_HOME=http://vim.wikia.com/wiki/Special:Random
 export TERM=xterm-256color
+
+ps -e | grep rescuetime &> /dev/null
+if [ $? -ne 0 ]; then
+	rescuetime &
+fi
