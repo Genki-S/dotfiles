@@ -66,6 +66,20 @@ if [ $? -ne 0 ]; then
 	fi
 fi
 
+# PomodoroApp
+if [ -x ~/PomodoroApp/PomodoroApp ]; then
+	if [ ! -L ~/.local/share/data/PomodoroApp/PomodoroApp.db ]; then
+		echo "You want to share PomodoroApp.db with Dropbox or something."
+	else
+		ps -e | grep PomodoroApp &> /dev/null
+		if [ $? -ne 0 ]; then
+			screen -d -m ~/PomodoroApp/PomodoroApp
+		fi
+	fi
+else
+	echo "You should install PomodoroApp, really."
+fi
+
 # AutoJump
 if [ -f /usr/share/autojump/autojump.zsh ]; then
 	source /usr/share/autojump/autojump.zsh
