@@ -59,7 +59,11 @@ export TERM=xterm-256color
 # RescueTime
 ps -e | grep rescuetime &> /dev/null
 if [ $? -ne 0 ]; then
-	rescuetime &
+	if which rescuetime &> /dev/null; then
+		screen -d -m rescuetime
+	else
+		echo "You should install RescueTime, really."
+	fi
 fi
 
 # AutoJump
