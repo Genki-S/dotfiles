@@ -11,15 +11,6 @@ nmap <Leader>s [source]
 nnoremap [source]v :source $MYVIMRC<CR>
 
 " ==================================================
-" Motions
-" ==================================================
-" brace movement for programming languages (override sentence motion)
-onoremap ) t)
-onoremap ( t(
-vnoremap ) t)
-vnoremap ( t(
-
-" ==================================================
 " Misc.
 " ==================================================
 " make & trigger :&& so it preserves flags
