@@ -1,6 +1,9 @@
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_text_mode_filetypes = {
+	\ 'text': 1,
+\ }
 
 " Plugin key-mappings.
 inoremap <expr><C-g> neocomplcache#undo_completion()
