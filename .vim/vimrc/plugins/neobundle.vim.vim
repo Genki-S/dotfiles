@@ -82,7 +82,7 @@ let s:plugin_filetypes = {
 \		'tex', 'plaintex'
 \	],
 \	 'zencoding-vim': [
-\		'html', 'haml', 'php'
+\		'html', 'xhtml', 'haml', 'php'
 \	],
 \	 'vim-haml': [
 \		'haml'
