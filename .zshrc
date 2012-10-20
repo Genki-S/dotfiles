@@ -73,7 +73,12 @@ if [ -x ~/PomodoroApp/PomodoroApp ]; then
 	else
 		ps -e | grep PomodoroApp &> /dev/null
 		if [ $? -ne 0 ]; then
-			screen -d -m ~/PomodoroApp/PomodoroApp
+			echo -n "Invoke PomodoroApp? [y/n]: "
+			read CONFIRM
+			case $CONFIRM in
+				y|Y|YES|yes|Yes) screen -d -m ~/PomodoroApp/PomodoroApp ;;
+				*)
+			esac
 		fi
 	fi
 else
