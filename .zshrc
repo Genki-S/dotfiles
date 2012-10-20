@@ -91,3 +91,8 @@ if [ -f /usr/share/autojump/autojump.zsh ]; then
 else
 	echo "You should install autojump, really."
 fi
+
+# ==================================================
+# Reminders
+# ==================================================
+echo "Use tmux!"
