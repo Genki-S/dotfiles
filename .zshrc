@@ -92,7 +92,12 @@ else
 	echo "You should install autojump, really."
 fi
 
-# ==================================================
-# Reminders
-# ==================================================
-echo "Use tmux!"
+# Tmux
+ps -e | grep tmux &> /dev/null
+if [ $? -ne 0 ]; then
+	if which tmux &> /dev/null; then
+		tmux
+	else
+		echo "tmux not installed. pity..."
+	fi
+fi
