@@ -19,3 +19,7 @@ symlink .vimrc
 symlink .vim
 symlink .zshrc
 symlink .tmux.conf
+
+if [ ! -L $ZSH/themes/genki.zsh-theme ]; then
+	ln -s $HOME/dotfiles/genki.zsh-theme $ZSH/themes/genki.zsh-theme
+fi
