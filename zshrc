@@ -11,10 +11,18 @@ compinit
 # End of lines added by compinstall
 
 # ==================================================
+# Environment Variables
+# ==================================================
+export HTTP_HOME=http://vim.wikia.com/wiki/Special:Random
+export TERM=xterm-256color
+
+export MYBUNDLES=$HOME/dotfiles/.mybundles
+
+# ==================================================
 # oh-my-zsh
 # ==================================================
 # Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=$MYBUNDLES/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -26,7 +34,7 @@ export ZSH_THEME="genki"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="false"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -46,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 # ==================================================
 # dircolors-solarized
 # ==================================================
-eval `dircolors $HOME/.dircolors-solarized/dircolors.256dark`
+eval `dircolors $MYBUNDLES/dircolors-solarized/dircolors.256dark`
 
 # ==================================================
 # PATH setting
@@ -60,9 +68,12 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # ==================================================
 alias vim="vim --servername genki" # in order to use AsyncCommand
 alias hist="fc -liD 1"
+alias ack="ack-grep"
+
 alias ev="vim ~/dotfiles/vimrc"
 alias ez="vim ~/dotfiles/zshrc"
-alias ack="ack-grep"
+alias et="vim ~/dotfiles/tmux.conf"
+alias neobundle="vim -u $HOME/dotfiles/bundle_vimrc"
 
 # ==================================================
 # Functions
@@ -86,12 +97,6 @@ function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 # History settings
 # ==================================================
 setopt EXTENDED_HISTORY
-
-# ==================================================
-# Environment Variables
-# ==================================================
-export HTTP_HOME=http://vim.wikia.com/wiki/Special:Random
-export TERM=xterm-256color
 
 # ==================================================
 # Tmux

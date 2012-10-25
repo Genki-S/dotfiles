@@ -1,0 +1,15 @@
+"let g:neobundle_default_git_protocol = 'https'
+
+" use NeoBundle
+set nocompatible
+filetype off
+filetype plugin indent off
+
+if has('vim_starting')
+	set runtimepath+=~/.vim/.bundle/neobundle.vim
+	call neobundle#rc(expand('~/dotfiles/.mybundles'))
+endif
+
+NeoBundle 'robbyrussell/oh-my-zsh'
+NeoBundle 'seebi/tmux-colors-solarized'
+NeoBundle 'seebi/dircolors-solarized'
