@@ -108,7 +108,7 @@ fi
 
 function tmuxpwd() {
 	if [ -n "$TMUX" ]; then
-		tmux setenv TMUXPWD_$(tmux display -p "#I") "$PWD"
+		tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD"
 	fi
 }
 precmd_functions=($precmd_functions tmuxpwd)
