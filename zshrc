@@ -44,6 +44,11 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # ==================================================
+# dircolors-solarized
+# ==================================================
+eval `dircolors $HOME/.dircolors-solarized/dircolors.256dark`
+
+# ==================================================
 # PATH setting
 # ==================================================
 # Add: path to texlive
