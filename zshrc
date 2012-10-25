@@ -89,6 +89,26 @@ export HTTP_HOME=http://vim.wikia.com/wiki/Special:Random
 export TERM=xterm-256color
 
 # ==================================================
+# Tmux
+# ==================================================
+# auto launch
+ps -e | grep tmux &> /dev/null
+if [ $? -ne 0 ]; then
+	if which tmux &> /dev/null; then
+		tmux
+	else
+		echo "tmux not installed. pity..."
+	fi
+fi
+
+function tmuxpwd() {
+	if [ -n "$TMUX" ]; then
+		tmux setenv TMUXPWD_$(tmux display -p "#I") "$PWD"
+	fi
+}
+precmd_functions=($precmd_functions tmuxpwd)
+
+# ==================================================
 # Miscellaneous
 # ==================================================
 # RescueTime
@@ -127,12 +147,3 @@ else
 	echo "You should install autojump, really."
 fi
 
-# Tmux
-ps -e | grep tmux &> /dev/null
-if [ $? -ne 0 ]; then
-	if which tmux &> /dev/null; then
-		tmux
-	else
-		echo "tmux not installed. pity..."
-	fi
-fi
