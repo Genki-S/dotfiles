@@ -14,7 +14,7 @@ NeoBundle 'Shougo/neobundle.vim'
 
 " Acceleration of Vim functionalities
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tpope/vim-surround'
