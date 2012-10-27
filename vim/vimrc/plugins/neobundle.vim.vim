@@ -11,6 +11,7 @@ NeoBundle 'mattn/webapi-vim'
 
 " Vim plugins management
 NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'MarcWeber/vim-addon-local-vimrc'
 
 " Acceleration of Vim functionalities
 NeoBundle 'Shougo/neocomplcache'
