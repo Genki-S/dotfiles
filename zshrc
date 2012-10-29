@@ -59,9 +59,24 @@ eval `dircolors $MYBUNDLES/dircolors-solarized/dircolors.256dark`
 # ==================================================
 # PATH setting
 # ==================================================
+function add_path() {
+	echo $PATH | grep -bo "$1\(:\|$\)" &> /dev/null
+	if [ $? -ne 0 ]; then
+		PATH=$PATH:$1
+	fi
+}
+
 # Add: path to texlive
-export PATH=$PATH:/usr/local/texlive/2011/bin/i386-linux/
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+add_path "/usr/local/texlive/2011/bin/i386-linux"
+
+# Add RVM to PATH for scripting
+add_path "$HOME/.rvm/bin"
+
+# Source rvm environment
+which rails &> /dev/null
+if [ $? -ne 0 ]; then
+	source $HOME/.rvm/environments/default
+fi
 
 # ==================================================
 # Aliases
