@@ -15,6 +15,7 @@ compinit
 # ==================================================
 export HTTP_HOME=http://vim.wikia.com/wiki/Special:Random
 export TERM=xterm-256color
+export EDITOR=vim
 
 export MYBUNDLES=$HOME/dotfiles/.mybundles
 
@@ -132,6 +133,13 @@ function tmuxpwd() {
 	fi
 }
 precmd_functions=($precmd_functions tmuxpwd)
+
+# Tmuxinator
+which tmuxinator &> /dev/null
+if [ $? -ne 0 ]; then
+	echo "Just run \"gem install tmuxinator\""
+fi
+[ -s $HOME/.tmuxinator/scripts/tmuxinator ] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # ==================================================
 # Miscellaneous
