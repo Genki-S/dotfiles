@@ -115,18 +115,50 @@ function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 setopt EXTENDED_HISTORY
 
 # ==================================================
-# Tmux
+# Miscellaneous
 # ==================================================
-# auto launch
-ps -e | grep tmux &> /dev/null
+# RescueTime
+ps -e | grep rescuetime &> /dev/null
 if [ $? -ne 0 ]; then
-	if which tmux &> /dev/null; then
-		tmux
+	if which rescuetime &> /dev/null; then
+		screen -d -m rescuetime
 	else
-		echo "tmux not installed. pity..."
+		echo "You should install RescueTime, really."
 	fi
 fi
 
+# PomodoroApp
+ps -e | grep tmux &> /dev/null
+if [ $? -ne 0 ]; then
+	if [ -x ~/PomodoroApp/PomodoroApp ]; then
+		if [ ! -L ~/.local/share/data/PomodoroApp/PomodoroApp.db ]; then
+			echo "You want to share PomodoroApp.db with Dropbox or something."
+		else
+			ps -e | grep PomodoroApp &> /dev/null
+			if [ $? -ne 0 ]; then
+				echo -n "Invoke PomodoroApp? [y/n]: "
+				read CONFIRM
+				case $CONFIRM in
+					y|Y|YES|yes|Yes) screen -d -m ~/PomodoroApp/PomodoroApp ;;
+					*)
+				esac
+			fi
+		fi
+	else
+		echo "You should install PomodoroApp, really."
+	fi
+fi
+
+# AutoJump
+if [ -f /usr/share/autojump/autojump.zsh ]; then
+	source /usr/share/autojump/autojump.zsh
+else
+	echo "You should install autojump, really."
+fi
+
+# ==================================================
+# Tmux
+# ==================================================
 function tmuxpwd() {
 	if [ -n "$TMUX" ]; then
 		tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD"
@@ -141,42 +173,12 @@ if [ $? -ne 0 ]; then
 fi
 [ -s $HOME/.tmuxinator/scripts/tmuxinator ] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-# ==================================================
-# Miscellaneous
-# ==================================================
-# RescueTime
-ps -e | grep rescuetime &> /dev/null
+# auto launch
+ps -e | grep tmux &> /dev/null
 if [ $? -ne 0 ]; then
-	if which rescuetime &> /dev/null; then
-		screen -d -m rescuetime
+	if which tmux &> /dev/null; then
+		tmux
 	else
-		echo "You should install RescueTime, really."
+		echo "tmux not installed. pity..."
 	fi
 fi
-
-# PomodoroApp
-if [ -x ~/PomodoroApp/PomodoroApp ]; then
-	if [ ! -L ~/.local/share/data/PomodoroApp/PomodoroApp.db ]; then
-		echo "You want to share PomodoroApp.db with Dropbox or something."
-	else
-		ps -e | grep PomodoroApp &> /dev/null
-		if [ $? -ne 0 ]; then
-			echo -n "Invoke PomodoroApp? [y/n]: "
-			read CONFIRM
-			case $CONFIRM in
-				y|Y|YES|yes|Yes) screen -d -m ~/PomodoroApp/PomodoroApp ;;
-				*)
-			esac
-		fi
-	fi
-else
-	echo "You should install PomodoroApp, really."
-fi
-
-# AutoJump
-if [ -f /usr/share/autojump/autojump.zsh ]; then
-	source /usr/share/autojump/autojump.zsh
-else
-	echo "You should install autojump, really."
-fi
-
