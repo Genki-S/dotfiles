@@ -3,16 +3,16 @@
 " ==================================================
 
 " Settings
-" .vim/vimrc/settings.vim
+" ~/.vim/vimrc/settings.vim
 
 " Mappings
-" .vim/vimrc/mappings.vim
+" ~/.vim/vimrc/mappings.vim
 
 " Commands
-" .vim/vimrc/commands.vim
+" ~/.vim/vimrc/commands.vim
 
 " Visual
-" .vim/vimrc/visual.vim
+" ~/.vim/vimrc/visual.vim
 
 " Sourcing them at the bottom of this file
 
