@@ -76,6 +76,10 @@ NeoBundleLazy 'hail2u/vim-css3-syntax'
 NeoBundleLazy 'cakebaker/scss-syntax.vim'
 NeoBundleLazy 'miripiruni/CSScomb-for-Vim'
 
+" Scala
+" --------------------------------------------------
+NeoBundleLazy 'derekwyatt/vim-scala'
+
 " Sourcings
 " --------------------------------------------------
 
@@ -107,6 +111,9 @@ let s:plugin_filetypes = {
 \	],
 \	'CSScomb-for-Vim': [
 \		'css', 'scss'
+\	],
+\	'vim-scala': [
+\		'scala'
 \	],
 \}
 
