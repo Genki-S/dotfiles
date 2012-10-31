@@ -7,7 +7,7 @@ nnoremap [edit]v :tabnew $MYVIMRC<CR>
 nnoremap [edit]s :N
 
 nnoremap [source] <Nop>
-nmap <Leader>s [source]
+nmap <Leader>S [source]
 nnoremap [source]v :source $MYVIMRC<CR>
 
 " ==================================================
