@@ -11,4 +11,5 @@ xmap <silent> [slime]s <Plug>SlimeRegionSend
 nmap <silent> [slime]s <Plug>SlimeLineSend
 nmap <silent> [slime]p <Plug>SlimeParagraphSend
 nmap <silent> [slime]m <Plug>SlimeMotionSend
+nmap <silent> [slime]a :<C-u>%SlimeSend<CR>
 nmap <silent> [slime]c <Plug>SlimeConfig
