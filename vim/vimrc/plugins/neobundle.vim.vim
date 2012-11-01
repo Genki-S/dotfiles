@@ -28,6 +28,7 @@ NeoBundle 'mileszs/ack.vim'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'vim-scripts/marvim'
 
 " Programming Features
 NeoBundle 'thinca/vim-quickrun'
