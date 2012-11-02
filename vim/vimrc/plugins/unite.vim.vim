@@ -3,7 +3,7 @@ nmap <Leader>u <SID>[unite]
 
 nnoremap <silent> <SID>[unite]a :<C-u>UniteBookmarkAdd<CR>
 nnoremap <silent> <SID>[unite]b :<C-u>Unite -buffer-name=buffer buffer<CR>
-nnoremap <silent> <SID>[unite]B :<C-u>Unite -buffer-name=bookmark buffer<CR>
+nnoremap <silent> <SID>[unite]B :<C-u>Unite -buffer-name=bookmark bookmark<CR>
 nnoremap <silent> <SID>[unite]c :<C-u>Unite -buffer-name=command command<CR>
 nnoremap <silent> <SID>[unite]f :<C-u>Unite -buffer-name=file file<CR>
 nnoremap <silent> <SID>[unite]h :<C-u>Unite -buffer-name=help help<CR>
