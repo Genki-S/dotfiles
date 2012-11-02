@@ -4,4 +4,4 @@ let g:syntastic_mode_map = {
 	\ 'passive_filetypes': []
 \}
 
-nnoremap <silent> <CR> :<C-u>SyntasticCheck<CR>
+nnoremap <silent> <Leader><CR> :<C-u>SyntasticCheck<CR>
