@@ -58,6 +58,7 @@ NeoBundle 'tsukkee/unite-help'
 NeoBundleLazy 'fuenor/qfixhowm'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'Genki-S/dry.vim'
+NeoBundle 'fuenor/im_control.vim'
 
 " --------------------------------------------------
 " for Specific filetypes
