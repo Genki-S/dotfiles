@@ -1,11 +1,11 @@
-nnoremap [vimfiler] <Nop>
-nmap <Space> [vimfiler]
+nnoremap <SID>[vimfiler] <Nop>
+nmap <Space> <SID>[vimfiler]
 
-nnoremap [vimfiler] :<C-u>VimFiler 
-nnoremap <silent> [vimfiler]b :<C-u>VimFilerBufferDir<CR>
-nnoremap <silent> [vimfiler]c :<C-u>VimFilerCurrentDir<CR>
-nnoremap <silent> [vimfiler]d :<C-u>VimFilerDouble<CR>
-nnoremap <silent> [vimfiler]e :<C-u>VimFilerExplorer -buffer-name=explorer -toggle<CR>
+nnoremap <SID>[vimfiler] :<C-u>VimFiler 
+nnoremap <silent> <SID>[vimfiler]b :<C-u>VimFilerBufferDir<CR>
+nnoremap <silent> <SID>[vimfiler]c :<C-u>VimFilerCurrentDir<CR>
+nnoremap <silent> <SID>[vimfiler]d :<C-u>VimFilerDouble<CR>
+nnoremap <silent> <SID>[vimfiler]e :<C-u>VimFilerExplorer -buffer-name=explorer -toggle<CR>
 
 let g:vimfiler_as_default_explorer = 1
 

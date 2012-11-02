@@ -1,17 +1,17 @@
-nnoremap [fugitive] <Nop>
-nmap <Leader>g [fugitive]
-nnoremap [fugitive]<Space> :Git 
-nnoremap [fugitive]s :Gstatus<CR>
-nnoremap [fugitive]c :Gcommit<CR>
-nnoremap [fugitive]C :Git commit --amend<CR>
-nnoremap [fugitive]g :Ggrep 
-nnoremap [fugitive]l :Glog 
-nnoremap [fugitive]e :Gedit 
-nnoremap [fugitive]v :Gvsplit 
-nnoremap [fugitive]t :Gtabedit 
-nnoremap [fugitive]re :Gread<CR>
-nnoremap [fugitive]w :Gwrite<CR>
-nnoremap [fugitive]d :Gdiff 
-nnoremap [fugitive]m :Gmove 
-nnoremap [fugitive]rm :Gremove<CR>
-nnoremap [fugitive]b :Gblame<CR>
+nnoremap <SID>[fugitive] <Nop>
+nmap <Leader>g <SID>[fugitive]
+nnoremap <SID>[fugitive]<Space> :Git 
+nnoremap <SID>[fugitive]s :Gstatus<CR>
+nnoremap <SID>[fugitive]c :Gcommit<CR>
+nnoremap <SID>[fugitive]C :Git commit --amend<CR>
+nnoremap <SID>[fugitive]g :Ggrep 
+nnoremap <SID>[fugitive]l :Glog 
+nnoremap <SID>[fugitive]e :Gedit 
+nnoremap <SID>[fugitive]v :Gvsplit 
+nnoremap <SID>[fugitive]t :Gtabedit 
+nnoremap <SID>[fugitive]re :Gread<CR>
+nnoremap <SID>[fugitive]w :Gwrite<CR>
+nnoremap <SID>[fugitive]d :Gdiff 
+nnoremap <SID>[fugitive]m :Gmove 
+nnoremap <SID>[fugitive]rm :Gremove<CR>
+nnoremap <SID>[fugitive]b :Gblame<CR>
