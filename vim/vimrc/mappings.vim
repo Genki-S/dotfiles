@@ -24,3 +24,10 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 " Insert Mode Mappings
 " ==================================================
 inoremap <Leader><C-u> <Esc>gUiWEa
+
+" ==================================================
+" Japanese
+" ==================================================
+" make ( and ) work with Japanese sentences
+nnoremap <silent> ( ?[.。]<CR>:noh<CR>
+nnoremap <silent> ) /[.。]<CR>:noh<CR>
