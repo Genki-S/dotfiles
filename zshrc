@@ -53,8 +53,12 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # ==================================================
-# dircolors-solarized
+# My bundles
 # ==================================================
+# MultiMarkDown
+PATH=$PATH:$MYBUNDLES/peg-multimarkdown/scripts
+
+# dircolors-solarized
 eval `dircolors $MYBUNDLES/dircolors-solarized/dircolors.256dark`
 
 # ==================================================

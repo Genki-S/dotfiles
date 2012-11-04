@@ -10,6 +10,18 @@ if has('vim_starting')
 	call neobundle#rc(expand('~/dotfiles/.mybundles'))
 endif
 
+" ==================================================
+" Shell stuff
+" ==================================================
 NeoBundle 'robbyrussell/oh-my-zsh'
 NeoBundle 'seebi/tmux-colors-solarized'
 NeoBundle 'seebi/dircolors-solarized'
+
+" ==================================================
+" Others
+" ==================================================
+NeoBundle 'fletcher/peg-multimarkdown', {
+	\ 'build' : {
+		\ 'unix' : 'make',
+	\ }
+\ }
