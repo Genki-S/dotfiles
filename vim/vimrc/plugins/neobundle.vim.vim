@@ -46,6 +46,10 @@ NeoBundle 'pydave/AsyncCommand'
 NeoBundle 'wannesm/wmgraphviz.vim'
 NeoBundle 'jpalardy/vim-slime'
 
+" For beautiful texts
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'jngeist/vim-multimarkdown'
+
 " Visual
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Lokaltog/vim-powerline'
