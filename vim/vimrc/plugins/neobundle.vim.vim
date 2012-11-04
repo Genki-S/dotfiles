@@ -30,6 +30,7 @@ NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'vim-scripts/marvim'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 't9md/vim-textmanip'
 
 " Programming Features
 NeoBundle 'thinca/vim-quickrun'
