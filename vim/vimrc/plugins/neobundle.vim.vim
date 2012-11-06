@@ -32,6 +32,9 @@ NeoBundle 'vim-scripts/marvim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'AndrewRadev/sideways.vim'
+NeoBundle 'AndrewRadev/linediff.vim'
+NeoBundle 'AndrewRadev/inline_edit.vim'
+NeoBundle 'AndrewRadev/splitjoin.vim'
 
 " Programming Features
 NeoBundle 'thinca/vim-quickrun'
