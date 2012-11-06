@@ -31,6 +31,7 @@ NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'vim-scripts/marvim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 't9md/vim-textmanip'
+NeoBundle 'AndrewRadev/sideways.vim'
 
 " Programming Features
 NeoBundle 'thinca/vim-quickrun'
