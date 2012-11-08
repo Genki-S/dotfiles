@@ -2,7 +2,7 @@
 nnoremap <SID>[ref] <Nop>
 nmap <Leader>, <SID>[ref]
 nnoremap <SID>[ref]a :Ref webdict alc 
-nnoremap <SID>[ref]l :Ref webdict longman 
+nnoremap <SID>[ref]c :Ref webdict collins 
 nnoremap <SID>[ref]w :Ref webdict wikipedia 
 nnoremap <silent> <SID>[ref]K :execute 'Ref webdict alc ' . expand('<cword>')<CR>
 
@@ -13,8 +13,8 @@ let g:ref_source_webdict_sites = {
 \		'keyword_encoding': 'utf-8',
 \		'cache': 1,
 \	},
-\	'longman': {
-\		'url': 'http://www.ldoceonline.com/dictionary/%s',
+\	'collins': {
+\		'url': 'http://www.collinsdictionary.com/dictionary/english/%s',
 \		'keyword_encoding': 'utf-8',
 \		'cache': 1,
 \	},
@@ -29,4 +29,6 @@ let g:ref_source_webdict_sites = {
 function! g:ref_source_webdict_sites.alc.filter(output)
 	return join(split(a:output, "\n")[35 :], "\n")
 endfunction
-
+function! g:ref_source_webdict_sites.collins.filter(output)
+	return join(split(a:output, "\n")[60 :], "\n")
+endfunction
