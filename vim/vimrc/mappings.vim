@@ -64,9 +64,16 @@ nnoremap <silent> t :<C-u>call <SID>JapaneseMotion('t')<CR>
 nnoremap <silent> T :<C-u>call <SID>JapaneseMotion('T')<CR>
 
 function! s:JapaneseMotion(motion)
-	if g:IMState == 2
-		echo "Type Rome: "
-		let c = nr2char(getchar())
+	let c = nr2char(getchar())
+	let l:flags = "n"
+	if a:motion ==? "t"
+		let l:flags += "b"
+	endif
+
+	if search(c, l:flags, line(".")) != 0
+		" Normal motion command
+	elseif g:IMState == 2
+		" Search Japanese with Rome
 		while get(s:rome_kana_dictionary, c, "none") ==# "none"
 			let c = c.nr2char(getchar())
 			if strlen(c) >= 5
@@ -74,8 +81,6 @@ function! s:JapaneseMotion(motion)
 			endif
 		endwhile
 		let c = get(s:rome_kana_dictionary, c)
-	else
-		let c = nr2char(getchar())
 	endif
 	execute "normal! ".a:motion.c
 endfunction
@@ -96,7 +101,7 @@ let s:rome_kana_dictionary = {
 	\ "ya": "や", "yu": "ゆ", "yo": "よ",
 	\ "ra": "ら", "ri": "り", "ru": "る","re": "れ","ro": "ろ",
 	\ "wa": "わ", "wi": "ゐ", "we": "ゑ", "wo": "を",
-	\ "n": "ん",
+	\ "nn": "ん",
 	\ "xa": "ぁ", "xi": "ぃ", "xu": "ぅ", "xe": "ぇ", "xo": "ぉ",
 	\ "xtsu": "っ","xya": "ゃ", "xyu": "ゅ", "xyo": "ょ",
 	\ "xwa": "ゎ",
