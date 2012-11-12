@@ -58,12 +58,18 @@ inoremap <Leader><C-u> <Esc>gUiWEa
 nnoremap <silent> ( ?[.。]<CR>:noh<CR>
 nnoremap <silent> ) /[.。]<CR>:noh<CR>
 
-nnoremap <silent> f :<C-u>call <SID>JapaneseMotion('f')<CR>
-nnoremap <silent> F :<C-u>call <SID>JapaneseMotion('F')<CR>
-nnoremap <silent> t :<C-u>call <SID>JapaneseMotion('t')<CR>
-nnoremap <silent> T :<C-u>call <SID>JapaneseMotion('T')<CR>
+noremap <silent> f :<C-u>call <SID>JapaneseMotion('f', 'v')<CR>
+noremap <silent> F :<C-u>call <SID>JapaneseMotion('F', 'v')<CR>
+noremap <silent> t :<C-u>call <SID>JapaneseMotion('t', 'v')<CR>
+noremap <silent> T :<C-u>call <SID>JapaneseMotion('T', 'v')<CR>
+nnoremap <silent> f :<C-u>call <SID>JapaneseMotion('f', '')<CR>
+nnoremap <silent> F :<C-u>call <SID>JapaneseMotion('F', '')<CR>
+nnoremap <silent> t :<C-u>call <SID>JapaneseMotion('t', '')<CR>
+nnoremap <silent> T :<C-u>call <SID>JapaneseMotion('T', '')<CR>
 
-function! s:JapaneseMotion(motion)
+" First search input ascii character. Found: move onto it, Not found: start searching for Japanese character.
+" Ends in visually selecting from previous cursor position to motion result position
+function! s:JapaneseMotion(motion, visual)
 	let c = nr2char(getchar())
 	let l:flags = "n"
 	if a:motion ==# "F" || a:motion ==# "T"
@@ -82,7 +88,7 @@ function! s:JapaneseMotion(motion)
 		endwhile
 		let c = get(s:ascii_kana_dictionary, c)
 	endif
-	execute "normal! ".a:motion.c
+	execute "normal! ".a:visual.a:motion.c
 endfunction
 
 let s:ascii_kana_dictionary = {
