@@ -66,8 +66,8 @@ nnoremap <silent> T :<C-u>call <SID>JapaneseMotion('T')<CR>
 function! s:JapaneseMotion(motion)
 	let c = nr2char(getchar())
 	let l:flags = "n"
-	if a:motion ==? "t"
-		let l:flags += "b"
+	if a:motion ==# "F" || a:motion ==# "T"
+		let l:flags .= "b"
 	endif
 
 	if search(c, l:flags, line(".")) != 0
