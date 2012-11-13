@@ -56,7 +56,7 @@ source $ZSH/oh-my-zsh.sh
 # My bundles
 # ==================================================
 # MultiMarkDown
-PATH=$PATH:$MYBUNDLES/peg-multimarkdown/scripts
+PATH=$MYBUNDLES/peg-multimarkdown/scripts:$PATH
 
 # dircolors-solarized
 eval `dircolors $MYBUNDLES/dircolors-solarized/dircolors.256dark`
