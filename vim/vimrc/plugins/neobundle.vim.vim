@@ -51,6 +51,7 @@ NeoBundle 'pydave/AsyncCommand'
 NeoBundle 'wannesm/wmgraphviz.vim'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'mileszs/ack.vim'
+NeoBundle 'lordm/vim-browser-reload-linux'
 
 " For beautiful texts
 NeoBundle 'godlygeek/tabular'
