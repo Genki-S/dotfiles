@@ -14,15 +14,9 @@ imap <C-j> <Plug>(neocomplcache_snippets_expand)
 smap <C-j> <Plug>(neocomplcache_snippets_expand)
 
 " Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <expr><silent> <CR> <SID>my_cr_function()
-function! s:my_cr_function()
-	return pumvisible() ? neocomplcache#close_popup() . "\<CR>" : "\<CR>"
-endfunction
 
-" <C-h>, <BS>: close popup and delete backword char.
+" <C-h>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
