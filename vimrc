@@ -21,7 +21,9 @@
 " NeoBundle
 " ==================================================
 
-"let g:neobundle_default_git_protocol = 'https'
+if strlen($https_proxy) != 0
+	let g:neobundle#types#git#default_protocol = 'https'
+endif
 let g:plugin_setting_dir = expand('~/.vim/vimrc/plugins')
 
 " use NeoBundle
