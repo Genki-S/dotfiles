@@ -7,7 +7,7 @@
 " --------------------------------------------------
 
 " Libraries
-NeoBundle 'mattn/webapi-vim'
+NeoBundleLazy 'mattn/webapi-vim'
 
 " Vim plugins management
 NeoBundle 'Shougo/neobundle.vim'
@@ -25,7 +25,6 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 't9md/vim-quickhl'
 NeoBundle 'austintaylor/vim-indentobject'
 NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'vim-scripts/marvim'
 NeoBundle 't9md/vim-textmanip'
@@ -36,7 +35,7 @@ NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'Raimondi/delimitMate'
 
 " Programming Features
-NeoBundle 'thinca/vim-quickrun'
+NeoBundleLazy 'thinca/vim-quickrun'
 NeoBundleLazy 'ujihisa/quicklearn'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdcommenter'
@@ -46,16 +45,16 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'thinca/vim-ref'
-NeoBundle 'tyru/open-browser.vim'
+NeoBundleLazy 'tyru/open-browser.vim'
 NeoBundle 'pydave/AsyncCommand'
-NeoBundle 'wannesm/wmgraphviz.vim'
+NeoBundleLazy 'wannesm/wmgraphviz.vim'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'mileszs/ack.vim'
-NeoBundle 'lordm/vim-browser-reload-linux'
+NeoBundleLazy 'lordm/vim-browser-reload-linux'
 
 " For beautiful texts
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'jngeist/vim-multimarkdown'
+NeoBundleLazy 'jngeist/vim-multimarkdown'
 
 " Visual
 NeoBundle 'altercation/vim-colors-solarized'
