@@ -15,9 +15,6 @@ inoremap <unique> <expr><C-e> neocomplcache#cancel_popup()
 imap <unique> <C-j> <Plug>(neocomplcache_snippets_expand)
 smap <unique> <C-j> <Plug>(neocomplcache_snippets_expand)
 
-inoremap <unique> <expr><C-y>  neocomplcache#close_popup()
-inoremap <unique> <expr><C-e>  neocomplcache#cancel_popup()
-
 " Enable omni completion.
 if !exists('g:neocomplcache_omni_patterns')
 	let g:neocomplcache_omni_patterns = {}
