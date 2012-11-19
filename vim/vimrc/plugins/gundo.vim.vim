@@ -1,2 +1,2 @@
-nnoremap <silent> <F5> :GundoToggle<CR>
+nnoremap <unique> <silent> <F5> :GundoToggle<CR>
 

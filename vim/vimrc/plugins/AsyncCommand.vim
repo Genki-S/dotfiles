@@ -1,3 +1,3 @@
-nnoremap <F9> :AsyncMake<CR>:echo "making..."<CR>
-nnoremap <F8> :!./a.out<CR>
+nnoremap <unique> <F9> :AsyncMake<CR>:echo "making..."<CR>
+nnoremap <unique> <F8> :!./a.out<CR>
 

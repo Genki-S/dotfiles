@@ -1,4 +1,4 @@
-nnoremap <silent> <Leader>t :TagbarToggle<CR>
+nnoremap <unique> <silent> <Leader>t :TagbarToggle<CR>
 
 let g:tagbar_type_scala = {
 	\ 'ctagstype' : 'Scala',

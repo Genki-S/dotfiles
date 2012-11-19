@@ -8,15 +8,15 @@ let g:neocomplcache_text_mode_filetypes = {
 \ }
 
 " Plugin key-mappings.
-inoremap <expr><C-g> neocomplcache#undo_completion()
-inoremap <expr><C-l> neocomplcache#complete_common_string()
-inoremap <expr><C-y> neocomplcache#close_popup()
-inoremap <expr><C-e> neocomplcache#cancel_popup()
-imap <C-j> <Plug>(neocomplcache_snippets_expand)
-smap <C-j> <Plug>(neocomplcache_snippets_expand)
+inoremap <unique> <expr><C-g> neocomplcache#undo_completion()
+inoremap <unique> <expr><C-l> neocomplcache#complete_common_string()
+inoremap <unique> <expr><C-y> neocomplcache#close_popup()
+inoremap <unique> <expr><C-e> neocomplcache#cancel_popup()
+imap <unique> <C-j> <Plug>(neocomplcache_snippets_expand)
+smap <unique> <C-j> <Plug>(neocomplcache_snippets_expand)
 
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <unique> <expr><C-y>  neocomplcache#close_popup()
+inoremap <unique> <expr><C-e>  neocomplcache#cancel_popup()
 
 " Enable omni completion.
 if !exists('g:neocomplcache_omni_patterns')

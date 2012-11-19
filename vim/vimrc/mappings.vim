@@ -1,26 +1,26 @@
 " ==================================================
 " Make it easy to make it easy
 " ==================================================
-nnoremap <SID>[edit] <Nop>
-nmap <Leader>e <SID>[edit]
-nnoremap <SID>[edit]v :tabnew $MYVIMRC<CR>
-nnoremap <SID>[edit]s :N
+nnoremap <unique> <SID>[edit] <Nop>
+nmap <unique> <Leader>e <SID>[edit]
+nnoremap <unique> <SID>[edit]v :tabnew $MYVIMRC<CR>
+nnoremap <unique> <SID>[edit]s :N
 
-nnoremap <SID>[source] <Nop>
-nmap <Leader>S <SID>[source]
-nnoremap <SID>[source]v :source $MYVIMRC<CR>
+nnoremap <unique> <SID>[source] <Nop>
+nmap <unique> <Leader>S <SID>[source]
+nnoremap <unique> <SID>[source]v :source $MYVIMRC<CR>
 
 " ==================================================
 " Next/Last text objects
 " ==================================================
-onoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
-xnoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
-onoremap in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
-xnoremap in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
-onoremap al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
-xnoremap al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
-onoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
-xnoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
+onoremap <unique> an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
+xnoremap <unique> an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
+onoremap <unique> in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
+xnoremap <unique> in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
+onoremap <unique> al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
+xnoremap <unique> al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
+onoremap <unique> il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
+xnoremap <unique> il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
 
 function! s:NextTextObject(motion, dir)
 	let c = nr2char(getchar())
@@ -40,32 +40,32 @@ endfunction
 " Misc.
 " ==================================================
 " make & trigger :&& so it preserves flags
-nnoremap & :&&<Enter>
-xnoremap & :&&<Enter>
+nnoremap <unique> & :&&<Enter>
+xnoremap <unique> & :&&<Enter>
 
 " select last paste in visual mode
-nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+nnoremap <unique> <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " ==================================================
 " Insert Mode Mappings
 " ==================================================
-inoremap <Leader><C-u> <Esc>gUiWEa
+inoremap <unique> <Leader><C-u> <Esc>gUiWEa
 
 " break undo chain when using insert mode deletions
-inoremap <C-u> <C-g>u<C-u>
-inoremap <C-w> <C-g>u<C-w>
+inoremap <unique> <C-u> <C-g>u<C-u>
+inoremap <unique> <C-w> <C-g>u<C-w>
 
 " ==================================================
 " Japanese
 " ==================================================
 " make ( and ) work with Japanese sentences
-nnoremap <silent> ( ?[.。]<CR>:noh<CR>
-nnoremap <silent> ) /[.。]<CR>:noh<CR>
+nnoremap <unique> <silent> ( ?[.。]<CR>:noh<CR>
+nnoremap <unique> <silent> ) /[.。]<CR>:noh<CR>
 
-noremap <expr> <silent> f <SID>JapaneseMotion('f')
-noremap <expr> <silent> F <SID>JapaneseMotion('F')
-noremap <expr> <silent> T <SID>JapaneseMotion('T')
-noremap <expr> <silent> t <SID>JapaneseMotion('t')
+noremap <unique> <expr> <silent> f <SID>JapaneseMotion('f')
+noremap <unique> <expr> <silent> F <SID>JapaneseMotion('F')
+noremap <unique> <expr> <silent> T <SID>JapaneseMotion('T')
+noremap <unique> <expr> <silent> t <SID>JapaneseMotion('t')
 
 " First search input ascii character. Found: move onto it, Not found: start searching for Japanese character.
 " Ends in visually selecting from previous cursor position to motion result position

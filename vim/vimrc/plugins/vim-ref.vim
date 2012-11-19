@@ -1,10 +1,10 @@
 " mappings
-nnoremap <SID>[ref] <Nop>
-nmap <Leader>, <SID>[ref]
-nnoremap <SID>[ref]a :Ref webdict alc 
-nnoremap <SID>[ref]c :Ref webdict collins 
-nnoremap <SID>[ref]w :Ref webdict wikipedia 
-nnoremap <silent> <SID>[ref]K :execute 'Ref webdict alc ' . expand('<cword>')<CR>
+nnoremap <unique> <SID>[ref] <Nop>
+nmap <unique> <Leader>, <SID>[ref]
+nnoremap <unique> <SID>[ref]a :Ref webdict alc 
+nnoremap <unique> <SID>[ref]c :Ref webdict collins 
+nnoremap <unique> <SID>[ref]w :Ref webdict wikipedia 
+nnoremap <unique> <silent> <SID>[ref]K :execute 'Ref webdict alc ' . expand('<cword>')<CR>
 
 " sources
 let g:ref_source_webdict_sites = {

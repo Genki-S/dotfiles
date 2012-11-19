@@ -2,8 +2,8 @@ function! s:SID()
 	return matchstr(expand('<sfile>'), '<SNR>\zs\d\+\ze_SID$')
 endfun
 
-nnoremap <SID>[marvim] <Nop>
-nmap <Leader>m <SID>[marvim]
+nnoremap <unique> <SID>[marvim] <Nop>
+nmap <unique> <Leader>m <SID>[marvim]
 
 let s:id = s:SID()
 
