@@ -3,6 +3,8 @@ let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_text_mode_filetypes = {
 	\ 'text': 1,
+	\ 'tex': 1,
+	\ 'gitcommit': 1,
 \ }
 
 " Plugin key-mappings.
