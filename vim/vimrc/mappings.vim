@@ -55,8 +55,6 @@ inoremap <Leader><C-u> <Esc>gUiWEa
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
-inoremap <BS> <Nop>
-
 " ==================================================
 " Japanese
 " ==================================================
