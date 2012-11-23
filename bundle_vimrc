@@ -1,4 +1,6 @@
-"let g:neobundle_default_git_protocol = 'https'
+if strlen($http_proxy) != 0
+	let g:neobundle#types#git#default_protocol = 'http'
+endif
 
 " use NeoBundle
 set nocompatible
