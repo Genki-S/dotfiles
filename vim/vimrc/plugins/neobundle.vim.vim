@@ -33,6 +33,7 @@ NeoBundle 'AndrewRadev/linediff.vim'
 NeoBundle 'AndrewRadev/inline_edit.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'chrisbra/Recover.vim'
 
 " Programming Features
 NeoBundleLazy 'thinca/vim-quickrun'
