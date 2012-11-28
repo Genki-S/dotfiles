@@ -22,6 +22,7 @@ symlink vim
 symlink zshrc
 symlink tmux.conf
 symlink ctags
+symlink latexmkrc
 
 if [ ! -L $ZSH/themes/genki.zsh-theme ]; then
 	echo "ln -s $HOME/dotfiles/genki.zsh-theme $ZSH/themes/genki.zsh-theme"
