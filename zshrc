@@ -71,7 +71,10 @@ function add_path() {
 	fi
 }
 
-# Add: path to texlive
+# Add path to $HOME/bin
+add_path "$HOME/bin"
+
+# Add path to texlive
 add_path "/usr/local/texlive/2011/bin/i386-linux"
 
 # Add RVM to PATH for scripting
