@@ -78,7 +78,7 @@ NeoBundle 'fuenor/im_control.vim'
 
 " TeX
 " --------------------------------------------------
-NeoBundleLazy 'gerw/vim-latex-suite'
+NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box'
 
 " Web
 " --------------------------------------------------
@@ -100,7 +100,7 @@ NeoBundleLazy 'derekwyatt/vim-scala'
 
 " plugin - filetype dictionary
 let s:plugin_filetypes = {
-\	 'vim-latex-suite': [
+\	 'LaTeX-Box': [
 \		'tex', 'plaintex'
 \	],
 \	 'zencoding-vim': [
