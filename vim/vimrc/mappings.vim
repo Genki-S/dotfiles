@@ -78,8 +78,8 @@ function! s:JapaneseMotion(motion)
 
 	if search(escape(c, "~."), l:flags, line(".")) != 0
 		" Normal motion command
-	elseif g:IMState == 2
-		" Search Japanese with Rome
+	else
+		" Search Japanese with Kana
 		while get(s:ascii_kana_dictionary, c, "none") ==# "none"
 			let c = c.nr2char(getchar())
 			if strlen(c) >= 5
