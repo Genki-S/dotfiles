@@ -96,6 +96,10 @@ NeoBundleLazy 'miripiruni/CSScomb-for-Vim'
 " --------------------------------------------------
 NeoBundleLazy 'derekwyatt/vim-scala'
 
+" Scilab
+" --------------------------------------------------
+NeoBundleLazy 'vim-scripts/scilab.vim'
+
 " Sourcings
 " --------------------------------------------------
 
@@ -131,6 +135,9 @@ let s:plugin_filetypes = {
 \	'vim-scala': [
 \		'scala'
 \	],
+\	'scilab.vim': [
+\		'scilab'
+\	]
 \}
 
 " helper function
