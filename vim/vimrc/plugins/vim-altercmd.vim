@@ -30,3 +30,4 @@ AlterCommand nbl Unite neobundle/lazy
 " Original commands
 " ==================================================
 AlterCommand ps PluginSetting
+AlterCommand psn PluginSetting neobundle.vim
