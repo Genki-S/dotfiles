@@ -27,6 +27,11 @@ AlterCommand nbc NeoBundleClean
 AlterCommand nbl Unite neobundle/lazy
 
 " ==================================================
+" NeoComplCache
+" ==================================================
+AlterCommand nse NeoSnippetEdit
+
+" ==================================================
 " Original commands
 " ==================================================
 AlterCommand ps PluginSetting
