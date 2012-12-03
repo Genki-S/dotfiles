@@ -3,7 +3,8 @@ local return_status="%{$fg[red]%}%(?..✘)%{$reset_color%}"
 PROMPT='
 %(?,,${return_status}[%?]%{$reset_color%} )%(1j.%{$fg[yellow]%}Job[%j]%{$reset_color%} .)%{$fg[green]%}[ ${PWD/#$HOME/~} ]%{$reset_color%} $(git_prompt_info)
 %# '
-RPROMPT='%T'
+
+RPROMPT='$(date "+%x %T %Z")'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="git: %{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
