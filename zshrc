@@ -121,7 +121,16 @@ function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 # ==================================================
 # History settings
 # ==================================================
-setopt EXTENDED_HISTORY
+setopt EXTENDED_HISTORY # Save time besides commands
+
+# save all commands
+function save_command() {
+	if [ "$(id -u)" -ne 0 ]; then]
+		FULL_CMD_LOG="$HOME/.zhistlogs/zsh-history-$(date -u "+%Y-%m-%d").log"
+		echo "$USER@`hostname`:`pwd` [$(date -u)] `\history -1`" >> ${FULL_CMD_LOG}
+	fi
+}
+precmd_functions=($precmd_functions save_command)
 
 # ==================================================
 # Miscellaneous
