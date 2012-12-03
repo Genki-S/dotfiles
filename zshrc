@@ -98,6 +98,8 @@ alias ez="vim ~/dotfiles/zshrc"
 alias et="vim ~/dotfiles/tmux.conf"
 alias neobundle="vim -u $HOME/dotfiles/bundle_vimrc"
 
+alias v="vimentor vim"
+
 # ==================================================
 # Functions
 # ==================================================
