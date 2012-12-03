@@ -125,7 +125,7 @@ setopt EXTENDED_HISTORY # Save time besides commands
 
 # save all commands
 function save_command() {
-	if [ "$(id -u)" -ne 0 ]; then]
+	if [ "$(id -u)" -ne 0 ]; then
 		FULL_CMD_LOG="$HOME/.zhistlogs/zsh-history-$(date -u "+%Y-%m-%d").log"
 		echo "$USER@`hostname`:`pwd` [$(date -u)] `\history -1`" >> ${FULL_CMD_LOG}
 	fi
@@ -200,3 +200,8 @@ if [ $? -ne 0 ]; then
 		echo "tmux not installed. pity..."
 	fi
 fi
+
+# ==================================================
+# Welcome Message
+# ==================================================
+uname -a
