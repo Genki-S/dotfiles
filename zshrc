@@ -104,7 +104,6 @@ alias v="vimentor vim"
 # Functions
 # ==================================================
 function clear() { echo "Don't bother to type \"clear\"! Just use <C-L>." }
-function touch() { echo "Don't bother to type \"touch\"! Just use \"> filename\"." }
 
 # ==================================================
 # Linux 101 Hacks
