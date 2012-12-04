@@ -173,6 +173,9 @@ else
 	echo "You should install autojump, really."
 fi
 
+# Realiaser
+alias > $HOME/.alias.cache
+
 # ==================================================
 # Tmux
 # ==================================================
