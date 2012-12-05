@@ -48,6 +48,12 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # ==================================================
+# My zsh
+# ==================================================
+# Load all of the config files in zsh/lib that end in .zsh
+for config_file ($HOME/dotfiles/zsh/lib/*.zsh) source $config_file
+
+# ==================================================
 # My bundles
 # ==================================================
 # MultiMarkDown
@@ -82,35 +88,9 @@ if [ $? -ne 0 ]; then
 fi
 
 # ==================================================
-# Aliases
-# ==================================================
-alias vim="vim --servername genki" # in order to use AsyncCommand
-alias hist="fc -liD 1"
-alias ack="ack-grep"
-
-alias ev="vim ~/dotfiles/vimrc"
-alias ez="vim ~/dotfiles/zshrc"
-alias et="vim ~/dotfiles/tmux.conf"
-alias neobundle="vim -u $HOME/dotfiles/bundle_vimrc"
-
-alias v="vimentor vim"
-
-# ==================================================
 # Functions
 # ==================================================
 function clear() { echo "Don't bother to type \"clear\"! Just use <C-L>." }
-
-# ==================================================
-# Linux 101 Hacks
-# ==================================================
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
-function mkcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
-# cd -
-# dirs, pushd, popd
-# shopt -s cdspell (not for zsh)
 
 # ==================================================
 # History settings
