@@ -9,3 +9,6 @@ PATH=$HOME/.rvm/bin:$PATH
 
 # MultiMarkDown
 PATH=$MYBUNDLES/peg-multimarkdown/scripts:$PATH
+
+# Remove duplications
+typeset -U path cdpath manpath fpath
