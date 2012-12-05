@@ -47,30 +47,10 @@ for config_file ($HOME/dotfiles/zsh/lib/*.zsh) source $config_file
 # ==================================================
 # My bundles
 # ==================================================
-# MultiMarkDown
-PATH=$MYBUNDLES/peg-multimarkdown/scripts:$PATH
 
 # dircolors-solarized
 eval `dircolors $MYBUNDLES/dircolors-solarized/dircolors.256dark`
 
-# ==================================================
-# PATH setting
-# ==================================================
-function add_path() {
-	echo $PATH | grep -bo "$1\(:\|$\)" &> /dev/null
-	if [ $? -ne 0 ]; then
-		PATH=$PATH:$1
-	fi
-}
-
-# Add path to $HOME/bin
-add_path "$HOME/bin"
-
-# Add path to texlive
-add_path "/usr/local/texlive/2011/bin/i386-linux"
-
-# Add RVM to PATH for scripting
-add_path "$HOME/.rvm/bin"
 
 # Source rvm environment
 which rails &> /dev/null
