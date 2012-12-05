@@ -6,15 +6,6 @@ compinit
 # End of lines added by compinstall
 
 # ==================================================
-# Environment Variables
-# ==================================================
-export HTTP_HOME=http://vim.wikia.com/wiki/Special:Random
-export TERM=xterm-256color
-export EDITOR=vim
-
-export MYBUNDLES=$HOME/dotfiles/.mybundles
-
-# ==================================================
 # oh-my-zsh
 # ==================================================
 # Path to your oh-my-zsh configuration.
