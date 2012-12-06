@@ -20,6 +20,16 @@ NeoBundle 'seebi/tmux-colors-solarized'
 NeoBundle 'seebi/dircolors-solarized'
 
 " ==================================================
+" Web
+" ==================================================
+NeoBundle 'einars/js-beautify'
+NeoBundle 'w3c/tidy-html5', {
+	\ 'build' : {
+		\ 'unix' : 'make -C build/gmake/',
+	\ }
+\ }
+
+" ==================================================
 " Others
 " ==================================================
 NeoBundle 'fletcher/peg-multimarkdown', {
@@ -28,8 +38,3 @@ NeoBundle 'fletcher/peg-multimarkdown', {
 	\ }
 \ }
 
-NeoBundle 'w3c/tidy-html5', {
-	\ 'build' : {
-		\ 'unix' : 'make -C build/gmake/',
-	\ }
-\ }
