@@ -80,6 +80,7 @@ NeoBundle 'fuenor/im_control.vim'
 " Ruby
 " --------------------------------------------------
 NeoBundleLazy 'vim-ruby/vim-ruby'
+NeoBundleLazy 'astashov/vim-ruby-debugger'
 
 " TeX
 " --------------------------------------------------
@@ -110,6 +111,9 @@ NeoBundleLazy 'vim-scripts/scilab.vim'
 " plugin - filetype dictionary
 let s:plugin_filetypes = {
 \	'vim-ruby': [
+\		'ruby'
+\	],
+\	'vim-ruby-debugger': [
 \		'ruby'
 \	],
 \	'LaTeX-Box': [
