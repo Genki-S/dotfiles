@@ -92,6 +92,7 @@ NeoBundleLazy 'mattn/zencoding-vim'
 NeoBundleLazy 'tpope/vim-haml'
 NeoBundleLazy 'Valloric/MatchTagAlways'
 NeoBundleLazy 'othree/html5.vim'
+NeoBundleLazy 'hokaccha/vim-html5validator'
 NeoBundleLazy 'pangloss/vim-javascript'
 NeoBundleLazy 'hallettj/jslint.vim'
 NeoBundleLazy 'hail2u/vim-css3-syntax'
@@ -131,6 +132,9 @@ let s:plugin_filetypes = {
 \	],
 \	'html5.vim': [
 \		'html', 'php'
+\	],
+\	'vim-html5validator': [
+\		'html'
 \	],
 \	'vim-javascript': [
 \		'js'
