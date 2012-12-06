@@ -93,6 +93,7 @@ NeoBundleLazy 'tpope/vim-haml'
 NeoBundleLazy 'Valloric/MatchTagAlways'
 NeoBundleLazy 'othree/html5.vim'
 NeoBundleLazy 'pangloss/vim-javascript'
+NeoBundleLazy 'hallettj/jslint.vim'
 NeoBundleLazy 'hail2u/vim-css3-syntax'
 NeoBundleLazy 'cakebaker/scss-syntax.vim'
 NeoBundleLazy 'miripiruni/CSScomb-for-Vim'
@@ -132,6 +133,9 @@ let s:plugin_filetypes = {
 \		'html', 'php'
 \	],
 \	'vim-javascript': [
+\		'js'
+\	],
+\	'jslint.vim': [
 \		'js'
 \	],
 \	'vim-css3-syntax': [
