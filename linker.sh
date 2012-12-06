@@ -36,12 +36,12 @@ fi
 # My bundles
 # ==================================================
 function symlink_bundle {
-	src=$MYBUNDLES/$1
+	src=$1
 	dest=$HOME/bin/${1##*/} # trim directory(ies)
 	dest=${dest%%.*} # trim extension(s)
 	echo "ln -s $src $dest"
 	ln -s $src $dest
 }
 
-symlink_bundle js-beautify/python/js-beautify
-symlink_bundle tidy-html5/bin/tidy
+symlink_bundle $MYBUNDLES/js-beautify/python/js-beautify
+symlink_bundle $MYBUNDLES/tidy-html5/bin/tidy
