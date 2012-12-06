@@ -44,3 +44,4 @@ function symlink_bundle {
 }
 
 symlink_bundle js-beautify/python/js-beautify
+symlink_bundle tidy-html5/bin/tidy
