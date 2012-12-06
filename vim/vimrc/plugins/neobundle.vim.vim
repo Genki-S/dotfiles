@@ -137,10 +137,10 @@ let s:plugin_filetypes = {
 \		'html'
 \	],
 \	'vim-javascript': [
-\		'js'
+\		'javascript'
 \	],
 \	'jslint.vim': [
-\		'js'
+\		'javascript'
 \	],
 \	'vim-css3-syntax': [
 \		'css', 'scss'
