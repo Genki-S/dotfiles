@@ -4,7 +4,7 @@ alias ev="v ~/dotfiles/vimrc"
 alias ez="v ~/dotfiles/zshrc"
 alias et="v ~/dotfiles/tmux.conf"
 
-alias neobundle="vim -u $HOME/dotfiles/bundle_vimrc"
+alias neobundle="vim -u $HOME/dotfiles/bundle_vimrc $HOME/dotfiles/bundle_vimrc"
 
 alias hist="fc -liD 1"
 alias ack="ack-grep"
