@@ -7,8 +7,5 @@ PATH=/usr/local/texlive/2012/bin/i386-linux:$PATH
 # RVM for scripting
 PATH=$HOME/.rvm/bin:$PATH
 
-# MultiMarkDown
-PATH=$MYBUNDLES/peg-multimarkdown/scripts:$PATH
-
 # Remove duplications
 typeset -U path cdpath manpath fpath

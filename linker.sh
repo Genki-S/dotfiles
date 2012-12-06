@@ -45,3 +45,9 @@ function symlink_bundle {
 
 symlink_bundle $MYBUNDLES/js-beautify/python/js-beautify
 symlink_bundle $MYBUNDLES/tidy-html5/bin/tidy
+
+PEG=$MYBUNDLES/peg-multimarkdown
+for f in $PEG/multimarkdown $PEG/scripts/*
+do
+	symlink_bundle $f
+done
