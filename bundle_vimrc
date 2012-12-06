@@ -27,3 +27,9 @@ NeoBundle 'fletcher/peg-multimarkdown', {
 		\ 'unix' : 'make',
 	\ }
 \ }
+
+NeoBundle 'w3c/tidy-html5', {
+	\ 'build' : {
+		\ 'unix' : 'make -C build/gmake/',
+	\ }
+\ }
