@@ -8,6 +8,7 @@ nnoremap <unique> <silent> <SID>[ref]K :execute 'Ref webdict alc ' . expand('<cw
 
 " Sources
 let g:ref_detect_filetype = {
+\	'c': 'man',
 \	'ruby': 'ri',
 \}
 
