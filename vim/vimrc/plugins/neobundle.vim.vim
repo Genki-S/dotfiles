@@ -81,6 +81,7 @@ NeoBundle 'fuenor/im_control.vim'
 " --------------------------------------------------
 NeoBundleLazy 'vim-ruby/vim-ruby'
 NeoBundleLazy 'astashov/vim-ruby-debugger'
+NeoBundleLazy 'taka84u9/vim-ref-ri'
 
 " TeX
 " --------------------------------------------------
@@ -118,10 +119,13 @@ let s:plugin_filetypes = {
 \	'vim-ruby-debugger': [
 \		'ruby'
 \	],
+\	'vim-ref-ri': [
+\		'ruby'
+\	],
 \	'LaTeX-Box': [
 \		'tex', 'plaintex'
 \	],
-\	 'zencoding-vim': [
+\	'zencoding-vim': [
 \		'html', 'xhtml', 'haml', 'php'
 \	],
 \	 'vim-haml': [
