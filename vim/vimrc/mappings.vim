@@ -64,8 +64,12 @@ nnoremap <unique> <silent> ) /[.。]<CR>:noh<CR>
 
 noremap <unique> <expr> <silent> f <SID>JapaneseMotion('f')
 noremap <unique> <expr> <silent> F <SID>JapaneseMotion('F')
-noremap <unique> <expr> <silent> T <SID>JapaneseMotion('T')
 noremap <unique> <expr> <silent> t <SID>JapaneseMotion('t')
+noremap <unique> <expr> <silent> T <SID>JapaneseMotion('T')
+sunmap f
+sunmap F
+sunmap t
+sunmap T
 
 " First search input ascii character. Found: move onto it, Not found: start searching for Japanese character.
 " Ends in visually selecting from previous cursor position to motion result position
@@ -172,3 +176,9 @@ let s:ascii_kana_dictionary = {
 " 	\ "_": "＿", "+": "＋", "=": "＝", "?": "？", ">": "＞", "<": "＜", "/": "／",
 " 	\ "}": "』", "{": "『", "[": "「", "]": "」",
 " \ }
+
+" ==================================================
+" Misc
+" ==================================================
+" unmap select mode maps for the snippets' sake
+autocmd VimEnter * smapclear
