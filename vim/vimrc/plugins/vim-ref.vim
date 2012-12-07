@@ -6,7 +6,12 @@ nnoremap <unique> <SID>[ref]c :Ref webdict collins
 nnoremap <unique> <SID>[ref]w :Ref webdict wikipedia 
 nnoremap <unique> <silent> <SID>[ref]K :execute 'Ref webdict alc ' . expand('<cword>')<CR>
 
-" sources
+" Sources
+let g:ref_detect_filetype = {
+\	'ruby': 'ri',
+\}
+
+" Aditional web sources
 let g:ref_source_webdict_sites = {
 \	'alc': {
 \		'url': 'http://eow.alc.co.jp/search?q=%s',
