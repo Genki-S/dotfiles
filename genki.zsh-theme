@@ -7,7 +7,7 @@ PROMPT='
 function last_command() {
 	echo `\history -1 | cut -d ' ' -f 3-20 | realiaser`
 }
-RPROMPT='%{$fg[$NCOLOR]%}%p $(last_command)%{$reset_color%}'
+RPROMPT=''
 
 ZSH_THEME_GIT_PROMPT_PREFIX="git: %{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
