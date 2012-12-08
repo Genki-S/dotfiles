@@ -1,4 +1,3 @@
 " Snippet
-let g:neocomplcache_snippets_dir = '~/.vim/snippets'
-imap <unique> <C-j> <Plug>(neocomplcache_snippets_expand)
-smap <unique> <C-j> <Plug>(neocomplcache_snippets_expand)
+let g:neosnippet#snippets_directory = '~/.vim/snippets'
+imap <unique> <C-j> <Plug>(neosnippet_expand_or_jump)
