@@ -164,8 +164,27 @@ snippet FORDIR
 abbr FORDIR(d)
 	FORDIR(${1:iterator}) {
 		${0}
+		${2:y} += dy[$1]; ${3:x} += dx[$1];
 	}
 
 snippet RANGE
 abbr a <= b <= c
 	RANGE(${1:a}, ${2:b}, ${3:c})${0}
+
+snippet field_input
+	cin >> ${1:height} >> ${2:width};
+	REP (i, $1) {
+		REP (j, $2) {
+			cin >> field[i][j];
+		}
+	}
+
+snippet print_field_func
+	void print_field() {
+		REP (i, ${1:height}) {
+			REP (j, ${2:width}) {
+				cerr << field[i][j];
+			}
+			cerr << endl;
+		}
+	}
