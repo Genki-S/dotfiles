@@ -12,8 +12,6 @@ inoremap <unique> <expr><C-g> neocomplcache#undo_completion()
 inoremap <unique> <expr><C-l> neocomplcache#complete_common_string()
 inoremap <unique> <expr><C-y> neocomplcache#close_popup()
 inoremap <unique> <expr><C-e> neocomplcache#cancel_popup()
-imap <unique> <C-j> <Plug>(neocomplcache_snippets_expand)
-smap <unique> <C-j> <Plug>(neocomplcache_snippets_expand)
 
 " Enable omni completion.
 if !exists('g:neocomplcache_omni_patterns')
@@ -27,6 +25,3 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Snippet
-let g:neocomplcache_snippets_dir = '~/.vim/snippets'
