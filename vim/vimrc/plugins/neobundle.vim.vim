@@ -45,6 +45,7 @@ NeoBundle 'majutsushi/tagbar'
 
 " Integration with outer softwares / services
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gregsexton/gitv'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundleLazy 'tyru/open-browser.vim'
