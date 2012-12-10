@@ -225,7 +225,8 @@ endfunction
 
 function! s:source_setting_and_bundle(...)
 	for bndl in a:000
-		call s:source_plugin_setting(bndl)
+		" Temporarily source all settings at the beginning (See the bottom)
+		" call s:source_plugin_setting(bndl)
 		execute "NeoBundleSource " . bndl
 	endfor
 endfunction
@@ -246,11 +247,15 @@ command! -nargs=* -bar
 " --------------------------------------------------
 " Source settings
 " --------------------------------------------------
+let s:bundle_names =
+	\ map(neobundle#config#get_neobundles(), 'v:val.name' )
 let s:sourced_bundle_names =
 	\ map( filter(neobundle#config#get_neobundles(),
 		\ 'neobundle#config#is_sourced(v:val.name)'), 'v:val.name' )
 
-for plugin in s:sourced_bundle_names
+" TODO: make this s:sourced_bundle_names
+"       and source settings on demand
+for plugin in s:bundle_names
 	if plugin !=# 'neobundle.vim'
 		call s:source_plugin_setting(plugin)
 	endif
