@@ -1,3 +1,11 @@
+" ==================================================
+" Alter Commands
+" ==================================================
+augroup altercmd-register
+	autocmd VimEnter * AlterCommand marvim MyNeoBundleSource marvim
+augroup END
+
+
 function! s:SID()
 	return matchstr(expand('<sfile>'), '<SNR>\zs\d\+\ze_SID$')
 endfun
