@@ -5,6 +5,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# TODO: This will be sourced again below...
+source $HOME/dotfiles/zsh/lib/env.zsh
+
 # ==================================================
 # oh-my-zsh
 # ==================================================
