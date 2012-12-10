@@ -194,16 +194,20 @@ if neobundle#exists_not_installed_bundles()
 endif
 
 " ==================================================
-" Interface
+" Plugin settings
 " ==================================================
+
+" --------------------------------------------------
+" Interface
+" --------------------------------------------------
 command! -nargs=1 -bar
 	\ -complete=customlist,neobundle#complete_bundles
 	\ PluginSetting
 	\ call s:edit_plugin_setting(<q-args>)
 
-" ==================================================
+" --------------------------------------------------
 " Helper Functions
-" ==================================================
+" --------------------------------------------------
 let s:plugin_names = map(neobundle#config#get_neobundles(), 'v:val.name')
 
 function! s:source_plugin_setting(plugin_name)
