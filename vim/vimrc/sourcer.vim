@@ -3,7 +3,7 @@
 
 function! s:SourceAndExecute(plugin, command, ...)
 	let s:args = join(a:000, " ")
-	execute "NeoBundleSource " . a:plugin
+	execute "MyNeoBundleSource " . a:plugin
 	execute a:command s:args
 endfunction
 
