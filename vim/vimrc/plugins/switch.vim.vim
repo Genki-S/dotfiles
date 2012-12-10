@@ -1,4 +1,4 @@
-nnoremap <unique> - :Switch<CR>
+nnoremap <unique> <silent> - :SourceAndExecute switch.vim Switch<CR>
 
 autocmd FileType vim let b:switch_definitions =
 	\ [
