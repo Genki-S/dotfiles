@@ -1,12 +1,3 @@
-" ==================================================
-" Alter Commands
-" ==================================================
-augroup altercmd-register
-	autocmd VimEnter * AlterCommand qhl SourceAndExecute vim-quickhl normal \ht
-	autocmd VimEnter * AlterCommand nh QuickhlReset
-augroup END
-
-
 nnoremap <unique> <SID>[quickhl] <Nop>
 nmap <unique> <Leader>h <SID>[quickhl]
 nmap <unique> <SID>[quickhl]t <Plug>(quickhl-toggle)

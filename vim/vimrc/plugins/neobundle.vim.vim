@@ -1,16 +1,4 @@
 " ==================================================
-" Alter Commands
-" ==================================================
-augroup altercmd-register
-	autocmd VimEnter * AlterCommand nb Unite neobundle
-	autocmd VimEnter * AlterCommand nbi Unite -auto-quit neobundle/install
-	autocmd VimEnter * AlterCommand nbu Unite neobundle/update
-	autocmd VimEnter * AlterCommand nbc NeoBundleClean
-	autocmd VimEnter * AlterCommand nbl Unite neobundle/lazy
-augroup END
-
-
-" ==================================================
 " Bundles
 " ==================================================
 
@@ -235,15 +223,19 @@ endfunction
 
 function! s:source_setting_and_bundle(...)
 	for bndl in a:000
-		" Temporarily source all settings at the beginning (See the bottom)
-		" call s:source_plugin_setting(bndl)
+		call s:source_plugin_setting(bndl)
 		execute "NeoBundleSource " . bndl
-		call s:source_plugin_setting_after(bndl)
+
+		" After settings are sourced before (wired?)
+		" Explanation: "After" means after sourcing AlterCommand,
+		"              to provide plugins altercmds properly.
+		" call s:source_plugin_setting_after(bndl)
 	endfor
 endfunction
 
 function! s:register_after_plugin_settings()
-	for plugin in s:sourced_bundle_names
+	" Source 'ALL' plugins' after settings
+	for plugin in s:bundle_names
 		augroup vimrc_after
 			execute "autocmd VimEnter * call s:source_plugin_setting_after('" . plugin . "')"
 		augroup END
@@ -277,9 +269,7 @@ let s:sourced_bundle_names =
 	\ map( filter(neobundle#config#get_neobundles(),
 		\ 'neobundle#config#is_sourced(v:val.name)'), 'v:val.name' )
 
-" TODO: make this s:sourced_bundle_names
-"       and source settings on demand
-for plugin in s:bundle_names
+for plugin in s:sourced_bundle_names
 	if plugin !=# 'neobundle.vim'
 		call s:source_plugin_setting(plugin)
 	endif
