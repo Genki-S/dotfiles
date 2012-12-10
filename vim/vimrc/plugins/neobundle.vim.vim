@@ -233,7 +233,7 @@ endfunction
 function! s:register_after_plugin_settings()
 	for plugin in s:sourced_bundle_names
 		augroup vimrc_after
-			autocmd VimEnter * call s:source_plugin_setting_after(plugin)
+			execute "autocmd VimEnter * call s:source_plugin_setting_after('" . plugin . "')"
 		augroup END
 	endfor
 endfunction
