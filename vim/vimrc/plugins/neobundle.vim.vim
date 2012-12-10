@@ -198,6 +198,20 @@ endif
 " ==================================================
 
 " --------------------------------------------------
+" Helper Functions
+" --------------------------------------------------
+function! s:source_plugin_setting(plugin_name)
+	let l:fullpath = g:plugin_setting_dir.'/'.a:plugin_name.'.vim'
+	if filereadable(l:fullpath)
+		execute 'source' l:fullpath
+	endif
+endfunction
+
+function! s:edit_plugin_setting(plugin_name)
+	execute 'edit' g:plugin_setting_dir.'/'.a:plugin_name.'.vim'
+endfunction
+
+" --------------------------------------------------
 " Interface
 " --------------------------------------------------
 command! -nargs=1 -bar
@@ -206,29 +220,14 @@ command! -nargs=1 -bar
 	\ call s:edit_plugin_setting(<q-args>)
 
 " --------------------------------------------------
-" Helper Functions
+" Source settings
 " --------------------------------------------------
-let s:plugin_names = map(neobundle#config#get_neobundles(), 'v:val.name')
+let s:sourced_bundle_names =
+	\ map( filter(neobundle#config#get_neobundles(),
+		\ 'neobundle#config#is_sourced(v:val.name)'), 'v:val.name' )
 
-function! s:source_plugin_setting(plugin_name)
-	let l:fullpath = g:plugin_setting_dir.'/'.a:plugin_name.'.vim'
-	if filereadable(l:fullpath)
-		execute 'source' l:fullpath
+for plugin in s:sourced_bundle_names
+	if plugin !=# 'neobundle.vim'
+		call s:source_plugin_setting(plugin)
 	endif
-endfunction
-
-function! s:source_all_plugin_settings()
-	for plugin in s:plugin_names
-		if plugin !=# 'neobundle.vim'
-			call s:source_plugin_setting(plugin)
-		endif
-	endfor
-endfunction
-
-function! s:edit_plugin_setting(plugin_name)
-	execute 'edit' g:plugin_setting_dir.'/'.a:plugin_name.'.vim'
-endfunction
-
-" Initialization
-call s:source_all_plugin_settings() " I know this is not cool
-" TODO: souce settings for lazy plugins when those are sourced (need to hook NeoBundleSource command?)
+endfor
