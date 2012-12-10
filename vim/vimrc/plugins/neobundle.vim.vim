@@ -207,8 +207,19 @@ function! s:source_plugin_setting(plugin_name)
 	endif
 endfunction
 
+function! s:source_plugin_setting_after(plugin_name)
+	let l:fullpath = g:plugin_setting_after_dir.'/'.a:plugin_name.'.vim'
+	if filereadable(l:fullpath)
+		execute 'source' l:fullpath
+	endif
+endfunction
+
 function! s:edit_plugin_setting(plugin_name)
 	execute 'edit' g:plugin_setting_dir.'/'.a:plugin_name.'.vim'
+endfunction
+
+function! s:edit_plugin_setting_after(plugin_name)
+	execute 'edit' g:plugin_setting_after_dir.'/'.a:plugin_name.'.vim'
 endfunction
 
 function! s:source_setting_and_bundle(...)
@@ -225,6 +236,11 @@ command! -nargs=1 -bar
 	\ -complete=customlist,neobundle#complete_bundles
 	\ PluginSetting
 	\ call s:edit_plugin_setting(<q-args>)
+
+command! -nargs=1 -bar
+	\ -complete=customlist,neobundle#complete_bundles
+	\ PluginSettingAfter
+	\ call s:edit_plugin_setting_after(<q-args>)
 
 command! -nargs=* -bar
 	\ -complete=customlist,neobundle#complete_lazy_bundles

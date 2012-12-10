@@ -35,4 +35,5 @@ AlterCommand nse NeoSnippetEdit
 " Original commands
 " ==================================================
 AlterCommand ps PluginSetting
+AlterCommand psa PluginSettingAfter
 AlterCommand psn PluginSetting neobundle.vim
