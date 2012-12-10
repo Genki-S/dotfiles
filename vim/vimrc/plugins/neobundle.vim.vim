@@ -226,6 +226,15 @@ function! s:source_setting_and_bundle(...)
 	for bndl in a:000
 		call s:source_plugin_setting(bndl)
 		execute "NeoBundleSource " . bndl
+		call s:source_plugin_setting_after(bndl)
+	endfor
+endfunction
+
+function! s:register_after_plugin_settings()
+	for plugin in s:sourced_bundle_names
+		augroup vimrc_after
+			autocmd VimEnter * call s:source_plugin_setting_after(plugin)
+		augroup END
 	endfor
 endfunction
 
@@ -259,3 +268,8 @@ for plugin in s:sourced_bundle_names
 		call s:source_plugin_setting(plugin)
 	endif
 endfor
+
+augroup vimrc_after
+	autocmd!
+augroup END
+call s:register_after_plugin_settings()
