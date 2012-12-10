@@ -14,7 +14,9 @@
 " Visual
 " ~/.vim/vimrc/visual.vim
 
-" Sourcing them at the bottom of this file
+for f in split(glob('~/.vim/vimrc/*.vim'), '\n')
+	execute 'source' f
+endfor
 
 
 " ==================================================
@@ -37,13 +39,6 @@ if has('vim_starting')
 endif
 
 execute 'source' g:plugin_setting_dir.'/neobundle.vim.vim'
-
-" ==================================================
-" My vimrc sourcing
-" ==================================================
-for f in split(glob('~/.vim/vimrc/*.vim'), '\n')
-	execute 'source' f
-endfor
 
 " ==================================================
 " Other sources
