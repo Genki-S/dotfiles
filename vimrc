@@ -18,12 +18,6 @@ for f in split(glob('~/.vim/vimrc/*.vim'), '\n')
 	execute 'source' f
 endfor
 
-" Group used to define altercmds after VimEnter
-augroup altercmd-register
-	autocmd!
-augroup END
-
-
 " ==================================================
 " NeoBundle
 " ==================================================
@@ -32,6 +26,7 @@ if strlen($http_proxy) != 0
 	let g:neobundle#types#git#default_protocol = 'http'
 endif
 let g:plugin_setting_dir = expand('~/.vim/vimrc/plugins')
+let g:plugin_setting_after_dir = expand('~/.vim/after/vimrc/plugins')
 
 " use NeoBundle
 set nocompatible

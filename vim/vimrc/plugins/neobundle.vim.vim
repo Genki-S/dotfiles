@@ -218,8 +218,19 @@ function! s:source_plugin_setting(plugin_name)
 	endif
 endfunction
 
+function! s:source_plugin_setting_after(plugin_name)
+	let l:fullpath = g:plugin_setting_after_dir.'/'.a:plugin_name.'.vim'
+	if filereadable(l:fullpath)
+		execute 'source' l:fullpath
+	endif
+endfunction
+
 function! s:edit_plugin_setting(plugin_name)
 	execute 'edit' g:plugin_setting_dir.'/'.a:plugin_name.'.vim'
+endfunction
+
+function! s:edit_plugin_setting_after(plugin_name)
+	execute 'edit' g:plugin_setting_after_dir.'/'.a:plugin_name.'.vim'
 endfunction
 
 function! s:source_setting_and_bundle(...)
@@ -227,6 +238,15 @@ function! s:source_setting_and_bundle(...)
 		" Temporarily source all settings at the beginning (See the bottom)
 		" call s:source_plugin_setting(bndl)
 		execute "NeoBundleSource " . bndl
+		call s:source_plugin_setting_after(bndl)
+	endfor
+endfunction
+
+function! s:register_after_plugin_settings()
+	for plugin in s:sourced_bundle_names
+		augroup vimrc_after
+			execute "autocmd VimEnter * call s:source_plugin_setting_after('" . plugin . "')"
+		augroup END
 	endfor
 endfunction
 
@@ -237,6 +257,11 @@ command! -nargs=1 -bar
 	\ -complete=customlist,neobundle#complete_bundles
 	\ PluginSetting
 	\ call s:edit_plugin_setting(<q-args>)
+
+command! -nargs=1 -bar
+	\ -complete=customlist,neobundle#complete_bundles
+	\ PluginSettingAfter
+	\ call s:edit_plugin_setting_after(<q-args>)
 
 command! -nargs=* -bar
 	\ -complete=customlist,neobundle#complete_lazy_bundles
@@ -259,3 +284,8 @@ for plugin in s:bundle_names
 		call s:source_plugin_setting(plugin)
 	endif
 endfor
+
+augroup vimrc_after
+	autocmd!
+augroup END
+call s:register_after_plugin_settings()

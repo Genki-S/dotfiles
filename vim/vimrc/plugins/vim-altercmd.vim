@@ -22,4 +22,5 @@ AlterCommand sol execute getline('.')
 " Original commands
 " ==================================================
 AlterCommand ps PluginSetting
+AlterCommand psa PluginSettingAfter
 AlterCommand psn PluginSetting neobundle.vim
