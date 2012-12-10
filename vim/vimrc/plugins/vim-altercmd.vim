@@ -17,19 +17,6 @@ AlterCommand so source %
 " source line
 AlterCommand sol execute getline('.')
 
-" ==================================================
-" NeoBundle
-" ==================================================
-AlterCommand nb Unite neobundle
-AlterCommand nbi Unite -auto-quit neobundle/install
-AlterCommand nbu Unite neobundle/update
-AlterCommand nbc NeoBundleClean
-AlterCommand nbl Unite neobundle/lazy
-
-" ==================================================
-" NeoComplCache
-" ==================================================
-AlterCommand nse NeoSnippetEdit
 
 " ==================================================
 " Original commands

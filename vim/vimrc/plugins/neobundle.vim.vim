@@ -1,4 +1,16 @@
 " ==================================================
+" Alter Commands
+" ==================================================
+augroup altercmd-register
+	autocmd VimEnter * AlterCommand nb Unite neobundle
+	autocmd VimEnter * AlterCommand nbi Unite -auto-quit neobundle/install
+	autocmd VimEnter * AlterCommand nbu Unite neobundle/update
+	autocmd VimEnter * AlterCommand nbc NeoBundleClean
+	autocmd VimEnter * AlterCommand nbl Unite neobundle/lazy
+augroup END
+
+
+" ==================================================
 " Bundles
 " ==================================================
 

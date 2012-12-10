@@ -18,6 +18,11 @@ for f in split(glob('~/.vim/vimrc/*.vim'), '\n')
 	execute 'source' f
 endfor
 
+" Group used to define altercmds after VimEnter
+augroup altercmd-register
+	autocmd!
+augroup END
+
 
 " ==================================================
 " NeoBundle
