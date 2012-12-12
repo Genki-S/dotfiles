@@ -147,3 +147,6 @@ cat <<HEREDOC
                   __/ |                                         
                  |___/                                          
 HEREDOC
+
+# Random reminders
+shuf -n 1 ~/random_reminders.txt
