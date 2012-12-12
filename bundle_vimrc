@@ -38,3 +38,11 @@ NeoBundle 'fletcher/peg-multimarkdown', {
 	\ }
 \ }
 
+
+
+" ==================================================
+" Commands
+" ==================================================
+cabbrev nbi NeoBundleInstall
+cabbrev nbc NeoBundleClean
+
