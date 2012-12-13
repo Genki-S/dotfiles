@@ -3,5 +3,3 @@ let g:syntastic_mode_map = {
 	\ 'active_filetypes': [],
 	\ 'passive_filetypes': []
 \}
-
-nnoremap <unique> <silent> <Leader><CR> :SourceAndExecute syntastic SyntasticCheck<CR>

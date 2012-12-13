@@ -35,6 +35,7 @@ NeoBundleLazy 'AndrewRadev/splitjoin.vim'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'tyru/vim-altercmd'
+NeoBundleLazy 'vim-scripts/UnconditionalPaste'
 
 " Programming Features
 NeoBundleLazy 'thinca/vim-quickrun'
