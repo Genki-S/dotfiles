@@ -9,3 +9,8 @@ alias nb="neobundle"
 
 alias hist="fc -liD 1"
 alias ack="ack-grep"
+
+# ==================================================
+# Frequent commands
+# ==================================================
+alias la="ls -a"
