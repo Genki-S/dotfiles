@@ -15,6 +15,6 @@ augroup vimrc_vimfiler
 augroup END
 
 function! s:my_vimfiler_settings()
-	nmap <unique> <buffer> q <Plug>(vimfiler_exit)
-	nmap <unique> <buffer> Q <Plug>(vimfiler_hide)
+	nmap <buffer> q <Plug>(vimfiler_exit)
+	nmap <buffer> Q <Plug>(vimfiler_hide)
 endfunction
