@@ -62,3 +62,6 @@ sync_linker $HOME/.mozilla/firefox/mblrj487.Break
 
 # Tmuxinator
 sync_linker $HOME/.tmuxinator
+
+# Miscellaneous
+sync_linker $HOME/random_reminders.txt
