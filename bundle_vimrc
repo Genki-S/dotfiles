@@ -65,7 +65,7 @@ function! s:link_bin_dir(bindir)
 endfunction
 
 function! s:repo_2_bundle_name(repo)
-	return substitute(a:repo, "^.*/", "", "")
+	return substitute(substitute(a:repo, "^.*/", "", ""), ".git$", "", "")
 endfunction
 
 " params
