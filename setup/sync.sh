@@ -27,9 +27,17 @@ function sync_linker {
 		return
 	fi
 	local link=$1
-	local file=$sync_root$1
+	local target=$sync_root$1
 	if [ -e $link -a ! -L $link ]; then
 		echo "$link exists and not a symlink file."
+		if [ -e $target ]; then
+			echo "$target also exists."
+			echo "Maybe you want to merge $link and $target."
+			echo "vim -d $link $target"
+			echo "After merge, remove $link and run this script again."
+			echo "Abort."
+			return
+		fi
 		echo "Moving $link to appropreate directory..."
 		sync_it $link
 	fi
@@ -37,11 +45,11 @@ function sync_linker {
 		# Remove existing symlink
 		rm $link
 	fi
-	if [ ! -e $file ]; then
-		echo "$file does not exist. Abort."
+	if [ ! -e $target ]; then
+		echo "$target does not exist. Abort."
 		return
 	fi
-	ln -s $file $link
+	ln -s $target $link
 }
 
 # Vimperator
@@ -49,3 +57,5 @@ sync_linker $HOME/.vimperator
 
 # Firefox
 sync_linker $HOME/.mozilla/firefox/profiles.ini
+sync_linker $HOME/.mozilla/firefox/hg3yf6t7.Study
+sync_linker $HOME/.mozilla/firefox/mblrj487.Break
