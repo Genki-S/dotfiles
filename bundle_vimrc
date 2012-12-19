@@ -109,6 +109,7 @@ command! -nargs=+ MyBundle
 NeoBundle 'robbyrussell/oh-my-zsh'
 NeoBundle 'seebi/tmux-colors-solarized'
 NeoBundle 'seebi/dircolors-solarized'
+MyBundle 'Genki-S/pomo' '' 'bin' ''
 
 " ==================================================
 " Web
