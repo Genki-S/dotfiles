@@ -5,7 +5,14 @@ snippet img
 	[$2]: ${3:filename}
 
 snippet lst
-	<!-- \lstinputlisting[language=${1},caption=${2},label=${3}]{${4:filename}} -->
+	<!-- \lstinputlisting[language=${1},caption=${2},label=lst:${3}]{${4:filename}} -->
+
+snippet ilst
+	<!--
+	\begin{lstlisting}[language=${1},caption=${2},label=lst:${3}]
+	${0}
+	\end{lstlisting}
+	-->
 
 snippet imath
 	<!-- $${0}$ -->
