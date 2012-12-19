@@ -123,16 +123,6 @@ if [ $? -ne 0 ]; then
 fi
 [ -s $HOME/.tmuxinator/scripts/tmuxinator ] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-# auto launch
-ps -e | grep tmux &> /dev/null
-if [ $? -ne 0 ]; then
-	if which tmux &> /dev/null; then
-		tmux
-	else
-		echo "tmux not installed. pity..."
-	fi
-fi
-
 # ==================================================
 # Welcome Message
 # ==================================================
@@ -149,4 +139,11 @@ cat <<HEREDOC
 HEREDOC
 
 # Random reminders
+echo
+echo "=== Random Reminder ==="
 shuf -n 1 ~/random_reminders.txt
+
+# Tmuxinator project list
+echo
+echo "=== My Projects ==="
+mux list
