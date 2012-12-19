@@ -6,12 +6,14 @@
 function symlink_dot {
 	local symlink_src=$1
 	local symlink_dest=.$1
-	CONFIRM=n
+	local confirm=n
 	if [ -e $HOME/$symlink_dest ]; then
 		echo -n "$symlink_dest exists. override? [y/n]"
-		read CONFIRM
+		read confirm
+	else
+		confirm=y
 	fi
-	case $CONFIRM in
+	case $confirm in
 		y|Y|YES|yes|Yes)
 			rm -f $HOME/$symlink_dest
 			echo "ln -s $HOME/dotfiles/$symlink_src $HOME/$symlink_dest"
