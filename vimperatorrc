@@ -1,0 +1,7 @@
+let mapleader = "\\"
+
+" Proxy mappings
+nnoremap pd :proxy direct<CR>:echo "No proxy"<CR>
+nnoremap pw :proxy pac -reload file:///home/genki/waseda.pac<CR>:echo "Waseda proxy"<CR>
+
+" vim: set ft=vimperator:
