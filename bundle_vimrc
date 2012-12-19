@@ -1,3 +1,8 @@
+" ==================================================
+" Configuration
+" ==================================================
+let g:mybundle_bin_dir = expand("$HOME/bin")
+
 if strlen($http_proxy) != 0
 	let g:neobundle#types#git#default_protocol = 'http'
 endif
@@ -13,11 +18,98 @@ if has('vim_starting')
 endif
 
 " ==================================================
+" Helper function
+" ==================================================
+function! s:add_bundle(repo, comm)
+	if empty(a:comm)
+		execute "NeoBundle '".a:repo."'"
+	else
+		execute "NeoBundle '".a:repo."', {'build':{'unix':'".a:comm."'}}"
+	endif
+endfunction
+
+function! s:link_bin_file(bin)
+	" Strip directory(ies) and extension(s)
+	let l:exe = substitute(a:bin, "^.*/", "", "")
+	let l:exe = substitute(l:exe, "\\..*$", "", "")
+	let l:exe_full = g:mybundle_bin_dir . "/" . l:exe
+	" Existence check
+	if getftype(l:exe_full) !=# ""
+		if confirm(l:exe_full." exists. Overwrite?", "&No\n&Yes") ==# 1
+			return
+		endif
+		if getftype(l:exe_full ==# "link")
+			call delete(l:exe_full)
+		else
+			" Proceed only if target is symlink
+			return
+		endif
+	endif
+	" Destination directory check
+	if !isdirectory(g:mybundle_bin_dir)
+		echomsg "Please create " . g:mybundle_bin_dir
+	endif
+	" Link
+	call system("ln -s " . a:bin . " " . l:exe_full)
+	" TODO: catch errors
+endfunction
+
+function! s:link_bin_dir(bindir)
+	if !isdirectory(a:bindir)
+		return
+	endif
+	let l:files = system("ls " . a:bindir)
+	for l:f in split(l:files)
+		call s:link_bin_file(a:bindir . "/" . l:f)
+	endfor
+endfunction
+
+function! s:repo_2_bundle_name(repo)
+	return substitute(a:repo, "^.*/", "", "")
+endfunction
+
+" params
+"   repo      String : repository name
+"   comm      String : build command(s)
+"   bin_dirs  String : binary directory names splitted by comma
+"   bin_files String : binary file names splitted by comma
+function! s:register_bundle(repo, comm, bin_dirs, bin_files)
+	call s:add_bundle(a:repo, a:comm)
+	let l:bundle_name = s:repo_2_bundle_name(a:repo)
+	if !neobundle#is_installed(l:bundle_name)
+		execute "NeoBundleInstall " . l:bundle_name
+		" Create symlinks
+		for l:d in split(a:bin_dirs, ",")
+			call s:link_bin_dir(
+				\ neobundle#get_neobundle_dir()."/".l:bundle_name."/".l:d)
+		endfor
+		for l:f in split(a:bin_files, ",")
+			call s:link_bin_file(
+				\ neobundle#get_neobundle_dir()."/".l:bundle_name."/".l:f)
+		endfor
+	endif
+endfunction
+
+" Format: space separated params for s:register_bundle
+function! s:mybundle(arg)
+	let l:args = split(a:arg, ' ')
+	" Remove quotes
+	call map(l:args, 'substitute(v:val, "^''", "", "")')
+	call map(l:args, 'substitute(v:val, "''$", "", "")')
+
+	call s:register_bundle(l:args[0], l:args[1], l:args[2], l:args[3])
+endfunction
+
+command! -nargs=+ MyBundle
+		\ call s:mybundle(<q-args>)
+
+" ==================================================
 " Shell stuff
 " ==================================================
 NeoBundle 'robbyrussell/oh-my-zsh'
 NeoBundle 'seebi/tmux-colors-solarized'
 NeoBundle 'seebi/dircolors-solarized'
+MyBundle 'Genki-S/pomo' '' 'bin' ''
 
 " ==================================================
 " Web
