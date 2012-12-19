@@ -4,8 +4,8 @@
 # Dotfiles
 # ==================================================
 function symlink_dot {
-	symlink_src=$1
-	symlink_dest=.$1
+	local symlink_src=$1
+	local symlink_dest=.$1
 	CONFIRM=n
 	if [ -e $HOME/$symlink_dest ]; then
 		echo -n "$symlink_dest exists. override? [y/n]"
