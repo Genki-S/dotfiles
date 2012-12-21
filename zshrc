@@ -23,6 +23,11 @@ antigen-bundle zsh-users/zsh-syntax-highlighting
 # More completions
 antigen-bundle zsh-users/zsh-completions src
 
+# Easy history search
+antigen-bundle zsh-users/zsh-history-substring-search
+bindkey '^p' history-substring-search-up
+bindkey '^n' history-substring-search-down
+
 # Directory specific environment segging
 antigen-bundle kennethreitz/autoenv
 
