@@ -106,7 +106,6 @@ command! -nargs=+ MyBundle
 " ==================================================
 " Shell stuff
 " ==================================================
-NeoBundle 'robbyrussell/oh-my-zsh'
 NeoBundle 'seebi/tmux-colors-solarized'
 NeoBundle 'seebi/dircolors-solarized'
 MyBundle 'Genki-S/pomo' 'rake install' '' ''

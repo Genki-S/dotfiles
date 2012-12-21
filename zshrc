@@ -9,37 +9,25 @@ compinit
 source $HOME/dotfiles/zsh/lib/env.zsh
 
 # ==================================================
-# oh-my-zsh
+# Antigen
 # ==================================================
-# Path to your oh-my-zsh configuration.
-export ZSH=$MYBUNDLES/oh-my-zsh
+source $HOME/dotfiles/zsh/antigen/antigen.zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-export ZSH_THEME="genki"
+# Load the oh-my-zsh's library.
+antigen-lib
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen-bundle git
+antigen-bundle command-not-found
 
-# Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="false"
+# Syntax highlighting bundle.
+antigen-bundle zsh-users/zsh-syntax-highlighting
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+# Load the theme.
+antigen-theme $HOME/dotfiles/genki.zsh-theme
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want disable red dots displayed while waiting for completion
-# DISABLE_COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
+# Tell antigen that you're done.
+antigen-apply
 
 # ==================================================
 # My zsh
