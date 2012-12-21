@@ -25,6 +25,7 @@ function symlink_dot {
 symlink_dot vimrc
 symlink_dot vim
 symlink_dot zshrc
+symlink_dot zshenv
 symlink_dot tmux.conf
 symlink_dot ctags
 symlink_dot latexmkrc

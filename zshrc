@@ -5,9 +5,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# TODO: This will be sourced again below...
-source $HOME/dotfiles/zsh/lib/env.zsh
-
 # ==================================================
 # Antigen
 # ==================================================
@@ -36,7 +33,7 @@ antigen-apply
 # My zsh
 # ==================================================
 # Load all of the config files in zsh/lib that end in .zsh
-for config_file ($HOME/dotfiles/zsh/lib/*.zsh) source $config_file
+for config_file ($HOME/dotfiles/zsh/zshrc/lib/*.zsh) source $config_file
 
 # ==================================================
 # My bundles
