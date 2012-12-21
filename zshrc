@@ -23,6 +23,9 @@ antigen-bundle command-not-found
 # Syntax highlighting bundle.
 antigen-bundle zsh-users/zsh-syntax-highlighting
 
+# Directory specific environment segging
+antigen-bundle kennethreitz/autoenv
+
 # Load the theme.
 antigen-theme $HOME/dotfiles/genki.zsh-theme
 
