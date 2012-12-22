@@ -57,6 +57,7 @@ NeoBundleLazy 'lordm/vim-browser-reload-linux'
 
 " For beautiful texts
 NeoBundleLazy 'godlygeek/tabular'
+NeoBundleLazy 'Stormherz/tablify'
 NeoBundleLazy 'jngeist/vim-multimarkdown'
 
 " Visual
