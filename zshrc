@@ -71,26 +71,10 @@ if [ $? -ne 0 ]; then
 	fi
 fi
 
-# PomodoroApp
-ps -e | grep tmux &> /dev/null
+# Pomodoro Technique
+which pomo &> /dev/null
 if [ $? -ne 0 ]; then
-	if [ -x ~/PomodoroApp/PomodoroApp ]; then
-		if [ ! -L ~/.local/share/data/PomodoroApp/PomodoroApp.db ]; then
-			echo "You want to share PomodoroApp.db with Dropbox or something."
-		else
-			ps -e | grep PomodoroApp &> /dev/null
-			if [ $? -ne 0 ]; then
-				echo -n "Invoke PomodoroApp? [y/n]: "
-				read CONFIRM
-				case $CONFIRM in
-					y|Y|YES|yes|Yes) screen -d -m ~/PomodoroApp/PomodoroApp ;;
-					*)
-				esac
-			fi
-		fi
-	else
-		echo "You should install PomodoroApp, really."
-	fi
+	echo "Just run \"gem install pomo\""
 fi
 
 # AutoJump
