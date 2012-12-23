@@ -57,8 +57,10 @@ sync_linker $HOME/.vimperator
 
 # Firefox
 sync_linker $HOME/.mozilla/firefox/profiles.ini
+sync_linker $HOME/.mozilla/firefox/qtlp6vd2.default
 sync_linker $HOME/.mozilla/firefox/hg3yf6t7.Study
 sync_linker $HOME/.mozilla/firefox/mblrj487.Break
+sync_linker $HOME/.mozilla/firefox/v6bute70.Development
 
 # Tmuxinator
 sync_linker $HOME/.tmuxinator
