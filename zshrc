@@ -125,6 +125,8 @@ echo "=== Random Reminder ==="
 shuf -n 1 ~/random_reminders.txt
 
 # Tmuxinator project list
-echo
-echo "=== My Projects ==="
-mux list
+if [ -z "$TMUX" ]; then
+	echo
+	echo "=== My Projects ==="
+	mux list
+fi
