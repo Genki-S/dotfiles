@@ -9,3 +9,7 @@ function lighten () {
 %# '
 	RPROMPT=''
 }
+
+function mkcd () {
+	mkdir -p "$@" && eval cd "\"\$$#\""
+}
