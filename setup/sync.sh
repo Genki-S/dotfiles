@@ -61,6 +61,7 @@ sync_linker $HOME/.mozilla/firefox/qtlp6vd2.default
 sync_linker $HOME/.mozilla/firefox/hg3yf6t7.Study
 sync_linker $HOME/.mozilla/firefox/mblrj487.Break
 sync_linker $HOME/.mozilla/firefox/v6bute70.Development
+sync_linker $HOME/.mozilla/firefox/7210femu.Training
 
 # Tmuxinator
 sync_linker $HOME/.tmuxinator
