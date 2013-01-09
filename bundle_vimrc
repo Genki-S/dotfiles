@@ -108,7 +108,9 @@ command! -nargs=+ MyBundle
 " ==================================================
 NeoBundle 'seebi/tmux-colors-solarized'
 NeoBundle 'seebi/dircolors-solarized'
-MyBundle 'Genki-S/pomo' 'rake install' '' ''
+" TODO: escape spaces
+" MyBundle 'bbelderbos/Codesnippets' 'chmod -R +x python' '' 'python/stackoverflow_cli_search.py,python/github_search.py'
+MyBundle 'bbelderbos/Codesnippets' '' '' 'python/stackoverflow_cli_search.py,python/github_search.py'
 
 " ==================================================
 " Web
