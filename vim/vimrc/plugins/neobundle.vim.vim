@@ -41,7 +41,7 @@ NeoBundleLazy 'vim-scripts/UnconditionalPaste'
 NeoBundleLazy 'thinca/vim-quickrun'
 NeoBundleLazy 'ujihisa/quicklearn'
 NeoBundleLazy 'scrooloose/syntastic'
-NeoBundleLazy 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/nerdcommenter'
 NeoBundleLazy 'majutsushi/tagbar'
 
 " Integration with outer softwares / services
