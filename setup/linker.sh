@@ -35,11 +35,14 @@ symlink_dot vimperatorrc
 # My bundles
 # ==================================================
 function symlink_bundle {
-	src=$1
-	dest=$HOME/bin/${1##*/} # trim directory(ies)
-	dest=${dest%%.*} # trim extension(s)
-	echo "ln -s $src $dest"
-	ln -s $src $dest
+	local src=$1
+	local dst=$HOME/bin/${1##*/} # trim directory(ies)
+	dst=${dst%%.*} # trim extension(s)
+	if [ -L $dst ]; then
+		rm -f $dst
+	fi
+	echo "ln -s $src $dst"
+	ln -s $src $dst
 }
 
 symlink_bundle $MYBUNDLES/js-beautify/python/js-beautify
