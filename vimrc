@@ -34,8 +34,8 @@ filetype off
 filetype plugin indent off
 
 if has('vim_starting')
-	set runtimepath+=~/.vim/.bundle/neobundle.vim
-	call neobundle#rc(expand('~/.vim/.bundle'))
+	set runtimepath+=~/.vimbundles/neobundle.vim
+	call neobundle#rc(expand('~/.vimbundles'))
 endif
 
 execute 'source' g:plugin_setting_dir.'/neobundle.vim.vim'
