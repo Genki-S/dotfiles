@@ -54,6 +54,7 @@ NeoBundleLazy 'wannesm/wmgraphviz.vim'
 NeoBundleLazy 'jpalardy/vim-slime'
 NeoBundleLazy 'mileszs/ack.vim'
 NeoBundleLazy 'lordm/vim-browser-reload-linux'
+NeoBundleLazy 'sjl/clam.vim'
 
 " For beautiful texts
 NeoBundleLazy 'godlygeek/tabular'
