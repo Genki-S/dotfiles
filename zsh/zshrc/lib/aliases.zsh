@@ -15,6 +15,7 @@ alias ack="ack-grep"
 # ==================================================
 alias l="ls"
 alias la="ls -a"
+alias x="xdg-open"
 
 # ==================================================
 # Useful stuffs
