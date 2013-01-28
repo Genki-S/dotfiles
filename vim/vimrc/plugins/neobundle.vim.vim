@@ -111,6 +111,10 @@ NeoBundleLazy 'derekwyatt/vim-scala'
 " --------------------------------------------------
 NeoBundleLazy 'vim-scripts/scilab.vim'
 
+" CSV
+" --------------------------------------------------
+NeoBundleLazy 'chrisbra/csv.vim'
+
 " Sourcings
 " --------------------------------------------------
 
