@@ -14,7 +14,7 @@
 " Visual
 " ~/.vim/vimrc/visual.vim
 
-for f in split(glob('~/.vim/vimrc/*.vim'), '\n')
+for f in split(glob('~/.vim/vimrc/lib/*.vim'), '\n')
 	execute 'source' f
 endfor
 
