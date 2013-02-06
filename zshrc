@@ -1,6 +1,18 @@
+# Platform check
+case $OSTYPE in
+	darwin*)
+		PLATFORM='mac'
+		;;
+	linux*)
+		PLATFORM='linux'
+		;;
+	*)
+		PLATFORM='unknown'
+		;;
+esac
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/genki/.zshrc'
-
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -40,8 +52,13 @@ antigen-apply
 # ==================================================
 # My zsh
 # ==================================================
-# Load all of the config files in zsh/lib that end in .zsh
-for config_file ($HOME/dotfiles/zsh/zshrc/lib/*.zsh) source $config_file
+# Load all config files
+if ls $HOME/dotfiles/zsh/zshrc/common/**/*.zsh &> /dev/null; then
+	for config_file ($HOME/dotfiles/zsh/zshrc/common/**/*.zsh) source $config_file
+fi
+if ls $HOME/dotfiles/zsh/zshrc/$PLATFORM/**/*.zsh &> /dev/null; then
+	for config_file ($HOME/dotfiles/zsh/zshrc/$PLATFORM/**/*.zsh) source $config_file
+fi
 
 # ==================================================
 # My bundles
@@ -75,13 +92,6 @@ fi
 which pomo &> /dev/null
 if [ $? -ne 0 ]; then
 	echo "Just run \"gem install pomo\""
-fi
-
-# AutoJump
-if [ -f /usr/share/autojump/autojump.zsh ]; then
-	source /usr/share/autojump/autojump.zsh
-else
-	echo "You should install autojump, really."
 fi
 
 # Realiaser
