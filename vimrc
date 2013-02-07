@@ -44,9 +44,9 @@ execute 'source' g:plugin_setting_dir.'/neobundle.vim.vim'
 " Other sources
 " ==================================================
 " To make the ":Man" command available
-source /usr/share/vim/vim73/ftplugin/man.vim
+runtime! ftplugin/man.vim
 " Matchit.vim
-source /usr/share/vim/vim73/macros/matchit.vim
+runtime! macros/matchit.vim
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 filetype plugin on
