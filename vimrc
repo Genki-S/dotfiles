@@ -26,7 +26,7 @@ if strlen($http_proxy) != 0
 	let g:neobundle#types#git#default_protocol = 'http'
 endif
 let g:plugin_setting_dir = expand('~/.vim/vimrc/plugins')
-let g:plugin_setting_after_dir = expand('~/.vim/after/vimrc/plugins')
+let g:plugin_interface_dir = expand('~/.vim/vimrc/plugins/interface')
 
 " use NeoBundle
 set nocompatible

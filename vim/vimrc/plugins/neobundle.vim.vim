@@ -209,8 +209,8 @@ function! s:source_plugin_setting(plugin_name)
 	endif
 endfunction
 
-function! s:source_plugin_setting_after(plugin_name)
-	let l:fullpath = g:plugin_setting_after_dir.'/'.a:plugin_name.'.vim'
+function! s:source_plugin_interface(plugin_name)
+	let l:fullpath = g:plugin_interface_dir.'/'.a:plugin_name.'.vim'
 	if filereadable(l:fullpath)
 		execute 'source' l:fullpath
 	endif
@@ -220,19 +220,14 @@ function! s:edit_plugin_setting(plugin_name)
 	execute 'edit' g:plugin_setting_dir.'/'.a:plugin_name.'.vim'
 endfunction
 
-function! s:edit_plugin_setting_after(plugin_name)
-	execute 'edit' g:plugin_setting_after_dir.'/'.a:plugin_name.'.vim'
+function! s:edit_plugin_interface(plugin_name)
+	execute 'edit' g:plugin_interface_dir.'/'.a:plugin_name.'.vim'
 endfunction
 
 function! s:source_setting_and_bundle(...)
 	for bndl in a:000
 		call s:source_plugin_setting(bndl)
 		execute "NeoBundleSource " . bndl
-
-		" After settings are sourced before (wired?)
-		" Explanation: "After" means after sourcing AlterCommand,
-		"              to provide plugins altercmds properly.
-		" call s:source_plugin_setting_after(bndl)
 	endfor
 endfunction
 
@@ -240,7 +235,7 @@ function! s:register_after_plugin_settings()
 	" Source 'ALL' plugins' after settings
 	for plugin in s:bundle_names
 		augroup vimrc_after
-			execute "autocmd VimEnter * call s:source_plugin_setting_after('" . plugin . "')"
+			execute "autocmd VimEnter * call s:source_plugin_interface('" . plugin . "')"
 		augroup END
 	endfor
 endfunction
@@ -255,8 +250,8 @@ command! -nargs=1 -bar
 
 command! -nargs=1 -bar
 	\ -complete=customlist,neobundle#complete_bundles
-	\ PluginSettingAfter
-	\ call s:edit_plugin_setting_after(<q-args>)
+	\ PluginInterface
+	\ call s:edit_plugin_interface(<q-args>)
 
 command! -nargs=* -bar
 	\ -complete=customlist,neobundle#complete_lazy_bundles
