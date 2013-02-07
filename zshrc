@@ -1,16 +1,3 @@
-# Platform check
-case $OSTYPE in
-	darwin*)
-		PLATFORM='mac'
-		;;
-	linux*)
-		PLATFORM='linux'
-		;;
-	*)
-		PLATFORM='unknown'
-		;;
-esac
-
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/genki/.zshrc'
 autoload -Uz compinit

@@ -1,3 +1,16 @@
+# Platform check
+case $OSTYPE in
+	darwin*)
+		PLATFORM='mac'
+		;;
+	linux*)
+		PLATFORM='linux'
+		;;
+	*)
+		PLATFORM='unknown'
+		;;
+esac
+
 # Remove duplications
 typeset -U path cdpath manpath fpath
 
