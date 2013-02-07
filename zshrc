@@ -88,12 +88,6 @@ if [ $? -ne 0 ]; then
 	fi
 fi
 
-# Pomodoro Technique
-which pomo &> /dev/null
-if [ $? -ne 0 ]; then
-	echo "Just run \"gem install pomo\""
-fi
-
 # Realiaser
 alias > $HOME/.alias.cache
 
