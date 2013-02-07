@@ -29,6 +29,14 @@ path=( # My bin prevails over system bin
 	/usr/local/texlive/2012/bin/i386-linux
 )
 
+case $PLATFORM in
+	mac)
+		path=($(brew --prefix coreutils)/libexec/gnubin
+			$path
+			)
+		;;
+esac
+
 export HTTP_HOME=http://vim.wikia.com/wiki/Special:Random
 export TERM=xterm-256color
 export EDITOR=vim
