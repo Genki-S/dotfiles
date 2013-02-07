@@ -86,6 +86,8 @@ NeoBundleLazy 'gregsexton/VimCalc'
 NeoBundleLazy 'vim-ruby/vim-ruby'
 NeoBundleLazy 'astashov/vim-ruby-debugger'
 NeoBundleLazy 'taka84u9/vim-ref-ri'
+NeoBundleLazy 'tpope/vim-rake'
+NeoBundleLazy 'tpope/vim-bundler'
 
 " TeX
 " --------------------------------------------------
@@ -127,6 +129,12 @@ let s:plugin_filetypes = {
 \		'ruby'
 \	],
 \	'vim-ref-ri': [
+\		'ruby'
+\	],
+\	'vim-rake': [
+\		'ruby'
+\	],
+\	'vim-bundler': [
 \		'ruby'
 \	],
 \	'LaTeX-Box': [
