@@ -115,6 +115,11 @@ echo
 echo "=== Random Reminder ==="
 shuf -n 1 ~/random_reminders.txt
 
+# Oblique Strategies
+echo
+echo "=== Oblique Strategy ==="
+shuf -n 1 ~/oblique_strategies.txt
+
 # Tmuxinator project list
 if [ -z "$TMUX" ]; then
 	echo

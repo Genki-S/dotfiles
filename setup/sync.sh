@@ -68,3 +68,4 @@ sync_linker $HOME/.tmuxinator
 
 # Miscellaneous
 sync_linker $HOME/random_reminders.txt
+sync_linker $HOME/oblique_strategies.txt
