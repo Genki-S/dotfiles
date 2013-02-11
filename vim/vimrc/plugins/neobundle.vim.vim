@@ -36,6 +36,7 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'tyru/vim-altercmd'
 NeoBundleLazy 'vim-scripts/UnconditionalPaste'
+NeoBundle 'goldfeld/vim-seek'
 
 " Programming Features
 NeoBundleLazy 'thinca/vim-quickrun'
