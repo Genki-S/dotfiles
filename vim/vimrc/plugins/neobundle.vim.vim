@@ -77,6 +77,7 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'Genki-S/dry.vim'
 NeoBundle 'fuenor/im_control.vim'
 NeoBundleLazy 'gregsexton/VimCalc'
+NeoBundleLazy 'vim-scripts/vimwiki'
 
 " --------------------------------------------------
 " for Specific filetypes
