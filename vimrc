@@ -2,18 +2,6 @@
 " My vimrc (in '~/.vim/vimrc/')
 " ==================================================
 
-" Settings
-" ~/.vim/vimrc/settings.vim
-
-" Mappings
-" ~/.vim/vimrc/mappings.vim
-
-" Commands
-" ~/.vim/vimrc/commands.vim
-
-" Visual
-" ~/.vim/vimrc/visual.vim
-
 for f in split(glob('~/.vim/vimrc/lib/*.vim'), '\n')
 	execute 'source' f
 endfor
