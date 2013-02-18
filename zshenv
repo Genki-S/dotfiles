@@ -30,6 +30,8 @@ path=( # My bin prevails over system bin
 	/usr/local/bin
 	/usr/bin
 	/bin
+	# pip
+	/usr/local/share/python
 	# texlive
 	/usr/local/texlive/2012/bin/i386-linux
 )
