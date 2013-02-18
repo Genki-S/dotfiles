@@ -8,7 +8,6 @@ alias neobundle="v -u $HOME/dotfiles/bundle_vimrc $HOME/dotfiles/bundle_vimrc"
 alias nb="neobundle"
 
 alias hist="fc -liD 1"
-alias ack="ack-grep"
 
 # ==================================================
 # Frequent commands
