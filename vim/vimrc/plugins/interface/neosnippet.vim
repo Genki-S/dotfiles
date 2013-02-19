@@ -1,1 +1,1 @@
-AlterCommand nse NeoSnippetEdit
+AlterCommand nse NeoSnippetEdit -split -vertical
