@@ -24,3 +24,5 @@ AlterCommand sl execute getline('.')
 AlterCommand ps PluginSetting
 AlterCommand pi PluginInterface
 AlterCommand psn PluginSetting neobundle.vim
+
+AlterCommand eft execute 'edit ~/dotfiles/vim/ftplugin/'.&filetype.'.vim'
