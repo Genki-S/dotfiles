@@ -62,3 +62,5 @@ export TERM=xterm-256color
 export EDITOR=vim
 
 export MYBUNDLES=$HOME/.mybundles
+
+export RSENSE_HOME=$MYBUNDLES/rsense
