@@ -1,3 +1,5 @@
+setlocal tags+=~/tags_ruby,~/tags_gem
+
 " Indent settings
 setlocal tabstop=2
 setlocal shiftwidth=2
