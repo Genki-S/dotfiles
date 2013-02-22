@@ -131,7 +131,7 @@ NeoBundle 'fletcher/peg-multimarkdown', {
 	\ }
 \ }
 
-MyBundle 'm2ym/rsense' 'chmod +x bin/release && ruby etc/config.rb > ~/.rsense' '' ''
+MyBundle 'm2ym/rsense' 'ant && chmod +x bin/release && ruby etc/config.rb > ~/.rsense' '' ''
 
 
 " ==================================================
