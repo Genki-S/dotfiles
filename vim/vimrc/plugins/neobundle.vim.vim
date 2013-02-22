@@ -75,6 +75,8 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 " Unite sources
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'tsukkee/unite-help'
+NeoBundle 'tsukkee/unite-tag'
+NeoBundle 'ujihisa/unite-rake'
 
 " Other Utilities
 NeoBundleLazy 'fuenor/qfixhowm'
