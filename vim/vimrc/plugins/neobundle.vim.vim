@@ -56,6 +56,12 @@ NeoBundleLazy 'jpalardy/vim-slime'
 NeoBundleLazy 'mileszs/ack.vim'
 NeoBundleLazy 'lordm/vim-browser-reload-linux'
 NeoBundleLazy 'sjl/clam.vim'
+NeoBundle 'Shougo/vimproc', {
+	\ 'build' : {
+		\ 'mac' : 'make -f make_mac.mak',
+		\ 'unix' : 'make -f make_unix.mak',
+	\ },
+\ }
 
 " For beautiful texts
 NeoBundleLazy 'godlygeek/tabular'
