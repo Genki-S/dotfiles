@@ -31,6 +31,9 @@ bindkey '^n' history-substring-search-down
 antigen-bundle kennethreitz/autoenv
 
 # Load the theme.
+source $MYBUNDLES/zsh-git-prompt/zshrc.sh
+export __GIT_PROMPT_DIR=$MYBUNDLES/zsh-git-prompt
+__EXECUTED_GIT_COMMAND=1 # To force prompt update at first
 antigen-theme $HOME/dotfiles/genki.zsh-theme
 
 # Tell antigen that you're done.

@@ -1,16 +1,12 @@
 local return_status="%{$fg[red]%}%(?..✘)%{$reset_color%}"
 
 PROMPT='
-%(?,,${return_status}[%?]%{$reset_color%} )%(1j.%{$fg[yellow]%}Job[%j]%{$reset_color%} .)%{$fg[green]%}[ ${PWD/#$HOME/~} ]%{$reset_color%} $(git_prompt_info)
+%(?,,${return_status}[%?]%{$reset_color%} )%(1j.%{$fg[yellow]%}Job[%j]%{$reset_color%} .)%{$fg[green]%}[ ${PWD/#$HOME/~} ]%{$reset_color%} $(git_super_status)
 %# '
 
-function last_command() {
-	echo `\history -1 | cut -d ' ' -f 3-20 | realiaser`
-}
-RPROMPT=''
-
-ZSH_THEME_GIT_PROMPT_PREFIX="git: %{$fg[magenta]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}[!]"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}[?]"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
+# Dirty fix for ambiwidth characters (just adding single space)
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}● "
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}✖ "
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}✚ "
+ZSH_THEME_GIT_PROMPT_UNTRACKED="… "
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔ "
