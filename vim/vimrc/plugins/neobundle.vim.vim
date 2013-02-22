@@ -91,7 +91,7 @@ NeoBundleLazy 'vim-scripts/vimwiki'
 " --------------------------------------------------
 function! s:tweak_neobundle_source_on_filetype(repo, filetypes)
 	exec "NeoBundleLazy" a:repo
-	exec "autocmd FileType" join(a:filetypes, ",") "MyNeoBundleSource" split(a:repo, "/")[1]
+	exec "autocmd FileType" join(a:filetypes, ",") "MyNeoBundleSource" split(substitute(a:repo, "'", "", "g"), "/")[1]
 endfunction
 
 " Usage: NeoBundleFileType 'repo' ft1,ft2,ft3...
