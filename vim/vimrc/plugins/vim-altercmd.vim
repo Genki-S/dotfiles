@@ -15,7 +15,7 @@ AlterCommand fl help function-list
 " --------------------------------------------------
 AlterCommand so source %
 " source line
-AlterCommand sol execute getline('.')
+AlterCommand sl execute getline('.')
 
 
 " ==================================================
