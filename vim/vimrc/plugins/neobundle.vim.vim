@@ -107,6 +107,7 @@ NeoBundleFileType 'tpope/vim-rails' ruby
 NeoBundleFileType 'tpope/vim-rake' ruby
 NeoBundleFileType 'tpope/vim-bundler' ruby
 NeoBundleFileType 'tpope/vim-endwise' ruby
+NeoBundleFileType 'Shougo/neocomplcache-rsense' ruby
 
 " Multi Mark Down
 " --------------------------------------------------
