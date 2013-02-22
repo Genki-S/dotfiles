@@ -60,7 +60,6 @@ NeoBundleLazy 'sjl/clam.vim'
 " For beautiful texts
 NeoBundleLazy 'godlygeek/tabular'
 NeoBundleLazy 'Stormherz/tablify'
-NeoBundleLazy 'jngeist/vim-multimarkdown'
 
 " Visual
 NeoBundle 'altercation/vim-colors-solarized'
@@ -82,119 +81,58 @@ NeoBundleLazy 'vim-scripts/vimwiki'
 " --------------------------------------------------
 " for Specific filetypes
 " --------------------------------------------------
+function! s:tweak_neobundle_source_on_filetype(repo, filetypes)
+	exec "NeoBundleLazy" a:repo
+	exec "autocmd FileType" join(a:filetypes, ",") "MyNeoBundleSource" split(a:repo, "/")[1]
+endfunction
+
+" Usage: NeoBundleFileType 'repo' ft1,ft2,ft3...
+" Note that you cannot to use double quotes for repo
+command! -nargs=+ NeoBundleFileType
+	\ call s:tweak_neobundle_source_on_filetype(
+		\ split("<args>", " ")[0],
+		\ split(split("<args>", " ")[1], ","))
 
 " Ruby
 " --------------------------------------------------
-NeoBundleLazy 'vim-ruby/vim-ruby'
-NeoBundleLazy 'taka84u9/vim-ref-ri'
-NeoBundleLazy 'tpope/vim-rails'
-NeoBundleLazy 'tpope/vim-rake'
-NeoBundleLazy 'tpope/vim-bundler'
+NeoBundleFileType 'vim-ruby/vim-ruby' ruby
+NeoBundleFileType 'taka84u9/vim-ref-ri' ruby
+NeoBundleFileType 'tpope/vim-rails' ruby
+NeoBundleFileType 'tpope/vim-rake' ruby
+NeoBundleFileType 'tpope/vim-bundler' ruby
+
+" Multi Mark Down
+" --------------------------------------------------
+NeoBundleFileType 'jngeist/vim-multimarkdown' mmd
 
 " TeX
 " --------------------------------------------------
-NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box'
+NeoBundleFileType 'LaTeX-Box-Team/LaTeX-Box' tex,plaintex
 
 " Web
 " --------------------------------------------------
-NeoBundleLazy 'mattn/zencoding-vim'
-NeoBundleLazy 'tpope/vim-haml'
-NeoBundleLazy 'Valloric/MatchTagAlways'
-NeoBundleLazy 'othree/html5.vim'
-NeoBundleLazy 'hokaccha/vim-html5validator'
-NeoBundleLazy 'pangloss/vim-javascript'
-NeoBundleLazy 'hail2u/vim-css3-syntax'
-NeoBundleLazy 'cakebaker/scss-syntax.vim'
-NeoBundleLazy 'miripiruni/CSScomb-for-Vim'
+NeoBundleFileType 'mattn/zencoding-vim' html,xhtml,haml,php
+NeoBundleFileType 'tpope/vim-haml' haml
+NeoBundleFileType 'Valloric/MatchTagAlways' html,xhtml,xml,php
+NeoBundleFileType 'othree/html5.vim' html,php
+NeoBundleFileType 'hokaccha/vim-html5validator' html
+NeoBundleFileType 'pangloss/vim-javascript' javascript
+NeoBundleFileType 'hail2u/vim-css3-syntax' css,scss
+NeoBundleFileType 'cakebaker/scss-syntax.vim' scss
+NeoBundleFileType 'miripiruni/CSScomb-for-Vim' css,scss
 
 " Scala
 " --------------------------------------------------
-NeoBundleLazy 'derekwyatt/vim-scala'
+NeoBundleFileType 'derekwyatt/vim-scala' scala
 
 " Scilab
 " --------------------------------------------------
-NeoBundleLazy 'vim-scripts/scilab.vim'
+NeoBundleFileType 'vim-scripts/scilab.vim' scilab
 
 " CSV
 " --------------------------------------------------
-NeoBundleLazy 'chrisbra/csv.vim'
+NeoBundleFileType 'chrisbra/csv.vim' csv
 
-" Sourcings
-" --------------------------------------------------
-
-" plugin - filetype dictionary
-let s:plugin_filetypes = {
-\	'vim-ruby': [
-\		'ruby'
-\	],
-\	'vim-ref-ri': [
-\		'ruby'
-\	],
-\	'vim-rails': [
-\		'ruby'
-\	],
-\	'vim-rake': [
-\		'ruby'
-\	],
-\	'vim-bundler': [
-\		'ruby'
-\	],
-\	'LaTeX-Box': [
-\		'tex', 'plaintex'
-\	],
-\	'zencoding-vim': [
-\		'html', 'xhtml', 'haml', 'php'
-\	],
-\	 'vim-haml': [
-\		'haml'
-\	],
-\	'MatchTagAlways': [
-\		'html', 'xhtml', 'xml', 'php'
-\	],
-\	'html5.vim': [
-\		'html', 'php'
-\	],
-\	'vim-html5validator': [
-\		'html'
-\	],
-\	'vim-javascript': [
-\		'javascript'
-\	],
-\	'vim-css3-syntax': [
-\		'css', 'scss'
-\	],
-\	'scss-syntax': [
-\		'scss'
-\	],
-\	'CSScomb-for-Vim': [
-\		'css', 'scss'
-\	],
-\	'vim-scala': [
-\		'scala'
-\	],
-\	'scilab.vim': [
-\		'scilab'
-\	]
-\}
-
-" helper function
-function! s:source_lazy_plugin(plugin)
-	try
-		execute 'NeoBundleSource' a:plugin
-	catch /^Vim\%((\a\+)\)\?:E127/
-		" TODO: inspect what is going on about E127
-	endtry
-endfunction
-
-" define sourcing autocmd
-augroup sourcings
-	autocmd!
-augroup END
-for [plugin, ftlist] in items(s:plugin_filetypes)
-	augroup sourcings
-		execute "autocmd FileType" join(ftlist, ',') "call s:source_lazy_plugin('".plugin."')"
-	augroup END
-endfor
 
 " --------------------------------------------------
 " Installation check

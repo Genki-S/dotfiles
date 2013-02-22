@@ -1,1 +1,0 @@
-NeoBundleSource vim-multimarkdown
