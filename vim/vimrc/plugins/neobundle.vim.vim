@@ -100,6 +100,7 @@ NeoBundleFileType 'taka84u9/vim-ref-ri' ruby
 NeoBundleFileType 'tpope/vim-rails' ruby
 NeoBundleFileType 'tpope/vim-rake' ruby
 NeoBundleFileType 'tpope/vim-bundler' ruby
+NeoBundleFileType 'tpope/vim-endwise' ruby
 
 " Multi Mark Down
 " --------------------------------------------------
