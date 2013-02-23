@@ -235,3 +235,8 @@ augroup vimrc_after
 	autocmd!
 augroup END
 call s:register_after_plugin_settings()
+
+" To trigger FileType event after loading plugins
+augroup vimrc_after
+	autocmd VimEnter * execute "set filetype=".&filetype
+augroup END
