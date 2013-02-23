@@ -2,6 +2,10 @@
 " My vimrc (in '~/.vim/vimrc/')
 " ==================================================
 
+for f in split(glob('~/.vim/vimrc/helper/*.vim'), '\n')
+	execute 'source' f
+endfor
+
 for f in split(glob('~/.vim/vimrc/lib/*.vim'), '\n')
 	execute 'source' f
 endfor
