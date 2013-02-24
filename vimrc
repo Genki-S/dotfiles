@@ -35,8 +35,10 @@ execute 'source' g:plugin_setting_dir.'/neobundle.vim.vim'
 " ==================================================
 " Other sources
 " ==================================================
+" Make :Man command available
+source $VIM/vim73/ftplugin/man.vim
 " Matchit.vim
-runtime! macros/matchit.vim
+source $VIM/vim73/macros/matchit.vim
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 filetype plugin on
