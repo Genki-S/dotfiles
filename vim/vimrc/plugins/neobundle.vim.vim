@@ -45,6 +45,7 @@ NeoBundleLazy 'ujihisa/quicklearn'
 NeoBundleLazy 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundleLazy 'majutsushi/tagbar'
+NeoBundle 'chrisbra/changesPlugin'
 
 " Integration with outer softwares / services
 NeoBundle 'tpope/vim-fugitive'
