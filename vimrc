@@ -36,7 +36,7 @@ execute 'source' g:plugin_setting_dir.'/neobundle.vim.vim'
 " Other sources
 " ==================================================
 " Matchit.vim
-runtime macros/matchit.vim
+runtime! macros/matchit.vim
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 filetype plugin on
