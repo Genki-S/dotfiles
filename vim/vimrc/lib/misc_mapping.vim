@@ -12,4 +12,8 @@ function! s:wise_quit()
 		w
 	endif
 	bd
+	let l:bls = tabpagebuflist()
+	if len(l:bls) == 1 && bufname(l:bls[0]) ==# ""
+		q
+	endif
 endfunction
