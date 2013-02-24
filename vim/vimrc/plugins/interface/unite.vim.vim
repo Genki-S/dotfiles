@@ -1,5 +1,5 @@
 nnoremap <unique> <SID>[unite] <Nop>
-nmap <unique> <Leader>u <SID>[unite]
+nmap <unique> <Space> <SID>[unite]
 
 nnoremap <unique> <silent> <SID>[unite]a :<C-u>UniteBookmarkAdd<CR>
 nnoremap <unique> <silent> <SID>[unite]b :<C-u>Unite -buffer-name=buffer buffer<CR>

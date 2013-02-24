@@ -1,5 +1,5 @@
 nnoremap <unique> <SID>[vimfiler] <Nop>
-nmap <unique> <Space> <SID>[vimfiler]
+nmap <unique> <Leader><Space> <SID>[vimfiler]
 
 nnoremap <unique> <SID>[vimfiler]<Space> :<C-u>VimFiler 
 nnoremap <unique> <silent> <SID>[vimfiler]b :<C-u>VimFilerBufferDir<CR>
