@@ -43,10 +43,10 @@ antigen-apply
 # My zsh
 # ==================================================
 # Load all config files
-if ls $HOME/dotfiles/zsh/zshrc/common/**/*.zsh &> /dev/null; then
+if ls -U $HOME/dotfiles/zsh/zshrc/common/**/*.zsh &> /dev/null; then
 	for config_file ($HOME/dotfiles/zsh/zshrc/common/**/*.zsh) source $config_file
 fi
-if ls $HOME/dotfiles/zsh/zshrc/$PLATFORM/**/*.zsh &> /dev/null; then
+if ls -U $HOME/dotfiles/zsh/zshrc/$PLATFORM/**/*.zsh &> /dev/null; then
 	for config_file ($HOME/dotfiles/zsh/zshrc/$PLATFORM/**/*.zsh) source $config_file
 fi
 
