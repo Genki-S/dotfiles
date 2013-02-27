@@ -21,4 +21,4 @@ alias sz="source $HOME/.zshrc"
 # ==================================================
 # Git
 # ==================================================
-alias gf="git diff"
+alias gf="git diff --color"
