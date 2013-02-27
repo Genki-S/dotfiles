@@ -71,5 +71,9 @@ export RSENSE_HOME=$MYBUNDLES/rsense
 # My zshenv
 # ==================================================
 # Load all config files
-for config_file ($HOME/dotfiles/zsh/zshenv/common/**/*.zsh) source $config_file
-for config_file ($HOME/dotfiles/zsh/zshenv/$PLATFORM/**/*.zsh) source $config_file
+if ls $HOME/dotfiles/zsh/zshenv/common/**/*.zsh &> /dev/null; then
+	for config_file ($HOME/dotfiles/zsh/zshenv/common/**/*.zsh) source $config_file
+fi
+if ls $HOME/dotfiles/zsh/zshenv/$PLATFORM/**/*.zsh &> /dev/null; then
+	for config_file ($HOME/dotfiles/zsh/zshenv/$PLATFORM/**/*.zsh) source $config_file
+fi
