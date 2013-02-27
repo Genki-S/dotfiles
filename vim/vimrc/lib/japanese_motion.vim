@@ -14,25 +14,34 @@ sunmap T
 " First search input ascii character. Found: move onto it, Not found: start searching for Japanese character.
 " Ends in visually selecting from previous cursor position to motion result position
 function! s:JapaneseMotion(motion)
-	let c = nr2char(getchar())
 	let l:flags = "n"
 	if a:motion ==# "F" || a:motion ==# "T"
 		let l:flags .= "b"
 	endif
 
-	if search(escape(c, "~."), l:flags, line(".")) != 0
+	let c = getchar()
+	if c == 27 " Esc
+		return
+	endif
+	let input = nr2char(c)
+	let target = input
+	if search(escape(input, "~."), l:flags, line(".")) != 0
 		" Normal motion command
 	else
 		" Search Japanese with Kana
-		while get(s:ascii_kana_dictionary, c, "none") ==# "none"
-			let c = c.nr2char(getchar())
-			if strlen(c) >= 5
+		while get(s:ascii_kana_dictionary, input, "none") ==# "none"
+			let c = getchar()
+			if c == 27
+				return
+			endif
+			let input = input . nr2char(c)
+			if strlen(input) >= 5
 				return
 			endif
 		endwhile
-		let c = get(s:ascii_kana_dictionary, c)
+		let target = get(s:ascii_kana_dictionary, input)
 	endif
-	return a:motion.c
+	return a:motion . target
 endfunction
 
 let s:ascii_kana_dictionary = {
