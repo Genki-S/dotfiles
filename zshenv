@@ -26,6 +26,7 @@ typeset -U path cdpath manpath fpath
 
 path=( # My bin prevails over system bin
 	$HOME/bin
+	$HOME/dotfiles/bin
 	# system bins
 	/usr/local/bin
 	/usr/bin
