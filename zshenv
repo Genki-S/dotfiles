@@ -65,3 +65,11 @@ export EDITOR=vim
 export MYBUNDLES=$HOME/.mybundles
 
 export RSENSE_HOME=$MYBUNDLES/rsense
+
+
+# ==================================================
+# My zshenv
+# ==================================================
+# Load all config files
+for config_file ($HOME/dotfiles/zsh/zshenv/common/**/*.zsh) source $config_file
+for config_file ($HOME/dotfiles/zsh/zshenv/$PLATFORM/**/*.zsh) source $config_file
