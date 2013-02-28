@@ -64,6 +64,7 @@ NeoBundle 'Shougo/vimproc', {
 		\ 'unix' : 'make -f make_unix.mak',
 	\ },
 \ }
+NeoBundle 'kana/vim-fakeclip'
 
 " For beautiful texts
 NeoBundleLazy 'godlygeek/tabular'
