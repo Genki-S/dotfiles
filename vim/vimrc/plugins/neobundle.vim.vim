@@ -111,7 +111,7 @@ NeoBundleFileType 'taka84u9/vim-ref-ri' ruby
 NeoBundleFileType 'tpope/vim-rails' ruby
 NeoBundleFileType 'tpope/vim-rake' ruby
 NeoBundleFileType 'tpope/vim-bundler' ruby
-NeoBundleFileType 'tpope/vim-endwise' ruby
+NeoBundleFileType 'tpope/vim-endwise' ruby,vim,sh,zsh,c,cpp
 NeoBundle 'Shougo/neocomplcache-rsense'
 
 " Multi Mark Down
