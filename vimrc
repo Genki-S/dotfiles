@@ -6,7 +6,10 @@ for f in split(glob('~/.vim/vimrc/helper/*.vim'), '\n')
 	execute 'source' f
 endfor
 
-for f in split(glob('~/.vim/vimrc/lib/*.vim'), '\n')
+for f in split(glob('~/.vim/vimrc/setting/*.vim'), '\n')
+	execute 'source' f
+endfor
+for f in split(glob('~/.vim/vimrc/mapping/*.vim'), '\n')
 	execute 'source' f
 endfor
 
