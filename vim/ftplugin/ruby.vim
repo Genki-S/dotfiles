@@ -6,5 +6,5 @@ setlocal shiftwidth=2
 setlocal softtabstop=2
 setlocal expandtab
 
-inoremap <buffer> <Leader><C-b> require "pry"; binding.pry
-nnoremap <buffer> <Leader><C-b> orequire "pry"; binding.pry<Esc>
+inoremap <silent> <buffer> <Leader><C-b> binding.pry
+nnoremap <silent> <buffer> <Leader><C-b> mzObinding.pry<Esc>`z:delmark z<CR>
