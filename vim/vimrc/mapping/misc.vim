@@ -8,6 +8,10 @@ nnoremap <unique> <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 " Wise quit
 nnoremap <unique> <silent> Q :call <SID>wise_quit()<CR>
 function! s:wise_quit()
+	if bufname("%") == "[Command Line]"
+		q
+		return
+	endif
 	if &l:modifiable && &l:modified
 		w
 	endif
