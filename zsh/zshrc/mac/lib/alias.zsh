@@ -1,3 +1,5 @@
+alias b="brew"
+alias bu="brew update"
 alias bs="brew search"
 function bi() {
 	if [ $# -gt 0 ]; then
@@ -12,3 +14,7 @@ function bi() {
 		fi
 	fi
 }
+
+# Directory
+alias bdr="cd $(brew --repository)"
+alias bdc="cd $(brew --cellar)"
