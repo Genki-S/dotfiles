@@ -20,6 +20,7 @@ symlink_dot tmux.conf
 symlink_dot ctags
 symlink_dot latexmkrc
 symlink_dot vimperatorrc
+symlink_dot git_template
 
 # ==================================================
 # My bundles
