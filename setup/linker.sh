@@ -21,6 +21,7 @@ symlink_dot ctags
 symlink_dot latexmkrc
 symlink_dot vimperatorrc
 symlink_dot git_template
+symlink_dot gitignore_global
 
 # ==================================================
 # My bundles
