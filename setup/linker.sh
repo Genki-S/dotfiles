@@ -7,7 +7,8 @@ function symlink_dot {
 	local symlink_src=$1
 	local symlink_dest=.$1
 	if [ -e $HOME/$symlink_dest ]; then
-		echo -n "$symlink_dest exists."
+		echo "$symlink_dest exists."
+		return
 	fi
 	ln -s $HOME/dotfiles/$symlink_src $HOME/$symlink_dest
 }
