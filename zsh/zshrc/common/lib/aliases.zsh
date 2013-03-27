@@ -16,7 +16,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias .......="cd ../../../../../.."
-alias sz="source $HOME/.zshrc"
+alias sz="source $HOME/.zshenv && source $HOME/.zshrc"
 
 # ==================================================
 # Git
