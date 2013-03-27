@@ -1,3 +1,6 @@
+# ==================================================
+# Brew
+# ==================================================
 alias b="brew"
 alias bu="brew update"
 alias bs="brew search"
@@ -18,3 +21,8 @@ function bi() {
 # Directory
 alias bdr="cd $(brew --repository)"
 alias bdc="cd $(brew --cellar)"
+
+# ==================================================
+# Frequent commands
+# ==================================================
+alias x="open"
