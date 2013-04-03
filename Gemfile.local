@@ -7,4 +7,12 @@ group :development do
   gem 'pry-rails'
   gem 'pry-debugger'
   gem 'awesome_print'
+
+  # Guard
+  gem 'rb-inotify', :require => false # for OS X
+  gem 'rb-fsevent', :require => false # for Linux
+  gem 'rb-fchange', :require => false # for Windows
+  gem 'guard'
+  gem 'rack-livereload'
+  gem 'guard-livereload'
 end
