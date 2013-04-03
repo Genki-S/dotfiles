@@ -109,7 +109,7 @@ command! -nargs=+ NeoBundleFileType
 " --------------------------------------------------
 NeoBundleFileType 'vim-ruby/vim-ruby' ruby
 NeoBundleFileType 'taka84u9/vim-ref-ri' ruby
-NeoBundleFileType 'tpope/vim-rails' ruby
+NeoBundle 'tpope/vim-rails'
 NeoBundleFileType 'tpope/vim-rake' ruby
 NeoBundleFileType 'tpope/vim-bundler' ruby
 NeoBundleFileType 'tpope/vim-endwise' ruby,vim,sh,zsh,c,cpp
