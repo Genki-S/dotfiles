@@ -3,3 +3,5 @@
 .mybundles
 vim/.bundle
 .netrwhist
+
+!Gemfile.local
