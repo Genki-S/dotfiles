@@ -6,4 +6,5 @@ group :development do
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-debugger'
+  gem 'awesome_print'
 end
