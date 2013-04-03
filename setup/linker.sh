@@ -23,6 +23,7 @@ symlink_dot latexmkrc
 symlink_dot vimperatorrc
 symlink_dot git_template
 symlink_dot gitignore_global
+symlink_dot pryrc
 
 # ==================================================
 # My bundles
