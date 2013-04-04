@@ -50,6 +50,9 @@ if ls -U $HOME/dotfiles/zsh/zshrc/$PLATFORM/**/*.zsh &> /dev/null; then
 	for config_file ($HOME/dotfiles/zsh/zshrc/$PLATFORM/**/*.zsh) source $config_file
 fi
 
+# Hooks
+add-zsh-hook precmd initializer_trigger
+
 # ==================================================
 # My bundles
 # ==================================================
