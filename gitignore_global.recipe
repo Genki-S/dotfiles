@@ -2,3 +2,5 @@
 Gemfile.local*
 Guardfile
 config/environments/genki.rb
+
+#Include# git/gitignore/Global/vim.gitignore
