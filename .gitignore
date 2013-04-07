@@ -5,3 +5,5 @@ vim/.bundle
 .netrwhist
 
 !Gemfile.local
+
+gitignore_global
