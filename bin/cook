@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+# Look at *.recipe files, and produce files according to various instructions
+Dir.glob("*.recipe") do |recipe|
+  dish = File.open(File.basename(recipe, ".recipe"), "w")
+  File.open(recipe, "r").each do |line|
+    line.match(/#(\w+)# (.*)/) do |m|
+      inst, arg = m[1], m[2]
+      case inst
+      when "Include"
+        dish.write(File.open(arg, "r").read)
+      end
+    end or dish.write(line)
+  end
+end
