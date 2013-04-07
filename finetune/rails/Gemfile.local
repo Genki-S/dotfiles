@@ -23,7 +23,11 @@ gem 'awesome_print'
 gem 'better_errors'
 gem 'binding_of_caller'
 
+## Documentation
+gem 'railroady'
+
 ## Misc.
 gem 'meta_request'
 gem 'sextant'
 gem 'quiet_assets'
+
