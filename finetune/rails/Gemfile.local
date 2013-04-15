@@ -18,6 +18,10 @@ gem 'guard-bundler'
 gem 'pry'
 gem 'pry-rails'
 gem 'pry-debugger'
+gem 'pry-coolline'
+gem 'pry-stack_explorer'
+gem 'pry-rescue'
+gem 'pry-doc'
 gem 'awesome_print'
 
 ## Better Errors
