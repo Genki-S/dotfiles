@@ -31,7 +31,14 @@ options     head
 snippet     bef
 abbr        before...end
 options     head
-    before :${1:all|each} do
+    before(:${1:all|each}) do
+      ${2}
+    end${0}
+
+snippet     aft
+abbr        after...end
+options     head
+    after(:${1:all|each}) do
       ${2}
     end${0}
 
