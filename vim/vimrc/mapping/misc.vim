@@ -1,3 +1,6 @@
+" M to make
+nnoremap <unique> M :make<Enter>
+
 " make & trigger :&& so it preserves flags
 nnoremap <unique> & :&&<Enter>
 xnoremap <unique> & :&&<Enter>
