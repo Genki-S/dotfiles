@@ -93,6 +93,11 @@ if [ $? -ne 0 ]; then
 fi
 [ -s $HOME/.tmuxinator/scripts/tmuxinator ] && source $HOME/.tmuxinator/scripts/tmuxinator
 
+# For fixing ncurses redrawing problem (with iTerm2 only?)
+if [[ -n $TMUX ]]; then
+	TERM=screen-256color
+fi
+
 # ==================================================
 # Welcome Message
 # ==================================================
