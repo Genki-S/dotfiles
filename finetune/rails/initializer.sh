@@ -17,4 +17,5 @@ guard init
 
 cp $MyRailsDir/env_genki.rb config/environments/genki.rb
 sed -i "" -e "s/<REPLACEME:ApplicationName>/$ApplicationName/g" config/environments/genki.rb
-
+# git filter
+echo "config/application.rb filter=rails_genki_env" >> .git/info/attributes
