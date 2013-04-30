@@ -1,0 +1,6 @@
+[submodule "submodules/gitignore"]
+	path = submodules/gitignore
+	url = http://github.com/github/gitignore
+[submodule "submodules/antigen"]
+	path = submodules/antigen
+	url = http://github.com/zsh-users/antigen
