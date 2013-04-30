@@ -7,7 +7,7 @@ compinit
 # ==================================================
 # Antigen
 # ==================================================
-source $HOME/dotfiles/zsh/antigen/antigen.zsh
+source $DOTDIR/submodules/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen-lib
@@ -34,7 +34,7 @@ antigen-bundle kennethreitz/autoenv
 source $MYBUNDLES/zsh-git-prompt/zshrc.sh
 export __GIT_PROMPT_DIR=$MYBUNDLES/zsh-git-prompt
 __EXECUTED_GIT_COMMAND=1 # To force prompt update at first
-antigen-theme $HOME/dotfiles/genki.zsh-theme
+antigen-theme $DOTDIR/zshfiles/genki.zsh-theme
 
 # Tell antigen that you're done.
 antigen-apply
@@ -43,11 +43,11 @@ antigen-apply
 # My zsh
 # ==================================================
 # Load all config files
-if ls -U $HOME/dotfiles/zsh/zshrc/common/**/*.zsh &> /dev/null; then
-	for config_file ($HOME/dotfiles/zsh/zshrc/common/**/*.zsh) source $config_file
+if ls -U $DOTDIR/zshfiles/zsh/zshrc/common/**/*.zsh &> /dev/null; then
+	for config_file ($DOTDIR/zshfiles/zsh/zshrc/common/**/*.zsh) source $config_file
 fi
-if ls -U $HOME/dotfiles/zsh/zshrc/$PLATFORM/**/*.zsh &> /dev/null; then
-	for config_file ($HOME/dotfiles/zsh/zshrc/$PLATFORM/**/*.zsh) source $config_file
+if ls -U $DOTDIR/zshfiles/zsh/zshrc/$PLATFORM/**/*.zsh &> /dev/null; then
+	for config_file ($DOTDIR/zshfiles/zsh/zshrc/$PLATFORM/**/*.zsh) source $config_file
 fi
 
 # Hooks
