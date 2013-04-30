@@ -171,6 +171,10 @@ snippet RANGE
 abbr a <= b <= c
 	RANGE(${1:a}, ${2:b}, ${3:c})${0}
 
+snippet rng
+abbr 0 <= x && x < y
+    (0 <= ${1:x} && $1 < ${2:y})${0}
+
 snippet field_input
 	cin >> ${1:height} >> ${2:width};
 	REP (i, $1) {
