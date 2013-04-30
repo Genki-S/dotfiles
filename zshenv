@@ -39,7 +39,7 @@ path=( # My bin prevails over system bin
 
 case $PLATFORM in
 	mac)
-		path=($(brew --prefix coreutils)/libexec/gnubin
+		path=(
 			$path
 			/usr/texbin
 			)
