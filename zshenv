@@ -41,6 +41,7 @@ case $PLATFORM in
 	mac)
 		path=($(brew --prefix coreutils)/libexec/gnubin
 			$path
+			/usr/texbin
 			)
 		;;
 esac
