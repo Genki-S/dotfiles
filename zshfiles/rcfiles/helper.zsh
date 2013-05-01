@@ -14,6 +14,10 @@ function expand_alias() {
 	echo $alias
 }
 
+function previous_command() {
+	echo `cat \`readlink -f $HISTFILE\` | tail -n1 | sed 's/[^;]*;//'`
+}
+
 function initializer_trigger() {
 	if (( $? != 0 )); then
 		# Previous command did not succeed
