@@ -1,3 +1,8 @@
+#!/bin/sh
+
+# Exit on first error
+set -e
+
 # Link dotfiles
 DOTDIR=$HOME/dotfiles
 dotfiles=(
@@ -36,7 +41,7 @@ bins=(
 	js-beautify/python/js-beautify
 	tidy-html5/bin/tidy
 	)
-if [[ $PLATFORM == "linux" ]]
+if [[ $PLATFORM == "linux" ]]; then
 	bins=(
 		$bins
 		peg-multimarkdown/multimarkdown
