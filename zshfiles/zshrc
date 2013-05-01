@@ -45,6 +45,7 @@ antigen-apply
 # Load all config files
 rcfiles=(
 	path.zsh
+	alias.zsh
 	ruby.zsh
 )
 for f in $rcfiles
