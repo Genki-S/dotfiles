@@ -46,7 +46,7 @@ antigen-apply
 rcfiles=(
 	path.zsh
 	env.zsh
-	alias.zsh
+	suger.zsh
 	completion.zsh
 	history.zsh
 	functions.zsh
