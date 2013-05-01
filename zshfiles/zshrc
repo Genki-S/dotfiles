@@ -43,6 +43,15 @@ antigen-apply
 # My zsh
 # ==================================================
 # Load all config files
+rcfiles=(
+	path.zsh
+	ruby.zsh
+)
+for f in $rcfiles
+do
+	source $DOTDIR/zshfiles/rcfiles/$f
+done
+
 if ls -U $DOTDIR/zshfiles/zsh/zshrc/common/**/*.zsh &> /dev/null; then
 	for config_file ($DOTDIR/zshfiles/zsh/zshrc/common/**/*.zsh) source $config_file
 fi
@@ -51,7 +60,7 @@ if ls -U $DOTDIR/zshfiles/zsh/zshrc/$PLATFORM/**/*.zsh &> /dev/null; then
 fi
 
 # Hooks
-add-zsh-hook precmd initializer_trigger
+# add-zsh-hook precmd initializer_trigger
 
 # ==================================================
 # My bundles
