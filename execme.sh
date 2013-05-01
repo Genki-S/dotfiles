@@ -3,6 +3,11 @@
 # Exit on first error
 set -e
 
+# Create necessary directories
+mkdir -p $HOME/.zhistlogs
+mkdir -p $HOME/.tmp/vim/backup
+mkdir -p $HOME/.tmp/vim/view
+
 # Link dotfiles
 DOTDIR=$HOME/dotfiles
 dotfiles=(
