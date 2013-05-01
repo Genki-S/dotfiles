@@ -1,7 +1,7 @@
 mkdir -p $MYBUNDLES
 
 # Install my bundles
-command vim -u $DOTDIR/bundle_vimrc -c "NeoBundleInstall" -c "quit"
+command vim -u $DOTDIR/setup/mybundlerc -c "NeoBundleInstall" -c "quit"
 
 bins=(
 	js-beautify/python/js-beautify
