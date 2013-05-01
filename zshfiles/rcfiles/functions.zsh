@@ -8,7 +8,3 @@ function noproxy () {
 	https_proxy=
 	ftp_proxy=
 }
-
-function mkcd () {
-	mkdir -p "$@" && eval cd "\"\$$#\""
-}

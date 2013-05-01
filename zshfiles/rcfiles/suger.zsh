@@ -12,6 +12,9 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias .......="cd ../../../../../.."
 alias sz="source $HOME/.zshenv && source $HOME/.zshrc"
+function mkcd () {
+	mkdir -p "$@" && eval cd "\"\$$#\""
+}
 
 # ==================================================
 # Global aliases
