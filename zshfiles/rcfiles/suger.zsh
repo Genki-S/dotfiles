@@ -1,6 +1,7 @@
 # ==================================================
 # Frequent commands
 # ==================================================
+alias ls="ls --color --classify"
 alias l="ls"
 alias la="ls -a"
 alias ax="atool -x"
