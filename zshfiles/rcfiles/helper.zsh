@@ -1,3 +1,19 @@
+function echoerr() { echo "$@" 1>&2 }
+
+function expand_alias() {
+	if (( $# != 1 )); then
+		echoerr "Usage: expand_alias CMD"
+		return 1
+	fi
+	alias $1 > /dev/null
+	if (( $? != 0 )); then
+		echo $1
+		return 0
+	fi
+	alias=`alias $1 | sed -e "s/[^=]*='\{0,1\}\([^']*\)'\{0,1\}/\1/"`
+	echo $alias
+}
+
 function initializer_trigger() {
 	if (( $? != 0 )); then
 		# Previous command did not succeed
@@ -23,8 +39,7 @@ function initializer_trigger() {
 	fi
 }
 
-function initializer()
-{
+function initializer() {
 	if (( $# == 0 )); then
 		echoerr "Usage: initializer NAME"
 		return 1

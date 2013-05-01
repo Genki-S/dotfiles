@@ -44,6 +44,7 @@ antigen-apply
 # ==================================================
 # Load all config files
 rcfiles=(
+	helper.zsh
 	path.zsh
 	env.zsh
 	suger.zsh
