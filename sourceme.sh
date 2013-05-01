@@ -6,6 +6,8 @@ dotfiles=(
 	vimfiles/vim
 	vimfiles/vimrc
 	rubyfiles/pryrc
+	gitfiles/git_template
+	gitfiles/gitignore_global
 	miscfiles/ctags
 	miscfiles/latexmkrc
 	miscfiles/tmux.conf
