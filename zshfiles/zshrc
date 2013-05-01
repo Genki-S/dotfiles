@@ -45,7 +45,12 @@ antigen-apply
 # Load all config files
 rcfiles=(
 	path.zsh
+	env.zsh
 	alias.zsh
+	completion.zsh
+	history.zsh
+	functions.zsh
+	vim.zsh
 	ruby.zsh
 	autojump.zsh
 )
