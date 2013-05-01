@@ -47,6 +47,7 @@ rcfiles=(
 	path.zsh
 	alias.zsh
 	ruby.zsh
+	autojump.zsh
 )
 for f in $rcfiles
 do
