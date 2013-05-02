@@ -8,6 +8,13 @@ mkdir -p $HOME/.zhistlogs
 mkdir -p $HOME/.tmp/vim/backup
 mkdir -p $HOME/.tmp/vim/view
 
+# Git submodule setup
+git submodule init
+git submodule update
+
+# Generate some dotfiles
+(cd $DOTDIR/gitfiles; $DOTDIR/bin/cook)
+
 # Link dotfiles
 DOTDIR=$HOME/dotfiles
 dotfiles=(
@@ -34,12 +41,6 @@ do
 	ln -s $basefile $dotfile
 done
 
-# Git submodule setup
-git submodule init
-git submodule update
-
-# If you have problem with antigen about https connection
-# sed -i 's/https/http/g' antigen.zsh
-
-# Source my bundles setup
+# Source other setups
+source $DOTDIR/setup/git.sh
 source $DOTDIR/setup/mybundle.sh
