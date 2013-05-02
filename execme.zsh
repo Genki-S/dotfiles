@@ -1,7 +1,10 @@
-#!/bin/sh
+#!/usr/local/bin/zsh
 
 # Exit on first error
 set -e
+
+DOTDIR=$HOME/dotfiles
+cd $DOTDIR
 
 # Create necessary directories
 mkdir -p $HOME/.zhistlogs
@@ -16,7 +19,6 @@ git submodule update
 (cd $DOTDIR/gitfiles; $DOTDIR/bin/cook)
 
 # Link dotfiles
-DOTDIR=$HOME/dotfiles
 dotfiles=(
 	zshfiles/zshrc
 	zshfiles/zshenv
