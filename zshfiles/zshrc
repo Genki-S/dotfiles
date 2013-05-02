@@ -50,6 +50,7 @@ rcfiles=(
 	suger.zsh
 	completion.zsh
 	history.zsh
+	hook.zsh
 	functions.zsh
 	vim.zsh
 	ruby.zsh
