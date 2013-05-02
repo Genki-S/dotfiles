@@ -1,12 +1,13 @@
 mkdir -p $MYBUNDLES
 
 # Install my bundles
-command vim -u $DOTDIR/setup/mybundlerc -c "NeoBundleInstall" -c "quit"
+command vim -u $DOTDIR/setup/mybundlerc -c "NeoBundleUpdate" -c "quit" || ;
 
 bins=(
 	js-beautify/python/js-beautify
 	tidy-html5/bin/tidy
 	)
+
 if [[ $PLATFORM == "linux" ]]; then
 	bins=(
 		$bins
