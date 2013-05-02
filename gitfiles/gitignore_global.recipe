@@ -3,7 +3,7 @@ Gemfile.local*
 Guardfile
 config/environments/genki.rb
 
-#Include# git/gitignore/Global/OSX.gitignore
-#Include# git/gitignore/Global/SASS.gitignore
-#Include# git/gitignore/Global/Tags.gitignore
-#Include# git/gitignore/Global/vim.gitignore
+#Include# $DOTDIR/submodules/gitignore/Global/OSX.gitignore
+#Include# $DOTDIR/submodules/gitignore/Global/SASS.gitignore
+#Include# $DOTDIR/submodules/gitignore/Global/Tags.gitignore
+#Include# $DOTDIR/submodules/gitignore/Global/vim.gitignore
