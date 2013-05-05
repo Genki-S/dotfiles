@@ -1,0 +1,9 @@
+# Rails stuffs
+Gemfile.local*
+Guardfile
+config/environments/genki.rb
+
+#Include# $DOTDIR/submodules/gitignore/Global/OSX.gitignore
+#Include# $DOTDIR/submodules/gitignore/Global/SASS.gitignore
+#Include# $DOTDIR/submodules/gitignore/Global/Tags.gitignore
+#Include# $DOTDIR/submodules/gitignore/Global/vim.gitignore

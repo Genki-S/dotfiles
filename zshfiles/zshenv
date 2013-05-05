@@ -1,0 +1,26 @@
+# ==================================================
+# Platform check
+# ==================================================
+case $OSTYPE in
+	darwin*)
+		PLATFORM='mac'
+		;;
+	linux*)
+		PLATFORM='linux'
+		;;
+	*)
+		PLATFORM='unknown'
+		;;
+esac
+
+# ==================================================
+# My zshenv
+# ==================================================
+# Load all config files
+envfiles=(
+	env.zsh
+)
+for f in $envfiles
+do
+	source $HOME/dotfiles/zshfiles/envfiles/$f
+done
