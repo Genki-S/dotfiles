@@ -51,6 +51,7 @@ rcfiles=(
 	completion.zsh
 	history.zsh
 	hook.zsh
+	highlight.zsh
 	functions.zsh
 	vim.zsh
 	ruby.zsh
