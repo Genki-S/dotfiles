@@ -45,4 +45,6 @@ done
 
 # Source other setups
 source $DOTDIR/setup/git.sh
+source $DOTDIR/setup/vim.sh
 source $DOTDIR/setup/mybundle.sh
+source $DOTDIR/setup/tagmaker.sh
