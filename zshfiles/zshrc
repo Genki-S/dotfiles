@@ -55,7 +55,6 @@ rcfiles=(
 	functions.zsh
 	vim.zsh
 	ruby.zsh
-	autojump.zsh
 )
 for f in $rcfiles
 do
