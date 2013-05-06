@@ -19,6 +19,7 @@ esac
 # Load all config files
 envfiles=(
 	env.zsh
+	ruby.zsh
 )
 for f in $envfiles
 do
