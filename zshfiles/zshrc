@@ -55,6 +55,7 @@ rcfiles=(
 	functions.zsh
 	vim.zsh
 	ruby.zsh
+	fasd.zsh
 )
 for f in $rcfiles
 do
