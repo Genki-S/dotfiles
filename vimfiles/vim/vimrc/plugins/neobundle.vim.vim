@@ -38,6 +38,7 @@ NeoBundle 'tyru/vim-altercmd'
 NeoBundleLazy 'vim-scripts/UnconditionalPaste'
 NeoBundle 'goldfeld/vim-seek'
 NeoBundle 'thinca/vim-qfreplace'
+NeoBundle 'tpope/vim-abolish'
 
 " Programming Features
 NeoBundleLazy 'thinca/vim-quickrun'
