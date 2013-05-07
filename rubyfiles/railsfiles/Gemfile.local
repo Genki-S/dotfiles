@@ -34,7 +34,7 @@ gem 'railroady'
 ## Misc.
 gem 'meta_request'
 gem 'sextant'
-gem 'quiet_assets'
+# gem 'quiet_assets'
 
 # Testing
 gem 'rspec'
