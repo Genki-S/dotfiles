@@ -109,6 +109,8 @@ if [[ -n $TMUX ]]; then
 	TERM=screen-256color
 fi
 
+DISABLE_AUTO_TITLE=true
+
 # ==================================================
 # Welcome Message
 # ==================================================
