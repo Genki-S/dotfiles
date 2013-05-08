@@ -12,7 +12,7 @@ function report_error() {
 }
 trap 'report_error $0 ${LINENO} ${$?}' ERR
 
-DOTDIR=$HOME/dotfiles
+source $HOME/dotfiles/zshfiles/envfiles/env.zsh
 cd $DOTDIR
 
 # Create necessary directories
