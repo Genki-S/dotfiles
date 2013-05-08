@@ -2,6 +2,15 @@
 
 # Exit on first error
 set -e
+if [[ -n $DEBUG ]]; then
+	set -x
+fi
+
+# Report error position
+function report_error() {
+	echo "Error at $1 on line $2 with exit code $3"
+}
+trap 'report_error $0 ${LINENO} ${$?}' ERR
 
 DOTDIR=$HOME/dotfiles
 cd $DOTDIR
