@@ -56,3 +56,5 @@ done
 source $DOTDIR/setup/git.sh
 source $DOTDIR/setup/vim.sh
 source $DOTDIR/setup/mybundle.sh
+
+echo "Remember to change your login shell!"
