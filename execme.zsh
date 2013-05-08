@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/local/bin/zsh --no-rcs
 
 # Exit on first error
 set -e
