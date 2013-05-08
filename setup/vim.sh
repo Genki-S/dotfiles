@@ -8,4 +8,4 @@ if [ ! -d $HOME/.vimbundles/neobundle.vim ]; then
 fi
 
 # Neobundle will do the rest.
-command vim -c "NeoBundleInstall" -c "quit" || ;
+command vim -c "NeoBundleUpdate" -c "quit" || ;
