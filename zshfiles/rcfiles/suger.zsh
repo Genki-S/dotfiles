@@ -36,7 +36,7 @@ alias gcam="git commit --amend"
 # Tmux related
 # ==================================================
 alias ms="mux start"
-
+alias mo="mux open"
 
 # ==================================================
 # Platform specific
