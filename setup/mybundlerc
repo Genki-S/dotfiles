@@ -49,3 +49,4 @@ NeoBundle 'm2ym/rsense', {
 		\ 'mac': 'ant && chmod +x bin/release && ruby etc/config.rb > ~/.rsense',
 	\ }
 \ }
+NeoBundle 'VitaliyRodnenko/geeknote'
