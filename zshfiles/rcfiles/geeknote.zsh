@@ -59,3 +59,24 @@ function sq3r() {
 		--notebook "SQ3R"
 	geeknote edit --note "$title"
 }
+
+# PCS
+function pcs() {
+	echo -n "Title: "
+	read title
+	echo -n "Tags(space separated): "
+	read tags
+	geeknote create \
+		--title $title \
+		--content "
+# Problem
+
+# Cause
+
+# Solution
+
+" \
+		--tags $tags \
+		--notebook "PCS"
+	geeknote edit --note "$title"
+}
