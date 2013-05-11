@@ -34,3 +34,28 @@ function spark() {
 function gni() {
 	geeknote create --title "$*" --content ""
 }
+
+# SQ3R
+function sq3r() {
+	echo -n "Title: "
+	read title
+	echo -n "Tags(space separated): "
+	read tags
+	geeknote create \
+		--title $title \
+		--content "
+# Survey
+
+# Question
+
+# Read
+
+# Recite
+
+# Review
+
+" \
+		--tags $tags \
+		--notebook "SQ3R"
+	geeknote edit --note "$title"
+}
