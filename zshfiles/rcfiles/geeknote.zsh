@@ -22,3 +22,15 @@ function jl() {
 	read tags
 	geeknote create --title $title --content "WRITE" --tags $tags --notebook Journal
 }
+
+# Stash my idea
+function spark() {
+	echo -n "Tags(space separated): "
+	read tags
+	geeknote create --title "spark on `date`" --content "$*" --tags $tags --notebook "The Spark File"
+}
+
+# GTD collection
+function gni() {
+	geeknote create --title "$*" --content ""
+}
