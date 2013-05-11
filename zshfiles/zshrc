@@ -55,6 +55,7 @@ rcfiles=(
 	functions.zsh
 	vim.zsh
 	fasd.zsh
+	geeknote.zsh
 )
 for f in $rcfiles
 do
