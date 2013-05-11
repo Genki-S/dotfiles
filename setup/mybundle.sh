@@ -25,5 +25,6 @@ do
 	binfile=$HOME/bin/$binname
 	if [[ -L $binfile ]]; then rm $binfile; fi
 	ln -s $basefile $binfile
+	chmod +x $basefile
 done
 
