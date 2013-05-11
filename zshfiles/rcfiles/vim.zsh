@@ -1,5 +1,5 @@
 function myvim() {
-	vimentor vim --servername genki $*
+	vim --servername genki $*
 	__EXECUTED_GIT_COMMAND=1
 }
 
