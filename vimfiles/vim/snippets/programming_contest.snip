@@ -192,3 +192,12 @@ snippet print_field_func
 			cerr << endl;
 		}
 	}
+
+snippet in_1
+    ${1:type} ${2:var}; cin >> $2;${0}
+snippet in_2
+    ${1:type} ${2:var}, ${3:var}; cin >> $2 >> $3;${0}
+snippet in_3
+    ${1:type} ${2:var}, ${3:var}, ${4:var}; cin >> $2 >> $3 >> $4;${0}
+snippet in_4
+    ${1:type} ${2:var}, ${3:var}, ${4:var}, ${5:var}; cin >> $2 >> $3 >> $4 >> $5;${0}
