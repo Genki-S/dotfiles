@@ -36,6 +36,7 @@ dotfiles=(
 	rubyfiles/pryrc
 	gitfiles/git_template
 	gitfiles/gitignore_global
+	gitfiles/gitconfig
 	miscfiles/ctags
 	miscfiles/latexmkrc
 	miscfiles/tmux.conf
