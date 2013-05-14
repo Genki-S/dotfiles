@@ -18,14 +18,14 @@ alias gnsync="python $MYBUNDLES/geeknote/gnsync.py"
 function jl() {
 	echo -n "Title: "
 	read title
-	echo -n "Tags(space separated): "
+	echo -n "Tags(comma separated): "
 	read tags
 	geeknote create --title $title --content "WRITE" --tags $tags --notebook Journal
 }
 
 # Stash my idea
 function spark() {
-	echo -n "Tags(space separated): "
+	echo -n "Tags(comma separated): "
 	read tags
 	geeknote create --title "spark on `date`" --content "$*" --tags $tags --notebook "The Spark File"
 }
@@ -39,7 +39,7 @@ function gni() {
 function sq3r() {
 	echo -n "Title: "
 	read title
-	echo -n "Tags(space separated): "
+	echo -n "Tags(comma separated): "
 	read tags
 	geeknote create \
 		--title $title \
@@ -64,7 +64,7 @@ function sq3r() {
 function pcs() {
 	echo -n "Title: "
 	read title
-	echo -n "Tags(space separated): "
+	echo -n "Tags(comma separated): "
 	read tags
 	geeknote create \
 		--title $title \
