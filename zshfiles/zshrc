@@ -54,6 +54,7 @@ rcfiles=(
 	hook.zsh
 	highlight.zsh
 	functions.zsh
+	bindkey.zsh
 	vim.zsh
 	git.zsh
 	fasd.zsh
