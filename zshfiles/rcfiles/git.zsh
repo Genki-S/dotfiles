@@ -1,5 +1,7 @@
 # Use hub
-alias git=hub
+function git() {
+	hub $*
+}
 
 # Sugers
 alias gf="git diff --color"
