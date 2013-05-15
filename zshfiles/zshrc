@@ -21,6 +21,7 @@ antigen-bundle zsh-users/zsh-syntax-highlighting
 
 # More completions
 antigen-bundle zsh-users/zsh-completions src
+antigen-bundle glidenote/hub-zsh-completion
 
 # Easy history search
 antigen-bundle zsh-users/zsh-history-substring-search
