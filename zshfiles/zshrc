@@ -54,6 +54,7 @@ rcfiles=(
 	highlight.zsh
 	functions.zsh
 	vim.zsh
+	git.zsh
 	fasd.zsh
 	geeknote.zsh
 )

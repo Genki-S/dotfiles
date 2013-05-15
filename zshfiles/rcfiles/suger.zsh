@@ -24,15 +24,6 @@ alias -g G="| grep -i"
 alias -g V="| grep -v"
 
 # ==================================================
-# Git
-# ==================================================
-alias gf="git diff --color"
-alias gr="git reset"
-alias grh~="git reset HEAD~"
-alias grh\^="git reset 'HEAD^'"
-alias gcam="git commit --amend"
-
-# ==================================================
 # Tmux related
 # ==================================================
 alias ms="mux start"
