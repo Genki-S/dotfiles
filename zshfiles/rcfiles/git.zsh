@@ -1,7 +1,8 @@
 # Use hub
-function git() {
-	hub $*
-}
+alias git=hub
+if type compdef >/dev/null; then
+	compdef hub=git
+fi
 
 # Sugers
 alias gf="git diff --color"
