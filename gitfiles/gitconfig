@@ -8,6 +8,9 @@
 [core]
 	excludesfile = ~/.gitignore_global
 
+[push]
+	default = upstream
+
 [filter "rails_genki_env"]
 	smudge = sed 's/Bundler.require(\\*Rails.groups(:assets => %w(development test)))/Bundler.require(*Rails.groups(:assets => %w(development test genki)))/'
 	clean = sed 's/Bundler.require(\\*Rails.groups(:assets => %w(development test genki)))/Bundler.require(*Rails.groups(:assets => %w(development test)))/'
