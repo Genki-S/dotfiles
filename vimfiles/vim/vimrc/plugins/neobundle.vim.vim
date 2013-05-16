@@ -48,6 +48,10 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundleLazy 'majutsushi/tagbar'
 NeoBundle 'chrisbra/changesPlugin'
 
+" Text Object
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'gilligan/textobj-gitgutter'
+
 " Integration with outer softwares / services
 NeoBundle 'tpope/vim-fugitive'
 NeoBundleLazy 'gregsexton/gitv'
