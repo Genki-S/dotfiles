@@ -22,3 +22,7 @@ alias gsl="git stash list"
 alias gss="git stash save"
 alias gsf="git stash show"
 alias gsp="git stash pop"
+# github issues
+alias gjob="ghi list --mine"
+alias gis="ghi show"
+alias gic="ghi comment"
