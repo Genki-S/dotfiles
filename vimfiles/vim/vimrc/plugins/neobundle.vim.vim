@@ -68,6 +68,7 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'sjl/splice.vim'
+NeoBundle 'airblade/vim-gitgutter'
 
 " For beautiful texts
 NeoBundleLazy 'godlygeek/tabular'
