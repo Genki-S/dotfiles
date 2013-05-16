@@ -6,6 +6,9 @@ export MYBUNDLES=$HOME/.mybundles
 export TERM=xterm-256color
 export EDITOR=vim
 
+# Locale
+export LC_CTYPE=en_US.UTF-8
+
 # Miscellaneous
 export RSENSE_HOME=$MYBUNDLES/rsense
 export HTTP_HOME=http://vim.wikia.com/wiki/Special:Random
