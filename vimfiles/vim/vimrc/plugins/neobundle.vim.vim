@@ -66,7 +66,6 @@ NeoBundle 'Shougo/vimproc', {
 	\ },
 \ }
 NeoBundle 'kana/vim-fakeclip'
-NeoBundle 'kakkyz81/evervim'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'sjl/splice.vim'
 
