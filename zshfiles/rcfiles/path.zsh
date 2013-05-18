@@ -36,3 +36,9 @@ if [[ $PLATFORM == "mac" ]]; then
 		/usr/texbin
 	)
 fi
+
+
+fpath=(
+	$fpath
+	$WIDGETDIR
+)
