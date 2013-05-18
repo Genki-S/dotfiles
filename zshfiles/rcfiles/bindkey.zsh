@@ -12,3 +12,5 @@ do
 	autoload -U $wgt:t
 	zle -N $wgt:t
 done
+
+bindkey '//' global-expansion-home-dir

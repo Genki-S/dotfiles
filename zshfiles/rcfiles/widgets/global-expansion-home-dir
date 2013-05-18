@@ -1,0 +1,11 @@
+# vim: filetype=zsh
+
+# Home directory is accessed so often but tilde is too far to hit.
+# Binding this widget to e.g. "//" will rescue you from the labor.
+# Of course this does not expand if "//" is preceded by non-space.
+
+if [ ${LBUFFER[-1]} = " " ]; then
+	LBUFFER+="~/"
+else
+	LBUFFER+=$KEYS
+fi
