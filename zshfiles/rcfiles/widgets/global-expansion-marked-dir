@@ -1,0 +1,18 @@
+# vim: filetype=zsh
+
+# Some directories are often used.
+# Therefore, expanding it with a few keystrokes is useful.
+# This is inspired by vim's mark feature.
+
+# TODO: move this hash to global
+#       and make it modifiable with another zle widget
+typeset -A marks
+marks=(
+	h ~/
+	d ~/Downloads/
+	p ~/Projects/
+)
+
+local input_key
+read -k 1 input_key
+LBUFFER+=${marks[$input_key]}

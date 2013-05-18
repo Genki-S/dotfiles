@@ -14,3 +14,7 @@ do
 done
 
 bindkey '//' global-expansion-home-dir
+# I mean '^/'. Only on mac?
+bindkey '^_' global-expansion-marked-dir
+
+# Tip: press <C-v><key> to get <key>'s keycode
