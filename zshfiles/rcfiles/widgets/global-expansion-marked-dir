@@ -9,6 +9,7 @@
 typeset -A marks
 marks=(
 	h ~/
+	t ~/Desktop/
 	d ~/Downloads/
 	p ~/Projects/
 )
