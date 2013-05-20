@@ -29,8 +29,6 @@ if [[ $PLATFORM == "mac" ]]; then
 	path=(
 		# Use gnu coreutils
 		$(brew --prefix coreutils)/libexec/gnubin
-		# Brew bin prevails
-		/usr/local/bin
 		$path
 		# texbin
 		/usr/texbin
