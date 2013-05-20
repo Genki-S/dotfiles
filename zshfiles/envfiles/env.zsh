@@ -8,7 +8,7 @@ export TERM=xterm-256color
 export EDITOR=vim
 
 # Locale
-export LC_CTYPE=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Miscellaneous
 export RSENSE_HOME=$MYBUNDLES/rsense
