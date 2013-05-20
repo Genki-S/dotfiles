@@ -6,14 +6,6 @@
 
 # TODO: move this hash to global
 #       and make it modifiable with another zle widget
-typeset -A marks
-marks=(
-	h ~/
-	t ~/Desktop/
-	d ~/Downloads/
-	p ~/Projects/
-)
-
-local input_key
-read -k 1 input_key
-LBUFFER+=${marks[$input_key]}
+local REPLY
+read-from-minibuffer -k 1 "Mark:"
+LBUFFER+=${zvi_dirmarks[$REPLY]}
