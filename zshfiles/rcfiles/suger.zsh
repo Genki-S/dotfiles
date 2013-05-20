@@ -45,6 +45,9 @@ elif [[ $PLATFORM == "mac" ]]; then
 	# http://d.hatena.ne.jp/edvakf/20080929/1222657230
 	alias pbcopy="nkf -w | __CF_USER_TEXT_ENCODING=0x$(printf %x $(id -u)):0x08000100:14 pbcopy"
 
+	# Unzip which can extract fxcking Japanese zip
+	alias junzip='/usr/local/bin/unzip -Ocp932'
+
 	# Brew
 	alias b="brew"
 	alias bu="brew update"
