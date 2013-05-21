@@ -23,6 +23,12 @@ source $zvi_dirmarks_save_file
 
 autoload -U read-from-minibuffer
 
+function zvi-list-dirmarks {
+	for k in ${(k)zvi_dirmarks}
+	do
+		echo $k ":" $zvi_dirmarks[$k]
+	done
+}
 function zvi-set-dirmark {
 	local REPLY
 	read-from-minibuffer -k 1 "Mark:"
