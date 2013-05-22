@@ -52,7 +52,6 @@ rcfiles=(
 	hook.zsh
 	highlight.zsh
 	functions.zsh
-	bindkey.zsh
 	vim.zsh
 	git.zsh
 	fasd.zsh
@@ -65,6 +64,10 @@ done
 
 # Hooks
 # add-zsh-hook precmd initializer_trigger
+
+# Modules
+zvimdir=$HOME/Projects/zsh-super-vim-mode
+source $zvimdir/zsh-super-vim-mode.zsh
 
 # ==================================================
 # My bundles
@@ -116,31 +119,31 @@ DISABLE_AUTO_TITLE=true
 # ==================================================
 # Welcome Message
 # ==================================================
-uname -a
-cat <<HEREDOC
-  _____                                   __  ___   ___ _   __  
- |  __ \                                 /_ |/ _ \ / _ (_) / /  
- | |  | | ___    _   _  ___  _   _ _ __   | | | | | | | | / /   
- | |  | |/ _ \  | | | |/ _ \| | | | '__|  | | | | | | | |/ /    
- | |__| | (_) | | |_| | (_) | |_| | |     | | |_| | |_| / / _ _ 
- |_____/ \___/   \__, |\___/ \__,_|_|     |_|\___/ \___/_/ (_|_)
-                  __/ |                                         
-                 |___/                                          
-HEREDOC
+# uname -a
+# cat <<HEREDOC
+  # _____                                   __  ___   ___ _   __  
+ # |  __ \                                 /_ |/ _ \ / _ (_) / /  
+ # | |  | | ___    _   _  ___  _   _ _ __   | | | | | | | | / /   
+ # | |  | |/ _ \  | | | |/ _ \| | | | '__|  | | | | | | | |/ /    
+ # | |__| | (_) | | |_| | (_) | |_| | |     | | |_| | |_| / / _ _ 
+ # |_____/ \___/   \__, |\___/ \__,_|_|     |_|\___/ \___/_/ (_|_)
+                  # __/ |                                         
+                 # |___/                                          
+# HEREDOC
 
-# Random reminders
-echo
-echo "=== Random Reminder ==="
-shuf -n 1 ~/random_reminders.txt
+# # Random reminders
+# echo
+# echo "=== Random Reminder ==="
+# shuf -n 1 ~/random_reminders.txt
 
-# Oblique Strategies
-echo
-echo "=== Oblique Strategy ==="
-shuf -n 1 ~/oblique_strategies.txt
+# # Oblique Strategies
+# echo
+# echo "=== Oblique Strategy ==="
+# shuf -n 1 ~/oblique_strategies.txt
 
-# Tmuxinator project list
-if [ -z "$TMUX" ]; then
-	echo
-	echo "=== My Projects ==="
-	mux list
-fi
+# # Tmuxinator project list
+# if [ -z "$TMUX" ]; then
+	# echo
+	# echo "=== My Projects ==="
+	# mux list
+# fi
