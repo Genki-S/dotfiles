@@ -1,3 +1,6 @@
+# Encoding
+Encoding.default_external = "UTF-8"
+
 # Aliases
 Pry.commands.alias_command 'c', 'continue'
 Pry.commands.alias_command 's', 'step'
