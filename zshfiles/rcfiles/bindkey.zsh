@@ -35,8 +35,12 @@ function zvi-list-jumplist {
 	do
 		echo $d
 	done
-	echo "YOU ARE HERE"
-	dirs -p
+	echo "\033[31m`dirs -lp | awk '{if (NR == 1) print}'`\033[0m"
+	dirs -lp | awk '{if (NR > 1) print}'
+}
+function zvi-clear-jumplist {
+	zvi_jumplist=()
+	dirs -c
 }
 zle -N zvi-jump-backward
 zle -N zvi-jump-forward
