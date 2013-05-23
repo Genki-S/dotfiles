@@ -1,7 +1,7 @@
 local return_status="%{$fg[red]%}%(?..✘)%{$reset_color%}"
 
 PROMPT='
-%(?,,${return_status}[%?]%{$reset_color%} )%(1j.%{$fg[yellow]%}Job[%j]%{$reset_color%} .)%{$fg[green]%}[ ${PWD/#$HOME/~} ]%{$reset_color%} $(git_super_status) %{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} %{$fg_bold[red]%}$(vi_command_mode_prompt_info)%{$reset_color%}
+%(?,,${return_status}[%?]%{$reset_color%} )%(1j.%{$fg[yellow]%}Job[%j]%{$reset_color%} .)%{$fg[green]%}[ ${PWD/#$HOME/~} ]%{$reset_color%} $(git_super_status) %{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} %{$fg_bold[red]%}$(zvim_is_command_mode && echo "CMD")%{$reset_color%}
 %# '
 
 # Dirty fix for ambiwidth characters (just adding single space)
