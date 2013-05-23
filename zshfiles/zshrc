@@ -68,6 +68,7 @@ done
 
 # Modules
 zvimdir=$HOME/Projects/zsh-super-vim-mode
+zvim_use_emacs_binding=true
 source $zvimdir/zsh-super-vim-mode.zsh
 
 # ==================================================
