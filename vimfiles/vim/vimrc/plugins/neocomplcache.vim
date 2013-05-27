@@ -4,6 +4,8 @@ let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_text_mode_filetypes = {
 	\ 'text': 1,
 	\ 'tex': 1,
+	\ 'markdown': 1,
+	\ 'mmd': 1,
 	\ 'gitcommit': 1,
 \ }
 
