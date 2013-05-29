@@ -69,6 +69,6 @@ do
 	zle -N $wgt:t
 done
 
-bindkey '//' global-expansion-home-dir
+bindkey '/' global-expansion-home-dir
 
 # Tip: press <C-v><key> to get <key>'s keycode
