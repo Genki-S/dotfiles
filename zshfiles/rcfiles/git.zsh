@@ -8,6 +8,7 @@ function git() {
 export GHI_TOKEN=`cat ~/private_files/ghi_token`
 
 # Sugers
+alias gs="git status --short --untracked-files"
 alias gf="git diff --color"
 alias gfc="git diff --color --cached"
 alias gr="git reset"
