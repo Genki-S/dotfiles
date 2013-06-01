@@ -1,5 +1,16 @@
 autocmd BufEnter * nested :call tagbar#autoopen(0)
 
+let g:tagbar_type_scss = {
+	\ 'ctagstype' : 'Scss',
+	\ 'kinds' : [
+		\ 'c:classes',
+		\ 'i:ids',
+		\ 's:selectors',
+		\ 'm:mixins',
+		\ 'v:variables',
+	\ ]
+\ }
+
 let g:tagbar_type_scala = {
 	\ 'ctagstype' : 'Scala',
 	\ 'kinds' : [
