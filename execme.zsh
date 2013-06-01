@@ -19,6 +19,7 @@ cd $DOTDIR
 mkdir -p $HOME/.zhistlogs
 mkdir -p $HOME/.tmp/vim/backup
 mkdir -p $HOME/.tmp/vim/view
+mkdir -p $HOME/.tmp/vim/undo
 
 # Git submodule setup
 git submodule init
