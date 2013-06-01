@@ -1,3 +1,5 @@
+autocmd BufEnter * nested :call tagbar#autoopen(0)
+
 let g:tagbar_type_scala = {
 	\ 'ctagstype' : 'Scala',
 	\ 'kinds' : [

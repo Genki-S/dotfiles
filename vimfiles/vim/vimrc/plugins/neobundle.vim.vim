@@ -45,7 +45,7 @@ NeoBundleLazy 'thinca/vim-quickrun'
 NeoBundleLazy 'ujihisa/quicklearn'
 NeoBundleLazy 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundleLazy 'majutsushi/tagbar'
+NeoBundle 'majutsushi/tagbar'
 NeoBundle 'chrisbra/changesPlugin'
 
 " Text Object
