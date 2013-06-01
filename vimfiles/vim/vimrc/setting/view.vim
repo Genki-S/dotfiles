@@ -1,10 +1,11 @@
 if has('mksession')
 	set viewdir=~/.tmp/vim/view
-	set viewoptions=folds,options,cursor
+	set viewoptions=folds
 endif
 
 let g:skipview_files = [
-\	'[EXAMPLE PLUGIN BUFFER]'
+\	'COMMIT_EDITMSG',
+\	'[EXAMPLE PLUGIN BUFFER]',
 \]
 
 function! MakeViewCheck()
