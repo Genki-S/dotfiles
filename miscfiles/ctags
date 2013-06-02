@@ -8,7 +8,7 @@
 --langmap=scss:.scss
 --regex-scss=/^[ \t]*\.([A-Za-z0-9_-]+)/.\1/c,class,classes/
 --regex-scss=/^[ \t]*#([A-Za-z0-9_-]+)/#\1/i,id,ids/
---regex-scss=/^[ \t]*(([A-Za-z0-9_-&:]+[ \t\n,]+)+)\{/\1/s,selector,selectors/
+--regex-scss=/^[ \t]*(([A-Za-z0-9_&:-]+[ \t\n,]+)+)\{/\1/s,selector,selectors/
 --regex-scss=/^[ \t]*@mixin[ \t]+([A-Za-z0-9_-]+)/\1/m,mixin,mixins/
 --regex-scss=/^[ \t]*\$([A-Za-z0-9_-]+)[ \t]*:/\1/v,variable,variables/
 
