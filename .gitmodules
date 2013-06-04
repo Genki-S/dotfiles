@@ -4,3 +4,6 @@
 [submodule "submodules/antigen"]
 	path = submodules/antigen
 	url = http://github.com/zsh-users/antigen
+[submodule "submodules/vimperator-plugins"]
+	path = submodules/vimperator-plugins
+	url = http://github.com/vimpr/vimperator-plugins.git
