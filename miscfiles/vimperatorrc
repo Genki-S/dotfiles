@@ -28,4 +28,9 @@ vnoremap P y<Esc><Esc>P
 set complete=tsl
 set focuscontent
 
+
+" Plugins
+let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins"
+let g:plugin_loader_plugins = "_libly,appendAnchor,pluginManager"
+
 " vim: set ft=vim:
