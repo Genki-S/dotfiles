@@ -41,6 +41,7 @@ dotfiles=(
 	miscfiles/ctags
 	miscfiles/latexmkrc
 	miscfiles/tmux.conf
+	miscfiles/vimperator
 	miscfiles/vimperatorrc
 	)
 
