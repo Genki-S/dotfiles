@@ -52,9 +52,6 @@ function sync_linker {
 	ln -s $target $link
 }
 
-# Vimperator
-sync_linker $HOME/.vimperator
-
 # Firefox
 sync_linker $HOME/.mozilla/firefox/profiles.ini
 sync_linker $HOME/.mozilla/firefox/qtlp6vd2.default
