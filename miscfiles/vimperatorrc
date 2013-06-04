@@ -31,6 +31,10 @@ set focuscontent
 
 " Plugins
 let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins"
-let g:plugin_loader_plugins = "_libly,appendAnchor,pluginManager"
+let g:plugin_loader_plugins = "_libly,appendAnchor,lookupDictionary,pluginManager"
+
+nnoremap <Leader>,e :eijiro 
+vnoremap E y:eijiro <M-v><CR>
+nmap <Leader>e chbveE
 
 " vim: set ft=vim:
