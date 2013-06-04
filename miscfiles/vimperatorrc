@@ -1,7 +1,31 @@
-let mapleader = "\\"
+let mapleader = ","
 
 " Proxy mappings
 nnoremap pd :proxy direct<CR>:echo "No proxy"<CR>
 nnoremap pw :proxy pac -reload file:///home/genki/waseda.pac<CR>:echo "Waseda proxy"<CR>
 
-" vim: set ft=vimperator:
+" Mode Changing
+nnoremap v cv
+vnoremap <Esc> <Esc><Esc>
+
+" For US Keyboard
+nnoremap ; :
+nnoremap : ;
+
+" Tabs
+nnoremap <C-h> :tabmove! -1<CR>
+nnoremap <C-l> :tabmove! +1<CR>
+
+" Turn css on/off
+nnoremap ! :set invum<CR>
+
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+" Search selected text
+vnoremap P y<Esc><Esc>P
+
+set complete=tsl
+set focuscontent
+
+" vim: set ft=vim:
