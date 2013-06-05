@@ -7,3 +7,5 @@ vim/.bundle
 !Gemfile.local
 
 gitignore_global
+
+miscfiles/vimperator/info
