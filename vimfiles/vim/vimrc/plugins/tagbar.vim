@@ -1,4 +1,4 @@
-autocmd BufEnter * nested :call tagbar#autoopen(0)
+autocmd FileType * :TagbarOpen
 
 let g:tagbar_type_scss = {
 	\ 'ctagstype' : 'Scss',
