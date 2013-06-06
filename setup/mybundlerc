@@ -22,7 +22,7 @@ endif
 " ==================================================
 NeoBundle 'seebi/tmux-colors-solarized'
 NeoBundle 'seebi/dircolors-solarized'
-NeoBundle 'olivierverdier/zsh-git-prompt'
+NeoBundle 'Genki-S/zsh-git-prompt'
 
 " ==================================================
 " Web
