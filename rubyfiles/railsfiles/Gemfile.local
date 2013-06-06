@@ -1,40 +1,50 @@
 # Include the regular Gemfile
 eval File.read('Gemfile')
 
-# Add any gems and groups that you don't want to keep local
+
+# This file is instance_eval-ed, so @dependencies can be accessed
+def is_specified?(gemname)
+  not @dependencies.find { |d| d.name == gemname }.nil?
+end
+
+def want_gem(gemname, *args)
+  unless is_specified? gemname
+    gem gemname, args
+  end
+end
 
 # Guard
-gem 'rb-inotify', :require => false # for OS X
-gem 'rb-fsevent', :require => false # for Linux
-gem 'rb-fchange', :require => false # for Windows
-gem 'guard'
-gem 'rack-livereload'
-gem 'guard-livereload'
-gem 'guard-bundler'
+want_gem 'rb-inotify', :require => false # for OS X
+want_gem 'rb-fsevent', :require => false # for Linux
+want_gem 'rb-fchange', :require => false # for Windows
+want_gem 'guard'
+want_gem 'rack-livereload'
+want_gem 'guard-livereload'
+want_gem 'guard-bundler'
 
 # Debugging
 
 ## Pry
-gem 'pry'
-gem 'pry-rails'
-gem 'pry-debugger'
-gem 'pry-coolline'
-gem 'pry-stack_explorer'
-gem 'pry-rescue'
-gem 'pry-doc'
-gem 'awesome_print'
+want_gem 'pry'
+want_gem 'pry-rails'
+want_gem 'pry-debugger'
+want_gem 'pry-coolline'
+want_gem 'pry-stack_explorer'
+want_gem 'pry-rescue'
+want_gem 'pry-doc'
+want_gem 'awesome_print'
 
 ## Better Errors
-gem 'better_errors'
-gem 'binding_of_caller'
+want_gem 'better_errors'
+want_gem 'binding_of_caller'
 
 ## Documentation
-gem 'railroady'
+want_gem 'railroady'
 
 ## Misc.
-gem 'meta_request'
-gem 'sextant'
-# gem 'quiet_assets'
+want_gem 'meta_request'
+want_gem 'sextant'
+# want_gem 'quiet_assets'
 
 # Testing
-gem 'rspec'
+want_gem 'rspec'
