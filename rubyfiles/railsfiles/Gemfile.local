@@ -13,38 +13,35 @@ def want_gem(gemname, *args)
   end
 end
 
-# Guard
-want_gem 'rb-inotify', :require => false # for OS X
-want_gem 'rb-fsevent', :require => false # for Linux
-want_gem 'rb-fchange', :require => false # for Windows
-want_gem 'guard'
-want_gem 'rack-livereload'
-want_gem 'guard-livereload'
-want_gem 'guard-bundler'
+group :development do
+  # Guard
+  want_gem 'rb-inotify', :require => false # for OS X
+  want_gem 'rb-fsevent', :require => false # for Linux
+  want_gem 'rb-fchange', :require => false # for Windows
+  want_gem 'guard'
+  want_gem 'rack-livereload'
+  want_gem 'guard-livereload'
+  want_gem 'guard-bundler'
 
-# Debugging
+  # Pry
+  want_gem 'pry'
+  want_gem 'pry-rails'
+  want_gem 'pry-debugger'
+  want_gem 'pry-coolline'
+  want_gem 'pry-stack_explorer'
+  want_gem 'pry-rescue'
+  want_gem 'pry-doc'
+  want_gem 'awesome_print'
 
-## Pry
-want_gem 'pry'
-want_gem 'pry-rails'
-want_gem 'pry-debugger'
-want_gem 'pry-coolline'
-want_gem 'pry-stack_explorer'
-want_gem 'pry-rescue'
-want_gem 'pry-doc'
-want_gem 'awesome_print'
+  # Better Errors
+  want_gem 'better_errors'
+  want_gem 'binding_of_caller'
 
-## Better Errors
-want_gem 'better_errors'
-want_gem 'binding_of_caller'
+  # Documentation
+  want_gem 'railroady'
 
-## Documentation
-want_gem 'railroady'
-
-## Misc.
-want_gem 'meta_request'
-want_gem 'sextant'
-# want_gem 'quiet_assets'
-
-# Testing
-want_gem 'rspec'
+  # Misc.
+  want_gem 'meta_request'
+  want_gem 'sextant'
+  want_gem 'quiet_assets'
+end
