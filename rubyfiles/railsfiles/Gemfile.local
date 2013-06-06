@@ -1,5 +1,5 @@
 # Include the regular Gemfile
-eval File.read('Gemfile')
+eval_gemfile 'Gemfile'
 
 
 # This file is instance_eval-ed, so @dependencies can be accessed
