@@ -2,5 +2,5 @@
 let mapleader = ','
 nnoremap <unique> \ ,
 
-nnoremap <unique> ; :
-nnoremap <unique> : ;
+noremap <unique> ; :
+noremap <unique> : ;
