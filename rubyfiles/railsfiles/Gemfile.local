@@ -9,7 +9,7 @@ end
 
 def want_gem(gemname, *args)
   unless is_specified? gemname
-    gem gemname, args
+    gem gemname, *args
   end
 end
 
