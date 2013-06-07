@@ -11,5 +11,5 @@ xmap <unique> <silent> <SID>[slime]s <Plug>SlimeRegionSend
 nmap <unique> <silent> <SID>[slime]s <Plug>SlimeLineSend
 nmap <unique> <silent> <SID>[slime]p <Plug>SlimeParagraphSend
 nmap <unique> <silent> <SID>[slime]m <Plug>SlimeMotionSend
-nmap <unique> <silent> <SID>[slime]a :<C-u>%SlimeSend<CR>
+nmap <unique> <silent> <SID>[slime]a ;<C-u>%SlimeSend<CR>
 nmap <unique> <silent> <SID>[slime]c <Plug>SlimeConfig
