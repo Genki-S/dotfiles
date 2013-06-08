@@ -50,3 +50,7 @@ NeoBundle 'm2ym/rsense', {
 	\ }
 \ }
 NeoBundle 'VitaliyRodnenko/geeknote'
+
+" Org mode with Evil
+NeoBundle 'git://gitorious.org/evil/evil.git'
+NeoBundle 'cofi/evil-leader'
