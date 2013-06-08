@@ -34,6 +34,7 @@ dotfiles=(
 	zshfiles/zshenv
 	vimfiles/vim
 	vimfiles/vimrc
+	emacsfiles/emacs
 	rubyfiles/pryrc
 	gitfiles/git_template
 	gitfiles/gitignore_global

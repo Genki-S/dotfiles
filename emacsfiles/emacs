@@ -1,0 +1,64 @@
+; Vim is my first finger language
+(add-to-list 'load-path "~/.mybundles/evil")
+(add-to-list 'load-path "~/.mybundles/evil-leader")
+(require 'evil)
+(require 'evil-leader)
+(evil-mode 1)
+(global-evil-leader-mode)
+(evil-leader/set-leader ",")
+
+; org mappings
+;; global
+(evil-define-key 'normal global-map
+  "zc" 'org-cycle
+  "zC" 'org-global-cycle
+  )
+
+;; with <Leader>
+(evil-leader/set-key
+  "c" (lambda () (interactive) (org-capture nil "c"))
+  "t" 'org-todo
+  "r" 'org-refile
+  "a" 'org-archive-subtree
+  ; Scheduling
+  "ss" 'org-schedule
+  "sd" 'org-deadline
+  ; Clocking
+  "ki" 'org-clock-in
+  "ko" 'org-clock-out
+  ; Views
+  "A" 'org-agenda-list
+  )
+
+; package settings
+(package-initialize)
+(require 'package )
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
+; variables
+(setq org-directory "~/org")
+(setq gtd-inbox (concat org-directory "/inbox.org"))
+(setq gtd-tasks (concat org-directory "/tasks.org"))
+(setq gtd-habit (concat org-directory "/habit.org"))
+
+(setq org-agenda-files
+      (list gtd-inbox gtd-tasks gtd-habit))
+(setq org-todo-keywords
+      '((type "PROCESS(p)" "NEXT(n)" "SOMEDAY(s)" "|" "DONE(d)" "DELEGATED(l)" "CANCELED(c)" )))
+(setq org-tag-alist
+      '(("@home" . ?h) ("@errand" . ?e ) ("@univ" . ?u )))
+
+; Targets include this file and any file contributing to the agenda - up to 9 levels deep
+(setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                 (org-agenda-files :maxlevel . 9))))
+
+; org-capture
+(setq org-default-notes-file gtd-inbox)
+(setq org-capture-templates
+      '(("c" "Capture" entry (file gtd-inbox)
+         "* PROCESS %?\n  %U\n  %a")))
+
+; MobileOrg
+(require 'org-mobile )
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+(setq org-mobile-inbox-for-pull (concat org-directory "mobile_pull.org"))
