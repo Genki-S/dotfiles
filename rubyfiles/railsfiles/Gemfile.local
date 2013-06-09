@@ -15,13 +15,16 @@ end
 
 group :development do
   # Guard
-  want_gem 'rb-inotify', :require => false # for OS X
-  want_gem 'rb-fsevent', :require => false # for Linux
-  want_gem 'rb-fchange', :require => false # for Windows
+  want_gem 'growl'
   want_gem 'guard'
   want_gem 'rack-livereload'
   want_gem 'guard-livereload'
   want_gem 'guard-bundler'
+  want_gem 'guard-rspec'
+  want_gem 'guard-zeus'
+  want_gem 'rb-inotify', :require => false # for OS X
+  want_gem 'rb-fsevent', :require => false # for Linux
+  want_gem 'rb-fchange', :require => false # for Windows
 
   # Pry
   want_gem 'pry'
@@ -41,7 +44,13 @@ group :development do
   want_gem 'railroady'
 
   # Misc.
+  want_gem 'zeus'
   want_gem 'meta_request'
   want_gem 'sextant'
   want_gem 'quiet_assets'
+end
+
+group :test do
+  want_gem 'rspec'
+  want_gem 'rspec-rails'
 end
