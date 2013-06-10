@@ -141,6 +141,7 @@ NeoBundleFileType 'pangloss/vim-javascript' javascript
 NeoBundleFileType 'hail2u/vim-css3-syntax' css,scss
 NeoBundleFileType 'cakebaker/scss-syntax.vim' scss
 NeoBundleFileType 'miripiruni/CSScomb-for-Vim' css,scss
+NeoBundleFileType 'kchmck/vim-coffee-script' coffee
 
 " Scala
 " --------------------------------------------------
