@@ -34,6 +34,9 @@
 (package-initialize)
 (require 'package )
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(require 'org)
+(require 'org-install)
+(add-to-list 'org-modules 'org-habit)
 
 ; variables
 (setq org-directory "~/org")
