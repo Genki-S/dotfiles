@@ -1,6 +1,8 @@
 function myvim() {
-	vim --servername genki $*
+	local startuptime_file="$HOME/.tmp/profiling/vim/`date "+%Y%m%d_%H%M%S"`"
+	vim --servername genki --startuptime $startuptime_file $*
 	__EXECUTED_GIT_COMMAND=1
+	echo "vim startup: `tail -n1 $startuptime_file | cut -d' ' -f1` ms."
 }
 
 alias v="myvim"
