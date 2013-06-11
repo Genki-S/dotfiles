@@ -7,6 +7,10 @@
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
 
+(define-key global-map
+  "\C-h" 'delete-backward-char
+  )
+
 ; org mappings
 ;; global
 (evil-define-key 'normal global-map
