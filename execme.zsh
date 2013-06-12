@@ -38,6 +38,7 @@ dotfiles=(
 	vimfiles/vimrc
 	emacsfiles/emacs
 	rubyfiles/pryrc
+	rubyfiles/gemfiles/gemrc
 	gitfiles/git_template
 	gitfiles/gitignore_global
 	gitfiles/gitconfig
