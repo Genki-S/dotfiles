@@ -1,5 +1,3 @@
-autocmd FileType * :TagbarOpen
-
 let g:tagbar_type_scss = {
 	\ 'ctagstype' : 'Scss',
 	\ 'kinds' : [
