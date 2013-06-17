@@ -35,6 +35,7 @@ group :development do
   want_gem 'pry-rescue'
   want_gem 'pry-doc'
   want_gem 'awesome_print'
+  want_gem 'hirb'
 
   # Better Errors
   want_gem 'better_errors'
