@@ -11,6 +11,9 @@
 [push]
 	default = upstream
 
+[branch]
+	autosetuprebase = always
+
 [merge]
 	tool = splice
 
