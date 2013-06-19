@@ -24,6 +24,13 @@
   "t" 'org-todo
   "r" 'org-refile
   "a" 'org-archive-subtree
+  "o" 'org-insert-todo-heading-respect-content
+  ">" 'org-do-demote
+  "<" 'org-do-promote
+  "C-h" 'org-promote-subtree
+  "C-l" 'org-demote-subtree
+  "C-k" 'org-move-subtree-up
+  "C-j" 'org-move-subtree-down
   ; Scheduling
   "ss" 'org-schedule
   "sd" 'org-deadline
