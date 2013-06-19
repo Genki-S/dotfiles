@@ -19,7 +19,7 @@ function cdup () {
 	fi
 
 	local pat=$1
-	local cwd=$PWD
+	local cwd=${PWD%/*}
 	while [ $cwd != '/' ] ; do
 		local dirname=${cwd##*/}
 		if [[ $dirname =~ $pat ]]; then
