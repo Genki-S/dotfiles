@@ -47,11 +47,13 @@
 (setq gtd-inbox (concat org-directory "/inbox.org"))
 (setq gtd-tasks (concat org-directory "/tasks.org"))
 (setq gtd-habit (concat org-directory "/habit.org"))
+(setq gtd-goal (concat org-directory "/goal.org"))
 
 (setq org-agenda-files
-      (list gtd-inbox gtd-tasks gtd-habit))
+      (list gtd-inbox gtd-tasks gtd-habit gtd-goal))
 (setq org-todo-keywords
-      '((type "PROCESS(p)" "NEXT(n)" "SOMEDAY(s)" "|" "DONE(d)" "DELEGATED(l)" "CANCELED(c)" )))
+      '((sequence "CAPTURED(c)" "NEXT(n)" "SOMEDAY(s)" "|" "DONE(d)" "DELEGATED(l)" "CANCELED(C)" )
+		(sequence "GOAL(g)" "PROCESS(p)" "|" "ACHIEVED(a)" "STEPUP(u)" )))
 (setq org-tag-alist
       '(("@home" . ?h) ("@errand" . ?e ) ("@univ" . ?u )))
 
@@ -63,7 +65,7 @@
 (setq org-default-notes-file gtd-inbox)
 (setq org-capture-templates
       '(("c" "Capture" entry (file gtd-inbox)
-         "* PROCESS %?\n  %U\n  %a")))
+         "* CAPTURED %?\n  %U\n  %a")))
 
 ; MobileOrg
 (require 'org-mobile )
