@@ -60,9 +60,10 @@
       (list gtd-inbox gtd-tasks gtd-habit gtd-goal))
 (setq org-todo-keywords
       '((sequence "CAPTURED(c)" "NEXT(n)" "SOMEDAY(s)" "|" "DONE(d)" "DELEGATED(l)" "CANCELED(C)" )
-		(sequence "GOAL(g)" "PROCESS(p)" "|" "ACHIEVED(a)" "STEPUP(u)" )))
+        (sequence "GOAL(g)" "PROCESS(p)" "|" "ACHIEVED(a)" "STEPUP(u)" )))
 (setq org-tag-alist
       '(("@home" . ?h) ("@errand" . ?e ) ("@univ" . ?u )))
+(setq org-todo-repeat-to-state "NEXT")
 
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
