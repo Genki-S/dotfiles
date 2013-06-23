@@ -123,8 +123,9 @@ NeoBundleFileType 'tpope/vim-bundler' ruby
 NeoBundleFileType 'tpope/vim-endwise' ruby,vim,sh,zsh,c,cpp
 NeoBundle 'Shougo/neocomplcache-rsense'
 
-" Multi Mark Down
+" Markdown
 " --------------------------------------------------
+NeoBundle 'plasticboy/vim-markdown/'
 NeoBundleFileType 'jngeist/vim-multimarkdown' mmd
 
 " TeX
