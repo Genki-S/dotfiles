@@ -44,10 +44,11 @@
 ; package settings
 (package-initialize)
 (require 'package )
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(add-to-list 'package-archives '("org-plus-contrib" . "http://orgmode.org/elpa/") t)
 (require 'org)
 (require 'org-install)
 (add-to-list 'org-modules 'org-habit)
+(add-to-list 'org-modules 'org-checklist)
 
 ; variables
 (setq org-directory "~/org")
