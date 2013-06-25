@@ -54,11 +54,12 @@
 (setq org-directory "~/org")
 (setq gtd-inbox (concat org-directory "/inbox.org"))
 (setq gtd-tasks (concat org-directory "/tasks.org"))
+(setq gtd-projects (concat org-directory "/projects.org"))
 (setq gtd-habit (concat org-directory "/habit.org"))
 (setq gtd-goal (concat org-directory "/goal.org"))
 
 (setq org-agenda-files
-      (list gtd-inbox gtd-tasks gtd-habit gtd-goal))
+      (list gtd-inbox gtd-tasks gtd-projects gtd-habit gtd-goal))
 (setq org-todo-keywords
       '((sequence "CAPTURED(c)" "NEXT(n)" "SOMEDAY(s)" "|" "DONE(d)" "DELEGATED(l)" "CANCELED(C)" )
         (sequence "GOAL(g)" "PROCESS(p)" "|" "ACHIEVED(a)" "STEPUP(u)" )))
