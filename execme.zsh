@@ -59,6 +59,9 @@ do
 	ln -s $basefile $dotfile
 done
 
+# Other deployments
+ln -s $DOTDIR/miscfiles/get-shit-done.ini $HOME/.config/get-shit-done.ini
+
 # Source other setups
 source $DOTDIR/setup/git.sh
 source $DOTDIR/setup/vim.sh

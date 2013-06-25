@@ -17,6 +17,11 @@ function mkcd () {
 	mkdir -p "$@" && eval cd "\"\$$#\""
 }
 
+# get-shit-done
+function get-shit-done () {
+	(cd $MYBUNDLES/get-shit-done; ./get-shit-done $@)
+}
+
 # ==================================================
 # Global aliases
 # ==================================================

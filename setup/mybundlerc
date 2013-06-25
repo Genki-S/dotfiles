@@ -23,6 +23,7 @@ endif
 NeoBundle 'seebi/tmux-colors-solarized'
 NeoBundle 'seebi/dircolors-solarized'
 NeoBundle 'Genki-S/zsh-git-prompt'
+NeoBundle 'leftnode/get-shit-done'
 
 " ==================================================
 " Web
