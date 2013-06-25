@@ -26,17 +26,6 @@ group :development do
   want_gem 'rb-fsevent', :require => false # for Linux
   want_gem 'rb-fchange', :require => false # for Windows
 
-  # Pry
-  want_gem 'pry'
-  want_gem 'pry-rails'
-  want_gem 'pry-debugger'
-  want_gem 'pry-coolline'
-  want_gem 'pry-stack_explorer'
-  want_gem 'pry-rescue'
-  want_gem 'pry-doc'
-  want_gem 'awesome_print'
-  want_gem 'hirb'
-
   # Better Errors
   want_gem 'better_errors'
   want_gem 'binding_of_caller'
@@ -54,4 +43,18 @@ end
 group :test do
   want_gem 'rspec'
   want_gem 'rspec-rails'
+end
+
+group :development, :test do
+  # Pry
+  want_gem 'pry'
+  want_gem 'pry-rails'
+  want_gem 'pry-remote'
+  want_gem 'pry-debugger'
+  want_gem 'pry-coolline'
+  want_gem 'pry-stack_explorer'
+  want_gem 'pry-rescue'
+  want_gem 'pry-doc'
+  want_gem 'awesome_print'
+  want_gem 'hirb'
 end
