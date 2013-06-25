@@ -62,6 +62,22 @@ done
 # Other deployments
 ln -s $DOTDIR/miscfiles/get-shit-done.ini $HOME/.config/get-shit-done.ini
 
+# Launchd deployments
+if [ $PLATFORM == 'mac' ]; then
+	for plist in $DOTDIR/miscfiles/launchd/*.haml
+	do
+		haml < $plist > $HOME/Library/LaunchAgents/${${plist##*/}%.haml}
+	done
+	root_plists=(
+		genki.get-shit-done.work.plist
+		genki.get-shit-done.play.plist
+	)
+	for plist in $root_plists
+	do
+		sudo mv $HOME/Library/LaunchAgents/$plist /Library/LaunchAgents/$plist
+	done
+fi
+
 # Source other setups
 source $DOTDIR/setup/git.sh
 source $DOTDIR/setup/vim.sh
