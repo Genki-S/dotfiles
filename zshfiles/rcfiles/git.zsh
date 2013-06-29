@@ -37,3 +37,6 @@ alias gprc="git pulls checkout"
 alias gprs="git pulls show"
 alias gprb="git pulls browse"
 alias gprm="git pulls merge"
+
+# Tig settings
+TIG_LS_REMOTE="git ls-remote ."
