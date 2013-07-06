@@ -24,7 +24,7 @@ alias gsl="git stash list"
 alias gss="git stash save"
 alias gsd="git stash show --color"
 alias gsp="git stash pop"
-alias gsd="git stash drop"
+alias gsdrop="git stash drop"
 # github issues
 alias gjob="ghi list --mine"
 alias gis="ghi show"
