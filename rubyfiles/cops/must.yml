@@ -1,0 +1,14 @@
+inherit_from:
+  - disable_all.yml
+
+# Common configuration.
+AllCops:
+  # Include gemspec and Rakefile
+  Includes:
+    - '**/*.gemspec'
+    - '**/Rakefile'
+  Excludes: []
+
+LineLength:
+  Enabled: true
+  Max: 128

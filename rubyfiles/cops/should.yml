@@ -1,0 +1,11 @@
+# Common configuration.
+AllCops:
+  # Include gemspec and Rakefile
+  Includes:
+    - '**/*.gemspec'
+    - '**/Rakefile'
+  Excludes: []
+
+LineLength:
+  Enabled: true
+  Max: 80
