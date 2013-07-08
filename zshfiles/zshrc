@@ -58,6 +58,7 @@ rcfiles=(
 	bindkey.zsh
 	vim.zsh
 	git.zsh
+	ruby.zsh
 	fasd.zsh
 	geeknote.zsh
 )
