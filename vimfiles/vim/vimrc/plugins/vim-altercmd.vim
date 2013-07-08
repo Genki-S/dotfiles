@@ -9,6 +9,7 @@ call altercmd#load()
 AlterCommand m make
 AlterCommand sf setfiletype
 AlterCommand fl help function-list
+AlterCommand tn tabnew
 
 " --------------------------------------------------
 " Source stuffs
@@ -16,6 +17,8 @@ AlterCommand fl help function-list
 AlterCommand so source %
 " source line
 AlterCommand sl execute getline('.')
+" source session
+AlterCommand ss source Session
 
 
 " ==================================================
