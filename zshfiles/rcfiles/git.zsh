@@ -4,6 +4,14 @@ function git() {
 	__EXECUTED_GIT_COMMAND=1
 }
 
+function plrq() {
+  local save_git_editor=$GIT_EDITOR
+
+  export GIT_EDITOR="$HOME/dotfiles/bin/plrq-editor"
+  git pull-request $*
+  GIT_EDITOR=$save_git_editor
+}
+
 # ghi -- github issues from command line
 export GHI_TOKEN=`cat ~/private_files/ghi_token`
 
