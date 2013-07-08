@@ -10,21 +10,21 @@ options     head
 snippet     desc
 abbr        describe...end
 options     head
-    describe "${1}" do
+    describe '${1}' do
       ${2}
     end${0}
 
 snippet     cont
 abbr        context...end
 options     head
-    context "${1}" do
+    context '${1}' do
       ${2}
     end${0}
 
 snippet     it
 abbr        it...end
 options     head
-    it "${1}" do
+    it '${1}' do
       ${2}
     end${0}
 
@@ -54,3 +54,13 @@ abbr        do |v| ... end
     do |${1:v}|
       ${2}
     end${0}
+
+snippet     match
+abbr        match to via
+options     head
+    match '/${1}', to: '${2}', via: '${3:get}'${0}
+
+snippet     sub
+abbr        subject
+options     head
+    subject { ${1:page} }${0}
