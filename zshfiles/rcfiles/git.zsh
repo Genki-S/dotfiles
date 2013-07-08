@@ -4,6 +4,8 @@ function git() {
 	__EXECUTED_GIT_COMMAND=1
 }
 
+alias git-root="git rev-parse --show-toplevel"
+
 function plrq() {
   local save_git_editor=$GIT_EDITOR
 
