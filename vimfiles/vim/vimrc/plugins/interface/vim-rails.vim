@@ -25,7 +25,7 @@ nnoremap <unique> <SID>[rails]v :Rview
 
 nnoremap <unique> <SID>[rails]M :Rake 
 nnoremap <unique> <SID>[rails]R :Rails 
-nnoremap <unique> <SID>[rails]r :Rails 
+nnoremap <unique> <SID>[rails]r :Rrunner 
 nnoremap <unique> <SID>[rails]p :Rpp 
 nnoremap <unique> <SID>[rails]g :Rgenerate 
 nnoremap <unique> <SID>[rails]d :Rdestroy 
