@@ -1,1 +1,1 @@
-nnoremap <unique> <silent> M :CoffeeCompile<CR>
+nnoremap <buffer> <silent> M :CoffeeCompile<CR>
