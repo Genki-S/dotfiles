@@ -30,38 +30,6 @@ git submodule update
 # Generate some dotfiles
 (cd $DOTDIR/gitfiles; $DOTDIR/bin/cook)
 
-# Link dotfiles
-dotfiles=(
-	zshfiles/zshrc
-	zshfiles/zshenv
-	vimfiles/vim
-	vimfiles/vimrc
-	emacsfiles/emacs
-	rubyfiles/pryrc
-	rubyfiles/gemfiles/gemrc
-	gitfiles/git_template
-	gitfiles/gitignore_global
-	gitfiles/gitconfig
-	miscfiles/ctags
-	miscfiles/latexmkrc
-	miscfiles/tmux.conf
-	miscfiles/vimperator
-	miscfiles/vimperatorrc
-	)
-
-for f in $dotfiles
-do
-	basename=${f##*/}
-	dotname=.$basename
-	basefile=$DOTDIR/$f
-	dotfile=$HOME/$dotname
-	if [[ -L $dotfile ]]; then rm $dotfile; fi
-	ln -s $basefile $dotfile
-done
-
-# Other deployments
-ln -s $DOTDIR/miscfiles/get-shit-done.ini $HOME/.config/get-shit-done.ini
-
 # Launchd deployments
 if [ $PLATFORM == 'mac' ]; then
 	for plist in $DOTDIR/miscfiles/launchd/*.haml
