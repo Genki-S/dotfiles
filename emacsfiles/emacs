@@ -16,6 +16,12 @@
 (evil-define-key 'normal global-map
   "zc" 'org-cycle
   "zC" 'org-global-cycle
+  "zR" 'show-all
+  "]h" 'outline-next-visible-heading
+  "[h" 'outline-previous-visible-heading
+  "]l" 'org-forward-same-level
+  "[l" 'org-backward-same-level
+  "{" 'outline-up-heading
   )
 
 ;; with <Leader>
@@ -57,6 +63,9 @@
 (setq gtd-projects (concat org-directory "/projects.org"))
 (setq gtd-habit (concat org-directory "/habit.org"))
 (setq gtd-goal (concat org-directory "/goal.org"))
+
+; org settings
+(setq org-catch-invisible-edits 1)
 
 (setq org-agenda-files
       (list gtd-inbox gtd-tasks gtd-projects gtd-habit gtd-goal))
