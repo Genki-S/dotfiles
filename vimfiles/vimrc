@@ -13,6 +13,9 @@ endfor
 for f in split(glob('~/.vim/vimrc/command/*.vim'), '\n')
 	execute 'source' f
 endfor
+for f in split(glob('~/.vim/vimrc/autocmd/*.vim'), '\n')
+	execute 'source' f
+endfor
 
 " ==================================================
 " NeoBundle
