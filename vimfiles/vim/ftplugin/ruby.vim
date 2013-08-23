@@ -10,7 +10,7 @@ setlocal expandtab
 function! RubyMethodFold(line)
 	let str = getline(a:line)
 	let syn_name = synIDattr(synID(a:line, 1, 0), 'name')
-	if str =~ '^\s*def'
+	if str =~ '^\s*def \w'
 		return 'a1'
 	elseif str =~ '^\s*end' && syn_name == 'rubyMethodBlock'
 		return 's1'
