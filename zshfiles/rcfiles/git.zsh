@@ -35,6 +35,19 @@ alias gss="git stash save"
 alias gsd="git stash show --color"
 alias gsp="git stash pop"
 alias gsdrop="git stash drop"
+# list things
+function gls() {
+  if [[ $# -eq 0 ]]; then
+    return
+  fi
+  case "$1" in
+    untracked)
+      git ls-files --other --exclude-standard
+      ;;
+    *)
+      ;;
+  esac
+}
 # github issues
 alias gjob="ghi list --mine"
 alias gis="ghi show"
