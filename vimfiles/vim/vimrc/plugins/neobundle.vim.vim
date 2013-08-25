@@ -73,6 +73,7 @@ NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'sjl/splice.vim'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'vim-scripts/TwitVim'
 
 " For beautiful texts
 NeoBundleLazy 'godlygeek/tabular'
