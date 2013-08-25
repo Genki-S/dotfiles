@@ -31,7 +31,10 @@ set focuscontent
 
 " Plugins
 let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins"
-let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,pluginManager"
+let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,pluginManager,twittperator"
+
+" Twittperator
+let g:twittperator_use_ssl_connection_for_api_ep = 1
 
 nnoremap <Leader>,e :eijiro 
 vnoremap E y:eijiro <M-v><CR>
