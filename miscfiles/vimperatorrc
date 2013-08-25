@@ -35,6 +35,7 @@ let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,
 
 " Twittperator
 let g:twittperator_use_ssl_connection_for_api_ep = 1
+cabbrev -javascript %% " -- " + buffer.title + " " + buffer.URL
 
 nnoremap <Leader>,e :eijiro 
 vnoremap E y:eijiro <M-v><CR>
