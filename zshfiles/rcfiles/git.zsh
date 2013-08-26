@@ -12,6 +12,9 @@ function plrq() {
   export GIT_EDITOR="$HOME/dotfiles/bin/plrq-editor"
   git pull-request $*
   GIT_EDITOR=$save_git_editor
+  if [[ -z $GIT_EDITOR ]]; then
+    unset GIT_EDITOR
+  fi
 }
 
 # ghi -- github issues from command line
