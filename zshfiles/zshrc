@@ -62,6 +62,7 @@ rcfiles=(
 	fasd.zsh
 	notification.zsh
 	geeknote.zsh
+	direnv.zsh
 )
 for f in $rcfiles
 do
