@@ -41,3 +41,6 @@ safe_ln $HOME/dotfiles/bin/cop.rb $HOME/bin/cop
 # misc files
 # ==================================================
 safe_ln $DOTDIR/miscfiles/get-shit-done.ini $HOME/.config/get-shit-done.ini
+
+# Populate git_template dir
+safe_ln $DOTDIR/gitfiles/hooks $DOTDIR/gitfiles/git_template/hooks
