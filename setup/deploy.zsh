@@ -2,6 +2,8 @@
 function safe_ln () {
 	src=$1
 	dst=$2
+	dst_dir=${dst%/*}
+	if [[ ! -d $dst_dir ]]; then mkdir -p $dst_dir; fi
 	if [[ -L $dst ]]; then rm $dst; fi
 	ln -s $src $dst
 }
