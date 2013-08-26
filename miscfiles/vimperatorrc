@@ -28,6 +28,8 @@ vnoremap P y<Esc><Esc>P
 set complete=tsl
 set focuscontent
 
+" Styling
+highlight -append Hint font-size: 14px;
 
 " Plugins
 let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins"
