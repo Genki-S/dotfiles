@@ -34,7 +34,6 @@ group :development do
   want_gem 'railroady'
 
   # Misc.
-  want_gem 'zeus'
   want_gem 'meta_request'
   want_gem 'sextant'
   want_gem 'quiet_assets'
