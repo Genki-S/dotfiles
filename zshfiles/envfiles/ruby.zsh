@@ -8,7 +8,7 @@ fi
 # Tell bundler to use local Gemfile
 function set_bundle_gemfile () {
 	if [[ -f Gemfile.local ]]; then
-		export BUNDLE_GEMFILE=Gemfile.local
+		export BUNDLE_GEMFILE=$PWD/Gemfile.local
 	else
 		unset BUNDLE_GEMFILE
 	fi
