@@ -1,1 +1,2 @@
 AlterCommand tw PosttoTwitter
+AlterCommand twl CPosttoTwitter
