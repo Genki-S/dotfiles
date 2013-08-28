@@ -48,6 +48,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'chrisbra/changesPlugin'
 NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'vim-scripts/IndentCommentPrefix'
 
 " Text Object
 NeoBundle 'kana/vim-textobj-user'
