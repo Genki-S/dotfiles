@@ -99,6 +99,7 @@ NeoBundle 'fuenor/im_control.vim'
 NeoBundleLazy 'gregsexton/VimCalc'
 NeoBundleLazy 'vim-scripts/vimwiki'
 NeoBundle 'Genki-S/vim-annotator'
+NeoBundle 'hsitz/VimOrganizer'
 
 " --------------------------------------------------
 " for Specific filetypes
