@@ -12,7 +12,7 @@ function! RubyMethodFold(line)
 	let syn_name = synIDattr(synID(a:line, 1, 0), 'name')
 	if str =~ '^\s*def \w'
 		return 'a1'
-	elseif str =~ '^\s*end' && syn_name == 'rubyMethodBlock'
+	elseif str =~ '^\s*end$' && syn_name == 'rubyMethodBlock'
 		return 's1'
 	else
 		return -1
