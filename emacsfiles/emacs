@@ -18,12 +18,13 @@
 (setq gtd-inbox (concat org-directory "/inbox.org"))
 (setq gtd-next (concat org-directory "/next.org"))
 (setq gtd-someday (concat org-directory "/someday.org"))
+(setq gtd-project (concat org-directory "/project.org"))
 
 ; org settings
 (setq org-catch-invisible-edits 1)
 
 (setq org-agenda-files
-      (list gtd-inbox gtd-next gtd-someday))
+      (list gtd-inbox gtd-next gtd-someday gtd-project))
 
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
