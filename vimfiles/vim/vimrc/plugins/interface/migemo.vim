@@ -1,0 +1,1 @@
+nnoremap <Leader>/ :Migemo<CR>

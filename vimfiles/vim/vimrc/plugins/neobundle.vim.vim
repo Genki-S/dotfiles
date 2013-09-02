@@ -77,6 +77,7 @@ NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'sjl/splice.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'vim-scripts/TwitVim'
+NeoBundle 'migemo', {'type' : 'nosync', 'base' : '~/.vimbundles/manual'}
 
 " For beautiful texts
 NeoBundleLazy 'godlygeek/tabular'
