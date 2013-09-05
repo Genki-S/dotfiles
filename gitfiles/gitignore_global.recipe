@@ -1,3 +1,6 @@
+# Vim stuffs
+.vimrc.local
+
 # Ruby stuffs
 .patrol
 
@@ -5,6 +8,9 @@
 Gemfile.local*
 Guardfile
 config/environments/genki.rb
+
+# Misc.
+.envrc
 
 #Include# $DOTDIR/submodules/gitignore/Global/OSX.gitignore
 #Include# $DOTDIR/submodules/gitignore/Global/SASS.gitignore
