@@ -1,8 +1,5 @@
-*.swp
-*~
-.mybundles
-vim/.bundle
-.netrwhist
+vimfiles/vim/bundles/*
+!vimfiles/vim/bundles/manual
 
 !Gemfile.local
 

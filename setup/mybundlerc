@@ -13,7 +13,7 @@ filetype off
 filetype plugin indent off
 
 if has('vim_starting')
-	set runtimepath+=~/.vimbundles/neobundle.vim
+	set runtimepath+=~/.vim/bundles/neobundle.vim
 	call neobundle#rc(expand('~/.mybundles'))
 endif
 

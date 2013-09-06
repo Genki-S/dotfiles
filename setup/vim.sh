@@ -1,10 +1,8 @@
 #!/bin/sh
 
-mkdir -p $HOME/.vimbundles
-
 # Install neobundle
-if [ ! -d $HOME/.vimbundles/neobundle.vim ]; then
-	git clone http://github.com/Shougo/neobundle.vim $HOME/.vimbundles/neobundle.vim
+if [ ! -d $DOTDIR/vimfiles/vim/bundles/neobundle.vim ]; then
+	git clone http://github.com/Shougo/neobundle.vim $DOTDIR/vimfiles/vim/bundles/neobundle.vim
 fi
 
 # Neobundle will do the rest.
