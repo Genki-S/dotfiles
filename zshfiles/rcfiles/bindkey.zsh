@@ -61,6 +61,9 @@ bindkey '^@' edit-command-line
 # ==================================================
 # My widgets
 # ==================================================
+# Dependencies
+autoload -Uz narrow-to-region
+
 # Mark all widgets for autoloading and
 # Register zle widgets
 for wgt in $WIDGETDIR/*
@@ -70,5 +73,8 @@ do
 done
 
 bindkey '/' global-expansion-home-dir
+bindkey '^r' history-incremental-preserving-pattern-search-backward
+bindkey -M isearch '^r' history-incremental-pattern-search-backward
+bindkey '^s' history-incremental-pattern-search-forward
 
 # Tip: press <C-v><key> to get <key>'s keycode

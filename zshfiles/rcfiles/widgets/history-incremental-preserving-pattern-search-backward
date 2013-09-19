@@ -1,0 +1,10 @@
+# vim: filetype=zsh
+
+# http://chneukirchen.org/blog/archive/2013/03/10-fresh-zsh-tricks-you-may-not-know.html
+
+local state
+MARK=CURSOR  # magick, else multiple ^R don't work
+narrow-to-region -p "$LBUFFER${BUFFER:+>>}" -P "${BUFFER:+<<}$RBUFFER" -S state
+zle end-of-history
+zle history-incremental-pattern-search-backward
+narrow-to-region -R state
