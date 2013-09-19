@@ -1,4 +1,4 @@
-# Directory sugers
+# Directory sugars
 export DOTDIR=$HOME/dotfiles
 export WIDGETDIR=$DOTDIR/zshfiles/rcfiles/widgets
 export MYBUNDLES=$HOME/.mybundles

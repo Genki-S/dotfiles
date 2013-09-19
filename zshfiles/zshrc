@@ -49,7 +49,7 @@ rcfiles=(
 	helper.zsh
 	path.zsh
 	env.zsh
-	suger.zsh
+	sugar.zsh
 	completion.zsh
 	history.zsh
 	hook.zsh
