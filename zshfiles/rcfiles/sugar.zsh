@@ -29,6 +29,7 @@ alias -g G="| grep -i"
 alias -g V="| grep -v"
 alias -g S="| sed"
 alias -g P="| $PAGER"
+alias -g X="| xargs"
 
 # ==================================================
 # Tmux related
