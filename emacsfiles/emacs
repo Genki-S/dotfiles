@@ -1,6 +1,12 @@
-; package settings
 (package-initialize)
 (require 'package )
+
+(require 'ido)
+(ido-mode t)
+
+; Org settings
+; ============
+
 (add-to-list 'package-archives '("org-plus-contrib" . "http://orgmode.org/elpa/") t)
 (require 'org)
 (require 'org-install)
