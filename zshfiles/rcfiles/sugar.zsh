@@ -31,6 +31,9 @@ alias -g S="| sed"
 alias -g P="| $PAGER"
 alias -g X="| xargs"
 
+# output modification
+alias -g CHOP='| awk "length < 1024 { print }"'
+
 # ==================================================
 # Tmux related
 # ==================================================
