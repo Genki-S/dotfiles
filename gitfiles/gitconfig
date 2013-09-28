@@ -1,3 +1,6 @@
+[include]
+	path = ~/dotfiles/submodules/yadr/git/gitconfig
+
 [user]
 	name = Genki Sugimoto
 	email = cfhoyuk.reccos.nelg@gmail.com
