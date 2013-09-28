@@ -1,0 +1,22 @@
+---
+- zshfiles:
+    - zshrc
+    - zshenv
+- vimfiles:
+    - vim
+    - vimrc
+- emacsfiles:
+    - emacs
+- rubyfiles:
+    - pryrc
+    - gemrc
+- gitfiles:
+    - gitconfig
+    - git_template
+    - gitignore_global
+- miscfiles:
+    - ctags
+    - latexmkrc
+    - tmux.conf
+    - vimperator
+    - vimperatorrc

@@ -1,0 +1,10 @@
+---
+- .tmp:
+    - vim:
+        - backup
+        - view
+        - undo
+    - profiling:
+        - zsh
+        - vim
+- .zhistlogs

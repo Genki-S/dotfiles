@@ -15,14 +15,6 @@ trap 'report_error $0 ${LINENO} ${$?}' ERR
 source $HOME/dotfiles/zshfiles/envfiles/env.zsh
 cd $DOTDIR
 
-# Create necessary directories
-mkdir -p $HOME/.zhistlogs
-mkdir -p $HOME/.tmp/vim/backup
-mkdir -p $HOME/.tmp/vim/view
-mkdir -p $HOME/.tmp/vim/undo
-mkdir -p $HOME/.tmp/profiling/zsh
-mkdir -p $HOME/.tmp/profiling/vim
-
 # Git submodule setup
 git submodule init
 git submodule update
