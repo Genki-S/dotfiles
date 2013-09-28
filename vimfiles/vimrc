@@ -37,14 +37,6 @@ endif
 
 execute 'source' expand('~/.vim/neobundles.vim')
 
-" ==================================================
-" Other sources
-" ==================================================
-" Make :Man command available
-source $VIM/vim73/ftplugin/man.vim
-" Matchit.vim
-source $VIM/vim73/macros/matchit.vim
-
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 filetype plugin on
 filetype indent on
