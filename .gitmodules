@@ -10,3 +10,6 @@
 [submodule "vimfiles/vim/bundles/neobundle.vim"]
 	path = vimfiles/vim/bundles/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim
+[submodule "submodules/yadr"]
+	path = submodules/yadr
+	url = https://github.com/skwp/dotfiles
