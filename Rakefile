@@ -6,6 +6,10 @@ require 'fileutils'
 HOME = "#{ENV['HOME']}/tmphome"
 DOTDIR = "#{ENV['HOME']}/dotfiles"
 
+desc 'Do the best.'
+task :install => [:update_submodules, :update_injection] do
+end
+
 desc 'Deploy dotfiles.'
 task :deploy do
   directories = YAML.load_file('config/directory_structure.yml')
@@ -19,10 +23,21 @@ task :deploy do
   end
 end
 
+desc 'Update submodules'
 task :update_submodules do
   run %{
     git submodule update --recursive
   }
+end
+
+desc 'Update files with injection of other files'
+task :update_injection do
+  files_with_injection = run %{
+    ag --files-with-matches 'INJECT_START' --ignore 'Rakefile' --ignore 'bin/inject'
+  }
+  files_with_injection.split.each do |fname|
+    run %{ inject #{fname} }
+  end
 end
 
 task :generate_global_tags do
