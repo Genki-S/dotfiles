@@ -19,6 +19,12 @@ task :deploy do
   end
 end
 
+task :update_submodules do
+  run %{
+    git submodule update --recursive
+  }
+end
+
 private
 
 def run(cmd)
