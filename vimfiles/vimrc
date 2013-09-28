@@ -24,8 +24,6 @@ endfor
 if strlen($http_proxy) != 0
 	let g:neobundle#types#git#default_protocol = 'http'
 endif
-let g:plugin_setting_dir = expand('~/.vim/vimrc/plugins')
-let g:plugin_interface_dir = expand('~/.vim/vimrc/plugins/interface')
 
 " use NeoBundle
 set nocompatible
@@ -37,7 +35,7 @@ if has('vim_starting')
 	call neobundle#rc(expand('~/.vim/bundles'))
 endif
 
-execute 'source' g:plugin_setting_dir.'/neobundle.vim.vim'
+execute 'source' expand('~/.vim/neobundles.vim')
 
 " ==================================================
 " Other sources

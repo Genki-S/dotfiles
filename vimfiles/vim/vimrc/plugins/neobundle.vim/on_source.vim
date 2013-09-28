@@ -171,59 +171,47 @@ NeoBundleFileType 'vim-scripts/scilab.vim' scilab
 " --------------------------------------------------
 NeoBundleFileType 'chrisbra/csv.vim' csv
 
-
-" --------------------------------------------------
-" Installation check
-" --------------------------------------------------
-if neobundle#exists_not_installed_bundles()
-	echomsg 'Not installed bundles : ' .
-\		string(neobundle#get_not_installed_bundle_names())
-	echomsg 'Please execute ":NeoBundleInstall" command.'
-endif
-
 " ==================================================
 " Plugin settings
 " ==================================================
+" Policy:
+"   * One setting file per one plugin
+"   * Lazy load, both plugins and settings
+
+function! g:plugin_setting_filename_on_source(plugin_name)
+	return expand('~/.vim/vimrc/plugins/' . a:plugin_name . '/on_source.vim')
+endfunction
+
+function! g:plugin_setting_filename_post_source(plugin_name)
+	return expand('~/.vim/vimrc/plugins/' . a:plugin_name . '/post_source.vim')
+endfunction
+
+let s:bundle_names =
+	\ map(neobundle#config#get_neobundles(), 'v:val.name' )
+
+for s:bundle_name in s:bundle_names
+	let s:bundle = neobundle#get(s:bundle_name)
+	function! s:bundle.hooks.on_source(bundle)
+		if filereadable(g:plugin_setting_filename_on_source(a:bundle.name))
+			execute 'source' g:plugin_setting_filename_on_source(a:bundle.name)
+		endif
+	endfunction
+	function! s:bundle.hooks.post_source(bundle)
+		if filereadable(g:plugin_setting_filename_post_source(a:bundle.name))
+			execute 'source' g:plugin_setting_filename_post_source(a:bundle.name)
+		endif
+	endfunction
+endfor
 
 " --------------------------------------------------
 " Helper Functions
 " --------------------------------------------------
-function! s:source_plugin_setting(plugin_name)
-	let l:fullpath = g:plugin_setting_dir.'/'.a:plugin_name.'.vim'
-	if filereadable(l:fullpath)
-		execute 'source' l:fullpath
-	endif
-endfunction
-
-function! s:source_plugin_interface(plugin_name)
-	let l:fullpath = g:plugin_interface_dir.'/'.a:plugin_name.'.vim'
-	if filereadable(l:fullpath)
-		execute 'source' l:fullpath
-	endif
-endfunction
-
 function! s:edit_plugin_setting(plugin_name)
 	execute 'edit' g:plugin_setting_dir.'/'.a:plugin_name.'.vim'
 endfunction
 
 function! s:edit_plugin_interface(plugin_name)
 	execute 'edit' g:plugin_interface_dir.'/'.a:plugin_name.'.vim'
-endfunction
-
-function! s:source_setting_and_bundle(...)
-	for bndl in a:000
-		call s:source_plugin_setting(bndl)
-		execute "NeoBundleSource " . bndl
-	endfor
-endfunction
-
-function! s:register_after_plugin_settings()
-	" Source 'ALL' plugins' after settings
-	for plugin in s:bundle_names
-		augroup vimrc_after
-			execute "autocmd VimEnter * call s:source_plugin_interface('" . plugin . "')"
-		augroup END
-	endfor
 endfunction
 
 " --------------------------------------------------
@@ -239,32 +227,13 @@ command! -nargs=1 -bar
 	\ PluginInterface
 	\ call s:edit_plugin_interface(<q-args>)
 
-command! -nargs=* -bar
-	\ -complete=customlist,neobundle#complete_lazy_bundles
-	\ MyNeoBundleSource
-	\ call s:source_setting_and_bundle(<f-args>)
 
-" --------------------------------------------------
-" Source settings
-" --------------------------------------------------
-let s:bundle_names =
-	\ map(neobundle#config#get_neobundles(), 'v:val.name' )
-let s:sourced_bundle_names =
-	\ map( filter(neobundle#config#get_neobundles(),
-		\ 'neobundle#config#is_sourced(v:val.name)'), 'v:val.name' )
+" ==================================================
+" Installation check
+" ==================================================
+if neobundle#exists_not_installed_bundles()
+	echomsg 'Not installed bundles : ' .
+\		string(neobundle#get_not_installed_bundle_names())
+	echomsg 'Please execute ":NeoBundleInstall" command.'
+endif
 
-for plugin in s:sourced_bundle_names
-	if plugin !=# 'neobundle.vim'
-		call s:source_plugin_setting(plugin)
-	endif
-endfor
-
-augroup vimrc_after
-	autocmd!
-augroup END
-call s:register_after_plugin_settings()
-
-" To trigger FileType event after loading plugins
-augroup vimrc_after
-	autocmd VimEnter * execute "set filetype=".&filetype
-augroup END
