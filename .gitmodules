@@ -7,3 +7,6 @@
 [submodule "submodules/vimperator-plugins"]
 	path = submodules/vimperator-plugins
 	url = http://github.com/vimpr/vimperator-plugins.git
+[submodule "vimfiles/vim/bundles/neobundle.vim"]
+	path = vimfiles/vim/bundles/neobundle.vim
+	url = https://github.com/Shougo/neobundle.vim

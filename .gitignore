@@ -1,4 +1,5 @@
 vimfiles/vim/bundles/*
+!vimfiles/vim/bundles/neobundle.vim
 !vimfiles/vim/bundles/manual
 
 !Gemfile.local
