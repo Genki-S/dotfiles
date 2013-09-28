@@ -20,3 +20,5 @@
     - tmux.conf
     - vimperator
     - vimperatorrc
+    - inputrc
+    - editrc
