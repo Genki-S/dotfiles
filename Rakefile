@@ -1,10 +1,8 @@
 require 'rake'
 require 'fileutils'
 
-# HOME = ENV['HOME']
-# DOTDIR = "#{HOME}/dotfiles"
-HOME = "#{ENV['HOME']}/tmphome"
-DOTDIR = "#{ENV['HOME']}/dotfiles"
+HOME = ENV['HOME']
+DOTDIR = "#{HOME}/dotfiles"
 
 desc 'Do the best.'
 task :install => [:update_submodules, :update_injection] do
@@ -19,7 +17,7 @@ task :deploy do
   end
   Dir.chdir(DOTDIR) do
     deploy_dotfiles(dotfiles)
-    safe_ln "#{DOTDIR}/gitfiles/hooks" "#{DOTDIR}/gitfiles/git_template/hooks"
+    my_ln("#{DOTDIR}/gitfiles/hooks", "#{DOTDIR}/gitfiles/git_template/hooks")
   end
 end
 
@@ -99,7 +97,7 @@ end
 def deploy_dotfiles(obj)
   case obj
   when String
-    safe_ln("#{Dir.pwd}/#{obj}", "#{HOME}/.#{obj}")
+    my_ln("#{Dir.pwd}/#{obj}", "#{HOME}/.#{obj}")
   when Array
     obj.each{ |o| deploy_dotfiles(o) }
   when Hash
@@ -111,7 +109,7 @@ def deploy_dotfiles(obj)
   end
 end
 
-def safe_ln(src, dst)
+def my_ln(src, dst)
   run %{ rm #{dst} } if File.symlink?(dst)
   raise %{File "#{dst}" exists and not a symlink.} if File.exists?(dst)
   run %{ ln -s #{src} #{dst} }
