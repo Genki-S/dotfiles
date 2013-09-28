@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+# DO NOT NEST INJECTIONS.
+
+require 'tempfile'
+
+ARGV.each do |fname|
+  tmp = Tempfile.new('injection')
+  tmp.write(File.read(fname))
+  tmp.rewind
+  file = File.open(fname, 'w')
+
+  injecting = false
+  tmp.each_line do |line|
+    injecting = false if line.match(/INJECT_END/)
+    file.write(line) unless injecting
+    line.match(/INJECT_START:(.*)/) do |m|
+      injection_src = eval(m[1])
+      file.write(File.read(injection_src))
+      injecting = true
+    end
+  end
+end

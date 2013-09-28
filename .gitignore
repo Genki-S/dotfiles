@@ -5,6 +5,5 @@ vimfiles/vim/bundles/*
 !Gemfile.local
 
 gitfiles/git_template/*
-gitfiles/gitignore_global
 
 miscfiles/vimperator/info
