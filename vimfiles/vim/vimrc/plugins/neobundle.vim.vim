@@ -51,9 +51,18 @@ NeoBundle 'chrisbra/changesPlugin'
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'vim-scripts/IndentCommentPrefix'
 
-" Text Object
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'gilligan/textobj-gitgutter'
+" Text objects
+NeoBundle "austintaylor/vim-indentobject"
+NeoBundle "bootleq/vim-textobj-rubysymbol"
+NeoBundle "coderifous/textobj-word-column.vim"
+NeoBundle "kana/vim-textobj-datetime"
+NeoBundle "kana/vim-textobj-entire"
+NeoBundle "kana/vim-textobj-function"
+NeoBundle "kana/vim-textobj-user"
+NeoBundle "lucapette/vim-textobj-underscore"
+NeoBundle "nelstrom/vim-textobj-rubyblock"
+NeoBundle "thinca/vim-textobj-function-javascript"
+NeoBundle "vim-scripts/argtextobj.vim"
 
 " Integration with outer softwares / services
 NeoBundle 'tpope/vim-fugitive'
