@@ -25,10 +25,17 @@
 - AndrewRadev/linediff.vim:
 - AndrewRadev/sideways.vim:
 - sjl/gundo.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - GundoShow
 - vim-scripts/UnconditionalPaste:
 - godlygeek/tabular:
+    lazy: 1
+    autoload:
+        commands:
+            - Tabularize
 - t9md/vim-textmanip:
-- Stormherz/tablify:
 - AndrewRadev/splitjoin.vim:
 - AndrewRadev/switch.vim:
 - tpope/vim-abolish:
@@ -47,6 +54,10 @@
 - tpope/vim-unimpaired:
 - goldfeld/vim-seek:
 - rking/ag.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - Ag
 
 # Reference
 - thinca/vim-ref:
@@ -64,6 +75,9 @@
 - tpope/vim-fugitive:
 - gregsexton/gitv:
     lazy: 1
+    autoload:
+        commands:
+            - Gitv
 
 # Visual
 - altercation/vim-colors-solarized:
@@ -97,11 +111,12 @@
 - fuenor/qfixhowm:
 - sjl/clam.vim:
 - gregsexton/VimCalc:
-- jpalardy/vim-slime:
-- tyru/vim-altercmd:
+    lazy: 1
     autoload:
         commands:
-            - AlterCommand
+            - Calc
+- jpalardy/vim-slime:
+- tyru/vim-altercmd:
 - vim-scripts/marvim:
 
 # Filetype Specific

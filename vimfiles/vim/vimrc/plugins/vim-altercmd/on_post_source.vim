@@ -1,7 +1,7 @@
+call altercmd#load()
+
 " Common altercmds are written in here
 " filetype altercmds are written in ftplugin/*.vim
-
-call altercmd#load()
 
 " ==================================================
 " Frequent commands
@@ -20,12 +20,22 @@ AlterCommand sl execute getline('.')
 " source session
 AlterCommand ss source Session
 
-
 " ==================================================
 " Original commands
 " ==================================================
 AlterCommand ps PluginSetting
 AlterCommand pi PluginInterface
 AlterCommand psn PluginSetting neobundle.vim
-
 AlterCommand eft execute 'edit $DOTDIR/vimfiles/vim/ftplugin/'.&filetype.'.vim'
+
+" ==================================================
+" Plugins
+" ==================================================
+AlterCommand nb Unite neobundle
+AlterCommand nbi Unite -auto-quit neobundle/install
+AlterCommand nbu Unite neobundle/update
+AlterCommand nbc NeoBundleClean
+AlterCommand nbl Unite neobundle/lazy
+AlterCommand nbd NeoBundleDocs
+
+AlterCommand nse NeoSnippetEdit -split -vertical
