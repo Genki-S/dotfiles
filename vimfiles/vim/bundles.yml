@@ -1,0 +1,209 @@
+---
+- Shougo/neobundle.vim:
+
+# It just works (No need to invoke consciously, just configure.)
+- tpope/vim-endwise:
+- tpope/vim-repeat:
+- tpope/vim-sleuth:
+- Raimondi/delimitMate:
+- vim-scripts/IndentCommentPrefix:
+- MarcWeber/vim-addon-local-vimrc:
+- Shougo/vimproc:
+    build:
+        mac: make -f make_mac.mak
+        unix: make -f make_unix.mak
+- mattn/webapi-vim:
+- vim-scripts/sudo.vim:
+- chrisbra/Recover.vim:
+
+# Coding
+- tpope/vim-scriptease:
+- Shougo/neosnippet:
+- scrooloose/syntastic:
+- ujihisa/quicklearn:
+- thinca/vim-qfreplace:
+- AndrewRadev/linediff.vim:
+- AndrewRadev/sideways.vim:
+- sjl/gundo.vim:
+- vim-scripts/UnconditionalPaste:
+- godlygeek/tabular:
+- t9md/vim-textmanip:
+- Stormherz/tablify:
+- AndrewRadev/splitjoin.vim:
+- AndrewRadev/switch.vim:
+- tpope/vim-abolish:
+- tpope/vim-surround:
+- scrooloose/nerdcommenter:
+- AndrewRadev/inline_edit.vim:
+
+## Completion
+- Shougo/neocomplcache:
+- Shougo/neocomplcache-rsense:
+- ujihisa/neco-look:
+
+# Navigation
+- majutsushi/tagbar:
+- Shougo/vimfiler:
+- tpope/vim-unimpaired:
+- goldfeld/vim-seek:
+- rking/ag.vim:
+
+# Reference
+- thinca/vim-ref:
+- taka84u9/vim-ref-ri:
+
+# Unite
+- Shougo/unite.vim:
+- h1mesuke/unite-outline:
+- tsukkee/unite-help:
+- ujihisa/unite-rake:
+- tsukkee/unite-tag:
+
+# Git
+- sjl/splice.vim:
+- tpope/vim-fugitive:
+- gregsexton/gitv:
+    lazy: 1
+
+# Visual
+- altercation/vim-colors-solarized:
+- airblade/vim-gitgutter:
+- t9md/vim-quickhl:
+- Lokaltog/vim-powerline:
+- kshenoy/vim-signature:
+- nathanaelkane/vim-indent-guides:
+
+# Text Objects
+- kana/vim-textobj-user:
+- kana/vim-textobj-entire:
+- kana/vim-textobj-function:
+- kana/vim-textobj-datetime:
+- lucapette/vim-textobj-underscore:
+- nelstrom/vim-textobj-rubyblock:
+- thinca/vim-textobj-function-javascript:
+- vim-scripts/argtextobj.vim:
+- bootleq/vim-textobj-rubysymbol:
+- coderifous/textobj-word-column.vim:
+- michaeljsmith/vim-indent-object:
+
+# Other Utilities
+- fuenor/im_control.vim:
+- pydave/AsyncCommand:
+- Genki-S/vim-annotator:
+- mattn/gist-vim:
+- kana/vim-fakeclip:
+- vim-scripts/TwitVim:
+- thinca/vim-quickrun:
+- fuenor/qfixhowm:
+- sjl/clam.vim:
+- gregsexton/VimCalc:
+- jpalardy/vim-slime:
+- tyru/vim-altercmd:
+    autoload:
+        commands:
+            - AlterCommand
+- vim-scripts/marvim:
+
+# Filetype Specific
+
+## Ruby
+- vim-ruby/vim-ruby:
+    autoload:
+        filetypes:
+            - ruby
+- tpope/vim-rails:
+    autoload:
+        filetypes:
+            - ruby
+- tpope/vim-rake:
+    autoload:
+        filetypes:
+            - ruby
+- tpope/vim-bundler:
+    autoload:
+        filetypes:
+            - ruby
+
+## Web Development
+- hail2u/vim-css3-syntax:
+    autoload:
+        filetypes:
+            - css
+            - scss
+- pangloss/vim-javascript:
+    autoload:
+        filetypes:
+            - javascript
+            - coffee
+- mattn/zencoding-vim:
+    autoload:
+        filetypes:
+            - html
+            - erb
+            - haml
+- miripiruni/CSScomb-for-Vim:
+    autoload:
+        filetypes:
+            - css
+            - scss
+- kchmck/vim-coffee-script:
+    autoload:
+        filetypes:
+            - coffee
+- cakebaker/scss-syntax.vim:
+    autoload:
+        filetypes:
+            - scss
+- othree/html5.vim:
+    autoload:
+        filetypes:
+            - html
+- hokaccha/vim-html5validator:
+    autoload:
+        filetypes:
+            - html
+- Valloric/MatchTagAlways:
+    autoload:
+        filetypes:
+            - html
+            - xml
+- tpope/vim-haml:
+    autoload:
+        filetypes:
+            - haml
+
+## Others
+- plasticboy/vim-markdown:
+    autoload:
+        filetypes:
+            - markdown
+            - mmd
+- jngeist/vim-multimarkdown:
+    autoload:
+        filetypes:
+            - mmd
+- LaTeX-Box-Team/LaTeX-Box:
+    autoload:
+        filetypes:
+            - tex
+- derekwyatt/vim-scala:
+    autoload:
+        filetypes:
+            - scala
+- chrisbra/csv.vim:
+    autoload:
+        filetypes:
+            - csv
+- vim-scripts/scilab.vim:
+    autoload:
+        filetypes:
+            - scilab
+- hsitz/VimOrganizer:
+    autoload:
+        filetypes:
+            - org
+
+# Manual Plugins
+- migemo:
+    type: nosync
+    base: ~/.vim/bundles/manual
