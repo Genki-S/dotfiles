@@ -1,1 +1,1 @@
-nnoremap <unique> <silent> - :SourceAndExecute switch.vim Switch<CR>
+nnoremap <unique> <silent> - :Switch<CR>
