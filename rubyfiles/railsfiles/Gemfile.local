@@ -45,15 +45,5 @@ group :test do
 end
 
 group :development, :test do
-  # Pry
-  want_gem 'pry'
-  want_gem 'pry-rails'
-  want_gem 'pry-remote'
-  want_gem 'pry-debugger'
-  want_gem 'pry-coolline'
-  want_gem 'pry-stack_explorer'
-  want_gem 'pry-rescue'
-  want_gem 'pry-doc'
-  want_gem 'awesome_print'
-  want_gem 'hirb'
+  want_gem 'jazz_hands'
 end

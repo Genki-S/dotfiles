@@ -1,0 +1,1 @@
+load "#{ENV['HOME']}/dotfiles/submodules/yadr/irb/aprc"
