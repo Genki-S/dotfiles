@@ -267,3 +267,5 @@
 - migemo:
     type: nosync
     base: ~/.vim/bundles/manual
+
+# vim: iskeyword+=/,.
