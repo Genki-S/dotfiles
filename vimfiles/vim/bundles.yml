@@ -21,6 +21,7 @@
 - mattn/webapi-vim:
 - vim-scripts/sudo.vim:
 - chrisbra/Recover.vim:
+- tsaleh/vim-matchit:
 
 # Coding
 - tpope/vim-scriptease:
@@ -166,6 +167,11 @@
         filetypes:
             - ruby
 - tpope/vim-bundler:
+    lazy: 1
+    autoload:
+        filetypes:
+            - ruby
+- vim-scripts/ruby-matchit:
     lazy: 1
     autoload:
         filetypes:
