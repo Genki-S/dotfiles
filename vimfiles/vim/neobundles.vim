@@ -12,13 +12,27 @@ endfunction
 " Bundles
 " ==================================================
 
-" Read bundle settings from yaml
-ruby << EOF
+function! g:yaml_load(filename)
+	ruby << EOF
 	require 'yaml'
-	bundles = YAML.load_file(File.expand_path('~/.vim/bundles.yml'))
-	bundles_hash = bundles.inspect.gsub('=>', ':').gsub('nil', '{}')
-	VIM::command("let g:my_bundles = #{bundles_hash}")
+	obj = YAML.load_file(File.expand_path(VIM::evaluate('a:filename')))
+	obj_hash = obj.inspect.gsub('=>', ':').gsub('nil', '{}')
+	VIM::command("let l:ret = #{obj_hash}")
 EOF
+	return l:ret
+endfunction
+
+function! g:yaml_write(filename, obj)
+	ruby << EOF
+	require 'yaml'
+	obj =  VIM::evaluate('a:obj')
+	fname = File.expand_path(VIM::evaluate('a:filename'))
+	File.write(File.expand_path(VIM::evaluate('a:filename')), obj.to_yaml)
+EOF
+endfunction
+
+" Read bundle settings from yaml
+let g:my_bundles = g:yaml_load('~/.vim/bundles.yml')
 
 " Manual plugins
 NeoBundleLocal ~/.vim/bundles/manual
