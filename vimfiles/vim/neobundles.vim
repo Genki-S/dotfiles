@@ -20,6 +20,9 @@ ruby << EOF
 	VIM::command("let g:my_bundles = #{bundles_hash}")
 EOF
 
+" Manual plugins
+NeoBundleLocal ~/.vim/bundles/manual
+
 for bundle in g:my_bundles
 	for [bundle_source_name, bundle_options] in items(bundle)
 		execute 'NeoBundle "' . bundle_source_name . '"'
