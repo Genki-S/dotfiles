@@ -106,3 +106,14 @@ if neobundle#exists_not_installed_bundles()
 \		string(neobundle#get_not_installed_bundle_names())
 	echomsg 'Please execute ":NeoBundleInstall" command.'
 endif
+
+" ==================================================
+" Random reminder
+" ==================================================
+function! s:get_random_bundle()
+	let s:rand = system('echo $RANDOM')
+	let s:all_bundles = neobundle#config#get_neobundles()
+	return s:all_bundles[s:rand % len(s:all_bundles)]
+endfunction
+
+echomsg 'Pickup: ' . s:get_random_bundle().name
