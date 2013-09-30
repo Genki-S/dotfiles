@@ -71,7 +71,7 @@
 - majutsushi/tagbar:
 - Shougo/vimfiler:
 - tpope/vim-unimpaired:
-- goldfeld/vim-seek:
+- rhysd/clever-f.vim:
 - rking/ag.vim:
     lazy: 1
     autoload:
