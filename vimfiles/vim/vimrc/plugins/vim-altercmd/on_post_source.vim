@@ -39,3 +39,5 @@ AlterCommand nbl Unite neobundle/lazy
 AlterCommand nbd NeoBundleDocs
 
 AlterCommand nse NeoSnippetEdit -split -vertical
+
+AlterCommand man Ref man

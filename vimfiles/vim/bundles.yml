@@ -79,6 +79,10 @@
 
 # Reference
 - thinca/vim-ref:
+    lazy: 1
+    autoload:
+        commands:
+            - Ref
 - taka84u9/vim-ref-ri:
 
 # Unite
