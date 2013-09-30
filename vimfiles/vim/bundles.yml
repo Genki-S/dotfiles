@@ -58,7 +58,7 @@
 - AndrewRadev/inline_edit.vim:
 
 ## Completion
-- Shougo/neocomplcache:
+- Shougo/neocomplete:
     lazy: 1
     autoload:
         insert: 1
