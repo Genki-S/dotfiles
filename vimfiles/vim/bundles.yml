@@ -247,6 +247,14 @@
     autoload:
         filetypes:
             - mmd
+- suan/vim-instant-markdown:
+    lazy: 1
+    autoload:
+        filetypes:
+            - markdown
+            - mmd
+    build:
+        mac: gem install redcarpet pygments.rb; npm -g install instant-markdown-d
 - LaTeX-Box-Team/LaTeX-Box:
     lazy: 1
     autoload:
