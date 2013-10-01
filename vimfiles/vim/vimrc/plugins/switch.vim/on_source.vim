@@ -1,13 +1,12 @@
-autocmd FileType yaml let b:switch_definitions =
-	\ [
-		\ {
-			\ '\vhttps://github.com/(.*)': '\1:',
-		\ }
-	\ ]
+" Definition file: ./switch.yml
+let s:switch_definitions = g:yaml_load(expand('<sfile>:p:h') . '/switch.yml')
+" { 'filetype1,filetype2': [ definitions ],
+"   'filetype3': [ definitions ], ... }
 
-autocmd FileType ruby let b:switch_definitions =
-	\ [
-		\ ['attr_reader', 'attr_writer', 'attr_accessor'],
-	\ ]
+for [fts, defs] in items(s:switch_definitions)
+	for ft in split(fts, ',')
+		execute 'autocmd FileType' ft 'let b:switch_definitions = s:switch_definitions.' . ft
+	endfor
+endfor
 
-execute "set filetype=".&filetype
+doautocmd FileType
