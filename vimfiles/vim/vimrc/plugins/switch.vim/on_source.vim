@@ -5,7 +5,9 @@ let s:switch_definitions = g:yaml_load(expand('<sfile>:p:h') . '/switch.yml')
 
 for [fts, defs] in items(s:switch_definitions)
 	for ft in split(fts, ',')
-		execute 'autocmd FileType' ft 'let b:switch_definitions = s:switch_definitions.' . ft
+		if has_key(s:switch_definitions, ft)
+			execute 'autocmd FileType' ft 'let b:switch_definitions = s:switch_definitions.' . ft
+		endif
 	endfor
 endfor
 
