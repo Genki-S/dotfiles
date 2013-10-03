@@ -5,7 +5,7 @@ HOME = ENV['HOME']
 DOTDIR = "#{HOME}/dotfiles"
 
 desc 'Do the best.'
-task :install => [:update_submodules, :update_injection] do
+task :install => [:init_submodules, :update_submodules, :update_injection] do
 end
 
 desc 'Deploy dotfiles.'
@@ -26,6 +26,10 @@ task :update_submodules do
   run %{
     git submodule update --recursive
   }
+end
+
+task :init_submodules do
+  run %{ git submodule update --init --recursive }
 end
 
 desc 'Update files with injection of other files'
