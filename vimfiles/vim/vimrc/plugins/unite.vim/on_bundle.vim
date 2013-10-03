@@ -13,4 +13,5 @@ nnoremap <unique> <silent> <SID>[unite]m :<C-u>Unite -buffer-name=mru file_mru<C
 nnoremap <unique> <silent> <SID>[unite]o :<C-u>Unite -buffer-name=outline outline<CR>
 nnoremap <unique> <silent> <SID>[unite]R :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <unique> <silent> <SID>[unite]r :<C-u>Unite -buffer-name=reccursive file_rec<CR>
+nnoremap <unique> <silent> <SID>[unite]t :<C-u>Unite -buffer-name=tag tag<CR>
 nnoremap <unique> <silent> <SID>[unite]<Space> :<C-u>Unite -buffer-name=source source<CR>
