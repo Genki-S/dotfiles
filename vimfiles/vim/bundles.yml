@@ -29,6 +29,8 @@
     lazy: 1
     autoload:
         insert: 1
+- honza/vim-snippets:
+    lazy: 1
 - scrooloose/syntastic:
 - ujihisa/quicklearn:
 - thinca/vim-qfreplace:
