@@ -1,0 +1,1 @@
+autocmd CmdwinEnter * setfiletype cmdwin
