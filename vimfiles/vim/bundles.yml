@@ -129,6 +129,7 @@
 - bootleq/vim-textobj-rubysymbol:
 - coderifous/textobj-word-column.vim:
 - michaeljsmith/vim-indent-object:
+- vim-scripts/textobj-gitgutter:
 
 # Other Utilities
 - fuenor/im_control.vim:
