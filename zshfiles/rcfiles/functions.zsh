@@ -30,3 +30,18 @@ function cdup () {
 	done
 	return 1
 }
+
+# Usage: extract_line N
+# extract line #n from standard input
+# example: `find . -name 'foo' | extract_line 1
+function extract_line()
+{
+	case $# in
+		1)
+			sed -n "${1}p";;
+		2)
+			sed -n "${1},${2}p";;
+		*)
+			;;
+	esac
+}

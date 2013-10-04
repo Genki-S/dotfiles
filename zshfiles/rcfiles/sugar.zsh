@@ -30,6 +30,7 @@ alias -g V="| grep -v"
 alias -g S="| sed"
 alias -g P="| $PAGER"
 alias -g X="| xargs"
+alias -g L="| extract_line"
 
 # output modification
 alias -g CHOP='| awk "length < 1024 { print }"'
