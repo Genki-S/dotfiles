@@ -49,6 +49,11 @@
             - Tabularize
 - t9md/vim-textmanip:
 - AndrewRadev/splitjoin.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - SplitjoinSplit
+            - SplitjoinJoin
 - AndrewRadev/switch.vim:
     lazy: 1
     autoload:
