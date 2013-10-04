@@ -66,7 +66,7 @@ for s:bundle in neobundle#config#get_neobundles()
 		if filereadable(g:plugin_setting_filename(a:bundle.name, 'on_post_source'))
 			execute 'source' g:plugin_setting_filename(a:bundle.name, 'on_post_source')
 		endif
-		execute 'doautocmd User sourced_' . a:bundle.name
+		execute 'silent doautocmd User sourced_' . a:bundle.name
 	endfunction
 endfor
 
