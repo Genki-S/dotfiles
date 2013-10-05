@@ -24,10 +24,15 @@ AlterCommand ss source Session
 " Original commands
 " ==================================================
 AlterCommand ps PluginSetting
+
+" e: edit
 AlterCommand eb edit $DOTDIR/vimfiles/vim/bundles.yml
 AlterCommand enb edit $DOTDIR/vimfiles/vim/neobundles.vim
 AlterCommand eft execute 'edit $DOTDIR/vimfiles/vim/ftplugin/'.&filetype.'.vim'
 AlterCommand esw edit $DOTDIR/vimfiles/vim/vimrc/plugins/switch.vim/switch.yml
+
+" v: view
+AlterCommand vb edit $DOTDIR/vimfiles/vim/bundles
 
 " ==================================================
 " Plugins
