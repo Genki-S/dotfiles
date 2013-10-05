@@ -1,0 +1,53 @@
+# Normal Mode Mappings
+nmap j :ScrollDown
+nmap <C-e> :ScrollDown
+nmap k :ScrollUp
+nmap <C-y> :ScrollUp
+nmap h :ScrollLeft
+nmap l :ScrollRight
+nmap <C-f> :PageDown
+nmap <C-b> :PageUp
+nmap <C-d> :PageHalfDown
+nmap <C-u> :PageHalfUp
+nmap gg :GoTop
+nmap G :GoBottom
+nmap t :TabOpenNew
+nmap d :TabCloseCurrent
+nmap D :TabCloseCurrent --focusprev
+nmap n :NextSearch
+nmap N :PrevSearch
+nmap gt :TabFocusNext
+nmap gT :TabFocusPrev
+nmap <C-n> :TabFocusNext
+nmap <C-p> :TabFocusPrev
+nmap r :TabReload
+nmap <C-o> :BackHist
+nmap <C-i> :ForwardHist
+nmap ; :GoCommandMode
+nmap / :GoSearchModeForward
+nmap ? :GoSearchModeBackward
+nmap a :GoLinkTextSearchMode
+nmap f :GoFMode
+nmap F :GoFMode --newtab
+nmap : :GoExtFMode
+nmap gi :FocusOnFirstInput
+nmap u :RestoreTab
+nmap gp :WinOpenNew --pop
+nmap gs :TabOpenNew --next view-source:%url
+nmap yy :copyurl
+nmap p :Open %clipboard
+nmap P :TabOpenNew %clipboard
+nmap o :Open -i
+nmap O :TabOpenNew -i
+nmap s :Open -i g
+nmap S :TabOpenNew -i g
+nmap b :Open -b
+nmap B :TabOpenNew -b
+nmap '' :BackToPageMark
+nmap <C-^> :TabSwitchLast
+nmap <C-ESC> :GoEmergencyMode
+nmap <ESC> :Escape
+nmap <C-[> :Escape
+nmap ,z :ToggleImageSize
+
+nmap <SPACE>m :TabOpenNew https://mail.google.com/mail/#inbox
