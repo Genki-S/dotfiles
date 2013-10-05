@@ -1,7 +1,7 @@
-xmap <unique> <C-y> <Plug>(textmanip-duplicate-up)
-xmap <unique> <C-e> <Plug>(textmanip-duplicate-down)
+xmap <C-y> <Plug>(textmanip-duplicate-up)
+xmap <C-e> <Plug>(textmanip-duplicate-down)
 
-xmap <unique> <C-j> <Plug>(textmanip-move-down)
-xmap <unique> <C-k> <Plug>(textmanip-move-up)
-xmap <unique> <C-h> <Plug>(textmanip-move-left)
-xmap <unique> <C-l> <Plug>(textmanip-move-right)
+xmap <C-j> <Plug>(textmanip-move-down)
+xmap <C-k> <Plug>(textmanip-move-up)
+xmap <C-h> <Plug>(textmanip-move-left)
+xmap <C-l> <Plug>(textmanip-move-right)

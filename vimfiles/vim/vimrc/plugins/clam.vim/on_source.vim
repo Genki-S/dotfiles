@@ -1,2 +1,2 @@
-nnoremap <unique> <Leader>! :Clam 
-vnoremap <unique> <Leader>! :ClamVisual 
+nnoremap <Leader>! :Clam 
+vnoremap <Leader>! :ClamVisual 

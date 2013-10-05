@@ -1,1 +1,1 @@
-nnoremap <unique> <silent> - :Switch<CR>
+nnoremap <silent> - :Switch<CR>

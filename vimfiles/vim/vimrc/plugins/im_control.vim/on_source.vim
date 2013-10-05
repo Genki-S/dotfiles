@@ -1,5 +1,5 @@
 " 「日本語入力固定モード」切替キー
-inoremap <unique> <silent> <C-\> <C-r>=IMState('FixMode')<CR>
+inoremap <silent> <C-\> <C-r>=IMState('FixMode')<CR>
 " PythonによるIBus制御指定
 let IM_CtrlIBusPython = 1
 

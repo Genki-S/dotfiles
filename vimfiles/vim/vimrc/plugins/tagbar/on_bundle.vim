@@ -1,4 +1,4 @@
-nnoremap <unique> <SID>[tagbar] <Nop>
-nmap <unique> <Leader>t <SID>[tagbar]
+nnoremap <SID>[tagbar] <Nop>
+nmap <Leader>t <SID>[tagbar]
 
-nnoremap <unique> <silent> <SID>[tagbar]<Space> :TagbarToggle<CR>
+nnoremap <silent> <SID>[tagbar]<Space> :TagbarToggle<CR>

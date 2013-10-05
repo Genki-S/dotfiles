@@ -1,8 +1,8 @@
 " Change Leader
 let mapleader = ','
-nnoremap <unique> \ ,
+nnoremap \ ,
 
-noremap <unique> ; :
-noremap <unique> : ;
-noremap <unique> q; q:
-noremap <unique> q: q;
+noremap ; :
+noremap : ;
+noremap q; q:
+noremap q: q;

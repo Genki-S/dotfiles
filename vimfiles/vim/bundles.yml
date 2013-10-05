@@ -131,6 +131,9 @@
 - michaeljsmith/vim-indent-object:
 - vim-scripts/textobj-gitgutter:
 
+# Sharpen the workflow
+- mattn/benchvimrc-vim:
+
 # Other Utilities
 - fuenor/im_control.vim:
 - Genki-S/vim-annotator:
