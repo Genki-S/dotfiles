@@ -26,6 +26,7 @@ AlterCommand ss source Session
 AlterCommand ps PluginSetting
 
 " e: edit
+AlterCommand ev edit $DOTDIR/vimfiles/vimrc
 AlterCommand eb edit $DOTDIR/vimfiles/vim/bundles.yml
 AlterCommand enb edit $DOTDIR/vimfiles/vim/neobundles.vim
 AlterCommand eft execute 'edit $DOTDIR/vimfiles/vim/ftplugin/'.&filetype.'.vim'
