@@ -1,1 +1,46 @@
+# See here for setting guideline
+# http://linux.die.net/man/3/readline
+
+# ====================
+# Settings
+# ====================
+
+# I set bindings myself, thank you.
+set bind-tty-special-chars Off
+
+# ====================
+# Key Bindings
+# ====================
 set editing-mode vi
+
+# Keymaps in insert mode
+set keymap vi-insert
+
+# Use emacs standard bindings
+Control-@: set-mark
+Control-a: beginning-of-line
+Control-b: backward-char
+Control-d: delete-char
+Control-e: end-of-line
+Control-f: forward-char
+Control-g: abort
+Control-h: backward-delete-char
+Control-i: complete
+Control-j: accept-line
+Control-k: kill-line
+Control-l: clear-screen
+Control-m: accept-line
+Control-n: next-history
+Control-p: previous-history
+Control-q: quoted-insert
+Control-r: reverse-search-history
+Control-s: forward-search-history
+Control-t: transpose-chars
+Control-u: unix-line-discard
+Control-v: quoted-insert
+Control-w: backward-kill-word
+Control-y: yank
+Control-]: character-search
+Control-_: undo
+
+"\C-x\C-r": re-read-init-file
