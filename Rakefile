@@ -1,5 +1,6 @@
 require 'rake'
 require 'fileutils'
+require 'yaml'
 
 HOME = ENV['HOME']
 DOTDIR = "#{HOME}/dotfiles"
