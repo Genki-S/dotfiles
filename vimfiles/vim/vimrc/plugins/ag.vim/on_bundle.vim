@@ -1,0 +1,1 @@
+nnoremap <Leader>a :Ag 
