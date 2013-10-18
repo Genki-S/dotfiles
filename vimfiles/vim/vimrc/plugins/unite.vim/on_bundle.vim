@@ -14,5 +14,8 @@ nnoremap <silent> <SID>[unite]o :<C-u>Unite -buffer-name=outline outline<CR>
 nnoremap <silent> <SID>[unite]R :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> <SID>[unite]r :<C-u>Unite -buffer-name=reccursive file_rec<CR>
 nnoremap <silent> <SID>[unite]s :<C-u>Unite -buffer-name=snippet snippet<CR>
-nnoremap <silent> <SID>[unite]t :<C-u>Unite -buffer-name=tag tag<CR>
 nnoremap <silent> <SID>[unite]<Space> :<C-u>Unite -buffer-name=source source<CR>
+
+" unite-tag
+nnoremap <silent> <SID>[unite]t :<C-u>Unite -buffer-name=tag tag<CR>
+nnoremap <silent> <SID>[unite]<C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>
