@@ -197,7 +197,7 @@
         filetypes:
             - javascript
             - coffee
-- mattn/zencoding-vim:
+- mattn/emmet-vim:
     lazy: 1
     autoload:
         filetypes:
