@@ -40,6 +40,8 @@
 (setq org-default-notes-file gtd-inbox)
 (setq org-capture-templates
       '(("c" "Capture" entry (file gtd-inbox)
-         "* TODO %?\n  %U\n  %a")))
+         "* TODO %?\n  %U\n  %a")
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+         (file "~/org/templates/journal.txt"))))
 
 ; vim: set filetype=lisp:
