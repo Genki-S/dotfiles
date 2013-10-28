@@ -27,7 +27,8 @@
 (setq gtd-project (concat org-directory "/project.org"))
 
 ; org settings
-(setq org-catch-invisible-edits 1)
+(setq org-catch-invisible-edits t)
+(setq org-startup-indented t)
 
 (setq org-agenda-files
       (list gtd-inbox gtd-next gtd-someday gtd-project))
