@@ -45,3 +45,11 @@ function extract_line()
 			;;
 	esac
 }
+
+function xargs_with_alias()
+{
+	expanded_cmd=`expand_alias $1`
+	shift
+	expanded_cmd+=" $*"
+	eval "xargs $expanded_cmd"
+}
