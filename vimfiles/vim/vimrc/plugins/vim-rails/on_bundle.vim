@@ -25,9 +25,11 @@ nnoremap <SID>[rails]v :Rview
 
 nnoremap <SID>[rails]M :Rake 
 nnoremap <SID>[rails]R :Rails 
-nnoremap <SID>[rails]r :Rrunner 
 nnoremap <SID>[rails]p :Rpp 
 nnoremap <SID>[rails]g :Rgenerate 
 nnoremap <SID>[rails]d :Rdestroy 
 
 nnoremap <SID>[rails]ex :Rextract 
+
+" For rspec-console
+nnoremap <SID>[rails]r :w<CR>:execute 'SlimeSend1 rspec' @% . ':' . line('.')<CR>
