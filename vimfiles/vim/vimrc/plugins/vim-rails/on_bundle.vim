@@ -32,4 +32,11 @@ nnoremap <SID>[rails]d :Rdestroy
 nnoremap <SID>[rails]ex :Rextract 
 
 " For rspec-console
-nnoremap <SID>[rails]r :w<CR>:execute 'SlimeSend1 rspec' @% . ':' . line('.')<CR>
+nnoremap <silent> <SID>[rails]r :call <SID>vimux_rspec_console()<CR>
+
+function! s:vimux_rspec_console()
+	if !exists('g:VimuxRunnerPaneIndex')
+		call VimuxRunCommand('rails c test')
+	endif
+	call VimuxRunCommand('rspec ' . expand('%') . ':' . line('.'))
+endfunction

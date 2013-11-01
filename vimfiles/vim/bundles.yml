@@ -150,6 +150,11 @@
     autoload:
         commands:
             - SlimeConfig
+- benmills/vimux:
+    lazy: 1
+    autoload:
+        commands:
+            - VimuxRunCommand
 - tyru/vim-altercmd:
 - vim-scripts/marvim:
 - kana/vim-fakeclip:
