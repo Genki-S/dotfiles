@@ -33,6 +33,9 @@ group :development do
   # Documentation
   want_gem 'railroady'
 
+  # Code analysis
+  want_gem 'rails_best_practices'
+
   # Misc.
   want_gem 'meta_request'
   want_gem 'sextant'
@@ -46,4 +49,8 @@ end
 
 group :development, :test do
   want_gem 'jazz_hands'
+  want_gem 'gnuplot'
+  want_gem 'commands'
+  want_gem 'rails-env-switcher'
+  want_gem 'rspec-console'
 end
