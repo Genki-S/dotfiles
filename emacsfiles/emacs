@@ -1,17 +1,15 @@
 (package-initialize)
-(require 'package )
+(require 'package)
 
 (require 'ido)
 (ido-mode t)
 
 ; Org settings
 ; ============
-
-(add-to-list 'package-archives '("org-plus-contrib" . "http://orgmode.org/elpa/") t)
+(add-to-list 'load-path (expand-file-name "~/dotfiles/submodules/org-mode/lisp"))
+(add-to-list 'load-path (expand-file-name "~/dotfiles/submodules/org-mode/contrib/lisp"))
 (require 'org)
-(require 'org-install)
-(add-to-list 'org-modules 'org-habit)
-(add-to-list 'org-modules 'org-checklist)
+(require 'org-checklist)
 
 ; key settings
 (global-set-key "\C-cl" 'org-store-link)
