@@ -1,6 +1,9 @@
 [include]
 	path = ~/dotfiles/submodules/yadr/git/gitconfig
 
+[alias]
+	news = log -p HEAD@{1}..HEAD@{0}
+
 [user]
 	name = Genki Sugimoto
 	email = cfhoyuk.reccos.nelg@gmail.com
