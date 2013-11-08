@@ -49,6 +49,7 @@ end
 
 group :development, :test do
   want_gem 'jazz_hands'
+  want_gem 'pry-rescue'
   want_gem 'gnuplot'
   want_gem 'commands'
   want_gem 'rails-env-switcher'
