@@ -53,3 +53,7 @@ function xargs_with_alias()
 	expanded_cmd+=" $*"
 	eval "xargs $expanded_cmd"
 }
+
+function zman() {
+	PAGER="less -g -s '+/^       "$1"'" man zshall
+}
