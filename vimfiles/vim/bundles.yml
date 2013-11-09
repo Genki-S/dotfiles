@@ -189,6 +189,13 @@
         filetypes:
             - ruby
 
+## Go
+- jnwhiteh/vim-golang:
+    lazy: 1
+    autoload:
+        filetypes:
+            - go
+
 ## Web Development
 - hail2u/vim-css3-syntax:
     lazy: 1
