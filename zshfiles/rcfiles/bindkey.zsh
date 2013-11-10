@@ -82,6 +82,17 @@ zstyle ':completion:tmux-pane-words-(prefix|anywhere):*' ignore-line current
 zstyle ':completion:tmux-pane-words-(prefix|anywhere):*' menu yes select interactive
 zstyle ':completion:tmux-pane-words-anywhere:*' matcher-list 'b:=* m:{A-Za-z}={a-zA-Z}'
 
+# complete the output from previous command
+# http://www.zsh.org/mla/users/2004/msg00893.html
+_jh-prev-result () {
+    hstring=$(eval `fc -l -n -1`)
+    set -A hlist ${(@s/
+/)hstring}
+    compadd - ${hlist}
+}
+zle -C jh-prev-comp menu-complete _jh-prev-result
+bindkey '^x^p' jh-prev-comp
+
 # ==================================================
 # Common settings
 # ==================================================
