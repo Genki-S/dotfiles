@@ -12,8 +12,11 @@ end
 
 Pry.config.commands.import custom_command_set
 
-# Rspec Console: http://velvetpulse.com/2012/11/19/improve-your-ruby-workflow-by-integrating-vim-tmux-pry/
-if Rails.env.test?
-  $LOAD_PATH << 'spec' # in case there are `require 'spec_helper'` statements
-  ActiveRecord::Base.logger = Logger.new(nil) # suppress overwhelming information
+# Rails settings
+if defined?(Rails)
+  # Rspec Console: http://velvetpulse.com/2012/11/19/improve-your-ruby-workflow-by-integrating-vim-tmux-pry/
+  if Rails.env.test?
+    $LOAD_PATH << 'spec' # in case there are `require 'spec_helper'` statements
+    ActiveRecord::Base.logger = Logger.new(nil) # suppress overwhelming information
+  end
 end
