@@ -84,6 +84,7 @@
     autoload:
         commands:
             - Ag
+- justinmk/vim-sneak:
 
 # Reference
 - thinca/vim-ref:
