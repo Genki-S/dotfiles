@@ -1,3 +1,5 @@
+execute 'source' expand('~/.vim/vimrc/optional/uskeyboard.vim')
+
 " ==================================================
 " NeoBundle
 " ==================================================
@@ -25,8 +27,6 @@ filetype indent on
 " ==================================================
 " My vimrc (in '~/.vim/vimrc/')
 " ==================================================
-
-execute 'source' expand('~/.vim/vimrc/optional/uskeyboard.vim')
 
 for f in split(glob('~/.vim/vimrc/setting/*.vim'), '\n')
 	execute 'source' f
