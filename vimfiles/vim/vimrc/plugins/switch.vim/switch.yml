@@ -28,6 +28,9 @@ ruby,eruby,haml:
     - attr_accessor
     - attr_reader
     - attr_writer
+  -
+    - binding.pry
+    - binding.remote_pry
 ruby.application_template:
   -
     - yes?
@@ -251,3 +254,9 @@ rails:
   -
     - 511
     - ':network_authentication_required'
+gitrebase:
+  -
+    - pick
+    - edit
+    - squash
+    - fixup
