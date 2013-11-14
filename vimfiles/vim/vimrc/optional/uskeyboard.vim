@@ -2,5 +2,7 @@
 let mapleader = ','
 nnoremap \ ,
 
-map ; :
-map : ;
+noremap ; :
+noremap : ;
+noremap q; q:
+noremap q: q;

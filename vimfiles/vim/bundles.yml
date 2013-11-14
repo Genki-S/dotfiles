@@ -116,7 +116,6 @@
 - Lokaltog/vim-powerline:
 - kshenoy/vim-signature:
 - nathanaelkane/vim-indent-guides:
-- osyo-manga/vim-over:
 
 # Text Objects
 - kana/vim-textobj-user:

@@ -1,6 +1,3 @@
-" Use cmdwin by default
-nnoremap : q:a
-
 cnoremap <C-a>  <Home>
 cnoremap <C-b>  <Left>
 cnoremap <C-f>  <Right>
