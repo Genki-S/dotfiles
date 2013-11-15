@@ -1,3 +1,10 @@
+let g:tagbar_status_func = 'TagbarStatusFunc'
+
+function! TagbarStatusFunc(current, sort, fname, ...) abort
+	let g:lightline.fname = a:fname
+	return lightline#statusline(0)
+endfunction
+
 let g:tagbar_type_scss = {
 	\ 'ctagstype' : 'Scss',
 	\ 'kinds' : [

@@ -115,7 +115,7 @@
 - altercation/vim-colors-solarized:
 - airblade/vim-gitgutter:
 - t9md/vim-quickhl:
-- Lokaltog/vim-powerline:
+- itchyny/lightline.vim:
 - kshenoy/vim-signature:
 - nathanaelkane/vim-indent-guides:
 
