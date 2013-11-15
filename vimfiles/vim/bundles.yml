@@ -221,6 +221,9 @@
         filetypes:
             - go
 
+## Vim
+- xolox/vim-reload:
+
 ## Web Development
 - hail2u/vim-css3-syntax:
     lazy: 1
