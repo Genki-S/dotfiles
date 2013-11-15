@@ -43,6 +43,11 @@ task :update_injection do
   end
 end
 
+desc 'Install essential softwares'
+task :install_softwares do
+  install_hub
+end
+
 task :generate_global_tags do
   run %{
     ctags \
@@ -118,4 +123,35 @@ def my_ln(src, dst)
   run %{ rm #{dst} } if File.symlink?(dst)
   raise %{File "#{dst}" exists and not a symlink.} if File.exists?(dst)
   run %{ ln -s #{src} #{dst} }
+end
+
+def install_hub
+  # http://hub.github.com/
+  if OS.mac?
+    run %{ brew install hub }
+  else
+    run %{
+      curl http://hub.github.com/standalone -sLo ~/bin/hub
+      chmod +x ~/bin/hub
+    }
+  end
+end
+
+# OS check (http://stackoverflow.com/questions/170956/how-can-i-find-which-operating-system-my-ruby-program-is-running-on)
+module OS
+  def OS.windows?
+    (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
+  end
+
+  def OS.mac?
+   (/darwin/ =~ RUBY_PLATFORM) != nil
+  end
+
+  def OS.unix?
+    !OS.windows?
+  end
+
+  def OS.linux?
+    OS.unix? and not OS.mac?
+  end
 end
