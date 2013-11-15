@@ -22,6 +22,7 @@
 - vim-scripts/sudo.vim:
 - chrisbra/Recover.vim:
 - tsaleh/vim-matchit:
+- xolox/vim-misc:
 
 # Coding
 - tpope/vim-scriptease:
@@ -132,6 +133,19 @@
 - michaeljsmith/vim-indent-object:
 - vim-scripts/textobj-gitgutter:
 
+# Writing
+- beloglazov/vim-online-thesaurus:
+    lazy: 1
+    autoload:
+        commands:
+            - OnlineThesaurusCurrentWord
+            - Thesaurus
+- mikewest/vimroom:
+    lazy: 1
+    autoload:
+        commands:
+            - VimroomToggle
+
 # Other Utilities
 - fuenor/im_control.vim:
 - Genki-S/vim-annotator:
@@ -160,6 +174,16 @@
 - vim-scripts/marvim:
 - kana/vim-fakeclip:
 - tyru/open-browser.vim:
+- xolox/vim-session:
+    lazy: 1
+    autoload:
+        commands:
+            - SaveSession
+            - OpenSession
+            - RestartVim
+            - CloseSession
+            - DeleteSession
+            - ViewSession
 
 # Filetype Specific
 
