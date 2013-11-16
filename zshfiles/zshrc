@@ -1,5 +1,5 @@
 # Profiling
-start_millisec=`gdate +%s%N | cut -b1-13`
+start_millisec=`date +%s%N | cut -b1-13`
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/genki/.zshrc'
@@ -153,6 +153,6 @@ DISABLE_AUTO_TITLE=true
 # fi
 
 # End profiling
-end_millisec=`gdate +%s%N | cut -b1-13`
+end_millisec=`date +%s%N | cut -b1-13`
 echo "zshrc: $(($end_millisec - $start_millisec)) ms." | \
 	tee $HOME/.tmp/profiling/zsh/`date "+%Y%m%d_%H%M%S"`
