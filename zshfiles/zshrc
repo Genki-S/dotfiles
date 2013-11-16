@@ -93,7 +93,7 @@ eval `dircolors $MYBUNDLES/dircolors-solarized/dircolors.256dark`
 # RescueTime
 ps -e | grep rescuetime &> /dev/null
 if [ $? -ne 0 ]; then
-	if which rescuetime &> /dev/null; then
+	if executable rescuetime; then
 		screen -d -m rescuetime
 	else
 		echo "You should install RescueTime, really."

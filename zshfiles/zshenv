@@ -1,6 +1,7 @@
 # ==================================================
-# Platform check
+# Utilities
 # ==================================================
+# platform check
 case $OSTYPE in
 	darwin*)
 		PLATFORM='mac'
@@ -12,6 +13,10 @@ case $OSTYPE in
 		PLATFORM='unknown'
 		;;
 esac
+
+function executable() {
+	command -v $* > /dev/null
+}
 
 # ==================================================
 # My zshenv

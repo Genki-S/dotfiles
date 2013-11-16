@@ -1,7 +1,6 @@
 # Source rvm environment
-which rails &> /dev/null
-if [ $? -ne 0 ]; then
-	source $HOME/.rvm/environments/default
+if executable rvm; then
+	source $(rvm env --path)
 fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 

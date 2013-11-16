@@ -3,7 +3,7 @@
 #   http://brettterpstra.com/2012/08/02/a-drop-in-growlnotify-replacement-for-mountain-lion-notifications/
 #   https://github.com/alloy/terminal-notifier
 
-if [[ -x `which terminal-notifier` ]]; then
+if executable terminal-notifier; then
 	notify-preexec-hook() {
 		zsh_notifier_cmd="$1"
 		zsh_notifier_time="`date +%s`"
