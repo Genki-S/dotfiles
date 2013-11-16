@@ -19,3 +19,6 @@
 [submodule "submodules/vimperator-labs"]
 	path = submodules/vimperator-labs
 	url = https://github.com/briceburg/vimperator-labs
+[submodule "submodules/zsh-super-vim-mode"]
+	path = submodules/zsh-super-vim-mode
+	url = https://github.com/Genki-S/zsh-super-vim-mode
