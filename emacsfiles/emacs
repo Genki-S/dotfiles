@@ -43,4 +43,20 @@
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
          (file "~/org/templates/journal.txt"))))
 
+
+; Writing
+; ============
+; reftex (http://nakkaya.com/2010/09/07/writing-papers-using-org-mode/)
+(setq reftex-default-bibliography
+      (quote ("~/reftex.bib")))
+
+(defun na-org-mode-reftex-setup ()
+  (interactive)
+  (load-library "reftex")
+  (and (buffer-file-name)
+       (file-exists-p (buffer-file-name))
+       (reftex-parse-all)))
+
+(add-hook 'org-mode-hook 'na-org-mode-reftex-setup)
+
 ; vim: set filetype=lisp:
