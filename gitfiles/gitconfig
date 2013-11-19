@@ -30,5 +30,8 @@
 [github]
 	user = Genki-S
 
+[color "diff"]
+	new = cyan
+
 [include]
 	path = ~/.gitconfig.local
