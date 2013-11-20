@@ -32,6 +32,7 @@ alias -g P="| $PAGER"
 alias -g T="| tee"
 alias -g X="| xargs_with_alias"
 alias -g L="| extract_line"
+alias -g PB="| reattach-to-user-namespace pbcopy"
 
 # output modification
 alias -g CHOP='| awk "length < 1024 { print }"'
