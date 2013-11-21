@@ -150,6 +150,10 @@
 - fuenor/im_control.vim:
 - Genki-S/vim-annotator:
 - mattn/gist-vim:
+    lazy: 1
+    autoload:
+        commands:
+            - Gist
 - kana/vim-fakeclip:
 - vim-scripts/TwitVim:
 - thinca/vim-quickrun:
