@@ -19,3 +19,11 @@ endfor
 for f in split(glob('~/.vim/vimrc/command/*.vim'), '\n')
 	execute 'source' f
 endfor
+
+" ==================================================
+" Call NeoBundle hooks on reloading vimrc
+" ==================================================
+if !has('vim_starting')
+	call neobundle#call_hook('on_source')
+	call neobundle#call_hook('on_post_source')
+endif

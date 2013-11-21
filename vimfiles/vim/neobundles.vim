@@ -140,14 +140,6 @@ endfunction
 
 echomsg 'Pickup: ' . s:get_random_bundle().name
 
-" ==================================================
-" Call hooks
-" ==================================================
-if !has('vim_starting')
-	call neobundle#call_hook('on_source')
-	call neobundle#call_hook('on_post_source')
-endif
-
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 filetype plugin on
 filetype indent on
