@@ -19,6 +19,8 @@ AlterCommand so source %
 AlterCommand sl execute getline('.')
 " source session
 AlterCommand ss source Session
+" source vimrc
+AlterCommand sv source $MYVIMRC
 
 " ==================================================
 " Original commands
@@ -26,7 +28,7 @@ AlterCommand ss source Session
 AlterCommand ps PluginSetting
 
 " e: edit
-AlterCommand ev edit $DOTDIR/vimfiles/vimrc
+AlterCommand ev edit $MYVIMRC
 AlterCommand eb edit $DOTDIR/vimfiles/vim/bundles.yml
 AlterCommand enb edit $DOTDIR/vimfiles/vim/neobundles.vim
 AlterCommand eft execute 'edit $DOTDIR/vimfiles/vim/ftplugin/'.&filetype.'.vim'
