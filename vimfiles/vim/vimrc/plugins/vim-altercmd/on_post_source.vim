@@ -10,6 +10,7 @@ AlterCommand m make
 AlterCommand sf setfiletype
 AlterCommand fl help function-list
 AlterCommand tn tabnew
+AlterCommand qt tabclose
 
 " --------------------------------------------------
 " Source stuffs
