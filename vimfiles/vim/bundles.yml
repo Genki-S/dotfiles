@@ -122,6 +122,12 @@
 - itchyny/lightline.vim:
 - kshenoy/vim-signature:
 - nathanaelkane/vim-indent-guides:
+- mattboehm/vim-accordion:
+    lazy: 1
+    autoload:
+        commands:
+            - Accordion
+            - AccordionDiff
 
 # Text Objects
 - kana/vim-textobj-user:
