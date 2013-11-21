@@ -87,6 +87,10 @@
             - Ag
 - justinmk/vim-sneak:
 
+# Debugging
+- mattboehm/vim-unstack:
+    lazy: 1
+
 # Reference
 - thinca/vim-ref:
     lazy: 1
