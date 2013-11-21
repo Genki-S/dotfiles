@@ -12,6 +12,7 @@
 	templatedir = ~/.git_template
 
 [core]
+	editor = "vim -u ~/.vimrc.minimal"
 	excludesfile = ~/.gitignore_global
 
 [push]
