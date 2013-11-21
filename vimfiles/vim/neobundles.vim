@@ -1,3 +1,7 @@
+filetype off
+filetype plugin indent off
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 let g:hook_names = ['on_bundle', 'on_source', 'on_post_source']
 
 function! g:plugin_setting_dirname(plugin_name)
@@ -135,3 +139,15 @@ function! s:get_random_bundle()
 endfunction
 
 echomsg 'Pickup: ' . s:get_random_bundle().name
+
+" ==================================================
+" Call hooks
+" ==================================================
+if !has('vim_starting')
+	call neobundle#call_hook('on_source')
+	call neobundle#call_hook('on_post_source')
+endif
+
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+filetype plugin on
+filetype indent on

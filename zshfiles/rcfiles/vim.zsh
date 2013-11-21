@@ -6,6 +6,7 @@ function myvim() {
 }
 
 alias v="myvim"
+alias vi="vim -u ~/.vimrc.minimal"
 alias ev="v ~/dotfiles/vimrc"
 alias ez="v ~/dotfiles/zshrc"
 alias et="v ~/dotfiles/tmux.conf"

@@ -1,0 +1,24 @@
+execute 'source' expand('~/.vim/vimrc/optional/uskeyboard.vim')
+
+" ==================================================
+" NeoBundle
+" ==================================================
+
+if strlen($http_proxy) != 0
+	let g:neobundle#types#git#default_protocol = 'http'
+endif
+
+" use NeoBundle
+set nocompatible
+filetype off
+filetype plugin indent off
+
+if has('vim_starting')
+	set runtimepath+=~/.vim/bundles/neobundle.vim
+	call neobundle#rc(expand('~/.vim/bundles'))
+endif
+
+filetype plugin on
+filetype indent on
+
+command! Custom execute 'source' expand('~/.vimrc')

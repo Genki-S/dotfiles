@@ -5,6 +5,7 @@
 - vimfiles:
     - vim
     - vimrc
+    - vimrc.minimal
 - emacsfiles:
     - emacs
 - rubyfiles:
