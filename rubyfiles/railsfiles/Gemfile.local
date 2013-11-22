@@ -40,6 +40,7 @@ group :development do
   want_gem 'meta_request'
   want_gem 'sextant'
   want_gem 'quiet_assets'
+  want_gem 'hookup'
 end
 
 group :test do
