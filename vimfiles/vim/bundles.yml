@@ -105,6 +105,7 @@
 - tsukkee/unite-help:
 - ujihisa/unite-rake:
 - tsukkee/unite-tag:
+- yuku-t/unite-git:
 
 # Git
 - sjl/splice.vim:
