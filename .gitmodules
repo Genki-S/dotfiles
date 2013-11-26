@@ -22,3 +22,12 @@
 [submodule "submodules/zsh-super-vim-mode"]
 	path = submodules/zsh-super-vim-mode
 	url = https://github.com/Genki-S/zsh-super-vim-mode
+[submodule "submodules/tmux-colors-solarized"]
+	path = submodules/tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized
+[submodule "submodules/dircolors-solarized"]
+	path = submodules/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized
+[submodule "submodules/zsh-git-prompt"]
+	path = submodules/zsh-git-prompt
+	url = https://github.com/Genki-S/zsh-git-prompt

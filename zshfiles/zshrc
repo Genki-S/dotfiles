@@ -33,8 +33,8 @@ antigen-bundle zsh-users/zsh-history-substring-search
 antigen-bundle kennethreitz/autoenv
 
 # Load the theme.
-source $MYBUNDLES/zsh-git-prompt/zshrc.sh
-export __GIT_PROMPT_DIR=$MYBUNDLES/zsh-git-prompt
+source $DOTDIR/submodules/zsh-git-prompt/zshrc.sh
+export __GIT_PROMPT_DIR=$DOTDIR/submodules/zsh-git-prompt
 __EXECUTED_GIT_COMMAND=1 # To force prompt update at first
 antigen-theme $DOTDIR/zshfiles/genki.zsh-theme
 
@@ -61,7 +61,6 @@ rcfiles=(
 	ruby.zsh
 	fasd.zsh
 	notification.zsh
-	geeknote.zsh
 	direnv.zsh
 )
 for f in $rcfiles
@@ -85,7 +84,7 @@ source $zvimdir/zsh-super-vim-mode.zsh
 # ==================================================
 
 # dircolors-solarized
-eval `dircolors $MYBUNDLES/dircolors-solarized/dircolors.256dark`
+eval `dircolors $DOTDIR/submodules/dircolors-solarized/dircolors.256dark`
 
 # ==================================================
 # Miscellaneous
