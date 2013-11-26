@@ -19,18 +19,19 @@
 
 ; variables
 (setq org-directory "~/org")
+; gtd is not strictly following the GTD book, I am tweaking
 (setq gtd-inbox (concat org-directory "/inbox.org"))
 (setq gtd-next (concat org-directory "/next.org"))
 (setq gtd-someday (concat org-directory "/someday.org"))
 (setq gtd-project (concat org-directory "/project.org"))
-(setq orgfile-routines (concat org-directory "/routines.org"))
+(setq gtd-routines (concat org-directory "/routines.org"))
 
 ; org settings
 (setq org-catch-invisible-edits t)
 (setq org-startup-indented t)
 
 (setq org-agenda-files
-      (list gtd-inbox gtd-next gtd-someday gtd-project orgfile-routines))
+      (list gtd-inbox gtd-next gtd-someday gtd-project gtd-routines))
 
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
