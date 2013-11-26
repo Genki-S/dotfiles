@@ -4,8 +4,9 @@ My setting files.
 
 This document is organized with requirement -> rules approach.
 
-## Prerequisits
+## Install these
 * the_silver_searcher
+* hub
 
 ## Vim
 
