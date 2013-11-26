@@ -6,7 +6,7 @@ HOME = ENV['HOME']
 DOTDIR = "#{HOME}/dotfiles"
 
 desc 'Do the best.'
-task :install => [:init_submodules, :update_submodules, :update_injection] do
+task :install => [:init_submodules, :update_submodules, :update_injection, :deploy] do
 end
 
 desc 'Deploy dotfiles.'
@@ -39,7 +39,7 @@ task :update_injection do
     ag --files-with-matches 'INJECT_START' --ignore 'Rakefile' --ignore 'bin/inject'
   }
   files_with_injection.split.each do |fname|
-    run %{ inject #{fname} }
+    run %{ #{DOTDIR}/bin/inject #{fname} }
   end
 end
 
@@ -122,6 +122,8 @@ end
 def my_ln(src, dst)
   run %{ rm #{dst} } if File.symlink?(dst)
   raise %{File "#{dst}" exists and not a symlink.} if File.exists?(dst)
+  dir = File.dirname(dst)
+  FileUtils.mkdir_p(dir) unless File.directory?(dir)
   run %{ ln -s #{src} #{dst} }
 end
 

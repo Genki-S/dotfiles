@@ -4,6 +4,9 @@ My setting files.
 
 This document is organized with requirement -> rules approach.
 
+## Prerequisits
+* the_silver_searcher
+
 ## Vim
 
 ### Plugin Management
