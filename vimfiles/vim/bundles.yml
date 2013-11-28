@@ -224,11 +224,6 @@
     autoload:
         filetypes:
             - ruby
-- vim-scripts/ruby-matchit:
-    lazy: 1
-    autoload:
-        filetypes:
-            - ruby
 
 ## Go
 - jnwhiteh/vim-golang:
