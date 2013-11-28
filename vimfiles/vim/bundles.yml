@@ -24,6 +24,7 @@
 - tsaleh/vim-matchit:
 - xolox/vim-misc:
 - tpope/vim-speeddating:
+- osyo-manga/shabadou.vim:
 
 # Coding
 - tpope/vim-scriptease:
@@ -33,7 +34,7 @@
         insert: 1
 - honza/vim-snippets:
     lazy: 1
-- scrooloose/syntastic:
+- osyo-manga/vim-watchdogs:
 - ujihisa/quicklearn:
 - thinca/vim-qfreplace:
 - AndrewRadev/linediff.vim:
@@ -135,6 +136,14 @@
         commands:
             - Accordion
             - AccordionDiff
+- jceb/vim-hier:
+    lazy: 1
+    autoload:
+        commands:
+            - HierStart
+            - HierStop
+            - HierUpdate
+            - HierClear
 
 # Text Objects
 - kana/vim-textobj-user:
@@ -174,6 +183,10 @@
 - kana/vim-fakeclip:
 - vim-scripts/TwitVim:
 - thinca/vim-quickrun:
+    lazy: 1
+    autoload:
+        commands:
+            - QuickRun
 - fuenor/qfixhowm:
 - sjl/clam.vim:
 - gregsexton/VimCalc:

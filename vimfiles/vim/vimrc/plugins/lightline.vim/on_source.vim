@@ -22,7 +22,7 @@ endfunction
 function! MyFugitive()
 	try
 		if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*fugitive#head')
-			let mark = ''  " edit here for cool mark
+			let mark = "\ue80a "  " edit here for cool mark
 			let _ = fugitive#head()
 			return strlen(_) ? mark._ : ''
 		endif
@@ -75,4 +75,8 @@ function! MyGitGutter()
 		endif
 	endfor
 	return join(ret, ' ')
+endfunction
+
+function! MyWatchdogsStatuslineFlag()
+	" TODO: implement here
 endfunction

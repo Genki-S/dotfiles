@@ -2,7 +2,7 @@
 active:
   right:
   - - lineinfo
-    - syntastic
+    - watchdogs
   - - percent
   - - charcode
     - fileformat
@@ -83,7 +83,7 @@ mode_fallback:
 component_type:
   tabs: tabsel
   close: raw
-  syntastic: error
+  watchdogs: error
 enable:
   tabline: 1
   statusline: 1
@@ -96,7 +96,7 @@ inactive:
 colorscheme: solarized
 component_expand:
   tabs: lightline#tabs
-  syntastic: SyntasticStatuslineFlag
+  watchdogs: MyWatchdogsStatuslineFlag
 _mode_:
   s: select
   !binary "Ew==": select
