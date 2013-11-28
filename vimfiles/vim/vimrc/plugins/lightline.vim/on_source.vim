@@ -77,6 +77,11 @@ function! MyGitGutter()
 	return join(ret, ' ')
 endfunction
 
-function! MyWatchdogsStatuslineFlag()
-	" TODO: implement here
+function! MyQfstatus()
+	let qflist = getqflist()
+	call filter(qflist, 'v:val.valid != 0')
+	if len(qflist) == 0
+		return ''
+	endif
+	return "[ QF: " . len(qflist) . " item(s) ]"
 endfunction
