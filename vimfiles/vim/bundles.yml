@@ -23,6 +23,7 @@
 - chrisbra/Recover.vim:
 - tsaleh/vim-matchit:
 - xolox/vim-misc:
+- tpope/vim-speeddating:
 
 # Coding
 - tpope/vim-scriptease:
