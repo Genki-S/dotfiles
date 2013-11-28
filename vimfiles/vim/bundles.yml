@@ -99,6 +99,11 @@
         commands:
             - Ref
 - taka84u9/vim-ref-ri:
+- yuratomo/w3m.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - W3m
 
 # Unite
 - Shougo/unite.vim:
