@@ -188,6 +188,9 @@
         commands:
             - QuickRun
 - fuenor/qfixhowm:
+    lazy: 1
+    autoload:
+        function_prefix: qfixmemo
 - sjl/clam.vim:
 - gregsexton/VimCalc:
     lazy: 1
