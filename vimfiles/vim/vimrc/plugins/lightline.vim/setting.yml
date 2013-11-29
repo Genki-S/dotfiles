@@ -16,26 +16,12 @@ active:
     - gitgutter
     - filename
     - modified
-palette: {}
-tab_component_function:
-  tabnum: lightline#tab#tabnum
-  filename: lightline#tab#filename
-  readonly: lightline#tab#readonly
-  modified: lightline#tab#modified
-subseparator:
-  right: '|'
-  left: '|'
-tabline_separator:
-  right: ''
-  left: ''
-component_visible_condition:
-  paste: '&paste'
-  readonly: '&readonly'
-  modified: '&modified||!&modifiable'
-tabline:
-  right: {}
+inactive:
+  right:
+  - - lineinfo
+  - - percent
   left:
-  - - tabs
+  - - filename
 component_function:
   fugitive: MyFugitive
   filename: MyFilename
@@ -44,82 +30,8 @@ component_function:
   fileencoding: MyFileencoding
   mode: MyMode
   gitgutter: MyGitGutter
-tab_component: {}
-mode_map:
-  !binary "Ew==": S-BLOCK
-  c: COMMAND
-  R: REPLACE
-  s: SELECT
-  v: VISUAL
-  V: V-LINE
-  i: INSERT
-  !binary "Fg==": V-BLOCK
-  S: S-LINE
-  n: NORMAL
-  '?': '      '
-component:
-  absolutepath: '%F'
-  line: '%l'
-  modified: '%M'
-  close: '%999X X '
-  fileencoding: '%{strlen(&fenc)?&fenc:&enc}'
-  bufnum: '%n'
-  readonly: '%R'
-  lineinfo: '%3l:%-2v'
-  filetype: '%{strlen(&filetype)?&filetype:"no ft"}'
-  filename: '%t'
-  paste: '%{&paste?"PASTE":""}'
-  charvaluehex: '%B'
-  percentwin: '%P'
-  relativepath: '%f'
-  fileformat: '%{&fileformat}'
-  column: '%c'
-  mode: '%{lightline#mode()}'
-  percent: '%3p%%'
-  charvalue: '%b'
-mode_fallback:
-  select: visual
-  replace: insert
 component_type:
-  tabs: tabsel
-  close: raw
   qfstatus: error
-enable:
-  tabline: 1
-  statusline: 1
-inactive:
-  right:
-  - - lineinfo
-  - - percent
-  left:
-  - - filename
 colorscheme: solarized
 component_expand:
-  tabs: lightline#tabs
   qfstatus: MyQfstatus
-_mode_:
-  s: select
-  !binary "Ew==": select
-  R: replace
-  c: command
-  V: visual
-  v: visual
-  i: insert
-  !binary "Fg==": visual
-  S: select
-  n: normal
-separator:
-  right: ''
-  left: ''
-tab:
-  active:
-  - tabnum
-  - filename
-  - modified
-  inactive:
-  - tabnum
-  - filename
-  - modified
-tabline_subseparator:
-  right: '|'
-  left: '|'
