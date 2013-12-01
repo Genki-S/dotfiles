@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+require 'nokogiri'
+require 'open-uri'
+
+anki_media_dir = File.expand_path(ENV['HOME'] + '/Documents/Anki/User\ 1/collection.media')
+word = ARGV.first
+
+# Collins
+doc = Nokogiri::HTML(open("http://www.collinsdictionary.com/dictionary/english/#{word}"))
+definitions = doc.at_css('.definition_content')
+definitions.css('script').remove
+definitions.css('#translations_box').remove
+definitions.css('#advert_box').remove
+definitions.css('.the_word').remove
+file = Tempfile.new(['definition', '.html'])
+file.write(definitions.to_html)
+file.close
+collins = `w3m -dump #{file.path}`
+file.unlink
+
+# Alc
+doc = Nokogiri::HTML(open("http://eow.alc.co.jp/#{word}"))
+definitions = doc.at_css('#resultsList')
+file = Tempfile.new(['definition', '.html'])
+file.write(definitions.to_html)
+file.close
+alc = `w3m -dump #{file.path}`
+file.unlink
+
+# Audio from Google TTS
+Dir.mktmpdir do |dir|
+  Dir.chdir(dir) do
+    `en2audio #{word}`
+    `mv #{word}.mp3 #{anki_media_dir}`
+  end
+end
+
+# Output
+text = collins + "\n" + alc
+puts word + " [sound:#{word}.mp3]" + "\t" + text.gsub("\n", '<br>').gsub(' ', '&nbsp;')

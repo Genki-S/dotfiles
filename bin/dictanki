@@ -1,0 +1,9 @@
+#!/bin/sh
+
+while read line; do
+	w3m -dump "http://eow.alc.co.jp/${line}" \
+		| sed "1,/${line}/d" \
+		| sed "1,/${line}/d" \
+		| $PAGER
+	en2anki $line >> ~/anki.txt
+done
