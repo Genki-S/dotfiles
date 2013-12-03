@@ -1,5 +1,5 @@
-function show_full_command() {
+function show_which() {
 	prevcmd=`previous_command`
-	echo "FULL COMMAND:" `full_command $prevcmd` "\n"
+	echo "which:" `which ${prevcmd%% *}` "\n"
 }
-preexec_functions+=(show_full_command)
+preexec_functions+=(show_which)

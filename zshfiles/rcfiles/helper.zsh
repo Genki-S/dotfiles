@@ -18,40 +18,6 @@ function previous_command() {
 	echo `cat \`readlink -f $HISTFILE\` | tail -n1 | sed 's/[^;]*;//'`
 }
 
-# Usage: full_command cmd arg whatever
-function full_command() {
-	com=$*
-	separator=(';' '|' '&&' '||')
-	for sep in $separator
-	do
-		com=`echo $com | sed "s/${(q)sep}/ ${(q)sep} /g"`
-	done
-	com=`echo $com | sed "s/  */ /g" | sed "s/\| \|/\|\|/g"`
-	comarr=(${(s/ /)com})
-	bin=true
-	for (( i = 1; i <= ${#comarr}; i++ )) do
-		if [[ ${comarr[i]} =~ ${(j/|/)${(q)separator}} ]]; then
-			bin=true
-			continue
-		fi
-		if [[ $bin != "true" ]]; then
-			continue
-		fi
-		wh=`which "${comarr[i]}"`
-		if [[ $wh =~ ".*not found.*" ]]; then
-		elif [[ $wh =~ ".*aliased to.*" ]]; then
-			# Wrap alias with double quote (TODO: deal with recursive alias)
-			comarr[$i]=`echo $wh | sed "s/.*aliased to \(.*\)/\"\1\"/"`
-		elif [[ $wh =~ ".*shell built-in command.*" ]]; then
-			comarr[$i]=`echo $wh | sed "s/^\([^:]*\):.*/\1/"`
-		else
-			comarr[$i]=$wh
-		fi
-		bin=false
-	done
-	echo $comarr
-}
-
 function initializer_trigger() {
 	if (( $? != 0 )); then
 		# Previous command did not succeed
