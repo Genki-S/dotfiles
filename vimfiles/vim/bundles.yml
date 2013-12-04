@@ -87,6 +87,7 @@
     autoload:
         commands:
             - Ag
+            - LAg
 - justinmk/vim-sneak:
 
 # Debugging

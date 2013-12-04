@@ -1,1 +1,1 @@
-nnoremap <Leader>a :Ag 
+nnoremap <Leader>a :LAg 
