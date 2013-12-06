@@ -115,6 +115,7 @@
 - tsukkee/unite-tag:
 - yuku-t/unite-git:
 - tacroe/unite-mark:
+- basyura/unite-rails:
 
 # Git
 - sjl/splice.vim:
