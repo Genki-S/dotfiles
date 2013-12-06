@@ -234,10 +234,6 @@
         filetypes:
             - ruby
 - tpope/vim-rails:
-    lazy: 1
-    autoload:
-        filetypes:
-            - ruby
 - tpope/vim-rake:
     lazy: 1
     autoload:
