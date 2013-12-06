@@ -1,10 +1,10 @@
 nnoremap <SID>[quickhl] <Nop>
 nmap <Leader>h <SID>[quickhl]
-nmap <SID>[quickhl]t <Plug>(quickhl-toggle)
-xmap <SID>[quickhl]t <Plug>(quickhl-toggle)
-nmap <SID>[quickhl]r <Plug>(quickhl-reset)
-xmap <SID>[quickhl]r <Plug>(quickhl-reset)
-nnoremap <silent> <SID>[quickhl]l :QuickhlLock<CR>
-nnoremap <silent> <SID>[quickhl]u :QuickhlUnLock<CR>
-nnoremap <silent> <SID>[quickhl]s :QuickhlList<CR>
-
+nmap <SID>[quickhl]<Space> <Plug>(quickhl-manual-toggle)
+xmap <SID>[quickhl]<Space> <Plug>(quickhl-manual-toggle)
+nmap <SID>[quickhl]t <Plug>(quickhl-manual-this)
+xmap <SID>[quickhl]t <Plug>(quickhl-manual-this)
+nnoremap <SID>[quickhl]a :QuickhlManualAdd 
+nnoremap <SID>[quickhl]d :QuickhlManualDelete 
+nnoremap <SID>[quickhl]r :QuickhlManualReset
+nnoremap <silent> <SID>[quickhl]l :QuickhlManualList<CR>
