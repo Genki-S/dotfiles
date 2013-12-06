@@ -46,11 +46,7 @@ alias mo="mux open"
 # ==================================================
 # Platform specific
 # ==================================================
-if [[ $PLATFORM == "linux" ]]; then
-	alias x="xdg-open"
-	alias ack="ack-grep"
-
-elif [[ $PLATFORM == "mac" ]]; then
+if is_mac; then
 	alias x="open"
 
 	# This is a charm

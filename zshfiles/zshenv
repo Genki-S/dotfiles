@@ -2,17 +2,9 @@
 # Utilities
 # ==================================================
 # platform check
-case $OSTYPE in
-	darwin*)
-		PLATFORM='mac'
-		;;
-	linux*)
-		PLATFORM='linux'
-		;;
-	*)
-		PLATFORM='unknown'
-		;;
-esac
+function is_mac() {
+	[[ $OSTYPE =~ 'darwin' ]]
+}
 
 function executable() {
 	command -v $* > /dev/null
@@ -21,13 +13,15 @@ function executable() {
 # ==================================================
 # My zshenv
 # ==================================================
-# Load all config files
-envfiles=(
-	env.zsh
-	path.zsh
-	ruby.zsh
-)
-for f in $envfiles
-do
-	source $HOME/dotfiles/zshfiles/envfiles/$f
-done
+if [[ ! -o NORCS ]]; then
+	# Load all config files
+	envfiles=(
+		env.zsh
+		path.zsh
+		ruby.zsh
+	)
+	for f in $envfiles
+	do
+		source $HOME/dotfiles/zshfiles/envfiles/$f
+	done
+fi

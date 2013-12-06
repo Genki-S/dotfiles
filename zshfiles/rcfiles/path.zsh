@@ -15,17 +15,7 @@ path=(
 	$path
 )
 
-if [[ $PLATFORM == "linux" ]]; then
-	path=(
-		$path
-		# pip
-		/usr/local/share/python
-		# texlive
-		/usr/local/texlive/2012/bin/i386-linux
-	)
-fi
-
-if [[ $PLATFORM == "mac" ]]; then
+if is_mac; then
 	path=(
 		# Use gnu coreutils
 		$(brew --prefix coreutils)/libexec/gnubin
@@ -34,7 +24,6 @@ if [[ $PLATFORM == "mac" ]]; then
 		/usr/texbin
 	)
 fi
-
 
 fpath=(
 	$fpath
