@@ -1,6 +1,3 @@
-# Profiling
-start_millisec=`date +%s%N | cut -b1-13`
-
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/genki/.zshrc'
 autoload -Uz compinit
@@ -150,8 +147,3 @@ DISABLE_AUTO_TITLE=true
 	# echo "=== My Projects ==="
 	# mux list
 # fi
-
-# End profiling
-end_millisec=`date +%s%N | cut -b1-13`
-echo "zshrc: $(($end_millisec - $start_millisec)) ms." | \
-	tee $HOME/.tmp/profiling/zsh/`date "+%Y%m%d_%H%M%S"`
