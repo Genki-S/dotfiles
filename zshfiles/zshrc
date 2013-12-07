@@ -41,6 +41,11 @@ antigen-apply
 # ==================================================
 # My zsh
 # ==================================================
+# Make online help available
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/helpfiles
+
 # Load all config files
 rcfiles=(
 	helper.zsh
