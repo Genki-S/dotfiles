@@ -1,3 +1,6 @@
+let g:unite_force_overwrite_statusline = 0
+let g:unite_source_history_yank_enable = 1
+
 nnoremap <SID>[unite] <Nop>
 nmap <Space> <SID>[unite]
 
@@ -15,6 +18,7 @@ nnoremap <silent> <SID>[unite]o :<C-u>Unite -buffer-name=outline outline<CR>
 nnoremap <silent> <SID>[unite]R :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> <SID>[unite]r :<C-u>Unite -buffer-name=reccursive file_rec<CR>
 nnoremap <silent> <SID>[unite]s :<C-u>Unite -buffer-name=snippet snippet<CR>
+nnoremap <silent> <SID>[unite]y :<C-u>Unite -buffer-name=yank history/yank<CR>
 nnoremap <silent> <SID>[unite]<Space> :<C-u>Unite -buffer-name=source source<CR>
 
 " unite-tag
