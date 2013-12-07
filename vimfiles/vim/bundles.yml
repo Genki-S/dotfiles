@@ -66,6 +66,11 @@
 - tpope/vim-surround:
 - scrooloose/nerdcommenter:
 - AndrewRadev/inline_edit.vim:
+- sk1418/Join:
+    lazy: 1
+    autoload:
+        commands:
+            - Join
 
 ## Completion
 - Shougo/neocomplete:
