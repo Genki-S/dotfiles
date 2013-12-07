@@ -12,31 +12,27 @@ AlterCommand fl help function-list
 AlterCommand tn tabnew
 AlterCommand qt tabclose
 
-" --------------------------------------------------
-" Source stuffs
-" --------------------------------------------------
+" s: source
 AlterCommand so source %
 " source line
 AlterCommand sl execute getline('.')
-" source session
 AlterCommand ss source Session
-" source vimrc
 AlterCommand sv source $MYVIMRC
+
+" e: edit
+AlterCommand ev tabedit $MYVIMRC
+AlterCommand eb tabedit $DOTDIR/vimfiles/vim/bundles.yml
+AlterCommand enb tabedit $DOTDIR/vimfiles/vim/neobundles.vim
+AlterCommand eft execute 'tabedit $DOTDIR/vimfiles/vim/ftplugin/'.&filetype.'.vim'
+AlterCommand esw tabedit $DOTDIR/vimfiles/vim/vimrc/plugins/switch.vim/switch.yml
+
+" v: view
+AlterCommand vb edit $DOTDIR/vimfiles/vim/bundles
 
 " ==================================================
 " Original commands
 " ==================================================
 AlterCommand ps PluginSetting
-
-" e: edit
-AlterCommand ev edit $MYVIMRC
-AlterCommand eb edit $DOTDIR/vimfiles/vim/bundles.yml
-AlterCommand enb edit $DOTDIR/vimfiles/vim/neobundles.vim
-AlterCommand eft execute 'edit $DOTDIR/vimfiles/vim/ftplugin/'.&filetype.'.vim'
-AlterCommand esw edit $DOTDIR/vimfiles/vim/vimrc/plugins/switch.vim/switch.yml
-
-" v: view
-AlterCommand vb edit $DOTDIR/vimfiles/vim/bundles
 
 " ==================================================
 " Plugins
