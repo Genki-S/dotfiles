@@ -25,6 +25,8 @@
 (setq gtd-someday (concat org-directory "/someday.org"))
 (setq gtd-projects (concat org-directory "/projects.org"))
 (setq gtd-routines (concat org-directory "/routines.org"))
+(setq file-journal (concat org-directory "/journal.org"))
+(setq file-workouts (concat org-directory "/workouts.org"))
 
 ; org settings
 (setq org-catch-invisible-edits t)
@@ -33,7 +35,7 @@
 (setq org-clock-into-drawer t)
 
 (setq org-agenda-files
-      (list gtd-inbox gtd-next gtd-someday gtd-projects gtd-routines))
+      (list gtd-inbox gtd-next gtd-someday gtd-projects gtd-routines file-workouts))
 
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
@@ -44,7 +46,7 @@
 (setq org-capture-templates
       '(("c" "Capture" entry (file gtd-inbox)
          "* TODO %?\n  %U\n  %a")
-        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+        ("j" "Journal" entry (file+datetree file-journal)
          (file "~/org/templates/journal.txt"))))
 
 ; todo keywords (http://doc.norang.ca/org-mode.html)
