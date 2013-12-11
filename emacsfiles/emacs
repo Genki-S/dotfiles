@@ -23,7 +23,7 @@
 (setq gtd-inbox (concat org-directory "/inbox.org"))
 (setq gtd-next (concat org-directory "/next.org"))
 (setq gtd-someday (concat org-directory "/someday.org"))
-(setq gtd-project (concat org-directory "/project.org"))
+(setq gtd-projects (concat org-directory "/projects.org"))
 (setq gtd-routines (concat org-directory "/routines.org"))
 
 ; org settings
@@ -31,7 +31,7 @@
 (setq org-startup-indented t)
 
 (setq org-agenda-files
-      (list gtd-inbox gtd-next gtd-someday gtd-project gtd-routines))
+      (list gtd-inbox gtd-next gtd-someday gtd-projects gtd-routines))
 
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
