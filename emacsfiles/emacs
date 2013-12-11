@@ -29,6 +29,8 @@
 ; org settings
 (setq org-catch-invisible-edits t)
 (setq org-startup-indented t)
+(setq org-log-into-drawer "LOGBOOK")
+(setq org-clock-into-drawer t)
 
 (setq org-agenda-files
       (list gtd-inbox gtd-next gtd-someday gtd-projects gtd-routines))
