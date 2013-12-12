@@ -4,6 +4,8 @@
 (require 'ido)
 (ido-mode t)
 
+(require 'calendar)
+
 ; Org settings
 ; ============
 (add-to-list 'load-path (expand-file-name "~/dotfiles/submodules/org-mode/lisp"))
@@ -40,6 +42,12 @@
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                  (org-agenda-files :maxlevel . 9))))
+
+; provide refile targets as paths, including the file name (without directory) as level 1 of the path
+(setq org-refile-use-outline-path 'file)
+
+; allow to create new nodes (must be confirmed by the user) as refile targets
+(setq org-refile-allow-creating-parent-nodes 'confirm)
 
 ; org-capture
 (setq org-default-notes-file gtd-inbox)
