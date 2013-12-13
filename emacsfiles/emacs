@@ -52,8 +52,14 @@
 ; org-capture
 (setq org-default-notes-file gtd-inbox)
 (setq org-capture-templates
-      '(("c" "Capture" entry (file gtd-inbox)
-         "* TODO %?\n%U\n%a")
+      '(("t" "Todo" entry (file gtd-inbox)
+         "* TODO %?\nfrom:%U\n%a\n")
+        ("m" "Meeting" entry (file gtd-inbox)
+         "* MEETING %?\nfrom:%U\n" :clock-in t :clock-resume t)
+        ("n" "Note" entry (file gtd-inbox)
+         "* %? :note:\nfrom:%U\n%a\n" :clock-in t :clock-resume t)
+        ("p" "Phone call" entry (file gtd-inbox)
+         "* PHONE %?\nfrom:%U" :clock-in t :clock-resume t)
         ("j" "Journal" entry (file+datetree file-journal)
          (file "~/org/templates/journal.txt"))))
 
