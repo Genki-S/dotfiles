@@ -219,16 +219,7 @@
 - vim-scripts/marvim:
 - kana/vim-fakeclip:
 - tyru/open-browser.vim:
-- xolox/vim-session:
-    lazy: 1
-    autoload:
-        commands:
-            - SaveSession
-            - OpenSession
-            - RestartVim
-            - CloseSession
-            - DeleteSession
-            - ViewSession
+- szw/vim-ctrlspace:
 
 # Filetype Specific
 

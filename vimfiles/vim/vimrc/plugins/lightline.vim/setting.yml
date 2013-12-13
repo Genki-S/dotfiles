@@ -1,4 +1,6 @@
 ---
+enable:
+  tabline: 0
 active:
   right:
   - - lineinfo
