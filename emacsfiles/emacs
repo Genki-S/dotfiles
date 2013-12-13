@@ -53,7 +53,7 @@
 (setq org-default-notes-file gtd-inbox)
 (setq org-capture-templates
       '(("c" "Capture" entry (file gtd-inbox)
-         "* TODO %?\n  %U\n  %a")
+         "* TODO %?\n%U\n%a")
         ("j" "Journal" entry (file+datetree file-journal)
          (file "~/org/templates/journal.txt"))))
 
