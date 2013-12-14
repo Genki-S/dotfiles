@@ -57,6 +57,20 @@
 ; allow to create new nodes (must be confirmed by the user) as refile targets
 (setq org-refile-allow-creating-parent-nodes 'confirm)
 
+; tags
+(setq org-tag-alist
+      '(
+        ; place
+        ("@work" . ?w) ("@home" . ?h)
+        ; aim
+        (">career") (">happiness") (">fitness") (">skill") (">relationship")
+        ; energy
+        ("!easy" . ?7) ("!normal" . ?8) ("!tough" . ?9)
+        ; time
+        ("@@morning" . ?m) ("@@afternoon" . ?a) ("@@evening" . ?e)
+        ; quadrant
+        ("Q1" . ?1) ("Q2" . ?2) ("Q3" . ?3) ("Q4" . ?4)))
+
 ; org-capture
 (setq org-default-notes-file gtd-inbox)
 (setq org-capture-templates
