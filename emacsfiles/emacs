@@ -89,6 +89,15 @@
               ("MEETING" :foreground "forest green" :weight bold)
               ("PHONE" :foreground "forest green" :weight bold))))
 
+; Org-babel
+(org-babel-do-load-languages
+  'org-babel-load-languages
+  '(;; other Babel languages
+    (plantuml . t)))
+
+(setq org-plantuml-jar-path
+      (expand-file-name "~/jar/plantuml.jar"))
+
 ; Writing
 ; ============
 ; reftex (http://nakkaya.com/2010/09/07/writing-papers-using-org-mode/)
