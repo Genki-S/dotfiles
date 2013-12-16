@@ -65,9 +65,9 @@
         ; aim
         (">career") (">happiness") (">fitness") (">skill") (">relationship")
         ; energy
-        ("!easy" . ?7) ("!normal" . ?8) ("!tough" . ?9)
+        ("!easy") ("!normal") ("!tough")
         ; time
-        ("@@morning" . ?m) ("@@afternoon" . ?a) ("@@evening" . ?e)
+        ("@@morning") ("@@afternoon") ("@@evening")
         ; quadrant
         ("Q1" . ?1) ("Q2" . ?2) ("Q3" . ?3) ("Q4" . ?4)))
 
