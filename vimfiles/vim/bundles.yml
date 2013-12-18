@@ -232,6 +232,7 @@
 - kana/vim-fakeclip:
 - tyru/open-browser.vim:
 - szw/vim-ctrlspace:
+- tpope/vim-dispatch:
 # }}}
 
 # Filetype Specific {{{
