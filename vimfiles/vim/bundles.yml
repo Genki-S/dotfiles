@@ -1,7 +1,7 @@
 ---
 - Shougo/neobundle.vim:
 
-# It just works (No need to invoke consciously, just configure.)
+# It just works (No need to invoke consciously, just configure.) {{{
 - tpope/vim-endwise:
     lazy: 1
     autoload:
@@ -25,8 +25,9 @@
 - xolox/vim-misc:
 - tpope/vim-speeddating:
 - osyo-manga/shabadou.vim:
+# }}}
 
-# Coding
+# Coding {{{
 - tpope/vim-scriptease:
 - Shougo/neosnippet:
     lazy: 1
@@ -72,7 +73,7 @@
         commands:
             - Join
 
-## Completion
+## Completion {{{
 - Shougo/neocomplete:
     lazy: 1
     autoload:
@@ -81,8 +82,11 @@
     lazy: 1
     autoload:
         insert: 1
+## }}}
 
-# Navigation
+# }}}
+
+# Navigation {{{
 - majutsushi/tagbar:
 - Shougo/vimfiler:
 - tpope/vim-unimpaired:
@@ -94,12 +98,14 @@
             - Ag
             - LAg
 - justinmk/vim-sneak:
+# }}}
 
-# Debugging
+# Debugging {{{
 - mattboehm/vim-unstack:
     lazy: 1
+# }}}
 
-# Reference
+# Reference {{{
 - thinca/vim-ref:
     lazy: 1
     autoload:
@@ -111,8 +117,9 @@
     autoload:
         commands:
             - W3m
+# }}}
 
-# Unite
+# Unite {{{
 - Shougo/unite.vim:
 - h1mesuke/unite-outline:
 - tsukkee/unite-help:
@@ -121,8 +128,9 @@
 - yuku-t/unite-git:
 - tacroe/unite-mark:
 - basyura/unite-rails:
+# }}}
 
-# Git
+# Git {{{
 - sjl/splice.vim:
 - tpope/vim-fugitive:
 - gregsexton/gitv:
@@ -130,8 +138,9 @@
     autoload:
         commands:
             - Gitv
+# }}}
 
-# Visual
+# Visual {{{
 - altercation/vim-colors-solarized:
 - airblade/vim-gitgutter:
 - t9md/vim-quickhl:
@@ -152,8 +161,9 @@
             - HierStop
             - HierUpdate
             - HierClear
+# }}}
 
-# Text Objects
+# Text Objects {{{
 - kana/vim-textobj-user:
 - kana/vim-textobj-entire:
 - kana/vim-textobj-function:
@@ -166,8 +176,9 @@
 - coderifous/textobj-word-column.vim:
 - michaeljsmith/vim-indent-object:
 - vim-scripts/textobj-gitgutter:
+# }}}
 
-# Writing
+# Writing {{{
 - beloglazov/vim-online-thesaurus:
     lazy: 1
     autoload:
@@ -179,8 +190,9 @@
     autoload:
         commands:
             - VimroomToggle
+# }}}
 
-# Other Utilities
+# Other Utilities {{{
 - fuenor/im_control.vim:
 - Genki-S/vim-annotator:
 - mattn/gist-vim:
@@ -220,10 +232,11 @@
 - kana/vim-fakeclip:
 - tyru/open-browser.vim:
 - szw/vim-ctrlspace:
+# }}}
 
-# Filetype Specific
+# Filetype Specific {{{
 
-## Ruby
+## Ruby {{{
 - vim-ruby/vim-ruby:
     lazy: 1
     autoload:
@@ -240,18 +253,21 @@
     autoload:
         filetypes:
             - ruby
+## }}}
 
-## Go
+## Go {{{
 - jnwhiteh/vim-golang:
     lazy: 1
     autoload:
         filetypes:
             - go
+## }}}
 
-## Vim
+## Vim {{{
 - xolox/vim-reload:
+## }}}
 
-## Web Development
+## Web Development {{{
 - hail2u/vim-css3-syntax:
     lazy: 1
     autoload:
@@ -308,8 +324,9 @@
     autoload:
         filetypes:
             - haml
+## }}}
 
-## Others
+## Others {{{
 - plasticboy/vim-markdown:
     lazy: 1
     autoload:
@@ -354,8 +371,11 @@
     autoload:
         filetypes:
             - org
+## }}}
 
-# Manual Plugins
+# }}}
+
+# Manual Plugins {{{
 - migemo:
     type: nosync
     base: ~/.vim/bundles/manual
@@ -363,5 +383,6 @@
     autoload:
         commands:
             Migemo
+# }}}
 
-# vim: iskeyword+=/,.,-
+# vim: iskeyword+=/,.,- foldmethod=marker
