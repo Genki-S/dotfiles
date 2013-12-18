@@ -29,6 +29,7 @@
 (setq gtd-routines (concat org-directory "/routines.org"))
 (setq file-journal (concat org-directory "/journal.org"))
 (setq file-workouts (concat org-directory "/workouts.org"))
+(setq file-goals (concat org-directory "/goals.org"))
 
 ; org settings
 (setq org-catch-invisible-edits t)
@@ -38,7 +39,7 @@
 (setq org-columns-default-format "%40ITEM %10TODO %5Effort(Effort) %CLOCKSUM")
 
 (setq org-agenda-files
-      (list gtd-inbox gtd-next gtd-someday gtd-projects gtd-routines file-workouts))
+      (list gtd-inbox gtd-next gtd-someday gtd-projects gtd-routines file-workouts file-goals))
 
 ; Targets include this file and any file contributing to the agenda - up to 9 levels deep
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
