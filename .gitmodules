@@ -13,9 +13,6 @@
 [submodule "submodules/yadr"]
 	path = submodules/yadr
 	url = https://github.com/skwp/dotfiles
-[submodule "submodules/org-mode"]
-	path = submodules/org-mode
-	url = git://orgmode.org/org-mode.git
 [submodule "submodules/vimperator-labs"]
 	path = submodules/vimperator-labs
 	url = https://github.com/briceburg/vimperator-labs
