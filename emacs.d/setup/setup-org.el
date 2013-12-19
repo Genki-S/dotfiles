@@ -5,6 +5,7 @@
 ; (require 'org-export)
 
 ;; POMODORO SETTINGS
+;; http://headhole.org/organisation/2012/08/22/org-mode-gtd-and-the-pomodoro-technique/
 (require 'org-pomodoro)
 
 ;; sets the default workflow keywords and their faces

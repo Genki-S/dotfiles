@@ -10,9 +10,22 @@
 (define-key global-map "\C-cop" '(lambda () (interactive) (find-file "~/org/projects.org")))
 (define-key global-map "\C-coj" '(lambda () (interactive) (find-file "~/org/journal.org")))
 
-;; Org-pomodoro
-;; http://headhole.org/organisation/2012/08/22/org-mode-gtd-and-the-pomodoro-technique/
-(define-key global-map (kbd "C-c C-x C-i") 'org-pomodoro)
-(define-key global-map (kbd "C-c C-x C-o") 'org-pomodoro)
+;; Override key bindings
+;; http://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs/1758639
+(defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
+
+(define-key my-keys-minor-mode-map (kbd "C-c C-x C-i") 'org-pomodoro)
+(define-key my-keys-minor-mode-map (kbd "C-c C-x C-o") 'org-pomodoro)
+
+(define-minor-mode my-keys-minor-mode
+                   "A minor mode so that my key settings override annoying major modes."
+                   t " my-keys" 'my-keys-minor-mode-map)
+
+(defun my-minibuffer-setup-hook ()
+  (my-keys-minor-mode 0))
+
+(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
+
+(my-keys-minor-mode 1)
 
 (provide 'setup-global-bindings)
