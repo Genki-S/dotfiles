@@ -10,4 +10,9 @@
 (define-key global-map "\C-cop" '(lambda () (interactive) (find-file "~/org/projects.org")))
 (define-key global-map "\C-coj" '(lambda () (interactive) (find-file "~/org/journal.org")))
 
+;; Org-pomodoro
+;; http://headhole.org/organisation/2012/08/22/org-mode-gtd-and-the-pomodoro-technique/
+(define-key global-map (kbd "C-c C-x C-i") 'org-pomodoro)
+(define-key global-map (kbd "C-c C-x C-o") 'org-pomodoro)
+
 (provide 'setup-global-bindings)
