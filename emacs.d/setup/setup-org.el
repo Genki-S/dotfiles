@@ -74,7 +74,10 @@
  '(org-clock-persist-query-resume nil)
  ;; Include current clocking task in clock reports
  '(org-clock-report-include-clocking-task t)
- '(org-columns-default-format "%25ITEM %15SCHEDULED %6EFFORT{:} %8CLOCKSUM"))
+ '(org-columns-default-format "%25ITEM %15SCHEDULED %6EFFORT{:} %8CLOCKSUM")
+ ;; provide refile targets as paths, including the file name
+ ;; (without directory) as level 1 of the path
+ '(org-refile-use-outline-path 'file))
 
 (setq org-refile-targets '(("~/org/next.org" :level . 1)
                            ("~/org/projects.org" :level . 1)
