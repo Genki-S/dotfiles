@@ -79,10 +79,11 @@
  ;; (without directory) as level 1 of the path
  '(org-refile-use-outline-path 'file))
 
-(setq org-refile-targets '(("~/org/next.org" :level . 1)
-                           ("~/org/projects.org" :level . 1)
-                           ("~/org/someday.org" :level . 1)
-                           ("~/org/references.org" :level . 1)))
+(setq org-refile-targets '((nil :maxlevel . 2)
+                           ("~/org/next.org" :level . 2)
+                           ("~/org/projects.org" :level . 2)
+                           ("~/org/someday.org" :level . 2)
+                           ("~/org/references.org" :level . 2)))
 
 ;; org-capture
 (setq org-default-notes-file "~/org/inbox.org")
