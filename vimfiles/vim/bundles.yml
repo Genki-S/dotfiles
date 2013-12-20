@@ -12,7 +12,6 @@
     lazy: 1
     autoload:
         insert: 1
-- vim-scripts/IndentCommentPrefix:
 - MarcWeber/vim-addon-local-vimrc:
 - Shougo/vimproc:
     build:
