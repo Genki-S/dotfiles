@@ -73,7 +73,8 @@
  ;; Do not prompt to resume an active clock
  '(org-clock-persist-query-resume nil)
  ;; Include current clocking task in clock reports
- '(org-clock-report-include-clocking-task t))
+ '(org-clock-report-include-clocking-task t)
+ '(org-columns-default-format "%25ITEM %15SCHEDULED %6EFFORT{:} %8CLOCKSUM"))
 
 (setq org-refile-targets '(("~/org/next.org" :level . 1)
                            ("~/org/projects.org" :level . 1)
