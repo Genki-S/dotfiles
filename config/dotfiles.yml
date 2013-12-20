@@ -6,8 +6,6 @@
     - vim
     - vimrc
     - vimrc.minimal
-- emacsfiles:
-    - emacs
 - rubyfiles:
     - pryrc
     - gemrc
@@ -23,3 +21,4 @@
     - vimperatorrc
     - inputrc
     - editrc
+- emacs.d
