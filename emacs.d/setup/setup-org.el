@@ -83,6 +83,10 @@
                            ("~/org/next.org" :level . 2)
                            ("~/org/projects.org" :level . 2)
                            ("~/org/someday.org" :level . 2)
+                           ("~/org/goals.org" :level . 2)
+                           ("~/org/workouts.org" :level . 2)
+                           ("~/org/routines.org" :level . 2)
+                           ("~/org/books.org" :level . 2)
                            ("~/org/references.org" :level . 2)))
 
 ;; org-capture
