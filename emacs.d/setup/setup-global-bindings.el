@@ -9,6 +9,9 @@
 (define-key global-map "\C-cos" '(lambda () (interactive) (find-file "~/org/someday.org")))
 (define-key global-map "\C-cop" '(lambda () (interactive) (find-file "~/org/projects.org")))
 (define-key global-map "\C-coj" '(lambda () (interactive) (find-file "~/org/journal.org")))
+(define-key global-map "\C-cor" '(lambda () (interactive) (find-file "~/org/routines.org")))
+(define-key global-map "\C-cog" '(lambda () (interactive) (find-file "~/org/goals.org")))
+(define-key global-map "\C-cow" '(lambda () (interactive) (find-file "~/org/workouts.org")))
 
 ;; Override key bindings
 ;; http://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs/1758639
