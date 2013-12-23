@@ -33,7 +33,7 @@
 (require 'setup-packages)
 
 ;; Setup extensions
-(eval-after-load 'ido '(require 'setup-ido))
+(require 'setup-ido)
 (require 'setup-org)
 
 ;; Functions (load all files in defuns-dir)

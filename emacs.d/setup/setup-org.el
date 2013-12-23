@@ -49,7 +49,9 @@
  '(org-startup-indented t)
  '(org-log-done t)
  '(org-catch-invisible-edits t)
+ ;; Better completion
  '(org-completion-use-ido t)
+ '(org-outline-path-complete-in-steps nil)
  '(org-agenda-start-on-weekday nil)
  '(org-agenda-include-diary t)
  '(org-agenda-window-setup 'current-window)
@@ -79,15 +81,15 @@
  ;; (without directory) as level 1 of the path
  '(org-refile-use-outline-path 'file))
 
-(setq org-refile-targets '((nil :maxlevel . 2)
-                           ("~/org/next.org" :level . 2)
-                           ("~/org/projects.org" :level . 2)
-                           ("~/org/someday.org" :level . 2)
-                           ("~/org/goals.org" :level . 2)
-                           ("~/org/workouts.org" :level . 2)
-                           ("~/org/routines.org" :level . 2)
-                           ("~/org/books.org" :level . 2)
-                           ("~/org/references.org" :level . 2)))
+(setq org-refile-targets '((nil :maxlevel . 9)
+                           ("~/org/next.org" :maxlevel . 9)
+                           ("~/org/projects.org" :maxlevel . 9)
+                           ("~/org/someday.org" :maxlevel . 9)
+                           ("~/org/goals.org" :maxlevel . 9)
+                           ("~/org/workouts.org" :maxlevel . 9)
+                           ("~/org/routines.org" :maxlevel . 9)
+                           ("~/org/books.org" :maxlevel . 9)
+                           ("~/org/references.org" :maxlevel . 9)))
 
 ;; org-capture
 (setq org-default-notes-file "~/org/inbox.org")
