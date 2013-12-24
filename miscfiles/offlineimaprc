@@ -1,0 +1,21 @@
+[general]
+accounts = Gmail
+maxsyncaccounts = 3
+pythonfile = ~/.offlineimap.py
+
+[Account Gmail]
+localrepository = Local
+remoterepository = Remote
+
+[Repository Local]
+type = Maildir
+localfolders = ~/Maildir
+
+[Repository Remote]
+type = IMAP
+remotehost = imap.gmail.com
+remoteuser = cfhoyuk.reccos.nelg@gmail.com
+remotepasseval = get_authinfo_password("imap.gmail.com", "cfhoyuk.reccos.nelg@gmail.com", 993)
+ssl = yes
+maxconnections = 1
+realdelete = no

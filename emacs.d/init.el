@@ -35,6 +35,7 @@
 ;; Setup extensions
 (require 'setup-ido)
 (require 'setup-org)
+(require 'setup-mail)
 
 ;; Functions (load all files in defuns-dir)
 (dolist (file (directory-files defuns-dir t "\\w+"))
