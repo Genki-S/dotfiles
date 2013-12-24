@@ -1,3 +1,8 @@
+;; Global keybindings
+(define-key global-map (kbd "C-h") 'delete-backward-char)
+(define-key global-map (kbd "M-h") 'backward-kill-word)
+(define-key global-map (kbd "<f1>") 'help-command)
+
 ;; Org-mode keybindings
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
