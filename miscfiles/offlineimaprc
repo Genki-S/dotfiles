@@ -17,5 +17,6 @@ remotehost = imap.gmail.com
 remoteuser = cfhoyuk.reccos.nelg@gmail.com
 remotepasseval = get_authinfo_password("imap.gmail.com", "cfhoyuk.reccos.nelg@gmail.com", 993)
 ssl = yes
+cert_fingerprint = 89091347184d41768bfc0da9fad94bfe882dd358
 maxconnections = 1
 realdelete = no
