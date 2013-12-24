@@ -95,7 +95,7 @@
 (setq org-default-notes-file "~/org/inbox.org")
 (setq org-capture-templates
       '(("t" "Todo" entry (file "~/org/inbox.org")
-         "* TODO %?\n%U\nfrom:%a\n")
+         "* TODO %?\n%U\nfrom:%a\n" :clock-in t :clock-resume t)
         ("m" "Meeting" entry (file "~/org/inbox.org")
          "* MEETING %?\n%U\n" :clock-in t :clock-resume t)
         ("n" "Note" entry (file "~/org/inbox.org")
@@ -103,7 +103,9 @@
         ("p" "Phone call" entry (file "~/org/inbox.org")
          "* PHONE %?\n%U" :clock-in t :clock-resume t)
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
-         (file "~/org/templates/journal.txt"))))
+         (file "~/org/templates/journal.txt") :clock-in t :clock-resume t)
+        ("7" "750 words" entry (file+datetree "~/org/journal.org")
+         ("* %?\n%U" :clock-in t :clock-resume t))))
 
 ;; Resume clocking task when emacs is restarted
 (org-clock-persistence-insinuate)
