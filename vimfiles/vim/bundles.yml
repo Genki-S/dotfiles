@@ -24,6 +24,7 @@
 - xolox/vim-misc:
 - tpope/vim-speeddating:
 - osyo-manga/shabadou.vim:
+- takac/vim-hardtime:
 # }}}
 
 # Coding {{{
