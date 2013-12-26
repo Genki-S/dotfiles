@@ -1,0 +1,7 @@
+#!/bin/sh
+
+osascript -e "
+tell application \"AppleScript Runner\"
+  display alert \"$1\" message \"$2\"
+end tell
+"
