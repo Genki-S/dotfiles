@@ -29,6 +29,37 @@
 ;; Are we on a mac?
 (setq is-mac (equal system-type 'darwin))
 
+;; TODO: migrate to el-get from package, or use both?
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+;; ensure el-get is installed
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+    (url-retrieve-synchronously
+      "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+;; add my recipes
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+;; init files for packages
+(setq el-get-user-package-directory "~/.emacs.d/el-get-init-files/")
+
+;; packages to install from el-get
+;; http://shibayu36.hatenablog.com/entry/2013/04/30/175740
+(defvar genki/el-get-packages
+  '(
+    wc-mode
+    )
+  "A list of packages to install from el-get at launch.")
+
+;; install new packages and init already installed packages
+(el-get 'sync genki/el-get-packages)
+
+;; require all packages (my first elisp code. why is it working?)
+(loop for p in genki/el-get-packages
+ do (require p))
+
 ;; Install packages from MELPA
 (require 'setup-packages)
 

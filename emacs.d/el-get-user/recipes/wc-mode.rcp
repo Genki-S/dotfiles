@@ -1,0 +1,4 @@
+(:name wc-mode
+       :type github
+       :description "Wordcount minor mode for Emacs"
+       :pkgname "bnbeckwith/wc-mode")
