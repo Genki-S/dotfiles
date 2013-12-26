@@ -55,7 +55,8 @@
                       (:endgroup . nil)))
 
 ;; The default agenda files. inbox.org is used only in custom agenda.
-(setq org-agenda-files (list "~/org/next.org"
+(setq org-agenda-files (list "~/org/inbox.org"
+                             "~/org/next.org"
                              "~/org/someday.org"
                              "~/org/projects.org"
                              "~/org/routines.org"
