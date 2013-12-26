@@ -87,6 +87,7 @@
                            ("~/org/next.org" :maxlevel . 9)
                            ("~/org/projects.org" :maxlevel . 9)
                            ("~/org/someday.org" :maxlevel . 9)
+                           ("~/org/waiting.org" :maxlevel . 9)
                            ("~/org/goals.org" :maxlevel . 9)
                            ("~/org/workouts.org" :maxlevel . 9)
                            ("~/org/routines.org" :maxlevel . 9)
