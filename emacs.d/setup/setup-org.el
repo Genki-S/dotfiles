@@ -7,6 +7,23 @@
 ;; POMODORO SETTINGS
 ;; http://headhole.org/organisation/2012/08/22/org-mode-gtd-and-the-pomodoro-technique/
 (require 'org-pomodoro)
+;; notification https://gist.github.com/jstewart/7664823
+(defun notify-osx (title message)
+  (call-process "osx-alert"
+                nil 0 nil
+                title message))
+(add-hook 'org-pomodoro-finished-hook
+          (lambda ()
+            (notify-osx "Pomodoro completed!" "Time for a break.")))
+(add-hook 'org-pomodoro-break-finished-hook
+          (lambda ()
+            (notify-osx "Pomodoro Short Break Finished" "Ready for Another?")))
+(add-hook 'org-pomodoro-long-break-finished-hook
+          (lambda ()
+            (notify-osx "Pomodoro Long Break Finished" "Ready for Another?")))
+(add-hook 'org-pomodoro-killed-hook
+          (lambda ()
+            (notify-osx "Pomodoro Killed" "One does not simply kill a pomodoro!")))
 
 ;; sets the default workflow keywords and their faces
 (setq org-todo-keywords
