@@ -35,6 +35,8 @@
         insert: 1
 - honza/vim-snippets:
     lazy: 1
+    autoload:
+        function_prefix: vim_snippets
 - osyo-manga/vim-watchdogs:
 - ujihisa/quicklearn:
 - thinca/vim-qfreplace:
