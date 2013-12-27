@@ -22,5 +22,10 @@ if executable terminal-notifier; then
 	}
 fi
 
+ring()
+{
+	echo -n ''
+}
+
 preexec_functions+=(notify-preexec-hook)
-precmd_functions+=(notify-precmd-hook)
+precmd_functions+=(notify-precmd-hook ring)
