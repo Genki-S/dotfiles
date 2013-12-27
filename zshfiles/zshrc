@@ -1,3 +1,6 @@
+# Profile zsh startup time
+zmodload zsh/zprof
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/genki/.zshrc'
 autoload -Uz compinit
@@ -152,3 +155,6 @@ DISABLE_AUTO_TITLE=true
 	# echo "=== My Projects ==="
 	# mux list
 # fi
+
+# Profile zsh startup time
+zprof > ~/.tmp/profiling/zsh/`date +%Y-%m-%d_%H:%M:%S`
