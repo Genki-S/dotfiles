@@ -58,6 +58,13 @@ task :update_injection do
   end
 end
 
+desc 'Doctor'
+task :doctor do
+  if ENV['MY_NAME'].nil?
+    puts 'Your ~/.envrc is not allowed. Try `direnv allow`.'
+  end
+end
+
 task :generate_global_tags do
   run %{
     ctags \

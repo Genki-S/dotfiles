@@ -21,6 +21,7 @@
     - vimperatorrc
     - inputrc
     - editrc
+    - envrc
     - offlineimaprc
     - offlineimap.py
 - emacs.d
