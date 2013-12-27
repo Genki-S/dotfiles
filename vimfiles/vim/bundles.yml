@@ -93,6 +93,13 @@
 - Shougo/vimfiler:
 - tpope/vim-unimpaired:
 - rhysd/clever-f.vim:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(clever-f-f)
+            - <Plug>(clever-f-F)
+            - <Plug>(clever-f-t)
+            - <Plug>(clever-f-T)
 - rking/ag.vim:
     lazy: 1
     autoload:
