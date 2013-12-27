@@ -151,7 +151,7 @@
 
 # Visual {{{
 - altercation/vim-colors-solarized:
-- airblade/vim-gitgutter:
+- mhinz/vim-signify:
 - t9md/vim-quickhl:
 - itchyny/lightline.vim:
 - kshenoy/vim-signature:
@@ -184,7 +184,6 @@
 - bootleq/vim-textobj-rubysymbol:
 - coderifous/textobj-word-column.vim:
 - michaeljsmith/vim-indent-object:
-- vim-scripts/textobj-gitgutter:
 # }}}
 
 # Writing {{{
