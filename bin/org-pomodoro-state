@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Get org-pomodoro information from ~/.org-pomodoro-status.
+# The file is consist of 2 lines. Which are:
+#   1. state: org-pomodoro-state from org-pomodoro.el
+#   2. start time: start time in unix timestamp
+#
+# Echoes org-pomodoro state for tmux statusline.
+
+state=`sed -n '1p' ~/.org-pomodoro-status`
+start=`sed -n '2p' ~/.org-pomodoro-status`
+duration=$(( `date '+%s'` - $start ))
+
+# adding 1 min. to spur myself
+echo "[POMODORO] ${state} | $(( $duration / 60 + 1 )) min. passed"

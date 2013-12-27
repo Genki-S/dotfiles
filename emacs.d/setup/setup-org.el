@@ -7,22 +7,39 @@
 ;; POMODORO SETTINGS
 ;; http://headhole.org/organisation/2012/08/22/org-mode-gtd-and-the-pomodoro-technique/
 (require 'org-pomodoro)
+
+;; for tmux status bar
+(defun write-org-pomodoro-state ()
+  (with-temp-buffer
+    (insert (concat (symbol-name org-pomodoro-state) "\n"
+                    (format-time-string "%s") "\n"))
+    (when (file-writable-p "~/.org-pomodoro-status")
+      (write-region (point-min) (point-max) "~/.org-pomodoro-status"))))
+
 ;; notification https://gist.github.com/jstewart/7664823
 (defun notify-osx (title message)
   (call-process "osx-alert"
                 nil 0 nil
                 title message))
+
+(add-hook 'org-pomodoro-started-hook
+          (lambda ()
+            (write-org-pomodoro-state)))
 (add-hook 'org-pomodoro-finished-hook
           (lambda ()
+            (write-org-pomodoro-state)
             (notify-osx "Pomodoro completed!" "Time for a break.")))
-(add-hook 'org-pomodoro-break-finished-hook
+(add-hook 'org-pomodoro-short-break-finished-hook
           (lambda ()
+            (write-org-pomodoro-state)
             (notify-osx "Pomodoro Short Break Finished" "Ready for Another?")))
 (add-hook 'org-pomodoro-long-break-finished-hook
           (lambda ()
+            (write-org-pomodoro-state)
             (notify-osx "Pomodoro Long Break Finished" "Ready for Another?")))
 (add-hook 'org-pomodoro-killed-hook
           (lambda ()
+            (write-org-pomodoro-state)
             (notify-osx "Pomodoro Killed" "One does not simply kill a pomodoro!")))
 
 ;; sets the default workflow keywords and their faces
