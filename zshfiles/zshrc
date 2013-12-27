@@ -1,48 +1,39 @@
 # Profile zsh startup time
 zmodload zsh/zprof
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/genki/.zshrc'
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
 # ==================================================
-# Antigen
+# oh-my-zsh and other plugins {{{
 # ==================================================
-source $DOTDIR/submodules/antigen/antigen.zsh
+# Path to your oh-my-zsh configuration.
+ZSH=$DOTDIR/submodules/oh-my-zsh
 
-# Load the oh-my-zsh's library.
-antigen-use oh-my-zsh
+# Manage theme myself
+ZSH_THEME=""
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen-bundle git
-antigen-bundle command-not-found
+# make red dots to be displayed while waiting for completion
+COMPLETION_WAITING_DOTS="true"
 
-# Syntax highlighting bundle.
-antigen-bundle zsh-users/zsh-syntax-highlighting
+# plugins to load from oh-my-zsh/plugins
+plugins=(git git-flow tmux command-not-found)
 
-# More completions
-antigen-bundle zsh-users/zsh-completions src
-antigen-bundle glidenote/hub-zsh-completion
+source $ZSH/oh-my-zsh.sh
 
-# Easy history search
-antigen-bundle zsh-users/zsh-history-substring-search
+# Syntax highlighting from https://github.com/zsh-users/zsh-syntax-highlighting
+source $DOTDIR/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Directory specific environment segging
-antigen-bundle kennethreitz/autoenv
+# Easy history search from https://github.com/zsh-users/zsh-history-substring-search
+source $DOTDIR/submodules/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-# Load the theme.
+# More completions from https://github.com/zsh-users/zsh-completions
+fpath+=($DOTDIR/submodules/zsh-completions/src)
+
 source $DOTDIR/submodules/zsh-git-prompt/zshrc.sh
 export __GIT_PROMPT_DIR=$DOTDIR/submodules/zsh-git-prompt
 __EXECUTED_GIT_COMMAND=1 # To force prompt update at first
-antigen-theme $DOTDIR/zshfiles/genki.zsh-theme
-
-# Tell antigen that you're done.
-antigen-apply
-
+source $DOTDIR/zshfiles/genki.zsh-theme
+# }}}
 # ==================================================
-# My zsh
+# My zsh configurations {{{
 # ==================================================
 # Make online help available
 unalias run-help
@@ -84,16 +75,13 @@ source $zvimdir/zsh-super-vim-mode.zsh
 # Load local zshrc
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
 
+# }}}
 # ==================================================
-# My bundles
+# Miscellaneous {{{
 # ==================================================
-
 # dircolors-solarized
 eval `dircolors $DOTDIR/submodules/dircolors-solarized/dircolors.256dark`
 
-# ==================================================
-# Miscellaneous
-# ==================================================
 # RescueTime
 ps -e | grep rescuetime &> /dev/null
 if [ $? -ne 0 ]; then
@@ -103,9 +91,9 @@ if [ $? -ne 0 ]; then
 		echo "You should install RescueTime, really."
 	fi
 fi
-
+# }}}
 # ==================================================
-# Tmux
+# Tmux {{{
 # ==================================================
 function tmuxpwd() {
 	if [ -n "$TMUX" ]; then
@@ -123,9 +111,9 @@ if [[ -n $TMUX ]]; then
 fi
 
 DISABLE_AUTO_TITLE=true
-
+# }}}
 # ==================================================
-# Welcome Message
+# Welcome Message {{{
 # ==================================================
 # uname -a
 # cat <<HEREDOC
@@ -155,6 +143,16 @@ DISABLE_AUTO_TITLE=true
 	# echo "=== My Projects ==="
 	# mux list
 # fi
+# }}}
+# ==================================================
+
+# The following lines were added by compinstall
+zstyle :compinstall filename "$HOME/.zshrc"
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 
 # Profile zsh startup time
 zprof > ~/.tmp/profiling/zsh/`date +%Y-%m-%d_%H:%M:%S`
+
+# vim: foldmethod=marker
