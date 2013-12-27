@@ -153,7 +153,7 @@
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
          (file "~/org/templates/journal.txt") :clock-in t :clock-resume t)
         ("7" "750 words" entry (file+datetree "~/org/journal.org")
-         ("* %?\n%U" :clock-in t :clock-resume t))))
+         "* %?\n%U" :clock-in t :clock-resume t)))
 
 ;; Resume clocking task when emacs is restarted
 (org-clock-persistence-insinuate)
