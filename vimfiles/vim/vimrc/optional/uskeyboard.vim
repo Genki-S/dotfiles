@@ -1,8 +1,10 @@
 " Change Leader
 let mapleader = ','
-nnoremap \ ,
 
+" See vim-sneak settings
+" nnoremap \ ,
+" noremap : ;
 noremap ; :
-noremap : ;
+
 noremap q; q:
 noremap q: q;
