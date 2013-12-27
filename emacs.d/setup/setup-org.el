@@ -72,7 +72,7 @@
                       ("Q4" . ?4)
                       (:endgroup . nil)))
 
-;; The default agenda files. inbox.org is used only in custom agenda.
+;; The default agenda files.
 (setq org-agenda-files (list "~/org/inbox.org"
                              "~/org/next.org"
                              "~/org/someday.org"
@@ -81,6 +81,15 @@
                              "~/org/books.org"
                              "~/org/workouts.org"
                              "~/org/goals.org"))
+
+(setq org-agenda-custom-commands
+      `(("R" . "for reporting")
+        ("Rd" "Daily report" agenda ""
+         ((org-agenda-ndays 1)
+          (org-agenda-archives-mode t)
+          (org-agenda-entry-types '(:closed))
+          (org-agenda-with-colors nil))
+         (,(concat "~/org/reports/" (format-time-string "%Y-%m-%d") ".html")))))
 
 ;; my org settings
 (custom-set-variables
