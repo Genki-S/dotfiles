@@ -50,6 +50,7 @@
 (defvar genki/el-get-packages
   '(
     wc-mode
+    flyspell-lazy ;; need 'ispell' to be executable
     )
   "A list of packages to install from el-get at launch.")
 
