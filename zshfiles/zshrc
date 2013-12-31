@@ -107,12 +107,16 @@ fi
 # ==================================================
 # Tmux {{{
 # ==================================================
-function tmuxpwd() {
+function tmux_setpwd() {
 	if [ -n "$TMUX" ]; then
-		tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD"
+		tmux setenv TMUXPWD_$(tmux display -p "#S_#I_#P") `pwd`
 	fi
 }
-precmd_functions=($precmd_functions tmuxpwd)
+chpwd_functions=($chpwd_functions tmux_setpwd)
+
+function tmuxpwd() {
+	tmux showenv TMUXPWD_$(tmux display -p "#S_#I_#P") | awk 'BEGIN{FS="="} {print $2}'
+}
 
 # Tmuxinator
 [ -s $HOME/.tmuxinator/scripts/tmuxinator ] && source $HOME/.tmuxinator/scripts/tmuxinator
