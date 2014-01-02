@@ -18,13 +18,14 @@
 (define-key global-map "\C-cow" '(lambda () (interactive) (find-file "~/org/workouts.org")))
 (define-key global-map "\C-cob" '(lambda () (interactive) (find-file "~/org/books.org")))
 
+;; org-pomodoro
+(define-key global-map "\C-cp" 'org-pomodoro)
+
 ;; Override key bindings
 ;; http://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs/1758639
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
 (define-key my-keys-minor-mode-map (kbd "M-h") 'backward-kill-word)
-(define-key my-keys-minor-mode-map (kbd "C-c C-x C-i") 'org-pomodoro)
-(define-key my-keys-minor-mode-map (kbd "C-c C-x C-o") 'org-pomodoro)
 
 (define-minor-mode my-keys-minor-mode
                    "A minor mode so that my key settings override annoying major modes."
