@@ -126,6 +126,14 @@ if [[ -n $TMUX ]]; then
 	TERM=screen-256color
 fi
 
+# TODO: Move this at the top of zshrc to improve startup time (currently does not work on top)
+# Run tmux automatically
+if [ -z $TMUX ]; then
+	tmux attach-session -t "$USER" || tmux new-session -s "$USER" "/usr/local/bin/zsh"
+	# exit
+	# Not exit in order to use shell outside of tmux on occasion...
+fi
+
 DISABLE_AUTO_TITLE=true
 # }}}
 # ==================================================
