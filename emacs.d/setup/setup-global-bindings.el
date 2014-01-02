@@ -1,6 +1,5 @@
 ;; Global keybindings
 (define-key global-map (kbd "C-h") 'delete-backward-char)
-(define-key global-map (kbd "M-h") 'backward-kill-word)
 (define-key global-map (kbd "<f1>") 'help-command)
 
 ;; Org-mode keybindings
@@ -23,6 +22,7 @@
 ;; http://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs/1758639
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
 
+(define-key my-keys-minor-mode-map (kbd "M-h") 'backward-kill-word)
 (define-key my-keys-minor-mode-map (kbd "C-c C-x C-i") 'org-pomodoro)
 (define-key my-keys-minor-mode-map (kbd "C-c C-x C-o") 'org-pomodoro)
 
