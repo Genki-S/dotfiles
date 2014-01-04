@@ -126,7 +126,10 @@
  '(org-columns-default-format "%25ITEM %15SCHEDULED %6Effort{:} %8CLOCKSUM")
  ;; provide refile targets as paths, including the file name
  ;; (without directory) as level 1 of the path
- '(org-refile-use-outline-path 'file))
+ '(org-refile-use-outline-path 'file)
+ ;; export settings
+ '(org-export-with-toc nil)
+ '(org-export-with-section-numbers nil))
 
 (setq org-refile-targets '((nil :maxlevel . 9)
                            ("~/org/next.org" :maxlevel . 9)

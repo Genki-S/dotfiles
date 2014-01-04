@@ -29,6 +29,14 @@
 ;; Are we on a mac?
 (setq is-mac (equal system-type 'darwin))
 
+;; Install packages from MELPA
+(require 'setup-packages)
+
+;; Setup extensions
+(require 'setup-ido)
+(require 'setup-org)
+(require 'setup-mail)
+
 ;; TODO: migrate to el-get from package, or use both?
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -49,6 +57,9 @@
 ;; http://shibayu36.hatenablog.com/entry/2013/04/30/175740
 (defvar genki/el-get-packages
   '(
+    xml-rpc
+    metaweblog
+    org2blog
     wc-mode
     flyspell-lazy ;; need 'ispell' to be executable
     )
@@ -60,14 +71,6 @@
 ;; require all packages (my first elisp code. why is it working?)
 (loop for p in genki/el-get-packages
  do (require p))
-
-;; Install packages from MELPA
-(require 'setup-packages)
-
-;; Setup extensions
-(require 'setup-ido)
-(require 'setup-org)
-(require 'setup-mail)
 
 ;; Functions (load all files in defuns-dir)
 (dolist (file (directory-files defuns-dir t "\\w+"))
