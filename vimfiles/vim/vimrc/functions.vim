@@ -1,5 +1,8 @@
+" For the sake of vim-qfreplace
 function! g:genki_location_to_quickfix()
 	call setqflist(getloclist(0))
+	lclose
+	copen
 endfunction
 
 " Set tabstop, softtabstop and shiftwidth to the same value
