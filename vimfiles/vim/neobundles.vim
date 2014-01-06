@@ -60,18 +60,22 @@ endfor
 "   * One setting file per one plugin
 "   * Lazy load, both plugins and settings
 
+function! MyOnSourceFunction(bundle)
+	if filereadable(g:plugin_setting_filename(a:bundle.name, 'on_source'))
+		execute 'source' g:plugin_setting_filename(a:bundle.name, 'on_source')
+	endif
+endfunction
+
+function! MyOnPostSourceFunction(bundle)
+	if filereadable(g:plugin_setting_filename(a:bundle.name, 'on_post_source'))
+		execute 'source' g:plugin_setting_filename(a:bundle.name, 'on_post_source')
+	endif
+	execute 'silent doautocmd User sourced_' . a:bundle.name
+endfunction
+
 for s:bundle in neobundle#config#get_neobundles()
-	function! s:bundle.hooks.on_source(bundle)
-		if filereadable(g:plugin_setting_filename(a:bundle.name, 'on_source'))
-			execute 'source' g:plugin_setting_filename(a:bundle.name, 'on_source')
-		endif
-	endfunction
-	function! s:bundle.hooks.on_post_source(bundle)
-		if filereadable(g:plugin_setting_filename(a:bundle.name, 'on_post_source'))
-			execute 'source' g:plugin_setting_filename(a:bundle.name, 'on_post_source')
-		endif
-		execute 'silent doautocmd User sourced_' . a:bundle.name
-	endfunction
+	let s:bundle.hooks.on_source = function('MyOnSourceFunction')
+	let s:bundle.hooks.on_post_source = function('MyOnPostSourceFunction')
 endfor
 
 " --------------------------------------------------
