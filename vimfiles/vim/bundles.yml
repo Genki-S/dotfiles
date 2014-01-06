@@ -177,13 +177,16 @@
 - kana/vim-textobj-entire:
 - kana/vim-textobj-function:
 - kana/vim-textobj-datetime:
+- kana/vim-textobj-indent:
+- kana/vim-textobj-fold:
+- kana/vim-textobj-diff:
+- thinca/vim-textobj-comment:
+- thinca/vim-textobj-between:
 - lucapette/vim-textobj-underscore:
-- nelstrom/vim-textobj-rubyblock:
-- thinca/vim-textobj-function-javascript:
-- vim-scripts/argtextobj.vim:
-- bootleq/vim-textobj-rubysymbol:
 - coderifous/textobj-word-column.vim:
-- michaeljsmith/vim-indent-object:
+- nelstrom/vim-textobj-rubyblock:
+- bootleq/vim-textobj-rubysymbol:
+- deris/vim-textobj-enclosedsyntax:
 # }}}
 
 # Writing {{{
