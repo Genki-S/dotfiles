@@ -172,6 +172,12 @@
             - HierClear
 # }}}
 
+# Operators {{{
+- kana/vim-operator-user:
+- tyru/operator-camelize.vim:
+- tek/vim-operator-assign:
+# }}}
+
 # Text Objects {{{
 - kana/vim-textobj-user:
 - kana/vim-textobj-entire:
