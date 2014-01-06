@@ -1,6 +1,9 @@
+function! g:genki_location_to_quickfix()
+	call setqflist(getloclist(0))
+endfunction
+
 " Set tabstop, softtabstop and shiftwidth to the same value
-command! -nargs=* Stab call Stab()
-function! Stab()
+function! g:genki_set_taboptions()
 	let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
 	if l:tabstop > 0
 		let &l:sts = l:tabstop
@@ -9,10 +12,10 @@ function! Stab()
 		" do we want expandtab as well?
 		let &l:expandtab = confirm('set expandtab?', "&No\n&Yes") - 1
 	endif
-	call SummarizeTabs()
+	call g:genki_summarize_tabs()
 endfunction
 
-function! SummarizeTabs()
+function! g:genki_summarize_tabs()
 	try
 		echohl ModeMsg
 		echon 'tabstop='.&l:ts

@@ -10,13 +10,13 @@ execute 'source' expand('~/.vim/neobundles.vim')
 " My vimrc (in '~/.vim/vimrc/')
 " ==================================================
 
+for f in split(glob('~/.vim/vimrc/*.vim'), '\n')
+	execute 'source' f
+endfor
 for f in split(glob('~/.vim/vimrc/setting/*.vim'), '\n')
 	execute 'source' f
 endfor
 for f in split(glob('~/.vim/vimrc/mapping/*.vim'), '\n')
-	execute 'source' f
-endfor
-for f in split(glob('~/.vim/vimrc/command/*.vim'), '\n')
 	execute 'source' f
 endfor
 
