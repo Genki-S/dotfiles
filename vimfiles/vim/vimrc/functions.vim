@@ -1,3 +1,8 @@
+" Make it possible to issue AlterCommand before vim-altercmd is sourced
+function! g:genki_altercmd(args)
+	execute 'autocmd User sourced_vim-altercmd AlterCommand' a:args
+endfunction
+
 " For the sake of vim-qfreplace
 function! g:genki_location_to_quickfix()
 	call setqflist(getloclist(0))

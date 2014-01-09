@@ -144,6 +144,15 @@ endfunction
 
 echomsg 'Pickup: ' . s:get_random_bundle().name
 
+" AlterCommands
+AlterCommand nb Unite neobundle
+AlterCommand nbi Unite -auto-quit neobundle/install
+AlterCommand nbu Unite neobundle/update
+AlterCommand nbc NeoBundleClean
+AlterCommand nbl Unite neobundle/lazy
+AlterCommand nbd NeoBundleDocs
+AlterCommand nbs NeoBundleSource
+
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 filetype plugin on
 filetype indent on
