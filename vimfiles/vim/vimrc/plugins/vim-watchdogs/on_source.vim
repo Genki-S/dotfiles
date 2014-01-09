@@ -5,8 +5,3 @@ if !neobundle#is_sourced('vim-quickrun')
 endif
 
 call watchdogs#setup(g:quickrun_config)
-
-augroup vimrc_vim-watchdogs
-	autocmd!
-	autocmd BufEnter * WatchdogsRunSilent
-augroup END
