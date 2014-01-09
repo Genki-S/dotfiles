@@ -70,6 +70,7 @@ rcfiles=(
 	fasd.zsh
 	notification.zsh
 	direnv.zsh
+	percol.zsh
 )
 for f in $rcfiles
 do

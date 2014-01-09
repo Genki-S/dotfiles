@@ -27,12 +27,14 @@ function get-shit-done () {
 # ==================================================
 alias -g G="| grep -i"
 alias -g V="| grep -v"
+alias -g A="| awk"
 alias -g S="| sed"
-alias -g P="| $PAGER"
 alias -g T="| tee"
 alias -g X="| xargs_with_alias"
 alias -g L="| extract_line"
+alias -g P="| percol"
 alias -g PB="| reattach-to-user-namespace pbcopy"
+alias -g PAGER="| $PAGER"
 
 # output modification
 alias -g CHOP='| awk "length < 1024 { print }"'
