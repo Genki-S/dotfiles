@@ -1,3 +1,22 @@
+function! g:yaml_load(filename)
+	ruby << EOF
+	require 'yaml'
+	obj = YAML.load_file(File.expand_path(VIM::evaluate('a:filename')))
+	obj_hash = obj.inspect.gsub('=>', ':').gsub('nil', '{}')
+	VIM::command("let l:ret = #{obj_hash}")
+EOF
+	return l:ret
+endfunction
+
+function! g:yaml_write(filename, obj)
+	ruby << EOF
+	require 'yaml'
+	obj =  VIM::evaluate('a:obj')
+	fname = File.expand_path(VIM::evaluate('a:filename'))
+	File.write(File.expand_path(VIM::evaluate('a:filename')), obj.to_yaml)
+EOF
+endfunction
+
 " Make it possible to issue AlterCommand before vim-altercmd is sourced
 function! g:genki_altercmd(args)
 	execute 'autocmd User sourced_vim-altercmd AlterCommand' a:args

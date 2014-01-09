@@ -3,16 +3,12 @@ if has('vim_starting')
 	execute 'source' expand('~/.vimrc.minimal')
 endif
 
-" Below makes vim feature-rich, but heavy"
+" Below makes vim feature-rich, but heavy
+execute 'source' expand('~/.vim/vimrc/functions.vim')
+execute 'source' expand('~/.vim/vimrc/commands.vim')
+
 execute 'source' expand('~/.vim/neobundles.vim')
 
-" ==================================================
-" My vimrc (in '~/.vim/vimrc/')
-" ==================================================
-
-for f in split(glob('~/.vim/vimrc/*.vim'), '\n')
-	execute 'source' f
-endfor
 for f in split(glob('~/.vim/vimrc/setting/*.vim'), '\n')
 	execute 'source' f
 endfor

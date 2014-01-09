@@ -2,105 +2,37 @@ filetype off
 filetype plugin indent off
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-let g:hook_names = ['on_bundle', 'on_source', 'on_post_source']
+" Helper Functions {{{
+let s:hook_names = ['on_bundle', 'on_source', 'on_post_source']
 
-function! g:plugin_setting_dirname(plugin_name)
+function! s:plugin_setting_dirname(plugin_name)
 	return expand('~/.vim/vimrc/plugins/' . a:plugin_name)
 endfunction
 
-function! g:plugin_setting_filename(plugin_name, hook_name)
-	return g:plugin_setting_dirname(a:plugin_name) . '/' . a:hook_name . '.vim'
+function! s:plugin_setting_filename(plugin_name, hook_name)
+	return s:plugin_setting_dirname(a:plugin_name) . '/' . a:hook_name . '.vim'
 endfunction
 
-" ==================================================
-" Bundles
-" ==================================================
-
-function! g:yaml_load(filename)
-	ruby << EOF
-	require 'yaml'
-	obj = YAML.load_file(File.expand_path(VIM::evaluate('a:filename')))
-	obj_hash = obj.inspect.gsub('=>', ':').gsub('nil', '{}')
-	VIM::command("let l:ret = #{obj_hash}")
-EOF
-	return l:ret
-endfunction
-
-function! g:yaml_write(filename, obj)
-	ruby << EOF
-	require 'yaml'
-	obj =  VIM::evaluate('a:obj')
-	fname = File.expand_path(VIM::evaluate('a:filename'))
-	File.write(File.expand_path(VIM::evaluate('a:filename')), obj.to_yaml)
-EOF
-endfunction
-
-" Read bundle settings from yaml
-let g:my_bundles = g:yaml_load('~/.vim/bundles.yml')
-
-" Manual plugins
-NeoBundleLocal ~/.vim/bundles/manual
-
-for bundle in g:my_bundles
-	for [bundle_source_name, bundle_options] in items(bundle)
-		execute 'NeoBundle "' . bundle_source_name . '"'
-		let s:bundle_name = neobundle#parser#path(bundle_source_name).name
-		call neobundle#config(s:bundle_name, bundle_options)
-		" Original hook: on_bundle
-		if filereadable(g:plugin_setting_filename(s:bundle_name, 'on_bundle'))
-			execute 'source' g:plugin_setting_filename(s:bundle_name, 'on_bundle')
-		endif
-	endfor
-endfor
-
-" ==================================================
-" Plugin settings
-" ==================================================
-" Policy:
-"   * One setting file per one plugin
-"   * Lazy load, both plugins and settings
-
-function! MyOnSourceFunction(bundle)
-	if filereadable(g:plugin_setting_filename(a:bundle.name, 'on_source'))
-		execute 'source' g:plugin_setting_filename(a:bundle.name, 'on_source')
-	endif
-endfunction
-
-function! MyOnPostSourceFunction(bundle)
-	if filereadable(g:plugin_setting_filename(a:bundle.name, 'on_post_source'))
-		execute 'source' g:plugin_setting_filename(a:bundle.name, 'on_post_source')
-	endif
-	execute 'silent doautocmd User sourced_' . a:bundle.name
-endfunction
-
-for s:bundle in neobundle#config#get_neobundles()
-	let s:bundle.hooks.on_source = function('MyOnSourceFunction')
-	let s:bundle.hooks.on_post_source = function('MyOnPostSourceFunction')
-endfor
-
-" --------------------------------------------------
-" Helper Functions
-" --------------------------------------------------
 function! s:mk_plugin_setting_directory(plugin_name)
-	call mkdir(g:plugin_setting_dirname(a:plugin_name))
+	call mkdir(s:plugin_setting_dirname(a:plugin_name))
 endfunction
 
 function! s:edit_plugin_setting(plugin_name, hook_name)
-	if !isdirectory(g:plugin_setting_dirname(a:plugin_name))
+	if !isdirectory(s:plugin_setting_dirname(a:plugin_name))
 		call s:mk_plugin_setting_directory(a:plugin_name)
 	endif
-	execute 'edit' g:plugin_setting_filename(a:plugin_name, a:hook_name)
+	execute 'edit' s:plugin_setting_filename(a:plugin_name, a:hook_name)
 endfunction
 
 function! s:edit_all_plugin_settings(plugin_name)
-	if !isdirectory(g:plugin_setting_dirname(a:plugin_name))
+	if !isdirectory(s:plugin_setting_dirname(a:plugin_name))
 		call s:mk_plugin_setting_directory(a:plugin_name)
 	endif
 	tabnew
 	arglocal
 	if argc() > 0 | argdelete * | endif
-	for hook_name in g:hook_names
-		execute 'argadd' g:plugin_setting_filename(a:plugin_name, hook_name)
+	for hook_name in s:hook_names
+		execute 'argadd' s:plugin_setting_filename(a:plugin_name, hook_name)
 	endfor
 	all
 	argglobal
@@ -114,6 +46,44 @@ function! s:parse_PluginSetting(qargs)
 		call s:edit_plugin_setting(s:args[0], s:args[1])
 	endif
 endfunction
+"}}}
+
+" Manual plugins
+NeoBundleLocal ~/.vim/bundles/manual
+
+" Setup bundles {{{
+let s:my_bundles = g:yaml_load('~/.vim/bundles.yml')
+for bundle in s:my_bundles
+	for [bundle_source_name, bundle_options] in items(bundle)
+		execute 'NeoBundle "' . bundle_source_name . '"'
+		let s:bundle_name = neobundle#parser#path(bundle_source_name).name
+		call neobundle#config(s:bundle_name, bundle_options)
+		" Original hook: on_bundle
+		if filereadable(s:plugin_setting_filename(s:bundle_name, 'on_bundle'))
+			execute 'source' s:plugin_setting_filename(s:bundle_name, 'on_bundle')
+		endif
+	endfor
+endfor
+"}}}
+" Lazy load plugin setting files {{{
+function! MyOnSourceFunction(bundle)
+	if filereadable(s:plugin_setting_filename(a:bundle.name, 'on_source'))
+		execute 'source' s:plugin_setting_filename(a:bundle.name, 'on_source')
+	endif
+endfunction
+
+function! MyOnPostSourceFunction(bundle)
+	if filereadable(s:plugin_setting_filename(a:bundle.name, 'on_post_source'))
+		execute 'source' s:plugin_setting_filename(a:bundle.name, 'on_post_source')
+	endif
+	execute 'silent doautocmd User sourced_' . a:bundle.name
+endfunction
+
+for s:bundle in neobundle#config#get_neobundles()
+	let s:bundle.hooks.on_source = function('MyOnSourceFunction')
+	let s:bundle.hooks.on_post_source = function('MyOnPostSourceFunction')
+endfor
+"}}}
 
 " --------------------------------------------------
 " Interface
@@ -124,18 +94,14 @@ command! -nargs=* -bar
 	\ call s:parse_PluginSetting(<q-args>)
 " TODO: complete hook types: on_bundle, on_source, on_post_source
 
-" ==================================================
-" Installation check
-" ==================================================
+" Installation check"{{{
 if neobundle#exists_not_installed_bundles()
 	echomsg 'Not installed bundles : ' .
 \		string(neobundle#get_not_installed_bundle_names())
 	echomsg 'Please execute ":NeoBundleInstall" command.'
 endif
-
-" ==================================================
-" Random reminder
-" ==================================================
+"}}}
+" Random reminder"{{{
 function! s:get_random_bundle()
 	let s:rand = system('echo $RANDOM')
 	let s:all_bundles = neobundle#config#get_neobundles()
@@ -143,8 +109,8 @@ function! s:get_random_bundle()
 endfunction
 
 echomsg 'Pickup: ' . s:get_random_bundle().name
-
-" AlterCommands
+"}}}
+" AlterCommands {{{
 AlterCommand nb Unite neobundle
 AlterCommand nbi Unite -auto-quit neobundle/install
 AlterCommand nbu Unite neobundle/update
@@ -152,7 +118,10 @@ AlterCommand nbc NeoBundleClean
 AlterCommand nbl Unite neobundle/lazy
 AlterCommand nbd NeoBundleDocs
 AlterCommand nbs NeoBundleSource
+"}}}
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 filetype plugin on
 filetype indent on
+
+" vim: foldmethod=marker
