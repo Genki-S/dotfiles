@@ -193,6 +193,7 @@
 - nelstrom/vim-textobj-rubyblock:
 - bootleq/vim-textobj-rubysymbol:
 - deris/vim-textobj-enclosedsyntax:
+- Julian/vim-textobj-variable-segment:
 # }}}
 
 # Writing {{{
