@@ -22,7 +22,7 @@ AlterCommand sv source $MYVIMRC
 " e: edit
 AlterCommand ev tabedit $MYVIMRC
 AlterCommand eb tabedit $DOTDIR/vimfiles/vim/bundles.yml
-AlterCommand enb tabedit $DOTDIR/vimfiles/vim/neobundles.vim
+AlterCommand enb tabedit $DOTDIR/vimfiles/vim/neobundle.vim
 AlterCommand eft execute 'tabedit $DOTDIR/vimfiles/vim/ftplugin/'.&filetype.'.vim'
 AlterCommand esw tabedit $DOTDIR/vimfiles/vim/vimrc/plugins/switch.vim/switch.yml
 

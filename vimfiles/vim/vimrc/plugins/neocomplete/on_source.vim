@@ -7,7 +7,13 @@ let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-" $DOTDIR/vimfiles/vim/vimrc/setting/writing.vim defines g:neocomplete#text_mode_filetypes
+let g:neocomplete#text_mode_filetypes = {
+	\ 'text': 1,
+	\ 'tex': 1,
+	\ 'markdown': 1,
+	\ 'mmd': 1,
+	\ 'gitcommit': 1,
+\ }
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {

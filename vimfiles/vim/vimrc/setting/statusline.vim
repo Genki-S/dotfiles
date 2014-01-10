@@ -1,1 +1,0 @@
-set laststatus=2

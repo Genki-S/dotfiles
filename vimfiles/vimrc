@@ -4,21 +4,16 @@ if has('vim_starting')
 endif
 
 " Below makes vim feature-rich, but heavy
-execute 'source' expand('~/.vim/vimrc/functions.vim')
-execute 'source' expand('~/.vim/vimrc/commands.vim')
+source ~/.vim/vimrc/functions.vim
+source ~/.vim/vimrc/commands.vim
+source ~/.vim/vimrc/autocmds.vim
+source ~/.vim/vimrc/mappings.vim
 
-execute 'source' expand('~/.vim/neobundles.vim')
+source ~/.vim/neobundle.vim
 
-for f in split(glob('~/.vim/vimrc/setting/*.vim'), '\n')
-	execute 'source' f
-endfor
-for f in split(glob('~/.vim/vimrc/mapping/*.vim'), '\n')
-	execute 'source' f
-endfor
+source ~/.vim/vimrc/options.vim
 
-" ==================================================
 " Call NeoBundle hooks on reloading vimrc
-" ==================================================
 if !has('vim_starting')
 	call neobundle#call_hook('on_source')
 	call neobundle#call_hook('on_post_source')

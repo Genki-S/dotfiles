@@ -1,7 +1,3 @@
-filetype off
-filetype plugin indent off
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 " Helper Functions {{{
 let s:hook_names = ['on_bundle', 'on_source', 'on_post_source']
 
@@ -47,6 +43,16 @@ function! s:parse_PluginSetting(qargs)
 	endif
 endfunction
 "}}}
+
+if strlen($http_proxy) != 0
+	let g:neobundle#types#git#default_protocol = 'http'
+endif
+
+set nocompatible
+if has('vim_starting')
+	set runtimepath+=~/.vim/bundles/neobundle.vim
+endif
+call neobundle#rc(expand('~/.vim/bundles'))
 
 " Manual plugins
 NeoBundleLocal ~/.vim/bundles/manual
@@ -121,7 +127,6 @@ AlterCommand nbs NeoBundleSource
 "}}}
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " vim: foldmethod=marker

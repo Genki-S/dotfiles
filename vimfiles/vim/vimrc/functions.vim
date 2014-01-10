@@ -17,6 +17,16 @@ function! g:yaml_write(filename, obj)
 EOF
 endfunction
 
+function! g:my_insert_cr_mapping()
+	if neobundle#is_sourced('vim-endwise') && neobundle#is_sourced('delimitMate')
+		imap <CR> <Plug>delimitMateCR<Plug>DiscretionaryEnd
+	elseif neobundle#is_sourced('vim-endwise')
+		imap <CR> <Plug>DiscretionaryEnd
+	elseif neobundle#is_sourced('delimitMate')
+		imap <CR> <Plug>delimitMateCR
+	endif
+endfunction
+
 " Make it possible to issue AlterCommand before vim-altercmd is sourced
 function! g:genki_altercmd(args)
 	execute 'autocmd User sourced_vim-altercmd AlterCommand' a:args
