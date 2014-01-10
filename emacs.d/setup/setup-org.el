@@ -129,7 +129,9 @@
  '(org-refile-use-outline-path 'file)
  ;; export settings
  '(org-export-with-toc nil)
- '(org-export-with-section-numbers nil))
+ '(org-export-with-section-numbers nil)
+ '(org-html-doctype "html5")
+ '(org-html-html5-fancy t))
 
 (setq org-refile-targets '((nil :maxlevel . 9)
                            ("~/org/next.org" :maxlevel . 9)
