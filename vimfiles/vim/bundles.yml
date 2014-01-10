@@ -142,6 +142,7 @@
 # Git {{{
 - sjl/splice.vim:
 - tpope/vim-fugitive:
+- int3/vim-extradite:
 - gregsexton/gitv:
     lazy: 1
     autoload:
@@ -255,6 +256,11 @@
         commands:
             - CtrlSpace
 - tpope/vim-dispatch:
+- Shougo/junkfile.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - JunkfileOpen
 # }}}
 
 # Filetype Specific {{{
