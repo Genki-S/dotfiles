@@ -1,3 +1,5 @@
+AlterCommand man Ref man
+
 nnoremap <SID>[ref] <Nop>
 nmap <Leader>, <SID>[ref]
 nnoremap <SID>[ref]a :Ref webdict alc 
