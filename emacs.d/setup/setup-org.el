@@ -133,6 +133,47 @@
  '(org-html-doctype "html5")
  '(org-html-html5-fancy t))
 
+;; LaTeX setings
+(require 'ox-html)
+(require 'ox-latex)
+(require 'ox-ascii)
+
+(add-to-list 'org-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")))
+(add-to-list 'org-latex-classes
+             '("koma-article"
+               "\\documentclass{scrartcl}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+(setq org-export-latex-listings 'listings)
+(setq org-export-latex-custom-lang-environments
+      '((java "javacode")))
+(setq org-export-latex-listings-options
+      '(("frame" "lines")
+        ("basicstyle" "\\footnotesize")
+        ("numbers" "left")
+        ("numberstyle" "\\tiny")))
+
+;; reftex (http://nakkaya.com/2010/09/07/writing-papers-using-org-mode/)
+(setq-default TeX-master t)
+(setq reftex-default-bibliography
+      (quote ("~/reftex.bib")))
+(defun na-org-mode-reftex-setup ()
+  (interactive)
+  (load-library "reftex")
+  (and (buffer-file-name)
+       (file-exists-p (buffer-file-name))
+       (reftex-parse-all)))
+(add-hook 'org-mode-hook 'na-org-mode-reftex-setup)
+(setq org-latex-to-pdf-process (list "latexmk -pdf -bibtex %f"))
+
+;; Refiling
 (setq org-refile-targets '((nil :maxlevel . 9)
                            ("~/org/next.org" :maxlevel . 9)
                            ("~/org/projects.org" :maxlevel . 9)
