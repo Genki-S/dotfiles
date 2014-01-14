@@ -229,4 +229,13 @@
 
 (setq org-plantuml-jar-path (concat vendor-dir "/plantuml.jar"))
 
+;; MobileOrg
+;; Set to the name of the file where new notes will be stored
+(setq org-mobile-inbox-for-pull "~/org/mobile-inbox.org")
+(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+
+;; auto sync
+(add-hook 'after-init-hook 'org-mobile-pull)
+(add-hook 'kill-emacs-hook 'org-mobile-push)
+
 (provide 'setup-org)
