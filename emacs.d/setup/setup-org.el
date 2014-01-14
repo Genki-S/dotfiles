@@ -94,6 +94,7 @@
 ;; my org settings
 (custom-set-variables
  '(org-startup-indented t)
+ '(org-startup-truncated nil)
  '(org-log-done t)
  '(org-catch-invisible-edits t)
  ;; Better completion
