@@ -1,0 +1,8 @@
+snippet     for
+abbr        for init; condition; post
+options     head
+    for ${1:i} := ${2:0}; ${3}; ${4:$1++} {${0}}
+
+snippet     scan
+abbr        fmt.Scan
+    fmt.Scan(&${1})${0}

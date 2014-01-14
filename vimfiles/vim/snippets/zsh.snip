@@ -1,1 +1,28 @@
 include sh.snip
+
+snippet     echoerr
+abbr        echo to stderr
+options     head
+    echo ${1} 1>&2
+
+snippet     scriptdir
+abbr        directory of script
+options     word
+    $(dirname \$0)
+
+snippet     yesno
+abbr        get yes or no from user
+options     head
+    read -q "REPLY?${1}"${0}
+    case $REPLY in
+        y|Y)
+            ${1}
+            ;;
+        n|N)
+            ${2}
+            ;;
+        *)
+            ${3}
+            ;;
+    esac
+    ${0}
