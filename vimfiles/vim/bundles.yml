@@ -282,6 +282,11 @@
     autoload:
         filetypes:
             - ruby
+- ngmy/vim-rubocop:
+    lazy: 1
+    autoload:
+        commands:
+            - RuboCop
 ## }}}
 
 ## Go {{{
