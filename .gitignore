@@ -2,6 +2,16 @@ vimfiles/vim/bundles/*
 !vimfiles/vim/bundles/neobundle.vim
 !vimfiles/vim/bundles/manual
 
+emacs.d/auto-save-list
+emacs.d/css
+emacs.d/el-get
+emacs.d/el-get-init-files/*.elc
+emacs.d/elpa
+emacs.d/icons
+emacs.d/scripts
+emacs.d/var
+emacs.d/bookmarks
+
 !Gemfile.local
 
 gitfiles/git_template/*
