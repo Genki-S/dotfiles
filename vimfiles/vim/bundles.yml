@@ -137,6 +137,7 @@
 - yuku-t/unite-git:
 - tacroe/unite-mark:
 - basyura/unite-rails:
+- mfumi/unite-compiler:
 # }}}
 
 # Git {{{
