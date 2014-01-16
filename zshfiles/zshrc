@@ -110,13 +110,13 @@ fi
 # ==================================================
 function tmux_setpwd() {
 	if [ -n "$TMUX" ]; then
-		tmux setenv TMUXPWD_$(tmux display -p "#S_#I_#P") `pwd`
+		tmux setenv -g TMUXPWD_$(tmux display -p "#S_#I_#P") `pwd`
 	fi
 }
 chpwd_functions=($chpwd_functions tmux_setpwd)
 
 function tmuxpwd() {
-	tmux showenv TMUXPWD_$(tmux display -p "#S_#I_#P") | awk 'BEGIN{FS="="} {print $2}'
+	tmux showenv -g TMUXPWD_$(tmux display -p "#S_#I_#P") | awk 'BEGIN{FS="="} {print $2}'
 }
 
 # Tmuxinator
