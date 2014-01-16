@@ -21,6 +21,9 @@
 ;; org-pomodoro
 (define-key global-map "\C-cp" 'org-pomodoro)
 
+;; summon-vim
+(define-key global-map "\C-cv" '(lambda () (interactive) (genki/summon-vim)))
+
 ;; Override key bindings
 ;; http://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs/1758639
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap.")
