@@ -138,6 +138,7 @@
 - tacroe/unite-mark:
 - basyura/unite-rails:
 - mfumi/unite-compiler:
+- thinca/vim-unite-history:
 # }}}
 
 # Git {{{
