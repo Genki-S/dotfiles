@@ -406,6 +406,11 @@
     autoload:
         filetypes:
             - org
+- aklt/plantuml-syntax:
+    lazy: 1
+    autoload:
+        filetypes:
+            - plantuml
 ## }}}
 
 # }}}
