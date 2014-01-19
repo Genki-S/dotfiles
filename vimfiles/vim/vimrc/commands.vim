@@ -8,3 +8,5 @@ command! Stab call g:genki_set_taboptions()
 " Show all mappings
 command! -nargs=* -complete=mapping AllMaps
 \	map <args> | map! <args> | lmap <args>
+
+command! -range Pbcopy <line1>,<line2>w !reattach-to-user-namespace pbcopy
