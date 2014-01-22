@@ -8,6 +8,14 @@ This document is organized with requirement -> rules approach.
 * the_silver_searcher
 * hub
 
+## Install vendor applications
+
+```
+vim -u ~/dotfiles/vendor/neovendor.vim
+```
+
+Installs in `~/vendor`.
+
 ## Vim
 
 ### Plugin Management
