@@ -139,10 +139,17 @@
 (require 'ox-latex)
 (require 'ox-ascii)
 
+(setq org-latex-to-pdf-process
+      (list "latexmk -pdflatex='pdflatex -shell-escape -file-line-error -synctex=1' -pdf -bibtex %f"))
+
 (add-to-list 'org-latex-classes
              '("article"
                "\\documentclass{article}"
-               ("\\section{%s}" . "\\section*{%s}")))
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 (add-to-list 'org-latex-classes
              '("koma-article"
                "\\documentclass{scrartcl}"
@@ -172,7 +179,6 @@
        (file-exists-p (buffer-file-name))
        (reftex-parse-all)))
 (add-hook 'org-mode-hook 'na-org-mode-reftex-setup)
-(setq org-latex-to-pdf-process (list "latexmk -pdf -bibtex %f"))
 
 ;; Refiling
 (setq org-refile-targets '((nil :maxlevel . 9)
