@@ -37,3 +37,6 @@
 [submodule "submodules/zsh-history-substring-search"]
 	path = submodules/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
+[submodule "submodules/git-hook"]
+	path = submodules/git-hook
+	url = https://github.com/rosylilly/git-hook
