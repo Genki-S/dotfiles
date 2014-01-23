@@ -15,7 +15,7 @@
                     (format-time-string "%s") "\n"))
     (when (file-writable-p "~/.org-pomodoro-status")
       (write-region (point-min) (point-max) "~/.org-pomodoro-status")
-      (call-process "tmux" nil 0 nil "refresh-client" "-S"))))
+      (call-process "tmux-all-session-do" nil 0 nil "refresh-client" "-S"))))
 
 ;; notification https://gist.github.com/jstewart/7664823
 (defun notify-osx (title message)
