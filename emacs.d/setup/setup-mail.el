@@ -28,8 +28,8 @@
 
 ;; something about ourselves
 (setq
-  user-mail-address "cfhoyuk.reccos.nelg@gmail.com"
-  user-full-name  "Genki Sugimoto"
+  user-mail-address (getenv "MY_EMAIL")
+  user-full-name (getenv "MY_NAME")
   message-signature
   (concat
     "--------------\n"
