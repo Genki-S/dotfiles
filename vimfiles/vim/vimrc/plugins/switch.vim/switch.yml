@@ -1,8 +1,11 @@
 ---
+_:
+  -
+    '\vhttps://github.com/(.*)/(.*)': 'git@github.com:\1/\2'
 yaml:
   -
     '\vhttps://github.com/(.*)': '\1:'
-ruby,eruby,haml:
+ruby:
   -
     - if
     - unless
@@ -31,22 +34,35 @@ ruby,eruby,haml:
   -
     - binding.pry
     - binding.remote_pry
-ruby.application_template:
+haml:
   -
-    - yes?
-    - no?
+    - if
+    - unless
   -
-    - lib
-    - initializer
-    - file
-    - vendor
-    - rakefile
+    - while
+    - until
   -
-    - controller
-    - model
-    - view
-    - migration
-    - scaffold
+    - .blank?
+    - .present?
+  -
+    - include
+    - extend
+  -
+    - class
+    - module
+  -
+    - .inject
+    - .delete_if
+  -
+    - .map
+    - .map!
+  -
+    - attr_accessor
+    - attr_reader
+    - attr_writer
+  -
+    - binding.pry
+    - binding.remote_pry
 rspec:
   -
     - describe
