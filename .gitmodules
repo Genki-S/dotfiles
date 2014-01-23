@@ -1,42 +1,56 @@
 [submodule "submodules/gitignore"]
 	path = submodules/gitignore
 	url = http://github.com/github/gitignore
+	branch = master
 [submodule "submodules/vimperator-plugins"]
 	path = submodules/vimperator-plugins
 	url = http://github.com/vimpr/vimperator-plugins.git
+	branch = master
 [submodule "vimfiles/vim/bundles/neobundle.vim"]
 	path = vimfiles/vim/bundles/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim
+	branch = master
 [submodule "submodules/yadr"]
 	path = submodules/yadr
 	url = https://github.com/skwp/dotfiles
+	branch = master
 [submodule "submodules/vimperator-labs"]
 	path = submodules/vimperator-labs
 	url = https://github.com/briceburg/vimperator-labs
+	branch = master
 [submodule "submodules/zsh-super-vim-mode"]
 	path = submodules/zsh-super-vim-mode
 	url = https://github.com/Genki-S/zsh-super-vim-mode
+	branch = master
 [submodule "submodules/tmux-colors-solarized"]
 	path = submodules/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized
+	branch = master
 [submodule "submodules/dircolors-solarized"]
 	path = submodules/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized
+	branch = master
 [submodule "submodules/zsh-git-prompt"]
 	path = submodules/zsh-git-prompt
 	url = https://github.com/Genki-S/zsh-git-prompt
+	branch = master
 [submodule "submodules/oh-my-zsh"]
 	path = submodules/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
+	branch = master
 [submodule "submodules/zsh-syntax-highlighting"]
 	path = submodules/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+	branch = master
 [submodule "submodules/zsh-completions"]
 	path = submodules/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions
+	branch = master
 [submodule "submodules/zsh-history-substring-search"]
 	path = submodules/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
+	branch = master
 [submodule "submodules/git-hook"]
 	path = submodules/git-hook
 	url = https://github.com/rosylilly/git-hook
+	branch = master
