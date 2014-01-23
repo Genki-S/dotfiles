@@ -1,0 +1,5 @@
+#!/bin/sh
+
+for f in $@; do
+  echo $f >> $(git rev-parse --show-toplevel)/.git/info/exclude
+done
