@@ -8,9 +8,6 @@
 	name = Genki Sugimoto
 	email = cfhoyuk.reccos.nelg@gmail.com
 
-[init]
-	templatedir = ~/.git_template
-
 [core]
 	editor = "vim -u ~/.vimrc.minimal"
 	excludesfile = ~/.gitignore_global

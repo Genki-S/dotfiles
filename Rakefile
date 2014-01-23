@@ -18,7 +18,6 @@ task :deploy do
   end
   Dir.chdir(DOTDIR) do
     deploy_dotfiles(dotfiles)
-    my_ln("#{DOTDIR}/gitfiles/hooks", "#{DOTDIR}/gitfiles/git_template/hooks")
   end
 end
 

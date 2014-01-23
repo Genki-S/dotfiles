@@ -6,6 +6,16 @@ function git() {
 
 alias git-root="git rev-parse --show-toplevel"
 
+function git-myinit() {
+  git flow init
+  hooks=(
+    pre-push https://gist.github.com/Genki-S/8572322/raw/8bbaf85e844bcab5a140a229d0391f1c2ade4fcf/ensure-clean-git-working-tree
+  )
+  for (( i = 1; i < ${#hooks}; i += 2 )); do
+    git hook install $hooks[$i] $hooks[$(( $i + 1 ))]
+  done
+}
+
 function plrq() {
   local save_git_editor=$GIT_EDITOR
 
