@@ -12,6 +12,7 @@
 - gitfiles:
     - gitconfig
     - gitignore_global
+    - git_hooks
 - miscfiles:
     - ctags
     - latexmkrc

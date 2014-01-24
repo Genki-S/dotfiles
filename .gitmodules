@@ -50,3 +50,7 @@
 	path = submodules/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
 	branch = master
+[submodule "submodule/git-hooks"]
+	path = submodule/git-hooks
+	url = https://github.com/icefox/git-hooks
+	branch = master
