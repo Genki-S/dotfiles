@@ -12,7 +12,6 @@ typeset -U path cdpath manpath fpath
 path=(
 	$HOME/bin
 	$HOME/dotfiles/bin
-	$HOME/dotfiles/submodules/git-hook/bin
 	$path
 )
 
