@@ -9,7 +9,10 @@ alias git-root="git rev-parse --show-toplevel"
 function git-myinit() {
   git flow init
   hooks=(
-    pre-push https://gist.github.com/Genki-S/8572322/raw/8bbaf85e844bcab5a140a229d0391f1c2ade4fcf/ensure-clean-git-working-tree
+    pre-push ~/dotfiles/bin/ensure-clean-git-working-tree
+    post-commit ~/dotfiles/bin/git-ctags
+    post-merge ~/dotfiles/bin/git-ctags
+    post-checkout ~/dotfiles/bin/git-ctags
   )
   for (( i = 1; i < ${#hooks}; i += 2 )); do
     git hook install $hooks[$i] $hooks[$(( $i + 1 ))]
