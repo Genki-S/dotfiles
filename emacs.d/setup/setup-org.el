@@ -140,7 +140,7 @@
 (require 'ox-ascii)
 
 (setq org-latex-to-pdf-process
-      (list "latexmk -pdflatex='pdflatex -shell-escape -file-line-error -synctex=1' -pdf -bibtex %f"))
+      (list "latexmk -pdflatex='pdflatex -shell-escape -interaction nonstopmode -file-line-error -synctex=1' -pdf -bibtex %f"))
 
 (add-to-list 'org-latex-classes
              '("article"
@@ -159,14 +159,11 @@
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-(setq org-export-latex-listings 'listings)
-(setq org-export-latex-custom-lang-environments
-      '((java "javacode")))
-(setq org-export-latex-listings-options
-      '(("frame" "lines")
-        ("basicstyle" "\\footnotesize")
-        ("numbers" "left")
-        ("numberstyle" "\\tiny")))
+(setq org-export-latex-listings 'minted)
+(setq org-export-latex-minted-options
+     '(("frame" "lines")
+       ("fontsize" "\\scriptsize")
+       ("linenos" "")))
 
 ;; reftex (http://nakkaya.com/2010/09/07/writing-papers-using-org-mode/)
 (setq-default TeX-master t)
