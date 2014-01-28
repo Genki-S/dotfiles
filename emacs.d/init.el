@@ -34,7 +34,8 @@
 
 ;; Setup extensions
 (require 'setup-ido)
-(require 'setup-org)
+(if (getenv "ORGMODE")
+  (require 'setup-org))
 (require 'setup-mail)
 
 ;; TODO: migrate to el-get from package, or use both?
@@ -61,7 +62,7 @@
     metaweblog
     org2blog
     wc-mode
-    flyspell-lazy ;; need 'ispell' to be executable
+    ; flyspell-lazy ;; need 'ispell' to be executable
     )
   "A list of packages to install from el-get at launch.")
 

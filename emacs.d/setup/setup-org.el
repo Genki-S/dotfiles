@@ -242,4 +242,23 @@
 (add-hook 'after-init-hook 'org-mobile-pull)
 (add-hook 'kill-emacs-hook 'org-mobile-push)
 
+;; Keybindings
+(define-key global-map (kbd "C-c l") 'org-store-link)
+(define-key global-map (kbd "C-c a") 'org-agenda)
+(define-key global-map (kbd "C-c c") 'org-capture)
+
+;; Jump to my org files easily
+(define-key global-map "\C-coi" '(lambda () (interactive) (find-file "~/org/inbox.org")))
+(define-key global-map "\C-con" '(lambda () (interactive) (find-file "~/org/next.org")))
+(define-key global-map "\C-cos" '(lambda () (interactive) (find-file "~/org/someday.org")))
+(define-key global-map "\C-cop" '(lambda () (interactive) (find-file "~/org/projects.org")))
+(define-key global-map "\C-coj" '(lambda () (interactive) (find-file "~/org/journal.org")))
+(define-key global-map "\C-cor" '(lambda () (interactive) (find-file "~/org/routines.org")))
+(define-key global-map "\C-cog" '(lambda () (interactive) (find-file "~/org/goals.org")))
+(define-key global-map "\C-cow" '(lambda () (interactive) (find-file "~/org/workouts.org")))
+(define-key global-map "\C-cob" '(lambda () (interactive) (find-file "~/org/books.org")))
+
+;; org-pomodoro
+(define-key global-map "\C-cp" 'org-pomodoro)
+
 (provide 'setup-org)
