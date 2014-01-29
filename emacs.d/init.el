@@ -63,7 +63,7 @@
     metaweblog
     org2blog
     wc-mode
-    ; flyspell-lazy ;; need 'ispell' to be executable
+    flyspell-lazy ;; need 'ispell' to be executable
     )
   "A list of packages to install from el-get at launch.")
 
