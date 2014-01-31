@@ -33,3 +33,4 @@ AlterCommand vb edit $DOTDIR/vimfiles/vim/bundles
 " Original commands
 " ==================================================
 AlterCommand ps PluginSetting
+AlterCommand gg Google

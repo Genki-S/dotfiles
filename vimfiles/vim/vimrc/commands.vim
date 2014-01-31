@@ -10,3 +10,5 @@ command! -nargs=* -complete=mapping AllMaps
 \	map <args> | map! <args> | lmap <args>
 
 command! -range Pbcopy <line1>,<line2>w !reattach-to-user-namespace pbcopy
+
+command! -nargs=* Google call g:genki_google(<q-args>)

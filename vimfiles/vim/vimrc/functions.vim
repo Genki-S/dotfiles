@@ -67,3 +67,13 @@ function! g:genki_summarize_tabs()
 		echohl None
 	endtry
 endfunction
+
+" Quick access to Google
+function! g:genki_google(query)
+	let l:query = a:query
+	" if in vim-ref (type query again? No thanks.)
+	if exists("b:ref_history")
+		let l:query = b:ref_history[b:ref_history_pos][1] . " " . l:query
+	endif
+	call openbrowser#search(l:query)
+endfunction
