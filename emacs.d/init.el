@@ -58,6 +58,7 @@
 ;; http://shibayu36.hatenablog.com/entry/2013/04/30/175740
 (defvar genki/el-get-packages
   '(
+    evil
     xml-rpc
     metaweblog
     org2blog
