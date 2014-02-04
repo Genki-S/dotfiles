@@ -59,6 +59,7 @@
 (defvar genki/el-get-packages
   '(
     evil
+    evil-leader
     xml-rpc
     metaweblog
     org2blog
