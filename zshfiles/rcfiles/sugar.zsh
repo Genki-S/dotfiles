@@ -4,6 +4,8 @@
 alias ls="ls --color --classify"
 alias l="ls"
 alias la="ls -a"
+# Make find follow symlinks
+alias find="find -L"
 alias ax="atool -x"
 alias hist="fc -liD 1"
 alias ..="cd .."
