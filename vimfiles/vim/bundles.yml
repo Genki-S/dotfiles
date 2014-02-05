@@ -247,7 +247,7 @@
     lazy: 1
     autoload:
         commands:
-            - VimuxRunCommand
+            - VimuxPromptMode
 - tyru/vim-altercmd:
 - vim-scripts/marvim:
 - kana/vim-fakeclip:
