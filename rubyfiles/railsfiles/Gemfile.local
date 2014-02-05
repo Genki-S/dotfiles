@@ -26,6 +26,9 @@ group :development do
   want_gem 'rb-fsevent', :require => false # for Linux
   want_gem 'rb-fchange', :require => false # for Windows
 
+  # Debug
+  want_gem 'rails-footnotes'
+
   # Better Errors
   want_gem 'better_errors'
   want_gem 'binding_of_caller'
