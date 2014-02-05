@@ -44,6 +44,7 @@ alias gsd="git stash show"
 alias gsdiff="git stash show --color"
 alias gsp="git stash pop"
 alias gsdrop="git stash drop"
+alias gbw="git browse"
 # git branch select
 alias gbs="git branch | percol | xargs git checkout"
 # list things
