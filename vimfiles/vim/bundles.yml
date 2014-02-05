@@ -25,6 +25,7 @@
 - tpope/vim-speeddating:
 - osyo-manga/shabadou.vim:
 - takac/vim-hardtime:
+- rizzatti/funcoo.vim:
 # }}}
 
 # Coding {{{
@@ -115,6 +116,7 @@
 # }}}
 
 # Reference {{{
+- rizzatti/dash.vim:
 - thinca/vim-ref:
     lazy: 1
     autoload:
@@ -188,7 +190,6 @@
 - kana/vim-textobj-datetime:
 - kana/vim-textobj-indent:
 - kana/vim-textobj-fold:
-- kana/vim-textobj-diff:
 - thinca/vim-textobj-comment:
 - thinca/vim-textobj-between:
 - lucapette/vim-textobj-underscore:
