@@ -1,1 +1,1 @@
-let g:agprg="ag --column"
+let g:agprg="ag --column --follow"
