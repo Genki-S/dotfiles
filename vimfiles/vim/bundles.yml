@@ -215,7 +215,6 @@
 # }}}
 
 # Other Utilities {{{
-- fuenor/im_control.vim:
 - Genki-S/vim-annotator:
 - mattn/gist-vim:
     lazy: 1
