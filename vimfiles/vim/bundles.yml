@@ -75,6 +75,7 @@
     autoload:
         commands:
             - Join
+- tommcdo/vim-exchange:
 
 ## Completion {{{
 - Shougo/neocomplete:
