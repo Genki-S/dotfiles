@@ -146,6 +146,11 @@
 # Git {{{
 - sjl/splice.vim:
 - tpope/vim-fugitive:
+- tommcdo/vim-fugitive-blame-ext:
+    lazy: 1
+    autoload:
+        filename_patterns:
+            - .*fugitiveblame
 - int3/vim-extradite:
 - gregsexton/gitv:
     lazy: 1
