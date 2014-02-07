@@ -2,6 +2,6 @@
 
 osascript -e "
 tell application \"AppleScript Runner\"
-  display alert \"$1\" message \"$2\"
+  display alert \"$1\" message \"$2\" giving up after 60
 end tell
 "
