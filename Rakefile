@@ -6,7 +6,12 @@ HOME = ENV['HOME']
 DOTDIR = "#{HOME}/dotfiles"
 
 desc 'Do the best.'
-task :install => [:init_submodules, :update_submodules, :brew, :update_injection, :deploy] do
+task :install => [
+  :init_submodules,
+  :update_submodules,
+  :brew,
+  :update_injection,
+  :deploy ] do
 end
 
 desc 'Deploy dotfiles.'
@@ -61,6 +66,16 @@ desc 'Doctor'
 task :doctor do
   if ENV['MY_NAME'].nil?
     puts 'Your ~/.envrc is not allowed. Try `direnv allow`.'
+  end
+end
+
+desc 'Mac settings'
+task :mac do
+  puts "Deploying plist files"
+  Dir.glob("#{HOME}/dotfiles/macfiles/LaunchAgents/*")
+  Dir.glob("#{DOTDIR}/macfiles/LaunchAgents/*") do |plist|
+    fname = File.basename(plist)
+    my_ln(plist, "#{HOME}/Library/LaunchAgents/#{fname}")
   end
 end
 
