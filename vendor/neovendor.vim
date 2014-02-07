@@ -4,11 +4,13 @@ if has('vim_starting')
 endif
 call neobundle#rc(expand('~/vendor'))
 
-NeoBundle 'Slava/testerdream', {
-	\ 'build' : {
-		\ 'mac' : 'ant',
-		\ 'unix' : 'ant',
-	\ },
-\ }
+source ~/.vim/vimrc/functions.vim
+
+let s:vendors = g:yaml_load('~/dotfiles/vendor/vendors.yml')
+for vendor in s:vendors
+	for [vendor_source_name, vendor_options] in items(vendor)
+		execute 'NeoBundle "' . vendor_source_name . '" , ' . string(vendor_options)
+	endfor
+endfor
 
 NeoBundleCheck

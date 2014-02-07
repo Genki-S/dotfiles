@@ -1,0 +1,10 @@
+---
+- Slava/testerdream:
+    build:
+        mac: ant
+        unix: ant
+
+- visionmedia/git-extras:
+    build:
+        mac: make install
+        unix: make install
