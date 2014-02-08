@@ -12,8 +12,7 @@ augroup LightLine
 augroup END
 
 function! s:filtered_lightline_call(funcname)
-	let fname = expand('%:t')
-	if fname == '__CS__'
+	if bufname('%') == '__CS__'
 		return
 	endif
 	execute 'call lightline#' . a:funcname . '()'
