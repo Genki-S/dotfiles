@@ -295,6 +295,11 @@
     autoload:
         commands:
             - RuboCop
+- thoughtbot/vim-rspec:
+    lazy: 1
+    autoload:
+        filetypes:
+            - ruby
 ## }}}
 
 ## Go {{{

@@ -1,4 +1,5 @@
 " Normal mode mappings {{{
+" This might be replaced by ftplugins or plugin mappings (because 'make' means different things)
 nnoremap M :make<Enter>
 
 nnoremap <C-n> :bnext<CR>
