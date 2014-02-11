@@ -22,5 +22,5 @@ endfunction
 setlocal foldmethod=expr
 setlocal foldexpr=RubyMethodFold(v:lnum)
 
-inoremap <silent> <buffer> <Leader><C-b> binding.pry
-nnoremap <silent> <buffer> <Leader><C-b> mzObinding.pry<Esc>`z:delmark z<CR>
+inoremap <silent> <buffer> <Leader><C-b> require 'pry'; binding.pry
+nnoremap <silent> <buffer> <Leader><C-b> mzOrequire 'pry'; binding.pry<Esc>`z:delmark z<CR>
