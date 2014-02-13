@@ -76,6 +76,11 @@
         commands:
             - Join
 - tommcdo/vim-exchange:
+- osyo-manga/vim-over:
+    lazy: 1
+    autoload:
+        commands:
+            - OverCommandLine
 
 ## Completion {{{
 - Shougo/neocomplete:
