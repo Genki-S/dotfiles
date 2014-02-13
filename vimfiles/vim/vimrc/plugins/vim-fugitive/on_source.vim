@@ -17,6 +17,12 @@ nnoremap <SID>[fugitive]rm :Gremove<CR>
 nnoremap <SID>[fugitive]b :Gblame<CR>
 nnoremap <SID>[fugitive]ms :call g:echo_commit_message()<CR>
 
+augroup vimrc_vim-figitive
+	autocmd!
+	" Because my vim lose .git/tags on occasion...
+	autocmd BufEnter * call fugitive#detect(expand('<amatch>:p'))
+augroup END
+
 function! g:echo_commit_message()
 	let dir = getcwd()
 	try
