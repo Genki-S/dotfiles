@@ -5,6 +5,8 @@ command! L2Q call g:genki_location_to_quickfix()
 
 command! Stab call g:genki_set_taboptions()
 
+command! NoTrail %s/\s\+$//
+
 " Show all mappings
 command! -nargs=* -complete=mapping AllMaps
 \	map <args> | map! <args> | lmap <args>
