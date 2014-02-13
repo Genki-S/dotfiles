@@ -1,6 +1,12 @@
 # Profile zsh startup time
 zmodload zsh/zprof
 
+# The following lines were added by compinstall
+zstyle :compinstall filename "$HOME/.zshrc"
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
 # ==================================================
 # oh-my-zsh and other plugins {{{
 # ==================================================
@@ -71,6 +77,7 @@ rcfiles=(
 	notification.zsh
 	direnv.zsh
 	percol.zsh
+	cdd.zsh
 )
 for f in $rcfiles
 do
@@ -170,12 +177,6 @@ DISABLE_AUTO_TITLE=true
 # fi
 # }}}
 # ==================================================
-
-# The following lines were added by compinstall
-zstyle :compinstall filename "$HOME/.zshrc"
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
 
 # Profile zsh startup time
 zprof > ~/.tmp/profiling/zsh/`date +%Y-%m-%d_%H:%M:%S`

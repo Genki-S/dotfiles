@@ -57,3 +57,6 @@
 [submodule "submodules/git-when-merged"]
 	path = submodules/git-when-merged
 	url = https://github.com/mhagger/git-when-merged
+[submodule "submodules/cdd"]
+	path = submodules/cdd
+	url = https://github.com/m4i/cdd
