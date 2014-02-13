@@ -19,8 +19,10 @@ function! RubyMethodFold(line)
 	endif
 endfunction
 
-setlocal foldmethod=expr
-setlocal foldexpr=RubyMethodFold(v:lnum)
+" TODO: Make my best folding method
+" setlocal foldmethod=expr
+" setlocal foldexpr=RubyMethodFold(v:lnum)
+setlocal foldmethod=syntax
 
 inoremap <silent> <buffer> <Leader><C-b> require 'pry'; binding.pry
 nnoremap <silent> <buffer> <Leader><C-b> mzOrequire 'pry'; binding.pry<Esc>`z:delmark z<CR>
