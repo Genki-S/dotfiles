@@ -1,0 +1,1 @@
+AlterCommand vpm VimuxPromptMode
