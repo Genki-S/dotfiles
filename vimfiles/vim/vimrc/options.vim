@@ -14,6 +14,7 @@ set scrolloff=3
 set wrap
 set list
 set listchars=tab:>\ ,trail:_,extends:>,precedes:<
+set number
 set relativenumber
 "}}}
 " syntax, highlighting and spelling {{{
