@@ -8,3 +8,8 @@
     build:
         mac: make install
         unix: make install
+
+- defunkt/dotjs:
+    build:
+        mac: rake install
+        unix: rake install

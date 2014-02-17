@@ -24,5 +24,6 @@
     - envrc
     - offlineimaprc
     - offlineimap.py
+    - js
 - emacs.d
 - percol.d
