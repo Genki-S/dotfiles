@@ -27,6 +27,7 @@ vnoremap P y<Esc><Esc>P
 
 set complete=tsl
 set focuscontent
+set hintchars=asdfghjkl
 
 " Styling
 highlight -append Hint font-size: 14px;
