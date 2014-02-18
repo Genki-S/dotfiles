@@ -138,6 +138,7 @@
 
 # Unite {{{
 - Shougo/unite.vim:
+- Shougo/neomru.vim:
 - h1mesuke/unite-outline:
 - tsukkee/unite-help:
 - ujihisa/unite-rake:
