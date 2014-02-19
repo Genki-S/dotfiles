@@ -34,6 +34,10 @@
     lazy: 1
     autoload:
         insert: 1
+- Shougo/neosnippet-snippets:
+    lazy: 1
+    autoload:
+        on_source: neosnippet
 - honza/vim-snippets:
     lazy: 1
     autoload:
