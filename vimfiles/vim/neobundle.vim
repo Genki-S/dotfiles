@@ -61,12 +61,16 @@ NeoBundleLocal ~/.vim/bundles/manual
 let s:my_bundles = g:yaml_load('~/.vim/bundles.yml')
 for bundle in s:my_bundles
 	for [bundle_source_name, bundle_options] in items(bundle)
-		execute 'NeoBundle "' . bundle_source_name . '"'
-		let s:bundle_name = neobundle#parser#path(bundle_source_name).name
-		call neobundle#config(s:bundle_name, bundle_options)
-		" Original hook: on_bundle
-		if filereadable(s:plugin_setting_filename(s:bundle_name, 'on_bundle'))
-			execute 'source' s:plugin_setting_filename(s:bundle_name, 'on_bundle')
+		if exists('$ALL_LAZY')
+			execute 'NeoBundleLazy "' . bundle_source_name . '"'
+		else
+			execute 'NeoBundle "' . bundle_source_name . '"'
+			let s:bundle_name = neobundle#parser#path(bundle_source_name).name
+			call neobundle#config(s:bundle_name, bundle_options)
+			" Original hook: on_bundle
+			if filereadable(s:plugin_setting_filename(s:bundle_name, 'on_bundle'))
+				execute 'source' s:plugin_setting_filename(s:bundle_name, 'on_bundle')
+			endif
 		endif
 	endfor
 endfor
