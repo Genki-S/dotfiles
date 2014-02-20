@@ -102,6 +102,9 @@
 # Navigation {{{
 - majutsushi/tagbar:
 - Shougo/vimfiler:
+    lazy: 1
+    autoload:
+        explorer: 1
 - tpope/vim-unimpaired:
 - rhysd/clever-f.vim:
     lazy: 1
