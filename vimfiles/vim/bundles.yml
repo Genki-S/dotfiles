@@ -146,15 +146,87 @@
 # Unite {{{
 - Shougo/unite.vim:
 - Shougo/neomru.vim:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - directory_mru
+            - file_mru
 - h1mesuke/unite-outline:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - outline
 - tsukkee/unite-help:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - help
 - ujihisa/unite-rake:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - rake
 - tsukkee/unite-tag:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - tag
+            - tag/file
+            - tag/include
 - yuku-t/unite-git:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - git_cached
+            - git_modified
+            - git_untracked
 - tacroe/unite-mark:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - mark
 - basyura/unite-rails:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - rails/asset
+            - rails/bundle
+            - rails/bundled_gem
+            - rails/config
+            - rails/controller
+            - rails/db
+            - rails/destroy
+            - rails/features
+            - rails/gem
+            - rails/gemfile
+            - rails/generate
+            - rails/git
+            - rails/helper
+            - rails/heroku
+            - rails/initializer
+            - rails/javascript
+            - rails/lib
+            - rails/log
+            - rails/mailer
+            - rails/model
+            - rails/rake
+            - rails/route
+            - rails/schema
+            - rails/spec
+            - rails/stylesheet
+            - rails/view
 - mfumi/unite-compiler:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - compiler
 - thinca/vim-unite-history:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - history/command
+            - history/search
+            - history/yank
 # }}}
 
 # Git {{{
@@ -282,6 +354,9 @@
     autoload:
         commands:
             - JunkfileOpen
+        unite_sources:
+            - junkfile
+            - junkfile/new
 # }}}
 
 # Filetype Specific {{{
