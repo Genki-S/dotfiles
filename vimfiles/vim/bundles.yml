@@ -104,6 +104,12 @@
 - Shougo/vimfiler:
     lazy: 1
     autoload:
+        commands:
+            - VimFiler
+            - VimFilerBufferDir
+            - VimFilerCurrentDir
+            - VimFilerDouble
+            - VimFilerExplorer
         explorer: 1
 - tpope/vim-unimpaired:
 - rhysd/clever-f.vim:
