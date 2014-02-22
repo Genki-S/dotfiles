@@ -76,7 +76,6 @@ end
 desc 'Mac settings'
 task :mac do
   puts "Deploying plist files"
-  Dir.glob("#{HOME}/dotfiles/macfiles/LaunchAgents/*")
   Dir.glob("#{DOTDIR}/macfiles/LaunchAgents/*") do |plist|
     fname = File.basename(plist)
     my_ln(plist, "#{HOME}/Library/LaunchAgents/#{fname}")

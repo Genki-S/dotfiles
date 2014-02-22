@@ -261,4 +261,7 @@
 ;; org-pomodoro
 (define-key global-map "\C-cp" 'org-pomodoro)
 
+;; for org backup
+(run-at-time "00:58" 3600 'org-save-all-org-buffers)
+
 (provide 'setup-org)
