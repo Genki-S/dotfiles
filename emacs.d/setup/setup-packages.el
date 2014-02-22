@@ -48,7 +48,6 @@
     markdown-mode
     multiple-cursors
     markup
-    melpa
     org
     org-plus-contrib
     org-pomodoro
