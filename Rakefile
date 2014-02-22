@@ -47,6 +47,10 @@ task :brew do
     tmux
     coreutils
     the_silver_searcher
+    bzr
+    aspell
+    fasd
+    direnv
   ).each do |software|
     run %{ brew install #{software} }
   end
