@@ -122,8 +122,8 @@ echomsg 'Pickup: ' . s:get_random_bundle().name
 "}}}
 " AlterCommands {{{
 AlterCommand nb Unite neobundle
-AlterCommand nbi Unite -auto-quit neobundle/install
-AlterCommand nbu Unite neobundle/update
+AlterCommand nbi Unite -log -wrap -auto-quit neobundle/install
+AlterCommand nbu Unite -log -wrap -auto-quit neobundle/update
 AlterCommand nbc NeoBundleClean
 AlterCommand nbl Unite neobundle/lazy
 AlterCommand nbd NeoBundleDocs
