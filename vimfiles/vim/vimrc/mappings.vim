@@ -12,14 +12,6 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 " plain paste
 nnoremap <Leader>pp :<C-u>r !cat<CR>
 
-" Keep search pattern at the center of the screen
-nnoremap <silent> n nzz
-nnoremap <silent> N Nzz
-nnoremap <silent> * *zz
-nnoremap <silent> # #zz
-nnoremap <silent> g* g*zz
-nnoremap <silent> g# g#zz
-
 " make ( and ) work with Japanese sentences
 nnoremap <silent> ( ?[.。]<CR>:noh<CR>
 nnoremap <silent> ) /[.。]<CR>:noh<CR>
