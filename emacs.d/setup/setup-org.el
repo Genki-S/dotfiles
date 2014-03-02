@@ -193,7 +193,7 @@
 (setq org-default-notes-file "~/org/inbox.org")
 (setq org-capture-templates
       '(("t" "Todo" entry (file "~/org/inbox.org")
-         "* TODO %?\n%U\nfrom:%a\n" :clock-in t :clock-resume t)
+         "* TODO %?\n%U\nfrom:%a\n** Why do this?\n" :clock-in t :clock-resume t)
         ("m" "Meeting" entry (file "~/org/inbox.org")
          "* MEETING %?\n%U\n" :clock-in t :clock-resume t)
         ("n" "Note" entry (file "~/org/inbox.org")
