@@ -232,6 +232,16 @@
             - history/command
             - history/search
             - history/yank
+- alpaca-tc/alpaca_english:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - english_dictionary
+            - english_example
+            - english_thesaurus
+    build:
+        mac: bundle
+        unix: bundle
 # }}}
 
 # Git {{{

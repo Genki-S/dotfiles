@@ -9,6 +9,7 @@ nnoremap <silent> <SID>[unite]b :<C-u>Unite -buffer-name=buffer buffer<CR>
 nnoremap <silent> <SID>[unite]B :<C-u>Unite -buffer-name=bookmark bookmark<CR>
 nnoremap <silent> <SID>[unite]c :<C-u>Unite -buffer-name=compiler compiler<CR>
 nnoremap <silent> <SID>[unite]C :<C-u>Unite -buffer-name=command command<CR>
+nnoremap <SID>[unite]e :<C-u>Unite -buffer-name=english english_
 nnoremap <silent> <SID>[unite]f :<C-u>Unite -buffer-name=file file<CR>
 nnoremap <SID>[unite]h :<C-u>Unite -buffer-name=history history/
 nnoremap <silent> <SID>[unite]H :<C-u>Unite -buffer-name=help help<CR>
