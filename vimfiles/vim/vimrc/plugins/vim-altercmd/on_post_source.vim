@@ -12,6 +12,15 @@ AlterCommand fl help function-list
 AlterCommand tn tabnew
 AlterCommand qt tabclose
 
+" make it easy to change fold methids
+" h stands for 'hand'
+AlterCommand fmh set foldmethod=manual
+AlterCommand fmi set foldmethod=indent
+AlterCommand fme set foldmethod=expr
+AlterCommand fmm set foldmethod=marker
+AlterCommand fms set foldmethod=syntax
+AlterCommand fmd set foldmethod=diff
+
 " s: source
 AlterCommand so source %
 " source line
