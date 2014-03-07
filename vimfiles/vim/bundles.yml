@@ -34,6 +34,11 @@
     lazy: 1
     autoload:
         insert: 1
+        commands:
+            - NeoSnippetMakeCache
+            - NeoSnippetEdit
+            - NeoSnippetSource
+            - NeoSnippetClearMarkers
 - Shougo/neosnippet-snippets:
     lazy: 1
     autoload:
