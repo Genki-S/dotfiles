@@ -2,6 +2,7 @@ nnoremap <SID>[unite-rails] <Nop>
 nmap <Leader>R <SID>[unite-rails]
 
 nnoremap <SID>[unite-rails]<Space> :Unite rails/
+nnoremap <SID>[unite-rails]a :Unite rails/asset<CR>
 nnoremap <SID>[unite-rails]b :Unite rails/bundle<CR>
 nnoremap <SID>[unite-rails]B :Unite rails/bundled_gem<CR>
 nnoremap <SID>[unite-rails]C :Unite rails/config<CR>
