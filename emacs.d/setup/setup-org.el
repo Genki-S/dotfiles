@@ -248,6 +248,7 @@
 (define-key global-map (kbd "C-c c") 'org-capture)
 
 ;; Jump to my org files easily
+(define-key global-map "\C-cod" '(lambda () (interactive) (find-file "~/org/dashboard.org")))
 (define-key global-map "\C-coi" '(lambda () (interactive) (find-file "~/org/inbox.org")))
 (define-key global-map "\C-con" '(lambda () (interactive) (find-file "~/org/next.org")))
 (define-key global-map "\C-cos" '(lambda () (interactive) (find-file "~/org/someday.org")))
