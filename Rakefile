@@ -9,7 +9,6 @@ desc 'Do the best.'
 task :install => [
   :init_submodules,
   :update_submodules,
-  :brew,
   :update_injection,
   :deploy ] do
 end
@@ -35,25 +34,6 @@ end
 
 task :init_submodules do
   run %{ git submodule update --init --recursive }
-end
-
-task :brew do
-  %w(
-    git
-    hub
-    tig
-    vim
-    zsh
-    tmux
-    coreutils
-    the_silver_searcher
-    bzr
-    aspell
-    fasd
-    direnv
-  ).each do |software|
-    run %{ brew install #{software} }
-  end
 end
 
 desc 'Update files with injection of other files'
