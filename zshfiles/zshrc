@@ -8,6 +8,12 @@ compinit
 # End of lines added by compinstall
 
 # ==================================================
+# Boxen {{{
+# ==================================================
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+# }}}
+
+# ==================================================
 # oh-my-zsh and other plugins {{{
 # ==================================================
 # Path to your oh-my-zsh configuration.
@@ -137,7 +143,7 @@ fi
 # TODO: Move this at the top of zshrc to improve startup time (currently does not work on top)
 # Run tmux automatically
 if [ -z $TMUX ]; then
-	tmux attach-session -t "$USER" || tmux new-session -s "$USER" "/usr/local/bin/zsh"
+	tmux attach-session -t "$USER" || tmux new-session -s "$USER" "$SHELL"
 	# exit
 	# Not exit in order to use shell outside of tmux on occasion...
 fi
