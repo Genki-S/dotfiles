@@ -14,7 +14,6 @@
   (kbd "RET") 'org-agenda-switch-to
   (kbd "C-c C-o") 'org-agenda-open-link
   (kbd "<") 'org-agenda-filter-by-category
-  (kbd "/") 'org-agenda-filter-by-tag
   (kbd "t") 'org-agenda-todo
   (kbd "C-c C-w") 'org-agenda-refile
   (kbd "T") 'org-agenda-show-tags
