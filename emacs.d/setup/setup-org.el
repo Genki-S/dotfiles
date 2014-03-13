@@ -205,6 +205,9 @@
         ("7" "750 words" entry (file+datetree "~/org/journal.org")
          "* %?\n%U" :clock-in t :clock-resume t)))
 
+; start with insert state in capture modes
+(add-hook 'org-capture-mode-hook (lambda () (evil-append (point))))
+
 ;; Resume clocking task when emacs is restarted
 (org-clock-persistence-insinuate)
 
