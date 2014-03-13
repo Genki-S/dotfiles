@@ -91,6 +91,9 @@
           (org-agenda-with-colors nil))
          (,(concat "~/org/reports/" (format-time-string "%Y-%m-%d") ".html")))))
 
+;; agenda evil settings
+(add-hook 'org-agenda-mode-hook 'evil-normal-state)
+
 ;; my org settings
 (custom-set-variables
  '(org-startup-indented t)
