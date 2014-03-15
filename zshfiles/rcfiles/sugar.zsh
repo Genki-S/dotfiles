@@ -21,6 +21,8 @@ function mkcd () {
 	mkdir -p "$@" && eval cd "\"\$$#\""
 }
 
+alias org="ORGMODE=1 emacs ~/org/dashboard.org"
+
 # ==================================================
 # Global aliases
 # ==================================================
