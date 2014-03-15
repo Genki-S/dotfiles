@@ -10,6 +10,7 @@ task :install => [
   :init_submodules,
   :update_submodules,
   :update_injection,
+  :orgmode,
   :deploy ] do
 end
 
@@ -34,6 +35,12 @@ end
 
 task :init_submodules do
   run %{ git submodule update --init --recursive }
+end
+
+desc 'Prepare Orgmode'
+task :orgmode do
+  my_ln("#{HOME}/Dropbox/org", "#{HOME}/org")
+  run %{ touch "$HOME/custom.el" }
 end
 
 desc 'Update files with injection of other files'
