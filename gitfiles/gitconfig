@@ -11,6 +11,7 @@
 [core]
 	editor = "vim -u ~/.vimrc.minimal"
 	excludesfile = ~/.gitignore_global
+	excludesfile = /opt/boxen/config/git/gitignore
 
 [push]
 	default = upstream
@@ -33,3 +34,9 @@
 
 [include]
 	path = ~/.gitconfig.local
+
+[credential]
+	helper = /opt/boxen/bin/boxen-git-credential
+
+[hub]
+	protocol = https
