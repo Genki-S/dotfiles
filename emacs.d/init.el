@@ -1,11 +1,3 @@
-;; Turn off mouse interface early in startup to avoid momentary display
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-
-;; No splash screen please ... jeez
-(setq inhibit-startup-message t)
-
 ;; Set the dir variables used by these init scripts
 (setq themes-dir (expand-file-name "themes" user-emacs-directory))
 (add-to-list 'load-path themes-dir)
@@ -22,21 +14,8 @@
 (setq tmp-dir (expand-file-name "tmp" user-emacs-directory))
 (add-to-list 'load-path tmp-dir)
 
-;; Keep emacs Custom-settings in separate file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
-
-;; Are we on a mac?
-(setq is-mac (equal system-type 'darwin))
-
 ;; Install packages from MELPA
 (require 'setup-packages)
-
-;; Setup extensions
-(require 'setup-ido)
-(if (getenv "ORGMODE")
-  (require 'setup-org))
-(require 'setup-mail)
 
 ;; TODO: migrate to el-get from package, or use both?
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
@@ -64,7 +43,6 @@
     metaweblog
     org2blog
     wc-mode
-    flyspell-lazy ;; need 'ispell' to be executable
     )
   "A list of packages to install from el-get at launch.")
 
@@ -75,6 +53,27 @@
 (loop for p in genki/el-get-packages
  do (require p))
 
+;; Turn off mouse interface early in startup to avoid momentary display
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
+;; No splash screen please ... jeez
+(setq inhibit-startup-message t)
+
+;; Keep emacs Custom-settings in separate file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
+
+;; Are we on a mac?
+(setq is-mac (equal system-type 'darwin))
+
+;; Setup extensions
+(require 'setup-ido)
+(if (getenv "ORGMODE")
+  (require 'setup-org))
+; (require 'setup-mail)
+
 ;; Functions (load all files in defuns-dir)
 (dolist (file (directory-files defuns-dir t "\\w+"))
   (when (file-regular-p file)
@@ -82,3 +81,9 @@
 
 ;; Setup global key-bindings
 (require 'setup-global-bindings)
+
+;; enable spell checker
+(dolist (hook '(text-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode 1))))
+(dolist (hook '(change-log-mode-hook log-edit-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode -1))))

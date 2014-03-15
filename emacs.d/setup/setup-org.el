@@ -245,8 +245,9 @@
 (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
 
 ;; auto sync
-(add-hook 'after-init-hook 'org-mobile-pull)
-(add-hook 'kill-emacs-hook 'org-mobile-push)
+; TODO make this run in background
+; (add-hook 'after-init-hook 'org-mobile-pull)
+; (add-hook 'kill-emacs-hook 'org-mobile-push)
 
 ;; Keybindings
 (define-key global-map (kbd "C-c l") 'org-store-link)

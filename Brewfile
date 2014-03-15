@@ -16,6 +16,8 @@ install coreutils
 install the_silver_searcher
 install fasd
 install direnv
+install bzr
+install ispell
 
 cask install firefox
 cask install google-chrome

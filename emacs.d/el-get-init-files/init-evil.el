@@ -4,6 +4,9 @@
 (define-key evil-normal-state-map ";" 'evil-ex)
 (define-key evil-normal-state-map ":" 'evil-repeat-find-char)
 
+(define-key evil-normal-state-map ",;" 'eval-expression)
+(define-key evil-normal-state-map ",x" 'execute-extended-command)
+
 ;; for org-mode
 (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
 
