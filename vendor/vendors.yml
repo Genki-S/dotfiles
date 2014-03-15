@@ -13,3 +13,5 @@
     build:
         mac: rake install
         unix: rake install
+
+- leftnode/get-shit-done:
