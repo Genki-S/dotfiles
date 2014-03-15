@@ -4,6 +4,7 @@ upgrade
 tap phinze/homebrew-cask
 install brew-cask
 
+install git-flow
 install tig
 install vim
 install emacs
@@ -24,3 +25,6 @@ cask install dropbox
 cask install alfred
 cask install flux
 cask install google-japanese-ime
+cask install flash
+
+cask alfred link
