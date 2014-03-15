@@ -8,7 +8,6 @@
     - vimrc.minimal
 - rubyfiles:
     - pryrc
-    - gemrc
 - gitfiles:
     - gitconfig
     - gitignore_global
