@@ -18,6 +18,7 @@ install fasd
 install direnv
 install bzr
 install ispell
+install w3m
 
 cask install firefox
 cask install google-chrome
