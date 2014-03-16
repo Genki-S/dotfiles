@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# https://gist.github.com/yodom/4049816
+
+osascript -e "
+tell application \"Evernote\"
+	set exists_col_wd to false --コレクションウインドウが開いているかどうか
+	repeat with wd in every window
+
+		-- コレクションウインドウが開いていれば、
+		--そのウインドウでリストアップされた中からランダムにノートを開く
+		if (class of wd) is collection window then
+			set exists_col_wd to true
+			set col_wd to wd
+		end if
+
+	end repeat
+
+	-- コレクションウインドウが開いていなければ開く
+	-- ノートを開いた後、コレクションウインドウは再び閉じる
+	if not exists_col_wd then
+		set col_wd to open collection window
+		set visible of col_wd to false
+
+	end if
+
+	--ランダムにノートを開く
+	my openRandomWindow(col_wd)
+
+	-- ランダム検索用に開いたコレクションウインドウは閉じる
+	if not exists_col_wd then
+		close col_wd
+	end if
+
+end tell
+
+--ウインドウwdでリストアップされている中からランダムにノートを開く
+on openRandomWindow(wd)
+	tell application \"Evernote\"
+		set query to query string of wd
+		set notelist to find notes query
+		set rand to random number from 1 to length of notelist
+		open note window with item rand of notelist
+	end tell
+end openRandomWindow
+"

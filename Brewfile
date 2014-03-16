@@ -28,5 +28,6 @@ cask install alfred
 cask install flux
 cask install google-japanese-ime
 cask install flash
+cask install evernote
 
 cask alfred link
