@@ -50,7 +50,6 @@
     markup
     org
     org-plus-contrib
-    org-pomodoro
     paredit
     popup
     puppet-mode

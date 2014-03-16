@@ -5,10 +5,15 @@
 ; (require 'org-export)
 
 ;; notification https://gist.github.com/jstewart/7664823
-(defun notify-osx (title message)
-  (call-process "osx-alert"
+(defun osx-notification (title message)
+  (call-process "osx-notification"
                 nil 0 nil
                 title message))
+
+(defun genki/org-check-clocking ()
+  (when (not (org-clocking-p))
+    (osx-notification "Not Clocking In" "Be Mindful of Your Life")))
+(run-at-time "00:00" 60 'genki/org-check-clocking)
 
 ;; sets the default workflow keywords and their faces
 (setq org-todo-keywords
@@ -232,9 +237,6 @@
 (define-key global-map "\C-cog" '(lambda () (interactive) (find-file "~/org/goals.org")))
 (define-key global-map "\C-cow" '(lambda () (interactive) (find-file "~/org/workouts.org")))
 (define-key global-map "\C-cob" '(lambda () (interactive) (find-file "~/org/books.org")))
-
-;; org-pomodoro
-(define-key global-map "\C-cp" 'org-pomodoro)
 
 ;; for org backup
 (run-at-time "00:58" 3600 'org-save-all-org-buffers)
