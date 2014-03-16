@@ -1,0 +1,7 @@
+#!/bin/sh
+
+osascript -e "
+tell application \"Automator Runner\"
+  display notification \"$2\" with title \"$1\"
+end tell
+"
