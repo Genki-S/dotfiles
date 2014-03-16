@@ -8,7 +8,9 @@
 (define-key evil-normal-state-map ",x" 'execute-extended-command)
 
 ;; for org-mode
-(evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
+(evil-define-key 'normal org-mode-map
+  (kbd "RET") 'org-ctrl-c-ctrl-c
+  (kbd "TAB") 'org-cycle)
 
 ;; see http://www.gnu.org/software/emacs/manual/html_node/org/Agenda-commands.html
 (evil-define-key 'normal org-agenda-mode-map
