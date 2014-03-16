@@ -187,4 +187,7 @@ DISABLE_AUTO_TITLE=true
 # Profile zsh startup time
 zprof > ~/.tmp/profiling/zsh/`date +%Y-%m-%d_%H:%M:%S`
 
+echo "Let's get shit done!"
+get-shit-done work
+
 # vim: foldmethod=marker

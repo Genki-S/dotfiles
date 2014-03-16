@@ -14,7 +14,7 @@ task :install => [
   :deploy ] do
 end
 
-desc 'Deploy dotfiles.'
+desc 'Deploy dotfiles and other files.'
 task :deploy do
   directories = YAML.load_file('config/directory_structure.yml')
   dotfiles = YAML.load_file('config/dotfiles.yml')
@@ -24,6 +24,8 @@ task :deploy do
   Dir.chdir(DOTDIR) do
     deploy_dotfiles(dotfiles)
   end
+
+  my_ln("#{DOTDIR}/miscfiles/get-shit-done.ini", "#{HOME}/.config/get-shit-done.ini")
 end
 
 desc 'Update submodules'
