@@ -187,7 +187,20 @@ DISABLE_AUTO_TITLE=true
 # Profile zsh startup time
 zprof > ~/.tmp/profiling/zsh/`date +%Y-%m-%d_%H:%M:%S`
 
-echo "Let's get shit done!"
-get-shit-done work
+# ==================================================
+# get-shit-done {{{
+# ==================================================
+# check if work mode has been set
+hosts_file="/etc/hosts"
+start_token="## start-gsd"
+end_token="## end-gsd"
+if ! grep $start_token $hosts_file &> /dev/null; then
+	if ! grep $end_token $hosts_file &> /dev/null; then
+		echo "Let's get shit done!"
+		get-shit-done work
+	fi
+fi
+# }}}
+# ==================================================
 
 # vim: foldmethod=marker
