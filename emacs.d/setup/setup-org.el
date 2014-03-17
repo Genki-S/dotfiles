@@ -169,10 +169,12 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file "~/org/inbox.org")
          "* TODO %?\n%U\nfrom:%a\n** Why do this?\n" :clock-in t :clock-resume t)
+        ("f" "Failure" entry (file "~/org/inbox.org")
+         "* %?  :failure:\n%U\n" :clock-in t :clock-resume t)
         ("m" "Meeting" entry (file "~/org/inbox.org")
          "* MEETING %?\n%U\n" :clock-in t :clock-resume t)
         ("n" "Note" entry (file "~/org/inbox.org")
-         "* %? :note:\n%U\nfrom:%a\n" :clock-in t :clock-resume t)
+         "* %?  :note:\n%U\nfrom:%a\n" :clock-in t :clock-resume t)
         ("p" "Phone call" entry (file "~/org/inbox.org")
          "* PHONE %?\n%U" :clock-in t :clock-resume t)
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
