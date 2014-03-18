@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -e
+
+function run_test {
+    targets=$(git diff --cached --name-only)
+    orig_files=()
+    for file in $targets; do
+        if [ $(echo $file | grep '.*\.orig$') ]; then
+            orig_files=("${orig_files[@]}" "$file")
+        fi
+    done
+    if [ ${#orig_files[@]} -ne 0 ]; then
+        echo 'Abort: You are going to commit *.orig files.'
+        echo "(files: ${orig_files[@]})"
+        echo 'If you are sure, commit with --no-verify option.'
+        exit 1
+    fi
+    exit 0
+}
+
+case "${1}" in
+    --about )
+        echo "Check if *.orig file is intended to be commited"
+        ;;
+    * )
+        run_test
+        ;;
+esac
