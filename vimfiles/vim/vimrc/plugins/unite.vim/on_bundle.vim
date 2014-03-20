@@ -28,3 +28,12 @@ nnoremap <silent> <SID>[unite]<Space> :<C-u>Unite -buffer-name=source source<CR>
 " unite-tag
 nnoremap <silent> <SID>[unite]t :<C-u>Unite -buffer-name=tag tag<CR>
 nnoremap <silent> <SID>[unite]<C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>
+
+" vim-unite-giti
+nnoremap <silent> <SID>[unite]g<Space> :<C-u>Unite -buffer-name=giti giti<CR>
+nnoremap <silent> <SID>[unite]gb :<C-u>Unite -buffer-name=giti giti/branch<CR>
+nnoremap <silent> <SID>[unite]gB :<C-u>Unite -buffer-name=giti giti/branch_all<CR>
+nnoremap <silent> <SID>[unite]gc :<C-u>Unite -buffer-name=giti giti/config<CR>
+nnoremap <silent> <SID>[unite]gl :<C-u>Unite -buffer-name=giti giti/log<CR>
+nnoremap <silent> <SID>[unite]gr :<C-u>Unite -buffer-name=giti giti/remote<CR>
+nnoremap <silent> <SID>[unite]gs :<C-u>Unite -buffer-name=giti giti/status<CR>

@@ -247,6 +247,17 @@
     build:
         mac: bundle
         unix: bundle
+- kmnk/vim-unite-giti:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - giti
+            - giti/branch
+            - giti/branch_all
+            - giti/config
+            - giti/log
+            - giti/remote
+            - giti/status
 # }}}
 
 # Git {{{
