@@ -11,6 +11,7 @@ AlterCommand sf setfiletype
 AlterCommand fl help function-list
 AlterCommand tn tabnew
 AlterCommand qt tabclose
+AlterCommand lcdb lcd %:p:h
 
 " make it easy to change fold methids
 " h stands for 'hand'
