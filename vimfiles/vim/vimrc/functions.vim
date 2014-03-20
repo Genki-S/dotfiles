@@ -1,4 +1,4 @@
-function! g:yaml_load(filename)
+function! Genki_yaml_load(filename)
 	ruby << EOF
 	require 'yaml'
 	obj = YAML.load_file(File.expand_path(VIM::evaluate('a:filename')))
@@ -8,7 +8,7 @@ EOF
 	return l:ret
 endfunction
 
-function! g:yaml_write(filename, obj)
+function! Genki_yaml_write(filename, obj)
 	ruby << EOF
 	require 'yaml'
 	obj =  VIM::evaluate('a:obj')
@@ -17,7 +17,7 @@ function! g:yaml_write(filename, obj)
 EOF
 endfunction
 
-function! g:my_insert_cr_mapping()
+function! Genki_my_insert_cr_mapping()
 	if neobundle#is_sourced('vim-endwise') && neobundle#is_sourced('delimitMate')
 		imap <CR> <Plug>delimitMateCR<Plug>DiscretionaryEnd
 	elseif neobundle#is_sourced('vim-endwise')
@@ -28,19 +28,19 @@ function! g:my_insert_cr_mapping()
 endfunction
 
 " Make it possible to issue AlterCommand before vim-altercmd is sourced
-function! g:genki_altercmd(args)
+function! Genki_altercmd(args)
 	execute 'autocmd User sourced_vim-altercmd AlterCommand' a:args
 endfunction
 
 " For the sake of vim-qfreplace
-function! g:genki_location_to_quickfix()
+function! Genki_location_to_quickfix()
 	call setqflist(getloclist(0))
 	lclose
 	copen
 endfunction
 
 " Set tabstop, softtabstop and shiftwidth to the same value
-function! g:genki_set_taboptions()
+function! Genki_set_taboptions()
 	let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
 	if l:tabstop > 0
 		let &l:sts = l:tabstop
@@ -49,10 +49,10 @@ function! g:genki_set_taboptions()
 		" do we want expandtab as well?
 		let &l:expandtab = confirm('set expandtab?', "&No\n&Yes") - 1
 	endif
-	call g:genki_summarize_tabs()
+	call Genki_summarize_tabs()
 endfunction
 
-function! g:genki_summarize_tabs()
+function! Genki_summarize_tabs()
 	try
 		echohl ModeMsg
 		echon 'tabstop='.&l:ts
@@ -69,7 +69,7 @@ function! g:genki_summarize_tabs()
 endfunction
 
 " Quick access to Google
-function! g:genki_google(query)
+function! Genki_google(query)
 	let l:query = a:query
 	" if in vim-ref (type query again? No thanks.)
 	if exists("b:ref_history")

@@ -58,7 +58,7 @@ call neobundle#rc(expand('~/.vim/bundles'))
 NeoBundleLocal ~/.vim/bundles/manual
 
 " Setup bundles {{{
-let s:my_bundles = g:yaml_load('~/.vim/bundles.yml')
+let s:my_bundles = Genki_yaml_load('~/.vim/bundles.yml')
 for bundle in s:my_bundles
 	for [bundle_source_name, bundle_options] in items(bundle)
 		if exists('$ALL_LAZY')

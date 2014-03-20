@@ -15,7 +15,7 @@ nnoremap <SID>[fugitive]d :Gdiff
 nnoremap <SID>[fugitive]mv :Gmove 
 nnoremap <SID>[fugitive]rm :Gremove<CR>
 nnoremap <SID>[fugitive]b :Gblame<CR>
-nnoremap <SID>[fugitive]ms :call g:echo_commit_message()<CR>
+nnoremap <SID>[fugitive]ms :call Genki_echo_commit_message()<CR>
 
 augroup vimrc_vim-figitive
 	autocmd!
@@ -23,7 +23,7 @@ augroup vimrc_vim-figitive
 	autocmd BufEnter * call fugitive#detect(expand('<amatch>:p'))
 augroup END
 
-function! g:echo_commit_message()
+function! Genki_echo_commit_message()
 	let dir = getcwd()
 	try
 		execute 'lcd' fugitive#extract_git_dir('%')

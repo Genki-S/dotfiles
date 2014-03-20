@@ -1,1 +1,1 @@
-call g:my_insert_cr_mapping()
+call Genki_my_insert_cr_mapping()
