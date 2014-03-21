@@ -1,1 +1,2 @@
 AlterCommand vpm VimuxPromptMode
+AlterCommand vbd VimuxBufferDir

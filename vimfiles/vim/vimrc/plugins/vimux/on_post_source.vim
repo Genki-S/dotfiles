@@ -47,3 +47,15 @@ endfunction
 " augroup END
 
 command! -nargs=* VimuxPromptMode call Genki_vimux_prompt_mode(<q-args>)
+
+" args: command to run first
+function! Genki_vimux_buffer_dir()
+	if bufname('%') =~# 'vimfiler'
+		let buffer_dir = vimfiler#get_current_vimfiler().current_dir
+	else
+		let buffer_dir = expand('%:p:h')
+	end
+	call VimuxRunCommand('cd ' . buffer_dir)
+endfunction
+
+command! -nargs=* VimuxBufferDir call Genki_vimux_buffer_dir()

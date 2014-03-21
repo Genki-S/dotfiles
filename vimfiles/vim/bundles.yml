@@ -370,6 +370,7 @@
     autoload:
         commands:
             - VimuxPromptMode
+            - VimuxBufferDir
 - tyru/vim-altercmd:
 - vim-scripts/marvim:
 - kana/vim-fakeclip:
