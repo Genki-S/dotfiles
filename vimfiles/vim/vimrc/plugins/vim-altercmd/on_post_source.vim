@@ -36,9 +36,6 @@ AlterCommand enb tabedit $DOTDIR/vimfiles/vim/neobundle.vim
 AlterCommand eft execute 'tabedit $DOTDIR/vimfiles/vim/ftplugin/'.&filetype.'.vim'
 AlterCommand esw tabedit $DOTDIR/vimfiles/vim/vimrc/plugins/switch.vim/switch.yml
 
-" v: view
-AlterCommand vb edit $DOTDIR/vimfiles/vim/bundles
-
 " ==================================================
 " Original commands
 " ==================================================

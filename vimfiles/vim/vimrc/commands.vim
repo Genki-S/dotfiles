@@ -15,3 +15,9 @@ command! -range Pbcopy <line1>,<line2>w !reattach-to-user-namespace pbcopy
 command! Pbclone call system('echo ' . getreg('"') . ' | reattach-to-user-namespace pbcopy')
 
 command! -nargs=* Google call Genki_google(<q-args>)
+
+command! -nargs=1
+	\ -complete=customlist,neobundle#complete_bundles
+	\ ViewBundle
+	\ edit $DOTDIR/vimfiles/vim/bundles/<args>
+AlterCommand vb ViewBundle
