@@ -2,9 +2,6 @@
 " This might be replaced by ftplugins or plugin mappings (because 'make' means different things)
 nnoremap M :make<Enter>
 
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprev<CR>
-
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 " tip: gv selects last selection again
