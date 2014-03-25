@@ -77,3 +77,43 @@ function! Genki_google(query)
 	endif
 	call openbrowser#search(l:query)
 endfunction
+
+function! Genki_char2tmux(char)
+	let keymap = {
+				\ 13 : "Enter",
+				\ 32 : "Space",
+				\ 27 : "Escape",
+				\ }
+	return get(keymap, a:char, nr2char(a:char))
+endfunction
+
+function! Genki_vimux_slime_prompt(command)
+	NeoBundleSource vimux
+	NeoBundleSource vim-slime
+
+	edit _VimuxSlimePrompt_
+	call VimuxRunCommand(a:command)
+
+	" configure vim-slime
+	let b:slime_config = {}
+	let b:slime_config['socket_name'] = 'default'
+	let b:slime_config['target_pane'] = ':.' . g:VimuxRunnerIndex
+
+	" mappings
+	nnoremap <buffer> <silent> <CR> :SlimeSend<CR>
+	vnoremap <buffer> <silent> <CR> :SlimeSend<CR>
+	inoremap <buffer> <silent> <CR> <Esc>:SlimeSend<CR>o
+	nnoremap <buffer> <silent> <nowait> <Leader> :<C-u>call VimuxSendKeys(Genki_char2tmux(getchar()))<CR>
+	inoremap <buffer> <silent> <expr> <nowait> <Leader> getline('.')=='' ? '<ESC>:call VimuxSendKeysWithGetcharWithCallback("startinsert")<CR>' : ','
+
+	" buffer settings
+	setlocal buftype=nofile
+	setlocal nobuflisted
+	setlocal noswapfile
+	setlocal bufhidden=delete
+	setlocal nonumber
+	setlocal nowrap
+
+	startinsert
+endfunction
+
