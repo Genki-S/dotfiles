@@ -23,6 +23,7 @@ endfunction
 " setlocal foldmethod=expr
 " setlocal foldexpr=RubyMethodFold(v:lnum)
 setlocal foldmethod=syntax
+setlocal foldlevel=1
 
 inoremap <silent> <buffer> <Leader><C-l> <Space>=><Space>
 
