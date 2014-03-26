@@ -19,6 +19,7 @@ install direnv
 install bzr
 install ispell
 install w3m
+install wget
 
 cask install firefox
 cask install google-chrome
@@ -31,5 +32,7 @@ cask install google-japanese-ime
 cask install flash
 cask install evernote
 cask install dash
+cask install anki
+cask install crashplan
 
 cask alfred link
