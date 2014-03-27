@@ -1,6 +1,25 @@
 ---
 - Shougo/neobundle.vim:
 
+# Libraries {{{
+- mattn/webapi-vim:
+    lazy: 1
+    autoload:
+        function_prefix: webapi
+        on_source:
+            - gist-vim
+- xolox/vim-misc:
+    lazy: 1
+    autoload:
+        on_source:
+            - vim-reload
+- rizzatti/funcoo.vim:
+    lazy: 1
+    autoload:
+        on_source:
+            - dash.vim
+# }}}
+
 # It just works (No need to invoke consciously, just configure.) {{{
 - tpope/vim-endwise:
     lazy: 1
@@ -17,14 +36,11 @@
     build:
         mac: make -f make_mac.mak
         unix: make -f make_unix.mak
-- mattn/webapi-vim:
 - vim-scripts/sudo.vim:
 - chrisbra/Recover.vim:
-- xolox/vim-misc:
 - tpope/vim-speeddating:
 - osyo-manga/shabadou.vim:
 - takac/vim-hardtime:
-- rizzatti/funcoo.vim:
 - kana/vim-submode:
 # }}}
 
@@ -140,6 +156,14 @@
 
 # Reference {{{
 - rizzatti/dash.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - Dash
+            - DashKeyWords
+            - DashSettings
+        mappings:
+            - <Plug>(Dash
 - thinca/vim-ref:
     lazy: 1
     autoload:
