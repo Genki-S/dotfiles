@@ -432,6 +432,10 @@
 
 ## Vim {{{
 - xolox/vim-reload:
+    lazy: 1
+    autoload:
+        filetypes:
+            - vim
 ## }}}
 
 ## Web Development {{{
