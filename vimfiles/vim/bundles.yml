@@ -136,10 +136,7 @@
     lazy: 1
     autoload:
         mappings:
-            - <Plug>(clever-f-f)
-            - <Plug>(clever-f-F)
-            - <Plug>(clever-f-t)
-            - <Plug>(clever-f-T)
+            - <Plug>(clever-f
 - rking/ag.vim:
     lazy: 1
     autoload:
