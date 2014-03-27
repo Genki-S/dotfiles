@@ -117,3 +117,6 @@ function! Genki_vimux_slime_prompt(command)
 	startinsert
 endfunction
 
+function! Genki_dump_variable(var_name)
+	execute "call append(line('.'), string(" . a:var_name . "))"
+endfunction
