@@ -341,6 +341,7 @@
 - bootleq/vim-textobj-rubysymbol:
 - deris/vim-textobj-enclosedsyntax:
 - Julian/vim-textobj-variable-segment:
+- osyo-manga/vim-textobj-blockwise:
 # }}}
 
 # Writing {{{
