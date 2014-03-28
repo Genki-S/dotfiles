@@ -57,3 +57,9 @@ function xargs_with_alias()
 function zman() {
 	PAGER="less -g -s '+/^       "$1"'" man zshall
 }
+
+function aoj() {
+	clicoder new aoj $1
+	dir=$(printf "%04d" $1)
+	cd $dir
+}
