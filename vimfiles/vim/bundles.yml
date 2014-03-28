@@ -268,7 +268,7 @@
     build:
         mac: bundle
         unix: bundle
-- kmnk/vim-unite-giti:
+- Genki-S/vim-unite-giti:
     lazy: 1
     autoload:
         unite_sources:
