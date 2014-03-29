@@ -1,3 +1,6 @@
+inoremap <silent> <buffer> <Leader><C-l> <Space>>><Space>
+inoremap <silent> <buffer> <Leader><C-h> <Space><<<Space>
+
 " ==================================================
 " Make"prg"file
 " ==================================================
