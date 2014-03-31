@@ -118,5 +118,11 @@ function! Genki_vimux_slime_prompt(command)
 endfunction
 
 function! Genki_dump_variable(var_name)
-	execute "call append(line('.'), string(" . a:var_name . "))"
+	NeoBundleSource vim-prettyprint
+	redir => var_content
+	execute "PrettyPrint" a:var_name
+	redir END
+	" use split to eliminate null characters (^@) in var_content:
+	" http://stackoverflow.com/questions/2573021/how-to-redirect-ex-command-output-into-current-buffer-or-file
+	call append('.', split(var_content, "\n"))
 endfunction
