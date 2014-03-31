@@ -40,6 +40,10 @@ let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,
 let g:twittperator_use_ssl_connection_for_api_ep = 1
 cabbrev -javascript %% " -- " + buffer.title + " " + buffer.URL
 
+" Pocket http://d.ktmtt.com/-/2014/02/23/firefox-vimperator-pocket/
+command pocket echo RIL.addCurrent() !== false ? 'Success' : 'Failed (or already clipped?)'
+nnoremap <Leader>p :pocket<CR>
+
 nnoremap <Leader>,e :eijiro 
 vnoremap E y:eijiro <M-v><CR>
 nmap <Leader>e chbveE
