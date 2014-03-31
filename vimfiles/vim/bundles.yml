@@ -573,6 +573,18 @@
 
 # }}}
 
+# Vim Scripting {{{
+- thinca/vim-prettyprint:
+    lazy: 1
+    autoload:
+        commands:
+            - PrettyPrint
+            - PP
+        functions:
+            - PrettyPrint
+            - PP
+# }}}
+
 # Manual Plugins {{{
 - migemo:
     type: nosync
