@@ -22,7 +22,7 @@ $(EXE): $(OBJS)
 .PHONY: clean cleanest
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJS)
 
 cleanest: clean
 	rm -f $(EXE)

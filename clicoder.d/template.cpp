@@ -12,6 +12,7 @@
 #include <ctime>
 #include <iostream>
 #include <iterator>
+#include <limits>
 #include <list>
 #include <map>
 #include <numeric>
@@ -37,6 +38,8 @@ typedef vector<int> VI;
 typedef vector<VI> VVI;
 typedef vector<LL> VLL;
 typedef vector<VLL> VVLL;
+typedef vector<ULL> VULL;
+typedef vector<VULL> VVULL;
 typedef vector<double> VD;
 typedef vector<VD> VVD;
 typedef vector<bool> VB;
@@ -76,18 +79,25 @@ template<class T> inline string toString(T x) { ostringstream sout; sout<<x; ret
 #define EXIST(s, e) ((s).find(e) != (s).end())
 // }}}
 // bit manipulation {{{
-#define BIT(n) (assert(n < 64), (1ULL << (n)))
-#define BITOF(n, m) (assert(m < 64), ((ULL)(n) >> (m) & 1))
+// singed integers are not for bitwise operations, specifically arithmetic shifts ('>>', and maybe not good for '<<' too)
+#define IS_UNSIGNED(n) (!numeric_limits<typeof(n)>::is_signed)
+#define BIT(n) (assert(IS_UNSIGNED(n)), assert(n < 64), (1ULL << (n)))
+#define BITOF(n, m) (assert(IS_UNSIGNED(n)), assert(m < 64), ((ULL)(n) >> (m) & 1))
+inline int make_mask(ULL upper, ULL lower) { assert(lower < 64 && upper < 64 && lower <= upper); return (BIT(upper) - 1) ^ (BIT(lower) - 1); }
 inline int onbits_count(ULL b) { int c = 0; while(b != 0) { c += (b & 1); b >>= 1; } return c; }
 inline int bits_count(ULL b) { int c = 0; while(b != 0) { ++c; b >>= 1; } return c; }
+// }}}
+// for readable code {{{
+#define EVEN(n) (n % 2 == 0)
+#define ODD(n) (!EVEN(n))
 // }}}
 // debug {{{
 #define dprt(fmt, ...) if (opt_debug) fprintf(stderr, fmt, ##__VA_ARGS__)
 #define darr(a) if (opt_debug) copy( (a), (a) + arrsz(a), ostream_iterator<int>(cerr, " ") ); cerr << endl
 #define darr_range(a, f, t) if (opt_debug) copy( (a) + (f), (a) + (t), ostream_iterator<int>(cerr, " ") ); cerr << endl
 #define dvec(v) if (opt_debug) copy( ALL(v), ostream_iterator<int>(cerr, " ") ); cerr << endl
-#define darr2(a, n, m) if (opt_debug) FOR(i, 0, (n)){ darr_range( (a)[i], 0, (m) ); }
-#define dvec2(v) if (opt_debug) FOR(i, 0, SZ(v)){ dvec( (v)[i] ); }
+#define darr2(a, n, m) if (opt_debug) FOR(__i, 0, (n)){ darr_range( (a)[__i], 0, (m) ); }
+#define dvec2(v) if (opt_debug) FOR(__i, 0, v.size()){ dvec( (v)[__i] ); }
 #define WAIT() if (opt_debug) { string _wait_; cerr << "(hit return to continue)" << endl; getline(cin, _wait_); }
 #define dump(x) if (opt_debug) cerr << " [L" << __LINE__ << "] " << #x << " = " << (x) << endl;
 #define dumpf() if (opt_debug) cerr << __PRETTY_FUNCTION__ << endl;
