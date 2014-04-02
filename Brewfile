@@ -6,7 +6,7 @@ install brew-cask
 
 install git-flow
 install tig
-install vim
+install vim --with-lua
 install emacs
 install zsh
 install tmux
@@ -34,5 +34,7 @@ cask install evernote
 cask install dash
 cask install anki
 cask install crashplan
+cask install skype
+cask install mactex
 
 cask alfred link
