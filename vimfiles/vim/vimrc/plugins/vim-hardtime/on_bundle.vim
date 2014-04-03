@@ -5,9 +5,13 @@ let g:hardtime_ignore_buffer_patterns = [".*fugitive.*"]
 
 let s:hardtime_ignore_filetypes = ["qf", "vimfiler"]
 
+function! s:disable_hardtime_by_filetype()
+	if index(s:hardtime_ignore_filetypes, &filetype) >= 0
+		HardTimeOff
+	endif
+endfunction
+
 augroup vimrc_vim-hardtime
 	autocmd!
-	for ft in s:hardtime_ignore_filetypes
-		execute "autocmd FileType" ft "HardTimeOff"
-	endfor
+	autocmd BufEnter * call s:disable_hardtime_by_filetype()
 augroup END
