@@ -41,8 +41,15 @@ let g:twittperator_use_ssl_connection_for_api_ep = 1
 cabbrev -javascript %% " -- " + buffer.title + " " + buffer.URL
 
 " Pocket http://d.ktmtt.com/-/2014/02/23/firefox-vimperator-pocket/
-command pocket echo RIL.addCurrent() !== false ? 'Success' : 'Failed (or already clipped?)'
+command! pocket echo RIL.addCurrent() !== false ? 'Success' : 'Failed (or already clipped?)'
 nnoremap <Leader>p :pocket<CR>
+
+" For orgmode
+command! CopyForOrg js util.copyToClipboard("[[" + buffer.URL + "][" + buffer.title + "]]", true)
+nnoremap <Leader>y :CopyForOrg<CR>
+
+" Reload .vimperatorrc
+nnoremap <Leader>R :source ~/.vimperatorrc<CR>
 
 nnoremap <Leader>,e :eijiro 
 vnoremap E y:eijiro <M-v><CR>
