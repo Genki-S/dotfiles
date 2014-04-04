@@ -27,7 +27,7 @@ function! Genki_echo_commit_message()
 	let dir = getcwd()
 	try
 		execute 'lcd' fugitive#extract_git_dir('%')
-		let s:commit_message = system('git log --format=\%B -n1 ' . fugitive#buffer().commit())
+		let s:commit_message = system('git log --format=format:"%s (%ad %an)" --date=short -n1 ' . fugitive#buffer().commit())
 		echo split(s:commit_message, "\n")[0]
 	catch
 	finally
