@@ -2,9 +2,8 @@
 " This might be replaced by ftplugins or plugin mappings (because 'make' means different things)
 nnoremap M :make<Enter>
 
-" q closes. frequency of closing > frequency of defining macro (http://d.hatena.ne.jp/vimtaku/20121117/1353138802)
-nnoremap q :<C-u>q<CR>
-nnoremap Q q
+" Q closes.
+nnoremap Q :<C-u>q<CR>
 
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
