@@ -87,3 +87,8 @@
   (add-hook hook (lambda () (flyspell-mode 1))))
 (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
   (add-hook hook (lambda () (flyspell-mode -1))))
+
+;; various
+(defun genki/remind-workout ()
+  (osx-notification "Get Active!" "Do some workout now."))
+(run-at-time "00:00" 3600 'genki/org-check-clocking)
