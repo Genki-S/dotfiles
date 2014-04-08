@@ -91,4 +91,4 @@
 ;; various
 (defun genki/remind-workout ()
   (osx-notification "Get Active!" "Do some workout now."))
-(run-at-time "00:00" 3600 'genki/org-check-clocking)
+(run-at-time "00:00" 3600 'genki/remind-workout)
