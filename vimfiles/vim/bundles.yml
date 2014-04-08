@@ -394,10 +394,6 @@
 - kana/vim-fakeclip:
 - tyru/open-browser.vim:
 - szw/vim-ctrlspace:
-    lazy: 1
-    autoload:
-        commands:
-            - CtrlSpace
 - tpope/vim-dispatch:
 - Shougo/junkfile.vim:
     lazy: 1
