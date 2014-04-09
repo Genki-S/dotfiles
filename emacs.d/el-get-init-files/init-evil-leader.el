@@ -1,6 +1,9 @@
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
 
+(evil-leader/set-key
+  "y" 'genki/pbcopy)
+
 (evil-leader/set-key-for-mode 'org-mode
   "a" 'org-agenda-list
   "c" 'org-capture
