@@ -92,17 +92,17 @@ inline int bits_count(ULL b) { int c = 0; while(b != 0) { ++c; b >>= 1; } return
 #define ODD(n) (!EVEN(n))
 // }}}
 // debug {{{
-#define dprt(fmt, ...) if (opt_debug) fprintf(stderr, fmt, ##__VA_ARGS__)
-#define darr(a) if (opt_debug) copy( (a), (a) + arrsz(a), ostream_iterator<int>(cerr, " ") ); cerr << endl
-#define darr_range(a, f, t) if (opt_debug) copy( (a) + (f), (a) + (t), ostream_iterator<int>(cerr, " ") ); cerr << endl
-#define dvec(v) if (opt_debug) copy( ALL(v), ostream_iterator<int>(cerr, " ") ); cerr << endl
-#define darr2(a, n, m) if (opt_debug) FOR(__i, 0, (n)){ darr_range( (a)[__i], 0, (m) ); }
-#define dvec2(v) if (opt_debug) FOR(__i, 0, v.size()){ dvec( (v)[__i] ); }
+#define dprt(fmt, ...) if (opt_debug) { fprintf(stderr, fmt, ##__VA_ARGS__); }
+#define darr(a) if (opt_debug) { copy( (a), (a) + arrsz(a), ostream_iterator<int>(cerr, " ") ); cerr << endl; }
+#define darr_range(a, f, t) if (opt_debug) { copy( (a) + (f), (a) + (t), ostream_iterator<int>(cerr, " ") ); cerr << endl; }
+#define dvec(v) if (opt_debug) { copy( ALL(v), ostream_iterator<int>(cerr, " ") ); cerr << endl; }
+#define darr2(a, n, m) if (opt_debug) { FOR(__i, 0, (n)){ darr_range( (a)[__i], 0, (m) ); } }
+#define dvec2(v) if (opt_debug) { FOR(__i, 0, v.size()){ dvec( (v)[__i] ); } }
 #define WAIT() if (opt_debug) { string _wait_; cerr << "(hit return to continue)" << endl; getline(cin, _wait_); }
-#define dump(x) if (opt_debug) cerr << " [L" << __LINE__ << "] " << #x << " = " << (x) << endl;
-#define dumpf() if (opt_debug) cerr << __PRETTY_FUNCTION__ << endl;
-#define dumpv(x) if (opt_debug) cerr << " [L:" << __LINE__ << "] " << #x << " = "; REP(q, (x).size()) cerr << (x)[q] << " "; cerr << endl;
-#define where() if (opt_debug) cerr << __FILE__ << ": " << __PRETTY_FUNCTION__ << " [L: " << __LINE__ << "]" << endl;
+#define dump(x) if (opt_debug) { cerr << " [L" << __LINE__ << "] " << #x << " = " << (x) << endl; }
+#define dumpf() if (opt_debug) { cerr << __PRETTY_FUNCTION__ << endl; }
+#define dumpv(x) if (opt_debug) { cerr << " [L:" << __LINE__ << "] " << #x << " = "; REP(q, (x).size()) cerr << (x)[q] << " "; cerr << endl; }
+#define where() if (opt_debug) { cerr << __FILE__ << ": " << __PRETTY_FUNCTION__ << " [L: " << __LINE__ << "]" << endl; }
 #define show_bits(b, s) if(opt_debug) { REP(i, s) { cerr << BITOF(b, s-1-i); if(i%4 == 3) cerr << ' '; } cerr << endl; }
 template<typename T1, typename T2> ostream& operator<<(ostream& s, const pair<T1, T2>& d) {return s << "(" << d.first << ", " << d.second << ")";}
 // }}}
