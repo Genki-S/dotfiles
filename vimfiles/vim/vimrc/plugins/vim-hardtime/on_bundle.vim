@@ -14,5 +14,5 @@ endfunction
 
 augroup vimrc_vim-hardtime
 	autocmd!
-	autocmd BufEnter * call s:disable_hardtime_by_filetype()
+	autocmd BufNew,BufEnter * call s:disable_hardtime_by_filetype()
 augroup END
