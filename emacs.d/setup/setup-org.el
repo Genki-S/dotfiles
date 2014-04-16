@@ -53,6 +53,7 @@
                              "~/org/books.org"
                              "~/org/workouts.org"
                              "~/org/journal.org"
+                             "~/org/archives.org"
                              "~/org/goals.org"))
 
 (setq org-agenda-custom-commands
@@ -163,6 +164,7 @@
                            ("~/org/workouts.org" :maxlevel . 9)
                            ("~/org/routines.org" :maxlevel . 9)
                            ("~/org/books.org" :maxlevel . 9)
+                           ("~/org/archives.org" :maxlevel . 9)
                            ("~/org/references.org" :maxlevel . 9)))
 
 ;; org-capture
