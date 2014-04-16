@@ -173,7 +173,7 @@
         ("f" "Failure" entry (file "~/org/inbox.org")
          "* %?  :failure:\n%U\n" :clock-in t :clock-resume t)
         ("m" "Meeting" entry (file "~/org/inbox.org")
-         "* MEETING %?\n%U\n** Learnings\n" :clock-in t :clock-resume t)
+         "* MEETING %?\n%U\n** References\n** Learnings\n" :clock-in t :clock-resume t)
         ("n" "Note" entry (file "~/org/inbox.org")
          "* %?  :note:\n%U\nfrom:%a\n" :clock-in t :clock-resume t)
         ("p" "Phone call" entry (file "~/org/inbox.org")
