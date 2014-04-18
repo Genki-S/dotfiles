@@ -65,9 +65,6 @@
           (org-agenda-with-colors nil))
          (,(concat "~/org/reports/" (format-time-string "%Y-%m-%d") ".html")))))
 
-;; agenda evil settings
-(add-hook 'org-agenda-mode-hook 'evil-normal-state)
-
 ;; my org settings
 (custom-set-variables
  '(org-startup-indented t)
@@ -185,8 +182,6 @@
         ("7" "750 words" entry (file+datetree "~/org/journal.org")
          "* %?\n%U" :clock-in t :clock-resume t)))
 
-; start with insert state in capture modes
-(add-hook 'org-capture-mode-hook (lambda () (evil-append (point))))
 
 ;; Resume clocking task when emacs is restarted
 (org-clock-persistence-insinuate)
@@ -221,11 +216,6 @@
 (setq org-mobile-inbox-for-pull "~/org/mobile-inbox.org")
 (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
 
-;; auto sync
-; TODO make this run in background
-; (add-hook 'after-init-hook 'org-mobile-pull)
-; (add-hook 'kill-emacs-hook 'org-mobile-push)
-
 ;; Keybindings
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
@@ -245,5 +235,15 @@
 
 ;; for org backup
 (run-at-time "00:58" 3600 'org-save-all-org-buffers)
+
+;; org-mode hooks
+;; agenda evil settings
+(add-hook 'org-agenda-mode-hook 'evil-normal-state)
+;; start with insert state in capture modes
+(add-hook 'org-capture-mode-hook (lambda () (evil-append (point))))
+;; auto sync with MobileOrg
+; TODO make this run in background
+; (add-hook 'after-init-hook 'org-mobile-pull)
+; (add-hook 'kill-emacs-hook 'org-mobile-push)
 
 (provide 'setup-org)
