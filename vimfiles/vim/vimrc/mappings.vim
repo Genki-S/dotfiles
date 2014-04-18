@@ -9,8 +9,8 @@ nnoremap Q :<C-u>q<CR>
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 " tip: gv selects last selection again
 
-" plain paste
-nnoremap <Leader>pp :<C-u>r !cat<CR>
+" Pbcopy
+vnoremap <silent> <Leader>Y :Pbcopy<CR>
 
 " make ( and ) work with Japanese sentences
 nnoremap <silent> ( ?[.。]<CR>:noh<CR>
