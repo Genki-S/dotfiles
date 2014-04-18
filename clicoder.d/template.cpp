@@ -105,6 +105,7 @@ inline int bits_count(ULL b) { int c = 0; while(b != 0) { ++c; b >>= 1; } return
 #define where() if (opt_debug) { cerr << __FILE__ << ": " << __PRETTY_FUNCTION__ << " [L: " << __LINE__ << "]" << endl; }
 #define show_bits(b, s) if(opt_debug) { REP(i, s) { cerr << BITOF(b, s-1-i); if(i%4 == 3) cerr << ' '; } cerr << endl; }
 template<typename T1, typename T2> ostream& operator<<(ostream& s, const pair<T1, T2>& d) {return s << "(" << d.first << ", " << d.second << ")";}
+template<typename T> ostream& operator<<(ostream& s, const complex<T>& d) {return s << "(" << d.real() << ", " << d.imag() << ")";}
 // }}}
 // }}}
 // time {{{
@@ -112,6 +113,7 @@ inline double now(){ struct timeval tv; gettimeofday(&tv, NULL); return (static_
 // }}}
 // string manipulation {{{
 inline VS split(string s, char delimiter) { VS v; string t; REP(i, s.length()) { if(s[i] == delimiter) v.PB(t), t = ""; else t += s[i]; } v.PB(t); return v; }
+inline string join(VS s, string j) { string t; REP(i, s.size()) { t += s[i] + j; } return t; }
 // }}}
 // geometry {{{
 #define Y real()
