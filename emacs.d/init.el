@@ -14,6 +14,11 @@
 (setq tmp-dir (expand-file-name "tmp" user-emacs-directory))
 (add-to-list 'load-path tmp-dir)
 
+;; Functions (load all files in defuns-dir)
+(dolist (file (directory-files defuns-dir t "\\w+"))
+  (when (file-regular-p file)
+    (load file)))
+
 ;; Install packages from MELPA
 (require 'setup-packages)
 
@@ -73,11 +78,6 @@
 (if (getenv "ORGMODE")
   (require 'setup-org))
 ; (require 'setup-mail)
-
-;; Functions (load all files in defuns-dir)
-(dolist (file (directory-files defuns-dir t "\\w+"))
-  (when (file-regular-p file)
-    (load file)))
 
 ;; Setup global key-bindings
 (require 'setup-global-bindings)

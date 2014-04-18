@@ -245,5 +245,7 @@
 ; TODO make this run in background
 ; (add-hook 'after-init-hook 'org-mobile-pull)
 ; (add-hook 'kill-emacs-hook 'org-mobile-push)
+(add-hook 'org-clock-in-hook 'genki/org-clock-current-task-to-tmux-statusline)
+(add-hook 'org-clock-out-hook 'genki/org-clock-out-hook)
 
 (provide 'setup-org)
