@@ -54,6 +54,9 @@ if has('vim_starting')
 endif
 call neobundle#rc(expand('~/.vim/bundles'))
 
+" Let neobundle manage neobundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
 " Manual plugins
 NeoBundleLocal ~/.vim/bundles/manual
 

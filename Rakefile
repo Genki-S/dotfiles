@@ -33,6 +33,10 @@ task :update_submodules do
   run %{
     git submodule update --recursive
   }
+  # neobundle is treated specially (to manage itself via neobundle)
+  unless File.directory?("#{DOTDIR}/vimfiles/vim/bundles/neobundle.vim")
+    run %{ git clone https://github.com/Shougo/neobundle.vim vimfiles/vim/bundles/neobundle.vim }
+  end
 end
 
 task :init_submodules do

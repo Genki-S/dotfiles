@@ -1,6 +1,4 @@
 ---
-- Shougo/neobundle.vim:
-
 # Libraries {{{
 - mattn/webapi-vim:
     lazy: 1

@@ -6,10 +6,6 @@
 	path = submodules/vimperator-plugins
 	url = http://github.com/vimpr/vimperator-plugins.git
 	branch = master
-[submodule "vimfiles/vim/bundles/neobundle.vim"]
-	path = vimfiles/vim/bundles/neobundle.vim
-	url = https://github.com/Shougo/neobundle.vim
-	branch = master
 [submodule "submodules/yadr"]
 	path = submodules/yadr
 	url = https://github.com/skwp/dotfiles
