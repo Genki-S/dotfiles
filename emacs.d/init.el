@@ -48,6 +48,7 @@
     metaweblog
     org2blog
     wc-mode
+    mu4e
     )
   "A list of packages to install from el-get at launch.")
 
@@ -77,7 +78,7 @@
 (require 'setup-ido)
 (if (getenv "ORGMODE")
   (require 'setup-org))
-; (require 'setup-mail)
+(require 'setup-mail)
 
 ;; Setup global key-bindings
 (require 'setup-global-bindings)
