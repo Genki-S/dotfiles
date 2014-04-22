@@ -2,7 +2,7 @@ let g:rspec_command = "MyRspec {spec}"
 
 function! s:my_rspec(spec)
 	" Need vim-rails
-	if exists('*rails#app') && rails#app().has_path('.zeus.sock') && executable('zeus')
+	if exists('*rails#app') && !empty(rails#app()) && rails#app().has_path('.zeus.sock') && executable('zeus')
 		compiler rspec
 		let save_makeprg = &makeprg
 		set makeprg=zeus
