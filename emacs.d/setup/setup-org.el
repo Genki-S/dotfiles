@@ -19,7 +19,8 @@
 ;; sets the default workflow keywords and their faces
 (setq org-todo-keywords
       '((sequence "TODO(t)" "DOING(n)" "|" "DONE(d!/!)")
-        (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "DELEGATED(l@/!)" "CANCELLED(c@/!)" "PHONE" "MEETING")))
+        (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "DELEGATED(l@/!)" "CANCELLED(c@/!)" "PHONE" "MEETING")
+        (sequence "DONT(o)" "|" "DIDNT(i!/!)")))
 
 (setq org-priority-faces
       '((65 :foreground "#ff7000" :weight bold)
