@@ -52,6 +52,7 @@
                              "~/org/someday.org"
                              "~/org/projects.org"
                              "~/org/routines.org"
+                             "~/org/habits.org"
                              "~/org/books.org"
                              "~/org/workouts.org"
                              "~/org/journal.org"
@@ -162,6 +163,7 @@
                            ("~/org/goals.org" :maxlevel . 9)
                            ("~/org/workouts.org" :maxlevel . 9)
                            ("~/org/routines.org" :maxlevel . 9)
+                           ("~/org/habits.org" :maxlevel . 9)
                            ("~/org/books.org" :maxlevel . 9)
                            ("~/org/archives.org" :maxlevel . 9)
                            ("~/org/references.org" :maxlevel . 9)))
@@ -232,6 +234,7 @@
 (define-key global-map "\C-cop" '(lambda () (interactive) (find-file "~/org/projects.org")))
 (define-key global-map "\C-coj" '(lambda () (interactive) (find-file "~/org/journal.org")))
 (define-key global-map "\C-cor" '(lambda () (interactive) (find-file "~/org/routines.org")))
+(define-key global-map "\C-coh" '(lambda () (interactive) (find-file "~/org/habits.org")))
 (define-key global-map "\C-cog" '(lambda () (interactive) (find-file "~/org/goals.org")))
 (define-key global-map "\C-cow" '(lambda () (interactive) (find-file "~/org/workouts.org")))
 (define-key global-map "\C-cob" '(lambda () (interactive) (find-file "~/org/books.org")))
