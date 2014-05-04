@@ -94,6 +94,10 @@
   (osx-notification "Get Active!" "Do some workout now."))
 (run-at-time "00:00" 3600 'genki/remind-workout)
 
+(defun genki/remind-breath ()
+  (osx-notification "Breath Properly" ""))
+(run-at-time "00:30" 3600 'genki/remind-workout)
+
 (setq genki-org-current-task "NOT CLOCKING IN...")
 (defun genki/remind-current-task ()
   (osx-notification "Current Task" genki-org-current-task))
