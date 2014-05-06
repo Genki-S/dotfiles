@@ -57,6 +57,7 @@
                              "~/org/workouts.org"
                              "~/org/journal.org"
                              "~/org/archives.org"
+                             "~/org/checklist.org"
                              "~/org/goals.org"))
 
 (setq org-agenda-custom-commands
@@ -238,6 +239,7 @@
 (define-key global-map "\C-cog" '(lambda () (interactive) (find-file "~/org/goals.org")))
 (define-key global-map "\C-cow" '(lambda () (interactive) (find-file "~/org/workouts.org")))
 (define-key global-map "\C-cob" '(lambda () (interactive) (find-file "~/org/books.org")))
+(define-key global-map "\C-coc" '(lambda () (interactive) (find-file "~/org/checklist.org")))
 
 ;; for org backup
 (run-at-time "00:58" 3600 'org-save-all-org-buffers)
