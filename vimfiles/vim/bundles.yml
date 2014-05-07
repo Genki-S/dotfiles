@@ -508,6 +508,7 @@
     autoload:
         filetypes:
             - haml
+- mustache/vim-mustache-handlebars:
 ## }}}
 
 ## Others {{{
