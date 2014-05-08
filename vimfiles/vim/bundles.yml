@@ -413,11 +413,11 @@
         filetypes:
             - ruby
 - tpope/vim-rails:
-- tpope/vim-rake:
-    lazy: 1
-    autoload:
-        filetypes:
-            - ruby
+# - tpope/vim-rake:
+    # lazy: 1
+    # autoload:
+        # filetypes:
+            # - ruby
 - tpope/vim-bundler:
     lazy: 1
     autoload:
@@ -517,18 +517,11 @@
     autoload:
         filetypes:
             - markdown
-            - mmd
-- jngeist/vim-multimarkdown:
-    lazy: 1
-    autoload:
-        filetypes:
-            - mmd
 - kannokanno/previm:
     lazy: 1
     autoload:
         filetypes:
             - markdown
-            - mmd
 - LaTeX-Box-Team/LaTeX-Box:
     lazy: 1
     autoload:
