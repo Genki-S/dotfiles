@@ -1,3 +1,5 @@
+;; Emacs is a great operating system, lacking only a decent editor
+
 (evil-mode 1)
 
 ;; mappings
