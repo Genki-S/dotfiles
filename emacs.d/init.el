@@ -44,6 +44,7 @@
   '(
     evil
     evil-leader
+    evil-surround
     xml-rpc
     metaweblog
     org2blog
@@ -55,10 +56,6 @@
 
 ;; install new packages and init already installed packages
 (el-get 'sync genki/el-get-packages)
-
-;; require all packages (my first elisp code. why is it working?)
-(loop for p in genki/el-get-packages
- do (require p))
 
 ;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
