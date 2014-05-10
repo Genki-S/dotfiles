@@ -49,6 +49,7 @@
     org2blog
     wc-mode
     mu4e
+    color-theme-solarized
     )
   "A list of packages to install from el-get at launch.")
 
@@ -88,6 +89,9 @@
   (add-hook hook (lambda () (flyspell-mode 1))))
 (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
   (add-hook hook (lambda () (flyspell-mode -1))))
+
+;; color
+(load-theme 'solarized-dark t)
 
 ;; various
 (defun genki/remind-workout ()
