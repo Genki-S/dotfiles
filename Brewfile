@@ -20,6 +20,15 @@ install bzr
 install ispell
 install w3m
 install wget
+install atool
+install libtool
+install glib
+install xapian
+install gmime
+install offlineimap
+install gpg
+install mu
+install gnutls
 
 cask install firefox
 cask install google-chrome
@@ -36,5 +45,7 @@ cask install anki
 cask install crashplan
 cask install skype
 cask install mactex
+cask install lastpass-universal
+cask install mendeley-desktop
 
 cask alfred link
