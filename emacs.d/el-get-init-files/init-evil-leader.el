@@ -2,6 +2,7 @@
 (evil-leader/set-leader ",")
 
 (evil-leader/set-key
+  "M" 'mu4e
   "Y" 'genki/pbcopy)
 
 (evil-leader/set-key-for-mode 'org-mode
