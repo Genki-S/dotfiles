@@ -5,7 +5,7 @@
   "M" 'mu4e
   "Y" 'genki/pbcopy)
 
-(evil-leader/set-key-for-mode 'org-mode
+(evil-leader/set-key
   "a" 'org-agenda-list
   "c" 'org-capture
   "j" 'org-next-item

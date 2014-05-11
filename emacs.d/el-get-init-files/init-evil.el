@@ -70,7 +70,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
        "j" 'evil-next-line
        "C" 'mu4e-compose-new
        "o" 'mu4e-view-message
-       "Q" 'mu4e-raw-view-quit-buffer)
+       "Q" 'mu4e-raw-view-quit-buffer
+       "/" 'evil-search-forward
+       (kbd "C-c C-o") 'org-open-at-point
+       (kbd "C-c l") 'org-store-link)
 
      ;; (evil-add-hjkl-bindings mu4e-view-raw-mode-map 'normal
      ;;   "J" 'mu4e-jump-to-maildir
