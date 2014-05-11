@@ -1,3 +1,6 @@
+(load "server")
+(unless (server-running-p) (server-start))
+
 ;; Set the dir variables used by these init scripts
 (setq themes-dir (expand-file-name "themes" user-emacs-directory))
 (add-to-list 'load-path themes-dir)

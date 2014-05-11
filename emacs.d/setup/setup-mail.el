@@ -25,7 +25,7 @@
         ("/[Gmail].All Mail"    . ?a)))
 
 ;; allow for updating mail using 'U' in the main view:
-(setq mu4e-get-mail-command "offlineimap")
+(setq mu4e-get-mail-command "zsh -i -c offlineimap") ;; I don't know why, but it only works under interactive zsh
 (setq mu4e-update-interval 300) ;; update every 5 minutes
 
 ;; something about ourselves
@@ -70,6 +70,17 @@
     (browse-url (concat "file://" tmpfile))))
 (add-to-list 'mu4e-view-actions
   '("View in browser" . mu4e-msgv-action-view-in-browser) t)
+
+;; For encrypting password
+(require 'epa-file)
+(epa-file-enable)
+(setq auth-sources '("~/.authinfo.gpg" "~/.authinfo" "~/.netrc"))
+
+(require 'netrc)
+(defun offlineimap-get-password (host port)
+  (let* ((netrc (netrc-parse (expand-file-name "~/.authinfo.gpg")))
+         (hostentry (netrc-machine netrc host port port)))
+    (when hostentry (netrc-get hostentry "password"))))
 
 (provide 'setup-mail)
 ;;; setup-mail.el ends here
