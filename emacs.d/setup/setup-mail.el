@@ -1,4 +1,5 @@
 ;;; setup-mail.el --- Setup mu4e
+;; This was an awesome resource : http://d.hatena.ne.jp/kenbeese/20121129/1354442823
 
 (require 'mu4e)
 
