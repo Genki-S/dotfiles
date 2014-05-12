@@ -121,7 +121,7 @@ function! s:get_random_bundle()
 	return s:all_bundles[s:rand % len(s:all_bundles)]
 endfunction
 
-echomsg 'Pickup: ' . s:get_random_bundle().name
+" echomsg 'Pickup: ' . s:get_random_bundle().name
 "}}}
 " AlterCommands {{{
 AlterCommand nb Unite neobundle
