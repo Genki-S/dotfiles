@@ -35,8 +35,12 @@
   user-full-name (getenv "MY_NAME")
   message-signature
   (concat
-    "--------------\n"
-    "Genki Sugimoto\n"))
+    "Genki Sugimoto\n"
+    "Waseda University\n"
+    "Washizaki Laboratory\n"
+    "\n"
+    "http://genkisugimoto.com"))
+(setq mu4e-compose-signature message-signature)
 
 ;; sending mail
 ;; make sure the gnutls command line utils are installed
