@@ -197,7 +197,7 @@ end_token="## end-gsd"
 if ! grep $start_token $hosts_file &> /dev/null; then
 	if ! grep $end_token $hosts_file &> /dev/null; then
 		echo "Let's get shit done!"
-		get-shit-done work
+		# get-shit-done work
 	fi
 fi
 # }}}
