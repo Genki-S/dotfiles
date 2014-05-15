@@ -1,0 +1,5 @@
+#!/bin/sh
+
+touch ~/.semaphore_vim
+vim $*
+rm ~/.semaphore_vim

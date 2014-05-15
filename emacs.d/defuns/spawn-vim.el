@@ -7,10 +7,10 @@
       (progn
         (let ((temp-file (make-temp-file "emacs_vim")))
           (write-region (point-min) (point-max) temp-file)
-          (call-process "tmux" nil nil nil "new-window" (concat "vim " temp-file))
+          (call-process "tmux" nil nil nil "new-window" (concat "semaphore-vim " temp-file))
           (sleep-for 1)
           (let ((temp-file-basename (file-name-nondirectory temp-file)))
-            (while (file-exists-p (replace-regexp-in-string temp-file-basename (concat "." temp-file-basename ".swp") temp-file))
+            (while (file-exists-p "~/.semaphore_vim")
                    (sleep-for 1))
             (insert-file-contents temp-file nil nil nil t))))
       (error "Current buffer doesn't point to a file yet."))))
