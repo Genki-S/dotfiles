@@ -54,6 +54,7 @@
     wc-mode
     mu4e
     color-theme-solarized
+    helm
     )
   "A list of packages to install from el-get at launch.")
 
@@ -76,7 +77,6 @@
 (setq is-mac (equal system-type 'darwin))
 
 ;; Setup extensions
-(require 'setup-ido)
 (if (getenv "ORGMODE")
   (require 'setup-org))
 (require 'setup-mail)
