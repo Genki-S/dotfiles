@@ -248,7 +248,8 @@
 ;; agenda evil settings
 (add-hook 'org-agenda-mode-hook 'evil-normal-state)
 ;; start with insert state in capture modes
-(add-hook 'org-capture-mode-hook (lambda () (evil-append (point))))
+(add-hook 'org-capture-mode-hook 'genki/org-capture-buffer-setup)
+
 ;; auto sync with MobileOrg
 ; TODO make this run in background
 ; (add-hook 'after-init-hook 'org-mobile-pull)

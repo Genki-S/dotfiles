@@ -8,6 +8,8 @@
 (add-to-list 'load-path vendor-dir)
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
 (add-to-list 'load-path defuns-dir)
+(setq defadvices-dir (expand-file-name "defadvices" user-emacs-directory))
+(add-to-list 'load-path defadvices-dir)
 (setq backups-dir (expand-file-name "backups" user-emacs-directory))
 (add-to-list 'load-path backups-dir)
 (setq setup-dir (expand-file-name "setup" user-emacs-directory))
@@ -17,9 +19,28 @@
 (setq tmp-dir (expand-file-name "tmp" user-emacs-directory))
 (add-to-list 'load-path tmp-dir)
 
+;; http://www.emacswiki.org/emacs/ElispCookbook#toc4
+(defun string/starts-with (s begins)
+  "Return non-nil if string S starts with BEGINS."
+  (cond ((>= (length s) (length begins))
+         (string-equal (substring s 0 (length begins)) begins))
+        (t nil)))
+
+(defun string/ends-with (s ending)
+  "Return non-nil if string S ends with ENDING."
+  (cond ((>= (length s) (length ending))
+         (let ((elength (length ending)))
+           (string= (substring s (- 0 elength)) ending)))
+        (t nil)))
+
 ;; Functions (load all files in defuns-dir)
 (dolist (file (directory-files defuns-dir t "\\w+"))
-  (when (file-regular-p file)
+  (when (and (file-regular-p file) (string/ends-with file ".el"))
+    (load file)))
+
+;; Advices
+(dolist (file (directory-files defadvices-dir t "\\w+"))
+  (when (and (file-regular-p file) (string/ends-with file ".el"))
     (load file)))
 
 ;; Install packages from MELPA
