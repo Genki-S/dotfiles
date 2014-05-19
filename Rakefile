@@ -73,6 +73,10 @@ task :mac do
     fname = File.basename(plist)
     my_ln(plist, "#{HOME}/Library/LaunchAgents/#{fname}")
   end
+  Dir.glob("#{DOTDIR}/macfiles/LaunchDaemons/*") do |plist|
+    fname = File.basename(plist)
+    my_ln(plist, "/Library/LaunchDaemons/#{fname}", true)
+  end
 end
 
 task :generate_global_tags do
@@ -146,12 +150,12 @@ def deploy_dotfiles(obj)
   end
 end
 
-def my_ln(src, dst)
+def my_ln(src, dst, sudo = false)
   run %{ rm #{dst} } if File.symlink?(dst)
   raise %{File "#{dst}" exists and not a symlink.} if File.exists?(dst)
   dir = File.dirname(dst)
   FileUtils.mkdir_p(dir) unless File.directory?(dir)
-  run %{ ln -s #{src} #{dst} }
+  run %{ #{sudo ? 'sudo' : ''} ln -s #{src} #{dst} }
 end
 
 # OS check (http://stackoverflow.com/questions/170956/how-can-i-find-which-operating-system-my-ruby-program-is-running-on)

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>EnableGlobbing</key>
+  <true/>
+  <key>Label</key>
+  <string>com.genkisugimoto.getshitdone.work.plist</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/genki/vendor/get-shit-done/get-shit-done</string>
+    <string>work</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>4</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+</dict>
+</plist>
