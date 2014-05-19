@@ -182,6 +182,8 @@
          "* %?  :note:\n%U\nfrom:%a\n" :clock-in t :clock-resume t)
         ("p" "Phone call" entry (file "~/org/inbox.org")
          "* PHONE %?\n%U" :clock-in t :clock-resume t)
+        ("r" "respond" entry (file "~/org/inbox.org")
+         "* TODO Respond to %a\nSCHEDULED: %t\n%U\n" :clock-in t :clock-resume t :immediate-finish t)
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
          (file "~/org/templates/journal.txt") :clock-in t :clock-resume t)
         ("7" "750 words" entry (file+datetree "~/org/journal.org")
