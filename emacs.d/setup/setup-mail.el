@@ -6,9 +6,9 @@
 ;; default
 ;; (setq mu4e-maildir "~/Maildir")
 
-(setq mu4e-drafts-folder "/[Gmail].Drafts")
-(setq mu4e-sent-folder   "/[Gmail].Sent Mail")
-(setq mu4e-trash-folder  "/[Gmail].Bin")
+(setq mu4e-drafts-folder "/Gmail/Drafts")
+(setq mu4e-sent-folder   "/Gmail/Sent Mail")
+(setq mu4e-trash-folder  "/Gmail/Bin")
 (setq mu4e-attachment-dir  "~/Downloads") ;; attachments are saved here
 
 ;; don't save message to Sent Messages, Gmail/IMAP takes care of this
@@ -20,10 +20,7 @@
 ;; the 'All Mail' folder by pressing ``ma''.
 
 (setq mu4e-maildir-shortcuts
-      '(("/INBOX"               . ?i)
-        ("/[Gmail].Sent Mail"   . ?s)
-        ("/[Gmail].Trash"       . ?t)
-        ("/[Gmail].All Mail"    . ?a)))
+      '(("/INBOX"               . ?i)))
 
 ;; allow for updating mail using 'U' in the main view:
 (setq mu4e-get-mail-command "zsh -i -c offlineimap") ;; I don't know why, but it only works under interactive zsh
@@ -86,6 +83,36 @@
   (let* ((netrc (netrc-parse (expand-file-name "~/.authinfo.gpg")))
          (hostentry (netrc-machine netrc host port port)))
     (when hostentry (netrc-get hostentry "password"))))
+
+;; for multiple accounts
+;; http://www.djcbsoftware.nl/code/mu/mu4e/Multiple-accounts.html
+(defvar my-mu4e-account-alist
+  '(("Gmail"
+     (mu4e-drafts-folder "/Gmail/Drafts")
+     (mu4e-sent-folder "/Gmail/Sent Mail")
+     (mu4e-trash-folder  "/Gmail/Bin")
+     (user-mail-address "cfhoyuk.reccos.nelg@gmail.com"))
+    ("Waseda"
+     (mu4e-drafts-folder "/Waseda/Drafts")
+     (mu4e-sent-folder "/Waseda/Sent Mail")
+     (mu4e-trash-folder  "/Waseda/Bin")
+     (user-mail-address "genki-sugimoto@asagi.waseda.jp"))))
+
+(defun my-mu4e-set-account ()
+  "Set the account for composing a message."
+  (let* ((account
+           (completing-read (format "Compose with account: (%s) "
+                                    (mapconcat #'(lambda (var) (car var)) my-mu4e-account-alist "/"))
+                            (mapcar #'(lambda (var) (car var)) my-mu4e-account-alist)
+                            nil t nil nil (caar my-mu4e-account-alist)))
+         (account-vars (cdr (assoc account my-mu4e-account-alist))))
+    (if account-vars
+      (mapc #'(lambda (var)
+                (set (car var) (cadr var)))
+            account-vars)
+      (error "No email account found"))))
+
+(add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)
 
 (provide 'setup-mail)
 ;;; setup-mail.el ends here
