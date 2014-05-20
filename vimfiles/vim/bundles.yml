@@ -354,7 +354,7 @@
 # }}}
 
 # Other Utilities {{{
-- Genki-S/vim-annotator:
+- MattesGroeger/vim-bookmarks:
 - mattn/gist-vim:
     lazy: 1
     autoload:
