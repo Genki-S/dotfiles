@@ -298,7 +298,7 @@
 - t9md/vim-quickhl:
 - itchyny/lightline.vim:
 - kshenoy/vim-signature:
-- nathanaelkane/vim-indent-guides:
+- Yggdroot/indentLine:
 - mattboehm/vim-accordion:
     lazy: 1
     autoload:
