@@ -1,6 +1,7 @@
 (require 'org)
 (require 'org-habit)
 (require 'org-checklist)
+(require 'org-id)
 (require 'org-mu4e)
 ; (require 'org-helpers)
 ; (require 'org-export)
@@ -90,6 +91,8 @@
  '(org-agenda-skip-scheduled-if-done t)
  ;; Remove completed items from search results
  '(org-agenda-skip-timestamp-if-done t)
+ ;; Generate unique id for each node for linking purpose
+ '(org-id-link-to-org-use-id t)
  ;; Separate drawers for clocking and logs
  '(org-drawers (quote ("PROPERTIES" "LOGBOOK")))
  ;; Save clock data and state changes and notes in the LOGBOOK drawer
