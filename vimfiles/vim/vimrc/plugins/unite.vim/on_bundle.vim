@@ -10,7 +10,8 @@ nnoremap <silent> <SID>[unite]B :<C-u>Unite -buffer-name=bookmark bookmark<CR>
 nnoremap <silent> <SID>[unite]c :<C-u>Unite -buffer-name=compiler compiler<CR>
 nnoremap <silent> <SID>[unite]C :<C-u>Unite -buffer-name=command command<CR>
 nnoremap <SID>[unite]e :<C-u>Unite -buffer-name=english english_
-nnoremap <silent> <SID>[unite]f :<C-u>Unite -buffer-name=file file<CR>
+nnoremap <silent> <SID>[unite]f :<C-u>UniteWithBufferDir -buffer-name=file file<CR>
+nnoremap <expr> <silent> <SID>[unite]F ":<C-u>Unite -buffer-name=file -input=" . expand("%:p:r:r:r") . " file<CR>"
 nnoremap <SID>[unite]h :<C-u>Unite -buffer-name=history history/
 nnoremap <silent> <SID>[unite]H :<C-u>Unite -buffer-name=help help<CR>
 nnoremap <silent> <SID>[unite]l :<C-u>Unite -buffer-name=lazy_bundles neobundle/lazy<CR>
