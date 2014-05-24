@@ -16,6 +16,12 @@ command! Pbclone call system('echo ' . getreg('"') . ' | reattach-to-user-namesp
 
 command! -nargs=* Google call Genki_google(<q-args>)
 
+command! -nargs=* -bar
+	\ -complete=customlist,neobundle#commands#complete_bundles
+	\ PluginSetting
+	\ call s:parse_PluginSetting(<q-args>)
+" TODO: complete hook types: on_bundle, on_source, on_post_source
+
 command! -nargs=1
 	\ -complete=customlist,neobundle#commands#complete_bundles
 	\ ViewBundle
