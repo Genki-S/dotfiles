@@ -507,11 +507,6 @@
 ## }}}
 
 ## Others {{{
-- plasticboy/vim-markdown:
-    lazy: 1
-    autoload:
-        filetypes:
-            - markdown
 - kannokanno/previm:
     lazy: 1
     autoload:
