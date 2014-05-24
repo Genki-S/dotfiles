@@ -102,7 +102,7 @@ endfor
 " Interface
 " --------------------------------------------------
 command! -nargs=* -bar
-	\ -complete=customlist,neobundle#complete_bundles
+	\ -complete=customlist,neobundle#commands#complete_bundles
 	\ PluginSetting
 	\ call s:parse_PluginSetting(<q-args>)
 " TODO: complete hook types: on_bundle, on_source, on_post_source

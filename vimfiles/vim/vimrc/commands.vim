@@ -17,7 +17,7 @@ command! Pbclone call system('echo ' . getreg('"') . ' | reattach-to-user-namesp
 command! -nargs=* Google call Genki_google(<q-args>)
 
 command! -nargs=1
-	\ -complete=customlist,neobundle#complete_bundles
+	\ -complete=customlist,neobundle#commands#complete_bundles
 	\ ViewBundle
 	\ edit $DOTDIR/vimfiles/vim/bundles/<args>
 AlterCommand vb ViewBundle
