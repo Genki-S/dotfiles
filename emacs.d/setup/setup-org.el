@@ -170,6 +170,7 @@
                            ("~/org/habits.org" :maxlevel . 9)
                            ("~/org/books.org" :maxlevel . 9)
                            ("~/org/archives.org" :maxlevel . 9)
+                           ("~/org/spark.org" :maxlevel . 9)
                            ("~/org/references.org" :maxlevel . 9)))
 
 ;; org-capture
@@ -187,6 +188,8 @@
          "* PHONE %?\n%U" :clock-in t :clock-resume t)
         ("r" "respond" entry (file "~/org/inbox.org")
          "* TODO Respond to %a\nSCHEDULED: %t\n%U\n" :clock-in t :clock-resume t :immediate-finish t)
+        ("s" "Spark" entry (file "~/org/spark.org")
+         "* TODO %? :idea:\n" :clock-in t :clock-resume t)
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
          (file "~/org/templates/journal.txt") :clock-in t :clock-resume t)
         ("7" "750 words" entry (file+datetree "~/org/journal.org")
