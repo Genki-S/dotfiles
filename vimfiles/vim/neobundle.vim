@@ -34,7 +34,7 @@ function! s:edit_all_plugin_settings(plugin_name)
 	argglobal
 endfunction
 
-function! s:parse_PluginSetting(qargs)
+function! Genki_open_plugin_setting(qargs)
 	let s:args = split(a:qargs)
 	if len(s:args) == 1
 		call s:edit_all_plugin_settings(s:args[0])

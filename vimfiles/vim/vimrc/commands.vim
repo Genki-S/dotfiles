@@ -19,7 +19,7 @@ command! -nargs=* Google call Genki_google(<q-args>)
 command! -nargs=* -bar
 	\ -complete=customlist,neobundle#commands#complete_bundles
 	\ PluginSetting
-	\ call s:parse_PluginSetting(<q-args>)
+	\ call Genki_open_plugin_setting(<q-args>)
 " TODO: complete hook types: on_bundle, on_source, on_post_source
 
 command! -nargs=1
