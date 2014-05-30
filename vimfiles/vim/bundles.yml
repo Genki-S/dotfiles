@@ -323,6 +323,7 @@
 - kana/vim-textobj-datetime:
 - kana/vim-textobj-indent:
 - kana/vim-textobj-fold:
+- kana/vim-textobj-line:
 - thinca/vim-textobj-comment:
 - thinca/vim-textobj-between:
 - lucapette/vim-textobj-underscore:
