@@ -397,6 +397,7 @@
         unite_sources:
             - junkfile
             - junkfile/new
+- mhinz/vim-startify:
 # }}}
 
 # Filetype Specific {{{
