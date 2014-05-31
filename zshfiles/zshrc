@@ -143,7 +143,9 @@ fi
 # TODO: Move this at the top of zshrc to improve startup time (currently does not work on top)
 # Run tmux automatically
 if [ -z $TMUX ]; then
-	tmux attach-session -t "$USER" || tmux new-session -s "$USER" "$SHELL"
+	# assume $SHELL is zsh, and open org mode automatically
+	# (and set window name 'org' so that it can be used by select-window)
+	tmux attach-session -t "$USER" || tmux new-session -s "$USER" -n "org" "$SHELL -i -c 'org'"
 	# exit
 	# Not exit in order to use shell outside of tmux on occasion...
 fi
