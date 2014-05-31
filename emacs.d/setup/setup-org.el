@@ -249,6 +249,9 @@
 (define-key global-map "\C-cob" '(lambda () (interactive) (find-file "~/org/books.org")))
 (define-key global-map "\C-coc" '(lambda () (interactive) (find-file "~/org/checklist.org")))
 
+;; org-pomodoro
+(define-key global-map "\C-cp" 'org-pomodoro)
+
 ;; for org backup
 (run-at-time "00:58" 3600 'org-save-all-org-buffers)
 
