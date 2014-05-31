@@ -14,3 +14,8 @@
   "h" 'org-up-element
   ">" 'org-demote-subtree
   "<" 'org-promote-subtree)
+
+(evil-leader/set-key
+  "pp" 'org-pomoboard/plan-tomorrow
+  "pd" 'org-pomoboard/do-this-task-tomorrow
+  "pt" 'org-pomoboard/open-dashboard-today)

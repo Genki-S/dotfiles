@@ -127,3 +127,9 @@
 (defun genki/remind-current-task ()
   (osx-notification "Current Task" genki-org-current-task))
 (run-at-time "00:00" 1800 'genki/remind-current-task)
+
+;; my scripts
+(setq my-scripts-dir (expand-file-name "my-scripts" user-emacs-directory))
+(dolist (file (directory-files my-scripts-dir t "\\w+"))
+  (when (and (file-regular-p file) (string/ends-with file ".el"))
+    (load file)))

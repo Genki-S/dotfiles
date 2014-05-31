@@ -1,0 +1,72 @@
+;; org-pomoboard.el: dashboard for org-pomodoro
+(require 'org)
+(require 'org-pomodoro)
+
+;; TODO: Move these to general utility functions
+(defun genki/days-to-time (days)
+  (seconds-to-time (* 86400 days)))
+
+(defun genki/tomorrow-time ()
+  (time-add (current-time) (genki/days-to-time 1)))
+
+;; Settings
+(setq org-pomoboard-savedir "~/.org-pomoboard")
+(setq org-pomoboard-template
+      (expand-file-name "my-scripts/org-pomoboard-template.org" user-emacs-directory))
+
+;; Utilities
+(defun org-pomoboard/dashboard-filename (time)
+  (concat (format-time-string "%Y-%m-%d" time) ".org"))
+
+(defun org-pomoboard/set-property (property value)
+  "Set org property with org-pomoboard prefix"
+  (org-set-property (concat "PB_" property) value))
+
+(defun org-pomoboard/add-to-multivalued-property (property value)
+  "Add to multivalued org property with org-pomoboard prefix"
+  (org-entry-add-to-multivalued-property (point) (concat "PB_" property) value))
+
+;; Functions
+(defun org-pomoboard/init-dashboard (time)
+  "Prepare dashboard file"
+  (make-directory org-pomoboard-savedir t)
+  (let ((file (concat org-pomoboard-savedir "/" (org-pomoboard/dashboard-filename time))))
+    (copy-file org-pomoboard-template file)
+    (find-file file)
+    (goto-char (point-min))
+    (insert (org-pomoboard/dashboard-filename time))
+    (search-forward "Stats")
+    (org-pomoboard/set-property "AVAILABLE" (read-from-minibuffer "Available Pomodoro: "))))
+
+(defun org-pomoboard/plan-tomorrow ()
+  (interactive)
+  (org-pomoboard/init-dashboard (genki/tomorrow-time))
+  (message "Now go choose tasks to do tomorrow."))
+
+(defun org-pomoboard/do-this-task-tomorrow ()
+  (interactive)
+  (org-store-link nil)
+  (let ((file (concat org-pomoboard-savedir "/" (org-pomoboard/dashboard-filename (genki/tomorrow-time))))
+        (estimation (read-from-minibuffer "Estimated Pomodoro: "))
+        (deactivate-mark t))
+    ; TODO: Make save-excursion work
+    (save-excursion
+      (find-file file)
+      (goto-char (point-min))
+      (search-forward "Tasks")
+      (org-insert-todo-subheading nil)
+      (insert (concat (plist-get org-store-link-plist :description) " ([[" (plist-get org-store-link-plist :link) "][origin]])"))
+      (org-pomoboard/set-property "ESTIMATE" estimation))))
+
+(defun org-pomoboard/open-dashboard-today ()
+  (interactive)
+  (find-file (concat org-pomoboard-savedir "/" (org-pomoboard/dashboard-filename (current-time)))))
+
+;; Tweak org-pomodoro
+(defun org-pomoboard/reflect-pomodoro ()
+  (call-process "activate-org")
+  (org-clock-goto)
+  (org-pomoboard/add-to-multivalued-property "POMODORO" (read-from-minibuffer "How productive I had been? (max 10):")))
+(add-hook 'org-pomodoro-finished-hook 'org-pomoboard/reflect-pomodoro)
+
+(provide 'org-pomoboard)
