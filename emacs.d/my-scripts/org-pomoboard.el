@@ -34,6 +34,7 @@
     (copy-file org-pomoboard-template file)
     (find-file file)
     (goto-char (point-min))
+    (next-line)
     (insert (org-pomoboard/dashboard-filename time))
     (search-forward "Stats")
     (org-pomoboard/set-property "AVAILABLE" (read-from-minibuffer "Available Pomodoro: "))))
