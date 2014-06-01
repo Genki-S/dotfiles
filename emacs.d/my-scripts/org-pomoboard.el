@@ -18,19 +18,41 @@
 (defun org-pomoboard/dashboard-filename (time)
   (concat (format-time-string "%Y-%m-%d" time) ".org"))
 
+(defun org-pomoboard/dashboard-filename-full (time)
+  (concat org-pomoboard-savedir "/" (org-pomoboard/dashboard-filename time)))
+
+(defun org-pomoboard/property (property)
+  "Return property name with prefix"
+  (concat "PB_" property))
+
 (defun org-pomoboard/set-property (property value)
   "Set org property with org-pomoboard prefix"
-  (org-set-property (concat "PB_" property) value))
+  (org-set-property (org-pomoboard/property property) value))
 
 (defun org-pomoboard/add-to-multivalued-property (property value)
   "Add to multivalued org property with org-pomoboard prefix"
-  (org-entry-add-to-multivalued-property (point) (concat "PB_" property) value))
+  (org-entry-add-to-multivalued-property (point) (org-pomoboard/property property) value))
+
+(defun org-pomoboard/available-pomodoro (time)
+  "Returns remaining pomodoro (Available - Planned)"
+  (find-file (org-pomoboard/dashboard-filename-full time))
+  (setq org-pomoboard-available-tomorrow (string-to-number (car (org-property-values (org-pomoboard/property "AVAILABLE")))))
+  (goto-char (point-min))
+  (search-forward "Tasks")
+  (org-goto-first-child)
+  (setq org-pomoboard-planned-tomorrow (string-to-number (org-entry-get (point) (org-pomoboard/property "ESTIMATE"))))
+  (while (org-get-next-sibling)
+         (setq org-pomoboard-planned-tomorrow (+ org-pomoboard-planned-tomorrow (string-to-number (org-entry-get (point) (org-pomoboard/property "ESTIMATE"))))))
+  (- org-pomoboard-available-tomorrow org-pomoboard-planned-tomorrow))
+
+(defun org-pomoboard/available-pomodoro-tomorrow ()
+  (org-pomoboard/available-pomodoro (genki/tomorrow-time)))
 
 ;; Functions
 (defun org-pomoboard/init-dashboard (time)
   "Prepare dashboard file"
   (make-directory org-pomoboard-savedir t)
-  (let ((file (concat org-pomoboard-savedir "/" (org-pomoboard/dashboard-filename time))))
+  (let ((file (org-pomoboard/dashboard-filename-full time)))
     (copy-file org-pomoboard-template file)
     (find-file file)
     (goto-char (point-min))
@@ -47,7 +69,7 @@
 (defun org-pomoboard/do-this-task-tomorrow ()
   (interactive)
   (org-store-link nil)
-  (let ((file (concat org-pomoboard-savedir "/" (org-pomoboard/dashboard-filename (genki/tomorrow-time))))
+  (let ((file (org-pomoboard/dashboard-filename-full (genki/tomorrow-time)))
         (estimation (read-from-minibuffer "Estimated Pomodoro: "))
         (deactivate-mark t))
     ; TODO: Make save-excursion work
@@ -61,7 +83,7 @@
 
 (defun org-pomoboard/open-dashboard-today ()
   (interactive)
-  (find-file (concat org-pomoboard-savedir "/" (org-pomoboard/dashboard-filename (current-time)))))
+  (find-file (org-pomoboard/dashboard-filename-full (current-time))))
 
 ;; Tweak org-pomodoro
 (defun org-pomoboard/reflect-pomodoro ()
