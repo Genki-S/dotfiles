@@ -13,6 +13,20 @@ compinit
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 # }}}
 
+# Jump into tmux session automatically {{{
+if [ -z $TMUX ]; then
+	# assume $SHELL is zsh, and open org mode automatically
+	# (and set window name 'org' so that it can be used by select-window)
+	tmux attach-session -t "$USER"
+	if [ $? -ne 0 ]; then
+		# Init new tmux session (play around with some tmux scripting)
+		tmux new-session -s "$USER" -n "org" "$SHELL -i -c 'org'"
+	fi
+	# exit
+	# Not exit in order to use shell outside of tmux on occasion...
+fi
+# }}}
+
 # ==================================================
 # oh-my-zsh and other plugins {{{
 # ==================================================
@@ -138,16 +152,6 @@ function tmuxpwd() {
 # For fixing ncurses redrawing problem (with iTerm2 only?)
 if [[ -n $TMUX ]]; then
 	TERM=screen-256color
-fi
-
-# TODO: Move this at the top of zshrc to improve startup time (currently does not work on top)
-# Run tmux automatically
-if [ -z $TMUX ]; then
-	# assume $SHELL is zsh, and open org mode automatically
-	# (and set window name 'org' so that it can be used by select-window)
-	tmux attach-session -t "$USER" || tmux new-session -s "$USER" -n "org" "$SHELL -i -c 'org'"
-	# exit
-	# Not exit in order to use shell outside of tmux on occasion...
 fi
 
 DISABLE_AUTO_TITLE=true
