@@ -81,6 +81,7 @@
       (org-pomoboard/set-property "ESTIMATE" estimation))))
 
 (defun org-pomoboard/do-this-task-tomorrow ()
+  (interactive)
   (org-pomoboard/do-this-task-at (genki/tomorrow-time)))
 
 (defun org-pomoboard/open-dashboard-today ()
@@ -93,5 +94,3 @@
   (org-clock-goto)
   (org-pomoboard/add-to-multivalued-property "POMODORO" (read-from-minibuffer "How productive I had been? (max 10):")))
 (add-hook 'org-pomodoro-finished-hook 'org-pomoboard/reflect-pomodoro)
-
-(provide 'org-pomoboard)
