@@ -66,10 +66,9 @@
   (org-pomoboard/init-dashboard (genki/tomorrow-time))
   (message "Now go choose tasks to do tomorrow."))
 
-(defun org-pomoboard/do-this-task-tomorrow ()
-  (interactive)
+(defun org-pomoboard/do-this-task-at (time)
   (org-store-link nil)
-  (let ((file (org-pomoboard/dashboard-filename-full (genki/tomorrow-time)))
+  (let ((file (org-pomoboard/dashboard-filename-full time))
         (estimation (read-from-minibuffer "Estimated Pomodoro: "))
         (deactivate-mark t))
     ; TODO: Make save-excursion work
@@ -80,6 +79,9 @@
       (org-insert-todo-subheading nil)
       (insert (concat (plist-get org-store-link-plist :description) " ([[" (plist-get org-store-link-plist :link) "][origin]])"))
       (org-pomoboard/set-property "ESTIMATE" estimation))))
+
+(defun org-pomoboard/do-this-task-tomorrow ()
+  (org-pomoboard/do-this-task-at (genki/tomorrow-time)))
 
 (defun org-pomoboard/open-dashboard-today ()
   (interactive)
