@@ -3,6 +3,7 @@
 
 (evil-leader/set-key
   "M" 'mu4e
+  "E" 'eval-buffer
   "V" 'genki/spawn-vim
   "Y" 'genki/pbcopy)
 
