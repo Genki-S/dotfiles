@@ -89,8 +89,13 @@
   (find-file (org-pomoboard/dashboard-filename-full (current-time))))
 
 ;; Tweak org-pomodoro
+(defun org-pomoboard/input-productivity ()
+  (org-pomoboard/add-to-multivalued-property "POMODORO" (read-from-minibuffer "How productive I had been? (max 10):")))
+
 (defun org-pomoboard/reflect-pomodoro ()
   (call-process "activate-org")
   (org-clock-goto)
-  (org-pomoboard/add-to-multivalued-property "POMODORO" (read-from-minibuffer "How productive I had been? (max 10):")))
+  ;; make it async not to pollute org-pomodoro procedure
+  ;; (if I don't make it async, org-pomodoro's countdown speeds up after I finish read-from-minibuffer)
+  (run-at-time "1 sec" nil 'org-pomoboard/input-productivity))
 (add-hook 'org-pomodoro-finished-hook 'org-pomoboard/reflect-pomodoro)
