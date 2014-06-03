@@ -13,7 +13,8 @@
                 title message))
 
 (defun genki/org-check-clocking ()
-  (when (not (org-clocking-p))
+  (when (and (not (org-clocking-p))
+             (eq org-pomodoro-state :none))
     (osx-notification "Not Clocking In" "Be Mindful of Your Life")))
 (run-at-time "00:00" 60 'genki/org-check-clocking)
 
