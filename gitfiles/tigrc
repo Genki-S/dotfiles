@@ -1,0 +1,5 @@
+# Move to WebUI: https://speakerdeck.com/yuku/ru-men-shu-nihazai-tutenai-git-and-github-tips (slide 28)
+bind main B @hub browse -- commit/%(commit)
+bind diff B @hub browse -- commit/%(commit)
+bind tree B @hub browse -- tree/%(commit)/%(directory)
+bind blob B @hub browse -- tree/%(commit)/%(file)

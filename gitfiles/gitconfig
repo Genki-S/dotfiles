@@ -3,6 +3,8 @@
 
 [alias]
 	news = log -p HEAD@{1}..HEAD@{0}
+	branch-root = merge-base master HEAD
+	review = !tig --reverse -w $(git branch-root)..HEAD
 
 [user]
 	name = Genki Sugimoto
