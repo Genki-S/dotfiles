@@ -109,6 +109,10 @@
     lazy: 1
     autoload:
         insert: 1
+- wellle/tmux-complete.vim:
+    lazy: 1
+    autoload:
+        insert: 1
 ## }}}
 
 # }}}
