@@ -99,3 +99,5 @@
   ;; (if I don't make it async, org-pomodoro's countdown speeds up after I finish read-from-minibuffer)
   (run-at-time "1 sec" nil 'org-pomoboard/input-productivity))
 (add-hook 'org-pomodoro-finished-hook 'org-pomoboard/reflect-pomodoro)
+
+(add-hook 'org-pomodoro-break-finished-hook (lambda () (call-process "activate-org")))
