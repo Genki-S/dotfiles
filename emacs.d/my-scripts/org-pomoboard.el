@@ -45,6 +45,28 @@
          (setq org-pomoboard-planned-tomorrow (+ org-pomoboard-planned-tomorrow (string-to-number (org-entry-get (point) (org-pomoboard/property "ESTIMATE"))))))
   (- org-pomoboard-available-tomorrow org-pomoboard-planned-tomorrow))
 
+(defun org-pomoboard/done-pomodoro ()
+  "Returns done pomodoro count"
+  (save-excursion
+    (goto-char (point-min))
+    (search-forward "Tasks")
+    (org-goto-first-child)
+    (setq org-pomoboard-done (length (org-entry-get-multivalued-property (point) (org-pomoboard/property "POMODORO"))))
+    (while (org-get-next-sibling)
+           (setq org-pomoboard-done (+ org-pomoboard-done (length (org-entry-get-multivalued-property (point) (org-pomoboard/property "POMODORO")))))))
+  org-pomoboard-done)
+
+(defun org-pomoboard/planned-pomodoro ()
+  "Returns planned pomodoro count"
+  (save-excursion
+    (goto-char (point-min))
+    (search-forward "Tasks")
+    (org-goto-first-child)
+    (setq org-pomoboard-planned (string-to-number (org-entry-get (point) (org-pomoboard/property "ESTIMATE"))))
+    (while (org-get-next-sibling)
+           (setq org-pomoboard-planned (+ org-pomoboard-planned (string-to-number (org-entry-get (point) (org-pomoboard/property "ESTIMATE")))))))
+  org-pomoboard-planned)
+
 (defun org-pomoboard/available-pomodoro-tomorrow ()
   (org-pomoboard/available-pomodoro (genki/tomorrow-time)))
 
@@ -86,6 +108,16 @@
 (defun org-pomoboard/open-dashboard-today ()
   (interactive)
   (find-file (org-pomoboard/dashboard-filename-full (current-time))))
+
+(defun org-pomoboard/update-stats-planned ()
+  (goto-char (point-min))
+  (search-forward "Stats")
+  (org-pomoboard/set-property "PLANNED" (number-to-string (org-pomoboard/planned-pomodoro))))
+
+(defun org-pomoboard/update-stats-done ()
+  (goto-char (point-min))
+  (search-forward "Stats")
+  (org-pomoboard/set-property "DONE" (number-to-string (org-pomoboard/done-pomodoro))))
 
 ;; Tweak org-pomodoro
 (defun org-pomoboard/input-productivity ()
