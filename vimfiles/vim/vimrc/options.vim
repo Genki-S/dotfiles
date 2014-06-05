@@ -13,7 +13,7 @@ set smartcase
 set scrolloff=3
 set wrap
 set list
-set listchars=tab:>\ ,trail:_,extends:>,precedes:<
+set listchars=tab:>\ ,trail:_,extends:>,precedes:<,conceal:#
 set number
 set relativenumber
 "}}}
