@@ -101,7 +101,7 @@
       (insert (concat (plist-get org-store-link-plist :description) " ([[" (plist-get org-store-link-plist :link) "][origin]])"))
       (org-pomoboard/set-property "ESTIMATE" estimation)
       (org-pomoboard/update-stats-planned)
-      (message (concat (org-pomoboard/available-pomodoro time) " MORE AVAILABLE")))))
+      (message (concat (number-to-string (org-pomoboard/available-pomodoro time)) " MORE AVAILABLE")))))
 
 (defun org-pomoboard/do-this-task-tomorrow ()
   (interactive)
