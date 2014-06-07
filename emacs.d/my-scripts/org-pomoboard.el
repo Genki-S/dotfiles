@@ -99,7 +99,9 @@
       (search-forward "Tasks")
       (org-insert-todo-subheading nil)
       (insert (concat (plist-get org-store-link-plist :description) " ([[" (plist-get org-store-link-plist :link) "][origin]])"))
-      (org-pomoboard/set-property "ESTIMATE" estimation))))
+      (org-pomoboard/set-property "ESTIMATE" estimation)
+      (org-pomoboard/update-stats-planned)
+      (message (concat (org-pomoboard/available-pomodoro time) " MORE AVAILABLE")))))
 
 (defun org-pomoboard/do-this-task-tomorrow ()
   (interactive)
@@ -119,13 +121,37 @@
   (search-forward "Stats")
   (org-pomoboard/set-property "DONE" (number-to-string (org-pomoboard/done-pomodoro))))
 
+;; About Score
+;; - Max score is 100
+;; - 1 pomodoro has potential score of $ 100 / #planned $
+;; - the score of 1 pomodoro is calculated by $ potential * (productivity / 10) $ where 10 is the max value of productivity
+(defun org-pomoboard/score ()
+  (let (planned (org-pomoboard/planned-pomodoro))
+    (save-excursion
+      (goto-char (point-min))
+      (search-forward "Tasks")
+      (org-goto-first-child)
+      (setq org-pomoboard-productivity-sum (apply '+ (mapcar 'string-to-number (org-entry-get-multivalued-property (point) (org-pomoboard/property "POMODORO")))))
+      (while (org-get-next-sibling)
+             (setq org-pomoboard-productivity-sum (+ org-pomoboard-productivity-sum (apply '+ (mapcar 'string-to-number (org-entry-get-multivalued-property (point) (org-pomoboard/property "POMODORO")))))))
+      (setq org-pomoboard-potential (/ (float 100) (org-pomoboard/planned-pomodoro)))
+      (setq org-pomoboard-score (* org-pomoboard-potential (/ (float org-pomoboard-productivity-sum) 10))))
+    org-pomoboard-score))
+
+(defun org-pomoboard/update-stats-score ()
+  (goto-char (point-min))
+  (search-forward "Stats")
+  (org-pomoboard/set-property "SCORE" (number-to-string (org-pomoboard/score))))
+
 ;; Tweak org-pomodoro
 (defun org-pomoboard/input-productivity ()
-  (org-pomoboard/add-to-multivalued-property "POMODORO" (read-from-minibuffer "How productive I had been? (max 10):")))
+  (org-clock-goto)
+  (org-pomoboard/add-to-multivalued-property "POMODORO" (read-from-minibuffer "How productive I had been? (max 10):"))
+  (org-pomoboard/update-stats-done)
+  (org-pomoboard/update-stats-score))
 
 (defun org-pomoboard/reflect-pomodoro ()
   (call-process "activate-org")
-  (org-clock-goto)
   ;; make it async not to pollute org-pomodoro procedure
   ;; (if I don't make it async, org-pomodoro's countdown speeds up after I finish read-from-minibuffer)
   (run-at-time "1 sec" nil 'org-pomoboard/input-productivity))
