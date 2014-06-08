@@ -15,3 +15,5 @@
         unix: rake install
 
 - leftnode/get-shit-done:
+
+- lpenz/atdtool:
