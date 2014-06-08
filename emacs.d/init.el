@@ -76,6 +76,7 @@
     mu4e
     color-theme-solarized
     helm
+    yasnippet
     )
   "A list of packages to install from el-get at launch.")
 

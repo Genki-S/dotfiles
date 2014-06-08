@@ -93,3 +93,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
        "j" 'evil-next-line
        "RET" 'mu4e-view-message)
      ))
+
+;; for yasnippet
+(eval-after-load 'yasnippet
+  '(progn
+    (define-key evil-insert-state-map (kbd "C-k") 'yas-expand)))
