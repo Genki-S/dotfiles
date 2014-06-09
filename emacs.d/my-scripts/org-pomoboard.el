@@ -13,6 +13,7 @@
 (setq org-pomoboard-savedir "~/.org-pomoboard")
 (setq org-pomoboard-template
       (expand-file-name "my-scripts/org-pomoboard-template.org" user-emacs-directory))
+(setq org-pomoboard-statistics-csv-file "stat.csv")
 
 ;; Utilities
 (defun org-pomoboard/dashboard-filename (time)
@@ -28,6 +29,10 @@
 (defun org-pomoboard/set-property (property value)
   "Set org property with org-pomoboard prefix"
   (org-set-property (org-pomoboard/property property) value))
+
+(defun org-pomoboard/get-property (property)
+  "Get org property with org-pomoboard prefix"
+  (org-entry-get (point) (org-pomoboard/property property)))
 
 (defun org-pomoboard/add-to-multivalued-property (property value)
   "Add to multivalued org property with org-pomoboard prefix"
@@ -158,3 +163,23 @@
 (add-hook 'org-pomodoro-finished-hook 'org-pomoboard/reflect-pomodoro)
 
 (add-hook 'org-pomodoro-break-finished-hook (lambda () (call-process "activate-org")))
+
+;; Publish
+(defun org-pomoboard/build-statistic-csv ()
+  "Returns statistic csv of current pomoboard buffer (assuming it's today's board)
+
+Values are: date, available, planned, done, score"
+  (let (statistic-list '())
+    (setq statistic-list (cons (format-time-string "%Y-%m-%d" (current-time)) statistic-list))
+    (save-excursion
+      (goto-char (point-min))
+      (search-forward "Stats")
+      (dolist (property '("AVAILABLE" "PLANNED" "DONE" "SCORE"))
+        (setq statistic-list (cons (org-pomoboard/get-property property) statistic-list))))
+    (mapconcat 'identity (nreverse statistic-list) ",")))
+
+(defun org-pomoboard/save-statistics ()
+  "Save statistic to a file org-pomoboard-statistics-csv-file (assume it's never called twice)"
+  (let ((file (concat org-pomoboard-savedir "/" org-pomoboard-statistics-csv-file))
+        (csv-string (concat (org-pomoboard/build-statistic-csv) "\n")))
+    (append-to-file csv-string nil file)))
