@@ -77,6 +77,7 @@
     color-theme-solarized
     helm
     yasnippet
+    company-mode
     )
   "A list of packages to install from el-get at launch.")
 
