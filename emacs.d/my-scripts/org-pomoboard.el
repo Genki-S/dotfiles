@@ -188,3 +188,9 @@ Values are: date, available, planned, done, score"
   (let ((file (concat org-pomoboard-savedir "/" org-pomoboard-statistics-csv-file))
         (csv-string (concat (org-pomoboard/build-statistic-csv) "\n")))
     (append-to-file csv-string nil file)))
+
+(defun org-pomoboard/finish-today ()
+  (unless (org-pomoboard/get-stat "FINISHED")
+    (org-pomoboard/save-statistics)
+    (org-pomoboard/set-stat "FINISHED" "t")
+    (message "WELL DONE!")))

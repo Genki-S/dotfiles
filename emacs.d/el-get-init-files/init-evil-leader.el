@@ -19,4 +19,5 @@
 (evil-leader/set-key
   "pp" 'org-pomoboard/plan-tomorrow
   "pd" 'org-pomoboard/do-this-task-tomorrow
-  "pt" 'org-pomoboard/open-dashboard-today)
+  "pt" 'org-pomoboard/open-dashboard-today
+  "pF" 'org-pomoboard/finish-today)
