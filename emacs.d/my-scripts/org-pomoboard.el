@@ -34,6 +34,18 @@
   "Get org property with org-pomoboard prefix"
   (org-entry-get (point) (org-pomoboard/property property)))
 
+(defun org-pomoboard/set-stat (property value)
+  (save-excursion
+    (goto-char (point-min))
+    (search-forward "Stats")
+    (org-pomoboard/set-property property value)))
+
+(defun org-pomoboard/get-stat (property)
+  (save-excursion
+    (goto-char (point-min))
+    (search-forward "Stats")
+    (org-pomoboard/get-property property)))
+
 (defun org-pomoboard/add-to-multivalued-property (property value)
   "Add to multivalued org property with org-pomoboard prefix"
   (org-entry-add-to-multivalued-property (point) (org-pomoboard/property property) value))
@@ -84,8 +96,7 @@
     (find-file file)
     (goto-char (point-min))
     (insert (org-pomoboard/dashboard-filename time))
-    (search-forward "Stats")
-    (org-pomoboard/set-property "AVAILABLE" (read-from-minibuffer "Available Pomodoro: "))))
+    (org-pomoboard/set-stat "AVAILABLE" (read-from-minibuffer "Available Pomodoro: "))))
 
 (defun org-pomoboard/plan-tomorrow ()
   (interactive)
@@ -118,13 +129,11 @@
 
 (defun org-pomoboard/update-stats-planned ()
   (goto-char (point-min))
-  (search-forward "Stats")
-  (org-pomoboard/set-property "PLANNED" (number-to-string (org-pomoboard/planned-pomodoro))))
+  (org-pomoboard/set-stat "PLANNED" (number-to-string (org-pomoboard/planned-pomodoro))))
 
 (defun org-pomoboard/update-stats-done ()
   (goto-char (point-min))
-  (search-forward "Stats")
-  (org-pomoboard/set-property "DONE" (number-to-string (org-pomoboard/done-pomodoro))))
+  (org-pomoboard/set-stat "DONE" (number-to-string (org-pomoboard/done-pomodoro))))
 
 ;; About Score
 ;; - Max score is 100
@@ -145,8 +154,7 @@
 
 (defun org-pomoboard/update-stats-score ()
   (goto-char (point-min))
-  (search-forward "Stats")
-  (org-pomoboard/set-property "SCORE" (number-to-string (org-pomoboard/score))))
+  (org-pomoboard/set-stat "SCORE" (number-to-string (org-pomoboard/score))))
 
 ;; Tweak org-pomodoro
 (defun org-pomoboard/input-productivity ()
@@ -171,11 +179,8 @@
 Values are: date, available, planned, done, score"
   (let (statistic-list '())
     (setq statistic-list (cons (format-time-string "%Y-%m-%d" (current-time)) statistic-list))
-    (save-excursion
-      (goto-char (point-min))
-      (search-forward "Stats")
-      (dolist (property '("AVAILABLE" "PLANNED" "DONE" "SCORE"))
-        (setq statistic-list (cons (org-pomoboard/get-property property) statistic-list))))
+    (dolist (property '("AVAILABLE" "PLANNED" "DONE" "SCORE"))
+      (setq statistic-list (cons (org-pomoboard/get-stat property) statistic-list)))
     (mapconcat 'identity (nreverse statistic-list) ",")))
 
 (defun org-pomoboard/save-statistics ()
