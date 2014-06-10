@@ -17,3 +17,13 @@ function! s:source.gather_candidates(args, context) "{{{
         \   'source__snip_ref' : v:val,
         \ }")
 endfunction "}}}
+
+" Onetime Snippet
+function! Genki_add_onetime_snippet(key, snip)
+  let neosnippet = neosnippet#variables#current_neosnippet()
+  let options = { 'head' : 0, 'indent' : 0, 'word' : 0 }
+  let new_snip = { a:key : { 'word' : a:key, 'snip' : a:snip . "${0}", 'options' : options } }
+  let neosnippet.snippets = extend(neosnippet.snippets, new_snip)
+endfunction
+command! -nargs=* AddOnetimeSnippet call Genki_add_onetime_snippet(<f-args>)
+AlterCommand snip AddOnetimeSnippet
