@@ -98,10 +98,17 @@
     (insert (org-pomoboard/dashboard-filename time))
     (org-pomoboard/set-stat "AVAILABLE" (read-from-minibuffer "Available Pomodoro: "))))
 
+(defun org-pomoboard/plan-day (time)
+  (org-pomoboard/init-dashboard time)
+  (message "Now go choose tasks to do tomorrow."))
+
+(defun org-pomoboard/plan-today ()
+  (interactive)
+  (org-pomoboard/plan-day (current-time)))
+
 (defun org-pomoboard/plan-tomorrow ()
   (interactive)
-  (org-pomoboard/init-dashboard (genki/tomorrow-time))
-  (message "Now go choose tasks to do tomorrow."))
+  (org-pomoboard/plan-day (genki/tomorrow-time)))
 
 (defun org-pomoboard/do-this-task-at (time)
   (org-store-link nil)
@@ -118,6 +125,10 @@
       (org-pomoboard/set-property "ESTIMATE" estimation)
       (org-pomoboard/update-stats-planned)
       (message (concat (number-to-string (org-pomoboard/available-pomodoro time)) " MORE AVAILABLE")))))
+
+(defun org-pomoboard/do-this-task-today ()
+  (interactive)
+  (org-pomoboard/do-this-task-at (current-time)))
 
 (defun org-pomoboard/do-this-task-tomorrow ()
   (interactive)
