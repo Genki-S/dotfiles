@@ -190,6 +190,7 @@ Values are: date, available, planned, done, score"
     (append-to-file csv-string nil file)))
 
 (defun org-pomoboard/finish-today ()
+  (interactive)
   (unless (org-pomoboard/get-stat "FINISHED")
     (org-pomoboard/save-statistics)
     (org-pomoboard/set-stat "FINISHED" "t")
