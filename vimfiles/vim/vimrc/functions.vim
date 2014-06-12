@@ -116,6 +116,14 @@ function! Genki_vimux_slime_prompt(command)
 	nnoremap <buffer> <silent> <nowait> <Leader> :<C-u>call VimuxSendKeys(Genki_char2tmux(getchar()))<CR>
 	inoremap <buffer> <silent> <expr> <nowait> <Leader> getline('.')=='' ? '<ESC>:call VimuxSendKeysWithGetcharWithCallback("startinsert")<CR>' : ','
 
+	" Save
+	let save_dir = expand('~/.vimtunnel')
+	if !isdirectory(save_dir)
+		call mkdir(save_dir)
+	endif
+	let b:save_file = save_dir . '/' . strftime('%Y-%m-%d') . '.' . getpid()
+	autocmd QuitPre <buffer> execute 'write' b:save_file
+
 	startinsert
 endfunction
 
