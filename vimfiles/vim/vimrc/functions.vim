@@ -91,7 +91,17 @@ function! Genki_vimux_slime_prompt(command)
 	NeoBundleSource vimux
 	NeoBundleSource vim-slime
 
+	" buffer settings
+	let swapfile_save = &swapfile
+	set noswapfile
 	edit _VimuxSlimePrompt_
+	setlocal buftype=nofile
+	setlocal nobuflisted
+	setlocal bufhidden=delete
+	setlocal nonumber
+	setlocal nowrap
+	let &g:swapfile = swapfile_save
+
 	call VimuxRunCommand(a:command)
 
 	" configure vim-slime
@@ -105,14 +115,6 @@ function! Genki_vimux_slime_prompt(command)
 	inoremap <buffer> <silent> <CR> <Esc>:SlimeSend<CR>o
 	nnoremap <buffer> <silent> <nowait> <Leader> :<C-u>call VimuxSendKeys(Genki_char2tmux(getchar()))<CR>
 	inoremap <buffer> <silent> <expr> <nowait> <Leader> getline('.')=='' ? '<ESC>:call VimuxSendKeysWithGetcharWithCallback("startinsert")<CR>' : ','
-
-	" buffer settings
-	setlocal buftype=nofile
-	setlocal nobuflisted
-	setlocal noswapfile
-	setlocal bufhidden=delete
-	setlocal nonumber
-	setlocal nowrap
 
 	startinsert
 endfunction
