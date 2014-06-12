@@ -5,7 +5,8 @@
   "M" 'mu4e
   "E" 'eval-buffer
   "V" 'genki/spawn-vim
-  "Y" 'genki/pbcopy)
+  "Y" 'genki/pbcopy
+  "oc" '(lambda () (interactive) (genki/open-browser "https://www.google.com/calendar/render")))
 
 (evil-leader/set-key
   "a" 'org-agenda-list
