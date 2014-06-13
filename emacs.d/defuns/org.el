@@ -1,3 +1,4 @@
+(setq genki-org-current-task "NOT CLOCKING IN...")
 (defun genki/tmux-set-status-right ()
   (call-process "tmux"
                 nil 0 nil
