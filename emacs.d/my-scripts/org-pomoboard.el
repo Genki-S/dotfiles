@@ -96,6 +96,7 @@
     (find-file file)
     (goto-char (point-min))
     (insert (org-pomoboard/dashboard-filename time))
+    (org-pomoboard/set-stat "DONE" "0")
     (org-pomoboard/set-stat "SCORE" "0")
     (org-pomoboard/set-stat "AVAILABLE" (read-from-minibuffer "Available Pomodoro: "))))
 
