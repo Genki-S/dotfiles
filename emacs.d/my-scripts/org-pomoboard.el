@@ -119,10 +119,10 @@
     ; TODO: Make save-excursion work
     (save-excursion
       (find-file file)
-      (goto-char (point-min))
-      (search-forward "Tasks")
-      (org-insert-todo-subheading nil)
-      (insert (concat (plist-get org-store-link-plist :description) " ([[" (plist-get org-store-link-plist :link) "][origin]])"))
+      (goto-char (point-max))
+      (evil-open-below 1)
+      (insert (concat "** TODO " (plist-get org-store-link-plist :description) " ([[" (plist-get org-store-link-plist :link) "][origin]])"))
+      (evil-normal-state)
       (org-pomoboard/set-property "ESTIMATE" estimation)
       (org-pomoboard/update-stats-planned)
       (message (concat (number-to-string (org-pomoboard/available-pomodoro time)) " MORE AVAILABLE")))))
