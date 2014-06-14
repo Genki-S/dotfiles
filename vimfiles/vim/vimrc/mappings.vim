@@ -24,6 +24,7 @@ cnoremap <C-f> <Right>
 cnoremap <C-d> <Delete>
 cnoremap <C-g> <C-c>
 cnoremap <C-t> <C-f>
+cnoremap <expr> %P expand("%:p")
 cnoremap <expr> %T expand("%:t")
 cnoremap <expr> %R expand("%:t:r")
 "}}}
