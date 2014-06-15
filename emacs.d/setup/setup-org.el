@@ -253,6 +253,10 @@
 ;; org-pomodoro
 (define-key global-map "\C-cp" 'org-pomodoro)
 
+;; org-habit
+;; show habits in the future
+(setq org-habit-show-habits-only-for-today nil)
+
 ;; for org backup
 (run-at-time "00:58" 3600 'org-save-all-org-buffers)
 
