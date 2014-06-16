@@ -52,6 +52,7 @@
 (setq org-agenda-files (list "~/org/inbox.org"
                              "~/org/next.org"
                              "~/org/someday.org"
+                             "~/org/scheduled.org"
                              "~/org/projects.org"
                              "~/org/routines.org"
                              "~/org/habits.org"
@@ -164,6 +165,7 @@
                            ("~/org/next.org" :maxlevel . 9)
                            ("~/org/projects.org" :maxlevel . 9)
                            ("~/org/someday.org" :maxlevel . 9)
+                           ("~/org/scheduled.org" :maxlevel . 9)
                            ("~/org/waiting.org" :maxlevel . 9)
                            ("~/org/goals.org" :maxlevel . 9)
                            ("~/org/workouts.org" :maxlevel . 9)
@@ -241,6 +243,7 @@
 (define-key global-map "\C-coi" '(lambda () (interactive) (find-file "~/org/inbox.org")))
 (define-key global-map "\C-con" '(lambda () (interactive) (find-file "~/org/next.org")))
 (define-key global-map "\C-cos" '(lambda () (interactive) (find-file "~/org/someday.org")))
+(define-key global-map "\C-coS" '(lambda () (interactive) (find-file "~/org/scheduled.org")))
 (define-key global-map "\C-cop" '(lambda () (interactive) (find-file "~/org/projects.org")))
 (define-key global-map "\C-coj" '(lambda () (interactive) (find-file "~/org/journal.org")))
 (define-key global-map "\C-cor" '(lambda () (interactive) (find-file "~/org/routines.org")))
