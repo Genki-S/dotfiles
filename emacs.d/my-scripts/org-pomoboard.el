@@ -48,7 +48,13 @@
 
 (defun org-pomoboard/add-to-multivalued-property (property value)
   "Add to multivalued org property with org-pomoboard prefix"
-  (org-entry-add-to-multivalued-property (point) (org-pomoboard/property property) value))
+  (org-set-property (org-pomoboard/property property)
+                    (mapconcat 'identity
+                               (nreverse (cons value
+                                               (nreverse (org-entry-get-multivalued-property
+                                                           (point)
+                                                           (org-pomoboard/property property)))))
+                               " ")))
 
 (defun org-pomoboard/available-pomodoro (time)
   "Returns remaining pomodoro (Available - Planned)"
