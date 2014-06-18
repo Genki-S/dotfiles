@@ -538,11 +538,6 @@
     autoload:
         filetypes:
             - scilab
-- hsitz/VimOrganizer:
-    lazy: 1
-    autoload:
-        filetypes:
-            - org
 - aklt/plantuml-syntax:
     lazy: 1
     autoload:
