@@ -75,6 +75,14 @@ task :ghq_ctags do
   end
 end
 
+desc 'Generate dictionary files (for vim completion) for ghq repositories'
+task :ghq_dict do
+  repos = YAML.load_file("#{DOTDIR}/config/ghq.yml")
+  repos.each do |repo|
+    run %{ cd `ghq list -e -p #{repo}` && cat tags | cut -f1 | uniq > tags.dict }
+  end
+end
+
 desc 'Update files with injection of other files'
 task :update_injection do
   files_with_injection = run %{
