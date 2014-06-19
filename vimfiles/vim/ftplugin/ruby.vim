@@ -1,5 +1,16 @@
 setlocal tags+=~/tags_ruby,~/tags_gem
 
+" Completion settings
+NeoBundleSource neocomplete
+" TODO: get desired ruby version
+if has_key(g:neocomplete#sources#dictionary#dictionaries, 'ruby')
+	" TODO: deal with duplicates
+	let ruby_dict = g:neocomplete#sources#dictionary#dictionaries.ruby . ',' . system('vim-ruby-dictionary-path')
+else
+	let ruby_dict = system('vim-ruby-dictionary-path')
+endif
+let g:neocomplete#sources#dictionary#dictionaries.ruby = ruby_dict
+
 " Indent settings
 setlocal tabstop=2
 setlocal shiftwidth=2

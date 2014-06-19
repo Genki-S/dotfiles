@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+# Prints dictionary file for certain ruby version
+
+version = (ARGV[0] || `rbenv version-name`).strip
+ruby_dir = "#{ENV['HOME']}/.rbenv/versions/#{version}"
+
+raise "Ruby #{version} not exist." unless File.directory?(ruby_dir)
+
+print "#{ruby_dir}/ruby.dict"
