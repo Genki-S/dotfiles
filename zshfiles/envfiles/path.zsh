@@ -4,6 +4,8 @@ if is_mac; then
 		/usr/local/bin
 		# Python bin
 		/usr/local/share/python
+		# Go bin
+		$GOPATH/bin
 		$path
 	)
 fi

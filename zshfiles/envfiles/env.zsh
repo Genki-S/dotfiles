@@ -9,5 +9,8 @@ export EDITOR=vim
 # Locale
 export LANG=en_US.UTF-8
 
+# GOLANG
+export GOPATH=$HOME/go
+
 # Miscellaneous
 export HTTP_HOME=http://vim.wikia.com/wiki/Special:Random
