@@ -107,7 +107,11 @@ function! Genki_vimux_slime_prompt(command)
 	" configure vim-slime
 	let b:slime_config = {}
 	let b:slime_config['socket_name'] = 'default'
-	let b:slime_config['target_pane'] = ':' . g:VimuxRunnerIndex
+	if g:VimuxRunnerIndex =~# '\d\.\d'
+		let b:slime_config['target_pane'] = ':' . g:VimuxRunnerIndex
+	else
+		let b:slime_config['target_pane'] = ':.' . g:VimuxRunnerIndex
+	endif
 
 	" mappings
 	nnoremap <buffer> <silent> <CR> :SlimeSend<CR>
