@@ -11,6 +11,7 @@ task :install => [
   :update_submodules,
   :update_injection,
   :orgmode,
+  :go_get,
   :deploy ] do
 end
 
@@ -47,6 +48,14 @@ desc 'Prepare Orgmode'
 task :orgmode do
   my_ln("#{HOME}/Dropbox/org", "#{HOME}/org")
   run %{ touch "$HOME/custom.el" }
+end
+
+desc 'Prepare Go packages'
+task :go_get do
+  # There must be a better way, but it works
+  File.read("#{DOTDIR}/Gofile").each_line do |gocmd|
+    run %{ go #{gocmd} }
+  end
 end
 
 desc 'Update files with injection of other files'
