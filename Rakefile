@@ -1,6 +1,7 @@
 require 'rake'
 require 'fileutils'
 require 'yaml'
+require 'uri'
 
 HOME = ENV['HOME']
 DOTDIR = "#{HOME}/dotfiles"
@@ -80,6 +81,28 @@ task :ghq_dict do
   repos = YAML.load_file("#{DOTDIR}/config/ghq.yml")
   repos.each do |repo|
     run %{ cd `ghq list -e -p #{repo}` && cat tags | cut -f1 | uniq > tags.dict }
+  end
+end
+
+desc 'Generate dictionary files (for vim completion) for ruby'
+task :ruby_dict do
+  # Ref: http://henry.animeo.jp/blog/2013/08/24/ruby-dict/
+  # Assumes rbenv is used.
+  # Creates ~/.rbenv/versions/*/ruby.dict
+  Dir.glob("#{HOME}/.rbenv/versions/*").each do |ruby_dir|
+    Dir.chdir(ruby_dir) do
+      methods = []
+      Dir.glob("#{Dir.pwd}/**/*.ri").each do |file|
+        method = URI.decode(File.basename(file))
+        if /^(.*)-\w*\.ri$/ =~ method
+          methods << $1
+        end
+      end
+
+      File.open('ruby.dict', 'w') do |file|
+        file.write(methods.uniq.sort.join("\n"))
+      end
+    end
   end
 end
 
