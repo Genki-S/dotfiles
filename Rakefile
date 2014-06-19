@@ -67,6 +67,14 @@ task :ghq_get do
   end
 end
 
+desc 'Generate ctags files for ghq repositories'
+task :ghq_ctags do
+  repos = YAML.load_file("#{DOTDIR}/config/ghq.yml")
+  repos.each do |repo|
+    run %{ cd `ghq list -e -p #{repo}` && ctags -R . }
+  end
+end
+
 desc 'Update files with injection of other files'
 task :update_injection do
   files_with_injection = run %{
