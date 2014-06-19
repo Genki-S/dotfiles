@@ -12,6 +12,7 @@ task :install => [
   :update_injection,
   :orgmode,
   :go_get,
+  :ghq_get,
   :deploy ] do
 end
 
@@ -55,6 +56,14 @@ task :go_get do
   # There must be a better way, but it works
   File.read("#{DOTDIR}/Gofile").each_line do |gocmd|
     run %{ go #{gocmd} }
+  end
+end
+
+desc 'Clone repositories'
+task :ghq_get do
+  repos = YAML.load_file("#{DOTDIR}/config/ghq.yml")
+  repos.each do |repo|
+    run %{ ghq get #{repo} }
   end
 end
 
