@@ -92,6 +92,11 @@
      (mu4e-sent-folder "/Gmail/Sent Mail")
      (mu4e-trash-folder  "/Gmail/Bin")
      (user-mail-address "cfhoyuk.reccos.nelg@gmail.com"))
+    ("Public"
+     (mu4e-drafts-folder "/Public/Drafts")
+     (mu4e-sent-folder "/Public/Sent Mail")
+     (mu4e-trash-folder  "/Public/Bin")
+     (user-mail-address "genki.sugimoto.jp@gmail.com"))
     ("Waseda"
      (mu4e-drafts-folder "/Waseda/Drafts")
      (mu4e-sent-folder "/Waseda/Sent Mail")
