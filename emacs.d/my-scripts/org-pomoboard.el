@@ -180,7 +180,8 @@
   (org-clock-goto)
   (org-pomoboard/add-to-multivalued-property "POMODORO" (read-from-minibuffer "How productive I had been? (max 10):"))
   (org-pomoboard/update-stats-done)
-  (org-pomoboard/update-stats-score))
+  (org-pomoboard/update-stats-score)
+  (message (concat "Now your score is " (org-pomoboard/get-stat "SCORE"))))
 
 (defun org-pomoboard/reflect-pomodoro ()
   (call-process "activate-org")
