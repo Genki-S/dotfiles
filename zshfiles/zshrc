@@ -28,6 +28,14 @@ fi
 # }}}
 
 # ==================================================
+# fpath {{{
+# ==================================================
+# TODO: why here? it works iff this source is before sourcing oh-my-zsh.sh
+fpath+=($GOPATH/src/github.com/motemen/ghq/zsh)
+# }}}
+# ==================================================
+
+# ==================================================
 # oh-my-zsh and other plugins {{{
 # ==================================================
 # Path to your oh-my-zsh configuration.
