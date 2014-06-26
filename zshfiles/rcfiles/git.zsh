@@ -27,6 +27,8 @@ export GHI_TOKEN=`cat ~/private_files/ghi_token`
 
 # Sugers
 alias gs="git status --short --untracked-files"
+# git status files
+alias gsf="git status --short --untracked-files | awk '{ print \$2 }'"
 alias gd="git diff --color"
 alias gdc="git diff --color --cached"
 alias gr="git reset"
