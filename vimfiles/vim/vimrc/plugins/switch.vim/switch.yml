@@ -274,3 +274,10 @@ gitrebase:
     - edit
     - squash
     - fixup
+coffee:
+  -
+    - addClass
+    - removeClass
+  -
+    - show
+    - hide
