@@ -87,33 +87,20 @@ function! Genki_char2tmux(char)
 	return get(keymap, a:char, nr2char(a:char))
 endfunction
 
-function! Genki_vimux_slime_prompt(command)
-	NeoBundleSource vimux
-	NeoBundleSource vim-slime
+function! Vypass__create_buffer()
+	tabnew
 
-	" buffer settings
-	let swapfile_save = &swapfile
-	set noswapfile
-	edit _VimuxSlimePrompt_
 	setlocal buftype=nofile
-	setlocal nobuflisted
-	setlocal bufhidden=delete
-	setlocal nonumber
+	setlocal noswapfile
+	setlocal noreadonly
 	setlocal nowrap
-	let &g:swapfile = swapfile_save
+	setlocal nospell
+	setlocal bufhidden=hide
+	setlocal nolist
+	setlocal foldcolumn=0
+	setlocal nofoldenable
+	setlocal nowrap
 
-	call VimuxRunCommand(a:command)
-
-	" configure vim-slime
-	let b:slime_config = {}
-	let b:slime_config['socket_name'] = 'default'
-	if g:VimuxRunnerIndex =~# '\d\.\d'
-		let b:slime_config['target_pane'] = ':' . g:VimuxRunnerIndex
-	else
-		let b:slime_config['target_pane'] = ':.' . g:VimuxRunnerIndex
-	endif
-
-	" mappings
 	nnoremap <buffer> <silent> <CR> :SlimeSend<CR>
 	vnoremap <buffer> <silent> <CR> :SlimeSend<CR>
 	inoremap <buffer> <silent> <CR> <Esc>:SlimeSend<CR>o
@@ -127,7 +114,26 @@ function! Genki_vimux_slime_prompt(command)
 	endif
 	let b:save_file = save_dir . '/' . strftime('%Y-%m-%d') . '.' . getpid()
 	autocmd QuitPre <buffer> execute 'write' b:save_file
+endfunction
 
+function! Vypass__configure_tmux(command)
+	NeoBundleSource vimux
+	NeoBundleSource vim-slime
+
+	call VimuxRunCommand(a:command)
+
+	let b:slime_config = {}
+	let b:slime_config['socket_name'] = 'default'
+	if g:VimuxRunnerIndex =~# '\d\.\d'
+		let b:slime_config['target_pane'] = ':' . g:VimuxRunnerIndex
+	else
+		let b:slime_config['target_pane'] = ':.' . g:VimuxRunnerIndex
+	endif
+endfunction
+
+function! Genki_vimux_slime_prompt(command)
+	call Vypass__create_buffer()
+	call Vypass__configure_tmux(a:command)
 	startinsert
 endfunction
 
