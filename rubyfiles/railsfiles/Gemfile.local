@@ -26,9 +26,6 @@ group :development do
   want_gem 'rb-fsevent', :require => false # for Linux
   want_gem 'rb-fchange', :require => false # for Windows
 
-  # Debug
-  want_gem 'rails-footnotes'
-
   # Better Errors
   want_gem 'better_errors'
   want_gem 'binding_of_caller'
@@ -52,10 +49,23 @@ group :test do
 end
 
 group :development, :test do
-  want_gem 'jazz_hands'
+  want_gem 'pry'
+  want_gem 'awesome_print'
+  want_gem 'hirb'
+  want_gem 'pry-rails'
+  want_gem 'pry-doc'
+  want_gem 'pry-git'
+  want_gem 'pry-remote'
+  want_gem 'pry-debugger'
+  want_gem 'pry-stack_explorer'
+  want_gem 'coolline'
+  want_gem 'coderay'
   want_gem 'pry-rescue'
   want_gem 'gnuplot'
   want_gem 'commands'
   want_gem 'rails-env-switcher'
   want_gem 'rspec-console'
+
+  # this is here because it uses initializer and rspec complains if this gem is not specified under :test group
+  want_gem 'rails-footnotes'
 end
