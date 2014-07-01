@@ -22,7 +22,7 @@
     (define-key keymap (kbd "RET") 'company-complete-selection)
     (define-key keymap [tab] 'company-complete-common)
     (define-key keymap (kbd "TAB") 'company-complete-common)
-    (define-key keymap (kbd "<f1>") 'company-show-doc-buffer)
+    ; (define-key keymap (kbd "<f1>") 'company-show-doc-buffer) ; change
     ; (define-key keymap (kbd "C-h") 'company-show-doc-buffer) ; change
     ; (define-key keymap "\C-w" 'company-show-location) ; change
     (define-key keymap "\C-s" 'company-search-candidates)
