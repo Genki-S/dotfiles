@@ -460,6 +460,12 @@
         filetypes:
             - css
             - scss
+- ap/vim-css-color:
+    lazy: 1
+    autoload:
+        filetypes:
+            - css
+            - scss
 - pangloss/vim-javascript:
     lazy: 1
     autoload:

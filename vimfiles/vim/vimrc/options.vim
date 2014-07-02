@@ -21,6 +21,8 @@ set relativenumber
 set nohlsearch
 set cursorline
 set colorcolumn=80
+set conceallevel=1
+set concealcursor=inc
 "}}}
 " multiple windows {{{
 set laststatus=2
@@ -92,6 +94,8 @@ if has('mksession')
 endif
 "}}}
 if $TERM ==# 'xterm-256color'
+	set t_Co=256
+elseif $TERM ==# 'screen-256color'
 	set t_Co=256
 else
 	set t_Co=16
