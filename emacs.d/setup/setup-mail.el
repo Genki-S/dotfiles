@@ -73,6 +73,13 @@
 (add-to-list 'mu4e-view-actions
   '("View in browser" . mu4e-msgv-action-view-in-browser) t)
 
+;; Show bcc field as well
+(setq mu4e-view-fields
+  '(:from :to :cc :bcc :subject :flags :date :maildir :mailing-list :tags :attachments :signature))
+
+;; Show full address
+(setq mu4e-view-show-addresses t)
+
 ;; For encrypting password
 (require 'epa-file)
 (epa-file-enable)
