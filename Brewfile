@@ -29,6 +29,8 @@ install offlineimap
 install gpg
 install mu
 install gnutls
+install hg
+install hub
 
 cask install firefox
 cask install google-chrome
