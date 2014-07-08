@@ -49,5 +49,6 @@ cask install skype
 cask install mactex
 cask install lastpass-universal
 cask install mendeley-desktop
+cask install clipmenu
 
 cask alfred link
