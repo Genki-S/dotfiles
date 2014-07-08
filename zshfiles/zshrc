@@ -14,13 +14,14 @@ compinit
 # }}}
 
 # Jump into tmux session automatically {{{
+export AUTO_TMUX_SESSION_NAME="genki"
 if [ -z $TMUX ]; then
 	# assume $SHELL is zsh, and open org mode automatically
 	# (and set window name 'org' so that it can be used by select-window)
-	tmux attach-session -t "$USER"
+	tmux attach-session -t "$AUTO_TMUX_SESSION_NAME"
 	if [ $? -ne 0 ]; then
 		# Init new tmux session (play around with some tmux scripting)
-		tmux new-session -s "$USER" -n "org" "$SHELL -i -c 'org'"
+		tmux new-session -s "$AUTO_TMUX_SESSION_NAME" -n "org" "$SHELL -i -c 'org'"
 	fi
 	# exit
 	# Not exit in order to use shell outside of tmux on occasion...
