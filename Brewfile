@@ -31,6 +31,7 @@ install mu
 install gnutls
 install hg
 install hub
+install gauche
 
 cask install firefox
 cask install google-chrome

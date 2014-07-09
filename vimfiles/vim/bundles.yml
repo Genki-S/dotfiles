@@ -519,6 +519,10 @@
 - mustache/vim-mustache-handlebars:
 ## }}}
 
+## Scheme {{{
+- aharisu/vim_goshrepl:
+# }}}
+
 ## Others {{{
 - kannokanno/previm:
     lazy: 1
