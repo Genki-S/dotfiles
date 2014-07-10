@@ -16,6 +16,12 @@ vim -u ~/dotfiles/vendor/neovendor.vim
 
 Installs in `~/vendor`.
 
+### Install gems
+
+```
+bundle install
+```
+
 ### Install Task
 
 ```
