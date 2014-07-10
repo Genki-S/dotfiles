@@ -521,6 +521,10 @@
 
 ## Scheme {{{
 - aharisu/vim_goshrepl:
+    lazy: 1
+    autoload:
+        commands:
+            - GoshREPL
 # }}}
 
 ## Others {{{
