@@ -117,9 +117,6 @@ function! Vypass__create_buffer()
 endfunction
 
 function! Vypass__configure_tmux(command)
-	NeoBundleSource vimux
-	NeoBundleSource vim-slime
-
 	call VimuxRunCommand(a:command)
 
 	let b:slime_config = {}
@@ -131,7 +128,22 @@ function! Vypass__configure_tmux(command)
 	endif
 endfunction
 
-function! Genki_vimux_slime_prompt(command)
+function! Vypass__check_dependencies()
+	if !exists('*VimuxRunCommand') || !exists(':SlimeConfig')
+		return 0
+	endif
+	return 1
+endfunction
+
+function! Vypass__start(command)
+	NeoBundleSource vimux
+	NeoBundleSource vim-slime
+
+	if !Vypass__check_dependencies()
+		echoerr 'Please install benmills/vimux and jpalardy/vim-slime'
+		return 0
+	endif
+
 	call Vypass__create_buffer()
 	call Vypass__configure_tmux(a:command)
 	startinsert
