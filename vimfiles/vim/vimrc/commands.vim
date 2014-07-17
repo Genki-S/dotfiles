@@ -28,8 +28,8 @@ command! -nargs=1
 	\ edit $DOTDIR/vimfiles/vim/bundles/<args>
 AlterCommand vb ViewBundle
 
-command! -nargs=? VimuxSlimePrompt call Genki_vimux_slime_prompt(<q-args>)
-AlterCommand vsp VimuxSlimePrompt
+command! -nargs=? Vypass call Vypass__start(<q-args>)
+AlterCommand vy Vypass
 
 command! -nargs=1 -complete=var DumpVariable call Genki_dump_variable(<q-args>)
 AlterCommand dump DumpVariable

@@ -387,7 +387,6 @@
     lazy: 1
     autoload:
         commands:
-            - VimuxPromptMode
             - VimuxBufferDir
 - tyru/vim-altercmd:
 - vim-scripts/marvim:
