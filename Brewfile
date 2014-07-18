@@ -29,6 +29,7 @@ install gnutls
 install hg
 install hub
 install gauche
+install highlight
 
 install caskroom/cask/brew-cask
 
