@@ -78,4 +78,7 @@ if is_mac; then
 	}
 	alias bdr="cd $(brew --repository)"
 	alias bdc="cd $(brew --cellar)"
+
+	# Karabiner
+	alias karabiner="/Applications/Karabiner.app/Contents/Library/bin/karabiner"
 fi

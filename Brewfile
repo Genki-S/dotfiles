@@ -51,5 +51,6 @@ cask install mactex
 cask install lastpass-universal
 cask install mendeley-desktop
 cask install clipmenu
+cask install karabiner
 
 cask alfred link
