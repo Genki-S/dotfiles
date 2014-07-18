@@ -1,9 +1,6 @@
 update
 upgrade
 
-tap phinze/homebrew-cask
-install brew-cask
-
 install git-flow
 install tig
 install vim --with-lua
@@ -32,6 +29,8 @@ install gnutls
 install hg
 install hub
 install gauche
+
+install caskroom/cask/brew-cask
 
 cask install firefox
 cask install google-chrome
