@@ -130,11 +130,11 @@
             - VimFilerExplorer
         explorer: 1
 - tpope/vim-unimpaired:
-- rhysd/clever-f.vim:
+- saihoooooooo/glowshi-ft.vim:
     lazy: 1
     autoload:
         mappings:
-            - <Plug>(clever-f
+            - <Plug>(glowshi-ft-
 - rking/ag.vim:
     lazy: 1
     autoload:
