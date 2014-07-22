@@ -33,7 +33,7 @@ alias -g S="| sed"
 alias -g T="| tee"
 alias -g X="| xargs_with_alias"
 alias -g L="| extract_line"
-alias -g P="| percol"
+alias -g P="| peco"
 alias -g PB="| reattach-to-user-namespace pbcopy"
 alias -g PAGER="| $PAGER"
 

@@ -105,7 +105,7 @@ rcfiles=(
 	fasd.zsh
 	notification.zsh
 	direnv.zsh
-	percol.zsh
+	peco.zsh
 	cdd.zsh
 )
 for f in $rcfiles

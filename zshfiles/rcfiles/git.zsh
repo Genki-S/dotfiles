@@ -48,7 +48,7 @@ alias gsp="git stash pop --index"
 alias gsdrop="git stash drop"
 alias gbw="git browse"
 # git branch select
-alias gbs="git branch | percol | xargs git checkout"
+alias gbs="git branch | peco | xargs git checkout"
 # list things
 function gls() {
   if [[ $# -eq 0 ]]; then

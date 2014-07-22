@@ -1,1 +1,2 @@
 get github.com/motemen/ghq
+get github.com/peco/peco/cmd/peco

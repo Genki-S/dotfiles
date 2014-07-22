@@ -1,12 +1,12 @@
-function percol_select_history() {
+function peco_select_history() {
 	local tac
 	executable gtac && tac="gtac" || { executable tac && tac="tac" || { tac="tail -r" } }
-	BUFFER=$(builtin history -n 1 | eval $tac | percol --query "$LBUFFER")
+	BUFFER=$(builtin history -n 1 | eval $tac | peco --query "$LBUFFER")
 	CURSOR=$#BUFFER # move cursor
 	zle -R -c # refresh
 }
-zle -N percol_select_history
-bindkey '^R' percol_select_history
+zle -N peco_select_history
+bindkey '^R' peco_select_history
 
 # http://qiita.com/dai___chi/items/b71fe99339bdbe5b5347
 function pbsearch() {
@@ -19,7 +19,7 @@ function pbsearch() {
 		| sed '/^$/d'| cat -n | sort -k 2| uniq -f1 | sort -k 1 \
 		| sed -e 's/^ *[0-9]*//g' \
 		| sed -e 's/^\s*//g' \
-		| percol \
+		| peco \
 		| sed -e 's/<BR>/\
 /g' \
 		| sed -e 's/&lt;/</g' -e 's/&gt;/>/g' \
