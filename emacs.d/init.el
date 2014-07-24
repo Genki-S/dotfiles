@@ -1,3 +1,6 @@
+(setq debug-on-error t)
+
+;; start as a server if there is no server
 (load "server")
 (unless (server-running-p) (server-start))
 
