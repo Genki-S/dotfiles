@@ -20,63 +20,74 @@
            ad-do-it)
 (ad-activate 'expect)
 
+;; start-pomodoro function
 (expectations
-  (desc "start-pomodoro creates valid pomodoro")
+  (desc "it creates pomodoro with title set as org-clock-current-task")
   (expect org-clock-current-task
           (progn
             (start-pomodoro)
             (gethash "title" current-pomodoro)))
+
+  (desc "it creates pomodoro with created_at set as current-time")
   (expect fixed-time
           (with-mock (stub current-time => fixed-time)
                      (start-pomodoro)
-                     (gethash "created_at" current-pomodoro)))
+                     (gethash "created_at" current-pomodoro))))
 
-  (desc "complete-pomodoro sets proper attributes to current-pomodoro")
+;; complete-pomodoro function
+(expectations
+  (desc "it sets completed_at as current-time")
   (expect fixed-time
           (with-mock (stub current-time => fixed-time)
                      (stub read-from-minibuffer => "1")
                      (start-pomodoro)
                      (complete-pomodoro)
                      (gethash "completed_at" current-pomodoro)))
+  (desc "it does not set interrupted_at")
   (expect nil
           (with-mock (stub current-time => fixed-time)
                      (stub read-from-minibuffer => "1")
                      (start-pomodoro)
                      (complete-pomodoro)
                      (gethash "interrupted_at" current-pomodoro)))
+  (desc "it creates reflection and set mood as good")
   (expect complete-mood
           (with-mock (stub read-from-minibuffer => "1")
                      (start-pomodoro)
                      (complete-pomodoro)
                      (gethash "mood"
                               (gethash "reflection" current-pomodoro))))
-  ;; it does not set interruption
+  (desc "it does not create interruption")
   (expect nil
           (with-mock (stub read-from-minibuffer => "1")
                      (start-pomodoro)
                      (complete-pomodoro)
-                     (gethash "interruption" current-pomodoro)))
+                     (gethash "interruption" current-pomodoro))))
 
-  (desc "interrupt-pomodoro sets proper attributes to current-pomodoro")
+;; interrupt-pomodoro function
+(expectations
+  (desc "it sets interrupted_at as current-time")
   (expect fixed-time
           (with-mock (stub current-time => fixed-time)
                      (stub read-from-minibuffer => interrupt-reason)
                      (start-pomodoro)
                      (interrupt-pomodoro)
                      (gethash "interrupted_at" current-pomodoro)))
+  (desc "it does not set completed_at")
   (expect nil
           (with-mock (stub current-time => fixed-time)
                      (stub read-from-minibuffer => interrupt-reason)
                      (start-pomodoro)
                      (interrupt-pomodoro)
                      (gethash "completed_at" current-pomodoro)))
+  (desc "it creates interruption and set reason as interrupt-reason")
   (expect interrupt-reason
           (with-mock (stub read-from-minibuffer => interrupt-reason)
                      (start-pomodoro)
                      (interrupt-pomodoro)
                      (gethash "reason"
                               (gethash "interruption" current-pomodoro))))
-  ;; it does not set reflection
+  (desc "it does not create reflection")
   (expect nil
           (with-mock (stub read-from-minibuffer => "1")
                      (start-pomodoro)
