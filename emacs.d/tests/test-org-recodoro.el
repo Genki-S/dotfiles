@@ -18,6 +18,7 @@
            "setup and teardown"
            (setq current-pomodoro nil)
            ad-do-it)
+(ad-activate 'expect)
 
 (expectations
   (desc "start-pomodoro creates valid pomodoro")
@@ -31,6 +32,18 @@
                      (gethash "created_at" current-pomodoro)))
 
   (desc "complete-pomodoro sets proper attributes to current-pomodoro")
+  (expect fixed-time
+          (with-mock (stub current-time => fixed-time)
+                     (stub read-from-minibuffer => "1")
+                     (start-pomodoro)
+                     (complete-pomodoro)
+                     (gethash "completed_at" current-pomodoro)))
+  (expect nil
+          (with-mock (stub current-time => fixed-time)
+                     (stub read-from-minibuffer => "1")
+                     (start-pomodoro)
+                     (complete-pomodoro)
+                     (gethash "interrupted_at" current-pomodoro)))
   (expect complete-mood
           (with-mock (stub read-from-minibuffer => "1")
                      (start-pomodoro)
@@ -45,6 +58,18 @@
                      (gethash "interruption" current-pomodoro)))
 
   (desc "interrupt-pomodoro sets proper attributes to current-pomodoro")
+  (expect fixed-time
+          (with-mock (stub current-time => fixed-time)
+                     (stub read-from-minibuffer => interrupt-reason)
+                     (start-pomodoro)
+                     (interrupt-pomodoro)
+                     (gethash "interrupted_at" current-pomodoro)))
+  (expect nil
+          (with-mock (stub current-time => fixed-time)
+                     (stub read-from-minibuffer => interrupt-reason)
+                     (start-pomodoro)
+                     (interrupt-pomodoro)
+                     (gethash "completed_at" current-pomodoro)))
   (expect interrupt-reason
           (with-mock (stub read-from-minibuffer => interrupt-reason)
                      (start-pomodoro)
