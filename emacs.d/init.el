@@ -81,6 +81,8 @@
     helm
     yasnippet
     company-mode
+    el-mock
+    ert-expectations
     )
   "A list of packages to install from el-get at launch.")
 
