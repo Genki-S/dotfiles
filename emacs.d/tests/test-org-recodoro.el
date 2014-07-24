@@ -6,7 +6,7 @@
 (require 'el-mock)
 (require 'ert-expectations)
 
-(load-file "org-recodoro.el")
+(load-file "~/.emacs.d/my-scripts/org-recodoro.el")
 
 ;; TODO: I want to mock these
 (setq org-clock-current-task "TASK")
