@@ -1,5 +1,8 @@
 (require 'org)
 
+(defun formatted-current-time ()
+  (format-time-string "%Y-%m-%dT%T%z" (current-time)))
+
 ;; pomodoro
 ;;  - title
 ;;  - created_at
@@ -10,7 +13,7 @@
 (defun make-pomodoro (title)
   (let ((pomodoro (make-hash-table :test 'equal)))
     (puthash "title" title pomodoro)
-    (puthash "created_at" (current-time) pomodoro)
+    (puthash "created_at" (formatted-current-time) pomodoro)
     pomodoro))
 
 ;; reflection
@@ -31,7 +34,7 @@
   (setq current-pomodoro (make-pomodoro org-clock-current-task)))
 
 (defun complete-pomodoro ()
-  (puthash "completed_at" (current-time) current-pomodoro)
+  (puthash "completed_at" (formatted-current-time) current-pomodoro)
   (let ((mood nil) (mood-index nil))
     (while (not (member mood-index '(1 2 3)))
            (setq mood-index (string-to-number (read-from-minibuffer "Mood (1: good, 2: so-so, 3: bad): "))))
@@ -39,6 +42,6 @@
     (puthash "reflection" (make-reflection mood) current-pomodoro)))
 
 (defun interrupt-pomodoro ()
-  (puthash "interrupted_at" (current-time) current-pomodoro)
+  (puthash "interrupted_at" (formatted-current-time) current-pomodoro)
   (let ((reason (read-from-minibuffer "Reason of interruption: ")))
     (puthash "interruption" (make-interruption reason) current-pomodoro)))

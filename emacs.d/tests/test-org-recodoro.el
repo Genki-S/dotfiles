@@ -11,6 +11,7 @@
 ;; TODO: I want to mock these
 (setq org-clock-current-task "TASK")
 (setq fixed-time (current-time))
+(setq formatted-fixed-time (format-time-string "%Y-%m-%dT%T%z" (current-time)))
 (setq complete-mood "good")
 (setq interrupt-reason "Gmail")
 
@@ -29,7 +30,7 @@
             (gethash "title" current-pomodoro)))
 
   (desc "it creates pomodoro with created_at set as current-time")
-  (expect fixed-time
+  (expect formatted-fixed-time
           (with-mock (stub current-time => fixed-time)
                      (start-pomodoro)
                      (gethash "created_at" current-pomodoro))))
@@ -37,7 +38,7 @@
 ;; complete-pomodoro function
 (expectations
   (desc "it sets completed_at as current-time")
-  (expect fixed-time
+  (expect formatted-fixed-time
           (with-mock (stub current-time => fixed-time)
                      (stub read-from-minibuffer => "1")
                      (start-pomodoro)
@@ -67,7 +68,7 @@
 ;; interrupt-pomodoro function
 (expectations
   (desc "it sets interrupted_at as current-time")
-  (expect fixed-time
+  (expect formatted-fixed-time
           (with-mock (stub current-time => fixed-time)
                      (stub read-from-minibuffer => interrupt-reason)
                      (start-pomodoro)
