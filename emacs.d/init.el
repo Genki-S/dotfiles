@@ -83,6 +83,7 @@
     company-mode
     el-mock
     ert-expectations
+    request
     )
   "A list of packages to install from el-get at launch.")
 

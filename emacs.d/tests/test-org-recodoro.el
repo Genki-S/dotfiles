@@ -2,7 +2,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (require 'el-get)
-(el-get 'sync '(el-mock ert-expectations))
+(el-get 'sync '(el-mock ert-expectations request))
 (require 'el-mock)
 (require 'ert-expectations)
 

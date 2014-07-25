@@ -1,5 +1,6 @@
 (require 'org)
 (require 'json)
+(require 'request)
 
 ;; * settings
 (setq recodoro-save-dir "~/.org-recodoro")
