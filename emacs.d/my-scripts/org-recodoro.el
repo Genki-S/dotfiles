@@ -14,7 +14,7 @@
   (let ((day (make-hash-table :test 'equal)))
     (puthash "date" (formatted-current-date) day)
     (puthash "goal" goal day)
-    (puthash "pomodoro" nil day)
+    (puthash "pomodori" '() day)
     day))
 
 ;; pomodoro
@@ -48,7 +48,8 @@
   (setq current-day (make-day (string-to-number (read-from-minibuffer "Your pomodoro goal: ")))))
 
 (defun start-pomodoro ()
-  (setq current-pomodoro (make-pomodoro org-clock-current-task)))
+  (setq current-pomodoro (make-pomodoro org-clock-current-task))
+  (puthash "pomodori" (cons current-pomodoro (gethash "pomodori" current-pomodoro)) current-day))
 
 (defun complete-pomodoro ()
   (puthash "completed_at" (formatted-current-time) current-pomodoro)

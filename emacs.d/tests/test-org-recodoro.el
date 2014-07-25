@@ -40,11 +40,11 @@
                      (gethash "goal" current-day)))
 
   (desc "it creates a day with no pomodoro")
-  (expect nil
+  (expect '()
           (with-mock (stub current-time => fixed-time)
                      (stub read-from-minibuffer => (number-to-string pomodoro-goal))
                      (start-day)
-                     (gethash "pomodoro" current-day))))
+                     (gethash "pomodori" current-day))))
 
 ;; start-pomodoro function
 (expectations
@@ -58,7 +58,16 @@
   (expect formatted-fixed-time
           (with-mock (stub current-time => fixed-time)
                      (start-pomodoro)
-                     (gethash "created_at" current-pomodoro))))
+                     (gethash "created_at" current-pomodoro)))
+
+  (desc "it insert the new pomodoro in front of current-day's pomodoro list")
+  (expect org-clock-current-task
+          (with-mock (stub current-time => fixed-time)
+                     (stub read-from-minibuffer => (number-to-string pomodoro-goal))
+                     (start-day)
+                     (start-pomodoro)
+                     (gethash "title"
+                              (nth 0 (gethash "pomodori" current-day))))))
 
 ;; complete-pomodoro function
 (expectations
