@@ -84,3 +84,10 @@
   (with-temp-buffer
     (insert (json-encode current-day))
     (write-region (point-min) (point-max) (save-file-path))))
+
+(defun load-day ()
+  (let ((json-object-type 'hash-table))
+    (setq current-day (json-read-from-string
+                        (with-temp-buffer
+                          (insert-file-contents (save-file-path))
+                          (buffer-string))))))

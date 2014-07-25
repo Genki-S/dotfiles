@@ -133,9 +133,9 @@
                      (interrupt-pomodoro)
                      (gethash "reflection" current-pomodoro))))
 
-;; save-day function
+;; save-day and load-day function
 (expectations
-  (desc "it saves current-day to json file")
+  (desc "save-day saves current-day to json file")
   (expect formatted-fixed-date
           (with-mock (stub read-from-minibuffer => (number-to-string pomodoro-goal))
                      (start-day)
@@ -145,4 +145,13 @@
                                 (json-read-from-string
                                   (with-temp-buffer
                                     (insert-file-contents (save-file-path))
-                                    (buffer-string))))))))
+                                    (buffer-string)))))))
+
+  (desc "load-day loads json file into current-day")
+  (expect formatted-fixed-date
+          (with-mock (stub read-from-minibuffer => (number-to-string pomodoro-goal))
+                     (start-day)
+                     (save-day)
+                     (setq current-day nil)
+                     (load-day)
+                     (gethash "date" current-day))))
