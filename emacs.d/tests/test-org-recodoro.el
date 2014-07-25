@@ -17,6 +17,10 @@
 (setq complete-mood "good")
 (setq interrupt-reason "Gmail")
 
+;; FIXME: this is dirty
+(setq recodoro-save-dir "~/.org-recodoro-test")
+(make-directory recodoro-save-dir t)
+
 (defadvice expect (around expect-around)
            "setup and teardown"
            (setq current-pomodoro nil)
@@ -128,3 +132,17 @@
                      (start-pomodoro)
                      (interrupt-pomodoro)
                      (gethash "reflection" current-pomodoro))))
+
+;; save-day function
+(expectations
+  (desc "it saves current-day to json file")
+  (expect formatted-fixed-date
+          (with-mock (stub read-from-minibuffer => (number-to-string pomodoro-goal))
+                     (start-day)
+                     (save-day)
+                     (let ((json-object-type 'hash-table))
+                       (gethash "date"
+                                (json-read-from-string
+                                  (with-temp-buffer
+                                    (insert-file-contents (save-file-path))
+                                    (buffer-string))))))))

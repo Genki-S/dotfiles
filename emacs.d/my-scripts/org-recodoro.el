@@ -1,10 +1,23 @@
 (require 'org)
+(require 'json)
 
+;; * settings
+(setq recodoro-save-dir "~/.org-recodoro")
+
+;; * initialization
+(make-directory recodoro-save-dir t)
+
+;; * helper functions
 (defun formatted-current-time ()
   (format-time-string "%Y-%m-%dT%T%z" (current-time)))
 
 (defun formatted-current-date ()
   (format-time-string "%Y-%m-%d" (current-time)))
+
+(defun save-file-path ()
+  (concat recodoro-save-dir "/" (formatted-current-date) ".json"))
+
+;; * models
 
 ;; day
 ;;  - date
@@ -44,6 +57,8 @@
     (puthash "reason" reason interruption)
     interruption))
 
+;; * apis
+
 (defun start-day ()
   (setq current-day (make-day (string-to-number (read-from-minibuffer "Your pomodoro goal: ")))))
 
@@ -63,3 +78,9 @@
   (puthash "interrupted_at" (formatted-current-time) current-pomodoro)
   (let ((reason (read-from-minibuffer "Reason of interruption: ")))
     (puthash "interruption" (make-interruption reason) current-pomodoro)))
+
+;; * save and load
+(defun save-day ()
+  (with-temp-buffer
+    (insert (json-encode current-day))
+    (write-region (point-min) (point-max) (save-file-path))))
