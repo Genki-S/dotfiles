@@ -9,9 +9,11 @@
 (load-file "~/.emacs.d/my-scripts/org-recodoro.el")
 
 ;; TODO: I want to mock these
+(setq pomodoro-goal 5)
 (setq org-clock-current-task "TASK")
 (setq fixed-time (current-time))
 (setq formatted-fixed-time (format-time-string "%Y-%m-%dT%T%z" (current-time)))
+(setq formatted-fixed-date (format-time-string "%Y-%m-%d" (current-time)))
 (setq complete-mood "good")
 (setq interrupt-reason "Gmail")
 
@@ -20,6 +22,29 @@
            (setq current-pomodoro nil)
            ad-do-it)
 (ad-activate 'expect)
+
+;; start-day function
+(expectations
+  (desc "it creates a day with current date")
+  (expect formatted-fixed-date
+          (with-mock (stub current-time => fixed-time)
+                     (stub read-from-minibuffer => (number-to-string pomodoro-goal))
+                     (start-day)
+                     (gethash "date" current-day)))
+
+  (desc "it creates a day with goal pomodoro-goal")
+  (expect pomodoro-goal
+          (with-mock (stub current-time => fixed-time)
+                     (stub read-from-minibuffer => (number-to-string pomodoro-goal))
+                     (start-day)
+                     (gethash "goal" current-day)))
+
+  (desc "it creates a day with no pomodoro")
+  (expect nil
+          (with-mock (stub current-time => fixed-time)
+                     (stub read-from-minibuffer => (number-to-string pomodoro-goal))
+                     (start-day)
+                     (gethash "pomodoro" current-day))))
 
 ;; start-pomodoro function
 (expectations

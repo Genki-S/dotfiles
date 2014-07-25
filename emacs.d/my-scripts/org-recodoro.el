@@ -3,6 +3,20 @@
 (defun formatted-current-time ()
   (format-time-string "%Y-%m-%dT%T%z" (current-time)))
 
+(defun formatted-current-date ()
+  (format-time-string "%Y-%m-%d" (current-time)))
+
+;; day
+;;  - date
+;;  - goal
+;;  --> * pomodoro
+(defun make-day (goal)
+  (let ((day (make-hash-table :test 'equal)))
+    (puthash "date" (formatted-current-date) day)
+    (puthash "goal" goal day)
+    (puthash "pomodoro" nil day)
+    day))
+
 ;; pomodoro
 ;;  - title
 ;;  - created_at
@@ -29,6 +43,9 @@
   (let ((interruption (make-hash-table :test 'equal)))
     (puthash "reason" reason interruption)
     interruption))
+
+(defun start-day ()
+  (setq current-day (make-day (string-to-number (read-from-minibuffer "Your pomodoro goal: ")))))
 
 (defun start-pomodoro ()
   (setq current-pomodoro (make-pomodoro org-clock-current-task)))
