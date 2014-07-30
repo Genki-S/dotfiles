@@ -5,6 +5,8 @@
 	news = log -p HEAD@{1}..HEAD@{0}
 	branch-root = merge-base master HEAD
 	review = !tig --reverse -w $(git branch-root)..HEAD
+	# http://mattn.kaoriya.net/software/git/20140708105946.htm
+	pr-setup = config --add remote.origin.fetch +refs/pull/*/head:refs/remotes/origin/pr/*
 
 [user]
 	name = Genki Sugimoto
