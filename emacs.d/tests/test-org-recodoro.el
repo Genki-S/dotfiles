@@ -69,11 +69,11 @@
             (lambda ()
               (gethash "title" current-pomodoro))))
 
-  (desc "it creates pomodoro with created_at set as current-time")
+  (desc "it creates pomodoro with started_at set as current-time")
   (expect formatted-fixed-time
           (with-my-start-pomodoro-fixtures
             (lambda ()
-              (gethash "created_at" current-pomodoro))))
+              (gethash "started_at" current-pomodoro))))
 
   (desc "it insert the new pomodoro in front of current-day's pomodoro list")
   (expect org-clock-current-task

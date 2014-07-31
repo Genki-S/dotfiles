@@ -33,7 +33,7 @@
 
 ;; pomodoro
 ;;  - title
-;;  - created_at
+;;  - started_at
 ;;  - finished_at
 ;;  - interrupted_at
 ;;  --> reflection
@@ -41,7 +41,7 @@
 (defun make-pomodoro (title)
   (let ((pomodoro (make-hash-table :test 'equal)))
     (puthash "title" title pomodoro)
-    (puthash "created_at" (formatted-current-time) pomodoro)
+    (puthash "started_at" (formatted-current-time) pomodoro)
     pomodoro))
 
 ;; reflection
