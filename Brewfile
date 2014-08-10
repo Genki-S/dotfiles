@@ -31,6 +31,9 @@ install hub
 install gauche
 install highlight
 
+tap peco/peco
+install migemogrep
+
 install caskroom/cask/brew-cask
 
 cask install firefox
