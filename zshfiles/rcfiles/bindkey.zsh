@@ -47,11 +47,18 @@ zle -N zvi-jump-forward
 bindkey '^o' zvi-jump-backward
 bindkey '\\^o' zvi-jump-forward
 
-function foreground-myvim() {
-	fg %myvim
+# http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+function fancy-ctrl-z() {
+	if [[ $#BUFFER -eq 0 ]]; then
+		BUFFER="fg"
+		zle accept-line
+	else
+		zle push-input
+		zle clear-screen
+	fi
 }
-zle -N foreground-myvim
-bindkey '^z' foreground-myvim
+zle -N fancy-ctrl-z
+bindkey '^z' fancy-ctrl-z
 
 # complete words from tmux pane(s)
 # Source: https://gist.github.com/blueyed/6856354
