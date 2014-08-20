@@ -319,6 +319,7 @@
 - kana/vim-operator-user:
 - tyru/operator-camelize.vim:
 - tek/vim-operator-assign:
+- kana/vim-operator-replace:
 # }}}
 
 # Text Objects {{{
