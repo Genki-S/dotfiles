@@ -36,7 +36,7 @@ abbr a <= b <= c
 
 snippet rng
 abbr 0 <= x && x < y
-    (0 <= ${1:x} && $1 < ${2:y})${0:TARGET}
+	(0 <= ${1:x} && $1 < ${2:y})${0:TARGET}
 
 snippet field_input
 	cin >> ${1:height} >> ${2:width};
@@ -57,10 +57,20 @@ snippet print_field_func
 	}
 
 snippet in_1
-    ${1:type} ${2:var}; cin >> $2;${0:TARGET}
+	${1:type} ${2:var}; cin >> $2;${0:TARGET}
 snippet in_2
-    ${1:type} ${2:var}, ${3:var}; cin >> $2 >> $3;${0:TARGET}
+	${1:type} ${2:var}, ${3:var}; cin >> $2 >> $3;${0:TARGET}
 snippet in_3
-    ${1:type} ${2:var}, ${3:var}, ${4:var}; cin >> $2 >> $3 >> $4;${0:TARGET}
+	${1:type} ${2:var}, ${3:var}, ${4:var}; cin >> $2 >> $3 >> $4;${0:TARGET}
 snippet in_4
-    ${1:type} ${2:var}, ${3:var}, ${4:var}, ${5:var}; cin >> $2 >> $3 >> $4 >> $5;${0:TARGET}
+	${1:type} ${2:var}, ${3:var}, ${4:var}, ${5:var}; cin >> $2 >> $3 >> $4 >> $5;${0:TARGET}
+
+snippet while_cin_2
+	while (cin >> ${1:h} >> ${2:w}, $1 || $2) {
+		${0:TARGET}
+	}
+
+snippet while_cin_3
+	while (cin >> ${1:a} >> ${2:b} >> ${3:c}, $1 || $2 || $3) {
+		${0:TARGET}
+	}
