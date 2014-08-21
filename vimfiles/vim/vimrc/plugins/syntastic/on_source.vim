@@ -5,12 +5,9 @@ let g:syntastic_mode_map = {
 	\ 'passive_filetypes': []
 \}
 
-augroup AutoSyntastic
-	autocmd!
-	autocmd BufWritePost * call s:syntastic_with_lightline()
-augroup END
+nnoremap <Leader><CR> :<C-u>call Syntastic_with_lightline()<CR>
 
-function! s:syntastic_with_lightline()
+function! Syntastic_with_lightline()
 	SyntasticCheck
 	call lightline#update()
 endfunction
