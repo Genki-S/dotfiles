@@ -110,10 +110,6 @@
      :parser 'json-read)))
 
 ;; * Hook onto org-pomodoro
-(defun after-finish-procedure ()
-  (post-pomodoro)
-  (call-process "activate-org"))
-
 (add-hook 'org-pomodoro-started-hook 'start-pomodoro)
 
 (add-hook 'org-pomodoro-finished-hook
@@ -121,13 +117,15 @@
             ;; make it async not to pollute org-pomodoro procedure
             ;; (if I don't make it async, org-pomodoro's countdown speeds up after I finish read-from-minibuffer)
             (run-at-time "1 sec" nil (lambda ()
+                                       (call-process "activate-org")
                                        (finish-pomodoro)
-                                       (after-finish-procedure)))))
+                                       (post-pomodoro)))))
 
 (add-hook 'org-pomodoro-killed-hook
           (lambda ()
             (run-at-time "1 sec" nil (lambda ()
+                                       (call-process "activate-org")
                                        (interrupt-pomodoro)
-                                       (after-finish-procedure)))))
+                                       (post-pomodoro)))))
 
 (add-hook 'org-pomodoro-break-finished-hook (lambda () (call-process "activate-org")))
