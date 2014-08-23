@@ -112,3 +112,7 @@
 (add-hook 'org-pomodoro-finished-hook (lambda ()
                                         (complete-pomodoro)
                                         (post-pomodoro)))
+
+(add-hook 'org-pomodoro-killed-hook (lambda ()
+                                      (interrupt-pomodoro)
+                                      (post-pomodoro)))
