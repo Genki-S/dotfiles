@@ -92,11 +92,11 @@
                     complete-mood-choice))
 
 (expectations
-  (desc "it sets completed_at as current-time")
+  (desc "it sets finished_at as current-time")
   (expect formatted-fixed-time
           (with-my-complete-pomodoro-fixtures
             (lambda ()
-              (gethash "completed_at" current-pomodoro))))
+              (gethash "finished_at" current-pomodoro))))
 
   (desc "it does not set interrupted_at")
   (expect nil
@@ -133,11 +133,11 @@
             (lambda ()
               (gethash "interrupted_at" current-pomodoro))))
 
-  (desc "it does not set completed_at")
+  (desc "it does not set finished_at")
   (expect nil
           (with-my-interrupt-pomodoro-fixtures
             (lambda ()
-              (gethash "completed_at" current-pomodoro))))
+              (gethash "finished_at" current-pomodoro))))
 
   (desc "it creates interruption and set reason as interrupt-reason")
   (expect interrupt-reason

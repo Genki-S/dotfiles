@@ -69,7 +69,7 @@
   (puthash "pomodori" (cons current-pomodoro (gethash "pomodori" current-pomodoro)) current-day))
 
 (defun complete-pomodoro ()
-  (puthash "completed_at" (formatted-current-time) current-pomodoro)
+  (puthash "finished_at" (formatted-current-time) current-pomodoro)
   (let ((mood nil) (mood-index nil))
     (while (not (member mood-index '(1 2 3)))
            (setq mood-index (string-to-number (read-from-minibuffer "Mood (1: good, 2: so-so, 3: bad): "))))
@@ -98,7 +98,7 @@
 (defun post-pomodoro ()
   (let ((data '()))
     (maphash (lambda (k v)
-               (if (member k '("title" "started_at" "completed_at" "interrupted_at"))
+               (if (member k '("title" "started_at" "finished_at" "interrupted_at"))
                  (setq data (cons `(,k . ,v) data))))
              current-pomodoro)
     (setq data (cons '("uid" . "681364011953743") data))
