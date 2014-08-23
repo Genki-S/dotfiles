@@ -7,7 +7,7 @@
       (progn
         (let ((temp-file (make-temp-file "emacs_vim")))
           (write-region (point-min) (point-max) temp-file)
-          (call-process "tmux" nil nil nil "new-window" (concat "semaphore-vim " temp-file))
+          (call-process "tmux" nil nil nil "new-window" (concat "~/dotfiles/bin/semaphore-vim " temp-file))
           (sleep-for 1)
           (let ((temp-file-basename (file-name-nondirectory temp-file)))
             (while (file-exists-p "~/.semaphore_vim")
