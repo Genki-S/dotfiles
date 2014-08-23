@@ -65,8 +65,9 @@
   (setq current-day (make-day (string-to-number (read-from-minibuffer "Your pomodoro goal: ")))))
 
 (defun start-pomodoro ()
-  (setq current-pomodoro (make-pomodoro org-clock-current-task))
-  (puthash "pomodori" (cons current-pomodoro (gethash "pomodori" current-pomodoro)) current-day))
+  (setq current-pomodoro (make-pomodoro org-clock-current-task)))
+  ;; currently don't care about day model
+  ; (puthash "pomodori" (cons current-pomodoro (gethash "pomodori" current-pomodoro)) current-day))
 
 (defun finish-pomodoro ()
   (puthash "finished_at" (formatted-current-time) current-pomodoro)
@@ -103,7 +104,7 @@
              current-pomodoro)
     (setq data (cons '("uid" . "681364011953743") data))
     (request
-     "http:/infinite-mountain-2191.herokuapp.com/api/v1/pomodori"
+     "http://infinite-mountain-2191.herokuapp.com/api/v1/pomodori"
      :type "POST"
      :data data
      :parser 'json-read)))
@@ -119,12 +120,14 @@
           (lambda ()
             ;; make it async not to pollute org-pomodoro procedure
             ;; (if I don't make it async, org-pomodoro's countdown speeds up after I finish read-from-minibuffer)
-            (run-at-time "1 sec" nil 'finish-pomodoro)
-            (after-finish-procedure)))
+            (run-at-time "1 sec" nil (lambda ()
+                                       (finish-pomodoro)
+                                       (after-finish-procedure)))))
 
 (add-hook 'org-pomodoro-killed-hook
           (lambda ()
-            (run-at-time "1 sec" nil 'interrupt-pomodoro)
-            (after-finish-procedure)))
+            (run-at-time "1 sec" nil (lambda ()
+                                       (interrupt-pomodoro)
+                                       (after-finish-procedure)))))
 
 (add-hook 'org-pomodoro-break-finished-hook (lambda () (call-process "activate-org")))
