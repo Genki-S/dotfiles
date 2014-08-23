@@ -55,5 +55,6 @@ cask install lastpass-universal
 cask install mendeley-desktop
 cask install clipmenu
 cask install karabiner
+cask install cloudytabs
 
 cask alfred link
