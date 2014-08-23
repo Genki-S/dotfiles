@@ -1,4 +1,5 @@
 (require 'org)
+(require 'org-pomodoro)
 (require 'json)
 (require 'request)
 
@@ -92,3 +93,22 @@
                         (with-temp-buffer
                           (insert-file-contents (save-file-path))
                           (buffer-string))))))
+
+;; * POST method
+(defun post-pomodoro ()
+  (let ((data '()))
+    (maphash (lambda (k v)
+               (if (member k '("title" "started_at" "completed_at" "interrupted_at"))
+                 (setq data (cons `(,k . ,v) data))))
+             current-pomodoro)
+    (setq data (cons '("uid" . "681364011953743") data))
+    (request
+     "http://localhost:3000/api/v1/pomodori"
+     :type "POST"
+     :data data
+     :parser 'json-read)))
+
+;; * Hook onto org-pomodoro
+(add-hook 'org-pomodoro-finished-hook (lambda ()
+                                        (complete-pomodoro)
+                                        (post-pomodoro)))
