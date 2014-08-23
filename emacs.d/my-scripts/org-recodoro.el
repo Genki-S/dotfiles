@@ -103,16 +103,26 @@
              current-pomodoro)
     (setq data (cons '("uid" . "681364011953743") data))
     (request
-     "http://localhost:3000/api/v1/pomodori"
+     "http:/infinite-mountain-2191.herokuapp.com/api/v1/pomodori"
      :type "POST"
      :data data
      :parser 'json-read)))
 
 ;; * Hook onto org-pomodoro
-(add-hook 'org-pomodoro-finished-hook (lambda ()
-                                        (complete-pomodoro)
-                                        (post-pomodoro)))
+(defun after-finish-procedure ()
+  (post-pomodoro)
+  (call-process "activate-org"))
 
-(add-hook 'org-pomodoro-killed-hook (lambda ()
-                                      (interrupt-pomodoro)
-                                      (post-pomodoro)))
+(add-hook 'org-pomodoro-finished-hook
+          (lambda ()
+            ;; make it async not to pollute org-pomodoro procedure
+            ;; (if I don't make it async, org-pomodoro's countdown speeds up after I finish read-from-minibuffer)
+            (run-at-time "1 sec" nil 'complete-pomodoro)
+            (after-finish-procedure)))
+
+(add-hook 'org-pomodoro-killed-hook
+          (lambda ()
+            (run-at-time "1 sec" nil 'interrupt-pomodoro)
+            (after-finish-procedure)))
+
+(add-hook 'org-pomodoro-break-finished-hook (lambda () (call-process "activate-org")))
