@@ -68,7 +68,7 @@
   (setq current-pomodoro (make-pomodoro org-clock-current-task))
   (puthash "pomodori" (cons current-pomodoro (gethash "pomodori" current-pomodoro)) current-day))
 
-(defun complete-pomodoro ()
+(defun finish-pomodoro ()
   (puthash "finished_at" (formatted-current-time) current-pomodoro)
   (let ((mood nil) (mood-index nil))
     (while (not (member mood-index '(1 2 3)))
@@ -113,11 +113,13 @@
   (post-pomodoro)
   (call-process "activate-org"))
 
+(add-hook 'org-pomodoro-started-hook 'start-pomodoro)
+
 (add-hook 'org-pomodoro-finished-hook
           (lambda ()
             ;; make it async not to pollute org-pomodoro procedure
             ;; (if I don't make it async, org-pomodoro's countdown speeds up after I finish read-from-minibuffer)
-            (run-at-time "1 sec" nil 'complete-pomodoro)
+            (run-at-time "1 sec" nil 'finish-pomodoro)
             (after-finish-procedure)))
 
 (add-hook 'org-pomodoro-killed-hook

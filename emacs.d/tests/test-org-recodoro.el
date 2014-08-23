@@ -14,8 +14,8 @@
 (setq fixed-time (current-time))
 (setq formatted-fixed-time (format-time-string "%Y-%m-%dT%T%z" (current-time)))
 (setq formatted-fixed-date (format-time-string "%Y-%m-%d" (current-time)))
-(setq complete-mood "good")
-(setq complete-mood-choice "1")
+(setq finish-mood "good")
+(setq finish-mood-choice "1")
 (setq interrupt-reason "Gmail")
 
 ;; FIXME: this is dirty
@@ -82,38 +82,39 @@
               (gethash "title"
                        (nth 0 (gethash "pomodori" current-day)))))))
 
-;; complete-pomodoro function
-(defun with-my-complete-pomodoro-fixtures (_body)
+;; finish-pomodoro function
+(defun with-my-finish-pomodoro-fixtures (_body)
   (with-my-fixtures (lambda ()
                       (start-day)
                       (start-pomodoro)
-                      (complete-pomodoro)
+                      (finish-pomodoro)
                       (funcall _body))
-                    complete-mood-choice))
+                    finish-mood-choice))
 
 (expectations
   (desc "it sets finished_at as current-time")
   (expect formatted-fixed-time
-          (with-my-complete-pomodoro-fixtures
+          (with-my-finish-pomodoro-fixtures
             (lambda ()
+              (post-pomodoro)
               (gethash "finished_at" current-pomodoro))))
 
   (desc "it does not set interrupted_at")
   (expect nil
-          (with-my-complete-pomodoro-fixtures
+          (with-my-finish-pomodoro-fixtures
             (lambda ()
               (gethash "interrupted_at" current-pomodoro))))
 
   (desc "it creates reflection and set mood as good")
-  (expect complete-mood
-          (with-my-complete-pomodoro-fixtures
+  (expect finish-mood
+          (with-my-finish-pomodoro-fixtures
             (lambda ()
               (gethash "mood"
                        (gethash "reflection" current-pomodoro)))))
 
   (desc "it does not create interruption")
   (expect nil
-          (with-my-complete-pomodoro-fixtures
+          (with-my-finish-pomodoro-fixtures
             (lambda ()
               (gethash "interruption" current-pomodoro)))))
 
