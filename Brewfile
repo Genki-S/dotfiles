@@ -30,6 +30,8 @@ install hg
 install hub
 install gauche
 install highlight
+install jq
+install jsonpp
 
 tap peco/peco
 install migemogrep
