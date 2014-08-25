@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# This goes quite well with QuickSilver
+osascript -e "tell app \"$1\" to activate"
