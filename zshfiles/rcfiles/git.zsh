@@ -1,3 +1,7 @@
+# Its' aliased to git automatically (when using boxen?)
+# but unalias it because I wanna set __EXECUTED_GIT_COMMAND
+unalias git
+
 # Use hub
 function git() {
 	hub $*
