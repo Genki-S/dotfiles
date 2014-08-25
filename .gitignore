@@ -17,3 +17,5 @@ emacs.d/bookmarks
 gitfiles/git_template/*
 
 miscfiles/vimperator/info
+
+clicoder.d/config.yml
