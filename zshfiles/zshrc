@@ -63,21 +63,10 @@ source $DOTDIR/submodules/zsh-history-substring-search/zsh-history-substring-sea
 fpath+=($DOTDIR/submodules/zsh-completions/src)
 
 # Source my prompt
+source $DOTDIR/submodules/zsh-git-prompt/zshrc.sh
+export __GIT_PROMPT_DIR=$DOTDIR/submodules/zsh-git-prompt
+__EXECUTED_GIT_COMMAND=1 # To force prompt update at first
 source $DOTDIR/zshfiles/genki.zsh-theme
-# dummy function
-git_super_status()
-{
-	echo ""
-}
-
-# Summon my customized prompt on demand
-# TODO: make more features loaded on demand
-custom()
-{
-	source $DOTDIR/submodules/zsh-git-prompt/zshrc.sh
-	export __GIT_PROMPT_DIR=$DOTDIR/submodules/zsh-git-prompt
-	__EXECUTED_GIT_COMMAND=1 # To force prompt update at first
-}
 # }}}
 # ==================================================
 # My zsh configurations {{{
