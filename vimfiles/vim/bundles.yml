@@ -472,6 +472,13 @@
         filetypes:
             - javascript
             - coffee
+- lfilho/cosco.vim:
+    lazy: 1
+    autoload:
+        filetypes:
+            - javascript
+            - css
+            - scss
 - mattn/emmet-vim:
     lazy: 1
     autoload:
