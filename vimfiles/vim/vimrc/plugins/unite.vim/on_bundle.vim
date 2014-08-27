@@ -19,8 +19,8 @@ nnoremap <silent> <SID>[unite]L :<C-u>Unite -buffer-name=line line<CR>
 nnoremap <silent> <SID>[unite]m :<C-u>Unite -buffer-name=mru file_mru<CR>
 nnoremap <silent> <SID>[unite]M :<C-u>Unite -buffer-name=mark mark<CR>
 nnoremap <silent> <SID>[unite]o :<C-u>Unite -buffer-name=outline outline<CR>
-nnoremap <silent> <SID>[unite]R :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> <SID>[unite]r :<C-u>Unite -buffer-name=reccursive file_rec<CR>
+nnoremap <silent> <SID>[unite]r :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> <SID>[unite]R :<C-u>Unite -buffer-name=quicklearn quicklearn -immediately<Cr>
 nnoremap <silent> <SID>[unite]s :<C-u>Unite -buffer-name=snippet snippet<CR>
 nnoremap <silent> <SID>[unite]y :<C-u>Unite -buffer-name=yank history/yank<CR>
 nnoremap <silent> <SID>[unite]Q :<C-u>UniteClose<CR>

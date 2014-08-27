@@ -365,10 +365,6 @@
 - kana/vim-fakeclip:
 - vim-scripts/TwitVim:
 - thinca/vim-quickrun:
-    lazy: 1
-    autoload:
-        commands:
-            - QuickRun
 - fuenor/qfixhowm:
     lazy: 1
     autoload:
