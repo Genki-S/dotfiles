@@ -7,12 +7,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# ==================================================
-# Boxen {{{
-# ==================================================
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-# }}}
-
 # Jump into tmux session automatically {{{
 export AUTO_TMUX_SESSION_NAME="genki"
 if [ -z $TMUX ]; then
