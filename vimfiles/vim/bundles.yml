@@ -152,14 +152,6 @@
 
 # Reference {{{
 - rizzatti/dash.vim:
-    lazy: 1
-    autoload:
-        commands:
-            - Dash
-            - DashKeyWords
-            - DashSettings
-        mappings:
-            - <Plug>(Dash
 - thinca/vim-ref:
     lazy: 1
     autoload:
@@ -520,6 +512,15 @@
         filetypes:
             - haml
 - mustache/vim-mustache-handlebars:
+    lazy: 1
+    autoload:
+        filetypes:
+            - hbs
+- evidens/vim-twig:
+    lazy: 1
+    autoload:
+        filetypes:
+            - twig
 ## }}}
 
 ## Scheme {{{
