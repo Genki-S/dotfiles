@@ -5,71 +5,82 @@ delete end
 snippet     mod
 abbr        module...end
 options     head
-    module ${1}
-      ${2}
-    end${0}
+	module ${1}
+	  ${2}
+	end${0}
 
 snippet     desc
 abbr        describe...end
 options     head
-    describe '${1}' do
-      ${2}
-    end${0}
+	describe '${1}' do
+	  ${2}
+	end${0}
 
 snippet     cont
 abbr        context...end
 options     head
-    context '${1}' do
-      ${2}
-    end${0}
+	context '${1}' do
+	  ${2}
+	end${0}
 
 snippet     it
 abbr        it...end
 options     head
-    it '${1}' do
-      ${2}
-    end${0}
+	it '${1}' do
+	  ${2}
+	end${0}
 
 snippet     bef
 abbr        before...end
 options     head
-    before(:${1:all|each}) do
-      ${2}
-    end${0}
+	before(:${1:all|each}) do
+	  ${2}
+	end${0}
 
 snippet     aft
 abbr        after...end
 options     head
-    after(:${1:all|each}) do
-      ${2}
-    end${0}
+	after(:${1:all|each}) do
+	  ${2}
+	end${0}
 
 snippet     wh
 abbr        while...end
 options     head
-    while ${1:condition}
-      ${2}
-    end${0}
+	while ${1:condition}
+	  ${2}
+	end${0}
 
 snippet     do
 abbr        do |v| ... end
-    do |${1:v}|
-      ${2}
-    end${0}
+	do |${1:v}|
+	  ${2}
+	end${0}
 
 snippet     match
 abbr        match to via
 options     head
-    match '/${1}', to: '${2}', via: '${3:get}'${0}
+	match '/${1}', to: '${2}', via: '${3:get}'${0}
 
 snippet     sub
 abbr        subject
 options     head
-    subject { ${1:page} }${0}
+	subject { ${1:page} }${0}
 
 # Capybara
 
 snippet     saop
 abbr        save_and_open_page
 options     head
-    save_and_open_page
+	save_and_open_page
+
+# Rspec
+snippet     exp
+abbr        expect
+options     head
+	expect(${1}).to ${0}
+
+snippet     expeq
+abbr        expect eq
+options     head
+	expect(${1}).to eq(${2})${0}
