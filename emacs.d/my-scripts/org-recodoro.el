@@ -1,7 +1,6 @@
 (require 'org)
 (require 'org-pomodoro)
 (require 'json)
-(require 'request)
 
 ;; * settings
 (setq recodoro-save-dir "~/.org-recodoro")
@@ -46,10 +45,10 @@
     pomodoro))
 
 ;; reflection
-;;  - mood
-(defun make-reflection (mood)
+;;  - evaluation
+(defun make-reflection (evaluation)
   (let ((reflection (make-hash-table :test 'equal)))
-    (puthash "mood" mood reflection)
+    (puthash "evaluation" evaluation reflection)
     reflection))
 
 ;; interruption
@@ -71,11 +70,11 @@
 
 (defun finish-pomodoro ()
   (puthash "finished_at" (formatted-current-time) current-pomodoro)
-  (let ((mood nil) (mood-index nil))
-    (while (not (member mood-index '(1 2 3)))
-           (setq mood-index (string-to-number (read-from-minibuffer "Mood (1: good, 2: so-so, 3: bad): "))))
-    (setq mood (nth mood-index '(nil "good" "so-so" "bad")))
-    (puthash "reflection" (make-reflection mood) current-pomodoro)))
+  (let ((evaluation nil) (evaluation-index nil))
+    (while (not (member evaluation-index '(1 2 3)))
+           (setq evaluation-index (string-to-number (read-from-minibuffer "Evaluation (1: good, 2: so-so, 3: bad): "))))
+    (setq evaluation (nth evaluation-index '(nil "-1" "0" "1")))
+    (puthash "reflection" (make-reflection evaluation) current-pomodoro)))
 
 (defun interrupt-pomodoro ()
   (puthash "interrupted_at" (formatted-current-time) current-pomodoro)
@@ -97,17 +96,13 @@
 
 ;; * POST method
 (defun post-pomodoro ()
-  (let ((data '()))
-    (maphash (lambda (k v)
-               (if (member k '("title" "started_at" "finished_at" "interrupted_at"))
-                 (setq data (cons `(,k . ,v) data))))
-             current-pomodoro)
-    (setq data (cons '("uid" . "681364011953743") data))
-    (request
-     "http://infinite-mountain-2191.herokuapp.com/api/v1/pomodori"
-     :type "POST"
-     :data data
-     :parser 'json-read)))
+  (call-process "curl"
+                nil 0 nil
+                "-HAccept:application/json"
+                "-HContent-type:application/json"
+                "-XPOST"
+                "-d" (json-encode-hash-table current-pomodoro)
+                "http://localhost:3000/api/v1/pomodori"))
 
 ;; * Hook onto org-pomodoro
 (add-hook 'org-pomodoro-started-hook 'start-pomodoro)
