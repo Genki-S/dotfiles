@@ -1,13 +1,65 @@
 let mapleader = ","
 
-" Proxy mappings
-nnoremap pd :proxy direct<CR>:echo "No proxy"<CR>
-nnoremap pw :proxy pac -reload file:///home/genki/waseda.pac<CR>:echo "Waseda proxy"<CR>
+" ==============================
+" Plugins {{{
+" ==============================
+let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins"
+let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,pluginManager,twittperator,copy"
 
-" Mode Changing
-nnoremap v cv
-vnoremap <Esc> <Esc><Esc>
+" lookupDictionary
+nnoremap <Leader>e :eijiro<Space>
+vnoremap E y:eijiro <M-v><CR>
 
+" Twittperator
+let g:twittperator_use_ssl_connection_for_api_ep = 1
+cabbrev -javascript %% " -- " + buffer.title + " " + buffer.URL
+
+" copy.js
+javascript <<EOM
+(function(){
+    liberator.globalVariables.copy_templates = [
+        { label: 'titleAndURL',    value: '%TITLE%\n%URL%' },
+        { label: 'title',          value: '%TITLE%', map: ',y' },
+        { label: 'anchor',         value: '<a href="%URL%">%TITLE%</a>' },
+        { label: 'selanchor',      value: '<a href="%URL%" title="%TITLE%">%SEL%</a>' },
+        { label: 'blockquote', value: '<blockquote cite="%URL%" title="%TITLE%">%HTMLSEL%</blockquote>' },
+        {
+            label: 'orgmode',
+            value: 'copy for orgmode',
+            custom: function() {
+                var title = content.document.title;
+                var url = content.document.location.href;
+                return "[[" + url + "][" + title + "]]";
+            }
+        },
+        {
+            label: 'markdown',
+            value: 'copy for markdown',
+            custom: function() {
+                var title = content.document.title;
+                var url = content.document.location.href;
+                return "[" + title + "](" + url + ")";
+            }
+        },
+    ];
+})();
+EOM
+
+" yy to copy plain url
+nnoremap ya :copy anchor<CR>
+nnoremap yA :copy selanchor<CR>
+nnoremap yt :copy title<CR>
+nnoremap yT :copy titleAndURL<CR>
+nnoremap yq :copy blockquote<CR>
+nnoremap yo :copy orgmode<CR>
+nnoremap ym :copy markdown<CR>
+
+" }}}
+" ==============================
+
+" ==============================
+" Key mappings {{{
+" ==============================
 " For US Keyboard
 nnoremap ; :
 nnoremap : ;
@@ -19,40 +71,62 @@ nnoremap <C-l> :tabmove! +1<CR>
 " Turn css on/off
 nnoremap ! :set invum<CR>
 
+" searching s
+" google
+nnoremap s :tabopen<Space>google<Space>
+" in visual mode, enable to searching with selected phase.
+vmap s y<Esc><Esc>:tabopen<Space>google<Space><C-p><CR>
+
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
 " Search selected text
 vnoremap P y<Esc><Esc>P
 
-set complete=tsl
-set focuscontent
-set hintchars=asdfghjkl
-
-" Styling
-highlight -append Hint font-size: 14px;
-
-" Plugins
-let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins"
-let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,pluginManager,twittperator"
-
-" Twittperator
-let g:twittperator_use_ssl_connection_for_api_ep = 1
-cabbrev -javascript %% " -- " + buffer.title + " " + buffer.URL
-
 " Pocket http://d.ktmtt.com/-/2014/02/23/firefox-vimperator-pocket/
 command! pocket echo RIL.addCurrent() !== false ? 'Success' : 'Failed (or already clipped?)'
 nnoremap <Leader>p :pocket<CR>
 
-" For orgmode
-command! CopyForOrg js util.copyToClipboard("[[" + buffer.URL + "][" + buffer.title + "]]", true)
-nnoremap <Leader>y :CopyForOrg<CR>
-
 " Reload .vimperatorrc
 nnoremap <Leader>R :source ~/.vimperatorrc<CR>
 
-nnoremap <Leader>,e :eijiro 
-vnoremap E y:eijiro <M-v><CR>
-nmap <Leader>e chbveE
+" }}}
+" ==============================
 
-" vim: set ft=vim:
+" ==============================
+" Settings {{{
+" ==============================
+set complete=sl
+set focuscontent
+set defsearch=google
+set hintchars=asdfghjkl
+" no sound
+set visualbell
+highlight Bell display:none
+" https://support.mozilla.org/en-US/kb/accessibility-features-firefox-make-firefox-and-we#w_html-access-keys
+set! ui.key.generalAccessKey=0
+" make caret bold: http://coderepos.org/share/browser/dotfiles/vimperator/snaka-vimperatorrc
+set! ui.caretWidth=8
+" }}}
+" ==============================
+
+" ==============================
+" Default qmarks {{{
+" ==============================
+" rule: lowercase letters are reserved for default marks
+qmark m https://mail.google.com/
+qmark s https://www.google.com/calendar/render?pli=1
+qmark r http://feedly.com/#my
+qmark f https://www.facebook.com/
+qmark a http://www.amazon.co.jp/
+qmark c http://cookpad.com/
+qmark g https://github.com/
+qmark w https://www.wnp.waseda.jp/portal/portal.php
+qmark l http://www.wul.waseda.ac.jp/
+" }}}
+" ==============================
+
+" reload message
+echo "vimperator: Welcome back."
+
+" vim: set ft=vim fdm=marker:
