@@ -50,4 +50,4 @@ nmap <ESC> :Escape
 nmap <C-[> :Escape
 nmap ,z :ToggleImageSize
 
-nmap <SPACE>m :TabOpenNew https://mail.google.com/mail/#inbox
+nmap gnm :TabOpenNew https://mail.google.com/mail/#inbox
