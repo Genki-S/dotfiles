@@ -1,5 +1,9 @@
 let mapleader = ","
 
+" https://github.com/suzuken/dotfiles/blob/master/vimperatorrc
+" he's just awesome! it's a real solarized!
+colorscheme solarized
+
 " ==============================
 " Plugins {{{
 " ==============================
