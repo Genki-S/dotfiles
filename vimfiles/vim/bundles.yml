@@ -99,6 +99,11 @@
         commands:
             - Join
 - tommcdo/vim-exchange:
+- scrooloose/syntastic:
+    lazy: 1
+    autoload:
+        commands:
+            - SyntasticCheck
 
 ## Completion {{{
 - Shougo/neocomplete:
