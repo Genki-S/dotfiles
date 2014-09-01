@@ -2,11 +2,32 @@
 (require 'org-pomodoro)
 (require 'json)
 
-;; * settings
-(setq recodoro-save-dir "~/.org-recodoro")
+(defconst org-recodoro "0.0.1"
+  "The version of the org-recodoro lisp code.")
+
+(defgroup org-recodoro nil
+  "Record your pomodoro through API and see your achievements."
+  :prefix "org-recodoro-"
+  :group 'tools)
+
+(defcustom org-recodoro-api-server "http://infinite-mountain-2191.herokuapp.com/api/v1/pomodori"
+  "Recodoro Api server."
+  :type '(string)
+  :group 'org-recodoro)
+
+(defcustom org-recodoro-uid ""
+  "Recodoro User id."
+  :type '(string)
+  :group 'org-recodoro)
+
+(defcustom org-recodoro-save-dir "~/.org-recodoro"
+  "Save response distination."
+  :type '(directory)
+  :group 'org-recodoro)
+
 
 ;; * initialization
-(make-directory recodoro-save-dir t)
+(make-directory org-recodoro-save-dir t)
 
 ;; * helper functions
 (defun formatted-current-time ()
@@ -16,7 +37,7 @@
   (format-time-string "%Y-%m-%d" (current-time)))
 
 (defun save-file-path ()
-  (concat recodoro-save-dir "/" (formatted-current-date) ".json"))
+  (concat org-recodoro-save-dir "/" (formatted-current-date) ".json"))
 
 ;; * models
 
