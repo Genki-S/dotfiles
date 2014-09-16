@@ -39,6 +39,11 @@ inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 "}}}
 
+" Visual mode mappings {{{
+" search with selection
+vnoremap * "zy:let @/ = @z<CR>n
+" }}}
+
 " Next Text Object {{{
 onoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
 xnoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
