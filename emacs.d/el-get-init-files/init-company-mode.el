@@ -1,7 +1,7 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'company-mode-hook
           (lambda ()
-            (add-to-list 'company-backends '(company-yasnippet company-ispell))))
+            (add-to-list 'company-backends '(company-yasnippet))))
 
 ;; dirty hack to change company-active-map
 (defvar company-active-map
