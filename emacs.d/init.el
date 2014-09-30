@@ -72,7 +72,7 @@
     evil
     evil-leader
     evil-surround
-    xml-rpc
+    xml-rpc-el
     metaweblog
     org2blog
     wc-mode
