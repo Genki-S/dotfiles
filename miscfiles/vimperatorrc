@@ -4,6 +4,9 @@ let mapleader = ","
 " he's just awesome! it's a real solarized!
 colorscheme solarized
 
+" minor change to the solarized
+hi -append Hint background-color: rgba(0, 43, 54, 0.5); color: #fff;
+
 " ==============================
 " Plugins {{{
 " ==============================
