@@ -98,6 +98,24 @@ nnoremap <Leader>R :source ~/.vimperatorrc<CR>
 " ==============================
 
 " ==============================
+" Commands {{{
+" ==============================
+javascript <<EOM
+liberator.modules.commands.addUserCommand(["togglepin"], "add pin to current tab",
+function(){
+    var currentTab = gBrowser.mCurrentTab
+    if(currentTab.pinned){
+        gBrowser.unpinTab(currentTab)
+    }
+    else{
+        gBrowser.pinTab(currentTab)
+    }
+});
+EOM
+" }}}
+" ==============================
+
+" ==============================
 " Settings {{{
 " ==============================
 set complete=sl
