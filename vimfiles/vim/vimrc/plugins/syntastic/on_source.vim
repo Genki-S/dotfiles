@@ -4,3 +4,5 @@ let g:syntastic_mode_map = {
 	\ 'active_filetypes': [],
 	\ 'passive_filetypes': []
 \}
+
+let g:syntastic_javascript_checkers = ['jshint', 'jslint']
