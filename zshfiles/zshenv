@@ -31,3 +31,6 @@ if [[ ! -o NORCS ]]; then
 		source $HOME/dotfiles/zshfiles/envfiles/$f
 	done
 fi
+
+# Load local zshenv
+[ -f $HOME/.zshenv.local ] && source $HOME/.zshenv.local
