@@ -5,6 +5,9 @@ nnoremap M :make<Enter>
 " Q closes.
 nnoremap Q :<C-u>q<CR>
 
+" close tab
+nnoremap <C-w>Q :tabclose<CR>
+
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 " tip: gv selects last selection again
