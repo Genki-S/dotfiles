@@ -32,6 +32,8 @@ install gauche
 install highlight
 install jq
 install jsonpp
+install fortune
+install cowsay
 
 tap peco/peco
 install migemogrep
