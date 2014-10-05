@@ -397,6 +397,7 @@
             - junkfile
             - junkfile/new
 - mhinz/vim-startify:
+- mhinz/vim-randomtag:
 # }}}
 
 # Filetype Specific {{{
