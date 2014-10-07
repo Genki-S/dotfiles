@@ -15,11 +15,11 @@ function git-myinit() {
   git hooks --install
 }
 
-function plrq() {
+function preq() {
   local save_git_editor=$GIT_EDITOR
 
-  export GIT_EDITOR="$HOME/dotfiles/bin/plrq-editor"
-  git pull-request $*
+  export GIT_EDITOR="$HOME/dotfiles/bin/preq-editor"
+  git pull-request $* --browse
   GIT_EDITOR=$save_git_editor
   if [[ -z $GIT_EDITOR ]]; then
     unset GIT_EDITOR

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+preq_template="$HOME/.preq_template"
+preq_editmsg="`git root`/.git/PULLREQ_EDITMSG"
+
+if [ -f $preq_template ]; then
+  cat $preq_template >> $preq_editmsg
+fi
+vim -c 'set ft=gitcommit' $*
+
+# Backup
+cp $preq_editmsg ${preq_editmsg}.bk
+
+# Check if there are no check miss
+grep '^#\[ \]' $preq_editmsg &> /dev/null
+if [[ $? -eq 0 ]]; then
+  echo "Insufficient check with pull request message." >&2
+  exit 1
+else
+  exit 0
+fi
