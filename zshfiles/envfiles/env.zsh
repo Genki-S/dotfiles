@@ -5,6 +5,7 @@ export WIDGETDIR=$DOTDIR/zshfiles/rcfiles/widgets
 # Preferences
 export TERM=xterm-256color
 export EDITOR=vim
+export GIT_EDITOR=vim
 
 # Locale
 export LANG=en_US.UTF-8
