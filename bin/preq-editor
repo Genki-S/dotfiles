@@ -12,7 +12,7 @@ vim -c 'set ft=gitcommit' $*
 cp $preq_editmsg ${preq_editmsg}.bk
 
 # Check if there are no check miss
-grep '^#\[ \]' $preq_editmsg &> /dev/null
+grep '^#\s*\[ \]' $preq_editmsg &> /dev/null
 if [[ $? -eq 0 ]]; then
   echo "Insufficient check with pull request message." >&2
   exit 1
