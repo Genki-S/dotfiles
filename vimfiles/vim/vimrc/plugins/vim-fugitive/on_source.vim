@@ -34,3 +34,9 @@ function! Genki_echo_commit_message()
 		execute 'lcd' dir
 	endtry
 endfunction
+
+function! Fugitive_open_pull_request()
+	let rev = fugitive#buffer().rev()
+	call system('git prbrowse ' . rev . ' &') " run in background because it can be slow
+endfunction
+command! Gprbrowse call Fugitive_open_pull_request()
