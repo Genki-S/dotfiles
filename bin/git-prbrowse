@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 COMMIT_SHA"
+  exit 1
+fi
+
+merge_sha=`git when-merged $1 | awk '{ print $2 }'`
+pr_id=`git show $merge_sha | grep 'pull request' | grep -o '#\d*' | tr -d '#'`
+repo=`hub browse -u | sed 's@/tree.*@@'`
+open "${repo}/pull/${pr_id}"
