@@ -81,4 +81,5 @@ alias gprb="git pulls browse"
 alias gprm="git pulls merge"
 
 # Tig settings
+alias tigb="tig master..HEAD" # see branch commits
 TIG_LS_REMOTE="git ls-remote ."
