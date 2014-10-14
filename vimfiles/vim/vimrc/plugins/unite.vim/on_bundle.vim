@@ -14,7 +14,7 @@ nnoremap <silent> <SID>[unite]f :<C-u>UniteWithBufferDir -buffer-name=file file<
 nnoremap <expr> <silent> <SID>[unite]F ":<C-u>Unite -buffer-name=file -input=" . expand("%:p:r:r:r") . " file<CR>"
 nnoremap <SID>[unite]h :<C-u>Unite -buffer-name=history history/
 nnoremap <silent> <SID>[unite]H :<C-u>Unite -buffer-name=help help<CR>
-nnoremap <silent> <SID>[unite]l :<C-u>Unite -buffer-name=lazy_bundles neobundle/lazy<CR>
+nnoremap <silent> <SID>[unite]l :<C-u>Unite -buffer-name=location_list location_list<CR>
 nnoremap <silent> <SID>[unite]L :<C-u>Unite -buffer-name=line line<CR>
 nnoremap <silent> <SID>[unite]m :<C-u>Unite -buffer-name=mru file_mru<CR>
 nnoremap <silent> <SID>[unite]M :<C-u>Unite -buffer-name=mark mark<CR>
@@ -23,6 +23,7 @@ nnoremap <silent> <SID>[unite]r :<C-u>Unite -buffer-name=file_rec file_rec/async
 nnoremap <silent> <SID>[unite]R :<C-u>Unite -buffer-name=quicklearn quicklearn -immediately<Cr>
 nnoremap <silent> <SID>[unite]s :<C-u>Unite -buffer-name=snippet snippet<CR>
 nnoremap <silent> <SID>[unite]y :<C-u>Unite -buffer-name=yank history/yank<CR>
+nnoremap <silent> <SID>[unite]q :<C-u>Unite -buffer-name=quickfix quickfix<CR>
 nnoremap <silent> <SID>[unite]Q :<C-u>UniteClose<CR>
 nnoremap <silent> <SID>[unite]<Space> :<C-u>Unite -buffer-name=source source<CR>
 

@@ -260,6 +260,12 @@
     build:
         mac: bundle
         unix: bundle
+- osyo-manga/unite-quickfix:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - quickfix
+            - location_list
 - Genki-S/vim-unite-giti:
     lazy: 1
     autoload:
