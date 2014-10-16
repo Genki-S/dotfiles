@@ -55,6 +55,8 @@ endif
 call neobundle#rc(expand('~/.vim/bundles'))
 
 " Let neobundle manage neobundle
+" FIXME: 09ead8 makes something wrong for me
+"        now using c4321b, please manually checkout in ~/.vim/bundles/neobundle.vim
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Manual plugins
