@@ -294,6 +294,7 @@
     autoload:
         commands:
             - Gitv
+- tpope/vim-git:
 # }}}
 
 # Visual {{{
