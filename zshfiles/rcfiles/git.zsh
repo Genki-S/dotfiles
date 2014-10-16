@@ -10,11 +10,6 @@ function git() {
 
 alias git-root="git rev-parse --show-toplevel"
 
-function git-myinit() {
-  git flow init
-  git hooks --install
-}
-
 function preq() {
   local save_git_editor=$GIT_EDITOR
 
@@ -83,3 +78,58 @@ alias gprm="git pulls merge"
 # Tig settings
 alias tigb="tig master..HEAD" # see branch commits
 TIG_LS_REMOTE="git ls-remote ."
+
+# Helper functions
+function git-myinit() {
+  git flow init
+  git hooks --install
+}
+
+function delete_local_merged_branches() {
+  git branch --merged master | grep -v master | xargs git branch -d
+}
+
+function delete_remote_merged_branches() {
+  git fetch origin
+  git remote prune origin
+
+  for BRANCH in `git branch -r --merged origin/master |\
+                 egrep "^\s*origin/"                  |\
+                 grep -v master                       |\
+                 grep chrishunt                       |\
+                 cut -d/ -f2-`
+  do
+    git push origin :$BRANCH
+  done
+}
+
+function weekly_summary() {
+  LAST_WEEK=$(date -v-7d +%m/%d)
+
+  STATS=$(
+    git log --since=1.week --oneline |
+    tail -n 1                        |
+    awk '{ print $1 }'               |
+    xargs git diff --shortstat
+  )
+
+  FEATURES=$(
+    git log --since=1.week --oneline |
+    egrep "Merge (pull|branch) "
+  )
+
+  FEATURES_COUNT=$(
+    echo "$FEATURES" |
+    sed '/^\s*$/d'   |
+    wc -l            |
+    awk '{ print $1 }'
+  )
+
+  echo "Stats ($LAST_WEEK - Today)"
+  echo "---------------------"
+  echo "$STATS"
+  echo
+  echo "Features ($FEATURES_COUNT)"
+  echo "-------------"
+  echo "$FEATURES"
+}

@@ -8,6 +8,7 @@ source ~/.vim/vimrc/functions.vim
 source ~/.vim/vimrc/commands.vim
 source ~/.vim/vimrc/autocmds.vim
 source ~/.vim/vimrc/mappings.vim
+source ~/.vim/vimrc/highlights.vim
 
 source ~/.vim/neobundle.vim
 

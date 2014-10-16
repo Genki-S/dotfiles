@@ -3,6 +3,9 @@ load "#{ENV['HOME']}/dotfiles/submodules/yadr/irb/pryrc"
 # Encoding
 Encoding.default_external = "UTF-8"
 
+# Aliases
+Pry.commands.alias_command 'w', 'whereami'
+
 # Custom commands
 custom_command_set = Pry::CommandSet.new do
   command 'saop', 'save_and_open_page' do |str|
