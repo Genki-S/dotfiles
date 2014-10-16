@@ -148,6 +148,7 @@
             - LAg
 - justinmk/vim-sneak:
 - vim-scripts/matchit.zip:
+- wellle/targets.vim:
 # }}}
 
 # Debugging {{{

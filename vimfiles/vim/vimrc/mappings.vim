@@ -47,28 +47,6 @@ inoremap <C-w> <C-g>u<C-w>
 vnoremap * "zy:let @/ = @z<CR>n
 " }}}
 
-" Next Text Object {{{
-onoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
-xnoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
-onoremap in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
-xnoremap in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
-onoremap aL :<c-u>call <SID>NextTextObject('a', 'F')<cr>
-xnoremap aL :<c-u>call <SID>NextTextObject('a', 'F')<cr>
-onoremap iL :<c-u>call <SID>NextTextObject('i', 'F')<cr>
-xnoremap iL :<c-u>call <SID>NextTextObject('i', 'F')<cr>
-function! s:NextTextObject(motion, dir)
-	let c = nr2char(getchar())
-	if c ==# "b"
-		let c = "("
-	elseif c ==# "B"
-		let c = "{"
-	elseif c ==# "d"
-		let c = "["
-	endif
-	exe "normal! ".a:dir.c."v".a:motion.c
-endfunction
-"}}}
-
 " make & trigger :&& so it preserves flags
 nnoremap & :&&<Enter>
 xnoremap & :&&<Enter>
