@@ -540,6 +540,16 @@
     autoload:
         filetypes:
             - twig
+- tpope/vim-jdaddy:
+    lazy: 1
+    autoload:
+        filetypes:
+            - json
+- elzr/vim-json:
+    lazy: 1
+    autoload:
+        filetypes:
+            - json
 ## }}}
 
 ## Scheme {{{
