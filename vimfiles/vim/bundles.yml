@@ -406,6 +406,11 @@
             - junkfile/new
 - mhinz/vim-startify:
 - mhinz/vim-randomtag:
+- tpope/vim-capslock:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>CapsLockToggle
 # }}}
 
 # Filetype Specific {{{
