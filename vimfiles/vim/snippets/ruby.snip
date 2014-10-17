@@ -74,6 +74,11 @@ abbr        save_and_open_page
 options     head
 	save_and_open_page
 
+snippet     saob
+abbr        save_and_open_body
+options     head
+	f = Tempfile.new(['body', '.html']); f.write(response.body); system("open #{f.path}");
+
 # Rspec
 snippet     exp
 abbr        expect
