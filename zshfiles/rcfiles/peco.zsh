@@ -28,3 +28,4 @@ function pbsearch() {
 };
 zle -N pbsearch
 bindkey '^[p' pbsearch
+alias pbs="pbsearch"
