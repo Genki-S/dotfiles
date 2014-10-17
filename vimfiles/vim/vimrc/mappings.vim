@@ -45,6 +45,8 @@ inoremap <C-w> <C-g>u<C-w>
 " Visual mode mappings {{{
 " search with selection
 vnoremap * "zy:let @/ = @z<CR>n
+vnoremap <Leader>G "zy:Google <C-r>"<CR>
+vnoremap <Leader>E "zy:Ref webdict alc <C-r>"<CR>
 " }}}
 
 " make & trigger :&& so it preserves flags
