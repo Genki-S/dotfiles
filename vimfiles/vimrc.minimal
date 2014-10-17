@@ -6,7 +6,8 @@ let mapleader = ','
 " nnoremap \ ,
 " noremap : ;
 noremap ; :
-noremap q; q:
+cnoremap <C-o> <C-f>
+" noremap q; q: " don't use this, it makes quit mappings wait
 "}}}
 
 command! Custom execute 'source' expand('~/.vimrc')
