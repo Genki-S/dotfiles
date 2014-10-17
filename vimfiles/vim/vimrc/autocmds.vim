@@ -7,6 +7,17 @@ augroup vimrc
 		\ if line("'\"") > 0 && line("'\"") <= line("$") |
 		\   exe "normal g`\"" |
 		\ endif
+	" Auto make directories on save
+	autocmd BufWritePre,FileWritePre *
+		\ if !isdirectory(expand("<afile>:p:h")) |
+		\   call mkdir(expand("<afile>:p:h"), "p") |
+		\ endif
+	autocmd FileType gitrebase
+		\ nnoremap <buffer> p :Pick<CR>|
+		\ nnoremap <buffer> s :Squash<CR>|
+		\ nnoremap <buffer> e :Edit<CR>|
+		\ nnoremap <buffer> r :Reword<CR>|
+		\ nnoremap <buffer> f :Fixup<CR>
 augroup END
 
 augroup vimrc_plugins

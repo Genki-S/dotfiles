@@ -158,3 +158,11 @@ function! Genki_dump_variable(var_name)
 	" http://stackoverflow.com/questions/2573021/how-to-redirect-ex-command-output-into-current-buffer-or-file
 	call append('.', split(var_content, "\n"))
 endfunction
+
+function! Genki_follow_symlink(...)
+  let fname = fnameescape(a:0 ? a:1 : expand('%'))
+  if getftype(fname) == 'link'
+    bwipeout #
+    exec 'silent! edit ' . fnameescape(fnamemodify(resolve(fname), ':p'))
+  endif
+endfunction
