@@ -39,3 +39,6 @@ nnoremap <silent> <SID>[unite]gc :<C-u>Unite -buffer-name=giti giti/config<CR>
 nnoremap <silent> <SID>[unite]gl :<C-u>Unite -buffer-name=giti giti/log<CR>
 nnoremap <silent> <SID>[unite]gr :<C-u>Unite -buffer-name=giti giti/remote<CR>
 nnoremap <silent> <SID>[unite]gs :<C-u>Unite -buffer-name=giti giti/status<CR>
+
+" unite-ghq
+nnoremap <silent> <SID>[unite]G :<C-u>Unite -buffer-name=ghq ghq<CR>

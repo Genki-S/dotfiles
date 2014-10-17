@@ -279,6 +279,11 @@
             - giti/remote
             - giti/status
 - osyo-manga/shabadou.vim:
+- haya14busa/unite-ghq:
+    lazy: 1
+    autoload:
+        unite_sources:
+            - ghq
 # }}}
 
 # Git {{{
