@@ -82,7 +82,7 @@ nnoremap ! :set invum<CR>
 " google
 nnoremap s :tabopen<Space>google<Space>
 " in visual mode, enable to searching with selected phase.
-vmap s y<Esc><Esc>:tabopen<Space>google<Space><C-p><CR>
+vnoremap s y<Esc><Esc>:tabopen<Space>google<Space><S-Insert><CR>
 
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
@@ -96,6 +96,12 @@ nnoremap <Leader>p :pocket<CR>
 
 " Reload .vimperatorrc
 nnoremap <Leader>R :source ~/.vimperatorrc<CR>
+
+" Mode navigation
+nnoremap v :nohlsearch<CR>ccv
+" remove heighligt in caret-mode because it mkaes hard to see my cursor
+nnoremap c :nohlsearch<CR>c
+vnoremap <Esc> <Esc><Esc>
 
 " }}}
 " ==============================
