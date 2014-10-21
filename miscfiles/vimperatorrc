@@ -45,7 +45,13 @@ javascript <<EOM
             custom: function() {
                 var title = content.document.title;
                 var url = content.document.location.href;
-                return "[" + title + "](" + url + ")";
+                var imageExtensions = ['png', 'jpg'];
+                var re = new RegExp('(' + imageExtensions.join('|') + ')$');
+                if (re.test(url)) {
+                    return "![" + title + "](" + url + ")";
+                } else {
+                    return "[" + title + "](" + url + ")";
+                }
             }
         },
     ];
