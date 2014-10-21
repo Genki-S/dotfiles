@@ -28,4 +28,5 @@ fi
 fpath=(
 	$fpath
 	$WIDGETDIR
+	~/dotfiles/zshfiles/functions
 )

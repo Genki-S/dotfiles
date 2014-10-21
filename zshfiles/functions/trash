@@ -1,0 +1,23 @@
+if ! [[ -d $HOME/.Trash/ ]]; then
+  mkdir $HOME/.Trash
+fi
+
+zmodload zsh/datetime
+local file basename name time
+
+for file in $*; do
+  if [[ -e $file ]]; then
+    name=$(basename $file)
+
+    if [[ -e $HOME/.Trash/$name ]]; then
+      strftime -s time "%Y-%m-%d %H:%M:%S" $EPOCHSECONDS
+      name="$name $time"
+    fi
+
+    mv $file $HOME/.Trash/$name
+  else
+    echo "No such file or directory: $file"
+  fi
+done
+
+# vim: filetype=zsh

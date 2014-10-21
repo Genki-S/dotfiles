@@ -96,6 +96,16 @@ do
 	source $DOTDIR/zshfiles/rcfiles/$f
 done
 
+function load-my-functions() {
+  for file in ~/dotfiles/zshfiles/functions/*(:t); do
+    if (( $+functions[$file] )); then
+      unfunction $file
+    fi
+    autoload -Uz $file
+  done
+}
+load-my-functions
+
 # Hooks
 # add-zsh-hook precmd initializer_trigger
 
