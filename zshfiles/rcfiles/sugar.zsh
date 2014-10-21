@@ -1,9 +1,6 @@
 # prevent silent overwriting
 alias mv="mv -i"
 
-# prevent accidental removal
-alias rm="trash"
-
 alias ls="ls --color --classify"
 alias l="ls"
 alias la="ls -a"
