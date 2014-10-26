@@ -76,6 +76,7 @@ template<class T> inline string toString(T x) { ostringstream sout; sout<<x; ret
 #define ALL(a) (a).begin(), (a).end()
 #define RALL(a) (a).rbegin(), (a).rend()
 #define EACH(c, it) for(typeof((c).begin()) it=(c).begin(); it!=(c).end(); ++it)
+#define REACH(c, it) for(typeof((c).rbegin()) it=(c).rbegin(); it!=(c).rend(); ++it)
 #define EXIST(s, e) ((s).find(e) != (s).end())
 // }}}
 // bit manipulation {{{
