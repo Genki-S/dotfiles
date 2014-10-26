@@ -84,9 +84,9 @@ template<class T> inline string toString(T x) { ostringstream sout; sout<<x; ret
 #define IS_UNSIGNED(n) (!numeric_limits<typeof(n)>::is_signed)
 #define BIT(n) (assert(IS_UNSIGNED(n)), assert(n < 64), (1ULL << (n)))
 #define BITOF(n, m) (assert(IS_UNSIGNED(n)), assert(m < 64), ((ULL)(n) >> (m) & 1))
-inline int make_mask(ULL upper, ULL lower) { assert(lower < 64 && upper < 64 && lower <= upper); return (BIT(upper) - 1) ^ (BIT(lower) - 1); }
-inline int onbits_count(ULL b) { int c = 0; while(b != 0) { c += (b & 1); b >>= 1; } return c; }
-inline int bits_count(ULL b) { int c = 0; while(b != 0) { ++c; b >>= 1; } return c; }
+inline int BITS_COUNT(ULL b) { int c = 0; while(b != 0) { c += (b & 1); b >>= 1; } return c; }
+inline int MSB(ULL b) { int c = 0; while(b != 0) { ++c; b >>= 1; } return c-1; }
+inline int MAKE_MASK(ULL upper, ULL lower) { assert(lower < 64 && upper < 64 && lower <= upper); return (BIT(upper) - 1) ^ (BIT(lower) - 1); }
 // }}}
 // for readable code {{{
 #define EVEN(n) (n % 2 == 0)
