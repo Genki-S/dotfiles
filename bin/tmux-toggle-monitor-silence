@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# toggle monitor-silence option of current window.
+# useful for waiting long installs.
+
+if [ $# -ne 1 ]; then
+	echo "Usage: $0 INTERVAL"
+	exit 1
+fi
+
+interval=$1
+current=`tmux show-window-options | grep 'monitor-silence' | awk '{ print $2 }'`
+
+if [ $current -eq 0 ]; then
+	tmux set-window-option monitor-silence $interval
+else
+	tmux set-window-option monitor-silence 0
+fi
