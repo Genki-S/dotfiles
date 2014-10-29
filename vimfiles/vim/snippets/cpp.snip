@@ -1,6 +1,14 @@
 include c.snip
 include programming_contest.snip
 
+snippet     maina
+abbr        main with args
+options     head
+	int main(int argc, char *argv[])
+	{
+		${0}
+	}
+
 snippet inc
 abbr include<>
 	#include <${1:iostream}>${0:TARGET}
