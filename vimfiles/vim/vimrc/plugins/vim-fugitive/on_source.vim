@@ -43,7 +43,7 @@ function! Fugitive_open_pull_request()
 		" maybe in blame mode
 		let rev = matchstr(getline('.'),'\x\+')
 	endif
-	let revision_minimum_required_chars = 9
+	let revision_minimum_required_chars = 6
 	if strchars(rev) < revision_minimum_required_chars
 		echoerr 'Use this in either blame or commit view'
 		return
