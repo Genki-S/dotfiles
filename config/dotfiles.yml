@@ -11,6 +11,7 @@
 - gitfiles:
     - gitconfig
     - gitignore_global
+    - git_template_dir
     - git_hooks
     - tigrc
 - miscfiles:
