@@ -36,7 +36,19 @@ function! Genki_echo_commit_message()
 endfunction
 
 function! Fugitive_open_pull_request()
-	let rev = fugitive#buffer().rev()
+	let buf = fugitive#buffer()
+	if buf.type() ==# 'commit'
+		let rev = fugitive#buffer().rev()
+	else
+		" maybe in blame mode
+		let rev = matchstr(getline('.'),'\x\+')
+	endif
+	let revision_minimum_required_chars = 9
+	if strchars(rev) < revision_minimum_required_chars
+		echoerr 'Use this in either blame or commit view'
+		return
+	endif
 	call system('git prbrowse ' . rev . ' &') " run in background because it can be slow
+	echo 'Opening pull request...'
 endfunction
 command! Gprbrowse call Fugitive_open_pull_request()
