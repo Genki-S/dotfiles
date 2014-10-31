@@ -4,8 +4,8 @@ unalias git
 
 # Use hub
 function git() {
-	hub $*
-	__EXECUTED_GIT_COMMAND=1
+  hub $*
+  __EXECUTED_GIT_COMMAND=1
 }
 
 alias git-root="git rev-parse --show-toplevel"
