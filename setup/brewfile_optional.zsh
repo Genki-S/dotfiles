@@ -39,6 +39,7 @@ casks=(
   mactex
   mendeley-desktop
   cloudytabs
+  licecap
 )
 
 for c in $casks; do
