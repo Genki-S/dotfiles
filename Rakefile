@@ -8,13 +8,61 @@ DOTDIR = "#{HOME}/dotfiles"
 
 desc 'Do the best.'
 task :install => [
+  :install_homebrew,
+  :install_ruby,
   :init_submodules,
   :update_submodules,
   :update_injection,
+  :brew_essentials,
   :orgmode,
-  :go_get,
-  :ghq_get,
+  :setup_osx,
   :deploy ] do
+  puts 'changing login shell...'
+  shell = '/usr/local/bin/zsh'
+  run %{
+    grep #{shell} /etc/shells > /dev/null || echo #{shell} | sudo tee -a /etc/shells > /dev/null
+  }
+  run %{ chsh -s #{shell} }
+  puts 'run `rake bundle_up` after logging in with zsh'
+end
+
+desc 'Install softwares'
+task :bundle_up => [
+  :brew_optionals,
+  :go_get,
+  :ghq_get] do
+end
+
+desc 'install homebrew'
+task :install_homebrew do
+  puts 'Installing Homebrew...'
+  run %{ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" }
+  run %{ brew doctor }
+end
+
+desc 'install essential brew packages'
+task :brew_essentials do
+  run %{ zsh setup/brewfile.zsh }
+end
+
+desc 'install optional brew packages'
+task :brew_optionals do
+  run %{ zsh setup/brewfile_optional.zsh }
+end
+
+desc 'setup osx'
+task :setup_osx do
+  run %{ ./setup/setup_osx }
+end
+
+
+desc 'install ruby'
+task :install_ruby do
+  puts 'Installing Ruby...'
+  run %{ brew install rbenv ruby-build }
+  run %{ rbenv install 2.1.3 } # TODO: ask version to user
+  run %{ rbenv rehash }
+  run %{ rbenv global 2.1.3 }
 end
 
 desc 'Deploy dotfiles and other files.'
@@ -49,7 +97,7 @@ end
 desc 'Prepare Orgmode'
 task :orgmode do
   my_ln("#{HOME}/Dropbox/org", "#{HOME}/org")
-  run %{ touch "$HOME/custom.el" }
+  run %{ touch "$HOME/.emacs.d/custom.el" }
 end
 
 desc 'Prepare Go packages'

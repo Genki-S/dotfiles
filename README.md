@@ -1,14 +1,19 @@
-# Dotfiles
+# Dear me
 
-My setting files.
+This is an instruction to set up your brand new Mac.
+Have fun :)
 
-## Installation
+# Automatic Installs
 
-### Prerequisits
-* the\_silver\_searcher
-* hub
+## Install essentials
 
-### Install vendor applications
+- `rake install`
+- open up another shell (which should be zsh)
+- `rake bundle_up`
+
+TODO: remove downloads of non-essentials and speed up
+
+## Install vendor applications
 
 ```
 vim -u ~/dotfiles/vendor/neovendor.vim
@@ -16,20 +21,15 @@ vim -u ~/dotfiles/vendor/neovendor.vim
 
 Installs in `~/vendor`.
 
-### Install gems
+# Manual Installations
 
-```
-bundle install
-```
+## Mac Apps
 
-### Install Task
+- open App Store
+- install purchased Apps
 
-```
-rake install
-```
+## Firefox Addons
 
-I hope this works.
-
-### Manual Installations
-
-* [dotjs for Firefox](https://github.com/rlr/dotjs-addon)
+- Vimperator
+- Firebug
+- dotjs
