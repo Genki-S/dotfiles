@@ -78,6 +78,20 @@ if is_mac; then
 			fi
 		fi
 	}
+	alias bcs="brew cask search"
+	function bci() {
+		if [ $# -gt 0 ]; then
+			brew cask install $*
+		else
+			last_command=$history[$[HISTCMD-1]]
+			last_command_array=("${(s/ /)last_command}")
+			if [ "$last_command_array[1]" = "bcs" ]; then
+				brew cask install $last_command_array[-1]
+			else
+				brew cask install
+			fi
+		fi
+	}
 	alias bdr="cd $(brew --repository)"
 	alias bdc="cd $(brew --cellar)"
 
