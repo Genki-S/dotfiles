@@ -12,5 +12,8 @@ let g:quickrun_config = {
 \       "outputter/buffer/split" : ":botright 18sp",
 \       "runner" : "vimproc",
 \       "runner/vimproc/updatetime" : 40,
-\   }
+\   },
+\   "javascript" : {
+\       "type" : "javascript/nodejs",
+\   },
 \}
