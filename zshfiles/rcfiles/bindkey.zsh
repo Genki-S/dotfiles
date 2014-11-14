@@ -108,6 +108,9 @@ bindkey '^n' history-substring-search-down
 bindkey '^r' history-incremental-pattern-search-backward
 bindkey '^s' history-incremental-pattern-search-forward
 
+# do it here because zsh-super-vim-mode cancels oh-my-zsh
+bindkey '^I' expand-or-complete-with-dots
+
 # Use <C-@> to edit command line with $EDITOR
 autoload edit-command-line
 zle -N edit-command-line
@@ -136,5 +139,6 @@ bindkey '/' global-expansion-home-dir
 bindkey '^r' history-incremental-preserving-pattern-search-backward
 bindkey -M isearch '^r' history-incremental-pattern-search-backward
 bindkey '^s' history-incremental-pattern-search-forward
+bindkey -M vicmd '^t' transpose-words
 
 # Tip: press <C-v><key> to get <key>'s keycode
