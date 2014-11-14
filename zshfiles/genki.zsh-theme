@@ -1,3 +1,5 @@
+# `man zshmisc` EXPANSION OF PROMPT SEQUENCES
+
 local return_status="%{$fg[red]%}%(?..✘)%{$reset_color%}"
 
 PROMPT='
