@@ -6,6 +6,8 @@ colorscheme solarized
 
 " minor change to the solarized
 hi -append Hint background-color: rgba(0, 43, 54, 0.5); color: #fff;
+" make hint appear the most front
+hi -append Hint z-index: 9999;
 
 " ==============================
 " Plugins {{{
