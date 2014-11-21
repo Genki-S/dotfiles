@@ -166,3 +166,7 @@ function! Genki_follow_symlink(...)
     exec 'silent! edit ' . fnameescape(fnamemodify(resolve(fname), ':p'))
   endif
 endfunction
+
+function! Genki_chmod(mode, file)
+  execute "silent !chmod" a:mode a:file
+endfunction

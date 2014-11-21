@@ -18,6 +18,10 @@ augroup vimrc
 		\ nnoremap <buffer> e :Edit<CR>|
 		\ nnoremap <buffer> r :Reword<CR>|
 		\ nnoremap <buffer> f :Fixup<CR>
+	autocmd BufWritePost *
+		\ if getline(1) =~ "^#!" && getline(1) =~ "/bin/" |
+		\   call Genki_chmod('a+x', expand("<afile>:p")) |
+		\ endif
 augroup END
 
 augroup vimrc_plugins
