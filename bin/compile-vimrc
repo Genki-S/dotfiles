@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+def hash_to_dictionary(hash)
+  hash.inspect.gsub('=>', ':').gsub('nil', '{}')
+end
+
+# compile yaml plugin list to NeoBundle sourcable VimScript.
+require 'yaml'
+
+file = File.open("#{ENV['HOME']}/.vim/neobundlefile_compiled.vim", 'w')
+
+bundles = YAML.load_file("#{ENV['HOME']}/.vim/bundles.yml")
+bundles.each do |bundle|
+  name = bundle.keys.first
+  options = bundle[name]
+  options_dict = hash_to_dictionary(options)
+
+  file.write("NeoBundle \"#{name}\", #{options_dict}\n")
+end

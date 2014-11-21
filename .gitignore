@@ -1,5 +1,6 @@
 vimfiles/vim/bundles/*
 !vimfiles/vim/bundles/manual
+vimfiles/vim/neobundlefile_compiled.vim
 
 emacs.d/auto-save-list
 emacs.d/css

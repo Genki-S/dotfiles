@@ -63,23 +63,23 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundleLocal ~/.vim/bundles/manual
 
 " Setup bundles {{{
-let s:my_bundles = Genki_yaml_load('~/.vim/bundles.yml')
-for bundle in s:my_bundles
-	for [bundle_source_name, bundle_options] in items(bundle)
-		if exists('$ALL_LAZY')
-			execute 'NeoBundleLazy "' . bundle_source_name . '"'
-		else
-			execute 'NeoBundle "' . bundle_source_name . '"'
-			let s:bundle_name = neobundle#parser#path(bundle_source_name).name
-			call neobundle#config(s:bundle_name, bundle_options)
-			" Original hook: on_bundle
-			if filereadable(s:plugin_setting_filename(s:bundle_name, 'on_bundle'))
-				execute 'source' s:plugin_setting_filename(s:bundle_name, 'on_bundle')
-			endif
-		endif
-	endfor
+let s:neobundlefile = expand('~/.vim/bundles.yml')
+let s:neobundlefile_compiled = expand('~/.vim/neobundlefile_compiled.vim')
+if getftime(s:neobundlefile) > getftime(s:neobundlefile_compiled)
+	silent !compile-vimrc
+endif
+
+execute "source" s:neobundlefile_compiled
+let s:bundle_names = map(neobundle#config#get_neobundles(), 'v:val["name"]')
+
+for bundle_name in s:bundle_names
+	" Original hook: on_bundle
+	if filereadable(s:plugin_setting_filename(bundle_name, 'on_bundle'))
+		execute 'source' s:plugin_setting_filename(bundle_name, 'on_bundle')
+	endif
 endfor
 "}}}
+
 " Lazy load plugin setting files {{{
 function! MyOnSourceFunction(bundle)
 	if filereadable(s:plugin_setting_filename(a:bundle.name, 'on_source'))
