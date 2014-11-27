@@ -1,6 +1,6 @@
 function myvim() {
 	local session_option=""
-	if [ -f Session.vim ]; then
+	if [ $# -eq 0 -a -f Session.vim ]; then
 		session_option="-S"
 	fi
 
