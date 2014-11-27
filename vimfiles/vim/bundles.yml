@@ -405,6 +405,11 @@
     autoload:
         commands:
             - CtrlSpace
+- tpope/vim-obsession:
+    lazy: 1
+    autoload:
+        commands:
+            - Obsession
 - tpope/vim-dispatch:
 - Shougo/junkfile.vim:
     lazy: 1
