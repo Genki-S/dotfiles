@@ -405,11 +405,8 @@
     autoload:
         commands:
             - CtrlSpace
+# obsession resumes recording after restoring session, so don't make this lazy
 - tpope/vim-obsession:
-    lazy: 1
-    autoload:
-        commands:
-            - Obsession
 - tpope/vim-dispatch:
 - Shougo/junkfile.vim:
     lazy: 1
