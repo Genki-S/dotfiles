@@ -56,3 +56,6 @@
 [submodule "submodules/cdd"]
 	path = submodules/cdd
 	url = https://github.com/m4i/cdd
+[submodule "submodules/tpm"]
+	path = submodules/tpm
+	url = https://github.com/tmux-plugins/tpm
