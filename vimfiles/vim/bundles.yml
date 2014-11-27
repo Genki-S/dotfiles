@@ -603,6 +603,7 @@
     autoload:
         filetypes:
             - plantuml
+- tmux-plugins/vim-tmux:
 ## }}}
 
 # }}}
