@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# NOTE: this is obsolete.
-# tmux swap-window -t option can take '-1' or '+1'...
-
 if [ $# -ne 1 ]; then
   echo "Usage: $0 (right|left)"
   exit 1
