@@ -397,7 +397,6 @@
         commands:
             - VimuxBufferDir
 - tyru/vim-altercmd:
-- vim-scripts/marvim:
 - kana/vim-fakeclip:
 - tyru/open-browser.vim:
 - szw/vim-ctrlspace:
