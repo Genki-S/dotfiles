@@ -52,11 +52,9 @@ set nocompatible
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundles/neobundle.vim
 endif
-call neobundle#rc(expand('~/.vim/bundles'))
+call neobundle#begin(expand('~/.vim/bundles'))
 
 " Let neobundle manage neobundle
-" FIXME: 09ead8 makes something wrong for me
-"        now using c4321b, please manually checkout in ~/.vim/bundles/neobundle.vim
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Manual plugins
@@ -99,6 +97,8 @@ for s:bundle in neobundle#config#get_neobundles()
 	let s:bundle.hooks.on_post_source = function('MyOnPostSourceFunction')
 endfor
 "}}}
+
+call neobundle#end()
 
 " --------------------------------------------------
 " Interface
