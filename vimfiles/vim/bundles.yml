@@ -209,7 +209,7 @@
     autoload:
         unite_sources:
             - mark
-- basyura/unite-rails:
+- negipo/unite-rails:
     lazy: 1
     autoload:
         unite_sources:
@@ -465,6 +465,8 @@
 
 ## Vim {{{
 - xolox/vim-reload:
+    depends:
+        - vim-misc
     lazy: 1
     autoload:
         filetypes:
