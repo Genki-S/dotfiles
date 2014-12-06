@@ -10,6 +10,10 @@
 (define-key evil-normal-state-map ",x" 'execute-extended-command)
 
 ;; for org-mode
+(add-hook 'org-mode-hook
+          (lambda ()
+            (setq evil-shift-width 2)))
+
 (evil-define-key 'normal org-mode-map
   (kbd "RET") 'org-ctrl-c-ctrl-c
   (kbd "TAB") 'org-cycle)
