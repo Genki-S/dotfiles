@@ -93,11 +93,12 @@ inline int MAKE_MASK(ULL upper, ULL lower) { assert(lower < 64 && upper < 64 && 
 #define ODD(n) (!EVEN(n))
 // }}}
 // debug {{{
+#define arrsz(a) ( sizeof(a) / sizeof(a[0]) )
 #define dprt(fmt, ...) if (opt_debug) { fprintf(stderr, fmt, ##__VA_ARGS__); }
 #define darr(a) if (opt_debug) { copy( (a), (a) + arrsz(a), ostream_iterator<int>(cerr, " ") ); cerr << endl; }
 #define darr_range(a, f, t) if (opt_debug) { copy( (a) + (f), (a) + (t), ostream_iterator<int>(cerr, " ") ); cerr << endl; }
 #define dvec(v) if (opt_debug) { copy( ALL(v), ostream_iterator<int>(cerr, " ") ); cerr << endl; }
-#define darr2(a, n, m) if (opt_debug) { FOR(__i, 0, (n)){ darr_range( (a)[__i], 0, (m) ); } }
+#define darr2(a) if (opt_debug) { FOR(__i, 0, (arrsz(a))){ darr( (a)[__i] ); } }
 #define dvec2(v) if (opt_debug) { FOR(__i, 0, v.size()){ dvec( (v)[__i] ); } }
 #define WAIT() if (opt_debug) { string _wait_; cerr << "(hit return to continue)" << endl; getline(cin, _wait_); }
 #define dump(x) if (opt_debug) { cerr << " [L" << __LINE__ << "] " << #x << " = " << (x) << endl; }
