@@ -209,7 +209,7 @@
     autoload:
         unite_sources:
             - mark
-- negipo/unite-rails:
+- basyura/unite-rails:
     lazy: 1
     autoload:
         unite_sources:
