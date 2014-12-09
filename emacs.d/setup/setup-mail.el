@@ -76,13 +76,13 @@
 ;; don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
 
-(defun open-with-eww-if-html ()
+(defun open-with-browser-if-html ()
   (setq mu4e-eww-tmpfile (format "%s/%d.html" temporary-file-directory (random)))
   (let ((html (mu4e-msg-field (mu4e-message-at-point t) :body-html)))
     (if html
       (with-temp-file mu4e-eww-tmpfile (insert html))))
-  (eww-open-file mu4e-eww-tmpfile))
-(add-hook 'mu4e-view-mode-hook 'open-with-eww-if-html)
+  (browse-url mu4e-eww-tmpfile))
+(add-hook 'mu4e-view-mode-hook 'open-with-browser-if-html)
 
 ;;; message view action
 ;; http://www.emacswiki.org/emacs/mu4e
