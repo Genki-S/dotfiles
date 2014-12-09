@@ -76,6 +76,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
        "o" 'mu4e-view-message
        "Q" 'mu4e-raw-view-quit-buffer
        "/" 'evil-search-forward
+       "q" 'quit-window
        (kbd "C-c C-o") 'org-open-at-point
        (kbd "C-c l") 'org-store-link)
 
