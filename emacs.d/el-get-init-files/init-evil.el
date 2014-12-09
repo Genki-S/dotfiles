@@ -103,3 +103,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (eval-after-load 'yasnippet
   '(progn
     (define-key evil-insert-state-map (kbd "C-k") 'yas-expand)))
+
+;; for eww
+(eval-after-load 'eww
+  '(progn
+     (evil-add-hjkl-bindings eww-mode-map 'normal
+                             "q" 'quit-window)))
