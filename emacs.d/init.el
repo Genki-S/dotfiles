@@ -46,10 +46,6 @@
   (when (and (file-regular-p file) (string/ends-with file ".el"))
     (load file)))
 
-;; Install packages from MELPA
-(require 'setup-packages)
-
-;; TODO: migrate to el-get from package, or use both?
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 ;; ensure el-get is installed
@@ -72,9 +68,12 @@
     evil
     evil-leader
     evil-surround
+    org-mode
+    flycheck
     xml-rpc-el
     metaweblog
     org2blog
+    org-pomodoro
     wc-mode
     mu4e
     color-theme-solarized
