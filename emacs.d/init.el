@@ -105,8 +105,7 @@
 (setq is-mac (equal system-type 'darwin))
 
 ;; Setup extensions
-(if (getenv "ORGMODE")
-  (require 'setup-org))
+(require 'setup-org)
 (require 'setup-mail)
 
 ;; Setup global key-bindings

@@ -22,7 +22,6 @@ function mkcd () {
 	mkdir -p "$@" && eval cd "\"\$$#\""
 }
 
-alias org="tmux rename-window org; ORGMODE=1 emacs ~/org/dashboard.org"
 alias pbs="pbsearch"
 
 # ==================================================
