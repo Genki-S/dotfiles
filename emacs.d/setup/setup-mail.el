@@ -2,6 +2,7 @@
 ;; This was an awesome resource : http://d.hatena.ne.jp/kenbeese/20121129/1354442823
 
 (require 'mu4e)
+(require 'mu4e-contrib)
 
 ;; default
 ;; (setq mu4e-maildir "~/Maildir")
@@ -23,8 +24,28 @@
       '(("/INBOX"               . ?i)))
 
 ;; allow for updating mail using 'U' in the main view:
-(setq mu4e-get-mail-command "zsh -i -c offlineimap") ;; I don't know why, but it only works under interactive zsh
+(setq mu4e-get-mail-command "offlineimap")
 (setq mu4e-update-interval 300) ;; update every 5 minutes
+
+;; see html mail in Emacs.app
+;; http://www.djcbsoftware.nl/code/mu/mu4e/Viewing-images-inline.html#Viewing-images-inline
+;; enable inline images
+(setq mu4e-view-show-images t)
+;; use imagemagick, if available
+(when (fboundp 'imagemagick-register-types)
+   (imagemagick-register-types))
+
+;; http://emacs.stackexchange.com/questions/3051/how-can-i-use-eww-as-a-renderer-for-mu4e
+;; this makes emacs slow and when Content-Type is multipart/alternative, mu4e
+;; seems to prefer text/plain rather than text/html
+; (defun my-render-html-message ()
+  ; (let ((dom (libxml-parse-html-region (point-min) (point-max))))
+    ; (erase-buffer)
+    ; (shr-insert-document dom)
+    ; (goto-char (point-min))
+    ; ;; for some reason, evil-normal-state is needed
+    ; (evil-normal-state)))
+; (setq mu4e-html2text-command 'my-render-html-message)
 
 ;; something about ourselves
 (setq
@@ -55,6 +76,14 @@
 ;; don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
 
+(defun open-with-eww-if-html ()
+  (setq mu4e-eww-tmpfile (format "%s/%d.html" temporary-file-directory (random)))
+  (let ((html (mu4e-msg-field (mu4e-message-at-point t) :body-html)))
+    (if html
+      (with-temp-file mu4e-eww-tmpfile (insert html))))
+  (eww-open-file mu4e-eww-tmpfile))
+(add-hook 'mu4e-view-mode-hook 'open-with-eww-if-html)
+
 ;;; message view action
 ;; http://www.emacswiki.org/emacs/mu4e
 (defun mu4e-msgv-action-view-in-browser (msg)
@@ -64,12 +93,13 @@
         (tmpfile (format "%s/%d.html" temporary-file-directory (random))))
     (unless html (error "No html part for this message"))
     (with-temp-file tmpfile
-    (insert
-        "<html>"
-        "<head><meta http-equiv=\"content-type\""
-        "content=\"text/html;charset=UTF-8\">"
-       html))
+                    (insert
+                      "<html>"
+                      "<head><meta http-equiv=\"content-type\""
+                      "content=\"text/html;charset=UTF-8\">"
+                      html))
     (browse-url (concat "file://" tmpfile))))
+
 (add-to-list 'mu4e-view-actions
   '("View in browser" . mu4e-msgv-action-view-in-browser) t)
 
