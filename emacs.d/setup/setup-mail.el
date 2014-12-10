@@ -27,26 +27,6 @@
 (setq mu4e-get-mail-command "offlineimap")
 (setq mu4e-update-interval 300) ;; update every 5 minutes
 
-;; see html mail in Emacs.app
-;; http://www.djcbsoftware.nl/code/mu/mu4e/Viewing-images-inline.html#Viewing-images-inline
-;; enable inline images
-(setq mu4e-view-show-images t)
-;; use imagemagick, if available
-(when (fboundp 'imagemagick-register-types)
-   (imagemagick-register-types))
-
-;; http://emacs.stackexchange.com/questions/3051/how-can-i-use-eww-as-a-renderer-for-mu4e
-;; this makes emacs slow and when Content-Type is multipart/alternative, mu4e
-;; seems to prefer text/plain rather than text/html
-; (defun my-render-html-message ()
-  ; (let ((dom (libxml-parse-html-region (point-min) (point-max))))
-    ; (erase-buffer)
-    ; (shr-insert-document dom)
-    ; (goto-char (point-min))
-    ; ;; for some reason, evil-normal-state is needed
-    ; (evil-normal-state)))
-; (setq mu4e-html2text-command 'my-render-html-message)
-
 ;; something about ourselves
 (setq
   user-mail-address "cfhoyuk.reccos.nelg@gmail.com"
