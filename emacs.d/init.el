@@ -129,3 +129,7 @@
 (dolist (file (directory-files my-scripts-dir t "\\w+"))
   (when (and (file-regular-p file) (string/ends-with file ".el"))
     (load file)))
+
+;; GUI
+;; timer is needed, see: http://www.emacswiki.org/emacs/FullScreen#toc3
+(run-with-idle-timer 0.1 nil 'maximize-frame)
