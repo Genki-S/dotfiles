@@ -57,11 +57,17 @@
 (setq message-kill-buffer-on-exit t)
 
 (defun open-with-browser-if-html ()
-  (setq mu4e-eww-tmpfile (format "%s/%d.html" temporary-file-directory (random)))
-  (let ((html (mu4e-msg-field (mu4e-message-at-point t) :body-html)))
+  (let ((html (mu4e-msg-field (mu4e-message-at-point t) :body-html))
+        (tmpfile (format "%s/%d.html" temporary-file-directory (random))))
     (if html
-      (with-temp-file mu4e-eww-tmpfile (insert html))))
-  (browse-url mu4e-eww-tmpfile))
+      (progn
+        (with-temp-file tmpfile
+                        (insert
+                          "<html>"
+                          "<head><meta http-equiv=\"content-type\""
+                          "content=\"text/html;charset=UTF-8\">"
+                          html))
+        (browse-url (concat "file://" tmpfile))))))
 (add-hook 'mu4e-view-mode-hook 'open-with-browser-if-html)
 
 ;;; message view action
