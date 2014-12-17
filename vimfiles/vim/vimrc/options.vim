@@ -19,7 +19,7 @@ set relativenumber
 "}}}
 " syntax, highlighting and spelling {{{
 set nohlsearch
-set cursorline
+set nocursorline
 set colorcolumn=80
 set conceallevel=1
 set concealcursor=inc
