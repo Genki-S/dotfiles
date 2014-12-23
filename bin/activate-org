@@ -1,3 +1,4 @@
 #!/bin/bash
 
-osascript -e 'tell application "Emacs" to activate'
+osascript -e 'tell application "iTerm" to activate'
+tmux select-window -t "$USER:org"
