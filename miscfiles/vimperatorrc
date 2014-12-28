@@ -21,7 +21,8 @@ vnoremap E y:eijiro <M-v><CR>
 
 " Twittperator
 let g:twittperator_use_ssl_connection_for_api_ep = 1
-cabbrev -javascript %% " -- " + buffer.title + " " + buffer.URL
+cabbrev -javascript %% " : " + buffer.title + " @ " + buffer.URL
+nmap <Leader>t ;%%<Space><BS><C-a>twittperator<Space>
 
 " copy.js
 javascript <<EOM
