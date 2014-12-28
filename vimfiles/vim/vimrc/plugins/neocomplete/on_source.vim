@@ -34,6 +34,10 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 inoremap <expr> <C-y>  neocomplete#close_popup()
 inoremap <expr> <C-e>  neocomplete#cancel_popup()
 
+" Easily disable (the unimpaired way)
+nnoremap [oC :<C-u>NeoCompleteEnable<CR>
+nnoremap ]oC :<C-u>NeoCompleteDisable<CR>
+
 " Enable omni completion.
 autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
