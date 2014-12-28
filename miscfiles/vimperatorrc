@@ -96,9 +96,6 @@ vnoremap s y<Esc><Esc>:tabopen<Space>google<Space><S-Insert><CR>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-" Search selected text
-vnoremap P y<Esc><Esc>P
-
 " Pocket http://d.ktmtt.com/-/2014/02/23/firefox-vimperator-pocket/
 command! pocket echo RIL.addCurrent() !== false ? 'Success' : 'Failed (or already clipped?)'
 nnoremap <Leader>p :pocket<CR>
