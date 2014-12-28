@@ -120,11 +120,6 @@
 ;; color
 (load-theme 'solarized-dark t)
 
-;; various
-(defun genki/remind-workout ()
-  (osx-notification "Get Active!" "Do some workout now."))
-(run-at-time "00:00" 3600 'genki/remind-workout)
-
 ;; my scripts
 (setq my-scripts-dir (expand-file-name "my-scripts" user-emacs-directory))
 (dolist (file (directory-files my-scripts-dir t "\\w+"))
