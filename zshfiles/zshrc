@@ -56,6 +56,9 @@ source $DOTDIR/submodules/zsh-history-substring-search/zsh-history-substring-sea
 # More completions from https://github.com/zsh-users/zsh-completions
 fpath+=($DOTDIR/submodules/zsh-completions/src)
 
+# stdkeep (https://github.com/Genki-S/stdkeep)
+source $DOTDIR/submodules/stdkeep/stdkeep.zsh
+
 # Source my prompt
 source $DOTDIR/submodules/zsh-git-prompt/zshrc.sh
 export __GIT_PROMPT_DIR=$DOTDIR/submodules/zsh-git-prompt
