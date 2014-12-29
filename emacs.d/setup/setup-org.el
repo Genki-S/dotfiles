@@ -6,6 +6,14 @@
 ; (require 'org-helpers)
 ; (require 'org-export)
 
+(defun genki/org-force-clock-out ()
+  (let ((currently-clocked-time
+          (floor (- (org-float-time) (org-float-time org-clock-start-time)) 60))
+        (limit-min 25))
+    (if (> currently-clocked-time limit-min)
+      (org-clock-out))))
+(run-at-time "00:00" 60 'genki/org-force-clock-out)
+
 ;; notification https://gist.github.com/jstewart/7664823
 (defun osx-notification (title message)
   (call-process "osx-notification"
