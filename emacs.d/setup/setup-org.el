@@ -15,7 +15,9 @@
 (defun genki/org-check-clocking ()
   (when (and (not (org-clocking-p))
              (eq org-pomodoro-state :none))
-    (osx-notification "Not Clocking In" "Be Mindful of Your Life")))
+    (progn
+      (osx-notification "Not Clocking In" "Be Mindful of Your Life")
+      (call-process "activate-org"))))
 (run-at-time "00:00" 60 'genki/org-check-clocking)
 
 ;; sets the default workflow keywords and their faces
