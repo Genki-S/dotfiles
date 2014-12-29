@@ -118,6 +118,11 @@
     lazy: 1
     autoload:
         insert: 1
+- Wolfy87/vim-expand:
+    lazy: 1
+    autoload:
+        commands:
+            - Expand
 ## }}}
 
 # }}}
