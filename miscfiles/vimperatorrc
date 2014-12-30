@@ -16,8 +16,28 @@ let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins"
 let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,twittperator,copy"
 
 " lookupDictionary
-nnoremap <Leader>e :eijiro<Space>
-vnoremap E y:eijiro <M-v><CR>
+javascript <<EOM
+liberator.modules.commands.addUserCommand(["eijiroWithSave"], "eijiro with the word saving to ~/unknown_words.txt",
+function(arg){
+    var query = arg.toString().split(',').join(' ');
+    var req = new XMLHttpRequest();
+    var url = 'http://localhost:1337';
+
+    req.open("POST", url, true);
+    req.onload = function(e) {
+        liberator.echo('Word saved.')
+    }
+    req.onerror = function(e) { liberator.echoerr('eijiroWithSave Error: ' + e); };
+    req.setRequestHeader('Content-Type', 'application/json');
+    var param = '{"word":"' + query + '"}';
+    req.send(param);
+
+    liberator.execute('eijiro ' + query);
+}, {}, true);
+EOM
+
+nnoremap <Leader>e :eijiroWithSave<Space>
+vnoremap E y:eijiroWithSave <M-v><CR>
 
 " Twittperator
 let g:twittperator_use_ssl_connection_for_api_ep = 1
