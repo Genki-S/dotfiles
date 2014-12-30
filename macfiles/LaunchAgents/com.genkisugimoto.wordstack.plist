@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>EnableGlobbing</key>
+  <true/>
+  <key>Label</key>
+  <string>com.genkisugimoto.wordstack.plist</string>
+  <key>ProgramArguments</key>
+  <array>
+    <!-- FIXME: what if I don't use boxen? -->
+    <string>/opt/boxen/nodenv/shims/node</string>
+    <string>~/dotfiles/miscfiles/word-stack-server.js</string>
+  </array>
+  <key>KeepAlive</key>
+  <true/>
+</dict>
+</plist>
