@@ -1,0 +1,5 @@
+(:name evil-tabs
+       :description "Integrating Vim-style tabs for Evil mode users."
+       :type github
+       :pkgname "krisajenkins/evil-tabs"
+       :depends (evil elscreen))

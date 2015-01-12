@@ -68,6 +68,7 @@
     evil
     evil-leader
     evil-surround
+    evil-tabs
     org-mode
     flycheck
     xml-rpc-el
