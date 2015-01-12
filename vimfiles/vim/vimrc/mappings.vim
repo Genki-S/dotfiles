@@ -1,4 +1,7 @@
 " Normal mode mappings {{{
+" Be consistent with D and C
+nnoremap Y y$
+
 " This might be replaced by ftplugins or plugin mappings (because 'make' means different things)
 nnoremap M :make<Enter>
 

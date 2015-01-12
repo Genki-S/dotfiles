@@ -12,6 +12,7 @@ set smartcase
 " displaying text {{{
 set scrolloff=3
 set wrap
+set display=lastline
 set list
 set listchars=tab:>\ ,trail:_,extends:>,precedes:<,conceal:#
 set number
@@ -45,7 +46,9 @@ set noshowmode
 " editing text {{{
 set backspace=indent,eol,start
 set formatoptions=rqnmB1
+set pumheight=5
 set showmatch
+set matchtime=1
 "}}}
 " tabs and indenting {{{
 set tabstop=2
