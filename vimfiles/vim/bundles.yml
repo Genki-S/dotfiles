@@ -580,6 +580,10 @@
             - GoshREPL
 # }}}
 
+## Swift {{{
+- toyamarinyon/vim-swift:
+# }}}
+
 ## Others {{{
 - kannokanno/previm:
     lazy: 1

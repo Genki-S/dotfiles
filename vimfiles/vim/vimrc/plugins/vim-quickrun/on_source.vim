@@ -16,4 +16,9 @@ let g:quickrun_config = {
 \   "javascript" : {
 \       "type" : "javascript/nodejs",
 \   },
+\   "swift" : {
+\       "command" : "xcrun",
+\       "cmdopt" : "swift",
+\       "exec" : "%c %o %s",
+\   },
 \}
