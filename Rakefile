@@ -5,6 +5,14 @@ require 'uri'
 
 HOME = ENV['HOME']
 DOTDIR = "#{HOME}/dotfiles"
+BREW_PREFIX = ENV['BREW_PREFIX']
+raise 'BREW_PREFIX environment variable is not set' unless BREW_PREFIX
+BREW = "#{BREW_PREFIX}/bin/brew"
+
+# Set path to include BREW_PREFIX/bin
+paths = ENV['PATH'].split(':')
+paths.unshift("#{BREW_PREFIX}/bin")
+ENV['PATH'] = paths.join(':')
 
 desc 'Do the best.'
 task :install => [
@@ -36,8 +44,8 @@ end
 desc 'install homebrew'
 task :install_homebrew do
   puts 'Installing Homebrew...'
-  run %{ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" }
-  run %{ brew doctor }
+  run %{ which #{BREW} || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" }
+  run %{ #{BREW} doctor }
 end
 
 desc 'install essential brew packages'
@@ -59,7 +67,7 @@ end
 desc 'install ruby'
 task :install_ruby do
   puts 'Installing Ruby...'
-  run %{ brew install rbenv ruby-build }
+  run %{ #{BREW} install rbenv ruby-build }
   run %{ rbenv install 2.1.3 } # TODO: ask version to user
   run %{ rbenv rehash }
   run %{ rbenv global 2.1.3 }
