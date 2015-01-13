@@ -1,5 +1,10 @@
 (setq debug-on-error t)
 
+;; create custom.el if it does not exist
+(defconst custom-file (expand-file-name "custom.el" user-emacs-directory))
+(unless (file-exists-p custom-file)
+  (write-region "" nil custom-file))
+
 ;; start as a server if there is no server
 (load "server")
 (unless (server-running-p) (server-start))
@@ -129,4 +134,5 @@
 
 ;; GUI
 ;; timer is needed, see: http://www.emacswiki.org/emacs/FullScreen#toc3
-(run-with-idle-timer 0.1 nil 'maximize-frame)
+; disabling because I don't use GUI for now
+; (run-with-idle-timer 0.1 nil 'maximize-frame)

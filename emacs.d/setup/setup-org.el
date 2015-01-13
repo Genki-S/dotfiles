@@ -7,11 +7,12 @@
 ; (require 'org-export)
 
 (defun genki/org-force-clock-out ()
-  (let ((currently-clocked-time
-          (floor (- (org-float-time) (org-float-time org-clock-start-time)) 60))
-        (limit-min 25))
-    (if (> currently-clocked-time limit-min)
-      (org-clock-out))))
+  (if (org-clocking-p)
+    (let ((currently-clocked-time
+            (floor (- (org-float-time) (org-float-time org-clock-start-time)) 60))
+          (limit-min 25))
+      (if (> currently-clocked-time limit-min)
+        (org-clock-out)))))
 (run-at-time "00:00" 60 'genki/org-force-clock-out)
 
 ;; notification https://gist.github.com/jstewart/7664823
@@ -72,6 +73,10 @@
                              "~/org/archives.org"
                              "~/org/checklist.org"
                              "~/org/goals.org"))
+;; Create agenda files if not exist
+(dolist (file org-agenda-files)
+  (unless (file-exists-p file)
+    (write-region "" nil file)))
 
 (setq org-agenda-custom-commands
       `(("R" . "for reporting")
