@@ -73,7 +73,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
        "J" 'mu4e-headers-jump-to-maildir
        "j" 'evil-next-line
        "C" 'mu4e-compose-new
-       "o" 'mu4e-view-message
+       "o" 'mu4e-view-go-to-url
        "Q" 'mu4e-raw-view-quit-buffer
        "/" 'evil-search-forward
        "q" 'mu4e~view-quit-buffer
