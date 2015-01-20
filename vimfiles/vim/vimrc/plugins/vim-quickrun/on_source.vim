@@ -21,4 +21,9 @@ let g:quickrun_config = {
 \       "cmdopt" : "swift",
 \       "exec" : "%c %o %s",
 \   },
+\   "plantuml" : {
+\       "command" : "plantuml",
+\       "exec" : ["%c %s", "open %s:p:r.png"],
+\       "outputter" : "null",
+\   }
 \}
