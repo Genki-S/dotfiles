@@ -16,8 +16,9 @@ config/environments/genki.rb
 .DS_Store
 .AppleDouble
 .LSOverride
-Icon
 
+# Icon must ends with two \r.
+Icon
 
 # Thumbnails
 ._*
@@ -28,20 +29,30 @@ Icon
 # INJECT_END
 
 # INJECT_START:"#{ENV['HOME']}/dotfiles/submodules/gitignore/Global/SASS.gitignore"
-### SASS Ignores - "Sassy CSS" http://sass-lang.com/
+### Sass Ignores - "Sassy CSS" http://sass-lang.com/
 *.sass-cache
 # INJECT_END
 
 # INJECT_START:"#{ENV['HOME']}/dotfiles/submodules/gitignore/Global/Tags.gitignore"
-# Ignore tags created by etags and ctags
+# Ignore tags created by etags, ctags, gtags (GNU global) and cscope
 TAGS
 !TAGS/
 tags
 !tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out
+
 # INJECT_END
 
 # INJECT_START:"#{ENV['HOME']}/dotfiles/submodules/gitignore/Global/vim.gitignore"
-.*.s[a-w][a-z]
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
 *.un~
 Session.vim
 .netrwhist
