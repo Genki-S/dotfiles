@@ -10,10 +10,6 @@
 	path = submodules/yadr
 	url = https://github.com/skwp/dotfiles
 	branch = master
-[submodule "submodules/vimperator-labs"]
-	path = submodules/vimperator-labs
-	url = https://github.com/briceburg/vimperator-labs
-	branch = master
 [submodule "submodules/zsh-super-vim-mode"]
 	path = submodules/zsh-super-vim-mode
 	url = https://github.com/Genki-S/zsh-super-vim-mode
@@ -62,3 +58,6 @@
 [submodule "submodules/stdkeep"]
 	path = submodules/stdkeep
 	url = https://github.com/Genki-S/stdkeep
+[submodule "submodules/vimperator-labs"]
+	path = submodules/vimperator-labs
+	url = https://github.com/vimperator/vimperator-labs
