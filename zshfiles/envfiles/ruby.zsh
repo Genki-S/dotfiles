@@ -1,8 +1,5 @@
-# Source rvm environment
-if executable rvm; then
-	source $(rvm env --path)
-fi
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# Source rbenv environment
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Tell bundler to use local Gemfile
 function set_bundle_gemfile () {
