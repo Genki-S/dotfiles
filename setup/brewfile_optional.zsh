@@ -17,6 +17,7 @@ formulas=(
   jq
   jsonpp
   migemogrep
+  tree
 )
 
 for f in $formulas; do
@@ -40,6 +41,8 @@ casks=(
   mendeley-desktop
   cloudytabs
   licecap
+  quicksilver
+  slack
 )
 
 for c in $casks; do

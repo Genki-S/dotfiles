@@ -24,6 +24,7 @@ formulas=(
   hub
   fortune
   cowsay
+  go
   caskroom/cask/brew-cask
 )
 
