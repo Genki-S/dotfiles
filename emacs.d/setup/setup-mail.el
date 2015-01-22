@@ -126,6 +126,18 @@
      (mu4e-trash-folder  "/Waseda/Bin")
      (user-mail-address "genki-sugimoto@asagi.waseda.jp"))))
 
+(defun my-mu4e-insert-template ()
+  "Set the template for composing a message."
+  (let ((template-files (directory-files "~/org/templates/mail")))
+    (setq templates (remove ".." (remove "." template-files)))
+    (setq chosen-template (completing-read
+                            (format "Template: (%s) "
+                                    (mapconcat #'(lambda (var) var) templates "/"))
+                            templates
+                            nil t nil nil t))
+    (insert-file-contents (concat "~/org/templates/mail/" chosen-template))))
+(add-hook 'message-mode-hook 'my-mu4e-insert-template)
+
 (defun my-mu4e-set-account ()
   "Set the account for composing a message."
   (let* ((account
