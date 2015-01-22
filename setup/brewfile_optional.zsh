@@ -43,6 +43,7 @@ casks=(
   licecap
   quicksilver
   slack
+  xmind
 )
 
 for c in $casks; do
