@@ -19,6 +19,8 @@ formulas=(
   migemogrep
   tree
   ansifilter
+  tidy
+  astyle
 )
 
 for f in $formulas; do

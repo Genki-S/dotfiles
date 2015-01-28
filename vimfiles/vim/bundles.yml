@@ -104,6 +104,11 @@
     autoload:
         commands:
             - SyntasticCheck
+- Chiel92/vim-autoformat:
+    lazy: 1
+    autoload:
+        commands:
+            - Autoformat
 
 ## Completion {{{
 - Shougo/neocomplete:

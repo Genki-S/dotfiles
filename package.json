@@ -1,0 +1,22 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "description": "This is an instruction to set up your brand new Mac. Have fun :)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Genki-S/dotfiles.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Genki-S/dotfiles/issues"
+  },
+  "homepage": "https://github.com/Genki-S/dotfiles",
+  "dependencies": {
+    "js-beautify": "^1.5.4"
+  }
+}
