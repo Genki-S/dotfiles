@@ -18,6 +18,7 @@ formulas=(
   jsonpp
   migemogrep
   tree
+  ansifilter
 )
 
 for f in $formulas; do
