@@ -1,4 +1,2 @@
-nnoremap <SID>[tagbar] <Nop>
-nmap <Leader>t <SID>[tagbar]
-
-nnoremap <silent> <SID>[tagbar]<Space> :TagbarToggle<CR>
+" Be careful not to conflict with Tabular mappings.
+nnoremap <silent> <Leader>t<Space> :TagbarToggle<CR>
