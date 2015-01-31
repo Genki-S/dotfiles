@@ -72,6 +72,7 @@ set cryptmethod=blowfish
 "}}}
 " the swap file {{{
 set swapfile
+set updatetime=1000
 "}}}
 " command line editing {{{
 set history=200

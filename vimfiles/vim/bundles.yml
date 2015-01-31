@@ -315,7 +315,7 @@
 
 # Visual {{{
 - altercation/vim-colors-solarized:
-- mhinz/vim-signify:
+- airblade/vim-gitgutter:
 - t9md/vim-quickhl:
 - itchyny/lightline.vim:
 - kshenoy/vim-signature:
