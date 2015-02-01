@@ -85,6 +85,13 @@ endif
 "}}}
 " executing external commands {{{
 set keywordprg=:help
+" Use par to reflow text
+" see: http://vimcasts.org/episodes/formatting-text-with-par/
+" Using `gw` will reflow with Vim's built-in algorithm.
+" stolen from https://github.com/rdlugosz/dotfiles/blob/fa77f78dab01b137ce8ec5db59c2720308c8373f/vimrc
+if executable('par')
+	set formatprg="par -h -w78 -B=.,\?_A_a "
+endif
 "}}}
 " multi-byte characters {{{
 set encoding=utf-8
