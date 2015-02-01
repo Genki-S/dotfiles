@@ -37,6 +37,10 @@
 - vim-scripts/sudo.vim:
 - chrisbra/Recover.vim:
 - tpope/vim-speeddating:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>SpeedDating
 - osyo-manga/shabadou.vim:
 - takac/vim-hardtime:
 - kana/vim-submode:
