@@ -183,6 +183,14 @@ qmark l http://www.wul.waseda.ac.jp/
 " }}}
 " ==============================
 
+" ==============================
+" Misc. {{{
+" Disable Vimperator for certain pages
+ignorekeys clear
+ignorekeys add docs\\.google\\.com
+" }}}
+" ==============================
+
 " reload message
 echo "vimperator: Welcome back."
 
