@@ -129,6 +129,10 @@ nnoremap v :nohlsearch<CR>ccv
 nnoremap c :nohlsearch<CR>c
 vnoremap <Esc> <Esc><Esc>
 
+" Encodings
+nnoremap <Leader>Ei :<C-u>set encoding=ISO-2022-JP<CR>
+nnoremap <Leader>Eu :<C-u>set encoding=UTF-8<CR>
+nnoremap <Leader>Ee :<C-u>set encoding=EUC-JP<CR>
 " }}}
 " ==============================
 
