@@ -1,0 +1,1 @@
+nmap ga <Plug>(characterize)

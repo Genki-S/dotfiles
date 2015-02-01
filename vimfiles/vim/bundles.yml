@@ -41,6 +41,11 @@
 - takac/vim-hardtime:
 - kana/vim-submode:
 - amdt/vim-niji:
+- tpope/vim-characterize:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(characterize)
 # }}}
 
 # Coding {{{
