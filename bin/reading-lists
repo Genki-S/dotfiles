@@ -1,3 +1,26 @@
 #!/bin/sh
 
-/usr/bin/plutil -convert xml1 -o - ~/Library/Safari/Bookmarks.plist | grep -E  -o '<string>http[s]{0,1}://.*</string>' | grep -v icloud | sed -E 's/<\/{0,1}string>//g'
+lists=$(/usr/bin/plutil -convert xml1 -o - ~/Library/Safari/Bookmarks.plist | grep -E  -o '<string>http[s]{0,1}://.*</string>' | grep -v icloud | sed -E 's/<\/{0,1}string>//g')
+
+lists=$(echo "$lists" | \
+  grep -v http://www.apple.com/ |\
+  grep -v https://www.facebook.com/ |\
+  grep -v https://twitter.com/ |\
+  grep -v http://en.wikipedia.org/wiki/Main_Page |\
+  grep -v http://www.yahoo.com/ |\
+  grep -v http://www.bbc.co.uk/ |\
+  grep -v http://www.cnn.com/ |\
+  grep -v http://espn.go.com/ |\
+  grep -v http://www.npr.org/ |\
+  grep -v http://www.usatoday.com/ |\
+  grep -v http://online.wsj.com/home-page |\
+  grep -v http://www.amazon.com/ |\
+  grep -v http://disney.com/ |\
+  grep -v http://www.ebay.com/ |\
+  grep -v http://www.flickr.com/ |\
+  grep -v https://www.linkedin.com/ |\
+  grep -v http://www.rottentomatoes.com/ |\
+  grep -v http://www.weather.com/ |\
+  grep -v http://www.yelp.com/)
+
+echo "$lists"
