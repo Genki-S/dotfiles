@@ -7,35 +7,35 @@ abbr        module...end
 options     head
 	module ${1}
 	  ${2}
-	end${0}
+	end
 
 snippet     desc
 abbr        describe...end
 options     head
 	describe '${1}' do
 	  ${2}
-	end${0}
+	end
 
 snippet     cont
 abbr        context...end
 options     head
 	context '${1}' do
 	  ${2}
-	end${0}
+	end
 
 snippet     it
 abbr        it...end
 options     head
 	it '${1}' do
 	  ${2}
-	end${0}
+	end
 
 snippet     bef
 abbr        before...end
 options     head
 	before(:${1:all|each}) do
 	  ${2}
-	end${0}
+	end
 
 snippet     aft
 abbr        after...end
@@ -49,18 +49,18 @@ abbr        while...end
 options     head
 	while ${1:condition}
 	  ${2}
-	end${0}
+	end
 
 snippet     do
 abbr        do |v| ... end
 	do |${1:v}|
 	  ${2}
-	end${0}
+	end
 
 snippet     match
 abbr        match to via
 options     head
-	match '/${1}', to: '${2}', via: '${3:get}'${0}
+	match '/${1}', to: '${2}', via: '${3:get}'
 
 snippet     sub
 abbr        subject
@@ -88,4 +88,4 @@ options     head
 snippet     expeq
 abbr        expect eq
 options     head
-	expect(${1}).to eq(${2})${0}
+	expect(${1}).to eq(${2})
