@@ -34,7 +34,6 @@
     build:
         mac: make -f make_mac.mak
         unix: make -f make_unix.mak
-- vim-scripts/sudo.vim:
 - chrisbra/Recover.vim:
 - tpope/vim-speeddating:
     lazy: 1
