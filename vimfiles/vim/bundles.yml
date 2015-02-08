@@ -40,7 +40,6 @@
     autoload:
         mappings:
             - <Plug>SpeedDating
-- osyo-manga/shabadou.vim:
 - takac/vim-hardtime:
 - kana/vim-submode:
 - amdt/vim-niji:
@@ -52,7 +51,7 @@
 # }}}
 
 # Coding {{{
-- tpope/vim-scriptease:
+# - tpope/vim-scriptease:
 - Shougo/neosnippet:
     lazy: 1
     autoload:
@@ -70,22 +69,44 @@
     lazy: 1
     autoload:
         function_prefix: vim_snippets
-- ujihisa/quicklearn:
+# - ujihisa/quicklearn:
 - thinca/vim-qfreplace:
+    lazy: 1
+    autoload:
+        commands:
+            - Qfreplace
 - AndrewRadev/linediff.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - Linediff
+            - LinediffReset
 - AndrewRadev/sideways.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - SidewaysLeft
+            - SidewaysRight
 - sjl/gundo.vim:
     lazy: 1
     autoload:
         commands:
             - GundoShow
 - vim-scripts/UnconditionalPaste:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>UnconditionalPaste
 - godlygeek/tabular:
     lazy: 1
     autoload:
         commands:
             - Tabularize
 - t9md/vim-textmanip:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(textmanip
 - AndrewRadev/splitjoin.vim:
     lazy: 1
     autoload:
@@ -98,9 +119,19 @@
         commands:
             - Switch
 - tpope/vim-abolish:
+    lazy: 1
+    autoload:
+        commands:
+            - Abolish
+            - S
+            - Subvert
 - tpope/vim-surround:
 - scrooloose/nerdcommenter:
 - AndrewRadev/inline_edit.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - InlineEdit
 - sk1418/Join:
     lazy: 1
     autoload:
@@ -142,6 +173,21 @@
 
 # Navigation {{{
 - majutsushi/tagbar:
+    lazy: 1
+    autoload:
+        commands:
+            - Tagbar
+            - TagbarCurrentTag
+            - TagbarDebugEnd
+            - TagbarOpen
+            - TagbarSetFoldlevel
+            - TagbarToggle
+            - TagbarClose
+            - TagbarDebug
+            - TagbarGetTypeConfig
+            - TagbarOpenAutoClose
+            - TagbarShowTag
+            - TagbarTogglePause
 - Shougo/vimfiler:
     lazy: 1
     autoload:
@@ -165,8 +211,12 @@
             - Ag
             - LAg
 - justinmk/vim-sneak:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>Sneak
+            - <Plug>VSneak
 - vim-scripts/matchit.zip:
-- wellle/targets.vim:
 # }}}
 
 # Debugging {{{
@@ -176,6 +226,13 @@
 
 # Reference {{{
 - rizzatti/dash.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - Dash
+            - DashKeywords
+        mappings:
+            - <Plug>DashSearch
 - thinca/vim-ref:
     lazy: 1
     autoload:
@@ -313,6 +370,10 @@
         filename_patterns:
             - .*fugitiveblame
 - int3/vim-extradite:
+    lazy: 1
+    autoload:
+        commands:
+            - Extradite
 - gregsexton/gitv:
     lazy: 1
     autoload:
@@ -368,6 +429,7 @@
 - deris/vim-textobj-enclosedsyntax:
 - Julian/vim-textobj-variable-segment:
 - osyo-manga/vim-textobj-blockwise:
+- wellle/targets.vim:
 # }}}
 
 # Writing {{{
@@ -386,19 +448,32 @@
 
 # Other Utilities {{{
 - MattesGroeger/vim-bookmarks:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>Bookmark
 - mattn/gist-vim:
     lazy: 1
     autoload:
         commands:
             - Gist
-- kana/vim-fakeclip:
-- vim-scripts/TwitVim:
+# - kana/vim-fakeclip:
+# - vim-scripts/TwitVim:
 - thinca/vim-quickrun:
+    lazy: 1
+    autoload:
+        commands:
+            - QuickRun
 - fuenor/qfixhowm:
     lazy: 1
     autoload:
         function_prefix: qfixmemo
 - sjl/clam.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - Clam
+            - ClamVisual
 - gregsexton/VimCalc:
     lazy: 1
     autoload:
@@ -415,8 +490,15 @@
         commands:
             - VimuxBufferDir
 - tyru/vim-altercmd:
-- kana/vim-fakeclip:
 - tyru/open-browser.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - OpenBrowser
+            - OpenBrowserSearch
+            - OpenBrowserSmartSearch
+        mappings:
+            - <Plug>(openbrowser
 - szw/vim-ctrlspace:
     lazy: 1
     autoload:
@@ -424,7 +506,20 @@
             - CtrlSpace
 # obsession resumes recording after restoring session, so don't make this lazy
 - tpope/vim-obsession:
+    lazy: 1
+    autoload:
+        commands:
+            - Obsession
 - tpope/vim-dispatch:
+    lazy: 1
+    autoload:
+        commands:
+            - Make
+            - Copen
+            - Dispatch
+            - Focus
+            - FocusDispatch
+            - Start
 - Shougo/junkfile.vim:
     lazy: 1
     autoload:
@@ -598,6 +693,10 @@
 
 ## Swift {{{
 - toyamarinyon/vim-swift:
+    lazy: 1
+    autoload:
+        filetypes:
+            - swift
 # }}}
 
 ## Others {{{
@@ -632,6 +731,10 @@
         filetypes:
             - plantuml
 - tmux-plugins/vim-tmux:
+    lazy: 1
+    autoload:
+        filetypes:
+            - tmux
 ## }}}
 
 # }}}
