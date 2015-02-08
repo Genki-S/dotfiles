@@ -434,8 +434,11 @@
         unite_sources:
             - junkfile
             - junkfile/new
-- mhinz/vim-startify:
 - mhinz/vim-randomtag:
+    lazy: 1
+    autoload:
+        commands:
+            - Random
 - tpope/vim-capslock:
     lazy: 1
     autoload:
