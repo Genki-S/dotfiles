@@ -46,6 +46,14 @@ inoremap <Leader><C-u> <Esc>gUiWgi
 " break undo chain when using insert mode deletions
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
+
+" emacs keybind
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+" ^ is more useful than 0 in many cases
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
+inoremap <C-k> <C-o>d$
 "}}}
 
 " Visual mode mappings {{{
