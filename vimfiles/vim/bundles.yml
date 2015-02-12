@@ -125,6 +125,8 @@
             - Abolish
             - S
             - Subvert
+        mappings:
+            - <Plug>Coerce
 - tpope/vim-surround:
 - scrooloose/nerdcommenter:
 - AndrewRadev/inline_edit.vim:

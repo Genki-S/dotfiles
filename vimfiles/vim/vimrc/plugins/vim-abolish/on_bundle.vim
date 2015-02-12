@@ -1,0 +1,1 @@
+nmap cr <Plug>Coerce
