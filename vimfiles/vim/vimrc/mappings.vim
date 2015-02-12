@@ -1,3 +1,15 @@
+" Change Leader
+let mapleader = ','
+
+" General mappings {{{
+" For US keyboard
+" See vim-sneak settings
+" nnoremap \ ,
+" noremap : ;
+noremap ; :
+" noremap q; q: " don't use this, it makes quit mappings wait
+"}}}
+
 " Normal mode mappings {{{
 " Be consistent with D and C
 nnoremap Y y$
@@ -27,16 +39,21 @@ nnoremap <silent> ) /[.。]<CR>:noh<CR>
 "}}}
 
 " Comamnd line mappings {{{
+" Emacs style
 cnoremap <C-a> <Home>
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <C-d> <Delete>
 cnoremap <C-g> <C-c>
-cnoremap <C-t> <C-f>
+
+" Useful expantions
 cnoremap <expr> %P expand("%:p")
 cnoremap <expr> %H expand("%:h")
 cnoremap <expr> %T expand("%:t")
 cnoremap <expr> %R expand("%:t:r")
+
+" Jump into commandline window with <C-t>
+cnoremap <C-t> <C-f>
 "}}}
 
 " Insert mode mappings {{{
