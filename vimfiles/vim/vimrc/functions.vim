@@ -70,6 +70,7 @@ endfunction
 
 " Quick access to Google
 function! Genki_google(query)
+	NeoBundleSource open-browser.vim
 	let l:query = a:query
 	" if in vim-ref (type query again? No thanks.)
 	if exists("b:ref_history")
