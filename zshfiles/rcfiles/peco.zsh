@@ -1,14 +1,11 @@
+# Thanks: http://qiita.com/wada811/items/78b14181a4de0fd5b497
 function peco_select_history() {
 	local tac
 	executable gtac && tac="gtac" || { executable tac && tac="tac" || { tac="tail -r" } }
 	BUFFER=$( \
-		builtin history 1 \
-		| sort -k2 \
-		| uniq --skip-fields=1 \
-		| sort -n -k1 \
-		| sed 's/^ *//' \
-		| cut -d' ' -f 2- \
-		| sed 's/^ *//' \
+		builtin history -n 1 \
+		| $tac \
+		| awk '!a[$0]++' \
 		| peco --query "$LBUFFER")
 	CURSOR=$#BUFFER # move cursor
 	zle -R -c # refresh
