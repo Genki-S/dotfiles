@@ -252,7 +252,7 @@
 - Shougo/unite.vim:
 # don't make it lazy so that neomru can register files
 - Shougo/neomru.vim:
-- h1mesuke/unite-outline:
+- Shougo/unite-outline:
     lazy: 1
     autoload:
         unite_sources:
