@@ -184,6 +184,7 @@ qmark c http://cookpad.com/
 qmark g https://github.com/
 qmark w https://www.wnp.waseda.jp/portal/portal.php
 qmark l http://www.wul.waseda.ac.jp/
+qmark p http://getpocket.com/a/queue/
 " }}}
 " ==============================
 
