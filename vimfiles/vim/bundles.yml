@@ -484,8 +484,12 @@
 - jpalardy/vim-slime:
     lazy: 1
     autoload:
-        commands:
-            - SlimeConfig
+        mappings:
+            - <Plug>SlimeRegionSend
+            - <Plug>SlimeLineSend
+            - <Plug>SlimeParagraphSend
+            - <Plug>SlimeMotionSend
+            - <Plug>SlimeConfig
 - benmills/vimux:
     lazy: 1
     autoload:
