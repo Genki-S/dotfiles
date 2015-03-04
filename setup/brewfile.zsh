@@ -25,6 +25,7 @@ formulas=(
   fortune
   cowsay
   go
+  automake
   caskroom/cask/brew-cask
 )
 
