@@ -23,7 +23,6 @@ task :install => [
   :update_injection,
   :brew_essentials,
   :orgmode,
-  :setup_osx,
   :deploy ] do
   puts 'changing login shell...'
   shell = '/usr/local/bin/zsh'
@@ -38,7 +37,8 @@ desc 'Install softwares'
 task :bundle_up => [
   :brew_optionals,
   :go_get,
-  :ghq_get] do
+  :ghq_get,
+  :setup_osx] do
 end
 
 desc 'install homebrew'
