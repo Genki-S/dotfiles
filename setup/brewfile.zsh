@@ -46,7 +46,7 @@ casks=(
   alfred
   google-japanese-ime
   dash
-  lastpass-universal
+  lastpass
   clipmenu
   karabiner
 )
