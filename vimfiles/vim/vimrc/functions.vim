@@ -1,10 +1,19 @@
-function! Genki_yaml_load(filename)
+function! Genki_yaml_load_with_cache(filename)
+	let l:cachedir = expand('~/.vim/cache/yaml')
+	if !isdirectory(l:cachedir) | call mkdir(l:cachedir, 'p') | endif
+	let l:cachefile = l:cachedir . '/' . substitute(expand(a:filename), '/', '+', 'g') . '.vim'
+	if filereadable(l:cachefile) && getftime(a:filename) <= getftime(l:cachefile)
+		return eval(join(readfile(l:cachefile), "\n"))
+	endif
+
 	ruby << EOF
 	require 'yaml'
 	obj = YAML.load_file(File.expand_path(VIM::evaluate('a:filename')))
 	obj_hash = obj.inspect.gsub('=>', ':').gsub('nil', '{}')
 	VIM::command("let l:ret = #{obj_hash}")
 EOF
+
+	call writefile([string(l:ret)], l:cachefile)
 	return l:ret
 endfunction
 

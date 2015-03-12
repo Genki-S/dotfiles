@@ -1,5 +1,5 @@
 " Definition file: ./switch.yml
-let s:switch_definitions = Genki_yaml_load(expand('<sfile>:p:h') . '/switch.yml')
+let s:switch_definitions = Genki_yaml_load_with_cache(expand('<sfile>:p:h') . '/switch.yml')
 " { '_': [ global definitions ],
 "   'filetype1': [ definitions ],
 "   'filetype2': [ definitions ], ... }
