@@ -43,6 +43,7 @@ if [[ ! -o NORCS ]]; then
 		env.zsh
 		path.zsh
 		ruby.zsh
+		go.zsh
 	)
 	for f in $envfiles
 	do

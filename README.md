@@ -35,6 +35,10 @@ Installs in `~/vendor`.
 - dotjs
 - Text Link
 
+## Other things
+
+- [moovweb/gvm · GitHub](https://github.com/moovweb/gvm)
+
 # Known issues
 
 - Homebrew cask can't be installed without sudo privilege
