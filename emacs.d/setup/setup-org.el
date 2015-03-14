@@ -6,28 +6,11 @@
 ; (require 'org-helpers)
 ; (require 'org-export)
 
-(defun genki/org-force-clock-out ()
-  (if (org-clocking-p)
-    (let ((currently-clocked-time
-            (floor (- (org-float-time) (org-float-time org-clock-start-time)) 60))
-          (limit-min 25))
-      (if (> currently-clocked-time limit-min)
-        (org-clock-out)))))
-(run-at-time "00:00" 60 'genki/org-force-clock-out)
-
 ;; notification https://gist.github.com/jstewart/7664823
 (defun osx-notification (title message)
   (call-process "osx-notification"
                 nil 0 nil
                 title message))
-
-(defun genki/org-check-clocking ()
-  (when (and (not (org-clocking-p))
-             (eq org-pomodoro-state :none))
-    (progn
-      (osx-notification "Not Clocking In" "Be Mindful of Your Life")
-      (call-process "activate-org"))))
-(run-at-time "00:00" 60 'genki/org-check-clocking)
 
 ;; sets the default workflow keywords and their faces
 (setq org-todo-keywords
