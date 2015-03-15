@@ -328,16 +328,6 @@
             - history/command
             - history/search
             - history/yank
-- alpaca-tc/alpaca_english:
-    lazy: 1
-    autoload:
-        unite_sources:
-            - english_dictionary
-            - english_example
-            - english_thesaurus
-    build:
-        mac: bundle
-        unix: bundle
 - osyo-manga/unite-quickfix:
     lazy: 1
     autoload:
@@ -765,6 +755,8 @@
 # Plugins I stopped using {{{
 # too slow, and I should not edit CSV with vim, maybe...
 # - chrisbra/csv.vim:
+# other distinct tools (`dictanki` of mine) suffices, and build is kinda tedious
+# - alpaca-tc/alpaca_english:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
