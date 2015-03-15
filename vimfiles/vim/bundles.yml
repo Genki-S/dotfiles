@@ -721,11 +721,6 @@
     autoload:
         filetypes:
             - scala
-- chrisbra/csv.vim:
-    lazy: 1
-    autoload:
-        filetypes:
-            - csv
 - vim-scripts/scilab.vim:
     lazy: 1
     autoload:
@@ -765,6 +760,11 @@
     autoload:
         commands:
             Migemo
+# }}}
+
+# Plugins I stopped using {{{
+# too slow, and I should not edit CSV with vim, maybe...
+# - chrisbra/csv.vim:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
