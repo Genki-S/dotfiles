@@ -65,11 +65,17 @@ let s:neobundlefile = expand('~/.vim/bundles.yml')
 let s:neobundlefile_compiled = expand('~/.vim/neobundlefile_compiled.vim')
 if getftime(s:neobundlefile) > getftime(s:neobundlefile_compiled)
 	silent !compile-vimrc
+	NeoBundleClearCache
 endif
 
-execute "source" s:neobundlefile_compiled
-let s:bundle_names = map(neobundle#config#get_neobundles(), 'v:val["name"]')
+if neobundle#has_cache()
+	NeoBundleLoadCache
+else
+	execute "source" s:neobundlefile_compiled
+	NeoBundleSaveCache
+endif
 
+let s:bundle_names = map(neobundle#config#get_neobundles(), 'v:val["name"]')
 for bundle_name in s:bundle_names
 	" Original hook: on_bundle
 	if filereadable(s:plugin_setting_filename(bundle_name, 'on_bundle'))
