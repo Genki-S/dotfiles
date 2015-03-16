@@ -412,6 +412,10 @@
         mappings:
             - <Plug>(textobj-entire-
 - kana/vim-textobj-function:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(textobj-function-
 - kana/vim-textobj-datetime:
 - kana/vim-textobj-indent:
     lazy: 1
