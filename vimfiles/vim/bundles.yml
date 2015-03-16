@@ -431,7 +431,6 @@
     autoload:
         mappings:
             - <Plug>(textobj-fold-
-- kana/vim-textobj-line:
 - thinca/vim-textobj-comment:
 - thinca/vim-textobj-between:
 - lucapette/vim-textobj-underscore:
@@ -782,6 +781,8 @@
 # - chrisbra/csv.vim:
 # other distinct tools (`dictanki` of mine) suffices, and build is kinda tedious
 # - alpaca-tc/alpaca_english:
+# it kills the last text object mapping, and I don't use line object anyway
+# - kana/vim-textobj-line:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
