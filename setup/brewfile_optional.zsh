@@ -47,6 +47,7 @@ casks=(
   quicksilver
   slack
   xmind
+  cheatsheet
 )
 
 for c in $casks; do
