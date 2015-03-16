@@ -407,6 +407,10 @@
 # Text Objects {{{
 - kana/vim-textobj-user:
 - kana/vim-textobj-entire:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(textobj-entire-
 - kana/vim-textobj-function:
 - kana/vim-textobj-datetime:
 - kana/vim-textobj-indent:
