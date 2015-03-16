@@ -462,6 +462,10 @@
         mappings:
             - <Plug>(textobj-rubysymbol-
 - deris/vim-textobj-enclosedsyntax:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(textobj-enclosedsyntax-
 - Julian/vim-textobj-variable-segment:
 - osyo-manga/vim-textobj-blockwise:
 - wellle/targets.vim:
