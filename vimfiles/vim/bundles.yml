@@ -410,6 +410,10 @@
 - kana/vim-textobj-function:
 - kana/vim-textobj-datetime:
 - kana/vim-textobj-indent:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(textobj-indent-
 - kana/vim-textobj-fold:
 - kana/vim-textobj-line:
 - thinca/vim-textobj-comment:
