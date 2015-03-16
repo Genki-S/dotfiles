@@ -467,6 +467,10 @@
         mappings:
             - <Plug>(textobj-enclosedsyntax-
 - Julian/vim-textobj-variable-segment:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(textobj-variable-
 - osyo-manga/vim-textobj-blockwise:
 - wellle/targets.vim:
 # }}}
