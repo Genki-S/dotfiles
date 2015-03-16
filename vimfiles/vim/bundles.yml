@@ -442,6 +442,10 @@
         mappings:
             - <Plug>(textobj-between-
 - lucapette/vim-textobj-underscore:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(textobj-underscore-
 - coderifous/textobj-word-column.vim:
 - nelstrom/vim-textobj-rubyblock:
 - bootleq/vim-textobj-rubysymbol:
