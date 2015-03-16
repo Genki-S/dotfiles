@@ -437,6 +437,10 @@
         mappings:
             - <Plug>(textobj-comment-
 - thinca/vim-textobj-between:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(textobj-between-
 - lucapette/vim-textobj-underscore:
 - coderifous/textobj-word-column.vim:
 - nelstrom/vim-textobj-rubyblock:
