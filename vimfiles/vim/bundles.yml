@@ -740,6 +740,11 @@
         functions:
             - PrettyPrint
             - PP
+- mattn/benchvimrc-vim:
+    lazy: 1
+    autoload:
+        commands:
+            - BenchVimrc
 # }}}
 
 # Manual Plugins {{{
