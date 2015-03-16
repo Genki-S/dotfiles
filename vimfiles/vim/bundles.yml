@@ -432,6 +432,10 @@
         mappings:
             - <Plug>(textobj-fold-
 - thinca/vim-textobj-comment:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(textobj-comment-
 - thinca/vim-textobj-between:
 - lucapette/vim-textobj-underscore:
 - coderifous/textobj-word-column.vim:
