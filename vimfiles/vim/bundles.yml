@@ -471,7 +471,6 @@
     autoload:
         mappings:
             - <Plug>(textobj-variable-
-- osyo-manga/vim-textobj-blockwise:
 - wellle/targets.vim:
 # }}}
 
@@ -815,6 +814,8 @@
 # - alpaca-tc/alpaca_english:
 # it kills the last text object mapping, and I don't use line object anyway
 # - kana/vim-textobj-line:
+# textobj-word-column suffices
+# - osyo-manga/vim-textobj-blockwise:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
