@@ -427,6 +427,10 @@
         mappings:
             - <Plug>(textobj-indent-
 - kana/vim-textobj-fold:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(textobj-fold-
 - kana/vim-textobj-line:
 - thinca/vim-textobj-comment:
 - thinca/vim-textobj-between:
