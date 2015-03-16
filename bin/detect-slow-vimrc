@@ -1,0 +1,7 @@
+#!/bin/bash
+
+tmpfile=$(mktemp)
+vim --startuptime $tmpfile -c 'quit'
+cat $tmpfile \
+  | grep '^\(\d\|\.\)\+\s\+\(\d\|\.\)\+\s\+\(\d\|\.\)\+' \
+  | sort -k3 -n -r
