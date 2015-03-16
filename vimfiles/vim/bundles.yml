@@ -447,6 +447,10 @@
         mappings:
             - <Plug>(textobj-underscore-
 - coderifous/textobj-word-column.vim:
+    lazy: 1
+    autoload:
+        functions:
+            - TextObjWordBasedColumn
 - nelstrom/vim-textobj-rubyblock:
 - bootleq/vim-textobj-rubysymbol:
 - deris/vim-textobj-enclosedsyntax:
