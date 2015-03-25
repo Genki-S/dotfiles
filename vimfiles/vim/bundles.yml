@@ -431,11 +431,6 @@
     autoload:
         mappings:
             - <Plug>(textobj-fold-
-- thinca/vim-textobj-comment:
-    lazy: 1
-    autoload:
-        mappings:
-            - <Plug>(textobj-comment-
 - thinca/vim-textobj-between:
     lazy: 1
     autoload:
@@ -816,6 +811,8 @@
 # - kana/vim-textobj-line:
 # textobj-word-column suffices
 # - osyo-manga/vim-textobj-blockwise:
+# mostly replace-able by textobj-between or :normal ^lC
+# - thinca/vim-textobj-comment:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
