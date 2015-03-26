@@ -38,6 +38,8 @@ task :bundle_up => [
   :brew_optionals,
   :go_get,
   :ghq_get,
+  :npm_install,
+  :bundle_install,
   :setup_osx] do
 end
 
@@ -121,6 +123,21 @@ task :ghq_get do
   repos = YAML.load_file("#{DOTDIR}/config/ghq.yml")
   repos.each do |repo|
     run %{ ghq get #{repo} }
+  end
+end
+
+desc 'Install npm packages'
+task :npm_install do
+  Dir.chdir(DOTDIR) do
+    run %{ npm install }
+  end
+end
+
+desc 'Install ruby gems'
+task :bundle_install do
+  Dir.chdir(DOTDIR) do
+    run %{ gem install bundler }
+    run %{ bundle install }
   end
 end
 
