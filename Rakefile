@@ -5,8 +5,8 @@ require 'uri'
 
 HOME = ENV['HOME']
 DOTDIR = "#{HOME}/dotfiles"
-BREW_PREFIX = ENV['BREW_PREFIX']
-raise 'BREW_PREFIX environment variable is not set' unless BREW_PREFIX
+BREW_PREFIX = ENV['BREW_PREFIX'] || `which brew > /dev/null && brew --prefix || echo ""`
+raise 'BREW_PREFIX environment variable is not set' if BREW_PREFIX.to_s.empty?
 BREW = "#{BREW_PREFIX}/bin/brew"
 
 # Set path to include BREW_PREFIX/bin
