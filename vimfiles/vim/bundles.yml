@@ -617,7 +617,7 @@
 ## }}}
 
 ## Go {{{
-- jnwhiteh/vim-golang:
+- fatih/vim-go:
     lazy: 1
     autoload:
         filetypes:
