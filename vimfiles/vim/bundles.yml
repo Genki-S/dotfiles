@@ -150,6 +150,15 @@
     autoload:
         commands:
             - Autoformat
+- janko-m/vim-test:
+    lazy: 1
+    autoload:
+        commands:
+            - TestNearest
+            - TestFile
+            - TestSuite
+            - TestLast
+            - TestVisit
 
 ## Completion {{{
 - Shougo/neocomplete:
@@ -605,11 +614,6 @@
     autoload:
         commands:
             - RuboCop
-- thoughtbot/vim-rspec:
-    lazy: 1
-    autoload:
-        filetypes:
-            - ruby
 ## }}}
 
 ## Go {{{
