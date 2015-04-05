@@ -37,7 +37,7 @@ function(arg){
 EOM
 
 nnoremap <Leader>e :eijiroWithSave<Space>
-vnoremap E y:eijiroWithSave <M-v><CR>
+vnoremap <Leader>e y:eijiroWithSave <M-v><CR>
 
 " Twittperator
 let g:twittperator_use_ssl_connection_for_api_ep = 1
