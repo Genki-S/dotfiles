@@ -1,5 +1,5 @@
 // Header {{{
-#include <bits/stcd++.h>
+#include <bits/stdc++.h>
 using namespace std;
 // consts {{{
 static const int INF = 1e9;
