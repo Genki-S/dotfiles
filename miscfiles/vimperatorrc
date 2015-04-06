@@ -111,7 +111,8 @@ nnoremap ! :set invum<CR>
 " google
 nnoremap s :tabopen<Space>google<Space>
 " in visual mode, enable to searching with selected phase.
-vnoremap s y<Esc><Esc>:tabopen<Space>google<Space><S-Insert><CR>
+cabbrev -javascript %" util.readFromClipboard()
+vnoremap s y<Esc><Esc>:tabopen<Space>google<Space>%"<Space><BS><CR>
 
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
