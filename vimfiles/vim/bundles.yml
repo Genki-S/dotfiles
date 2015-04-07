@@ -16,6 +16,11 @@
     autoload:
         on_source:
             - dash.vim
+- basyura/twibill.vim:
+    lazy: 1
+    autoload:
+        on_source:
+            - TweetVim
 # }}}
 
 # It just works (No need to invoke consciously, just configure.) {{{
@@ -504,7 +509,23 @@
         commands:
             - Gist
 # - kana/vim-fakeclip:
-# - vim-scripts/TwitVim:
+- basyura/TweetVim:
+    lazy: 1
+    autoload:
+        commands:
+            - TweetVimVersioni
+            - TweetVimAddAccount
+            - TweetVimSwitchAccount
+            - TweetVimHomeTimeline
+            - TweetVimMentions
+            - TweetVimUserTimeline
+            - TweetVimListStatuses
+            - TweetVimSearch
+            - TweetVimSay
+            - TweetVimUserStream
+            - TweetVimCommandSay
+            - TweetVimCurrentLineSay
+            - TweetVimClearIcon
 - thinca/vim-quickrun:
     lazy: 1
     autoload:
@@ -543,6 +564,8 @@
 - tyru/open-browser.vim:
     lazy: 1
     autoload:
+        on_source:
+            - twibill.vim
         commands:
             - OpenBrowser
             - OpenBrowserSearch
