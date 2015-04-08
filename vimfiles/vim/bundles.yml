@@ -513,7 +513,7 @@
     lazy: 1
     autoload:
         commands:
-            - TweetVimVersioni
+            - TweetVimVersion
             - TweetVimAddAccount
             - TweetVimSwitchAccount
             - TweetVimHomeTimeline
