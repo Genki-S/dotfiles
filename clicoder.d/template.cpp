@@ -1,5 +1,30 @@
 // Header {{{
-#include <bits/stdc++.h>
+// includes {{{
+#include <algorithm>
+#include <cassert>
+#include <cctype>
+#include <climits>
+#include <cmath>
+#include <complex>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
+#include <iostream>
+#include <iterator>
+#include <limits>
+#include <list>
+#include <map>
+#include <numeric>
+#include <queue>
+#include <set>
+#include <sstream>
+#include <stack>
+#include <string>
+#include <sys/time.h>
+#include <unistd.h>
+#include <vector>
+// }}}
 using namespace std;
 // consts {{{
 static const int INF = 1e9;
