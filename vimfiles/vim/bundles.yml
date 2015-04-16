@@ -254,6 +254,11 @@
     autoload:
         commands:
             - Ref
+- Keithbsmiley/investigate.vim:
+    lazy: 1
+    autoload:
+        functions:
+            - investigate#Investigate
 - taka84u9/vim-ref-ri:
 - yuratomo/w3m.vim:
     lazy: 1
