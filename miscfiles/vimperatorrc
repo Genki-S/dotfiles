@@ -169,6 +169,7 @@ highlight Bell display:none
 set! ui.key.generalAccessKey=0
 " make caret bold: http://coderepos.org/share/browser/dotfiles/vimperator/snaka-vimperatorrc
 set! ui.caretWidth=8
+set hinttags+="| //*[contains(concat(' ', normalize-space(@class), ' '), ' vimperator-hint-target ')]"
 " }}}
 " ==============================
 
