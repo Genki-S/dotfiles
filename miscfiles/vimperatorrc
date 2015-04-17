@@ -269,9 +269,8 @@ set! ui.key.generalAccessKey=0
 " make caret bold: http://coderepos.org/share/browser/dotfiles/vimperator/snaka-vimperatorrc
 set! ui.caretWidth=8
 set hinttags&
-" FIXME: this creates too much links and make it impossible to press things
-"        like Amazon buttons
-" set hinttags+="| //*[contains(concat(' ', normalize-space(@class), ' '), ' vimperator-hint-target ')]"
+" `vimperator-hint-target` class is set using dotjs (see: miscfiles/js/default.js)
+set hinttags+="| //*[contains(concat(' ', normalize-space(@class), ' '), ' vimperator-hint-target ')]"
 set newtab+=help
 set showstatuslinks=2
 set tabnumbers
