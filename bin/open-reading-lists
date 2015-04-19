@@ -1,0 +1,9 @@
+#!/bin/bash
+
+lists=$($HOME/dotfiles/bin/reading-lists)
+for url in $lists; do
+  open $url
+  # prevent "LSOpenURLsWithRole() failed with error -1712"
+  # http://apple.stackexchange.com/questions/118290/lsopenurlswithrole-failed-with-error-1712-for-the-file-path-to-folder-wh
+  sleep 0.5
+done
