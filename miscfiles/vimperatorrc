@@ -13,7 +13,7 @@ hi -append Hint z-index: 2147483647 !important;
 " Plugins {{{
 " ==============================
 let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins ~/dotfiles/submodules/caisui-vimperator/plugin"
-let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,twittperator,copy,feedSomeKeys_3,hints-ext"
+let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,twittperator,copy,feedSomeKeys_3,hints-ext,slideshare"
 
 " appendAnchor {{{
 let g:auto_append_anchor="true"
@@ -117,6 +117,13 @@ nnoremap c ;C
 let g:use_hints_ext_visual="V"
 nnoremap v ;V
 js hints.addSimpleMap("<C-l>", function () {this.relocation(); });
+" }}}
+
+" slideshare.js {{{
+nnoremap -urls=^http://www\.slideshare\.net/ <S-J> :slideshare next<CR>
+nnoremap -urls=^http://www\.slideshare\.net/ ]] :slideshare next<CR>
+nnoremap -urls=^http://www\.slideshare\.net/ <S-K> :slideshare prev<CR>
+nnoremap -urls=^http://www\.slideshare\.net/ [[ :slideshare prev<CR>
 " }}}
 
 " }}}
