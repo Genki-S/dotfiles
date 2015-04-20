@@ -12,8 +12,8 @@ hi -append Hint z-index: 2147483647 !important;
 " ==============================
 " Plugins {{{
 " ==============================
-let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins"
-let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,twittperator,copy,feedSomeKeys_3"
+let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins ~/dotfiles/submodules/caisui-vimperator/plugin"
+let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,twittperator,copy,feedSomeKeys_3,hints-ext"
 
 " appendAnchor {{{
 let g:auto_append_anchor="true"
@@ -109,6 +109,16 @@ auve :fmaps -urls='feedly\.com' ? gh ga gg gl <S-j> <S-k> a r j k n p o v <S-a> 
 
 delcommand auve
 " }}}
+
+" hints-ext {{{
+let g:use_hintchars_ex=1
+let g:use_hints_ext_caret="C"
+nnoremap c ;C
+let g:use_hints_ext_visual="V"
+nnoremap v ;V
+js hints.addSimpleMap("<C-l>", function () {this.relocation(); });
+" }}}
+
 " }}}
 " ==============================
 
@@ -143,10 +153,6 @@ nnoremap <Leader>p :pocket<CR>
 " Reload .vimperatorrc
 nnoremap <Leader>R :source ~/.vimperatorrc<CR>
 
-" Mode navigation
-nnoremap v :nohlsearch<CR>ccv
-" remove heighligt in caret-mode because it mkaes hard to see my cursor
-nnoremap c :nohlsearch<CR>c
 vnoremap <Esc> <Esc><Esc>
 
 " Encodings
