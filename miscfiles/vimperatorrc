@@ -161,7 +161,7 @@ EOM
 set complete=sl
 set focuscontent
 set defsearch=google
-set hintchars=asdfghjkl
+set hintchars=qwertyuiopasdfghjklzxcvbnm
 " no sound
 set visualbell
 highlight Bell display:none
