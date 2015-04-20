@@ -7,15 +7,20 @@ colorscheme solarized
 " minor change to the solarized
 hi -append Hint background-color: rgba(0, 43, 54, 0.5); color: #fff;
 " make hint appear the most front (using 2^32)
-hi -append Hint z-index: 2147483647;
+hi -append Hint z-index: 2147483647 !important;
 
 " ==============================
 " Plugins {{{
 " ==============================
 let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins"
-let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,twittperator,copy"
+let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,twittperator,copy,feedSomeKeys_3"
 
-" lookupDictionary
+" appendAnchor {{{
+let g:auto_append_anchor="true"
+let g:auto_append_anchor_once="true"
+" }}}
+
+" lookupDictionary {{{
 javascript <<EOM
 liberator.modules.commands.addUserCommand(["eijiroWithSave"], "eijiro with the word saving to ~/unknown_words.txt",
 function(arg){
@@ -38,13 +43,15 @@ EOM
 
 nnoremap <Leader>e :eijiroWithSave<Space>
 vnoremap <Leader>e y:eijiroWithSave <M-v><CR>
+" }}}
 
-" Twittperator
+" Twittperator {{{
 let g:twittperator_use_ssl_connection_for_api_ep = 1
 cabbrev -javascript %% " : " + buffer.title + " @ " + buffer.URL
 nmap <Leader>t ;%%<Space><BS><C-a>twittperator<Space>
+" }}}
 
-" copy.js
+" copy.js {{{
 javascript <<EOM
 (function(){
     liberator.globalVariables.copy_templates = [
@@ -89,7 +96,19 @@ nnoremap yT :copy titleAndURL<CR>
 nnoremap yq :copy blockquote<CR>
 nnoremap yo :copy orgmode<CR>
 nnoremap ym :copy markdown<CR>
+" }}}
 
+" feedSomekeys_3 {{{
+command! -nargs=+ auve autocmd VimperatorEnter .* <args>
+
+" for Grooveshark
+auve :fmaps -urls='grooveshark\.com' <Space>
+
+" for Feedly
+auve :fmaps -urls='feedly\.com' ? gh ga gg gl <S-j> <S-k> a r j k n p o v <S-a> m x s b c <S-v> <Esc>
+
+delcommand auve
+" }}}
 " }}}
 " ==============================
 
@@ -169,7 +188,14 @@ highlight Bell display:none
 set! ui.key.generalAccessKey=0
 " make caret bold: http://coderepos.org/share/browser/dotfiles/vimperator/snaka-vimperatorrc
 set! ui.caretWidth=8
+set hinttags&
 set hinttags+="| //*[contains(concat(' ', normalize-space(@class), ' '), ' vimperator-hint-target ')]"
+set hinttags+="| //img[contains(concat(' ', normalize-space(@class), ' '), ' hatena-star-comment-button ')]"
+set hinttags+="| //img[contains(concat(' ', normalize-space(@class), ' '), ' hatena-star-add-button ')]"
+set newtab+=help
+set showstatuslinks=2
+set tabnumbers
+set visualbell
 " }}}
 " ==============================
 
