@@ -13,7 +13,7 @@ hi -append Hint z-index: 2147483647 !important;
 " Plugins {{{
 " ==============================
 let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins ~/dotfiles/submodules/caisui-vimperator/plugin"
-let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,twittperator,copy,feedSomeKeys_3,hints-ext,slideshare,xpath_hint"
+let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,twittperator,copy,feedSomeKeys_3,hints-ext,slideshare,xpath_hint,stella"
 
 " appendAnchor {{{
 let g:auto_append_anchor="true"
@@ -128,6 +128,17 @@ nnoremap -urls=^http://www\.slideshare\.net/ [[ :slideshare prev<CR>
 
 " xpath_hint.js {{{
 let g:xpath_hint_map = 'X'
+" }}}
+
+" stella.js {{{
+nnoremap -urls=^https://www\.youtube\.com/ <Leader>. :stplay<CR>
+nnoremap -urls=^https://www\.youtube\.com/ <Leader>z :stfullscreen<CR>
+nnoremap -urls=^https://www\.youtube\.com/ <Leader>ss :stseek<SPACE>
+nnoremap -urls=^https://www\.youtube\.com/ <Leader>s- :stseek! -10<CR>
+nnoremap -urls=^https://www\.youtube\.com/ <Leader>s+ :stseek! 10<CR>
+nnoremap -urls=^https://www\.youtube\.com/ <Leader>vv :stvolume<SPACE>
+nnoremap -urls=^https://www\.youtube\.com/ <Leader>v- :stvolume! -10<CR>
+nnoremap -urls=^https://www\.youtube\.com/ <Leader>v+ :stvolume! 10<CR>
 " }}}
 
 " }}}
