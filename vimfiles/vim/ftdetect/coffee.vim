@@ -1,4 +1,4 @@
-autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-autocmd BufNewFile,BufRead *Cakefile set filetype=coffee
-autocmd BufNewFile,BufRead *.coffeekup,*.ck set filetype=coffee
-autocmd BufNewFile,BufRead *._coffee set filetype=coffee
+autocmd BufNewFile,BufRead *.coffee setfiletype=coffee
+autocmd BufNewFile,BufRead *Cakefile setfiletype=coffee
+autocmd BufNewFile,BufRead *.coffeekup,*.ck setfiletype=coffee
+autocmd BufNewFile,BufRead *._coffee setfiletype coffee

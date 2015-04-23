@@ -1,2 +1,1 @@
-au BufRead,BufNewFile *.org set filetype=org
-
+au BufRead,BufNewFile *.org setfiletype org

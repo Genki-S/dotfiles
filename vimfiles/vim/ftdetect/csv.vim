@@ -1,2 +1,2 @@
 " csv
-au BufRead,BufNewFile *.{csv} set filetype=csv
+au BufRead,BufNewFile *.{csv} setfiletype csv
