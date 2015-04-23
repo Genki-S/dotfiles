@@ -803,6 +803,11 @@
     autoload:
         filetypes:
             - tmux
+- markcornick/vim-terraform:
+    lazy: 1
+    autoload:
+        filetypes:
+            - terraform
 ## }}}
 
 # }}}
