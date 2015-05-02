@@ -5,6 +5,7 @@
 ;; mappings
 (define-key evil-normal-state-map ";" 'evil-ex)
 (define-key evil-normal-state-map ":" 'evil-repeat-find-char)
+(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
 
 (define-key evil-normal-state-map ",;" 'eval-expression)
 (define-key evil-normal-state-map ",x" 'execute-extended-command)
