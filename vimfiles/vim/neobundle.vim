@@ -65,9 +65,8 @@ if getftime(s:neobundlefile) > getftime(s:neobundlefile_compiled)
 	NeoBundleClearCache
 endif
 
-if neobundle#has_cache()
-	NeoBundleLoadCache
-else
+if neobundle#load_cache()
+	" when cache loading fails
 	execute "source" s:neobundlefile_compiled
 	NeoBundleSaveCache
 endif
