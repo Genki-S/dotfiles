@@ -616,6 +616,11 @@
     autoload:
         mappings:
             - <Plug>CapsLockToggle
+- osyo-manga/vim-vigemo:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(vigemo-search)
 # }}}
 
 # Filetype Specific {{{
@@ -827,16 +832,6 @@
     autoload:
         commands:
             - BenchVimrc
-# }}}
-
-# Manual Plugins {{{
-- migemo:
-    type: nosync
-    base: ~/.vim/bundles/manual
-    lazy: 1
-    autoload:
-        commands:
-            Migemo
 # }}}
 
 # Plugins I stopped using {{{

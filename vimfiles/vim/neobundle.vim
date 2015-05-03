@@ -57,9 +57,6 @@ call neobundle#begin(expand('~/.vim/bundles'))
 " Let neobundle manage neobundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" Manual plugins
-NeoBundleLocal ~/.vim/bundles/manual
-
 " Setup bundles {{{
 let s:neobundlefile = expand('~/.vim/bundles.yml')
 let s:neobundlefile_compiled = expand('~/.vim/neobundlefile_compiled.vim')

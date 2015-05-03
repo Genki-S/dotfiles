@@ -1,5 +1,4 @@
-vimfiles/vim/bundles/*
-!vimfiles/vim/bundles/manual
+vimfiles/vim/bundles
 vimfiles/vim/neobundlefile_compiled.vim
 vimfiles/vim/cache
 
