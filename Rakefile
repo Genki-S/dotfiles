@@ -52,12 +52,13 @@ end
 
 desc 'install essential brew packages'
 task :brew_essentials do
-  run %{ zsh setup/brewfile.zsh }
+  run %{ brew tap Homebrew/bundle }
+  run %{ brew bundle --file=Brewfile }
 end
 
 desc 'install optional brew packages'
 task :brew_optionals do
-  run %{ zsh setup/brewfile_optional.zsh }
+  run %{ brew bundle --file=Brewfile.optional }
 end
 
 desc 'setup osx'
