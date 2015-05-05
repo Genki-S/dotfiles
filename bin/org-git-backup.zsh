@@ -1,10 +1,14 @@
 #!/bin/zsh
 
+# FIXME: boxen dependency
+BREW=/opt/boxen/homebrew/bin/brew
+GIT=$(BREW --prefix)/bin/git
+
 cd ~/org
 # Remove deleted files
-git ls-files --deleted -z | xargs -0 git rm >/dev/null 2>&1
+$GIT ls-files --deleted -z | xargs -0 $GIT rm >/dev/null 2>&1
 # Add new files
-git add . >/dev/null 2>&1
+$GIT add . >/dev/null 2>&1
 
-git commit -m "$(date)"
-git push origin master
+$GIT commit -m "$(date)"
+$GIT push origin master
