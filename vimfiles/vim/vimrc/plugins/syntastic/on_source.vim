@@ -1,4 +1,4 @@
-let g:syntastic_auto_loc_list = 2
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_mode_map = {
 	\ 'mode': 'inactive',
 	\ 'active_filetypes': [],
