@@ -22,6 +22,7 @@ brew 'fortune'
 brew 'cowsay'
 brew 'go'
 brew 'automake'
+brew 'aspell'
 
 brew 'caskroom/cask/brew-cask'
 cask 'iterm2'

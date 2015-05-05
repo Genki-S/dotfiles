@@ -42,10 +42,6 @@
 	path = submodules/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
 	branch = master
-[submodule "submodules/git-hooks"]
-	path = submodules/git-hooks
-	url = https://github.com/icefox/git-hooks
-	branch = master
 [submodule "submodules/git-when-merged"]
 	path = submodules/git-when-merged
 	url = https://github.com/mhagger/git-when-merged

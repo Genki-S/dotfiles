@@ -1,1 +1,17 @@
-../../../submodules/git-hooks/contrib/commit-msg/spellcheck
+#!/bin/bash
+
+msgfile=$1
+
+which aspell > /dev/null
+if [ ! $? -eq 0 ] ; then
+    echo >&2 "aspell not installed. Please install."
+    exit 0
+fi
+
+set -e
+
+warnings=`cat "${msgfile}" | grep -v '^#.*' | aspell list`
+if [ ! -z "${warnings}" ] ; then
+    echo >&2 "Possible spelling errors in the commit message:"
+    echo -e >&2 "\t"${warnings}"";
+fi
