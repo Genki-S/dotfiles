@@ -2,3 +2,4 @@ get github.com/motemen/ghq
 get github.com/peco/peco/cmd/peco
 get github.com/ericchiang/pup
 get github.com/peco/migemogrep
+get github.com/git-hooks/git-hooks
