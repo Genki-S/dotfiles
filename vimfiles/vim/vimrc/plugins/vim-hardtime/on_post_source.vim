@@ -1,0 +1,2 @@
+AlterCommand hton HardTimeOff
+AlterCommand htoff HardTimeOff
