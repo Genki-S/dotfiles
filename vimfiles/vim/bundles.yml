@@ -56,7 +56,7 @@
 # }}}
 
 # Coding {{{
-# - tpope/vim-scriptease:
+- tpope/vim-scriptease:
 - Shougo/neosnippet:
     lazy: 1
     autoload:
