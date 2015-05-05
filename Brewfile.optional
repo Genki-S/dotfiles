@@ -15,6 +15,7 @@ brew 'tree'
 brew 'ansifilter'
 brew 'tidy'
 brew 'astyle'
+brew 'shellcheck'
 
 cask 'calibre'
 cask 'libreoffice'
