@@ -781,8 +781,8 @@
 - kannokanno/previm:
     lazy: 1
     autoload:
-        filetypes:
-            - markdown
+        commands:
+            - PrevimOpen
 - LaTeX-Box-Team/LaTeX-Box:
     lazy: 1
     autoload:
