@@ -24,6 +24,10 @@ function preq() {
 # ghi -- github issues from command line
 export GHI_TOKEN=`cat ~/private_files/ghi_token`
 
+# ghq
+# http://weblog.bulknews.net/post/89635306479/ghq-peco-percol
+alias gcd='cd $(ghq list --full-path | peco)'
+
 # Sugers
 alias gs="git status --short --untracked-files"
 # git status files
