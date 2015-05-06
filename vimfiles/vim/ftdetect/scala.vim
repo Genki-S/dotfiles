@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.scala setlocal filetype=scala
+au BufRead,BufNewFile *.scala setfiletype scala
