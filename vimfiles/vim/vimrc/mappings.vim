@@ -30,9 +30,6 @@ nnoremap <C-w>t :tabnew<CR>
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 " tip: gv selects last selection again
 
-" Pbcopy
-vnoremap <silent> <Leader>Y :Pbcopy<CR>
-
 " make ( and ) work with Japanese sentences
 nnoremap <silent> ( ?[.。]<CR>:noh<CR>
 nnoremap <silent> ) /[.。]<CR>:noh<CR>
@@ -84,6 +81,9 @@ inoremap <C-k> <C-o>d$
 vnoremap * "zy:let @/ = @z<CR>n
 vnoremap <Leader>G "zy:Google <C-r>"<CR>
 vnoremap <Leader>E "zy:Ref webdict alc <C-r>"<CR>
+
+" Pbcopy
+vnoremap <silent> <Leader>Y :Pbcopy<CR>
 " }}}
 
 " make & trigger :&& so it preserves flags
