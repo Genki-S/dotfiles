@@ -217,9 +217,9 @@ set! ui.key.generalAccessKey=0
 " make caret bold: http://coderepos.org/share/browser/dotfiles/vimperator/snaka-vimperatorrc
 set! ui.caretWidth=8
 set hinttags&
-set hinttags+="| //*[contains(concat(' ', normalize-space(@class), ' '), ' vimperator-hint-target ')]"
-set hinttags+="| //img[contains(concat(' ', normalize-space(@class), ' '), ' hatena-star-comment-button ')]"
-set hinttags+="| //img[contains(concat(' ', normalize-space(@class), ' '), ' hatena-star-add-button ')]"
+" FIXME: this creates too much links and make it impossible to press things
+"        like Amazon buttons
+" set hinttags+="| //*[contains(concat(' ', normalize-space(@class), ' '), ' vimperator-hint-target ')]"
 set newtab+=help
 set showstatuslinks=2
 set tabnumbers
