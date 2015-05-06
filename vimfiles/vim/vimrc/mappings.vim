@@ -36,6 +36,12 @@ vnoremap <silent> <Leader>Y :Pbcopy<CR>
 " make ( and ) work with Japanese sentences
 nnoremap <silent> ( ?[.。]<CR>:noh<CR>
 nnoremap <silent> ) /[.。]<CR>:noh<CR>
+
+" make [[ and ]] work with no {}-at-first-column restriction (:help section)
+nnoremap [[ ?{<CR>w99[{
+nnoremap ][ /}<CR>b99]}
+nnoremap ]] j0?{<CR>w99[{%/{<CR>
+nnoremap [] k$/}<CR>b99]}%?}<CR>
 "}}}
 
 " Comamnd line mappings {{{
