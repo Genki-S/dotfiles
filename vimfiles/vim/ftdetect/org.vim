@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.org setfiletype org
+au BufRead,BufNewFile *.org setlocal filetype=org

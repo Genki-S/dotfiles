@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.sci,*.sce setfiletype scilab
+au BufRead,BufNewFile *.sci,*.sce setlocal filetype=scilab

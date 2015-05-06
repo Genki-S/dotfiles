@@ -1,1 +1,1 @@
-autocmd CmdwinEnter * setfiletype cmdwin
+autocmd CmdwinEnter * setlocal filetype=cmdwin

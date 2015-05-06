@@ -1,2 +1,2 @@
-autocmd BufRead,BufNewFile *.tf setfiletype terraform
-autocmd BufRead,BufNewFile *.tfstate setfiletype=javascript
+autocmd BufRead,BufNewFile *.tf setlocal filetype=terraform
+autocmd BufRead,BufNewFile *.tfstate setlocal filetype=javascript

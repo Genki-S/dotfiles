@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.go setfiletype go
+autocmd BufNewFile,BufRead *.go setlocal filetype=go
