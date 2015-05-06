@@ -1,7 +1,32 @@
 #!/bin/bash
 
 tmpfile=$(mktemp)
-vim --startuptime $tmpfile -c 'quit'
-cat $tmpfile \
-  | grep '^\(\d\|\.\)\+\s\+\(\d\|\.\)\+\s\+\(\d\|\.\)\+' \
-  | sort -k3 -n -r
+vim --startuptime "$tmpfile" -c 'quit' "$@"
+
+outfile=$(mktemp)
+prev_clock=0
+
+echo -n "0" >> "$outfile"
+while read line; do
+  echo "$line" >> "$outfile"
+
+  echo "$line" | grep '^\d' > /dev/null
+  if [ $? -ne 0 ]; then
+    continue
+  fi
+
+  clock=$(echo "$line" | cut -d' ' -f1)
+  clock_diff=$(echo "scale=3; $clock - $prev_clock" | bc -q | sed 's/^\./0./')
+  prev_clock="$clock"
+
+  # this is the clock diff for the next line
+  echo -n "$clock_diff  " >> "$outfile"
+done < "$tmpfile"
+
+echo "startuptime: $tmpfile"
+echo "modified startuptime: $outfile"
+echo
+echo "times in msec"
+printf "  time to execute (diff in clock)\tclock\ttime to source (self+sourced)\ttime to source (self):\tsourced script\n"
+grep '^\(\d\|\.\)\+\s\+\(\d\|\.\)\+\s\+\(\d\|\.\)\+' < "$outfile" \
+  | sort -k1 -n -r
