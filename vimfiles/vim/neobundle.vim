@@ -63,6 +63,9 @@ let s:neobundlefile_compiled = expand('~/.vim/neobundlefile_compiled.vim')
 if getftime(s:neobundlefile) > getftime(s:neobundlefile_compiled)
 	silent !compile-vimrc
 	NeoBundleClearCache
+	" Delete ftdetect files copied by NeoBundle (I don't need it for now)
+	call neobundle#util#cleandir('ftdetect')
+	call neobundle#util#cleandir('after/ftdetect')
 endif
 
 if neobundle#load_cache()
