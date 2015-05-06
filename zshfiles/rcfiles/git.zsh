@@ -55,7 +55,15 @@ alias gsd="git stash show"
 alias gsdiff="git stash show --color"
 alias gsp="git stash pop --index"
 alias gsdrop="git stash drop"
-alias gbw="git browse"
+alias gbws='git browse $(ghq list | sed "s!github\.com/!!" | peco)'
+function gbw() {
+  root=$(git-root)
+  if [ -z "$root" ]; then
+    gbws
+  else
+    git browse
+  fi
+}
 # git branch select
 alias gbs="git branch | peco | xargs git checkout"
 # list things
