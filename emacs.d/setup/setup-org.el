@@ -34,6 +34,7 @@
                       ("@work" . ?w)
                       ("@home" . ?h)
                       ("@univ" . ?u)
+                      ("@errand" . ?e)
                       (:endgroup . nil)
                       (:startgroup . nil)
                       ("Q1" . ?1)
