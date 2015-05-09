@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# http://blog.teapla.net/2015/05/5444
+osascript -e 'tell application "System Events" to key code 102'
