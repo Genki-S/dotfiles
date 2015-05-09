@@ -22,6 +22,10 @@ augroup vimrc
 		\ if getline(1) =~ "^#!" && getline(1) =~ "/bin/" |
 		\   call Genki_chmod('a+x', expand("<afile>:p")) |
 		\ endif
+	" This has a lag and I had better control IME myself
+	" if has('mac')
+		" autocmd InsertLeave * call system('osx-ime-to-eisuu')
+	" endif
 augroup END
 
 augroup vimrc_plugins
