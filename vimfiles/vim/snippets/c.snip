@@ -1,3 +1,13 @@
 snippet     sc
 abbr        scanf
-    scanf("%${1}", &${2});${0}
+  scanf("%${1}", &${2});${0}
+
+snippet     calloc
+abbr        calloc
+  ${1:int}* ${2:p};
+  if ( NULL == ($2 = calloc(${3:10}, sizeof($1))) ) {
+    printf("malloc failed\n");
+    return(-1);
+  }
+  ${0:#:Do something with your memory};
+  free($2);
