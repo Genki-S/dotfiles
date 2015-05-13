@@ -194,6 +194,8 @@
          "* TODO %? :idea:\n")
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
          (file "~/org/templates/journal.txt"))
+        ("w" "Workout" entry (file+datetree "~/org/journal.org")
+         "* %?  :workout:\n%U")
         ("7" "750 words" entry (file+datetree "~/org/journal.org")
          "* %?\n%U" :clock-in t :clock-resume t)))
 
