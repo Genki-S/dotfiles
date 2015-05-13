@@ -391,7 +391,6 @@
 
 # Visual {{{
 - altercation/vim-colors-solarized:
-- airblade/vim-gitgutter:
 - t9md/vim-quickhl:
 - itchyny/lightline.vim:
 - kshenoy/vim-signature:
@@ -843,6 +842,8 @@
 # - thinca/vim-textobj-comment:
 # it breaks dot repeat and it's more annoying than auto closing is useful
 # - Raimondi/delimitMate:
+# unbearably slow... with gitgutter `:Time w` => `1.332 seconds to run :w`, without gitgutter: `:Time w` => `0.024 seconds to run :w`
+# - airblade/vim-gitgutter:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
