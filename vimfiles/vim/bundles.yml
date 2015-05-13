@@ -844,6 +844,8 @@
 # - Raimondi/delimitMate:
 # unbearably slow... with gitgutter `:Time w` => `1.332 seconds to run :w`, without gitgutter: `:Time w` => `0.024 seconds to run :w`
 # - airblade/vim-gitgutter:
+# as slow as vim-gitgutter
+# - mhinz/vim-signify:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
