@@ -12,7 +12,14 @@ function! s:disable_hardtime_by_filetype()
 	endif
 endfunction
 
+function! s:enable_hardtime_by_filetype()
+	if ! (index(s:hardtime_ignore_filetypes, &filetype) >= 0)
+		HardTimeOn
+	endif
+endfunction
+
 augroup vimrc_vim-hardtime
 	autocmd!
 	autocmd FileType,BufEnter * call s:disable_hardtime_by_filetype()
+	autocmd CursorHold * silent call s:enable_hardtime_by_filetype()
 augroup END
