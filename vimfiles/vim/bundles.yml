@@ -617,11 +617,6 @@
 # Filetype Specific {{{
 
 ## Ruby {{{
-- vim-ruby/vim-ruby:
-    lazy: 1
-    autoload:
-        filetypes:
-            - ruby
 - tpope/vim-rails:
 # - tpope/vim-rake:
     # lazy: 1
@@ -844,6 +839,8 @@
 # - mhinz/vim-signify:
 # this makes insert mode too slow, but only useful rarely
 # - wellle/tmux-complete.vim:
+# it seems vim comes with enough ruby support by default, and I don't miss any feature of this plugin (to be honest, I know nothing what this does due to the lack of documentation)
+# - vim-ruby/vim-ruby:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
