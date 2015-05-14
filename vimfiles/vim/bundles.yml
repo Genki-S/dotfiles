@@ -170,10 +170,6 @@
     lazy: 1
     autoload:
         insert: 1
-- wellle/tmux-complete.vim:
-    lazy: 1
-    autoload:
-        insert: 1
 - Wolfy87/vim-expand:
     lazy: 1
     autoload:
@@ -846,6 +842,8 @@
 # - airblade/vim-gitgutter:
 # as slow as vim-gitgutter
 # - mhinz/vim-signify:
+# this makes insert mode too slow, but only useful rarely
+# - wellle/tmux-complete.vim:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
