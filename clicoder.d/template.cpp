@@ -162,6 +162,14 @@ bool in_field(P p) {
 	return (0 <= p.Y && p.Y < g_height) && (0 <= p.X && p.X < g_width);
 }
 // }}}
+// input and output {{{
+inline void input(string filename) {
+	freopen(filename.c_str(), "r", stdin);
+}
+inline void output(string filename) {
+	freopen(filename.c_str(), "w", stdout);
+}
+// }}}
 // }}}
 bool opt_debug = false;
 
@@ -179,6 +187,9 @@ int main(int argc, char** argv) {
 		}
 	}
 	// }}}
+
+	input("./inputs/0.txt");
+	// output("./outputs/0.txt");
 
 	<`0`>
 
