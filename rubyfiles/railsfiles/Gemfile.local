@@ -65,6 +65,7 @@ group :development, :test do
   want_gem 'commands'
   want_gem 'rails-env-switcher'
   want_gem 'rspec-console'
+  want_gem 'did_you_mean'
 
   # this is here because it uses initializer and rspec complains if this gem is not specified under :test group
   want_gem 'rails-footnotes'
