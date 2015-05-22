@@ -7,27 +7,27 @@ function! s:my_rails_settings()
 	nnoremap <buffer> <SID>[rails] <Nop>
 	nmap <buffer> <Leader>r <SID>[rails]
 
-	nnoremap <buffer> <SID>[rails]<Space> :R 
-	nnoremap <buffer> <SID>[rails]c :Rcontroller 
-	nnoremap <buffer> <SID>[rails]en :Renvironment 
-	nnoremap <buffer> <SID>[rails]fi :Rfixtures 
-	nnoremap <buffer> <SID>[rails]fu :Rfunctionaltest 
-	nnoremap <buffer> <SID>[rails]h :Rhelper 
-	nnoremap <buffer> <SID>[rails]ini :Rinitializer 
-	nnoremap <buffer> <SID>[rails]int :Rintegrationtest 
-	nnoremap <buffer> <SID>[rails]j :Rjavascript 
-	nnoremap <buffer> <SID>[rails]la :Rlayout 
-	nnoremap <buffer> <SID>[rails]li :Rlib 
-	nnoremap <buffer> <SID>[rails]lo :Rlocale 
-	nnoremap <buffer> <SID>[rails]ma :Rmailer 
-	nnoremap <buffer> <SID>[rails]mi :Rmigration 
-	nnoremap <buffer> <SID>[rails]mo :Rmodel 
-	nnoremap <buffer> <SID>[rails]sp :Rspec 
-	nnoremap <buffer> <SID>[rails]sc :Rschema 
-	nnoremap <buffer> <SID>[rails]st :Rstylesheet 
-	nnoremap <buffer> <SID>[rails]t :Rtask 
-	nnoremap <buffer> <SID>[rails]u :Runittest 
-	nnoremap <buffer> <SID>[rails]v :Rview 
+	nnoremap <buffer> <SID>[rails]<Space> :E 
+	nnoremap <buffer> <SID>[rails]c :Econtroller 
+	nnoremap <buffer> <SID>[rails]en :Eenvironment 
+	nnoremap <buffer> <SID>[rails]fi :Efixtures 
+	nnoremap <buffer> <SID>[rails]fu :Efunctionaltest 
+	nnoremap <buffer> <SID>[rails]h :Ehelper 
+	nnoremap <buffer> <SID>[rails]ini :Einitializer 
+	nnoremap <buffer> <SID>[rails]int :Eintegrationtest 
+	nnoremap <buffer> <SID>[rails]j :Ejavascript 
+	nnoremap <buffer> <SID>[rails]la :Elayout 
+	nnoremap <buffer> <SID>[rails]li :Elib 
+	nnoremap <buffer> <SID>[rails]lo :Elocale 
+	nnoremap <buffer> <SID>[rails]ma :Emailer 
+	nnoremap <buffer> <SID>[rails]mi :Emigration 
+	nnoremap <buffer> <SID>[rails]mo :Emodel 
+	nnoremap <buffer> <SID>[rails]sp :Espec 
+	nnoremap <buffer> <SID>[rails]sc :Eschema 
+	nnoremap <buffer> <SID>[rails]st :Estylesheet 
+	nnoremap <buffer> <SID>[rails]t :Etask 
+	nnoremap <buffer> <SID>[rails]u :Eunittest 
+	nnoremap <buffer> <SID>[rails]v :Eview 
 
 	nnoremap <buffer> <SID>[rails]M :Rake 
 	nnoremap <buffer> <SID>[rails]R :Rails 
