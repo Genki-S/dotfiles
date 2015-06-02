@@ -70,7 +70,8 @@ function pbsearch() {
 	plutil -convert xml1 $clipMenuPath/clips.data -o - \
 		| awk '/<string>/,/<\/string>/' \
 		| awk 1 ORS='<BR>' \
-		| sed -e "s/<string>//g" -e "s/<\\/string><BR>/\n/g" \
+		| sed -e "s/<string>//g" -e 's/<\/string><BR>/\
+/g' \
 		| tail -n +15 \
 		| sed '/^$/d'| cat -n | sort -k 2| uniq -f1 | sort -k 1 \
 		| sed -e 's/^ *[0-9]*//g' \
