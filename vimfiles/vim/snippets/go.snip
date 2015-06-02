@@ -17,6 +17,16 @@ abbr        if file not exists
     ${0:#:fmt.Printf("no such file or directory: %s", filename)}
   }
 
+snippet     rand
+abbr        rand.Seed
+  rand.Seed(time.Now().UTC().UnixNano())
+
+snippet     forl
+abbr        for list
+  for e := l.Front(); e != nil; e = e.Next() {
+    fmt.Println(e.Value)
+  }
+
 # GoConvey snippets
 snippet     Convey
 options     head
