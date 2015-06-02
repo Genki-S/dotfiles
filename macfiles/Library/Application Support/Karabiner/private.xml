@@ -1,7 +1,3 @@
 <?xml version="1.0"?>
 <root>
-  <appdef>
-    <appname>TERMINAL</appname>
-    <equal>com.apple.Terminal</equal>
-  </appdef>
 </root>
