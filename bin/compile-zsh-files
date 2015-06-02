@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+# http://blog.n-z.jp/blog/2013-12-10-auto-zshrc-recompile.html
+
+for f in $HOME/.zshrc $HOME/.zshenv $(find $HOME/dotfiles/zshfiles -name '*.zsh'); do
+  zcompile $f
+done
