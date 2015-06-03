@@ -10,3 +10,7 @@ function set_bundle_gemfile () {
 	fi
 }
 preexec_functions+=(set_bundle_gemfile)
+
+# Make gem-src use ghq
+# https://github.com/amatsuda/gem-src
+export GEMSRC_USE_GHQ=1

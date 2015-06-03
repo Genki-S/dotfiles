@@ -40,6 +40,7 @@ task :bundle_up => [
   :ghq_get,
   :npm_install,
   :bundle_install,
+  :install_rbenv_plugins,
   :setup_osx] do
 end
 
@@ -143,6 +144,15 @@ task :bundle_install do
   end
 end
 
+desc 'Install rbenv plugins'
+task :install_rbenv_plugins do
+  if ENV['RBENV_ROOT'].to_s.empty?
+    warn '$RBENV_ROOT is not defined'
+    return
+  end
+  run %{ #{DOTDIR}/setup/install-rbenv-plugins.sh }
+end
+
 desc 'Generate ctags files for ghq repositories'
 task :ghq_ctags do
   repos = YAML.load_file("#{DOTDIR}/config/ghq.yml")
@@ -159,6 +169,7 @@ task :ghq_dict do
   end
 end
 
+# FIXME: use $RBENV_ROOT
 desc 'Generate dictionary files (for vim completion) for ruby'
 task :ruby_dict do
   # Ref: http://henry.animeo.jp/blog/2013/08/24/ruby-dict/
@@ -288,6 +299,10 @@ def my_ln(src, dst, sudo = false)
   dir = File.dirname(dst)
   FileUtils.mkdir_p(dir) unless File.directory?(dir)
   run %{ #{sudo ? 'sudo' : ''} ln -s #{src} #{dst} }
+end
+
+def warn(msg)
+  STDERR.puts msg
 end
 
 # OS check (http://stackoverflow.com/questions/170956/how-can-i-find-which-operating-system-my-ruby-program-is-running-on)
