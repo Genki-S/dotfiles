@@ -140,17 +140,32 @@
 
 (defun my-mu4e-set-account ()
   "Set the account for composing a message."
-  (let* ((account
-           (completing-read (format "Compose with account: (%s) "
-                                    (mapconcat #'(lambda (var) (car var)) my-mu4e-account-alist "/"))
-                            (mapcar #'(lambda (var) (car var)) my-mu4e-account-alist)
-                            nil t nil nil (caar my-mu4e-account-alist)))
-         (account-vars (cdr (assoc account my-mu4e-account-alist))))
-    (if account-vars
-      (mapc #'(lambda (var)
-                (set (car var) (cadr var)))
-            account-vars)
-      (error "No email account found"))))
+  (let* ((msg mu4e-compose-parent-message)
+         (account
+           (if msg
+             ; Set the From address based on the To address of the original.
+             ; http://www.djcbsoftware.nl/code/mu/mu4e/Compose-hooks.html#Compose-hooks
+             (cond
+               ((mu4e-message-contact-field-matches msg :to "cfhoyuk.reccos.nelg@gmail.com")
+                "Gmail")
+               ((mu4e-message-contact-field-matches msg :to "genki.sugimoto.jp@gmail.com")
+                "Public")
+               ((mu4e-message-contact-field-matches msg :to "genki-sugimoto@asagi.waseda.jp")
+                "Waseda")
+               (t nil))
+             nil)))
+    (unless account
+      (setq account
+            (completing-read (format "Compose with account: (%s) "
+                                     (mapconcat #'(lambda (var) (car var)) my-mu4e-account-alist "/"))
+                             (mapcar #'(lambda (var) (car var)) my-mu4e-account-alist)
+                             nil t nil nil (caar my-mu4e-account-alist))))
+    (let ((account-vars (cdr (assoc account my-mu4e-account-alist))))
+      (if account-vars
+        (mapc #'(lambda (var)
+                  (set (car var) (cadr var)))
+              account-vars)
+        (error "No email account found")))))
 
 (add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)
 
