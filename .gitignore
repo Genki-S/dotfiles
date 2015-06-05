@@ -16,9 +16,6 @@ emacs.d/scripts
 emacs.d/var
 emacs.d/bookmarks
 
-Gemfile.lock
-!Gemfile.local
-
 gitfiles/git_template/*
 
 miscfiles/vimperator/info
