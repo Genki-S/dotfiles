@@ -134,8 +134,9 @@
                             (format "Template: (%s) "
                                     (mapconcat #'(lambda (var) var) templates "/"))
                             templates
-                            nil t nil nil t))
-    (insert-file-contents (concat "~/org/templates/mail/" chosen-template))))
+                            nil t nil nil nil))
+    (if chosen-template
+	(insert-file-contents (concat "~/org/templates/mail/" chosen-template)))))
 (add-hook 'message-mode-hook 'my-mu4e-insert-template)
 
 (defun my-mu4e-set-account ()
