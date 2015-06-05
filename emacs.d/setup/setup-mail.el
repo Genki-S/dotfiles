@@ -136,7 +136,7 @@
                             templates
                             nil t nil nil nil))
     (if chosen-template
-	(insert-file-contents (concat "~/org/templates/mail/" chosen-template)))))
+      (insert-file-contents (concat "~/org/templates/mail/" chosen-template)))))
 (add-hook 'message-mode-hook 'my-mu4e-insert-template)
 
 (defun my-mu4e-set-account ()
@@ -169,6 +169,17 @@
         (error "No email account found")))))
 
 (add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)
+
+; make it possible to attach file via helm-find-files
+(eval-after-load "helm-files"
+                 '(progn
+                    ; See the definition of helm-find-files-1 function to know how to make source
+                    (unless helm-source-find-files
+                      (setq helm-source-find-files (helm-make-source
+                                                     "Find Files" 'helm-source-ffiles)))
+                    (helm-add-action-to-source "Attach file"
+                                               'helm-ff-gnus-attach-files
+                                               helm-source-find-files)))
 
 (provide 'setup-mail)
 ;;; setup-mail.el ends here
