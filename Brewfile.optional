@@ -16,6 +16,7 @@ brew 'ansifilter'
 brew 'tidy'
 brew 'astyle'
 brew 'shellcheck'
+brew 'ghi'
 
 cask 'calibre'
 cask 'libreoffice'
