@@ -73,6 +73,8 @@
 
 ;; my org settings
 (custom-set-variables
+ '(org-global-properties
+    '(("Effort_ALL" . "0 0:01 0:05 0:10 0:30 1:00 1:30 2:00 2:30 3:00 3:30 4:00 4:30 5:00")))
  '(org-startup-indented t)
  '(org-startup-truncated nil)
  '(org-log-done t)
@@ -106,7 +108,9 @@
  '(org-clock-persist-query-resume nil)
  ;; Include current clocking task in clock reports
  '(org-clock-report-include-clocking-task t)
- '(org-columns-default-format "%25ITEM %15SCHEDULED %6Effort{:} %8CLOCKSUM")
+ ;; "Effort" (as noted in http://orgmode.org/manual/Effort-estimates.html) does not work actually.
+ ;; "EFFORT" does. (for homebrew installed emacs 22.1.1 and 24.5.1, at least)
+ '(org-columns-default-format "%50ITEM(Task) %20SCHEDULED %10EFFORT{:} %10CLOCKSUM")
  ;; provide refile targets as paths, including the file name
  ;; (without directory) as level 1 of the path
  '(org-refile-use-outline-path 'file)
