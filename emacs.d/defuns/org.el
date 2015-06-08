@@ -11,9 +11,11 @@
           (setq genki-org-current-task "CAPTURING"))
         (setq genki-org-current-task "NOT CLOCKING IN..."))
       (setq genki-tmux-status-text
-            (cl-case org-pomodoro-state
-                     (:none genki-org-current-task)
-                     (t (concat "[" (org-pomodoro-format-seconds) "] " genki-org-current-task))))
+            (if (boundp 'org-pomodoro-state)
+              (cl-case org-pomodoro-state
+                       (:none genki-org-current-task)
+                       (t (concat "[" (org-pomodoro-format-seconds) "] " genki-org-current-task)))
+              genki-org-current-task))
       (genki/tmux-set-status-right genki-tmux-status-text))
 
 (defun genki/org-capture-buffer-setup ()
