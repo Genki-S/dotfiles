@@ -124,7 +124,10 @@
   (add-hook hook (lambda () (flyspell-mode -1))))
 
 ;; color
-(load-theme 'solarized-dark t)
+;; https://github.com/sellout/emacs-color-theme-solarized
+(load-theme 'solarized t)
+(set-frame-parameter nil 'background-mode 'dark)
+(set-terminal-parameter nil 'background-mode 'dark)
 
 ;; my scripts
 (setq my-scripts-dir (expand-file-name "my-scripts" user-emacs-directory))
