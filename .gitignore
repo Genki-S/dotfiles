@@ -7,7 +7,6 @@ vimfiles/vim/cache
 
 emacs.d/auto-save-list
 emacs.d/css
-emacs.d/custom.el
 emacs.d/el-get
 emacs.d/el-get-init-files/*.elc
 emacs.d/elpa
