@@ -49,6 +49,7 @@
     autoload:
         mappings:
             - <Plug>(characterize)
+- Konfekt/FastFold:
 # }}}
 
 # Coding {{{
