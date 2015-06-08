@@ -110,7 +110,7 @@
  '(org-clock-report-include-clocking-task t)
  ;; "Effort" (as noted in http://orgmode.org/manual/Effort-estimates.html) does not work actually.
  ;; "EFFORT" does. (for homebrew installed emacs 22.1.1 and 24.5.1, at least)
- '(org-columns-default-format "%50ITEM(Task) %20SCHEDULED %10EFFORT{:} %10CLOCKSUM")
+ '(org-columns-default-format "%50ITEM(Task) %20SCHEDULED %20EFFORT{:} %10CLOCKSUM")
  ;; provide refile targets as paths, including the file name
  ;; (without directory) as level 1 of the path
  '(org-refile-use-outline-path 'file)
