@@ -1,5 +1,6 @@
 (require 'helm)
 (require 'helm-files)
+(require 'helm-elisp)
 
 (helm-mode 1)
 
