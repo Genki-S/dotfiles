@@ -9,7 +9,7 @@
   "oc" '(lambda () (interactive) (genki/open-browser "https://www.google.com/calendar/render")))
 
 (evil-leader/set-key
-  "a" '(lambda () (interactive) (org-agenda-list) (org-agenda-columns) (evil-normal-state))
+  "a" '(lambda () (interactive) (org-agenda-list))
   "c" 'org-capture
   "j" 'org-next-item
   "k" 'org-previous-item
