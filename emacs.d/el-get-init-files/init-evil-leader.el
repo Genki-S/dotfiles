@@ -10,7 +10,9 @@
 
 (evil-leader/set-key
   "a" '(lambda () (interactive) (org-agenda-list))
-  "e" 'org-set-effort
+  "e" '(lambda () (interactive) (if (eq major-mode 'org-agenda-mode)
+                                  (org-agenda-set-effort)
+                                  (org-set-effort)))
   "c" 'org-capture
   "j" 'org-next-item
   "k" 'org-previous-item
