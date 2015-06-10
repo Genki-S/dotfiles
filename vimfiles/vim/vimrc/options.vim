@@ -84,6 +84,8 @@ if has('persistent_undo')
 endif
 "}}}
 " executing external commands {{{
+" using zsh for external command is too slow (because zsh my startup is slow for now...)
+set shell=/bin/bash
 set keywordprg=:help
 " Use par to reflow text
 " see: http://vimcasts.org/episodes/formatting-text-with-par/
