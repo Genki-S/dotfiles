@@ -50,6 +50,9 @@ typedef vector<string> VS;
 typedef vector<VS> VVS;
 typedef pair<int, int> PII;
 typedef complex<int> P;
+#define PQ(type) priority_queue<type>
+// priority queue reverse
+#define PQR(type) priority_queue< type, vector<type>, greater<type> >
 // }}}
 // macros & inline functions {{{
 // syntax sugars {{{
@@ -58,6 +61,8 @@ typedef complex<int> P;
 #define REP(i, n) FOR(i, 0, n)
 #define REPI(i, n) FORI(i, 0, n)
 #define OPOVER(_op, _type) inline bool operator _op (const _type &t) const
+#define ASSIGN_MAX(var, val) ((var) = max((var), (val)))
+#define ASSIGN_MIN(var, val) ((var) = min((var), (val)))
 // }}}
 // conversion {{{
 inline int toInt(string s) { int v; istringstream sin(s); sin>>v; return v; }
@@ -101,6 +106,8 @@ inline int MAKE_MASK(ULL upper, ULL lower) { assert(lower < 64 && upper < 64 && 
 #define darr2(a) if (opt_debug) { FOR(__i, 0, (arrsz(a))){ darr( (a)[__i] ); } }
 #define WAIT() if (opt_debug) { string _wait_; cerr << "(hit return to continue)" << endl; getline(cin, _wait_); }
 #define dump(x) if (opt_debug) { cerr << " [L" << __LINE__ << "] " << #x << " = " << (x) << endl; }
+// dump vector elements in [s, e)
+#define dumpv(v, s, e) if (opt_debug) { cerr << " [L" << __LINE__ << "] " << #v << " = "; FOR(__i, s, e) { cerr << v[__i] << "\t"; } cerr << endl; }
 #define dumpl(x) if (opt_debug) { cerr << " [L" << __LINE__ << "] " << #x << endl << (x) << endl; }
 #define dumpf() if (opt_debug) { cerr << __PRETTY_FUNCTION__ << endl; }
 #define where() if (opt_debug) { cerr << __FILE__ << ": " << __PRETTY_FUNCTION__ << " [L: " << __LINE__ << "]" << endl; }
@@ -155,11 +162,11 @@ inline string join(VS s, string j) { string t; REP(i, s.size()) { t += s[i] + j;
 #define X imag()
 // }}}
 // 2 dimentional array {{{
+enum { UP, RIGHT, DOWN, LEFT, UP_RIGHT, DOWN_RIGHT, DOWN_LEFT, UP_LEFT };
 P dydx4[4] = { P(-1, 0), P(0, 1), P(1, 0), P(0, -1) };
 P dydx8[8] = { P(-1, 0), P(0, 1), P(1, 0), P(0, -1), P(-1, 1), P(1, 1), P(1, -1), P(-1, -1) };
-int g_height, g_width;
-bool in_field(P p) {
-	return (0 <= p.Y && p.Y < g_height) && (0 <= p.X && p.X < g_width);
+bool in_field(int H, int W, P p) {
+	return (0 <= p.Y && p.Y < H) && (0 <= p.X && p.X < W);
 }
 // }}}
 // input and output {{{
@@ -188,7 +195,8 @@ int main(int argc, char** argv) {
 	}
 	// }}}
 
-	input("./inputs/0.txt");
+	// opt_debug = true;
+	// input("./inputs/0.txt");
 	// output("./outputs/0.txt");
 
 	<`0`>
