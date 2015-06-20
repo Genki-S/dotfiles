@@ -1,3 +1,7 @@
+// Problems to test this library {{{
+// http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2641
+// }}}
+
 // Geometry <3 {{{
 class GeometryUtil {
 	public:
