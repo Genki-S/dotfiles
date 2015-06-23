@@ -7,6 +7,7 @@ __ZSH_NOTIFIER_EXCLUDE_COMMANDS=(
 	myvim
 	git
 	tig
+	fg
 )
 
 if executable terminal-notifier; then
@@ -29,7 +30,7 @@ if executable terminal-notifier; then
 				# FIXME: dirty hack to use reattach-to-user-namespece
 				#        see: https://github.com/alloy/terminal-notifier/issues/115
 				reattach-to-user-namespace terminal-notifier -title "Task Finished" \
-					-message "'$zsh_notifier_cmd' exited after $time_taken seconds"
+					-message "'$zsh_notifier_raw_cmd' exited after $time_taken seconds"
 			fi
 		fi
 		zsh_notifier_cmd=
