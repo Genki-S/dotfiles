@@ -1,7 +1,7 @@
 tap 'peco/peco'
 brew 'tig'
 brew 'vim', args: ['with-lua']
-brew 'emacs'
+brew 'emacs', args: ['with-d-bus']
 brew 'zsh'
 brew 'tmux'
 brew 'reattach-to-user-namespace'
