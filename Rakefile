@@ -7,7 +7,7 @@ HOME = ENV['HOME']
 DOTDIR = "#{HOME}/dotfiles"
 BREW_PREFIX = ENV['BREW_PREFIX'] || `which brew > /dev/null && brew --prefix || echo ""`
 raise 'BREW_PREFIX environment variable is not set' if BREW_PREFIX.to_s.empty?
-BREW = "#{BREW_PREFIX}/bin/brew"
+BREW = "#{BREW_PREFIX.chomp}/bin/brew"
 
 # Set path to include BREW_PREFIX/bin
 paths = ENV['PATH'].split(':')
