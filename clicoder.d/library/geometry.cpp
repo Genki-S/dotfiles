@@ -1,5 +1,6 @@
 // Problems to test this library {{{
 // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2641
+// http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1127
 // }}}
 
 // Geometry <3 {{{
@@ -71,12 +72,46 @@ ostream& operator<<(ostream& out, const Vector3D<T>& v) {
 	return out << "(" << v.x << ", " << v.y << ", " << v.z << ")";
 }
 
+template<typename T>
 class Sphere {
-	int x, y, z, r;
 	public:
-		Sphere(int _x, int _y, int _z, int _r) : x(_x), y(_y), z(_z), r(_r) {
+		T x, y, z, r;
+		Sphere(T _x, T _y, T _z, T _r) : x(_x), y(_y), z(_z), r(_r) {
+		}
+
+		// distance of the centers of spheres
+		T distance(const Sphere& rhs) const {
+			// move two spheres so that the center of (*this) comes to the origin
+			Sphere _r(rhs.x - x, rhs.y - y, rhs.z - z, rhs.r);
+			return Vector3D<T>(_r.x, _r.y, _r.z).abs();
+		}
+
+		// check if this sphere is completely inside of rhs
+		bool is_inside_of(const Sphere& rhs) const {
+			return geo.lt(distance(rhs) + r, rhs.r);
+		}
+
+		// check if this sphere is completely outside of rhs
+		bool is_outside_of(const Sphere& rhs) const {
+			return geo.gt(distance(rhs) - r, rhs.r);
+		}
+
+		// check if this sphere is touching with rhs
+		bool is_touching_with(const Sphere& rhs) const {
+			return
+				geo.eql(distance(rhs), r + rhs.r) ||
+				((*this).is_inside_of(rhs) && geo.eql(distance(rhs) + r, rhs.r)) ||
+				(rhs.is_inside_of((*this)) && geo.eql(distance(rhs) + rhs.r, r));
+		}
+
+		bool is_overlapping_with(const Sphere& rhs) const {
+			return !is_inside_of(rhs) && !is_outside_of(rhs) && !is_touching_with(rhs);
 		}
 };
+template<typename T>
+ostream& operator<<(ostream& out, const Sphere<T>& s) {
+	return out << "(" << s.x << ", " << s.y << ", " << s.z << ", " << s.r << ")";
+}
 // }}}
 
 // vim: foldmethod=marker
