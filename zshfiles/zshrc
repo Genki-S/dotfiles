@@ -222,4 +222,12 @@ fi
 # }}}
 # ==================================================
 
+# clean $path
+# http://blog.n-z.jp/blog/2013-12-12-zsh-cleanup-path.html
+path=(
+	# allow directories only (-/)
+	# reject world-writable directories (^W)
+	${^path}(N-/^W)
+)
+
 # vim: foldmethod=marker

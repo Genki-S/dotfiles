@@ -51,5 +51,13 @@ if [[ ! -o NORCS ]]; then
 	done
 fi
 
+# clean $path
+# http://blog.n-z.jp/blog/2013-12-12-zsh-cleanup-path.html
+path=(
+	# allow directories only (-/)
+	# reject world-writable directories (^W)
+	${^path}(N-/^W)
+)
+
 # Load local zshenv
 [ -f $HOME/.zshenv.local ] && source $HOME/.zshenv.local
