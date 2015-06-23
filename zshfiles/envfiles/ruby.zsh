@@ -1,5 +1,5 @@
 # Source rbenv environment
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 
 # Tell bundler to use local Gemfile
 function set_bundle_gemfile () {
