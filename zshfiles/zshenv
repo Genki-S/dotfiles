@@ -31,7 +31,8 @@ function executable() {
 # ==================================================
 # Boxen
 # ==================================================
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+# Stopped using boxen since it made zsh startup time significantly slow
+# [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 # ==================================================
 
 # ==================================================

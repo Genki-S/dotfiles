@@ -1,8 +1,6 @@
 #!/bin/zsh
 
-# FIXME: boxen dependency
-BREW=/opt/boxen/homebrew/bin/brew
-GIT=$(BREW --prefix)/bin/git
+GIT=$(brew --prefix)/bin/git
 
 cd ~/org
 # Remove deleted files

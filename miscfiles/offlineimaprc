@@ -19,6 +19,6 @@ remotepasseval = get_password_emacs("imap.gmail.com", "993")
 folderfilter = lambda foldername: foldername in ['INBOX', '[Gmail]/Sent Mail', 'GTD@inbox']
 nametrans = lambda foldername: foldername.replace("[Gmail]/", "")
 ssl = yes
-sslcacertfile = /opt/boxen/homebrew/etc/openssl/cert.pem
+sslcacertfile = /usr/local/etc/openssl/cert.pem
 maxconnections = 1
 realdelete = no

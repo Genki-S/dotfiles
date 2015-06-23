@@ -9,7 +9,7 @@
   <key>ProgramArguments</key>
   <array>
     <!-- FIXME: what if I don't use boxen? -->
-    <string>/opt/boxen/nodenv/shims/node</string>
+    <string>/usr/local/bin/node</string>
     <string>~/dotfiles/miscfiles/word-stack-server.js</string>
   </array>
   <key>KeepAlive</key>
