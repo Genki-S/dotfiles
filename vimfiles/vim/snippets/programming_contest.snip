@@ -65,12 +65,23 @@ snippet in_3
 snippet in_4
 	${1:type} ${2:var}, ${3:var}, ${4:var}, ${5:var}; cin >> $2 >> $3 >> $4 >> $5;${0:TARGET}
 
-snippet while_cin_2
-	while (cin >> ${1:h} >> ${2:w}, $1 || $2) {
+snippet whin_1
+abbr while cin
+	${1:type} ${2:var};
+	while (cin >> $2, $2) {
 		${0:TARGET}
 	}
 
-snippet while_cin_3
-	while (cin >> ${1:a} >> ${2:b} >> ${3:c}, $1 || $2 || $3) {
+snippet whin_2
+abbr while cin
+	${1:type} ${2:h}, ${3:w};
+	while (cin >> $2 >> $3, $2 | $3) {
+		${0:TARGET}
+	}
+
+snippet whin_3
+abbr while cin
+	${1:type} ${2:i}, ${3:j}, ${4:k};
+	while (cin >> $2 >> $3 >> $4, $2 | $3 | $4) {
 		${0:TARGET}
 	}

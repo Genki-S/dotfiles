@@ -23,6 +23,15 @@ abbr for (int) {}
 		${0:TARGET}
 	}
 
+snippet     class
+options     head
+	class ${1:ClassName} {
+		private:${2:#:privates}
+		public:${3:#:public members}
+			$1(${4:args}) {
+			}
+	};
+
 snippet cls
 	class ${1:ClassName} {
 		private:
