@@ -111,7 +111,7 @@ inline int MAKE_MASK(ULL upper, ULL lower) { assert(lower < 64 && upper < 64 && 
 #define dumpl(x) if (opt_debug) { cerr << " [L" << __LINE__ << "] " << #x << endl << (x) << endl; }
 #define dumpf() if (opt_debug) { cerr << __PRETTY_FUNCTION__ << endl; }
 #define where() if (opt_debug) { cerr << __FILE__ << ": " << __PRETTY_FUNCTION__ << " [L: " << __LINE__ << "]" << endl; }
-#define show_bits(b, s) if(opt_debug) { REP(i, s) { cerr << BITOF(b, s-1-i); if(i%4 == 3) cerr << ' '; } cerr << endl; }
+#define dumpb(bit, digits) if (opt_debug) { cerr << " [L" << __LINE__ << "] " << #bit << " = "; for(int __i = digits - 1; __i >= 0; __i--) { cerr << static_cast<bool>(bit & (1 << __i)); if (__i % 4 == 0) { cerr << " "; } } cerr << endl; }
 
 // ostreams {{{
 // complex
