@@ -21,6 +21,14 @@ class UnionFindTree {
 			return group(x) == group(y);
 		}
 
+		bool all_united() {
+			int g = group(0);
+			FOR (i, 1, n) {
+				if (group(i) != g) { return false; }
+			}
+			return true;
+		}
+
 		void unite(int x, int y) {
 			x = group(x);
 			y = group(y);
