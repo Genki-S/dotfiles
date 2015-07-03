@@ -17,6 +17,7 @@ brew 'tidy'
 brew 'astyle'
 brew 'shellcheck'
 brew 'ghi'
+brew 'cmake'
 
 cask 'calibre'
 cask 'libreoffice'
