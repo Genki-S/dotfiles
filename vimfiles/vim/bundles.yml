@@ -226,6 +226,8 @@
             - <Plug>Sneak
             - <Plug>VSneak
 - vim-scripts/matchit.zip:
+- tpope/vim-projectionist:
+    lazy: 1
 # }}}
 
 # Debugging {{{
@@ -619,6 +621,7 @@
 
 ## Ruby {{{
 - tpope/vim-rails:
+    lazy: 1
 # - tpope/vim-rake:
     # lazy: 1
     # autoload:
