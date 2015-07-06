@@ -1,5 +1,6 @@
 # Vim stuffs
 .vimrc.local
+.projections.json
 
 # Ruby stuffs
 .patrol
