@@ -228,6 +228,11 @@
 - vim-scripts/matchit.zip:
 - tpope/vim-projectionist:
     lazy: 1
+- haya14busa/incsearch.vim:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(incsearch-
 # }}}
 
 # Debugging {{{
