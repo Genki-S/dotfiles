@@ -21,6 +21,7 @@
  '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-skip-timestamp-if-done t)
  '(org-agenda-start-on-weekday nil)
+ '(org-agenda-sticky t)
  '(org-agenda-time-grid
    (quote
     ((daily weekly today require-timed)
