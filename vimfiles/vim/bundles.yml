@@ -24,10 +24,6 @@
 # }}}
 
 # It just works (No need to invoke consciously, just configure.) {{{
-- tpope/vim-endwise:
-    lazy: 1
-    autoload:
-        insert: 1
 - tpope/vim-repeat:
 - tpope/vim-sleuth:
 - MarcWeber/vim-addon-local-vimrc:
@@ -161,6 +157,10 @@
             - TestSuite
             - TestLast
             - TestVisit
+- cohama/lexima.vim:
+    lazy: 1
+    autoload:
+        insert: 1
 
 ## Completion {{{
 - Shougo/neocomplete:
@@ -847,6 +847,8 @@
 # - vim-ruby/vim-ruby:
 # this makes opening up ruby files super slow. behaves like filetype is set twice?
 # - tpope/vim-bundler:
+# Moved to lexima.vim
+# - tpope/vim-endwise:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
