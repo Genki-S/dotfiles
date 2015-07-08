@@ -24,6 +24,7 @@ brew 'go'
 brew 'automake'
 brew 'aspell'
 brew 'cheat'
+brew 'python'
 
 brew 'caskroom/cask/brew-cask'
 cask 'iterm2'

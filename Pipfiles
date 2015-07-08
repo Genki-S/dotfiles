@@ -1,0 +1,4 @@
+# TODO: Make pip_install rake command
+install 3to2
+install vim-vint
+install language-check
