@@ -51,3 +51,10 @@ snippet case
 	case ${1:var}:
 		${2:statements}break;
 		${0:TARGET}
+
+snippet     opover
+abbr        operator overload
+options     head
+	${1:type} operator${2:+}(const $1& lhs, const $1& rhs) {
+		${0}
+	}
