@@ -36,6 +36,7 @@
   (kbd "I") 'org-agenda-clock-in
   (kbd "O") 'org-agenda-clock-out
   (kbd "J") 'org-agenda-clock-goto
+  (kbd "r") 'org-agenda-redo
   (kbd "q") 'org-agenda-quit)
 
 ;; esc quits everything (https://github.com/davvil/.emacs.d/blob/master/init.el)
