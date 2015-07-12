@@ -286,7 +286,8 @@
     autoload:
         unite_sources:
             - rake
-- tsukkee/unite-tag:
+- Genki-S/unite-tag:
+    rev: my_hacks
     lazy: 1
     autoload:
         unite_sources:
