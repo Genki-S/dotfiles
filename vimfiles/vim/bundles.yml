@@ -637,6 +637,11 @@
     autoload:
         commands:
             - RuboCop
+- tpope/vim-bundler:
+    lazy: 1
+    autoload:
+        filetypes:
+            - ruby
 ## }}}
 
 ## Go {{{
@@ -845,8 +850,6 @@
 # - wellle/tmux-complete.vim:
 # it seems vim comes with enough ruby support by default, and I don't miss any feature of this plugin (to be honest, I know nothing what this does due to the lack of documentation)
 # - vim-ruby/vim-ruby:
-# this makes opening up ruby files super slow. behaves like filetype is set twice?
-# - tpope/vim-bundler:
 # Moved to lexima.vim
 # - tpope/vim-endwise:
 # }}}
