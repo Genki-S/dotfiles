@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -x
+
+while read gem; do
+  gem install $gem
+done < $RBENV_ROOT/default-gems
