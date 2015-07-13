@@ -565,6 +565,17 @@
     autoload:
         commands:
             - VimuxBufferDir
+            - VimuxClearRunnerHistory
+            - VimuxCloseRunner
+            - VimuxInspectRunner
+            - VimuxInterruptRunner
+            - VimuxPromptCommand
+            - VimuxRunCommand
+            - VimuxRunLastCommand
+            - VimuxScrollDownInspect
+            - VimuxScrollUpInspect
+            - VimuxTogglePane
+            - VimuxZoomRunner
 - tyru/vim-altercmd:
 - tyru/open-browser.vim:
     lazy: 1
