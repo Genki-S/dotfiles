@@ -632,6 +632,11 @@
     autoload:
         mappings:
             - <Plug>(vigemo-search)
+- mrtazz/simplenote.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - Simplenote
 # }}}
 
 # Filetype Specific {{{
