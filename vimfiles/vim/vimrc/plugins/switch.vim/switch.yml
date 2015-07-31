@@ -3,6 +3,10 @@ _:
   -
     '\vhttps://github.com/(.*)/(.*)': 'git@github.com:\1/\2'
     '\vgit\@github.com:(.*)/(.*)': '\1/\2'
+cpp:
+  -
+    - first
+    - second
 ruby:
   -
     - if
