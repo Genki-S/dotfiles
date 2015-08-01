@@ -1,10 +1,10 @@
 ---
-default:
-    template: template.cpp
-    makefile: Makefile
-aoj:
-    user_id: Glen_S
-    password:
-atcoder:
-    user_id: Glen_S
-    password:
+sites:
+    default:
+        template: template.cpp
+    aoj:
+        user_id: Glen_S
+        password:
+    atcoder:
+        user_id: Glen_S
+        password:
