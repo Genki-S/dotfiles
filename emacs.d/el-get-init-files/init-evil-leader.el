@@ -6,6 +6,7 @@
   "E" 'eval-buffer
   "V" 'genki/spawn-vim
   "Y" 'genki/pbcopy
+  "R" 'recover-this-file
   "oc" '(lambda () (interactive) (genki/open-browser "https://www.google.com/calendar/render")))
 
 (evil-leader/set-key
