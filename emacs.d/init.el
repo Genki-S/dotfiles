@@ -74,6 +74,8 @@
     evil-leader
     evil-surround
     evil-tabs
+    smartparens
+    evil-lisp-state
     org-mode
     flycheck
     xml-rpc-el
