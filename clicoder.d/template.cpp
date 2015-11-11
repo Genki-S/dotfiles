@@ -36,6 +36,7 @@ typedef long long int LL;
 typedef unsigned long long int ULL;
 typedef vector<int> VI;
 typedef vector<VI> VVI;
+typedef vector<VVI> VVVI;
 typedef vector<LL> VLL;
 typedef vector<VLL> VVLL;
 typedef vector<ULL> VULL;
@@ -46,6 +47,7 @@ typedef vector<bool> VB;
 typedef vector<VB> VVB;
 typedef vector<char> VC;
 typedef vector<VC> VVC;
+typedef vector<VVC> VVVC;
 typedef vector<string> VS;
 typedef vector<VS> VVS;
 typedef pair<int, int> PII;
@@ -138,6 +140,17 @@ template<typename T> ostream& operator<<(ostream& s, const vector< vector<T> >& 
 	return s;
 }
 
+// set
+template<typename T> ostream& operator<<(ostream& s, const set<T>& v) {
+	s << "{ ";
+	for (typeof(v.begin()) itr = v.begin(); itr != v.end(); ++itr) {
+		if (itr != v.begin()) { s << ", "; }
+		s << (*itr);
+	}
+	s << " }";
+	return s;
+}
+
 // map
 template<typename T1, typename T2> ostream& operator<<(ostream& s, const map<T1, T2>& m) {
 	s << "{" << endl;
@@ -163,6 +176,8 @@ inline string join(VS s, string j) { string t; REP(i, s.size()) { t += s[i] + j;
 // }}}
 // 2 dimentional array {{{
 enum { UP, RIGHT, DOWN, LEFT, UP_RIGHT, DOWN_RIGHT, DOWN_LEFT, UP_LEFT };
+int dy4[] = { -1, 0, 1, 0 };
+int dx4[] = { 0, 1, 0, -1 };
 P dydx4[4] = { P(-1, 0), P(0, 1), P(1, 0), P(0, -1) };
 P dydx8[8] = { P(-1, 0), P(0, 1), P(1, 0), P(0, -1), P(-1, 1), P(1, 1), P(1, -1), P(-1, -1) };
 bool in_field(int H, int W, P p) {
@@ -178,6 +193,62 @@ inline void output(string filename) {
 }
 // }}}
 // }}}
+
+// Header under development {{{
+
+int LCM(int a, int b) {
+	// FIXME
+	return a * b;
+}
+
+// Fraction class {{{
+// ref: http://martin-thoma.com/fractions-in-cpp/
+class Fraction {
+	public:
+		ULL numerator;
+		ULL denominator;
+		Fraction(ULL _numerator, ULL _denominator) {
+			assert(_denominator > 0);
+			numerator = _numerator;
+			denominator = _denominator;
+		};
+
+		Fraction operator*(const ULL rhs) {
+			return Fraction(this->numerator * rhs, this->denominator);
+		};
+
+		Fraction operator*(const Fraction& rhs) {
+			return Fraction(this->numerator * rhs.numerator, this->denominator * rhs.denominator);
+		}
+
+		Fraction operator+(const Fraction& rhs) {
+			ULL lcm = LCM(this->denominator, rhs.denominator);
+			ULL numer_lhs = this->numerator * (this->denominator / lcm);
+			ULL numer_rhs = rhs.numerator * (rhs.numerator / lcm);
+			return Fraction(numer_lhs + numer_rhs, lcm);
+		}
+
+		Fraction& operator+=(const Fraction& rhs) {
+			Fraction result = (*this) + rhs;
+			this->numerator = result.numerator;
+			this->denominator = result.denominator;
+			return *this;
+		}
+};
+
+std::ostream& operator<<(std::ostream &s, const Fraction &a) {
+	if (a.denominator == 1) {
+		s << a.numerator;
+	} else {
+		s << a.numerator << "/" << a.denominator;
+	}
+	return s;
+}
+
+// }}}
+
+// }}}
+
 bool opt_debug = false;
 
 int main(int argc, char** argv) {
@@ -196,8 +267,8 @@ int main(int argc, char** argv) {
 	// }}}
 
 	// opt_debug = true;
-	// input("./inputs/0.txt");
-	// output("./outputs/0.txt");
+	// input("./inputs/0");
+	// output("./outputs/0");
 
 	<`0`>
 
