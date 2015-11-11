@@ -25,7 +25,7 @@ fi
 # FIXME: this should be done using LaunchAgent, but it does not work for now
 tmux list-session | grep 'wordstack' > /dev/null
 if [ $? -ne 0 ]; then
-	TMUX='' tmux new-session -d -s 'wordstack' -n 'wordstack' '/opt/boxen/nodenv/shims/node ~/dotfiles/miscfiles/word-stack-server.js'
+	TMUX='' tmux new-session -d -s 'wordstack' -n 'wordstack' '/usr/local/bin/node ~/dotfiles/miscfiles/word-stack-server.js'
 fi
 
 # ==================================================
