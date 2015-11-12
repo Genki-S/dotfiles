@@ -241,14 +241,14 @@
 # }}}
 
 # Reference {{{
-- rizzatti/dash.vim:
+- rhysd/devdocs.vim:
     lazy: 1
     autoload:
         commands:
-            - Dash
-            - DashKeywords
+            - DevDocs
+            - DevDocsAll
         mappings:
-            - <Plug>DashSearch
+            - <Plug>(devdocs-under-cursor)
 - thinca/vim-ref:
     lazy: 1
     autoload:
@@ -869,6 +869,8 @@
 # - vim-ruby/vim-ruby:
 # Moved to lexima.vim
 # - tpope/vim-endwise:
+# Use devdocs.io and devdocs.vim
+# - rizzatti/dash.vim:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
