@@ -2,7 +2,7 @@ set nocompatible
 if has('vim_starting')
 	set runtimepath+=~/.vim/bundles/neobundle.vim
 endif
-call neobundle#rc(expand('~/vendor'))
+call neobundle#begin(expand('~/vendor'))
 
 source ~/.vim/vimrc/functions.vim
 
@@ -12,5 +12,7 @@ for vendor in s:vendors
 		execute 'NeoBundle "' . vendor_source_name . '" , ' . string(vendor_options)
 	endfor
 endfor
+
+call neobundle#end()
 
 NeoBundleCheck
