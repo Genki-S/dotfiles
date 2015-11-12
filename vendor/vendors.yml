@@ -17,3 +17,8 @@
 - leftnode/get-shit-done:
 
 - lpenz/atdtool:
+
+- Thibaut/devdocs:
+    build:
+        mac: bundle install && thor docs:download --all
+        unix: bundle install && thor docs:download --all
