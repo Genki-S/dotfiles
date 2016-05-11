@@ -8,4 +8,10 @@ if is_mac; then
 		$GOPATH/bin
 		$path
 	)
+else
+	path=(
+		# Go bin
+		$GOPATH/bin
+		$path
+	)
 fi
