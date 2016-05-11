@@ -75,6 +75,7 @@
     evil-surround
     evil-tabs
     smartparens
+    bind-map
     evil-lisp-state
     org-mode
     flycheck
