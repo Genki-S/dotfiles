@@ -139,8 +139,7 @@ end
 desc 'Install ruby gems'
 task :bundle_install do
   Dir.chdir(DOTDIR) do
-    run %{ gem install bundler }
-    run %{ bundle install }
+    run %{ ./setup/install-rbenv-plugins.sh }
   end
 end
 
