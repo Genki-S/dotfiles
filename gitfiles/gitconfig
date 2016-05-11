@@ -24,6 +24,7 @@
 
 [merge]
 	tool = splice
+	ff = false
 
 [mergetool "splice"]
 	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
