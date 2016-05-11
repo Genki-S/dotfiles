@@ -26,6 +26,7 @@ brew 'aspell'
 brew 'cheat'
 brew 'python'
 
+tap 'caskroom/cask'
 brew 'caskroom/cask/brew-cask'
 cask 'iterm2'
 cask 'firefox'
