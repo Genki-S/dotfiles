@@ -138,6 +138,9 @@
   (when (and (file-regular-p file) (string/ends-with file ".el"))
     (load file)))
 
+;; set system local so that org-mode uses English format timestamp
+(setq system-time-locale "C")
+
 ;; GUI
 ;; timer is needed, see: http://www.emacswiki.org/emacs/FullScreen#toc3
 ; disabling because I don't use GUI for now
