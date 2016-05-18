@@ -119,6 +119,7 @@ task :go_get do
   File.read("#{DOTDIR}/Gofile").each_line do |gocmd|
     run %{ go #{gocmd} }
   end
+  run %{ #{DOTDIR}/setup/install-git-hooks.sh }
 end
 
 desc 'Clone repositories'
