@@ -229,6 +229,8 @@ set complete=sl
 set focuscontent
 set defsearch=google
 set hintchars=qwertyuiopasdfghjklzxcvbnm
+" make ,, separate urls when using :open, :tabopen etc
+set urlseparator=,,
 " no sound
 set visualbell
 highlight Bell display:none
