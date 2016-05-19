@@ -60,6 +60,9 @@ function fancy-ctrl-z() {
 zle -N fancy-ctrl-z
 bindkey '^z' fancy-ctrl-z
 
+# ==================================================
+# Completions (^x*)
+# ==================================================
 # complete words from tmux pane(s)
 # Source: https://gist.github.com/blueyed/6856354
 _tmux_pane_words() {
@@ -81,8 +84,8 @@ _tmux_pane_words() {
 
 zle -C tmux-pane-words-prefix   complete-word _generic
 zle -C tmux-pane-words-anywhere complete-word _generic
-bindkey '^x^tt' tmux-pane-words-prefix
-bindkey '^x^tT' tmux-pane-words-anywhere
+bindkey '^xt' tmux-pane-words-prefix
+bindkey '^xT' tmux-pane-words-anywhere
 zstyle ':completion:tmux-pane-words-(prefix|anywhere):*' completer _tmux_pane_words
 zstyle ':completion:tmux-pane-words-(prefix|anywhere):*' ignore-line current
 # display the (interactive) menu on first execution of the hotkey
@@ -93,12 +96,10 @@ zstyle ':completion:tmux-pane-words-anywhere:*' matcher-list 'b:=* m:{A-Za-z}={a
 # http://www.zsh.org/mla/users/2004/msg00893.html
 _jh-prev-result () {
     hstring=$(eval `fc -l -n -1`)
-    set -A hlist ${(@s/
-/)hstring}
-    compadd - ${hlist}
+    compadd - ${=hstring}
 }
 zle -C jh-prev-comp menu-complete _jh-prev-result
-bindkey '^x^p' jh-prev-comp
+bindkey '^xp' jh-prev-comp
 
 # ==================================================
 # Common settings
