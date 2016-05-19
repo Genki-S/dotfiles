@@ -10,7 +10,7 @@
  '(org-agenda-include-diary t)
  '(org-agenda-prefix-format
    (quote
-    ((agenda . " %i %-12:c%?-12t% s (%e) ")
+    ((agenda . " %i %-12:c%?-12t% s (%e) %l")
      (timeline . "  % s")
      (todo . " %i %-12:c")
      (tags . " %i %-12:c")
@@ -20,6 +20,12 @@
  '(org-agenda-skip-deadline-if-done t)
  '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-skip-timestamp-if-done t)
+ '(org-agenda-sorting-strategy
+   (quote
+    ((agenda habit-down time-up category-keep)
+     (todo priority-down category-keep)
+     (tags priority-down category-keep)
+     (search category-keep))))
  '(org-agenda-start-on-weekday nil)
  '(org-agenda-sticky t)
  '(org-agenda-time-grid
