@@ -1,0 +1,6 @@
+#!/bin/bash
+if is_mac; then
+  reattach-to-user-namespace pbcopy
+else
+  xclip -sel clip
+fi

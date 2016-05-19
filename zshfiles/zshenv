@@ -19,11 +19,6 @@
 # ==================================================
 # Utilities
 # ==================================================
-# platform check
-function is_mac() {
-	[[ $OSTYPE =~ 'darwin' ]]
-}
-
 function executable() {
 	command -v $* > /dev/null
 }
@@ -41,8 +36,8 @@ function executable() {
 if [[ ! -o NORCS ]]; then
 	# Load all config files
 	envfiles=(
-		env.zsh
 		path.zsh
+		env.zsh
 		ruby.zsh
 		go.zsh
 	)
