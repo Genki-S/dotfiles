@@ -79,7 +79,7 @@ inoremap <C-k> <C-o>d$
 " Visual mode mappings {{{
 " search with selection
 vnoremap * "zy:let @/ = @z<CR>n
-vnoremap <Leader>G "zy:Google <C-r>"<CR>
+vnoremap <C-G> "zy:Google <C-r>"<CR>
 vnoremap <Leader>E "zy:Ref webdict alc <C-r>"<CR>
 
 " Pbcopy
