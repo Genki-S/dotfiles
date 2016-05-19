@@ -80,6 +80,6 @@ function pbsearch() {
 		| sed -e 's/<BR>/\
 /g' \
 		| sed -e 's/&lt;/</g' -e 's/&gt;/>/g' \
-		| reattach-to-user-namespace pbcopy
-	reattach-to-user-namespace pbpaste
+		| copy
+	paste
 };

@@ -5,7 +5,7 @@
   "M" 'mu4e
   "E" 'eval-buffer
   "V" 'genki/spawn-vim
-  "Y" 'genki/pbcopy
+  "Y" 'genki/copy
   "R" 'recover-this-file
   "oc" '(lambda () (interactive) (genki/open-browser "https://www.google.com/calendar/render")))
 
