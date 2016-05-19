@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if is_mac; then
+  open $@
+else
+  xdg-open $@
+fi
