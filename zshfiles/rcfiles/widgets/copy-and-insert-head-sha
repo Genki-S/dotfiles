@@ -1,0 +1,4 @@
+# vim: filetype=zsh
+
+git rev-parse HEAD | copy
+LBUFFER+=$(git rev-parse HEAD)

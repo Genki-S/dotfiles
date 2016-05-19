@@ -142,4 +142,11 @@ bindkey -M isearch '^r' history-incremental-pattern-search-backward
 bindkey '^s' history-incremental-pattern-search-forward
 bindkey -M vicmd '^t' transpose-words
 
+# ==================================================
+# Insertions (^v*)
+# ==================================================
+# insert the commit sha of HEAD and copy to clipboard
+bindkey '^vs' copy-and-insert-head-sha
+bindkey '^vc' copy-and-insert-head-comment
+
 # Tip: press <C-v><key> to get <key>'s keycode
