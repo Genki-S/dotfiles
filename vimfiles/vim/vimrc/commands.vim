@@ -11,8 +11,8 @@ command! NoTrail %s/\s\+$//
 command! -nargs=* -complete=mapping AllMaps
 \	map <args> | map! <args> | lmap <args>
 
-command! -range Pbcopy <line1>,<line2>w !reattach-to-user-namespace pbcopy
-command! Pbclone call system('echo ' . getreg('"') . ' | reattach-to-user-namespace pbcopy')
+command! -range Pbcopy <line1>,<line2>w !copy
+command! Pbclone call system('echo ' . getreg('"') . ' | copy')
 
 command! -nargs=* Google call Genki_google(<q-args>)
 
