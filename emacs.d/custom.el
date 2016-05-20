@@ -42,6 +42,7 @@
  '(org-columns-default-format "%50ITEM(Task) %20SCHEDULED %20EFFORT{:} %10CLOCKSUM")
  '(org-completion-use-ido t)
  '(org-drawers (quote ("PROPERTIES" "LOGBOOK")))
+ '(org-enforce-todo-dependencies t)
  '(org-export-with-section-numbers nil)
  '(org-export-with-toc nil)
  '(org-global-properties
