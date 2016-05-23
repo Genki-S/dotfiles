@@ -232,6 +232,15 @@
     autoload:
         mappings:
             - <Plug>(incsearch-
+- Genki-S/gtags.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - Gtags
+            - Gtagsa
+            - GtagsCursor
+            - Gozilla
+            - GtagsUpdate
 # }}}
 
 # Debugging {{{
