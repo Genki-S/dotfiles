@@ -512,10 +512,6 @@
 
 # Other Utilities {{{
 - MattesGroeger/vim-bookmarks:
-    lazy: 1
-    autoload:
-        mappings:
-            - <Plug>Bookmark
 - mattn/gist-vim:
     lazy: 1
     autoload:
