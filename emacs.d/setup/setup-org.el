@@ -190,6 +190,8 @@
          "* MEETING %?\n%U\n** References\n** Learnings\n")
         ("n" "Note" entry (file "~/org/inbox.org")
          "* %?  :note:\n%U\nfrom:%a\n")
+        ("q" "Question" entry (file "~/org/inbox.org")
+         "* %?  :question:\n%U\nfrom:%a\n")
         ("p" "Phone call" entry (file "~/org/inbox.org")
          "* PHONE %?\n%U")
         ("r" "respond" entry (file "~/org/inbox.org")
