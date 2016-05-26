@@ -1,8 +1,9 @@
 #!/bin/bash
+
 if is_mac; then
   # This is a charm
   # http://d.hatena.ne.jp/edvakf/20080929/1222657230
-  reattach-to-user-namespace nkf -w | __CF_USER_TEXT_ENCODING=0x$(printf %x $(id -u)):0x08000100:14 pbcopy"
+  reattach-to-user-namespace nkf -w | __CF_USER_TEXT_ENCODING=0x$(printf %x $(id -u)):0x08000100:14 pbcopy
 else
   xclip -sel clip
 fi
