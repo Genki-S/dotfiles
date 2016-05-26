@@ -379,6 +379,7 @@
     autoload:
         unite_sources:
             - ghq
+- hewes/unite-gtags:
 # }}}
 
 # Git {{{
