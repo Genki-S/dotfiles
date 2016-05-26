@@ -33,7 +33,7 @@ nnoremap <silent> <SID>[unite]<C-]> :<C-u>UniteWithCursorWord -immediately tag<C
 
 " unite-gtags
 "   gtags-all
-nnoremap <silent> <SID>[unite]ga :<C-u>Unite -buffer-name=gtags gtags/completion<CR>
+nnoremap <silent> <SID>[unite]ga :<C-u>Unite -buffer-name=gtags -default-action=list_definitions gtags/completion<CR>
 nnoremap <silent> <SID>[unite]gr :<C-u>Unite -buffer-name=gtags gtags/ref<CR>
 nnoremap <silent> <SID>[unite]gd :<C-u>Unite -buffer-name=gtags gtags/def<CR>
 nnoremap <silent> <SID>[unite]gg :<C-u>Unite -buffer-name=gtags gtags/grep<CR>
