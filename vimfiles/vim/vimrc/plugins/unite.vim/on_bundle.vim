@@ -31,14 +31,20 @@ nnoremap <silent> <SID>[unite]<Space> :<C-u>Unite -buffer-name=source source<CR>
 nnoremap <silent> <SID>[unite]t :<C-u>Unite -buffer-name=tag tag<CR>
 nnoremap <silent> <SID>[unite]<C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>
 
-" vim-unite-giti
-nnoremap <silent> <SID>[unite]g<Space> :<C-u>Unite -buffer-name=giti giti<CR>
-nnoremap <silent> <SID>[unite]gb :<C-u>Unite -buffer-name=giti giti/branch<CR>
-nnoremap <silent> <SID>[unite]gB :<C-u>Unite -buffer-name=giti giti/branch_all<CR>
-nnoremap <silent> <SID>[unite]gc :<C-u>Unite -buffer-name=giti giti/config<CR>
-nnoremap <silent> <SID>[unite]gl :<C-u>Unite -buffer-name=giti giti/log<CR>
-nnoremap <silent> <SID>[unite]gr :<C-u>Unite -buffer-name=giti giti/remote<CR>
-nnoremap <silent> <SID>[unite]gs :<C-u>Unite -buffer-name=giti giti/status<CR>
+" unite-gtags
+"   gtags-all
+nnoremap <silent> <SID>[unite]ga :<C-u>Unite -buffer-name=gtags gtags/completion<CR>
+nnoremap <silent> <SID>[unite]gr :<C-u>Unite -buffer-name=gtags gtags/ref<CR>
+nnoremap <silent> <SID>[unite]gd :<C-u>Unite -buffer-name=gtags gtags/def<CR>
+nnoremap <silent> <SID>[unite]gg :<C-u>Unite -buffer-name=gtags gtags/grep<CR>
+nnoremap <silent> <SID>[unite]gf :<C-u>Unite -buffer-name=gtags gtags/file<CR>
+nnoremap <silent> <SID>[unite]gp :<C-u>Unite -buffer-name=gtags gtags/path<CR>
 
-" unite-ghq
-nnoremap <silent> <SID>[unite]G :<C-u>Unite -buffer-name=ghq ghq<CR>
+" vim-unite-giti
+nnoremap <silent> <SID>[unite]G<Space> :<C-u>Unite -buffer-name=giti giti<CR>
+nnoremap <silent> <SID>[unite]Gb :<C-u>Unite -buffer-name=giti giti/branch<CR>
+nnoremap <silent> <SID>[unite]GB :<C-u>Unite -buffer-name=giti giti/branch_all<CR>
+nnoremap <silent> <SID>[unite]Gc :<C-u>Unite -buffer-name=giti giti/config<CR>
+nnoremap <silent> <SID>[unite]Gl :<C-u>Unite -buffer-name=giti giti/log<CR>
+nnoremap <silent> <SID>[unite]Gr :<C-u>Unite -buffer-name=giti giti/remote<CR>
+nnoremap <silent> <SID>[unite]Gs :<C-u>Unite -buffer-name=giti giti/status<CR>
