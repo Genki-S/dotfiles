@@ -6,12 +6,16 @@ if is_mac; then
 		/usr/local/share/python
 		# Go bin
 		$GOPATH/bin
+		# npm bin
+		$HOME/dotfiles/node_modules/.bin
 		$path
 	)
 else
 	path=(
 		# Go bin
 		$GOPATH/bin
+		# npm bin
+		$HOME/dotfiles/node_modules/.bin
 		$path
 	)
 fi
