@@ -119,12 +119,16 @@ delcommand auve
 " }}}
 
 " hints-ext {{{
+command! -nargs=+ auve autocmd VimperatorEnter .* <args>
+
 let g:use_hintchars_ex=1
 let g:use_hints_ext_caret="C"
 nnoremap c ;C
 let g:use_hints_ext_visual="V"
 nnoremap v ;V
-js hints.addSimpleMap("<C-l>", function () {this.relocation(); });
+auve js hints.addSimpleMap("<C-l>", function () {this.relocation(); });
+
+delcommand auve
 " }}}
 
 " slideshare.js {{{
