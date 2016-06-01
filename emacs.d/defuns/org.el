@@ -34,4 +34,6 @@
   (interactive)
   (call-interactively 'org-schedule)
   (let ((time (org-get-scheduled-time (point))))
-    (org-map-tree (lambda () (org-schedule nil time)))))
+    (org-map-tree
+      (lambda () (progn
+                   (if (org-entry-is-todo-p) (org-schedule nil time)))))))
