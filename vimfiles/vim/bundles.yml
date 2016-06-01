@@ -550,11 +550,6 @@
     autoload:
         mappings:
             - <Plug>(vigemo-search)
-- mrtazz/simplenote.vim:
-    lazy: 1
-    autoload:
-        commands:
-            - Simplenote
 # }}}
 
 # Filetype Specific {{{
@@ -789,6 +784,8 @@
 # - tpope/vim-endwise:
 # Use devdocs.io and devdocs.vim
 # - rizzatti/dash.vim:
+# I don't use simplenote anymore (did I use it once?)
+# - mrtazz/simplenote.vim:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
