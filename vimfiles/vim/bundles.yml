@@ -550,6 +550,15 @@
     autoload:
         mappings:
             - <Plug>(vigemo-search)
+- mohitleo9/vim-fidget:
+    build:
+        mac: npm install -g
+        unix: npm install -g
+    lazy: 1
+    autoload:
+        commands:
+            - VimFidget
+            - VimFidgetBrowse
 # }}}
 
 # Filetype Specific {{{
