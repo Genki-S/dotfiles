@@ -244,6 +244,10 @@
 (define-key global-map (kbd "C-c a") 'org-agenda)
 (define-key global-map (kbd "C-c c") 'org-capture)
 
+;; Overrides
+;; only org-mode, not org-agenda-mode (TODO: implement genki/org-agenda-schedule-subtree)
+(define-key org-mode-map (kbd "C-c C-s") 'genki/org-schedule-subtree)
+
 ;; Jump to my org files easily
 (define-key global-map "\C-coa" '(lambda () (interactive) (find-file "~/org/archives.org")))
 (define-key global-map "\C-cod" '(lambda () (interactive) (find-file "~/org/dashboard.org")))

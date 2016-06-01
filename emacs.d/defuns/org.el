@@ -29,3 +29,9 @@
 (defun genki/org-capture-750-words-setup ()
   (wc-mode)
   (wc-set-word-goal 10))
+
+(defun genki/org-schedule-subtree ()
+  (interactive)
+  (call-interactively 'org-schedule)
+  (let ((time (org-get-scheduled-time (point))))
+    (org-map-tree (lambda () (org-schedule nil time)))))
