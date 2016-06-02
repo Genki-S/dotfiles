@@ -278,6 +278,8 @@ ignorekeys add docs\\.google\\.com
 " }}}
 " ==============================
 
+source ~/.vimperatorrc.local
+
 " reload message
 echo "vimperator: Welcome back."
 
