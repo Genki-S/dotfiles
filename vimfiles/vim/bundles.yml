@@ -528,13 +528,14 @@
             - FocusDispatch
             - Start
 - Shougo/junkfile.vim:
-    lazy: 1
-    autoload:
-        commands:
-            - JunkfileOpen
-        unite_sources:
-            - junkfile
-            - junkfile/new
+    # FIXME: unite_sources seems to be not working (thus making it not lazy for now)
+    # lazy: 1
+    # autoload:
+        # commands:
+            # - JunkfileOpen
+        # unite_sources:
+            # - junkfile
+            # - junkfile/new
 - mhinz/vim-randomtag:
     lazy: 1
     autoload:
