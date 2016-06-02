@@ -31,16 +31,15 @@
         ("CANCELLED" :foreground "#9eb9a7" :weight bold)))
 
 (setq org-tag-alist '((:startgroup . nil)
-                      ("@work" . ?w)
+                      ("@office" . ?o)
                       ("@home" . ?h)
-                      ("@univ" . ?u)
                       ("@errand" . ?e)
                       (:endgroup . nil)
                       (:startgroup . nil)
-                      ("Q1" . ?1)
-                      ("Q2" . ?2)
-                      ("Q3" . ?3)
-                      ("Q4" . ?4)
+                      ("job" . ?j)
+                      ("dotfiles" . ?d)
+                      ("learning" . ?l)
+                      ("social" . ?s)
                       (:endgroup . nil)))
 
 ;; The default agenda files.
@@ -184,6 +183,8 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file "~/org/inbox.org")
          "* TODO %?\n%U\nfrom:%a\n** Why do this?\n")
+        ("i" "Issue" entry (file "~/org/inbox.org")
+         (file "~/org/templates/jira_issue.txt"))
         ("f" "Failure" entry (file "~/org/inbox.org")
          (file "~/org/templates/failure_reflection.txt"))
         ("m" "Meeting" entry (file "~/org/inbox.org")
