@@ -10,4 +10,5 @@ gem-browse
 gem-ctags
 ruby-beautify
 terminal-notifier
+rbenv-ctags
 overcommit
