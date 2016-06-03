@@ -37,7 +37,9 @@ Installs in `~/vendor`.
 
 ## Other things
 
-- [moovweb/gvm · GitHub](https://github.com/moovweb/gvm)
+- [moovweb/gvm](https://github.com/moovweb/gvm)
+- [brigade/overcommit](https://github.com/brigade/overcommit)
+  - Don't forget to update `gitfiles/git_template_dir/hooks` periodically
 
 # Known issues
 

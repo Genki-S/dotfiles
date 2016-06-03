@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-echo "git hooks not installed in this repository.  Run 'git hooks --install' to install it or 'git hooks -h' for more information."
