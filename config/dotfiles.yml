@@ -26,5 +26,6 @@
     - offlineimap.py
     - js
     - cheat
+    - overcommit.yml
 - emacs.d
 - clicoder.d

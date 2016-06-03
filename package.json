@@ -17,9 +17,17 @@
   },
   "homepage": "https://github.com/Genki-S/dotfiles",
   "dependencies": {
+    "csslint": "^0.10.0",
+    "eslint": "^2.11.1",
+    "htmlhint": "^0.9.13",
     "js-beautify": "^1.5.4",
-    "jshint": "^2.6.3",
-    "jslint": "^0.9.0-pre006",
-    "leasot": "^2.2.1"
+    "jscs": "^3.0.3",
+    "jshint": "^2.9.2",
+    "jslint": "^0.9.8",
+    "leasot": "^2.2.1",
+    "semistandard": "^8.0.0",
+    "textlint": "^6.8.0",
+    "textlint-rule-ginger": "^0.1.6",
+    "textlint-rule-spellchecker": "^0.1.4"
   }
 }

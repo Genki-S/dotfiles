@@ -1,0 +1,53 @@
+PostCheckout:
+  IndexTags:
+    enabled: true
+PostCommit:
+  IndexTags:
+    enabled: true
+  GitGuilt:
+    enabled: true
+PostMerge:
+  IndexTags:
+    enabled: true
+PostRewrite:
+  IndexTags:
+    enabled: true
+PreRebase:
+  MergedCommits:
+    enabled: true
+    branches: master
+
+# Enabling web related checks by default for me
+PreCommit:
+  CssLint:
+    enabled: true
+  ESLint:
+    enabled: true
+  HLint:
+    enabled: true
+  HtmlHint:
+    enabled: true
+  # HtmlTidy:
+    # enabled: true
+  ImageOptim:
+    enabled: true
+  Jscs:
+    enabled: true
+  JsHint:
+    enabled: true
+  JsLint:
+    enabled: true
+  # Jsl:
+    # enabled: true
+  JsonSyntax:
+    enabled: true
+  Mdl:
+    enabled: true
+  SemiStandard:
+    enabled: true
+  TrailingWhitespace:
+    enabled: true
+  W3cCss:
+    enabled: true
+  W3cHtml:
+    enabled: true
