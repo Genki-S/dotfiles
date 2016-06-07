@@ -19,6 +19,7 @@
   "dependencies": {
     "csslint": "^0.10.0",
     "eslint": "^2.11.1",
+    "git-guilt": "^0.1.1",
     "htmlhint": "^0.9.13",
     "js-beautify": "^1.5.4",
     "jscs": "^3.0.3",

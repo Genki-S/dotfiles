@@ -21,7 +21,7 @@ PreRebase:
 PreCommit:
   CssLint:
     enabled: true
-  ESLint:
+  EsLint:
     enabled: true
   HLint:
     enabled: true
@@ -51,3 +51,9 @@ PreCommit:
     enabled: true
   W3cHtml:
     enabled: true
+
+PrePush:
+  AntTest:
+    enabled: true
+    description: Checking if test passes
+    required_executable: 'ant'

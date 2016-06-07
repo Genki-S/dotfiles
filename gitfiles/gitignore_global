@@ -4,6 +4,7 @@
 
 # Git stuff
 .overcommit.yml
+.git-hooks
 
 # Ruby stuffs
 .patrol
