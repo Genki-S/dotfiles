@@ -51,9 +51,16 @@ PreCommit:
     enabled: true
   W3cHtml:
     enabled: true
+  Pmd:
+    enabled: true
+    description: 'Linting with PMD'
+    required_executable: 'pmd'
+    format: 'text'
+    rulesets:
+      - '$HOME/dotfiles/miscfiles/mypmdrules.xml'
 
 PrePush:
   AntTest:
     enabled: true
-    description: Checking if test passes
-    required_executable: 'ant'
+    description: 'Checking if test passes'
+    required_executable: 'ant-without-ivy'
