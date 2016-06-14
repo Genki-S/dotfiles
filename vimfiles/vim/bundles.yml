@@ -712,6 +712,16 @@
             - swift
 # }}}
 
+## Java {{{
+- eclim:
+    type: nosync
+    base: ~/dotfiles/vimfiles/vim/manual-bundles
+    lazy: 1
+    autoload:
+        filetypes:
+            - java
+# }}}
+
 ## Others {{{
 - kannokanno/previm:
     lazy: 1
