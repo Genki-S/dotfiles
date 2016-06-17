@@ -1,3 +1,5 @@
+verify_signatures: false
+
 PostCheckout:
   IndexTags:
     enabled: true
@@ -52,12 +54,24 @@ PreCommit:
   W3cHtml:
     enabled: true
   Pmd:
-    enabled: true
+    enabled: false
     description: 'Linting with PMD'
     required_executable: 'pmd'
     format: 'text'
+    include:
+      - '**/*.java'
     rulesets:
       - '$HOME/dotfiles/miscfiles/mypmdrules.xml'
+  Javac:
+    enabled: true
+    description: 'Linting with javac'
+    required_executable: 'javac'
+    include:
+      - '**/*.java'
+    classpath_eclipse: true
+    additional_args:
+      - '-encoding'
+      - 'utf-8'
 
 PrePush:
   AntTest:
