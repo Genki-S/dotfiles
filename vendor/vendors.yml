@@ -22,3 +22,8 @@
     build:
         mac: bundle install && thor docs:download --all
         unix: bundle install && thor docs:download --all
+
+- pmd/pmd:
+    build:
+        mac: mvn clean package
+        unix: mvn clean package
