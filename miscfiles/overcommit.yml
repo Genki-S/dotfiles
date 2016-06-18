@@ -3,16 +3,24 @@ verify_signatures: false
 PostCheckout:
   IndexTags:
     enabled: true
+  Gtags:
+    enabled: true
 PostCommit:
   IndexTags:
+    enabled: true
+  Gtags:
     enabled: true
   GitGuilt:
     enabled: true
 PostMerge:
   IndexTags:
     enabled: true
+  Gtags:
+    enabled: true
 PostRewrite:
   IndexTags:
+    enabled: true
+  Gtags:
     enabled: true
 PreRebase:
   MergedCommits:
