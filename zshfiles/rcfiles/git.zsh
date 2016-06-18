@@ -53,6 +53,8 @@ alias gsdiff="git stash show --color"
 alias gsp="git stash pop --index"
 alias gsdrop="git stash drop"
 alias gbws='git browse $(ghq list | sed "s!github\.com/!!" | peco)'
+# Get sha with e.g. `$ grp HEAD`
+alias grp="git rev-parse --verify"
 function gbw() {
   root=$(git-root)
   if [ -z "$root" ]; then
