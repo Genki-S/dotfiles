@@ -76,7 +76,10 @@ PreCommit:
     required_executable: 'javac'
     include:
       - '**/*.java'
-    classpath_eclipse: true
+    classpaths:
+      - './src/resources'
+      - './build/classes'
+      - './build/lib/**/*.jar'
     additional_args:
       - '-encoding'
       - 'utf-8'

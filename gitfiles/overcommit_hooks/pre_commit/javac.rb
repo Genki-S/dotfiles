@@ -1,22 +1,16 @@
 require 'tmpdir'
 
-# TODO: catch LoadError
-require 'nokogiri'
-
 module Overcommit::Hook::PreCommit
   class Javac < Base
     def run
       tmpdir = Dir.mktmpdir
+      classpath_arg = config['classpaths'].map { |path| Dir.glob(path) }.join(':')
       args = [
-        # '-d', tmpdir,
+        '-d', tmpdir,
+        '-classpath', classpath_arg,
         '-Xlint:all',
       ]
       args += config['additional_args']
-
-      if config['classpath_eclipse']
-        args += ['-classpath', load_classpath_eclipse]
-      end
-
       args += applicable_files
 
       result = execute(command, args: args)
@@ -29,12 +23,6 @@ module Overcommit::Hook::PreCommit
       else
         [:fail, output]
       end
-    end
-
-    def load_classpath_eclipse
-      doc = File.open(".classpath") { |f| Nokogiri::XML(f) }
-      paths = doc.xpath('//classpath/classpathentry/@path').map(&:value)
-      paths.join(':')
     end
   end
 end
