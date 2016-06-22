@@ -8,21 +8,29 @@ module Overcommit::Hook::PreCommit
       args = [
         '-d', tmpdir,
         '-classpath', classpath_arg,
-        '-Xlint:all',
       ]
       args += config['additional_args']
-      args += applicable_files
 
-      result = execute(command, args: args)
-      FileUtils.remove_entry(tmpdir)
-
+      result = execute_with_rules(config['must_rules'], args)
       output = result.stdout + result.stderr
-
-      if result.success?
-        output.empty? ? :pass : [:warn, output]
-      else
-        [:fail, output]
+      if !result.success? || !output.empty?
+        FileUtils.remove_entry(tmpdir)
+        return [:fail, output]
       end
+
+      result = execute_with_rules(config['warn_rules'], args)
+      output = result.stdout + result.stderr
+      FileUtils.remove_entry(tmpdir)
+      if output.empty?
+        :pass
+      else
+        [:warn, output]
+      end
+    end
+
+    def execute_with_rules(rules, args)
+      lint_args = rules.map { |rule| "-Xlint:#{rule}" }
+      execute(command, args: args + lint_args + applicable_files)
     end
   end
 end
