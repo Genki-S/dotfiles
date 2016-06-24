@@ -13,6 +13,13 @@ module Overcommit::Hook::PreCommit
 
       result = execute_with_rules(config['must_rules'], args)
       output = result.stdout + result.stderr
+      output = output.split("\n").delete_if do |line|
+        line =~ /Note: Some input files use or override a deprecated API./ ||
+        line =~ /Note: Recompile with -Xlint:deprecation for details./ ||
+        line =~ /Note: Some input files use unchecked or unsafe operations./ ||
+        line =~ /Note: Recompile with -Xlint:unchecked for details./
+      end.join("\n")
+
       if !result.success? || !output.empty?
         FileUtils.remove_entry(tmpdir)
         return [:fail, output]
@@ -20,6 +27,7 @@ module Overcommit::Hook::PreCommit
 
       result = execute_with_rules(config['warn_rules'], args)
       output = result.stdout + result.stderr
+
       FileUtils.remove_entry(tmpdir)
       if output.empty?
         :pass
