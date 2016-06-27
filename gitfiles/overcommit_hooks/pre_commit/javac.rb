@@ -17,7 +17,9 @@ module Overcommit::Hook::PreCommit
         line =~ /Note: Some input files use or override a deprecated API./ ||
         line =~ /Note: Recompile with -Xlint:deprecation for details./ ||
         line =~ /Note: Some input files use unchecked or unsafe operations./ ||
-        line =~ /Note: Recompile with -Xlint:unchecked for details./
+        line =~ /Note: Recompile with -Xlint:unchecked for details./ ||
+        line =~ /Note: [^\s]* uses or overrides a deprecated API./ ||
+        line =~ /Note: [^\s]* uses unchecked or unsafe operations./
       end.join("\n")
 
       if !result.success? || !output.empty?
