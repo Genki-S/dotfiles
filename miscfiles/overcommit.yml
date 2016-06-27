@@ -70,6 +70,12 @@ PreCommit:
       - '**/*.java'
     rulesets:
       - '$HOME/dotfiles/miscfiles/mypmdrules.xml'
+  Checkstyle:
+    enabled: true
+    description: 'Linting with Checkstyle'
+    required_executable: 'checkstyle'
+    include:
+      - '**/*.java'
   Javac:
     enabled: true
     description: 'Linting with javac'
