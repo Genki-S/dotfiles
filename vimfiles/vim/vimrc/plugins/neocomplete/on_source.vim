@@ -39,6 +39,11 @@ nnoremap [oC :<C-u>NeoCompleteEnable<CR>
 nnoremap ]oC :<C-u>NeoCompleteDisable<CR>
 
 " Enable omni completion.
+if !exists('g:neocomplete#force_omni_input_patterns')
+	let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.java = '\k\.\k*'
+
 autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
