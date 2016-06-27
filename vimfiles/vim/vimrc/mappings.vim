@@ -73,7 +73,6 @@ inoremap <C-f> <Right>
 " ^ is more useful than 0 in many cases
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
-inoremap <C-k> <C-o>d$
 "}}}
 
 " Visual mode mappings {{{
