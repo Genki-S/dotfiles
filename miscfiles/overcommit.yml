@@ -62,7 +62,7 @@ PreCommit:
   W3cHtml:
     enabled: true
   Pmd:
-    enabled: false
+    enabled: true
     description: 'Linting with PMD'
     required_executable: 'pmd'
     format: 'text'
