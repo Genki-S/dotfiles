@@ -63,3 +63,6 @@
 [submodule "submodules/git-hooks"]
 	path = submodules/git-hooks
 	url = git@github.com:git-hooks/git-hooks.git
+[submodule "submodules/checkstyle"]
+	path = submodules/checkstyle
+	url = https://github.com/checkstyle/checkstyle
