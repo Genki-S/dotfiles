@@ -1,4 +1,7 @@
 ---
+- /home/genki/dev/indeed.vim:
+    type: nosync
+
 # Libraries {{{
 - mattn/webapi-vim:
     lazy: 1
@@ -298,6 +301,7 @@
 # Git {{{
 - sjl/splice.vim:
 - tpope/vim-fugitive:
+- shumphrey/fugitive-gitlab.vim:
 - tommcdo/vim-fugitive-blame-ext:
     lazy: 1
     autoload:
