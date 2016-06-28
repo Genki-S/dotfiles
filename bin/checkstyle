@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -jar ~/dotfiles/submodules/checkstyle/target/checkstyle-6.19-all.jar -c /google_checks.xml $@
+java -jar ~/dotfiles/submodules/checkstyle/target/checkstyle-6.19-all.jar -c $HOME/dotfiles/miscfiles/checkstyle_checks.xml $@
