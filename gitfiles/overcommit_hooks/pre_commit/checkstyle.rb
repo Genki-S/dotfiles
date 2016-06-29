@@ -3,9 +3,12 @@ module Overcommit::Hook::PreCommit
     def run
       result = execute(command, args: applicable_files)
       output = result.stdout + result.stderr
-      return :pass if output.empty?
+      output = output.split("\n").delete_if do |line|
+        line =~ /Starting audit.../ ||
+        line =~ /Audit done./
+      end.join("\n")
 
-      output = result.stdout + result.stderr
+      return :pass if output.empty?
       [:fail, output]
     end
   end
