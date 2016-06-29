@@ -18,7 +18,7 @@ CompilerSet makeprg=.git/hooks/pre-commit
 "   - Java Checkstyle
 "   - Java PMD
 "   - javac
-CompilerSet errorformat=[WARN]\ %f:%l:%c:\ %m,[WARN]\ %f:%l:\ %m,
+CompilerSet errorformat=[WARN]\ %f:%l:%c:%m,[WARN]\ %f:%l:%m,%f:%l:%m,
 			\%f:%l:\ %m,
 			\%E%f:%l:\ %m,%-Z%p^,%-C%.%#,%-G%.%#
 
