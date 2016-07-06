@@ -14,6 +14,12 @@ Gemfile.local*
 Guardfile
 config/environments/genki.rb
 
+# Java stuffs
+.classpath
+.project
+*.eml
+*.userlibraries
+
 # Misc.
 .envrc
 
