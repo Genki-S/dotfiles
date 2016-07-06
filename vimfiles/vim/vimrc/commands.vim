@@ -35,3 +35,6 @@ command! -nargs=1 -complete=var DumpVariable call Genki_dump_variable(<q-args>)
 AlterCommand dump DumpVariable
 
 command! FollowSymlink call Genki_follow_symlink()
+
+command! PreCommit compiler pre-commit | Make
+AlterCommand pre PreCommit
