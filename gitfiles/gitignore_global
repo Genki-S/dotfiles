@@ -20,6 +20,15 @@ config/environments/genki.rb
 *.eml
 *.userlibraries
 
+## Bazel
+BUILD
+WORKSPACE
+bazel-bin
+bazel-genfiles
+bazel-jobsearch-be-ricky
+bazel-out
+bazel-testlogs
+
 # Misc.
 .envrc
 

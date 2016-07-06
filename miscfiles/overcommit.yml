@@ -107,6 +107,13 @@ PreCommit:
     additional_args:
       - '-encoding'
       - 'utf-8'
+  ErrorProne:
+    enabled: true
+    description: 'Linting with ErrorProne'
+    required_executable: 'bazel'
+    include:
+      - '**/*.java'
+    target: 'errorprone'
 
 PrePush:
   AntTest:
