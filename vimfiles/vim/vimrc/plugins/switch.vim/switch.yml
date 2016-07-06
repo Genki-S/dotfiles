@@ -285,3 +285,7 @@ coffee:
   -
     - show
     - hide
+java:
+  -
+    - public
+    - private
