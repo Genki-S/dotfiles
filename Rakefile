@@ -5,14 +5,6 @@ require 'uri'
 
 HOME = ENV['HOME']
 DOTDIR = "#{HOME}/dotfiles"
-BREW_PREFIX = ENV['BREW_PREFIX'] || `which brew > /dev/null && brew --prefix || echo ""`
-raise 'BREW_PREFIX environment variable is not set' if BREW_PREFIX.to_s.empty?
-BREW = "#{BREW_PREFIX.chomp}/bin/brew"
-
-# Set path to include BREW_PREFIX/bin
-paths = ENV['PATH'].split(':')
-paths.unshift("#{BREW_PREFIX}/bin")
-ENV['PATH'] = paths.join(':')
 
 desc 'Do the best.'
 task :install => [
@@ -23,14 +15,20 @@ task :install => [
   :update_injection,
   :brew_essentials,
   :orgmode,
-  :deploy ] do
-  puts 'changing login shell...'
-  shell = '/usr/local/bin/zsh'
-  run %{
-    grep #{shell} /etc/shells > /dev/null || echo #{shell} | sudo tee -a /etc/shells > /dev/null
-  }
-  run %{ chsh -s #{shell} }
+  :deploy,
+  :chsh ] do
   puts 'run `rake bundle_up` after logging in with zsh'
+end
+
+desc 'Do the best for unix.'
+task :install_unix => [
+  :init_submodules,
+  :update_submodules,
+  :update_injection,
+  :orgmode,
+  :deploy,
+  :chsh ] do
+  puts 'run `rake bundle_up_unix` after logging in with zsh'
 end
 
 desc 'Install softwares'
@@ -44,11 +42,30 @@ task :bundle_up => [
   :setup_osx] do
 end
 
+desc 'Install softwares'
+task :bundle_up_unix => [
+  :go_get,
+  :ghq_get,
+  :npm_install,
+  :bundle_install,
+  :install_rbenv_plugins] do
+end
+
+desc 'Change login shell'
+task :chsh do
+  puts 'Changing login shell...'
+  shell = '/usr/local/bin/zsh'
+  run %{
+    grep #{shell} /etc/shells > /dev/null || echo #{shell} | sudo tee -a /etc/shells > /dev/null
+  }
+  run %{ chsh -s #{shell} }
+end
+
 desc 'install homebrew'
 task :install_homebrew do
   puts 'Installing Homebrew...'
-  run %{ which #{BREW} || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" }
-  run %{ #{BREW} doctor }
+  run %{ which brew || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" }
+  run %{ brew doctor }
 end
 
 desc 'install essential brew packages'
@@ -71,7 +88,7 @@ end
 desc 'install ruby'
 task :install_ruby do
   puts 'Installing Ruby...'
-  run %{ #{BREW} install rbenv ruby-build }
+  run %{ brew install rbenv ruby-build }
   run %{ rbenv install 2.1.3 } # TODO: ask version to user
   run %{ rbenv rehash }
   run %{ rbenv global 2.1.3 }
