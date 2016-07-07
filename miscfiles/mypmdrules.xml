@@ -19,6 +19,7 @@
   <rule ref="rulesets/java/comments.xml">
     <exclude name="CommentRequired"/>
     <exclude name="CommentSize"/>
+    <exclude name="CommentDefaultAccessModifier"/>
   </rule>
   <rule ref="rulesets/java/typeresolution.xml"/>
   <rule ref="rulesets/java/migrating_to_junit4.xml"/>
@@ -49,6 +50,7 @@
     <exclude name="AtLeastOneConstructor"/>
     <exclude name="AvoidFinalLocalVariable"/>
     <exclude name="DataflowAnomalyAnalysis"/>
+    <exclude name="DefaultPackage"/>
     <exclude name="OnlyOneReturn"/>
   </rule>
   <!-- <rule ref="rulesets/java/logging-jakarta-commons.xml"/> -->
