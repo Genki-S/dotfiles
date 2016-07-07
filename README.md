@@ -40,7 +40,39 @@ Installs in `~/vendor`.
 - [moovweb/gvm](https://github.com/moovweb/gvm)
 - [brigade/overcommit](https://github.com/brigade/overcommit)
   - Don't forget to update `gitfiles/git_template_dir/hooks` periodically
+TODO: Install executables for overcommit config
 
 # Known issues
 
 - Homebrew cask can't be installed without sudo privilege
+
+# For Ubuntu
+
+WIP
+
+- Install rbenv
+- Install ruby
+- Install golang
+- Install lua
+- Build Vim
+  - http://unix.stackexchange.com/questions/2807/why-does-my-vim-7-3-compile-fail-to-include-clientserver
+  - https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+  - http://superuser.com/questions/660593/how-to-compile-a-gvim-from-source-using-the-latest-version
+- Build Emacs
+  - sudo apt-get build-dep emacs24
+  - wget -O- http://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.xz | tar xJf -
+  - sudo apt-get install bzr
+  - sudo apt-get build-dep mu4e
+- sudo apt-get install tig
+- sudo apt-get install espeak
+- sudo add-apt-repository:
+  - ppa:jconti/recent-notifications
+- sudo apt-get install:
+  - tree
+  - indicator-notifications
+  - exuberant-ctags
+  - findbugs
+- Install fasd https://github.com/clvv/fasd
+- Install Fcitx for Japanese input https://blogs.fsfe.org/stefan.a/2014/09/23/set-up-fcitx-chinese-and-japanese-language-input-ubuntu-14-04/
+  - Don't use ibus, it's kana-input is messed up
+- Install solarized: https://github.com/Anthony25/gnome-terminal-colors-solarized
