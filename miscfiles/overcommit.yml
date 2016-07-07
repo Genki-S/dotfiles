@@ -95,13 +95,13 @@ PreCommit:
       - 'fallthrough'
       - 'finally'
       - 'overrides'
-      - 'rawtypes'
       - 'serial'
       - 'static'
       - 'try'
-      - 'unchecked'
       - 'varargs'
     warn_rules:
+      - 'unchecked'
+      - 'rawtypes'
       - 'deprecation'
       - 'processing'
     additional_args:
