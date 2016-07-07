@@ -6,6 +6,9 @@ module Overcommit::Hook::PreCommit
       /Too many static imports may lead to messy code/,
       /This class has too many methods, consider refactoring it/,
       /The String literal [^ ]* appears \d+ times in this file/,
+      /A high number of imports can indicate a high degree of coupling within an object/,
+      /The (method|class) [^ ]* has a (Modified |Standard |)Cyclomatic Complexity of \d+/,
+      /Avoid instantiating new objects inside loops/,
     ]
 
     def run
