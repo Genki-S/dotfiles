@@ -1,0 +1,7 @@
+include "linux104.mayu"
+
+key C-H = Backspace
+key Backspace = BackSlash
+key BackSlash = Backspace
+key Esc = BackQuote
+key C-OpenBracket = Esc

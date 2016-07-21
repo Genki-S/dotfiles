@@ -68,11 +68,21 @@ WIP
 - sudo add-apt-repository:
   - ppa:jconti/recent-notifications
 - sudo apt-get install:
+  - mercurial
   - tree
   - indicator-notifications
   - exuberant-ctags
   - findbugs
+  - nodejs
+  - npm
 - Install fasd https://github.com/clvv/fasd
 - Install Fcitx for Japanese input https://blogs.fsfe.org/stefan.a/2014/09/23/set-up-fcitx-chinese-and-japanese-language-input-ubuntu-14-04/
   - Don't use ibus, it's kana-input is messed up
 - Install solarized: https://github.com/Anthony25/gnome-terminal-colors-solarized
+
+## Install Mayu (Karabiner alternative for Ubuntu)
+
+Xmodmap cannot be used to map keys with control modifier.
+
+- [Ubuntu 14.04にMozcと窓使いの憂鬱をインストールする - Symfoware](http://symfoware.blog68.fc2.com/blog-entry-1397.html)
+- [「のどか」 - KEYBOARD](http://www.appletkan.com/nodoka-doc/keyboard.html)
