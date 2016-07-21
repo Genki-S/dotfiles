@@ -46,3 +46,5 @@
 	templatedir = ~/.git_template_dir
 [ghi]
 	token = !security find-internet-password -a Genki-S -s github.com -l 'ghi token' -w
+[rerere]
+	enabled = true
