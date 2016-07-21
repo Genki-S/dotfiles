@@ -32,8 +32,8 @@
 - MarcWeber/vim-addon-local-vimrc:
 - Shougo/vimproc:
     build:
-        mac: make -f make_mac.mak
-        unix: make -f make_unix.mak
+        mac: make
+        unix: make
 - chrisbra/Recover.vim:
 - tpope/vim-speeddating:
     lazy: 1
