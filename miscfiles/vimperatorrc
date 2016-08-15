@@ -274,7 +274,7 @@ qmark p http://getpocket.com/a/queue/
 " Misc. {{{
 " Disable Vimperator for certain pages
 ignorekeys clear
-ignorekeys add docs\\.google\\.com
+" ignorekeys add docs\\.google\\.com
 " }}}
 " ==============================
 
