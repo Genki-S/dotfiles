@@ -2,6 +2,9 @@ include "linux104.mayu"
 
 key C-H = Backspace
 key Backspace = BackSlash
+key S-Backspace = $VERTICAL_LINE
 key BackSlash = Backspace
 key Esc = BackQuote
+key S-Esc = $TILDE
 key C-OpenBracket = Esc
+key S-C-OpenBracket = S-Esc
