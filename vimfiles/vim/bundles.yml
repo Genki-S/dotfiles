@@ -698,6 +698,12 @@
     autoload:
         filetypes:
             - json
+- mxw/vim-jsx:
+    lazy: 1
+    autoload:
+        filetypes:
+            - javascript
+            - jsx
 ## }}}
 
 ## Scheme {{{
