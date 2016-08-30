@@ -19,5 +19,9 @@ let g:quickrun_config = {
 \       "command" : "plantuml",
 \       "exec" : ["%c %s", "open %s:p:r.png"],
 \       "outputter" : "null",
+\   },
+\   "ert" : {
+\       "command" : "emacs",
+\       "exec" : "%c -batch -l ert -l %s -f ert-run-tests-batch-and-exit"
 \   }
 \}
