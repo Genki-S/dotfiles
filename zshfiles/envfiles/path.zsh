@@ -8,6 +8,8 @@ if is_mac; then
 		$GOPATH/bin
 		# npm bin
 		$HOME/dotfiles/node_modules/.bin
+		# anaconda
+		$HOME/anaconda3/bin
 		$path
 	)
 else
