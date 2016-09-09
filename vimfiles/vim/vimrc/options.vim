@@ -19,6 +19,7 @@ set number
 set relativenumber
 "}}}
 " syntax, highlighting and spelling {{{
+set synmaxcol=300
 set nohlsearch
 set nocursorline
 set colorcolumn=80
