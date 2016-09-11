@@ -1,7 +1,4 @@
 ---
-- /home/genki/dev/indeed.vim:
-    type: nosync
-
 # Libraries {{{
 - mattn/webapi-vim:
     lazy: 1
