@@ -67,11 +67,6 @@
     autoload:
         function_prefix: vim_snippets
 # - ujihisa/quicklearn:
-- thinca/vim-qfreplace:
-    lazy: 1
-    autoload:
-        commands:
-            - Qfreplace
 - AndrewRadev/linediff.vim:
     lazy: 1
     autoload:

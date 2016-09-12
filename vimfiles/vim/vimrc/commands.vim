@@ -1,8 +1,6 @@
 " This will be overwritten when vim-altercmd is sourced
 command! -nargs=* AlterCommand call Genki_altercmd(<q-args>)
 
-command! L2Q call Genki_location_to_quickfix()
-
 command! Stab call Genki_set_taboptions()
 
 command! NoTrail %s/\s\+$//

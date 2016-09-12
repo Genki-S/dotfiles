@@ -31,13 +31,6 @@ function! Genki_altercmd(args)
 	execute 'autocmd User sourced_vim-altercmd AlterCommand' a:args
 endfunction
 
-" For the sake of vim-qfreplace
-function! Genki_location_to_quickfix()
-	call setqflist(getloclist(0))
-	lclose
-	copen
-endfunction
-
 " Set tabstop, softtabstop and shiftwidth to the same value
 function! Genki_set_taboptions()
 	let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
