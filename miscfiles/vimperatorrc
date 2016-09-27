@@ -92,6 +92,21 @@ javascript <<EOM
                 }
             }
         },
+        {
+            label: 'wiki',
+            value: 'copy for Atlassian wiki',
+            custom: function() {
+                var title = content.document.title;
+                var url = content.document.location.href;
+                var imageExtensions = ['png', 'jpg'];
+                var re = new RegExp('(' + imageExtensions.join('|') + ')$');
+                if (re.test(url)) {
+                    return "!" + url + "!";
+                } else {
+                    return "[" + title + "|" + url + "]";
+                }
+            }
+        },
     ];
 })();
 EOM
@@ -104,6 +119,7 @@ nnoremap yT :copy titleAndURL<CR>
 nnoremap yq :copy blockquote<CR>
 nnoremap yo :copy orgmode<CR>
 nnoremap ym :copy markdown<CR>
+nnoremap yw :copy wiki<CR>
 " }}}
 
 " feedSomekeys_3 {{{
