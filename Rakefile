@@ -35,6 +35,7 @@ desc 'Install softwares'
 task :bundle_up => [
   :brew_optionals,
   :go_get,
+  :cargo_install,
   :ghq_get,
   :npm_install,
   :bundle_install,
@@ -136,7 +137,14 @@ task :go_get do
   File.read("#{DOTDIR}/Gofile").each_line do |gocmd|
     run %{ go #{gocmd} }
   end
-  run %{ #{DOTDIR}/setup/install-git-hooks.sh }
+end
+
+desc 'Prepare Rust packages'
+task :cargo_install do
+  # There must be a better way, but it works
+  File.read("#{DOTDIR}/Cargofile").each_line do |cargocmd|
+    run %{ cargo #{cargocmd} }
+  end
 end
 
 desc 'Clone repositories'

@@ -41,6 +41,7 @@ Installs in `~/vendor`.
 - [brigade/overcommit](https://github.com/brigade/overcommit)
   - Don't forget to update `gitfiles/git_template_dir/hooks` periodically
 TODO: Install executables for overcommit config
+TODO: Install cargo for Rust packages
 
 # Known issues
 
