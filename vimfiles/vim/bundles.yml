@@ -207,12 +207,13 @@
     autoload:
         mappings:
             - <Plug>(glowshi-ft-
-- rking/ag.vim:
+- mhinz/vim-grepper:
     lazy: 1
     autoload:
         commands:
-            - Ag
-            - LAg
+            - Grepper
+        mappings:
+            - <Plug>(GrepperOperator)
 - justinmk/vim-sneak:
     lazy: 1
     autoload:
