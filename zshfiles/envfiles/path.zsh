@@ -10,6 +10,8 @@ if is_mac; then
 		$HOME/dotfiles/node_modules/.bin
 		# anaconda
 		$HOME/anaconda3/bin
+		# Cargo
+		$HOME/.cargo/bin
 		$path
 	)
 else
@@ -18,6 +20,8 @@ else
 		$GOPATH/bin
 		# npm bin
 		$HOME/dotfiles/node_modules/.bin
+		# Cargo
+		$HOME/.cargo/bin
 		$path
 	)
 fi
