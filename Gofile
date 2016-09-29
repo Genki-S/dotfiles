@@ -3,3 +3,16 @@ get github.com/motemen/ghq
 get github.com/peco/peco/cmd/peco
 get github.com/ericchiang/pup
 get github.com/peco/migemogrep
+get github.com/nsf/gocode
+get github.com/alecthomas/gometalinter
+get golang.org/x/tools/cmd/goimports
+get golang.org/x/tools/cmd/guru
+get golang.org/x/tools/cmd/gorename
+get github.com/golang/lint/golint
+get github.com/rogpeppe/godef
+get github.com/kisielk/errcheck
+get github.com/jstemmer/gotags
+get github.com/klauspost/asmfmt/cmd/asmfmt
+get github.com/fatih/motion
+get github.com/zmb3/gogetdoc
+get github.com/josharian/impl
