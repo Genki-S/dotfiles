@@ -59,7 +59,8 @@
 	url = https://github.com/vimperator/vimperator-labs
 [submodule "submodules/caisui-vimperator"]
 	path = submodules/caisui-vimperator
-	url = https://github.com/caisui/vimperator
+	url = https://github.com/Genki-S/vimperator
+	branch = dirty_fixes
 [submodule "submodules/git-hooks"]
 	path = submodules/git-hooks
 	url = git@github.com:git-hooks/git-hooks.git
