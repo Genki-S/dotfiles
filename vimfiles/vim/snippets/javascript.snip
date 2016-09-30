@@ -1,0 +1,56 @@
+snippet     xhr
+abbr        xhr template
+options     head
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/bar/foo.txt", true);
+  xhr.onload = function (e) {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        console.log(xhr.responseText);
+      } else {
+        console.error(xhr.statusText);
+      }
+    }
+  };
+  xhr.onerror = function (e) {
+    console.error(xhr.statusText);
+  };
+  xhr.send(null);
+
+snippet     rbind
+abbr        react bind method
+options     head
+  this.${1:method} = this.$1.bind(this);
+
+snippet     mstp
+abbr        mapStateToProps
+options     head
+  function mapStateToProps(state) {
+    return {
+      ${1}: state.${2}
+    }
+  }
+
+snippet     mdtp
+abbr        mapDispatchToProps
+options     head
+  function mapDispatchToProps(dispatch) {
+    return {
+      ${1}: (${2}) => {
+        dispatch(${3}($2))
+      }
+    }
+  }
+
+snippet     conn
+abbr        connect
+options     head
+  export default connect(${1:mapStateToProps}, ${2:mapDispatchToProps})(${3:`expand('%:t:r')`});
+
+snippet     pt
+abbr        propTypes
+options     head
+  const { PropTypes } = React;
+  `expand('%:t:r')`.propTypes = {
+    ${1}: PropTypes.${2}
+  };
