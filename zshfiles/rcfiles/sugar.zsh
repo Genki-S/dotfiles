@@ -25,6 +25,8 @@ function mkcd () {
 alias org="tmux rename-window org; ORGMODE=1 emacs ~/org/dashboard.org"
 alias pbs="pbsearch"
 
+alias x="my-open"
+
 # ==================================================
 # Global aliases
 # ==================================================
@@ -52,8 +54,6 @@ alias mo="mux open"
 # Platform specific
 # ==================================================
 if is_mac; then
-	alias x="open"
-
 	# Unzip which can extract fxcking Japanese zip
 	alias junzip='/usr/local/bin/unzip -Ocp932'
 
