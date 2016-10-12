@@ -72,7 +72,7 @@ javascript <<EOM
             label: 'orgmode',
             value: 'copy for orgmode',
             custom: function() {
-                var title = content.document.title;
+                var title = content.document.title.replace(/[\[\]]+/g, '');
                 var url = content.document.location.href;
                 return "[[" + url + "][" + title + "]]";
             }
