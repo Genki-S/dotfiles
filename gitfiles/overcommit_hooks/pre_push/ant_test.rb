@@ -3,7 +3,7 @@ module Overcommit::Hook::PrePush
     def run
       return [:warn, "No build.xml... skipping."] unless File.exist?('build.xml')
 
-      result = execute(command, args: ['test'])
+      result = execute(command, args: ['clean test'])
       return :pass if result.success?
 
       output = result.stdout + result.stderr
