@@ -29,5 +29,6 @@
     - overcommit.yml
     - mayu
     - Xmodmap
+    - globalrc
 - emacs.d
 - clicoder.d
