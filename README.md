@@ -35,13 +35,14 @@ Installs in `~/vendor`.
 - dotjs
 - Text Link
 
-## Other things
+## TODO: To be automated...
 
 - [moovweb/gvm](https://github.com/moovweb/gvm)
 - [brigade/overcommit](https://github.com/brigade/overcommit)
   - Don't forget to update `gitfiles/git_template_dir/hooks` periodically
-TODO: Install executables for overcommit config
-TODO: Install cargo for Rust packages
+- Install executables for overcommit config
+- Install cargo for Rust packages
+- [Go, Ruby, PythonでGNU GLOBAL(gtags)+α - Qiita](http://qiita.com/sona-tar/items/672df1259a76f082ce42)
 
 # Known issues
 
@@ -80,6 +81,7 @@ WIP
 - Install Fcitx for Japanese input https://blogs.fsfe.org/stefan.a/2014/09/23/set-up-fcitx-chinese-and-japanese-language-input-ubuntu-14-04/
   - Don't use ibus, it's kana-input is messed up
 - Install solarized: https://github.com/Anthony25/gnome-terminal-colors-solarized
+- Make Super-<Tab> change windows: [shortcut keys - Sane alt-tab behaviour in Ubuntu 14.04.1 (unity) - Ask Ubuntu](http://askubuntu.com/questions/543148/sane-alt-tab-behaviour-in-ubuntu-14-04-1-unity)
 
 ## Install Mayu (Karabiner alternative for Ubuntu)
 
