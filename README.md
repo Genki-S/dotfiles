@@ -1,11 +1,8 @@
-# Dear me
+# Genki's dotfiles
 
-This is an instruction to set up your brand new Mac.
-Have fun :)
+## Automatic Installs
 
-# Automatic Installs
-
-## Install essentials
+### Install essentials
 
 - `rake install`
 - open up another shell (which should be zsh)
@@ -13,7 +10,7 @@ Have fun :)
 
 TODO: remove downloads of non-essentials and speed up
 
-## Install vendor applications
+### Install vendor applications
 
 ```
 vim -u ~/dotfiles/vendor/neovendor.vim
@@ -21,21 +18,21 @@ vim -u ~/dotfiles/vendor/neovendor.vim
 
 Installs in `~/vendor`.
 
-# Manual Installations
+## Manual Installations
 
-## Mac Apps
+### Mac Apps
 
 - open App Store
 - install purchased Apps
 
-## Firefox Addons
+### Firefox Addons
 
 - Vimperator
 - Firebug
 - dotjs
 - Text Link
 
-## TODO: To be automated...
+### TODO: To be automated
 
 - [moovweb/gvm](https://github.com/moovweb/gvm)
 - [brigade/overcommit](https://github.com/brigade/overcommit)
@@ -44,11 +41,11 @@ Installs in `~/vendor`.
 - Install cargo for Rust packages
 - [Go, Ruby, PythonでGNU GLOBAL(gtags)+α - Qiita](http://qiita.com/sona-tar/items/672df1259a76f082ce42)
 
-# Known issues
+## Known issues
 
 - Homebrew cask can't be installed without sudo privilege
 
-# For Ubuntu
+## For Ubuntu
 
 WIP
 
@@ -81,9 +78,9 @@ WIP
 - Install Fcitx for Japanese input https://blogs.fsfe.org/stefan.a/2014/09/23/set-up-fcitx-chinese-and-japanese-language-input-ubuntu-14-04/
   - Don't use ibus, it's kana-input is messed up
 - Install solarized: https://github.com/Anthony25/gnome-terminal-colors-solarized
-- Make Super-<Tab> change windows: [shortcut keys - Sane alt-tab behaviour in Ubuntu 14.04.1 (unity) - Ask Ubuntu](http://askubuntu.com/questions/543148/sane-alt-tab-behaviour-in-ubuntu-14-04-1-unity)
+- Make `Super-<Tab>` change windows: [shortcut keys - Sane alt-tab behaviour in Ubuntu 14.04.1 (unity) - Ask Ubuntu](http://askubuntu.com/questions/543148/sane-alt-tab-behaviour-in-ubuntu-14-04-1-unity)
 
-## Install Mayu (Karabiner alternative for Ubuntu)
+### Install Mayu (Karabiner alternative for Ubuntu)
 
 Xmodmap cannot be used to map keys with control modifier.
 
