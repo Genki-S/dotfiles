@@ -557,6 +557,12 @@
         commands:
             - VimFidget
             - VimFidgetBrowse
+- sk1418/QFGrep:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>QFGrep
+            - <Plug>QFRestore
 # }}}
 
 # Filetype Specific {{{
