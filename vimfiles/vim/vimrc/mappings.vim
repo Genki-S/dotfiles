@@ -23,8 +23,8 @@ nnoremap Q :<C-u>q<CR>
 " close tab
 nnoremap <C-w>Q :tabclose<CR>
 
-" C-w t to create new tab
-nnoremap <C-w>t :tabnew<CR>
+" C-w t to create new tab with current window (with current tab layout intact)
+nnoremap <C-w>t <C-w>s<C-w>T
 
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
