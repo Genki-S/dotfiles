@@ -19,6 +19,7 @@ config/environments/genki.rb
 .project
 *.eml
 *.userlibraries
+.idea
 
 ## Bazel
 BUILD
