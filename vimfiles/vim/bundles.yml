@@ -99,7 +99,9 @@
     autoload:
         mappings:
             - <Plug>(textmanip
-- AndrewRadev/splitjoin.vim:
+# - AndrewRadev/splitjoin.vim:
+- Genki-S/splitjoin.vim:
+    rev: splitjoin_for_java
     lazy: 1
     autoload:
         commands:
