@@ -22,7 +22,7 @@ set relativenumber
 set synmaxcol=300
 set nohlsearch
 set nocursorline
-set colorcolumn=80
+set colorcolumn=80,120
 set conceallevel=1
 set concealcursor=inc
 "}}}
