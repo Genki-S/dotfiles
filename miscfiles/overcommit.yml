@@ -125,4 +125,4 @@ PrePush:
   AntTest:
     enabled: true
     description: 'Checking if test passes'
-    required_executable: 'ant-without-ivy'
+    required_executable: 'ant'
