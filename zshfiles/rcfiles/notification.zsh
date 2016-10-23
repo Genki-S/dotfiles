@@ -22,6 +22,10 @@ notify-preexec-hook() {
 }
 
 notify-precmd-hook() {
+	if [ -z "$zsh_notifier_time" ]; then
+		return
+	fi
+
 	local raw_cmd=${zsh_notifier_raw_cmd%% *}
 	if [ ${__ZSH_NOTIFIER_EXCLUDE_COMMANDS[(i)${raw_cmd}]} -le ${#__ZSH_NOTIFIER_EXCLUDE_COMMANDS} ]; then
 		return
