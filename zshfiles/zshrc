@@ -79,7 +79,7 @@ source $DOTDIR/zshfiles/genki.zsh-theme
 # My zsh configurations {{{
 # ==================================================
 # Make online help available
-unalias run-help
+alias run-help >/dev/null 2>&1 && unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
 

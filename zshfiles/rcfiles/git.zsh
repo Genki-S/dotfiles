@@ -1,6 +1,6 @@
 # Its' aliased to git automatically (when using boxen?)
 # but unalias it because I wanna set __EXECUTED_GIT_COMMAND
-unalias git
+alias git >/dev/null 2>&1 && unalias git
 
 # Use hub
 function git() {
