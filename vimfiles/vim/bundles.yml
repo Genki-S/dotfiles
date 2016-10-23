@@ -157,6 +157,10 @@
     lazy: 1
     autoload:
         insert: 1
+- kana/vim-smartchr:
+    lazy: 1
+    autoload:
+        insert: 1
 
 ## Completion {{{
 - Shougo/neocomplete:
