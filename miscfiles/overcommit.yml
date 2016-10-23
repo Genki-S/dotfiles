@@ -114,6 +114,12 @@ PreCommit:
     include:
       - '**/*.java'
     target: 'errorprone'
+  Gometalinter:
+    enabled: true
+    description: 'Linting with gometalinter'
+    required_executable: 'gometalinter'
+    include:
+      - '**/*.go'
 
 PrePush:
   AntTest:
