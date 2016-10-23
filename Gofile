@@ -16,3 +16,4 @@ get github.com/klauspost/asmfmt/cmd/asmfmt
 get github.com/fatih/motion
 get github.com/zmb3/gogetdoc
 get github.com/josharian/impl
+get github.com/direnv/direnv
