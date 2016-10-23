@@ -138,16 +138,6 @@ source $zvimdir/zsh-super-vim-mode.zsh
 # ==================================================
 # dircolors-solarized
 eval `dircolors $DOTDIR/submodules/dircolors-solarized/dircolors.256dark`
-
-# RescueTime
-ps -e | grep rescuetime &> /dev/null
-if [ $? -ne 0 ]; then
-	if executable rescuetime; then
-		screen -d -m rescuetime
-	else
-		echo "You should install RescueTime, really."
-	fi
-fi
 # }}}
 # ==================================================
 # Tmux {{{
