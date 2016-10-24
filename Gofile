@@ -17,3 +17,4 @@ get github.com/fatih/motion
 get github.com/zmb3/gogetdoc
 get github.com/josharian/impl
 get github.com/direnv/direnv
+get -u github.com/haya14busa/reviewdog/cmd/reviewdog
