@@ -16,6 +16,10 @@ module Overcommit::Hook::PreCommit
       result = execute(command, args: ['-d', applicable_files.join(','), '-f', config['format'], '-R', rulesets.join(',')])
       output = result.stdout + result.stderr
 
+      # Filter error by diff using reviewdog
+      result = execute(['reviewdog', '-efm', "%f:%l:\t%m", '-diff', 'git diff HEAD'], input: output)
+      output = result.stdout + result.stderr
+
       error_messages = output.split("\n").delete_if do |line|
         WARNING_MESSAGE_REGEXPS.any? { |pat| pat.match(line) }
       end
