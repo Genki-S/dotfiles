@@ -4,7 +4,11 @@ module Overcommit::Hook::PreCommit
       result = execute(command, args: ['./...'])
       output = result.stdout + result.stderr
 
-      if result.success?
+      # Filter error by diff using reviewdog
+      result = execute(['reviewdog', '-efm', "%f:%l:%c:%\\w\\+:%m", '-diff', 'git diff HEAD'], input: output)
+      output = result.stdout + result.stderr
+
+      if output.empty?
         return [:pass]
       else
         return [:fail, output]
