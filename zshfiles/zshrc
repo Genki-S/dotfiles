@@ -217,4 +217,4 @@ export NVM_DIR="/home/genki/.nvm"
 [ -s '/home/genki/Downloads/google-cloud-sdk/path.zsh.inc' ] && source '/home/genki/Downloads/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
-[ -s '/home/genki/Downloads/google-cloud-sdk/completion.zsh.inc' ] && source '/home/genki/Downloads/google-cloud-sdk/completion.zsh.inc'
+[ -s '/home/genki/Downloads/google-cloud-sdk/completion.zsh.inc' ] && source '/home/genki/Downloads/google-cloud-sdk/completion.zsh.inc' || true
