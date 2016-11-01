@@ -6,7 +6,8 @@ function myvim() {
 
 	local startuptime_file="$HOME/.tmp/profiling/vim/`date "+%Y%m%d_%H%M%S"`"
 
-	vim $session_option --startuptime $startuptime_file $*
+	# '-X' to skip connecting X server: https://github.com/christoomey/dotfiles/issues/13
+	vim -X $session_option --startuptime $startuptime_file $*
 
 	__EXECUTED_GIT_COMMAND=1
 	echo "vim startup: `tail -n1 $startuptime_file | cut -d' ' -f1` ms."
