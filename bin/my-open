@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 if is_mac; then
   open "$@"
