@@ -37,7 +37,6 @@
     autoload:
         mappings:
             - <Plug>SpeedDating
-- takac/vim-hardtime:
 - kana/vim-submode:
 - tpope/vim-characterize:
     lazy: 1
@@ -49,6 +48,27 @@
 
 # Coding {{{
 - tpope/vim-scriptease:
+    lazy: 1
+    autoload:
+        commands:
+            - PP
+            - PPmsg
+            - Verbose
+            - Scriptnames
+            - Runtime
+            - Disarm
+            - Breakadd
+            - Breakdel
+            - Ve
+            - Vedit
+            - Vopen
+            - Vsplit
+            - Vvsplit
+            - Vtabedit
+            - Vpedit
+            - Vread
+            - Time
+            - Console
 - Shougo/neosnippet:
     lazy: 1
     autoload:
@@ -134,6 +154,10 @@
         commands:
             - Join
 - tommcdo/vim-exchange:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(Exchange
 - scrooloose/syntastic:
     lazy: 1
     autoload:
@@ -209,10 +233,6 @@
         explorer: 1
 - tpope/vim-unimpaired:
 - saihoooooooo/glowshi-ft.vim:
-    lazy: 1
-    autoload:
-        mappings:
-            - <Plug>(glowshi-ft-
 - mhinz/vim-grepper:
     lazy: 1
     autoload:
@@ -227,8 +247,8 @@
             - <Plug>Sneak
             - <Plug>VSneak
 - vim-scripts/matchit.zip:
-- tpope/vim-projectionist:
-    lazy: 1
+# TODO: Try vim-projectionist
+# - tpope/vim-projectionist:
 - haya14busa/incsearch.vim:
     lazy: 1
     autoload:
@@ -248,6 +268,9 @@
 # Debugging {{{
 - mattboehm/vim-unstack:
     lazy: 1
+    autoload:
+        commands:
+            - Unstack
 # }}}
 
 # Reference {{{
@@ -269,7 +292,6 @@
     autoload:
         functions:
             - investigate#Investigate
-- taka84u9/vim-ref-ri:
 - yuratomo/w3m.vim:
     lazy: 1
     autoload:
@@ -516,10 +538,6 @@
             - CtrlSpace
 # obsession resumes recording after restoring session, so don't make this lazy
 - tpope/vim-obsession:
-    lazy: 1
-    autoload:
-        commands:
-            - Obsession
 - tpope/vim-dispatch:
     lazy: 1
     autoload:
@@ -545,10 +563,6 @@
         commands:
             - Random
 - tpope/vim-capslock:
-    lazy: 1
-    autoload:
-        mappings:
-            - <Plug>CapsLockToggle
 - osyo-manga/vim-vigemo:
     lazy: 1
     autoload:
@@ -821,6 +835,10 @@
 # - rizzatti/dash.vim:
 # I don't use simplenote anymore (did I use it once?)
 # - mrtazz/simplenote.vim:
+# I want to make vim-startup time faster, though this is useful for training.
+# - takac/vim-hardtime:
+# I'm not using it recently
+# - taka84u9/vim-ref-ri:
 # }}}
 
 # vim: iskeyword+=/,.,- foldmethod=marker
