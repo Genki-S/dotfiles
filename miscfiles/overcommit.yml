@@ -85,6 +85,7 @@ PreCommit:
     classpaths:
       - './src/resources'
       - './build/classes'
+      - './build/testclasses'
       - './build/lib/**/*.jar'
     must_rules:
       - 'cast'
