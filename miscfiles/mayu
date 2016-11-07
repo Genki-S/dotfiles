@@ -8,5 +8,6 @@ key BackQuote = Insert
 key Esc = BackQuote
 key S-Esc = $TILDE
 key C-OpenBracket = Esc
+key C-_3 = Esc
 key S-C-OpenBracket = S-Esc
 key S-BackQuote = Esc
