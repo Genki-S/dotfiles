@@ -263,6 +263,11 @@
             - GtagsCursor
             - Gozilla
             - GtagsUpdate
+- haya14busa/vim-asterisk:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(asterisk-
 # }}}
 
 # Debugging {{{
@@ -398,10 +403,6 @@
         mappings:
             - <Plug>(textobj-fold-
 - thinca/vim-textobj-between:
-    lazy: 1
-    autoload:
-        mappings:
-            - <Plug>(textobj-between-
 - lucapette/vim-textobj-underscore:
     lazy: 1
     autoload:
