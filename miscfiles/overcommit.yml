@@ -125,5 +125,9 @@ PreCommit:
 PrePush:
   AntTest:
     enabled: true
-    description: 'Checking if test passes'
+    description: 'Checking if Java test passes'
     required_executable: 'ant'
+  GoTest:
+    enabled: true
+    description: 'Checking if Go test passes'
+    required_executable: 'go'
