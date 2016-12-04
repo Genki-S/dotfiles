@@ -792,6 +792,11 @@
     autoload:
         filetypes:
             - terraform
+- vim-scripts/nginx.vim:
+    lazy: 1
+    autoload:
+        filetypes:
+            - nginx
 ## }}}
 
 # }}}
