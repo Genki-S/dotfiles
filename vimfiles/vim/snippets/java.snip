@@ -1,0 +1,33 @@
+# Overriding snippets in neosnippet-snippets, with final modifier
+snippet try
+    try {
+        ${0:TARGET}
+    } catch (final ${1:Exception} ${2:e}) {
+        ${3:e.printStackTrace();}
+    }
+
+snippet try_resources
+    try (${1:#:Resources}) {
+        ${0:TARGET}
+    } catch (final ${2:Exception} ${3:e}) {
+        ${4:e.printStackTrace();}
+    }
+
+snippet try_finally
+    try {
+        ${0:TARGET}
+    } catch (final ${1:Exception} ${2:e}) {
+        ${3:e.printStackTrace();}
+    } finally {
+        ${4}
+    }
+
+snippet catch
+    catch (final ${1:Exception} ${2:e}) {
+        ${0:e.printStackTrace();}
+    }
+
+snippet finally
+    finally {
+        ${0:TARGET}
+    }
