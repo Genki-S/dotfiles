@@ -1,7 +1,7 @@
 module Overcommit::Hook::PreCommit
   class Gometalinter < Base
     def run
-      result = execute(command, args: ['./...'])
+      result = execute(command, args: ['--enable-all', './...'])
       output = result.stdout + result.stderr
 
       # Filter error by diff using reviewdog
