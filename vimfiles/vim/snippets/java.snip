@@ -31,3 +31,27 @@ snippet finally
     finally {
         ${0:TARGET}
     }
+
+snippet anonymous
+    new ${1:Callable}<${2}>() {
+        @Override
+        public ${3} ${4:call}($5) {
+            ${0:TARGET}
+        }
+    };
+
+snippet predicate
+    new Predicate<${1}>() {
+        @Override
+        public boolean apply(final $1 ${2}) {
+            return $2.equals(true);
+        }
+    };
+
+snippet callable
+    new Callable<${1}>() {
+        @Override
+        public $1 call() {
+            return true;
+        }
+    };
