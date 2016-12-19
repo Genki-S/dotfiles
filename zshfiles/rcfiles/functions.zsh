@@ -9,6 +9,12 @@ function noproxy () {
 	ftp_proxy=
 }
 
+# Usage: vw EXECUTABLE
+# vim `which EXECUTABLE`
+function vw () {
+	$EDITOR `which $*`
+}
+
 # Usage: cdup pattern
 # search pattern for upper directories and cd to first matched directory
 # e.g. cwd: /super/very/deep/directory -> `cdup ery` -> cwd: /super/very
