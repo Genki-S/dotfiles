@@ -52,6 +52,7 @@
     <exclude name="DataflowAnomalyAnalysis"/>
     <exclude name="DefaultPackage"/>
     <exclude name="OnlyOneReturn"/>
+    <exclude name="CallSuperInConstructor"/>
   </rule>
   <!-- <rule ref="rulesets/java/logging-jakarta-commons.xml"/> -->
   <rule ref="rulesets/java/javabeans.xml">
