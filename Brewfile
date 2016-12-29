@@ -25,6 +25,7 @@ brew 'automake'
 brew 'aspell'
 brew 'cheat'
 brew 'python'
+brew 'rust'
 
 tap 'caskroom/cask'
 cask 'iterm2'
