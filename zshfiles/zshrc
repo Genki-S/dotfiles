@@ -1,10 +1,11 @@
 # Profile zsh startup time
 zmodload zsh/zprof
 
+# Oh-my-zsh will perform compinit
 # The following lines were added by compinstall
-zstyle :compinstall filename "$HOME/.zshrc"
-autoload -Uz compinit
-compinit
+# zstyle :compinstall filename "$HOME/.zshrc"
+# autoload -Uz compinit
+# compinit
 # End of lines added by compinstall
 
 # Jump into tmux session automatically {{{
@@ -37,6 +38,10 @@ fi
 # ==================================================
 # TODO: why here? it works iff this source is before sourcing oh-my-zsh.sh
 fpath+=($GOPATH/src/github.com/motemen/ghq/zsh)
+# More completions from https://github.com/zsh-users/zsh-completions
+fpath+=($DOTDIR/submodules/zsh-completions/src)
+# TODO: this is sourced here only for setting up fpath before sourceing oh-my-zsh. Should be organized better...
+source $DOTDIR/zshfiles/rcfiles/path.zsh
 # }}}
 # ==================================================
 
@@ -63,9 +68,6 @@ source $DOTDIR/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Easy history search from https://github.com/zsh-users/zsh-history-substring-search
 source $DOTDIR/submodules/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-# More completions from https://github.com/zsh-users/zsh-completions
-fpath+=($DOTDIR/submodules/zsh-completions/src)
-
 # stdkeep (https://github.com/Genki-S/stdkeep)
 source $DOTDIR/submodules/stdkeep/stdkeep.zsh
 
@@ -91,7 +93,7 @@ HELPDIR=/usr/local/share/zsh/helpfiles
 # Load all config files
 rcfiles=(
 	helper.zsh
-	path.zsh
+	# path.zsh # This is sourced at the fpath section (to setup fpath before sourcing oh-my-zsh)
 	env.zsh
 	sugar.zsh
 	completion.zsh
