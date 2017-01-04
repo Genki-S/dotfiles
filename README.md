@@ -79,6 +79,7 @@ WIP
   - Don't use ibus, it's kana-input is messed up
 - Install solarized: https://github.com/Anthony25/gnome-terminal-colors-solarized
 - Make `Super-<Tab>` change windows: [shortcut keys - Sane alt-tab behaviour in Ubuntu 14.04.1 (unity) - Ask Ubuntu](http://askubuntu.com/questions/543148/sane-alt-tab-behaviour-in-ubuntu-14-04-1-unity)
+- Install [jhawthorn/fzy: A better fuzzy finder](https://github.com/jhawthorn/fzy)
 
 ### Install Mayu (Karabiner alternative for Ubuntu)
 

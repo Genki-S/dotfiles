@@ -1,0 +1,17 @@
+# vim: filetype=zsh
+
+# j<Space> on Zle starting fzy with directories would be better than using fasd
+# the normal way.
+
+if [ ${#LBUFFER} -ne 0 ]; then
+	LBUFFER+="j"
+	return
+fi
+
+read-from-minibuffer -k 1
+if [ $REPLY = " " ]; then
+	cd $(fasd_cd -d | sort -n -r | awk '{print $2}' | fzy)
+	zle reset-prompt
+else
+	LBUFFER+="j${REPLY}"
+fi

@@ -26,6 +26,7 @@ brew 'aspell'
 brew 'cheat'
 brew 'python'
 brew 'rust'
+brew 'fzy'
 
 tap 'caskroom/cask'
 cask 'iterm2'
