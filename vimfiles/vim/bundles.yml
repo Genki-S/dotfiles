@@ -588,6 +588,16 @@
         mappings:
             - <Plug>QFGrep
             - <Plug>QFRestore
+- Shougo/vinarise.vim:
+    lazy: 1
+    autoload:
+        commands:
+            - Vinarize
+- diepm/vim-rest-console:
+    lazy: 1
+    autoload:
+        filetypes:
+            - rest
 # }}}
 
 # Filetype Specific {{{
