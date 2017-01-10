@@ -185,6 +185,11 @@
     lazy: 1
     autoload:
         insert: 1
+- junegunn/vim-easy-align:
+    lazy: 1
+    autoload:
+        mappings:
+            - <Plug>(EasyAlign)
 
 ## Completion {{{
 - Shougo/neocomplete:
