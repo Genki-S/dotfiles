@@ -36,7 +36,6 @@ Installs in `~/vendor`.
 
 - [moovweb/gvm](https://github.com/moovweb/gvm)
 - [brigade/overcommit](https://github.com/brigade/overcommit)
-  - Don't forget to update `gitfiles/git_template_dir/hooks` periodically
 - Install executables for overcommit config
 - Install cargo for Rust packages
 - [Go, Ruby, PythonでGNU GLOBAL(gtags)+α - Qiita](http://qiita.com/sona-tar/items/672df1259a76f082ce42)
