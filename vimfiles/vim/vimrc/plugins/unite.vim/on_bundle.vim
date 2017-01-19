@@ -27,6 +27,10 @@ nnoremap <silent> <SID>[unite]q :<C-u>Unite -buffer-name=quickfix quickfix<CR>
 nnoremap <silent> <SID>[unite]Q :<C-u>UniteClose<CR>
 nnoremap <silent> <SID>[unite]<Space> :<C-u>Unite -buffer-name=source source<CR>
 
+" unite-tag or unite-gtags
+nnoremap <C-]> :Unite -immediately gtags/context<CR>
+nnoremap <C-w><C-]> <C-w>s:Unite -immediately gtags/context<CR>
+
 " unite-tag
 nnoremap <silent> <SID>[unite]t :<C-u>Unite -buffer-name=tag tag<CR>
 nnoremap <silent> <SID>[unite]<C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>
