@@ -121,6 +121,9 @@ PreCommit:
     required_executable: 'gometalinter'
     include:
       - '**/*.go'
+  NoDebugPrint:
+    enabled: true
+    description: 'Finding debug code'
 
 PrePush:
   AntTest:
