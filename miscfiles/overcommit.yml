@@ -134,3 +134,6 @@ PrePush:
     enabled: true
     description: 'Checking if Go test passes'
     required_executable: 'go'
+  CleanGitStatus:
+    enabled: true
+    description: 'Checking if git status is clean'

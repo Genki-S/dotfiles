@@ -12,7 +12,7 @@ module Overcommit::Hook::PreCommit
           f.each_with_index do |line, i|
             DEBUG_CODES.each do |d|
               if line =~ d
-                  violations << { file: file, line: line, line_number: i+1 }
+                violations << { file: file, line: line, line_number: i+1 }
               end
             end
           end
