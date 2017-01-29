@@ -277,6 +277,11 @@
     autoload:
         mappings:
             - <Plug>(asterisk-
+- mhinz/vim-lookup:
+    lazy: 1
+    autoload:
+        filetypes:
+            - vim
 # }}}
 
 # Debugging {{{
