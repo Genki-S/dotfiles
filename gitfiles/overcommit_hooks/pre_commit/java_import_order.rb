@@ -17,6 +17,7 @@ module Overcommit::Hook::PreCommit
             break
           end
 
+          l = l.sub(/;$/, '') # for sorting purpose ("." is smaller than ";")
           import_lines << l
           if l =~ /^import javax/
             javax_imports << l
@@ -29,7 +30,7 @@ module Overcommit::Hook::PreCommit
           end
         end
 
-        expected = (other_imports.sort + ["\n"] + javax_imports.sort + java_imports.sort + ["\n"] + static_imports.sort).join('').rstrip
+        expected = (other_imports.sort + ["\n"] + javax_imports.sort + java_imports.sort + ["\n"] + static_imports.sort).join('').strip
         actual = import_lines.join('').strip
 
         if expected != actual
