@@ -124,6 +124,11 @@ PreCommit:
   NoDebugPrint:
     enabled: true
     description: 'Finding debug code'
+  JavaImportOrder:
+    enabled: true
+    description: 'Checking if the import order follows convention'
+    include:
+      - '**/*.java'
 
 PrePush:
   AntTest:
