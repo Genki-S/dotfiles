@@ -5,6 +5,7 @@ module Overcommit::Hook::PreCommit
     def run
       tmpdir = Dir.mktmpdir
       classpath_arg = config['classpaths'].map { |path| Dir.glob(path) }.join(':')
+      classpath_arg += ":./build/classes"
       args = [
         '-d', tmpdir,
         '-classpath', classpath_arg,
