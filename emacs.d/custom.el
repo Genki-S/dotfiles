@@ -23,7 +23,7 @@
  '(org-agenda-skip-timestamp-if-done t)
  '(org-agenda-sorting-strategy
    (quote
-    ((agenda habit-down time-up category-keep)
+    ((agenda habit-down time-up priority-down category-keep)
      (todo priority-down category-keep)
      (tags priority-down category-keep)
      (search category-keep))))
