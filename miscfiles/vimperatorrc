@@ -21,12 +21,7 @@ hi -append Hint z-index: 2147483647 !important;
 " Plugins {{{
 " ==============================
 let g:plugin_loader_roots = "~/dotfiles/submodules/vimperator-plugins ~/dotfiles/submodules/caisui-vimperator/plugin"
-let g:plugin_loader_plugins = "_libly,auto_source,appendAnchor,lookupDictionary,twittperator,copy,feedSomeKeys_3,hints-ext,slideshare,xpath_hint,stella,scroll_div"
-
-" appendAnchor {{{
-let g:auto_append_anchor="true"
-let g:auto_append_anchor_once="true"
-" }}}
+let g:plugin_loader_plugins = "_libly,auto_source,lookupDictionary,twittperator,copy,feedSomeKeys_3,hints-ext,slideshare,xpath_hint,stella,scroll_div"
 
 " lookupDictionary {{{
 javascript <<EOM
