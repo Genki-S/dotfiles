@@ -164,6 +164,11 @@ nnoremap -urls=^https://www\.youtube\.com/ <Leader>v- :stvolume! -10<CR>
 nnoremap -urls=^https://www\.youtube\.com/ <Leader>v+ :stvolume! 10<CR>
 " }}}
 
+" scroll_div.js {{{
+nmap J <Leader>j
+nmap K <Leader>k
+" }}}
+
 " }}}
 " ==============================
 
