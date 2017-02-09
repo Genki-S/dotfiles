@@ -1,0 +1,75 @@
+#!/usr/bin/env ruby
+
+def fix_import_order(lines)
+  package_line = nil
+  imports = {
+    java: [],
+    javax: [],
+    static: [],
+    other: []
+  }
+  rest = []
+  importing = true
+
+  lines.each do |line|
+    if line =~ /^package/
+      package_line = line
+      next
+    end
+
+    unless importing
+      rest << line
+      next
+    end
+    if (not line.chomp.empty?) && (not line =~ /^import/)
+      rest << line
+      importing = false
+      next
+    end
+
+    line = line.sub(/;$/, '') # for sorting purpose ("." is smaller than ";")
+    if line =~ /^import javax/
+      imports[:javax] << line
+    elsif line =~ /^import java/
+      imports[:java] << line
+    elsif line =~ /^import static/
+      imports[:static] << line
+    elsif line =~ /^import/
+      imports[:other] << line
+    end
+  end
+
+  def semi(imports)
+    imports.map { |i| i.chomp + ";" + "\n" }
+  end
+
+  ordered_imports = semi(imports[:other].sort) +
+                    ["\n"] +
+                    semi(imports[:javax].sort) +
+                    semi(imports[:java].sort) +
+                    ["\n"] +
+                    semi(imports[:static].sort)
+
+  ([package_line, "\n"] + ordered_imports + ["\n"] + rest)
+end
+
+def remove_consecutive_blank_lines(lines)
+  fixed = []
+  prev = nil
+  lines.each do |line|
+    unless prev == "\n" && line == "\n"
+      fixed << line
+    end
+    prev = line
+  end
+  fixed
+end
+
+ARGV.each do |file|
+  next unless file.end_with?('.java')
+  lines = File.readlines(file)
+  fixed = fix_import_order(lines)
+  fixed = remove_consecutive_blank_lines(fixed)
+  File.write(file + ".orig", lines.join(''))
+  File.write(file, fixed.join(''))
+end
