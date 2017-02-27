@@ -14,8 +14,8 @@ nnoremap <SID>[fugitive]w :Gwrite<CR>
 nnoremap <SID>[fugitive]d :Gdiff 
 nnoremap <SID>[fugitive]mv :Gmove 
 nnoremap <SID>[fugitive]rm :Gremove<CR>
-nnoremap <SID>[fugitive]b :Gblame<CR>
-nnoremap <SID>[fugitive]B :Gblame -C -C<CR>
+nnoremap <SID>[fugitive]b :Gblame -w<CR>
+nnoremap <SID>[fugitive]B :Gblame -w -C -C<CR>
 nnoremap <SID>[fugitive]ms :call Genki_echo_commit_message()<CR>
 
 augroup vimrc_vim-figitive
