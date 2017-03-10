@@ -2,8 +2,11 @@ nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
 let g:grepper = {
+  \ 'quickfix': 0,
   \ 'tools': ['rg', 'git', 'ag', 'grep'],
-  \ 'quickfix': 0
+  \ 'rg': {
+    \ 'grepprg': 'rg --no-heading --vimgrep --smart-case'
+  \ }
 \ }
 
 nnoremap <SID>[grepper] <Nop>
