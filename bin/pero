@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Stolen from http://blog.kazuhooku.com/2017/03/peco.html
+vim $(exec rg --vimgrep --follow --smart-case "" | peco | awk -F : '{ print $1 " +"$2  }')
