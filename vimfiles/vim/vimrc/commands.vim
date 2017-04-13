@@ -34,5 +34,5 @@ AlterCommand dump DumpVariable
 
 command! FollowSymlink call Genki_follow_symlink()
 
-command! PreCommit compiler pre-commit | Make
-AlterCommand pre PreCommit
+command! Precommit compiler pre-commit | Make
+AlterCommand pre Precommit
