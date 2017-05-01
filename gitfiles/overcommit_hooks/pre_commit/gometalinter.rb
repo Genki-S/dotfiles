@@ -1,6 +1,8 @@
 module Overcommit::Hook::PreCommit
   class Gometalinter < Base
     def run
+      execute(['go'], args: ['install'])
+
       result = execute(command, args: ['--enable-all', './...'])
       output = result.stdout + result.stderr
 
