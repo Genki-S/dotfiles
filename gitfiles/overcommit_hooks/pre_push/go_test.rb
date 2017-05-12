@@ -1,7 +1,7 @@
 module Overcommit::Hook::PrePush
   class GoTest < Base
     def run
-      result = execute(command, args: ['test', './...'])
+      result = execute(command, args: ['test', '-race', './...'])
       return :pass if result.success?
 
       output = result.stdout + result.stderr
