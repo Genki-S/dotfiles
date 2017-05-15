@@ -60,7 +60,15 @@ PreCommit:
   W3cCss:
     enabled: true
   W3cHtml:
+
+  # Original
+  LineLength:
     enabled: true
+    description: 'Check long lines'
+    include:
+      - '**/*'
+    warn_length: 80
+    error_length: 128
   Pmd:
     enabled: true
     description: 'Linting with PMD'
