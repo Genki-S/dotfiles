@@ -5,6 +5,7 @@
 - vimfiles:
     - vim
     - vimrc
+    - gvimrc
 - rubyfiles:
     - pryrc
 - gitfiles:
