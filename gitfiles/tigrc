@@ -1,5 +1,12 @@
 # Move to WebUI: https://speakerdeck.com/yuku/ru-men-shu-nihazai-tutenai-git-and-github-tips (slide 28)
-bind main B @hub browse -- commit/%(commit)
-bind diff B @hub browse -- commit/%(commit)
-bind tree B @hub browse -- tree/%(commit)/%(directory)
-bind blob B @hub browse -- tree/%(commit)/%(file)
+bind main B !hub browse -- commit/%(commit)
+bind diff B !hub browse -- commit/%(commit)
+bind tree B !hub browse -- tree/%(commit)/%(directory)
+bind blob B !hub browse -- tree/%(commit)/%(file)
+
+# Line
+bind main L !sh -c "git log --format=%h\ %s -n 1 %(commit) | copy"
+# Hash
+bind generic H !sh -c "git log --format=%h -n 1 %(commit) | copy"
+# Open GitHub/GitLab (TODO)
+bind generic O !sh -c "$HOME/dotfiles/bin/git-browse-origin %(commit)"

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+COMMIT=$1
+
+URL_BASE=`git config --get remote.origin.url | sed -e 's|git@|https://|' -e 's|:|/|g' -e 's|///|://|' -e 's|.git$||'`
+
+URL=$URL_BASE
+
+if [ -n "$COMMIT" ]; then
+  URL="$URL/commit/$COMMIT"
+fi
+
+$HOME/dotfiles/bin/my-open $URL
