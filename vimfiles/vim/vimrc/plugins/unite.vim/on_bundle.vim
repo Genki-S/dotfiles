@@ -8,7 +8,7 @@ nnoremap <silent> <SID>[unite]a :<C-u>UniteBookmarkAdd<CR>
 nnoremap <silent> <SID>[unite]b :<C-u>Unite -buffer-name=buffer buffer<CR>
 nnoremap <silent> <SID>[unite]B :<C-u>Unite -buffer-name=bookmark bookmark<CR>
 nnoremap <silent> <SID>[unite]c :<C-u>Unite -buffer-name=compiler compiler<CR>
-nnoremap <silent> <SID>[unite]C :<C-u>Unite -buffer-name=command command<CR>
+nnoremap <silent> <SID>[unite]; :<C-u>Unite -buffer-name=command command<CR>
 nnoremap <SID>[unite]e :<C-u>Unite -buffer-name=english english_
 nnoremap <silent> <SID>[unite]f :<C-u>UniteWithBufferDir -buffer-name=file file<CR>
 nnoremap <expr> <silent> <SID>[unite]F ":<C-u>Unite -buffer-name=file -input=" . expand("%:p:r:r:r") . " file<CR>"
