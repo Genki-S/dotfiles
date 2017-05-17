@@ -11,8 +11,13 @@ module Overcommit::Hook::PreCommit
         File.open(file) do |f|
           f.each_with_index do |line, i|
             DEBUG_CODES.each do |d|
-              if line =~ d
-                violations << { file: file, line: line, line_number: i+1 }
+              begin
+                if line =~ d
+                  violations << { file: file, line: line, line_number: i+1 }
+                end
+              rescue ArgumentError => e
+                # Ignore invalid byte sequence
+                raise e unless e.message == "invalid byte sequence in UTF-8"
               end
             end
           end
