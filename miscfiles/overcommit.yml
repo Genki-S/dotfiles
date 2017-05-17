@@ -137,6 +137,10 @@ PreCommit:
     description: 'Checking if the import order follows convention'
     include:
       - '**/*.java'
+  # Run https://github.com/typicode/husky by myself
+  Husky:
+    enabled: true
+    description: 'Running precommit hook in package.json'
 
 PrePush:
   AntTest:
