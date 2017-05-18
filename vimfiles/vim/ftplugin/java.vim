@@ -35,6 +35,8 @@ function! g:JavaOpenDoc() abort
 		let fqn = substitute(substitute(fqns[0], '^import ', '', ''), ';$', '', '')
 		if fqn =~# '^java\.'
 			call openbrowser#open("https://docs.oracle.com/javase/7/docs/api/" . tr(fqn, '.', '/') . ".html")
+		elseif fqn =~# '^com\.google\.protobuf'
+			call openbrowser#open("https://developers.google.com/protocol-buffers/docs/reference/java/" . tr(fqn, '.', '/') . ".html")
 		elseif fqn =~# '^com\.google\.'
 			call openbrowser#open("https://google.github.io/guava/releases/21.0/api/docs/" . tr(fqn, '.', '/') . ".html")
 		elseif fqn =~# '^com\.rabbitmq\.'
