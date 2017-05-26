@@ -163,3 +163,11 @@ endfunction
 function! Genki_chmod(mode, file)
   execute "silent !chmod" a:mode a:file
 endfunction
+
+function! Genki_timeat(time)
+  if !exists("*strftime")
+    return ""
+  endif
+  let ts = str2nr(strpart(a:time, 0, 10))
+  return strftime("%Y-%m-%d %T", ts)
+endfunction

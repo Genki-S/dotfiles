@@ -36,3 +36,5 @@ command! FollowSymlink call Genki_follow_symlink()
 
 command! Precommit compiler pre-commit | Make
 AlterCommand pre Precommit
+
+command! -nargs=1 TimeAt echomsg Genki_timeat(<q-args>)
