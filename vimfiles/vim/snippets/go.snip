@@ -33,3 +33,15 @@ options     head
   Convey("${1:Test Description}",${2: t,} func() {
     ${0}
   })
+
+snippet     cc
+abbr        context with cancel
+options     head
+  ctx, ${1:cancel} = context.WithCancel(${2:context.Background()})
+  defer $1()
+
+snippet     ct
+abbr        context with timeout
+options     head
+  ctx, ${1:cancel} = context.WithTimeout(${2:context.Background()}, ${3:timeout})
+  ${4:defer $1()}
