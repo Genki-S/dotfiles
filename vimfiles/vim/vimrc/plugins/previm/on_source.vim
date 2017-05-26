@@ -1,1 +1,1 @@
-let g:previm_open_cmd = 'open -a Firefox'
+let g:previm_open_cmd = '$HOME/dotfiles/bin/my-open'
