@@ -102,6 +102,15 @@ javascript <<EOM
                 }
             }
         },
+        {
+            label: 'jirakey',
+            value: 'copy JIRA key',
+            custom: function() {
+                var url = content.document.location.href;
+                jiraKey = url.match(/browse\/([A-Z]+-\d+)/)[1];
+                return jiraKey;
+            }
+        }
     ];
 })();
 EOM
@@ -115,6 +124,7 @@ nnoremap yq :copy blockquote<CR>
 nnoremap yo :copy orgmode<CR>
 nnoremap ym :copy markdown<CR>
 nnoremap yw :copy wiki<CR>
+nnoremap yj :copy jirakey<CR>
 " }}}
 
 " feedSomekeys_3 {{{
