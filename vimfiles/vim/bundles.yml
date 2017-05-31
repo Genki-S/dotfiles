@@ -205,10 +205,6 @@
     autoload:
         commands:
             - Expand
-- haya14busa/vim-auto-programming:
-    lazy: 1
-    autoload:
-        insert: 1
 ## }}}
 
 # }}}
