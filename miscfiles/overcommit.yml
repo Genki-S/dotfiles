@@ -141,6 +141,10 @@ PreCommit:
   Husky:
     enabled: true
     description: 'Running precommit hook in package.json'
+  GoTest:
+    enabled: true
+    description: 'Checking if Go test passes'
+    required_executable: 'go'
 
 PrePush:
   AntTest:

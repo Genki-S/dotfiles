@@ -1,7 +1,8 @@
-module Overcommit::Hook::PrePush
+module Overcommit::Hook::PreCommit
   class GoTest < Base
     def run
-      result = execute(command, args: ['test', '-race', './...', '-timeout', '2s'])
+      # No `-race` option for pre-commit (`-race` test is done on pre-push)
+      result = execute(command, args: ['test', './...', '-timeout', '1s'])
       return :pass if result.success?
 
       output = result.stdout + result.stderr
