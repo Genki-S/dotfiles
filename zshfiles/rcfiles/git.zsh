@@ -64,7 +64,7 @@ function gbw() {
   fi
 }
 # git branch select
-alias gbs="git branch | peco | xargs git checkout"
+alias gbs="git branch -a | peco | xargs git checkout"
 # list things
 function gls() {
   if [[ $# -eq 0 ]]; then
