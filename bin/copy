@@ -5,5 +5,7 @@ if is_mac; then
   # http://d.hatena.ne.jp/edvakf/20080929/1222657230
   reattach-to-user-namespace nkf -w | __CF_USER_TEXT_ENCODING=0x$(printf %x $(id -u)):0x08000100:14 pbcopy
 else
-  xclip -sel clip
+  # DISPLAY is a charm
+  # http://www.linuxquestions.org/questions/linux-software-2/xdotool-error-can't-open-display-null-4175527094/
+  DISPLAY=':0.0' xclip -sel clip
 fi
