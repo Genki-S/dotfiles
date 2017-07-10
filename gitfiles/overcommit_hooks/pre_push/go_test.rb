@@ -1,6 +1,8 @@
 module Overcommit::Hook::PrePush
   class GoTest < Base
     def run
+      execute(['go'], args: ['install', './...'])
+
       result = execute(command, args: ['test', '-race', './...', '-timeout', '2s'])
       return :pass if result.success?
 
