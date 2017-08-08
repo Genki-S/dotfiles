@@ -6,4 +6,6 @@ let g:go_metalinter_command = "gometalinter --enable-all ./..."
 " K is mapped to :GoDoc by default
 " Override investigate.vim mapping, since go has awesome doc tools usable
 " inside Vim.
-nnoremap <buffer> gK :<C-u>GoInfo<CR>
+nnoremap gK :<C-u>GoInfo<CR>
+
+command! -nargs=0 GoExport call go#rename#Rename(<bang>0, substitute(expand("<cword>"), '.*', '\u&', ''))
