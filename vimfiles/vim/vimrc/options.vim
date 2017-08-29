@@ -12,6 +12,7 @@ set smartcase
 " displaying text {{{
 set scrolloff=3
 set wrap
+set breakindent
 set display=lastline
 set list
 set listchars=tab:>\ ,trail:_,extends:>,precedes:<,conceal:#
