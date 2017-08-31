@@ -3,7 +3,12 @@ module Overcommit::Hook::PreCommit
     def run
       execute(['go'], args: ['install', './...'])
 
-      result = execute(command, args: ['--enable-all', './...'])
+      result = execute(['go'], args: ['list', './...'])
+      return [:fail, result.stdout + result.stderr] unless result.success?
+      all_pkgs = result.stdout.split("\n")
+      pkgs = all_pkgs - all_pkgs.grep(/vendor/)
+
+      result = execute(command, args: ['--enable-all'] + pkgs)
       output = result.stdout + result.stderr
 
       # Filter error by diff using reviewdog
