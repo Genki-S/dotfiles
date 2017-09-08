@@ -6,10 +6,18 @@ module Overcommit::Hook::PreCommit
       result = execute(['go'], args: ['list', './...'])
       return [:fail, result.stdout + result.stderr] unless result.success?
       all_pkgs = result.stdout.split("\n")
-      pkgs = all_pkgs - all_pkgs.grep(/vendor/)
+      paths = (all_pkgs - all_pkgs.grep(/vendor/)).map do |pkg|
+        # convert to full path, since gometalinter doesn't accept package name
+        "#{ENV['GOPATH']}/src/#{pkg}"
+      end
 
-      result = execute(command, args: ['--enable-all'] + pkgs)
+      result = execute(command, args: ['--enable-all'] + paths)
       output = result.stdout + result.stderr
+
+      # Fail for errors on these linters even if that's not my change, since the
+      # errors are too bad
+      fatals = output.split("\n").grep(/ineffassign/)
+      return [:fail, fatals.join("\n")] unless fatals.empty?
 
       # Filter error by diff using reviewdog
       result = execute(['reviewdog', '-efm', "%f:%l:%c:%\\w\\+:%m", '-diff', 'git diff HEAD'], input: output)
