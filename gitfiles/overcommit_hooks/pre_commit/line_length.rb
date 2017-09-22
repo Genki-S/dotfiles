@@ -15,10 +15,16 @@ module Overcommit::Hook::PreCommit
         end
       end
 
+      # Filter error by diff using reviewdog
+      filter_res = execute(['reviewdog', '-efm', "%f:%l:%m", '-diff', 'git diff HEAD'], input: errors.join("\n"))
+      errors = filter_res.stdout + filter_res.stderr
+      filter_res = execute(['reviewdog', '-efm', "%f:%l:%m", '-diff', 'git diff HEAD'], input: warns.join("\n"))
+      warns = filter_res.stdout + filter_res.stderr
+
       if !errors.empty?
-        return [:fail, (errors + warns).sort.join("\n")]
+        return [:fail, errors + warns]
       elsif !warns.empty?
-        return [:warn, warns.join("\n")]
+        return [:warn, warns]
       else
         return :pass
       end
