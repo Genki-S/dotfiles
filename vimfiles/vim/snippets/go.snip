@@ -37,11 +37,28 @@ options     head
 snippet     cc
 abbr        context with cancel
 options     head
-  ctx, ${1:cancel} = context.WithCancel(${2:context.Background()})
+  ctx, ${1:cancel} := context.WithCancel(${2:context.Background()})
   defer $1()
 
 snippet     ct
 abbr        context with timeout
 options     head
-  ctx, ${1:cancel} = context.WithTimeout(${2:context.Background()}, ${3:timeout})
+  ctx, ${1:cancel} := context.WithTimeout(${2:context.Background()}, ${3:timeout})
   ${4:defer $1()}
+
+snippet     suite
+abbr        test suite with testify/suite
+options     head
+  type ${1:suiteName}Suite struct {
+    suite.Suite
+  }
+
+  func Test${2:SuiteName}Suite(t *testing.T) {
+    suite.Run(t, new($1Suite))
+  }
+
+  func (s *$1Suite) SetupTest() {
+  }
+
+  func (s *$1Suite) Test${3:Feature}() {
+  }
