@@ -110,6 +110,15 @@ javascript <<EOM
                 jiraKey = url.match(/browse\/([A-Z]+-\d+)/)[1];
                 return jiraKey;
             }
+        },
+        {
+            label: 'jiraMarkdown',
+            value: 'copy JIRA as [JIRA_KEY](JIRA_URL)',
+            custom: function() {
+                var url = content.document.location.href;
+                jiraKey = url.match(/browse\/([A-Z]+-\d+)/)[1];
+                return "[" + jiraKey + "](" + url + ")";
+            }
         }
     ];
 })();
@@ -125,6 +134,7 @@ nnoremap yo :copy orgmode<CR>
 nnoremap ym :copy markdown<CR>
 nnoremap yw :copy wiki<CR>
 nnoremap yj :copy jirakey<CR>
+nnoremap yJ :copy jiraMarkdown<CR>
 " }}}
 
 " feedSomekeys_3 {{{
@@ -231,6 +241,9 @@ nnoremap <Leader>pu :<C-u>panorama pulltab<Space>
 nnoremap <Leader>pr :<C-u>panorama remove<Space>
 " Open tab group view
 nnoremap <Leader>po <M-S-e>
+
+" Since JIRA steals key... (<C-i> brings emphasized text)
+inoremap <C-o> <c-i>
 " }}}
 " ==============================
 
