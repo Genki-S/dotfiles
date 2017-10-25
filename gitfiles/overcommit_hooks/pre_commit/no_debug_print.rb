@@ -35,7 +35,7 @@ module Overcommit::Hook::PreCommit
       if violations.empty?
         return [:pass]
       else
-        return [:fail, output]
+        return [:fail, violations]
       end
     end
   end
