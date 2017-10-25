@@ -26,6 +26,12 @@ nnoremap <C-w>Q :tabclose<CR>
 " C-w t to create new tab with current window (with current tab layout intact)
 nnoremap <C-w>t <C-w>s<C-w>T
 
+" gF (takes line number into account) is better than gf
+nnoremap gf gF
+nnoremap gF gf
+nnoremap <C-w>f <C-w>F
+nnoremap <C-w>F <C-w>f
+
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 " tip: gv selects last selection again
