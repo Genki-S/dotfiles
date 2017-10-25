@@ -9,3 +9,4 @@ let g:go_metalinter_command = "gometalinter --enable-all ./..."
 nnoremap gK :<C-u>GoInfo<CR>
 
 command! -nargs=0 GoExport call go#rename#Rename(<bang>0, substitute(expand("<cword>"), '.*', '\u&', ''))
+command! -nargs=0 GoUnexport call go#rename#Rename(<bang>0, substitute(expand("<cword>"), '.*', '\l&', ''))
