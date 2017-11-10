@@ -8,9 +8,11 @@ function myvim() {
 
 	# '-X' to skip connecting X server: https://github.com/christoomey/dotfiles/issues/13
 	vim -X $session_option --startuptime $startuptime_file $*
+	local code=$?
 
 	__EXECUTED_GIT_COMMAND=1
 	echo "vim startup: `tail -n1 $startuptime_file | cut -d' ' -f1` ms."
+	return $code
 }
 
 alias v="myvim"
