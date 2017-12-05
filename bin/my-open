@@ -3,5 +3,7 @@
 if is_mac; then
   open "$@"
 else
-  xdg-open "$@"
+  # DISPLAY is a charm
+  # http://www.linuxquestions.org/questions/linux-software-2/xdotool-error-can't-open-display-null-4175527094/
+  DISPLAY=':0.0' xdg-open "$@"
 fi
