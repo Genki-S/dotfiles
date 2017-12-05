@@ -111,7 +111,6 @@ rcfiles=(
 	peco.zsh
 	cdd.zsh
 	go.zsh
-	docker.zsh
 )
 for f in $rcfiles
 do
