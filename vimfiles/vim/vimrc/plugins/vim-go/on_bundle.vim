@@ -3,7 +3,7 @@ nmap <Leader>G <SID>[go]
 
 nnoremap <silent> <SID>[go]d :GoDescribe<CR>
 nnoremap <silent> <SID>[go]r :GoReferrers<CR>
-nnoremap <silent> <SID>[go]R :GoRename<CR>
+nnoremap <SID>[go]R :GoRename <C-r><C-w>
 nnoremap <silent> <SID>[go]i :GoImplements<CR>
 nnoremap <silent> <SID>[go]I :GoImpl<CR>
 nnoremap <silent> <SID>[go]cr :GoCallers<CR>
