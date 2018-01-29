@@ -354,6 +354,11 @@
         commands:
             - Gitv
 - tpope/vim-git:
+- hotwatermorning/auto-git-diff:
+    lazy: 1
+    autoload:
+        filetypes:
+            - gitrebase
 # }}}
 
 # Visual {{{
