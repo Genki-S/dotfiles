@@ -190,6 +190,12 @@
     autoload:
         mappings:
             - <Plug>(EasyAlign)
+- Genki-S/vim-autofix:
+    lazy: 1
+    autoload:
+        commands:
+            - Autofix
+            - AutofixLoc
 
 ## Completion {{{
 - Shougo/neocomplete:
@@ -837,6 +843,14 @@
     autoload:
         commands:
             - BenchVimrc
+- thinca/vim-themis:
+    lazy: 1
+    autoload:
+        functions:
+            - themis#suite
+            - themis#helper
+            - themis#option
+            - themis#func_alias
 # }}}
 
 # Plugins I stopped using {{{
