@@ -12,16 +12,19 @@ module Overcommit::Hook::PreCommit
       end
 
       result = execute(command, args: ['--enable-all'] + paths)
-      output = result.stdout + result.stderr
+
+      unless result.stderr.empty?
+        return [:fail, 'Missing linter binaries, run `gometailnter --install --update`' + "\n" + result.stderr]
+      end
 
       # Fail for errors on these linters even if that's not my change, since the
       # errors are too bad
-      fatals = output.split("\n").grep(/ineffassign/)
+      fatals = result.stdout.split("\n").grep(/ineffassign/)
       return [:fail, fatals.join("\n")] unless fatals.empty?
 
       # Filter error by diff using reviewdog
-      result = execute(['reviewdog', '-efm', "%f:%l:%c:%\\w\\+:%m", '-diff', 'git diff HEAD'], input: output)
-      output = result.stdout + result.stderr
+      filteredResult = execute(['reviewdog', '-efm', "%f:%l:%c:%\\w\\+:%m", '-diff', 'git diff HEAD'], input: result.stdout)
+      output = filteredResult.stdout + filteredResult.stderr
 
       if output.empty?
         return [:pass]
