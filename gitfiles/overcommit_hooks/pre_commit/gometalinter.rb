@@ -3,15 +3,7 @@ module Overcommit::Hook::PreCommit
     def run
       execute(['go'], args: ['install', './...'])
 
-      result = execute(['go'], args: ['list', './...'])
-      return [:fail, result.stdout + result.stderr] unless result.success?
-      all_pkgs = result.stdout.split("\n")
-      paths = (all_pkgs - all_pkgs.grep(/vendor/)).map do |pkg|
-        # convert to full path, since gometalinter doesn't accept package name
-        "#{ENV['GOPATH']}/src/#{pkg}"
-      end
-
-      result = execute(command, args: ['--enable-all'] + paths)
+      result = execute(command, args: ['--enable-all'] + applicable_files)
 
       unless result.stderr.empty?
         return [:fail, 'Missing linter binaries, run `gometailnter --install --update`' + "\n" + result.stderr]
