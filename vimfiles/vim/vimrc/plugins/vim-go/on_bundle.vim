@@ -9,5 +9,6 @@ nnoremap <silent> <SID>[go]I :GoImpl<CR>
 nnoremap <silent> <SID>[go]cr :GoCallers<CR>
 nnoremap <silent> <SID>[go]ce :GoCallees<CR>
 nnoremap <silent> <SID>[go]cs :GoCallstack<CR>
+nnoremap <silent> <SID>[go]C :GoCoverage<CR>
 nnoremap <silent> <SID>[go]e :GoExport<CR>
 nnoremap <silent> <SID>[go]u :GoUnexport<CR>
