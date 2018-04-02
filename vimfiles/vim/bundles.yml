@@ -343,6 +343,7 @@
 # Git {{{
 - sjl/splice.vim:
 - tpope/vim-fugitive:
+- tpope/vim-rhubarb:
 - shumphrey/fugitive-gitlab.vim:
 - tommcdo/vim-fugitive-blame-ext:
     lazy: 1
