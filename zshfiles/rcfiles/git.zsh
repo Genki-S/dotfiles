@@ -29,6 +29,7 @@ alias gcd='cd $(ghq list --full-path | peco)'
 alias gs="git status --short --untracked-files"
 # git status files
 alias gsf="git status --short --untracked-files | awk '{ print \$2 }'"
+alias gco-="git checkout -"
 alias gd="git diff --color"
 alias gdc="git diff --color --cached"
 alias gl="git pull --rebase"
