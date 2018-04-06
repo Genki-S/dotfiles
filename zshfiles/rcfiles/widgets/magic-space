@@ -1,0 +1,26 @@
+# vim: filetype=zsh
+
+# magic-space changes behavior based on LBUFFER
+
+__fasd_fzy() {
+	cd $(fasd_cd -d | sort -n -r | awk '{print $2}' | fzy)
+	LBUFFER=
+	zle reset-prompt
+}
+
+__git_checkout_fzy() {
+	git checkout $(git branch -a | fzy)
+	LBUFFER=
+	zle reset-prompt
+}
+
+case "${LBUFFER}" in
+	j)
+		__fasd_fzy
+		;;
+	gco)
+		__git_checkout_fzy
+		;;
+	*)
+		zle self-insert
+esac

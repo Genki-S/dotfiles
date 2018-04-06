@@ -141,7 +141,7 @@ bindkey '^r' history-incremental-preserving-pattern-search-backward
 bindkey -M isearch '^r' history-incremental-pattern-search-backward
 bindkey '^s' history-incremental-pattern-search-forward
 bindkey -M vicmd '^t' transpose-words
-bindkey 'j' fasd-fzy
+bindkey ' ' magic-space
 
 # ==================================================
 # Insertions (^v*)
