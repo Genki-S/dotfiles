@@ -14,12 +14,22 @@ __git_checkout_fzy() {
 	zle reset-prompt
 }
 
+__vim_fzy() {
+	file=$(find . | fzy)
+	LBUFFER="v ${file}"
+	zle reset-prompt
+	zle accept-line
+}
+
 case "${LBUFFER}" in
 	j)
 		__fasd_fzy
 		;;
 	gco)
 		__git_checkout_fzy
+		;;
+	v)
+		__vim_fzy
 		;;
 	*)
 		zle self-insert
