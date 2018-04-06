@@ -9,13 +9,24 @@ __fasd_fzy() {
 }
 
 __git_checkout_fzy() {
-	git checkout $(git branch -a | fzy)
-	LBUFFER=
+	branch=$(git branch -a | fzy | xargs) # xargs trims leading/trailing spaces
+	if [ -z "$branch" ]; then
+		zle reset-prompt
+		return
+	fi
+
+	LBUFFER="git checkout ${branch}"
 	zle reset-prompt
+	zle accept-line
 }
 
 __vim_fzy() {
 	file=$(find . | fzy)
+	if [ -z "$file" ]; then
+		zle reset-prompt
+		return
+	fi
+
 	LBUFFER="v ${file}"
 	zle reset-prompt
 	zle accept-line
@@ -25,7 +36,8 @@ case "${LBUFFER}" in
 	j)
 		__fasd_fzy
 		;;
-	gco)
+	gbs)
+		# "g"it "b"ranch" "s"elect
 		__git_checkout_fzy
 		;;
 	v)
