@@ -10,6 +10,16 @@ abbr        os.OpenFile
   }
   defer $1.close()
 
+# json snippet
+snippet json
+abbr \`json:key\`
+	\`json:"${1:`go#util#snippetcase(matchstr(getline("."), '\w\+'))`}"\`
+
+# yaml snippet
+snippet yaml
+abbr \`yaml:key\`
+	\`yaml:"${1:`go#util#snippetcase(matchstr(getline("."), '\w\+'))`}"\`
+
 # http://stackoverflow.com/a/12518877
 snippet     fnex
 abbr        if file not exists
@@ -67,6 +77,14 @@ options     head
 
   func (s *$1Suite) SetupTest() {
   }
+
+  func (s *$1Suite) TearDownTest() {
+  }
+
+  var (
+    _ suite.SetupTestSuite    = (*$1Suite)(nil)
+    _ suite.TearDownTestSuite = (*$1Suite)(nil)
+  )
 
   func (s *$1Suite) Test${3:Feature}() {
   }
