@@ -3,13 +3,8 @@ let g:go_fmt_autosave = 1
 let g:go_test_timeout = "1s"
 let g:go_metalinter_command = "gometalinter --enable-all ./..."
 
-" snippet settings
+" don't let vim-go mutate neosnippet state
 let g:go_snippet_engine = "none"
-if type(g:neosnippet#snippets_directory) != type([])
-	throw "Wrong type for g:neosnippet#snippets_directory"
-endif
-let s:gosnippets_dir = split(globpath(&rtp, 'gosnippets/snippets'))
-let g:neosnippet#snippets_directory = s:gosnippets_dir + g:neosnippet#snippets_directory
 
 " K is mapped to :GoDoc by default
 " Override investigate.vim mapping, since go has awesome doc tools usable
