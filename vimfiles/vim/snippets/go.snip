@@ -10,6 +10,14 @@ abbr        os.OpenFile
   }
   defer $1.close()
 
+delete      ife
+snippet     ife
+options     head
+  if err != nil {
+    return `g:NeosnippetSnippets_Goiferr()`
+  }
+  ${2}
+
 # json snippet
 snippet json
 abbr \`json:key\`
