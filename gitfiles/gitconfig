@@ -53,3 +53,6 @@
 
 [include]
 	path = ~/.gitconfig_local
+
+[diff]
+	tool = vimdiff
