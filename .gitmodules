@@ -73,3 +73,6 @@
 [submodule "submodules/aur/rbenv"]
 	path = submodules/aur/rbenv
 	url = https://aur.archlinux.org/rbenv.git
+[submodule "submodules/aur/ruby-build"]
+	path = submodules/aur/ruby-build
+	url = https://aur.archlinux.org/ruby-build.git
