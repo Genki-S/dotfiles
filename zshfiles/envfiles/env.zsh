@@ -3,7 +3,6 @@ export DOTDIR=$HOME/dotfiles
 export WIDGETDIR=$DOTDIR/zshfiles/rcfiles/widgets
 
 # Preferences
-export TERM=xterm-256color
 export EDITOR=vim
 export GIT_EDITOR=vim
 
