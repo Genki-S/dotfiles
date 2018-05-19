@@ -32,6 +32,8 @@
     - globalrc
     - zazurc.json
     - xinitrc
+    - Xresources
+    - Xresources.d
     - Xmodmap
 - emacs.d
 - clicoder.d
