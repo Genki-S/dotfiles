@@ -36,6 +36,8 @@ done < $HOME/dotfiles/Pacfile
 declare -a aurpkgs=(
   "rbenv"
   "ruby-build"
+  "ttf-migu"
+  "ttf-ricty"
 )
 for aurpkg in "${aurpkgs[@]}"; do
   (cd $HOME/dotfiles/submodules/aur/$aurpkg && makepkg -si)
