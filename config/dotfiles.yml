@@ -29,8 +29,9 @@
     - cheat
     - overcommit.yml
     - mayu
-    - Xmodmap
     - globalrc
     - zazurc.json
+    - xinitrc
+    - Xmodmap
 - emacs.d
 - clicoder.d
