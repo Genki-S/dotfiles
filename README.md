@@ -45,6 +45,10 @@ Installs in `~/vendor`.
 
 - Homebrew cask can't be installed without sudo privilege
 
+## For Arch
+
+Run `./install_arch.sh` and cross your fingers.
+
 ## For Ubuntu
 
 WIP
