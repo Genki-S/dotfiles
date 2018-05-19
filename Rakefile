@@ -129,7 +129,6 @@ end
 desc 'Prepare Orgmode'
 task :orgmode do
   my_ln("#{HOME}/Dropbox/org", "#{HOME}/org")
-  run %{ touch "$HOME/.emacs.d/custom.el" }
 end
 
 desc 'Prepare Go packages'
