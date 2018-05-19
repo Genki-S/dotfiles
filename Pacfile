@@ -12,6 +12,17 @@ rust
 fasd
 hub
 
+# GUI
+xorg
+i3
+rxvt-unicode
+# https://wiki.archlinux.org/index.php/X_resources
+xorg-xrdb
+fontconfig
+fontforge
+ttf-inconsolata
+adobe-source-han-sans-jp-fonts
+
 # Vim
 ## gvim installs CLI vim with +clipboard: https://wiki.archlinux.org/index.php/vim
 gvim
