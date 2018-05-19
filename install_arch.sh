@@ -46,3 +46,6 @@ done
 eval "$(rbenv init -)"
 rbenv install 2.5.1
 rbenv global 2.5.1
+
+rake install_unix
+rake bundle_up_unix
