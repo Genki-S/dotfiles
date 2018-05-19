@@ -17,6 +17,7 @@ task :install => [
   :orgmode,
   :deploy,
   :chsh ] do
+  my_ln("#{DOTDIR}/macfiles/Library/Application\\ Support/Karabiner/private.xml", "#{HOME}/Library/Application\\ Support/Karabiner/private.xml")
   puts 'run `rake bundle_up` after logging in with zsh'
 end
 
@@ -107,7 +108,6 @@ task :deploy do
   end
 
   my_ln("#{DOTDIR}/miscfiles/get-shit-done.ini", "#{HOME}/.config/get-shit-done.ini")
-  my_ln("#{DOTDIR}/macfiles/Library/Application\\ Support/Karabiner/private.xml", "#{HOME}/Library/Application\\ Support/Karabiner/private.xml")
 end
 
 desc 'Update submodules'
