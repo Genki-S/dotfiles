@@ -47,6 +47,7 @@ end
 desc 'Install softwares'
 task :bundle_up_unix => [
   :go_get,
+  :cargo_install,
   :ghq_get,
   :npm_install,
   :bundle_install,
