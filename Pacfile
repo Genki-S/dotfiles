@@ -24,6 +24,12 @@ fontforge
 ttf-inconsolata
 adobe-source-han-sans-jp-fonts
 
+# Japanese input
+fcitx
+fcitx-mozc
+fcitx-configtool
+fcitx-im
+
 # Vim
 ## gvim installs CLI vim with +clipboard: https://wiki.archlinux.org/index.php/vim
 gvim
