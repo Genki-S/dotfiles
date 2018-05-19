@@ -33,5 +33,6 @@ fcitx-im
 # Vim
 ## gvim installs CLI vim with +clipboard: https://wiki.archlinux.org/index.php/vim
 gvim
+lua
 ## pacman-installed vim is configured to use ruby dll from system ruby
 ruby
