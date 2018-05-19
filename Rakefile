@@ -284,7 +284,9 @@ private
 
 def run(cmd)
   puts "[Running] #{cmd} (#{Dir.pwd})"
-  `#{cmd}` unless ENV['DEBUG']
+  ret = `#{cmd}` unless ENV['DEBUG']
+  raise $?.to_s unless $?.success?
+  ret
 end
 
 def mkdir_hierarchy(obj)
