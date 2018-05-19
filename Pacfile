@@ -1,0 +1,19 @@
+the_silver_searcher
+zsh
+tmux
+emacs
+
+python
+go
+nodejs
+npm
+rust
+
+fasd
+hub
+
+# Vim
+## gvim installs CLI vim with +clipboard: https://wiki.archlinux.org/index.php/vim
+gvim
+## pacman-installed vim is configured to use ruby dll from system ruby
+ruby
