@@ -76,3 +76,9 @@
 [submodule "submodules/aur/ruby-build"]
 	path = submodules/aur/ruby-build
 	url = https://aur.archlinux.org/ruby-build.git
+[submodule "submodules/aur/ttf-ricty"]
+	path = submodules/aur/ttf-ricty
+	url = https://aur.archlinux.org/ttf-ricty.git
+[submodule "submodules/aur/ttf-migu"]
+	path = submodules/aur/ttf-migu
+	url = https://aur.archlinux.org/ttf-migu.git
