@@ -32,6 +32,7 @@
     - globalrc
     - zazurc.json
     - urlview
+    - i3
     - pam_environment
     - xinitrc
     - Xresources
