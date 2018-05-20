@@ -82,3 +82,6 @@
 [submodule "submodules/aur/ttf-migu"]
 	path = submodules/aur/ttf-migu
 	url = https://aur.archlinux.org/ttf-migu.git
+[submodule "submodules/aur/urlview"]
+	path = submodules/aur/urlview
+	url = https://aur.archlinux.org/urlview.git

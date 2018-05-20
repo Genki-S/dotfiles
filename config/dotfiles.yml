@@ -31,6 +31,7 @@
     - mayu
     - globalrc
     - zazurc.json
+    - urlview
     - pam_environment
     - xinitrc
     - Xresources

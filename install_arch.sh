@@ -38,6 +38,7 @@ declare -a aurpkgs=(
   "ruby-build"
   "ttf-migu"
   "ttf-ricty"
+  "urlview"
 )
 for aurpkg in "${aurpkgs[@]}"; do
   (cd $HOME/dotfiles/submodules/aur/$aurpkg && makepkg -si)
