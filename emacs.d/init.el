@@ -80,8 +80,6 @@
     org-mode
     flycheck
     xml-rpc-el
-    metaweblog
-    org2blog
     org-pomodoro
     wc-mode
     mu4e
