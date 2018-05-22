@@ -39,6 +39,7 @@ declare -a aurpkgs=(
   "ttf-migu"
   "ttf-ricty"
   "urlview"
+  "firefox-esr-gtk2"
 )
 for aurpkg in "${aurpkgs[@]}"; do
   (cd $HOME/dotfiles/submodules/aur/$aurpkg && makepkg -si)
