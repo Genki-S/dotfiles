@@ -15,6 +15,10 @@ hub
 bzr
 mu
 
+# bluetooth
+bluez
+bluez-utils
+
 # GUI
 xorg
 i3
