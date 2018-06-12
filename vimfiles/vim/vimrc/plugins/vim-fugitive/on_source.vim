@@ -12,6 +12,7 @@ nnoremap <SID>[fugitive]t :Gtabedit
 nnoremap <SID>[fugitive]re :Gread<CR>
 nnoremap <SID>[fugitive]w :Gwrite<CR>
 nnoremap <SID>[fugitive]d :Gdiff 
+nnoremap <SID>[fugitive]D :Gdiff master<CR>
 nnoremap <SID>[fugitive]mv :Gmove 
 nnoremap <SID>[fugitive]rm :Gremove<CR>
 nnoremap <SID>[fugitive]b :Gblame -w<CR>
