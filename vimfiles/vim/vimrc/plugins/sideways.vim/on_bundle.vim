@@ -1,2 +1,2 @@
-nnoremap <silent> <Leader><C-h> :SidewaysLeft<CR>
-nnoremap <silent> <Leader><C-l> :SidewaysRight<CR>
+nnoremap <silent> <Leader>H :SidewaysLeft<CR>
+nnoremap <silent> <Leader>L :SidewaysRight<CR>
