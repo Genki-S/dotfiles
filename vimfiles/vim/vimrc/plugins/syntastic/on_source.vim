@@ -16,3 +16,6 @@ let g:syntastic_text_language_check_args = '--language=en-US'
 let g:syntastic_java_checkstyle_classpath = expand("$HOME/dotfiles/submodules/checkstyle/target/checkstyle-6.19-all.jar")
 let g:syntastic_java_checkstyle_conf_file = expand("$HOME/dotfiles/miscfiles/checkstyle_checks.xml")
 let g:syntastic_java_checkers = ['checkstyle'] " javac check is done with :EclimValidate
+
+" Vim checkers
+let g:syntastic_vim_checkers = ['vint']
