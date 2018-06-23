@@ -29,11 +29,6 @@
      (search category-keep))))
  '(org-agenda-start-on-weekday nil)
  '(org-agenda-sticky t)
- '(org-agenda-time-grid
-   (quote
-    ((daily weekly today require-timed)
-     "----------------"
-     (800 1000 1200 1400 1600 1800 2000))))
  '(org-agenda-window-setup (quote current-window))
  '(org-catch-invisible-edits t)
  '(org-clock-into-drawer t)
