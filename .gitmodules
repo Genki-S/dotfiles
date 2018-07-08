@@ -85,6 +85,3 @@
 [submodule "submodules/aur/urlview"]
 	path = submodules/aur/urlview
 	url = https://aur.archlinux.org/urlview.git
-[submodule "submodules/aur/firefox-esr-gtk2"]
-	path = submodules/aur/firefox-esr-gtk2
-	url = https://aur.archlinux.org/firefox-esr-gtk2.git
