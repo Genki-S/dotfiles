@@ -1,9 +1,17 @@
+require 'set'
+
 module Overcommit::Hook::PreCommit
   class Gometalinter < Base
     def run
       execute(['go'], args: ['install', './...'])
 
-      result = execute(command, args: ['--enable-all'] + applicable_files)
+      packages = Set.new()
+      applicable_files.each do |filename|
+        dirname = File.dirname(filename)
+        packages.add(dirname)
+      end
+
+      result = execute(command, args: ['--enable-all'] + packages.to_a)
 
       unless result.stderr.empty?
         return [:fail, 'Missing linter binaries, run `gometailnter --install --update`' + "\n" + result.stderr]
