@@ -85,3 +85,6 @@
 [submodule "submodules/aur/urlview"]
 	path = submodules/aur/urlview
 	url = https://aur.archlinux.org/urlview.git
+[submodule "submodules/aur/vivaldi"]
+	path = submodules/aur/vivaldi
+	url = https://aur.archlinux.org/vivaldi.git
