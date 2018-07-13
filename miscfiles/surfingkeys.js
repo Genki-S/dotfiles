@@ -31,6 +31,35 @@ settings.hintAlign = 'left';
 // open new tabs to the right of the current one
 settings.newTabPosition = "right"
 
+// marks
+var overlayedGlobalMarks = {
+    'm': 'https://mail.google.com',
+    'n': 'http://www.nicovideo.jp/ranking?header',
+    's': 'https://www.google.com/calendar/render?pli=1',
+    'r': 'http://feedly.com/#my',
+    'a': 'http://www.amazon.co.jp/',
+    'g': 'https://github.com/',
+    'p': 'http://getpocket.com/a/queue/'
+};
+mapkey('gn', '#10Jump to vim-like mark in new tab.', function(mark) {
+    var priorityURL = overlayedGlobalMarks[mark];
+    if (priorityURL === undefined) {
+        // fallback to Surfingkeys default jump
+        Normal.jumpVIMark(mark, true);
+        return;
+    }
+    var markInfo = {
+        url: priorityURL,
+        scrollLeft: 0,
+        scrollTop: 0
+    };
+    markInfo.tab = {
+        tabbed: true,
+        active: true
+    };
+    RUNTIME("openLink", markInfo);
+});
+
 // set theme
 settings.theme = `
 .sk_theme {
