@@ -60,6 +60,11 @@ mapkey('gn', '#10Jump to vim-like mark in new tab.', function(mark) {
     RUNTIME("openLink", markInfo);
 });
 
+// copies
+mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() {
+    Clipboard.write('[[' + window.location.href + '][' + document.title + ']]');
+});
+
 // set theme
 settings.theme = `
 .sk_theme {
