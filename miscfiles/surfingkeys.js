@@ -2,6 +2,27 @@ map('<Ctrl-n>', 'R') // next tab
 map('<Ctrl-p>', 'E') // prev tab
 // TODO: maybe use mapkey to free R/E mappings
 
+mapkey('<Ctrl-o>', '#4Go back in history', function() {
+    history.go(-1);
+}, {repeatIgnore: true});
+mapkey('<Ctrl-i>', '#4Go forward in history', function() {
+    history.go(1);
+}, {repeatIgnore: true});
+
+// scrolls
+mapkey('<Ctrl-d>', '#2Scroll a page down', function() {
+    Normal.scroll('pageDown')
+}, {repeatIgnore: true});
+mapkey('<Ctrl-f>', '#2Scroll a full page down', function() {
+    Normal.scroll('fullPageDown')
+}, {repeatIgnore: true});
+mapkey('<Ctrl-u>', '#2Scroll a page up', function() {
+    Normal.scroll('pageUp')
+}, {repeatIgnore: true});
+mapkey('<Ctrl-b>', '#2Scroll a full page up', function() {
+    Normal.scroll('fullPageUp')
+}, {repeatIgnore: true});
+
 // set theme
 settings.theme = `
 .sk_theme {
