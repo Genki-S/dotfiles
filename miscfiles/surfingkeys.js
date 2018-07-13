@@ -65,6 +65,20 @@ mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() 
     Clipboard.write('[[' + window.location.href + '][' + document.title + ']]');
 });
 
+// vimperator's "ignore" feature
+var PassThroughOnce = (function() {
+    var self = new Mode("PassThroughOnce", "pass through once");
+    self.addEventListener('keydown', function(event) {
+        // prevent this event to be handled by Surfingkeys' other listeners
+        event.sk_suppressed = true;
+        self.exit();
+    })
+    return self;
+})();
+mapkey('i', '#0enter PassThroughOnce mode to temporarily suppress SurfingKeys', function() {
+    PassThroughOnce.enter()
+});
+
 // set theme
 settings.theme = `
 .sk_theme {
