@@ -26,6 +26,11 @@ mapkey('<Ctrl-b>', '#2Scroll a full page up', function() {
 // hints
 map('F', 'af'); // open a link in new tab
 
+settings.hintAlign = 'left';
+
+// open new tabs to the right of the current one
+settings.newTabPosition = "right"
+
 // set theme
 settings.theme = `
 .sk_theme {
