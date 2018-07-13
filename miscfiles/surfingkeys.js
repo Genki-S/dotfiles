@@ -1,3 +1,7 @@
+map('<Ctrl-n>', 'R') // next tab
+map('<Ctrl-p>', 'E') // prev tab
+// TODO: maybe use mapkey to free R/E mappings
+
 // set theme
 settings.theme = `
 .sk_theme {
