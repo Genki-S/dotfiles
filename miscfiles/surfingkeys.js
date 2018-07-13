@@ -23,6 +23,9 @@ mapkey('<Ctrl-b>', '#2Scroll a full page up', function() {
     Normal.scroll('fullPageUp')
 }, {repeatIgnore: true});
 
+// hints
+map('F', 'af'); // open a link in new tab
+
 // set theme
 settings.theme = `
 .sk_theme {
