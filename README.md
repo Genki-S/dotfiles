@@ -49,6 +49,8 @@ Installs in `~/vendor`.
 
 Run `./install_arch.sh` and cross your fingers.
 
+Enable H.264 support for Vivaldi: https://gist.github.com/ruario/bec42d156d30affef655
+
 ## For Ubuntu
 
 WIP
