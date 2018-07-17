@@ -41,6 +41,8 @@ var overlayedGlobalMarks = {
     'r': 'http://feedly.com/#my',
     'a': 'http://www.amazon.co.jp/',
     'g': 'https://github.com/',
+    't': 'https://twitter.com/',
+    'y': 'https://youtube.com/',
     'p': 'http://getpocket.com/a/queue/'
 };
 mapkey('gn', '#10Jump to vim-like mark in new tab.', function(mark) {
