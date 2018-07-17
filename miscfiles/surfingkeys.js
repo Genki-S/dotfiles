@@ -64,10 +64,25 @@ mapkey('gn', '#10Jump to vim-like mark in new tab.', function(mark) {
     RUNTIME("openLink", markInfo);
 });
 
-// copies
+// copies {{{
 mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() {
     Clipboard.write('[[' + window.location.href + '][' + document.title + ']]');
 });
+
+// useful for e.g. copying JIRA keys
+// stole from https://github.com/kalbasit/dotfiles/blob/master/.surfingkeys.js.dtmpl
+function copyLastElementInPath() {
+    const locationParts = window.location.href.split("/");
+    const lastElement = locationParts[locationParts.length-1].split("#")[0].split("?")[0];
+    if (!lastElement) {
+        Front.showBanner(`No last element was found.`);
+        return;
+    }
+    Clipboard.write(lastElement);
+    Front.showBanner(`Copied ${lastElement} to the clipboard.`);
+}
+mapkey('yl', '#7Copy the last element of the path in the URL', copyLastElementInPath)
+// }}}
 
 // vimperator's "ignore" feature
 var PassThroughOnce = (function() {
@@ -125,3 +140,5 @@ settings.theme = `
 #sk_status, #sk_find {
     font-size: 20pt;
 }`;
+
+// vim: foldmethod=marker
