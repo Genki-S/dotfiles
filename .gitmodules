@@ -88,3 +88,9 @@
 [submodule "submodules/aur/vivaldi"]
 	path = submodules/aur/vivaldi
 	url = https://aur.archlinux.org/vivaldi.git
+[submodule "submodules/aur/vivaldi-ffmpeg-codecs"]
+	path = submodules/aur/vivaldi-ffmpeg-codecs
+	url = https://aur.archlinux.org/vivaldi-ffmpeg-codecs.git
+[submodule "submodules/aur/ncurses5-compat-libs"]
+	path = submodules/aur/ncurses5-compat-libs
+	url = https://aur.archlinux.org/ncurses5-compat-libs.git
