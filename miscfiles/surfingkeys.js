@@ -113,6 +113,18 @@ var PassThroughOnce = (function() {
 mapkey('i', '#0enter PassThroughOnce mode to temporarily suppress SurfingKeys', function() {
     PassThroughOnce.enter()
 });
+
+// open URL from clipboard
+mapkey('p', '#3Open URL from clipboard', () => {
+    Clipboard.read(response => {
+        window.location.href = response.data;
+    });
+});
+mapkey('P', '#1Open URL from clipboard in a new tab', () => {
+    Clipboard.read(response => {
+        window.open(response.data);
+    });
+})
 // }}}
 
 // insert mode mappings
