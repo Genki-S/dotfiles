@@ -26,7 +26,7 @@ mapkey('<Ctrl-b>', '#2Scroll a full page up', function() {
 }, {repeatIgnore: true});
 
 // hints
-map('F', 'af'); // open a link in new tab
+map('F', 'gf'); // open a link in new tab
 
 settings.hintAlign = 'left';
 
