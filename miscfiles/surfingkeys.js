@@ -83,6 +83,10 @@ mapkey('i', '#0enter PassThroughOnce mode to temporarily suppress SurfingKeys', 
     PassThroughOnce.enter()
 });
 
+// insert mode mappings
+imap('<Ctrl-f>', '<Alt-f>')
+imap('<Ctrl-b>', '<Alt-b>')
+
 // set theme
 settings.theme = `
 .sk_theme {
