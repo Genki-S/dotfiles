@@ -10,6 +10,8 @@ mapkey('<Ctrl-i>', '#4Go forward in history', function() {
 }, {repeatIgnore: true});
 
 // scrolls
+map('<Ctrl-e>', 'j')
+map('<Ctrl-y>', 'k')
 mapkey('<Ctrl-d>', '#2Scroll a page down', function() {
     Normal.scroll('pageDown')
 }, {repeatIgnore: true});
