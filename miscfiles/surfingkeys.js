@@ -9,7 +9,7 @@ mapkey('<Ctrl-i>', '#4Go forward in history', function() {
     history.go(1);
 }, {repeatIgnore: true});
 
-// scrolls
+// scrolls {{{
 map('<Ctrl-e>', 'j')
 map('<Ctrl-y>', 'k')
 mapkey('<Ctrl-d>', '#2Scroll a page down', function() {
@@ -24,9 +24,22 @@ mapkey('<Ctrl-u>', '#2Scroll a page up', function() {
 mapkey('<Ctrl-b>', '#2Scroll a full page up', function() {
     Normal.scroll('fullPageUp')
 }, {repeatIgnore: true});
+// }}}
 
-// hints
 map('F', 'gf'); // open a link in new tab
+
+mapkey('R', '#4Reload the page skipping the cache', () => {
+    RUNTIME('reloadTab', {
+        nocache: true
+    });
+});
+
+mapkey(',r', '#11Reload settings', () => {
+    RUNTIME('loadSettingsFromUrl', {
+        url: 'file://<%= ENV["HOME"] %>/.surfingkeys.js'
+    });
+    Front.showBanner('settings were reloaded');
+})
 
 // settings {{{
 // show hints to the left of elements (same as vimperator)
@@ -43,8 +56,8 @@ mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() 
 // useful for e.g. copying JIRA keys
 // stole from https://github.com/kalbasit/dotfiles/blob/master/.surfingkeys.js.dtmpl
 function copyLastElementInPath() {
-    const locationParts = window.location.href.split("/");
-    const lastElement = locationParts[locationParts.length-1].split("#")[0].split("?")[0];
+    const locationParts = window.location.href.split('/');
+    const lastElement = locationParts[locationParts.length-1].split('#')[0].split('?')[0];
     if (!lastElement) {
         Front.showBanner(`No last element was found.`);
         return;
