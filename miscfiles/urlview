@@ -1,0 +1,4 @@
+# man urlview
+
+# Open URL in browser
+COMMAND xdg-open

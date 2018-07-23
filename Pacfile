@@ -1,0 +1,46 @@
+the_silver_searcher
+zsh
+tmux
+emacs
+tig
+
+firefox
+
+python
+go
+nodejs
+npm
+rust
+
+fasd
+hub
+bzr
+mu
+
+# bluetooth
+bluez
+bluez-utils
+
+# GUI
+xorg
+i3
+rxvt-unicode
+# https://wiki.archlinux.org/index.php/X_resources
+xorg-xrdb
+fontconfig
+fontforge
+ttf-inconsolata
+adobe-source-han-sans-jp-fonts
+
+# Japanese input
+fcitx
+fcitx-mozc
+fcitx-configtool
+fcitx-im
+
+# Vim
+## gvim installs CLI vim with +clipboard: https://wiki.archlinux.org/index.php/vim
+gvim
+lua
+## pacman-installed vim is configured to use ruby dll from system ruby
+ruby

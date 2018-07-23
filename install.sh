@@ -68,9 +68,6 @@ fi
 echo "Running rake install task..."
 run BREW_PREFIX=$brew_prefix rake install
 
-echo "Installing tmux plugins..."
-run $HOME/dotfiles/submodules/tpm/scripts/install_plugins.sh
-
 echo "Downloading solarized colorscheme..."
 run curl 'https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized Dark.itermcolors' > ~/SolarizedDark.itermcolors
 echo "Applying solarized..."

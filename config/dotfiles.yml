@@ -29,8 +29,15 @@
     - cheat
     - overcommit.yml
     - mayu
-    - Xmodmap
     - globalrc
     - zazurc.json
+    - urlview
+    - i3
+    - pam_environment
+    - xinitrc
+    - Xresources
+    - Xresources.d
+    - Xmodmap
+    - surfingkeys.js
 - emacs.d
 - clicoder.d

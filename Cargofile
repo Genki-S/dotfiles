@@ -1,1 +1,1 @@
-install ripgrep
+install --force ripgrep

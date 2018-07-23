@@ -70,3 +70,27 @@
 [submodule "submodules/zsh-autosuggestions"]
 	path = submodules/zsh-autosuggestions
 	url = git://github.com/zsh-users/zsh-autosuggestions
+[submodule "submodules/aur/rbenv"]
+	path = submodules/aur/rbenv
+	url = https://aur.archlinux.org/rbenv.git
+[submodule "submodules/aur/ruby-build"]
+	path = submodules/aur/ruby-build
+	url = https://aur.archlinux.org/ruby-build.git
+[submodule "submodules/aur/ttf-ricty"]
+	path = submodules/aur/ttf-ricty
+	url = https://aur.archlinux.org/ttf-ricty.git
+[submodule "submodules/aur/ttf-migu"]
+	path = submodules/aur/ttf-migu
+	url = https://aur.archlinux.org/ttf-migu.git
+[submodule "submodules/aur/urlview"]
+	path = submodules/aur/urlview
+	url = https://aur.archlinux.org/urlview.git
+[submodule "submodules/aur/vivaldi"]
+	path = submodules/aur/vivaldi
+	url = https://aur.archlinux.org/vivaldi.git
+[submodule "submodules/aur/vivaldi-ffmpeg-codecs"]
+	path = submodules/aur/vivaldi-ffmpeg-codecs
+	url = https://aur.archlinux.org/vivaldi-ffmpeg-codecs.git
+[submodule "submodules/aur/ncurses5-compat-libs"]
+	path = submodules/aur/ncurses5-compat-libs
+	url = https://aur.archlinux.org/ncurses5-compat-libs.git

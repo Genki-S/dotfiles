@@ -17,6 +17,7 @@ task :install => [
   :orgmode,
   :deploy,
   :chsh ] do
+  my_ln("#{DOTDIR}/macfiles/Library/Application\\ Support/Karabiner/private.xml", "#{HOME}/Library/Application\\ Support/Karabiner/private.xml")
   puts 'run `rake bundle_up` after logging in with zsh'
 end
 
@@ -46,6 +47,7 @@ end
 desc 'Install softwares'
 task :bundle_up_unix => [
   :go_get,
+  :cargo_install,
   :ghq_get,
   :npm_install,
   :bundle_install,
@@ -107,7 +109,6 @@ task :deploy do
   end
 
   my_ln("#{DOTDIR}/miscfiles/get-shit-done.ini", "#{HOME}/.config/get-shit-done.ini")
-  my_ln("#{DOTDIR}/macfiles/Library/Application\\ Support/Karabiner/private.xml", "#{HOME}/Library/Application\\ Support/Karabiner/private.xml")
 end
 
 desc 'Update submodules'
@@ -128,7 +129,6 @@ end
 desc 'Prepare Orgmode'
 task :orgmode do
   my_ln("#{HOME}/Dropbox/org", "#{HOME}/org")
-  run %{ touch "$HOME/.emacs.d/custom.el" }
 end
 
 desc 'Prepare Go packages'
@@ -284,7 +284,9 @@ private
 
 def run(cmd)
   puts "[Running] #{cmd} (#{Dir.pwd})"
-  `#{cmd}` unless ENV['DEBUG']
+  ret = `#{cmd}` unless ENV['DEBUG']
+  raise $?.to_s unless $?.success?
+  ret
 end
 
 def mkdir_hierarchy(obj)

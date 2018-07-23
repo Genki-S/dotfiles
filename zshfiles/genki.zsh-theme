@@ -16,3 +16,5 @@ ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}✖ %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}✚ %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="… "
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔ %{$reset_color%}"
+
+ZSH_THEME_GIT_PROMPT_CACHE=1
