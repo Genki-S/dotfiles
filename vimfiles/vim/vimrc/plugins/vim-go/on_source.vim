@@ -3,6 +3,8 @@ let g:go_fmt_autosave = 1
 let g:go_test_timeout = "1s"
 let g:go_metalinter_command = "gometalinter --enable-all ./..."
 
+let g:go_gocode_unimported_packages = 1
+
 " don't let vim-go mutate neosnippet state
 let g:go_snippet_engine = "none"
 
