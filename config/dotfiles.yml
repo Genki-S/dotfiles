@@ -1,5 +1,6 @@
 ---
 - zshfiles:
+    - zprofile
     - zshrc
     - zshenv
 - vimfiles:
