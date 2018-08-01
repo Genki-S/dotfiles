@@ -8,6 +8,12 @@ __fasd_fzy() {
 	zle reset-prompt
 }
 
+__cd_find_fzy() {
+	cd $(find . -type d | fzy)
+	LBUFFER=
+	zle reset-prompt
+}
+
 __git_checkout_fzy() {
 	branch=$(git branch -a | fzy | xargs) # xargs trims leading/trailing spaces
 	if [ -z "$branch" ]; then
@@ -35,6 +41,9 @@ __vim_fzy() {
 case "${LBUFFER}" in
 	j)
 		__fasd_fzy
+		;;
+	jf)
+		__cd_find_fzy
 		;;
 	gbs)
 		# "g"it "b"ranch" "s"elect
