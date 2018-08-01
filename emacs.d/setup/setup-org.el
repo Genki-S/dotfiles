@@ -215,24 +215,6 @@
 (custom-set-faces
  '(org-mode-line-clock ((t (:foreground "red" :box (:line-width -1 :style released-button)))) t))
 
-
-;; org-babel
-(org-babel-do-load-languages
- (quote org-babel-load-languages)
- '((emacs-lisp . t)
-   (dot . t)
-   (ditaa . t)
-   (R . t)
-   (python . t)
-   (ruby . t)
-   (gnuplot . t)
-   (clojure . t)
-   (sh . t)
-   (ledger . t)
-   (org . t)
-   (plantuml . t)
-   (latex . t)))
-
 (setq org-plantuml-jar-path (concat vendor-dir "/plantuml.jar"))
 
 ;; MobileOrg
