@@ -3,6 +3,7 @@ zsh
 tmux
 emacs
 tig
+fzy
 
 firefox
 
@@ -16,6 +17,7 @@ fasd
 hub
 bzr
 mu
+jq
 
 # bluetooth
 bluez
