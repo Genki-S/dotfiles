@@ -757,6 +757,11 @@
         filetypes:
             - javascript
             - jsx
+- ElmCast/elm-vim:
+    lazy: 1
+    autoload:
+        filetypes:
+            - elm
 ## }}}
 
 ## Scheme {{{
