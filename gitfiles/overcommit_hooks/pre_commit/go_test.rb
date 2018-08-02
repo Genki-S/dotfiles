@@ -13,7 +13,7 @@ module Overcommit::Hook::PreCommit
       return :pass if result.success?
 
       output = result.stdout + result.stderr
-      if output.include?('no packages to test')
+      if output.include?('no Go files in')
           return [:warn, output]
       end
       [:fail, output]
