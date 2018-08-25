@@ -33,6 +33,7 @@ fontconfig
 fontforge
 ttf-inconsolata
 adobe-source-han-sans-jp-fonts
+noto-fonts-emoji
 
 # Japanese input
 fcitx
