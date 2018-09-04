@@ -1,2 +1,10 @@
 #include ".Xresources.d/solarized"
-#include ".Xresources.d/fonts"
+
+! http://malkalech.com/urxvt_terminal_emulator
+
+urxvt.scrollBar: false
+urxvt.pointerBlank: true
+urxvt.visualBell: false
+
+urxvt.font: xft:Cica:pixelsize=16:antialias=true:hinting=true
+urxvt.boldFont: xft:Cica:pixelsize=16:antialias=true:hinting=true
