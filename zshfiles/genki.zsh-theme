@@ -2,8 +2,12 @@
 
 local return_status="%{$fg[red]%}%(?..✘)%{$reset_color%}"
 
+kube_context() {
+  echo "(kube: $(kubectl config current-context))"
+}
+
 PROMPT='
-%{$fg_bold[red]%}$(zvim_is_command_mode && echo "CMD")%{$reset_color%}%(?..${return_status}[%?]%{$reset_color%} )%(1j.%{$fg[yellow]%}Job[%j]%{$reset_color%} .)%{$fg[green]%}[ ${PWD/#$HOME/~} ]%{$reset_color%} $(git_super_status) %{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} at %{$fg[white]%}%D %*%{$reset_color%}
+%{$fg_bold[red]%}$(zvim_is_command_mode && echo "CMD")%{$reset_color%}%(?..${return_status}[%?]%{$reset_color%} )%(1j.%{$fg[yellow]%}Job[%j]%{$reset_color%} .)%{$fg[green]%}[ ${PWD/#$HOME/~} ]%{$reset_color%} $(kube_context) $(git_super_status) %{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} at %{$fg[white]%}%D %*%{$reset_color%}
 %# '
 
 # RPROMPT
