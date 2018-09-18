@@ -3,7 +3,7 @@
 local return_status="%{$fg[red]%}%(?..✘)%{$reset_color%}"
 
 kube_context() {
-  echo "(kube: $(kubectl config current-context))"
+  echo "(kube: $(kubectl config current-context 2> /dev/null))"
 }
 
 PROMPT='
