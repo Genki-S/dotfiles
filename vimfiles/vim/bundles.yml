@@ -831,6 +831,11 @@
     autoload:
         filetypes:
             - nginx
+- martinda/Jenkinsfile-vim-syntax:
+    lazy: 1
+    autoload:
+        filetypes:
+            - Jenkinsfile
 ## }}}
 
 # }}}
