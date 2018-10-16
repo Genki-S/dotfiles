@@ -47,6 +47,21 @@ Installs in `~/vendor`.
 
 ## For Arch
 
+### Pre-dotfiles
+
+- Follow [installation guide](https://wiki.archlinux.org/index.php/installation_guide)
+- Add user (other than root)
+- Install sudo
+- visudo -> add me to sudoer
+- Install i3
+- Install rxvt-unicode
+- Install xorg, xorg-init
+- Install firefox (or any browser available from non-AUR)
+- Copy & edit xinitrc
+- startx
+
+### Install dotfiles
+
 Run `./install_arch.sh` and cross your fingers.
 
 Enable H.264 support for Vivaldi: https://gist.github.com/ruario/bec42d156d30affef655
