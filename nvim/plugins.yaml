@@ -2,3 +2,7 @@
 - Shougo/deoplete.nvim:
 
 - tpope/vim-fugitive:
+
+- fatih/vim-go:
+    lazy: 1
+    on_ft: go
