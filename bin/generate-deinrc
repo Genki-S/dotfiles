@@ -14,6 +14,8 @@ plugins.each do |plugin|
   repo = plugin.keys.first
   options = plugin[repo] || {}
   options['hook_add'] = "call g:DeinHookAdd('#{repo}')"
+  options['hook_source'] = "call g:DeinHookSource('#{repo}')"
+  options['hook_post_source'] = "call g:DeinHookPostSource('#{repo}')"
 
   options_dict = hash_to_dictionary(options)
   file.write("call dein#add('#{repo}', #{options_dict})\n")

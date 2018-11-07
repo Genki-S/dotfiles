@@ -1,7 +1,7 @@
 " My dein extensions
 
 let g:dein_plugin_settings_dir = g:nvim_config_dir . '/plugin-settings'
-let s:hook_names = ['hook_add']
+let s:hook_names = ['hook_add', 'hook_source', 'hook_post_source']
 
 function! s:plugin_setting_filename(plugin_name, hook_name)
   return g:dein_plugin_settings_dir . '/' . a:plugin_name . '/' . a:hook_name . '.vim'
@@ -11,12 +11,27 @@ function! g:CompleteDeinPluginNames(arglead, cmdline, cursorpos)
   return filter(keys(g:dein#_plugins), 'stridx(tolower(v:val), tolower(a:arglead)) >= 0')
 endfunction
 
-function! g:DeinHookAdd(repo) abort
-  let plugin_name = split(a:repo, '/')[1] " TODO: Is this assumption alright?
-  let f = s:plugin_setting_filename(plugin_name, 'hook_add')
+function! s:repo_to_name(repo) abort
+  return split(a:repo, '/')[1] " TODO: Is this assumption alright?
+endfunction
+
+function! s:source_hook_script(repo, hook) abort
+  let f = s:plugin_setting_filename(s:repo_to_name(a:repo), a:hook)
   if filereadable(f)
     execute 'source' f
   endif
+endfunction
+
+function! g:DeinHookAdd(repo) abort
+  call s:source_hook_script(a:repo, 'hook_add')
+endfunction
+
+function! g:DeinHookSource(repo) abort
+  call s:source_hook_script(a:repo, 'hook_source')
+endfunction
+
+function! g:DeinHookPostSource(repo) abort
+  call s:source_hook_script(a:repo, 'hook_post_source')
 endfunction
 
 function! g:DeinOpenPluginSettings(plugin_name) abort
@@ -65,6 +80,10 @@ if dein#load_state(s:dein_install_dir)
   call dein#end()
   call dein#save_state()
 endif
+
+" trigger source and post_source hooks manually for non-lazy plugins
+call dein#call_hook('source')
+autocmd VimEnter * call dein#call_hook('post_source')
 
 " Required:
 filetype plugin indent on
