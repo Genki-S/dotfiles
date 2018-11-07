@@ -4,6 +4,7 @@ vimfiles/vim/neobundlefile_compiled.vim
 vimfiles/vim/cache
 
 /nvim/dein
+/nvim/deinrc-generated.vim
 
 *.zwc
 
