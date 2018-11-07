@@ -1,2 +1,4 @@
 - Shougo/denite.nvim:
 - Shougo/deoplete.nvim:
+
+- tpope/vim-fugitive:
