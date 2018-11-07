@@ -14,9 +14,7 @@ if dein#load_state(s:dein_install_dir)
   " Required:
   call dein#add(s:dein_repo)
 
-  " Add or remove your plugins here like this:
-  "call dein#add('Shougo/neosnippet.vim')
-  "call dein#add('Shougo/neosnippet-snippets')
+  call dein#load_toml("$HOME/.config/nvim/plugins.toml", {})
 
   " Required:
   call dein#end()

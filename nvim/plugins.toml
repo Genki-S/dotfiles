@@ -1,0 +1,2 @@
+[[plugins]]
+repo = 'Shougo/denite.nvim'
