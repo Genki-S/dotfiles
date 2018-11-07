@@ -1,5 +1,11 @@
 - Shougo/denite.nvim:
 - Shougo/deoplete.nvim:
+- Shougo/neosnippet.vim:
+    lazy: 1
+    on_i: 1
+- Shougo/neosnippet-snippets:
+    lazy: 1
+    on_i: 1
 
 - tpope/vim-fugitive:
 
