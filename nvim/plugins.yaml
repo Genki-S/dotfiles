@@ -16,3 +16,5 @@
 - zchee/deoplete-go:
     lazy: 1
     on_ft: go
+
+- altercation/vim-colors-solarized:
