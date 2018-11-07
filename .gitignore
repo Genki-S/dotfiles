@@ -3,6 +3,8 @@ vimfiles/vim/bundles/*
 vimfiles/vim/neobundlefile_compiled.vim
 vimfiles/vim/cache
 
+/nvim/dein
+
 *.zwc
 
 emacs.d/auto-save-list
