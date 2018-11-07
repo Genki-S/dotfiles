@@ -1,1 +1,2 @@
-" Hello Neovim!
+noremap ; :
+noremap : ;
