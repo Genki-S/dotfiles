@@ -17,4 +17,6 @@
     lazy: 1
     on_ft: go
 
+- easymotion/vim-easymotion:
+
 - altercation/vim-colors-solarized:
