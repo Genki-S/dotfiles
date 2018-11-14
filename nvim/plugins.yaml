@@ -8,6 +8,7 @@
     on_i: 1
 
 - tpope/vim-fugitive:
+- shumphrey/fugitive-gitlab.vim:
 - tpope/vim-sleuth:
 
 - kana/vim-smartchr:
