@@ -5,6 +5,7 @@ vimfiles/vim/cache
 
 /nvim/dein
 /nvim/deinrc-generated.vim
+/nvim/init.local.vim
 
 *.zwc
 
