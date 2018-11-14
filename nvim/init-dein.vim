@@ -35,6 +35,9 @@ function! g:DeinHookPostSource(repo) abort
 endfunction
 
 function! g:DeinOpenPluginSettings(plugin_name) abort
+  if a:plugin_name == ""
+    throw "Plugin name is required"
+  endif
   let l:settings_dir = g:dein_plugin_settings_dir . '/' . a:plugin_name
   call mkdir(l:settings_dir, 'p')
   tabnew
