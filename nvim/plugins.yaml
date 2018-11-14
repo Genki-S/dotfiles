@@ -10,6 +10,10 @@
 - tpope/vim-fugitive:
 - tpope/vim-sleuth:
 
+- kana/vim-smartchr:
+    lazy: 1
+    on_i: 1
+
 - fatih/vim-go:
     lazy: 1
     on_ft: go
