@@ -14,6 +14,7 @@
 - kana/vim-smartchr:
     lazy: 1
     on_i: 1
+- tyru/vim-altercmd:
 
 - fatih/vim-go:
     lazy: 1
