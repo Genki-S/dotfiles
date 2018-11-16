@@ -54,7 +54,7 @@ mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() 
 });
 
 // useful for e.g. copying JIRA keys
-// stole from https://github.com/kalbasit/dotfiles/blob/master/.surfingkeys.js.dtmpl
+// stole from https://github.com/kalbasit/dotfiles/blob/master/overlays/all/surfingkeys-config/surfingkeys.js
 function copyLastElementInPath() {
     const locationParts = window.location.href.split('/');
     const lastElement = locationParts[locationParts.length-1].split('#')[0].split('?')[0];
@@ -130,6 +130,7 @@ mapkey('P', '#1Open URL from clipboard in a new tab', () => {
 // insert mode mappings
 imap('<Ctrl-f>', '<Alt-f>')
 imap('<Ctrl-b>', '<Alt-b>')
+imap('<Ctrl-w>', '<Alt-w>')
 
 // set theme {{{
 settings.theme = `
