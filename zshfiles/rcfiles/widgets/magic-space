@@ -51,7 +51,7 @@ case "${LBUFFER}" in
 		# "g"it "b"ranch" "s"elect
 		__git_checkout_fzy
 		;;
-	v)
+	vf)
 		__vim_fzy
 		;;
 	*)
