@@ -1,0 +1,34 @@
+- Shougo/denite.nvim:
+- Shougo/deoplete.nvim:
+- Shougo/neosnippet.vim:
+    lazy: 1
+    on_i: 1
+- Shougo/neosnippet-snippets:
+    lazy: 1
+    on_i: 1
+
+- tpope/vim-fugitive:
+- shumphrey/fugitive-gitlab.vim:
+- tpope/vim-sleuth:
+
+- kana/vim-smartchr:
+    lazy: 1
+    on_i: 1
+- tyru/vim-altercmd:
+
+- fatih/vim-go:
+    lazy: 1
+    on_ft: go
+- zchee/deoplete-go:
+    lazy: 1
+    on_ft: go
+
+- easymotion/vim-easymotion:
+
+- altercation/vim-colors-solarized:
+
+- itchyny/lightline.vim:
+
+- jpalardy/vim-slime:
+    lazy: 1
+    on_map: <Plug>Slime

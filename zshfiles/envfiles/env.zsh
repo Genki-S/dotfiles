@@ -3,8 +3,8 @@ export DOTDIR=$HOME/dotfiles
 export WIDGETDIR=$DOTDIR/zshfiles/rcfiles/widgets
 
 # Preferences
-export EDITOR=vim
-export GIT_EDITOR=vim
+export EDITOR=nvim
+export GIT_EDITOR=nvim
 
 # Locale
 export LANG=en_US.UTF-8
