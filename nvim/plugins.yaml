@@ -28,3 +28,7 @@
 - altercation/vim-colors-solarized:
 
 - itchyny/lightline.vim:
+
+- jpalardy/vim-slime:
+    lazy: 1
+    on_map: <Plug>Slime
