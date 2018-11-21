@@ -173,4 +173,19 @@ settings.theme = `
 }`;
 // }}}
 
+var inlineQuery = {
+  url: function(query) {
+    return "https://eow.alc.co.jp/search?q=" + query
+  },
+
+  parseResult: function(res) {
+    var parser = new DOMParser();
+    var junkHead = /[\s\S]*<div id="resultsList"/;
+    var content = res.text.replace(junkHead, '<div id="resultsList"');
+    var junkTail = /<!-- ▲ 検索結果本体 ▲ -->[\s\S]*/;
+    var content = content.replace(junkTail, '');
+    return content;
+  }
+}
+Front.registerInlineQuery(inlineQuery)
 // vim: foldmethod=marker
