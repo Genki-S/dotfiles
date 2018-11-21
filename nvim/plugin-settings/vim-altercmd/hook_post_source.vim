@@ -24,3 +24,7 @@ AlterCommand sl execute getline('.')
 AlterCommand ev tabedit $MYVIMRC
 AlterCommand ep tabedit $DOTDIR/nvim/plugins.yaml
 AlterCommand eft execute 'tabedit $DOTDIR/nvim/ftplugin/'.&filetype.'.vim'
+
+
+" TweetVim
+AlterCommand tw TweetVimSay

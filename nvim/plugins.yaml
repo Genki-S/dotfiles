@@ -40,3 +40,32 @@
 - diepm/vim-rest-console:
     lazy: 1
     on_ft: rest
+
+- tyru/open-browser.vim:
+    lazy: 1
+    on_source: twibill.vim
+    on_cmd:
+        - OpenBrowser
+        - OpenBrowserSearch
+        - OpenBrowserSmartSearch
+    on_map:
+        - <Plug>(openbrowser
+- basyura/twibill.vim:
+    lazy: 1
+    on_source: TweetVim
+- basyura/TweetVim:
+    lazy: 1
+    on_cmd:
+        - TweetVimVersion
+        - TweetVimAddAccount
+        - TweetVimSwitchAccount
+        - TweetVimHomeTimeline
+        - TweetVimMentions
+        - TweetVimUserTimeline
+        - TweetVimListStatuses
+        - TweetVimSearch
+        - TweetVimSay
+        - TweetVimUserStream
+        - TweetVimCommandSay
+        - TweetVimCurrentLineSay
+        - TweetVimClearIcon
