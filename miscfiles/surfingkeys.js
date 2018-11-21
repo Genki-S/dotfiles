@@ -50,7 +50,8 @@ settings.newTabPosition = "right"
 
 // copies {{{
 mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() {
-    Clipboard.write('[[' + window.location.href + '][' + document.title + ']]');
+    var title = document.title.replace(/[\[\]]+/g, '');
+    Clipboard.write('[[' + window.location.href + '][' + title + ']]');
 });
 
 // useful for e.g. copying JIRA keys
