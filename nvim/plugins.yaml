@@ -36,3 +36,7 @@
 - ElmCast/elm-vim:
     lazy: 1
     on_ft: elm
+
+- diepm/vim-rest-console:
+    lazy: 1
+    on_ft: rest
