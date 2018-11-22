@@ -262,6 +262,7 @@
           (lambda ()
             (call-process "activate-org")
             (call-process "my-notification" nil nil nil "Pomodoro break finished!" (concat "\nPomodoro break finished, go back to your emacs.\n\n\n\n\n" lorem) "--urgency" "critical")))
+(run-at-time nil 5 'genki/org-notify-no-pomodoro)
 
 ;; org-habit
 ;; show habits in the future
@@ -282,6 +283,6 @@
 ; (add-hook 'kill-emacs-hook 'org-mobile-push)
 (add-hook 'org-clock-in-hook 'genki/org-clock-current-task-to-tmux-statusline)
 (add-hook 'org-clock-out-hook 'genki/org-clock-current-task-to-tmux-statusline)
-(run-at-time "00:00" 1 'genki/org-clock-current-task-to-tmux-statusline)
+(run-at-time nil 1 'genki/org-clock-current-task-to-tmux-statusline)
 
 (provide 'setup-org)

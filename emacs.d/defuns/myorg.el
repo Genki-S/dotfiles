@@ -18,6 +18,12 @@
               genki-org-current-task))
       (genki/tmux-set-status-right genki-tmux-status-text))
 
+(defun genki/org-notify-no-pomodoro ()
+  (if (fboundp 'org-pomodoro-active-p)
+    (if (org-pomodoro-active-p)
+      ()
+      (call-process "my-notification" nil nil nil "Pomodoro is not active!" "\nPomodoro is not active, gather yourself and start one!" "--urgency" "critical" "--expire-time" "5000"))))
+
 (defun genki/org-capture-buffer-setup ()
   ;; things always done
   (evil-insert 1)
