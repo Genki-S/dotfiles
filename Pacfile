@@ -35,6 +35,9 @@ ttf-inconsolata
 adobe-source-han-sans-jp-fonts
 noto-fonts-emoji
 
+libnotify
+dunst
+
 # Japanese input
 fcitx
 fcitx-mozc
