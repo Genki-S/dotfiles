@@ -1,0 +1,28 @@
+#!/bin/bash
+
+title="$1"
+shift
+body="$1"
+shift
+rest="$@"
+
+set -euo pipefail
+
+if [ -z "$title" -o -z "$body" ]; then
+  echo "Usage: $0 TITLE BODY [other options]"
+  exit 1
+fi
+
+notify_send=$(which notify-send)
+if [ -x "$notify_send" ]; then
+  notify-send "$title" "$body" $rest
+  exit
+fi
+
+osascript=$(which osascript)
+if [ -x "$osascript" ]; then
+  osx-notification "$title" "$body" $rest
+fi
+
+echo "No notification system found"
+exit 1
