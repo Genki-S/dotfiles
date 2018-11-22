@@ -248,7 +248,20 @@
 (define-key global-map "\C-coc" '(lambda () (interactive) (find-file "~/org/checklist.org")))
 
 ;; org-pomodoro
+(defvar lorem "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 (define-key global-map "\C-cp" 'org-pomodoro)
+(add-hook 'org-pomodoro-finished-hook
+          (lambda ()
+            (call-process "activate-org")
+            (call-process "my-notification" nil nil nil "Pomodoro Finished!" (concat "\nPomodoro finished, go back to your emacs.\n\n\n\n\n" lorem) "--urgency" "critical")))
+(add-hook 'org-pomodoro-killed-hook
+          (lambda ()
+            (call-process "activate-org")
+            (call-process "my-notification" nil nil nil "Pomodoro Killed!" (concat "\nPomodoro killed, go back to your emacs.\n\n\n\n\n" lorem) "--urgency" "critical")))
+(add-hook 'org-pomodoro-break-finished-hook
+          (lambda ()
+            (call-process "activate-org")
+            (call-process "my-notification" nil nil nil "Pomodoro break finished!" (concat "\nPomodoro break finished, go back to your emacs.\n\n\n\n\n" lorem) "--urgency" "critical")))
 
 ;; org-habit
 ;; show habits in the future

@@ -133,15 +133,11 @@
             ;; make it async not to pollute org-pomodoro procedure
             ;; (if I don't make it async, org-pomodoro's countdown speeds up after I finish read-from-minibuffer)
             (run-at-time "1 sec" nil (lambda ()
-                                       (call-process "activate-org")
                                        (finish-pomodoro)
                                        (post-pomodoro)))))
 
 (add-hook 'org-pomodoro-killed-hook
           (lambda ()
             (run-at-time "1 sec" nil (lambda ()
-                                       (call-process "activate-org")
                                        (interrupt-pomodoro)
                                        (post-pomodoro)))))
-
-(add-hook 'org-pomodoro-break-finished-hook (lambda () (call-process "activate-org")))
