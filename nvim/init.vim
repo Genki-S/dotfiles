@@ -9,8 +9,8 @@ set list
 set listchars=tab:>\ ,trail:_,extends:>,precedes:<,conceal:#
 set tabstop=2
 
-" for left padding, plus it's useful when I do :-5t. etc.
-set relativenumber
+" for padding
+set signcolumn=yes
 
 execute 'source ' . g:nvim_config_dir . '/init-dein.vim'
 
