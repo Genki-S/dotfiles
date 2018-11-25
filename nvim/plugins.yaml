@@ -6,6 +6,9 @@
 - Shougo/neosnippet-snippets:
     lazy: 1
     on_i: 1
+- Shougo/defx.nvim:
+    lazy: 1
+    on_cmd: Defx
 
 - tpope/vim-fugitive:
 - shumphrey/fugitive-gitlab.vim:
