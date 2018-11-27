@@ -26,5 +26,6 @@ AlterCommand ep tabedit $DOTDIR/nvim/plugins.yaml
 AlterCommand eft execute 'tabedit $DOTDIR/nvim/ftplugin/'.&filetype.'.vim'
 
 
-" TweetVim
+" for plugins
 AlterCommand tw TweetVimSay
+AlterCommand nse NeoSnippetEdit
