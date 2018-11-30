@@ -1,0 +1,212 @@
+# Profile zsh startup time
+zmodload zsh/zprof
+
+# Oh-my-zsh will perform compinit
+# The following lines were added by compinstall
+# zstyle :compinstall filename "$HOME/.zshrc"
+# autoload -Uz compinit
+# compinit
+# End of lines added by compinstall
+
+# Jump into tmux session automatically {{{
+export AUTO_TMUX_SESSION_NAME="genki"
+if [ -z $TMUX ]; then
+	# assume $SHELL is zsh, and open org mode automatically
+	# (and set window name 'org' so that it can be used by select-window)
+	tmux attach-session -t "$AUTO_TMUX_SESSION_NAME"
+	if [ $? -ne 0 ]; then
+		# Init new tmux session (play around with some tmux scripting)
+		tmux new-session -s "$AUTO_TMUX_SESSION_NAME" -n "org" "$SHELL -i -c 'org'"
+	fi
+	# exit
+	# Not exit in order to use shell outside of tmux on occasion...
+fi
+# }}}
+
+# FIXME: this should be done using LaunchAgent, but it does not work for now
+tmux list-session | grep 'wordstack' > /dev/null
+if [ $? -ne 0 ]; then
+  TMUX='' tmux new-session -d -s 'wordstack' -n 'wordstack' '/usr/local/bin/node ~/dotfiles/miscfiles/word-stack-server.js'
+fi
+tmux list-session | grep 'devdocs' > /dev/null
+if [ $? -ne 0 ]; then
+  TMUX='' tmux new-session -d -c "$HOME/vendor/devdocs" -s 'devdocs' -n 'devdocs' '/usr/local/opt/rbenv/shims/rackup'
+fi
+
+# ==================================================
+# fpath and compinit {{{
+# ==================================================
+fpath+=($GOPATH/src/github.com/motemen/ghq/zsh)
+# More completions from https://github.com/zsh-users/zsh-completions
+fpath+=($DOTDIR/submodules/zsh-completions/src)
+# TODO: this is sourced here only for setting up fpath before sourceing oh-my-zsh. Should be organized better...
+source $DOTDIR/zshfiles/rcfiles/path.zsh
+# }}}
+# ==================================================
+
+# ==================================================
+# oh-my-zsh and other plugins {{{
+# ==================================================
+# Path to your oh-my-zsh configuration.
+ZSH=$DOTDIR/submodules/oh-my-zsh
+
+# Manage theme myself
+ZSH_THEME=""
+
+# make red dots to be displayed while waiting for completion
+COMPLETION_WAITING_DOTS="true"
+
+# plugins to load from oh-my-zsh/plugins
+plugins=(git git-flow tmux command-not-found rbenv)
+
+source $ZSH/oh-my-zsh.sh
+
+# Syntax highlighting from https://github.com/zsh-users/zsh-syntax-highlighting
+source $DOTDIR/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Easy history search from https://github.com/zsh-users/zsh-history-substring-search
+source $DOTDIR/submodules/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# stdkeep (https://github.com/Genki-S/stdkeep)
+source $DOTDIR/submodules/stdkeep/stdkeep.zsh
+
+# Fish-like auto suggestions from https://github.com/zsh-users/zsh-autosuggestions
+source $DOTDIR/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh
+# to see all colors: for code in {000..255}; do print -P -- "$code: %F{$code}Test%f"; done
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
+
+# Source my prompt
+source $DOTDIR/submodules/zsh-git-prompt/zshrc.sh
+export __GIT_PROMPT_DIR=$DOTDIR/submodules/zsh-git-prompt
+__EXECUTED_GIT_COMMAND=1 # To force prompt update at first
+source $DOTDIR/zshfiles/genki.zsh-theme
+# }}}
+# ==================================================
+# My zsh configurations {{{
+# ==================================================
+# Make online help available
+alias run-help >/dev/null 2>&1 && unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/helpfiles
+
+# Load all config files
+rcfiles=(
+	helper.zsh
+	# path.zsh # This is sourced at the fpath section (to setup fpath before sourcing oh-my-zsh)
+	env.zsh
+	sugar.zsh
+	completion.zsh
+	history.zsh
+	hook.zsh
+	highlight.zsh
+	functions.zsh
+	bindkey.zsh
+	vim.zsh
+	git.zsh
+	ruby.zsh
+	fasd.zsh
+	notification.zsh
+	direnv.zsh
+	peco.zsh
+	cdd.zsh
+	go.zsh
+)
+for f in $rcfiles
+do
+	source $DOTDIR/zshfiles/rcfiles/$f
+done
+
+function load-my-functions() {
+  for file in ~/dotfiles/zshfiles/functions/*(:t); do
+    if (( $+functions[$file] )); then
+      unfunction $file
+    fi
+    autoload -Uz $file
+  done
+}
+load-my-functions
+
+# Hooks
+# add-zsh-hook precmd initializer_trigger
+
+# Modules
+zvimdir=$DOTDIR/submodules/zsh-super-vim-mode
+zvim_use_emacs_binding=true
+source $zvimdir/zsh-super-vim-mode.zsh
+
+# Load local zshrc
+[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+
+# }}}
+# ==================================================
+# Miscellaneous {{{
+# ==================================================
+# dircolors-solarized
+eval `dircolors $DOTDIR/submodules/dircolors-solarized/dircolors.256dark`
+# }}}
+# ==================================================
+# Tmux {{{
+# ==================================================
+function tmux_setpwd() {
+	if [ -n "$TMUX" ]; then
+		tmux setenv -g TMUXPWD_$(tmux display -p "#S_#I_#P") `pwd`
+	fi
+}
+chpwd_functions=($chpwd_functions tmux_setpwd)
+
+function tmuxpwd() {
+	tmux showenv -g TMUXPWD_$(tmux display -p "#S_#I_#P") | awk 'BEGIN{FS="="} {print $2}'
+}
+
+# Tmuxinator
+[ -s $HOME/.tmuxinator/scripts/tmuxinator ] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+DISABLE_AUTO_TITLE=true
+# }}}
+# ==================================================
+# Welcome Message {{{
+# ==================================================
+# uname -a
+# # Tmuxinator project list
+# if [ -z "$TMUX" ]; then
+	# echo
+	# echo "=== My Projects ==="
+	# mux list
+# fi
+# }}}
+# ==================================================
+
+# Profile zsh startup time
+zprof > ~/.tmp/profiling/zsh/`date +%Y-%m-%d_%H:%M:%S`
+
+# ==================================================
+# get-shit-done {{{
+# ==================================================
+# check if work mode has been set
+hosts_file="/etc/hosts"
+start_token="## start-gsd"
+end_token="## end-gsd"
+if ! grep $start_token $hosts_file &> /dev/null; then
+	if ! grep $end_token $hosts_file &> /dev/null; then
+		echo "Let's get shit done!"
+		# get-shit-done work
+	fi
+fi
+# }}}
+# ==================================================
+
+# clean $path
+# http://blog.n-z.jp/blog/2013-12-12-zsh-cleanup-path.html
+path=(
+	# allow directories only (-/)
+	# reject world-writable directories (^W)
+	${^path}(N-/^W)
+)
+
+# vim: foldmethod=marker
+
+# The next line updates PATH for the Google Cloud SDK.
+[ -s '/home/genki/Downloads/google-cloud-sdk/path.zsh.inc' ] && source '/home/genki/Downloads/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+[ -s '/home/genki/Downloads/google-cloud-sdk/completion.zsh.inc' ] && source '/home/genki/Downloads/google-cloud-sdk/completion.zsh.inc' || true
