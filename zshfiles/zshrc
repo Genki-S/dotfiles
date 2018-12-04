@@ -1,6 +1,7 @@
 rcfiles=(
   prompt.zsh
   git.zsh
+  nvim.zsh
 )
 for f in $rcfiles
 do
