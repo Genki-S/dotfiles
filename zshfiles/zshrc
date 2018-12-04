@@ -1,0 +1,7 @@
+rcfiles=(
+  prompt.zsh
+)
+for f in $rcfiles
+do
+  source $DOTDIR/zshfiles/rcfiles/$f
+done
