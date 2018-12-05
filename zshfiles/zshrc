@@ -1,3 +1,7 @@
+# Plugins {{{
+eval "$(fasd --init auto)"
+# }}}
+
 rcfiles=(
   prompt.zsh
   git.zsh
@@ -8,3 +12,5 @@ for f in $rcfiles
 do
   source $DOTDIR/zshfiles/rcfiles/$f
 done
+
+# vim:foldmethod=marker

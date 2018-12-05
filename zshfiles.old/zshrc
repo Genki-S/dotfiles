@@ -108,7 +108,6 @@ rcfiles=(
 	notification.zsh
 	direnv.zsh
 	peco.zsh
-	cdd.zsh
 	go.zsh
 )
 for f in $rcfiles
