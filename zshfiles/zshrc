@@ -1,5 +1,6 @@
 # Plugins {{{
 eval "$(fasd --init auto)"
+eval "$(direnv hook zsh)"
 # }}}
 
 rcfiles=(
