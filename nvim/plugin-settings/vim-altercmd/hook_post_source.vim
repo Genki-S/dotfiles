@@ -22,8 +22,8 @@ AlterCommand sl execute getline('.')
 
 " e: edit
 AlterCommand ev tabedit $MYVIMRC
-AlterCommand ep tabedit $DOTDIR/nvim/plugins.yaml
-AlterCommand eft execute 'tabedit $DOTDIR/nvim/ftplugin/'.&filetype.'.vim'
+AlterCommand ep tabedit $HOME/dotfiles/nvim/plugins.yaml
+AlterCommand eft execute 'tabedit $HOME/dotfiles/nvim/ftplugin/'.&filetype.'.vim'
 
 
 " for plugins

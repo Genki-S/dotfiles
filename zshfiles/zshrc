@@ -1,8 +1,3 @@
-# Plugins {{{
-eval "$(fasd --init auto)"
-eval "$(direnv hook zsh)"
-# }}}
-
 rcfiles=(
   prompt.zsh
   history.zsh
@@ -12,7 +7,12 @@ rcfiles=(
 )
 for f in $rcfiles
 do
-  source $DOTDIR/zshfiles/rcfiles/$f
+  source $HOME/dotfiles/zshfiles/rcfiles/$f
 done
+
+# Plugins {{{
+eval "$(fasd --init auto)"
+eval "$(direnv hook zsh)"
+# }}}
 
 # vim:foldmethod=marker

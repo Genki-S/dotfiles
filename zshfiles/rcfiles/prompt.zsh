@@ -5,7 +5,7 @@ autoload -U colors && colors
 
 # TODO: Consider if having zsh-git-prompt is worth the delay
 #       If I don't use it, be sure to remove zsh-git-prompt from submodule
-#source $DOTDIR/submodules/zsh-git-prompt/zshrc.sh
+#source $HOME/dotfiles/submodules/zsh-git-prompt/zshrc.sh
 #GIT_PROMPT_EXECUTABLE='haskell'
 
 () {
