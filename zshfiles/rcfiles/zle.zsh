@@ -19,3 +19,4 @@ bindkey '^[' vi-cmd-mode
 }
 
 bindkey ' ' magic-space
+bindkey '^z' foreground

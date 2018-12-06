@@ -1,0 +1,9 @@
+# vim: filetype=zsh
+
+# foreground calls fg (meant to be bounded to <C-z>)
+
+if [[ $#BUFFER -gt 0 ]]; then
+  zle push-input
+fi
+BUFFER='fg'
+zle accept-line
