@@ -5,9 +5,10 @@ eval "$(direnv hook zsh)"
 
 rcfiles=(
   prompt.zsh
+  history.zsh
+  zle.zsh
   git.zsh
   nvim.zsh
-  zle.zsh
 )
 for f in $rcfiles
 do
