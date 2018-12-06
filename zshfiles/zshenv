@@ -1,0 +1,8 @@
+# Load all config files
+envfiles=(
+  path.zsh
+)
+for f in $envfiles
+do
+  source $HOME/dotfiles/zshfiles/envfiles/$f
+done
