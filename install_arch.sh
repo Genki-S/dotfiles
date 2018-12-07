@@ -32,6 +32,8 @@ while read pkg; do
   sudo pacman -S --noconfirm $pkg
 done < $HOME/dotfiles/Pacfile
 
+# TODO: Use anyenv to install rbenv
+
 # install AUR
 declare -a aurpkgs=(
   "rbenv"
