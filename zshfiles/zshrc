@@ -10,6 +10,10 @@ do
   source $HOME/dotfiles/zshfiles/rcfiles/$f
 done
 
+# Misc. {{{
+alias org='tmux rename-window org; ORGMODE=1 emacs -nw ~/org/dashboard.org'
+# }}}
+
 # Plugins {{{
 eval "$(fasd --init auto)"
 eval "$(direnv hook zsh)"
