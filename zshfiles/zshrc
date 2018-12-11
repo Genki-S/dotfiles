@@ -17,6 +17,26 @@ alias org='tmux rename-window org; ORGMODE=1 emacs -nw ~/org/dashboard.org'
 # Plugins {{{
 eval "$(fasd --init auto)"
 eval "$(direnv hook zsh)"
+
+# Syntax highlighting from https://github.com/zsh-users/zsh-syntax-highlighting
+source $HOME/dotfiles/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Easy history search from https://github.com/zsh-users/zsh-history-substring-search
+source $HOME/dotfiles/submodules/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+
+# Fish-like auto suggestions from https://github.com/zsh-users/zsh-autosuggestions
+source $HOME/dotfiles/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
+# to see all colors: for code in {000..255}; do print -P -- "$code: %F{$code}Test%f"; done
+
+# More completions from https://github.com/zsh-users/zsh-completions
+fpath+=($HOME/dotfiles/submodules/zsh-completions/src)
+
 # }}}
+
+autoload -Uz compinit
+compinit
 
 # vim:foldmethod=marker
