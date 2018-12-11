@@ -1,4 +1,5 @@
 #!/bin/zsh
+
 if is_mac; then
   reattach-to-user-namespace pbpaste
 else

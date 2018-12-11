@@ -1,0 +1,8 @@
+# vim: filetype=zsh
+
+() {
+  local query="$BUFFER"
+  BUFFER=$( fc -l 1 | sed 's/ *[0-9]* *//' | tac | fzy --query "$query" )
+  CURSOR=$#BUFFER # move cursor
+  zle reset-prompt
+}

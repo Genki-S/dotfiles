@@ -1,27 +1,23 @@
-if is_mac; then
-	path=(
-		# Brew bin prevails
-		/usr/local/bin
-		# Python bin
-		/usr/local/share/python
-		# Go bin
-		$GOPATH/bin
-		# npm bin
-		$HOME/dotfiles/node_modules/.bin
-		# anaconda
-		$HOME/anaconda3/bin
-		# Cargo
-		$HOME/.cargo/bin
-		$path
-	)
-else
-	path=(
-		# Go bin
-		$GOPATH/bin
-		# npm bin
-		$HOME/dotfiles/node_modules/.bin
-		# Cargo
-		$HOME/.cargo/bin
-		$path
-	)
-fi
+# Remove duplications
+typeset -U path cdpath manpath fpath
+
+# path(...): add only if condition(...) is true
+#  N: NULL_GLOB option
+#  -: follow symlink
+#  /: directory
+
+path=(
+  $HOME/dotfiles/bin(N/)
+  $(go env GOPATH)/bin(N/)
+  $HOME/.cargo/bin
+  $path
+)
+
+# clean $path
+# http://blog.n-z.jp/blog/2013-12-12-zsh-cleanup-path.html
+path=(
+  # allow directories only (-/)
+  # reject world-writable directories (^W)
+  ${^path}(N-/^W)
+)
+

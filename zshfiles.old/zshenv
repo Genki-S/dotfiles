@@ -1,0 +1,63 @@
+# The file load order is
+#
+# Always read
+#   global zshenv
+#   .zshenv (except zsh -f which only read global zshenv)
+#
+# If login shell
+#   global zprofile
+#   .zprofile
+#
+# If interactive shell
+#   global zshrc
+#   .zshrc
+#
+# If login shell
+#   global zlogin
+#   .zlogin
+
+# ==================================================
+# Utilities
+# ==================================================
+function executable() {
+	command -v $* > /dev/null
+}
+
+function is_mac() {
+	[[ $OSTYPE =~ 'darwin' ]]
+}
+
+# ==================================================
+# Boxen
+# ==================================================
+# Stopped using boxen since it made zsh startup time significantly slow
+# [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+# ==================================================
+
+# ==================================================
+# My zshenv
+# ==================================================
+if [[ ! -o NORCS ]]; then
+	# Load all config files
+	envfiles=(
+		path.zsh
+		env.zsh
+		ruby.zsh
+		go.zsh
+	)
+	for f in $envfiles
+	do
+		source $HOME/dotfiles/zshfiles/envfiles/$f
+	done
+fi
+
+# clean $path
+# http://blog.n-z.jp/blog/2013-12-12-zsh-cleanup-path.html
+path=(
+	# allow directories only (-/)
+	# reject world-writable directories (^W)
+	${^path}(N-/^W)
+)
+
+# Load local zshenv
+[ -f $HOME/.zshenv.local ] && source $HOME/.zshenv.local
