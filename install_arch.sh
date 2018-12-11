@@ -44,6 +44,7 @@ declare -a aurpkgs=(
   "vivaldi"
   "ncurses5-compat-libs"  # needed by vivaldi-ffmpeg-codecs
   "vivaldi-ffmpeg-codecs" # to support H.264 on vivaldi
+  "unclutter-xfixes-git"
 )
 for aurpkg in "${aurpkgs[@]}"; do
   (cd $HOME/dotfiles/submodules/aur/$aurpkg && makepkg -si)

@@ -91,3 +91,6 @@
 [submodule "submodules/aur/ncurses5-compat-libs"]
 	path = submodules/aur/ncurses5-compat-libs
 	url = https://aur.archlinux.org/ncurses5-compat-libs.git
+[submodule "submodules/aur/unclutter-xfixes-git"]
+	path = submodules/aur/unclutter-xfixes-git
+	url = https://aur.archlinux.org/unclutter-xfixes-git.git
