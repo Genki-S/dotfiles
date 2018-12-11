@@ -9,6 +9,9 @@ set list
 set listchars=tab:>\ ,trail:_,extends:>,precedes:<,conceal:#
 set tabstop=2
 
+set ignorecase
+set smartcase
+
 " for padding
 set signcolumn=yes
 
