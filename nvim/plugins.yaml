@@ -11,6 +11,15 @@
 - shumphrey/fugitive-gitlab.vim:
 - tpope/vim-sleuth:
 
+- kana/vim-operator-user: # only autoload files, no need to make this lazy
+- kana/vim-textobj-user: # only autoload files, no need to make this lazy
+- rhysd/vim-operator-surround:
+    lazy: 1
+    on_map: <Plug>(operator-surround-
+- thinca/vim-textobj-between:
+    lazy: 1
+    on_map: <Plug>(textobj-between-
+
 - kana/vim-smartchr:
     lazy: 1
     on_i: 1
