@@ -1,3 +1,4 @@
+# Shougoware {{{
 - Shougo/denite.nvim:
 - Shougo/deoplete.nvim:
 - Shougo/neosnippet.vim:
@@ -6,50 +7,39 @@
 - Shougo/defx.nvim:
     lazy: 1
     on_cmd: Defx
+# }}}
 
-- tpope/vim-fugitive:
-- shumphrey/fugitive-gitlab.vim:
-- tpope/vim-sleuth:
-
+# operator-user {{{
 - kana/vim-operator-user: # only autoload files, no need to make this lazy
-- kana/vim-textobj-user: # only autoload files, no need to make this lazy
 - rhysd/vim-operator-surround:
     lazy: 1
     on_map: <Plug>(operator-surround-
+# }}}
+
+# textobj-user {{{
+- kana/vim-textobj-user: # only autoload files, no need to make this lazy
 - thinca/vim-textobj-between:
     lazy: 1
     on_map: <Plug>(textobj-between-
+# }}}
 
-- kana/vim-smartchr:
-    lazy: 1
-    on_i: 1
-- tyru/vim-altercmd:
-
-- fatih/vim-go:
-    lazy: 1
-    on_ft: go
-- zchee/deoplete-go:
-    lazy: 1
-    on_ft: go
-
-- easymotion/vim-easymotion:
-
+# visual {{{
 - altercation/vim-colors-solarized:
-
 - itchyny/lightline.vim:
+# }}}
 
+# communicating with outer world {{{
+
+# git
+- tpope/vim-fugitive:
+- shumphrey/fugitive-gitlab.vim:
+
+# tmux
 - jpalardy/vim-slime:
     lazy: 1
     on_map: <Plug>Slime
 
-- ElmCast/elm-vim:
-    lazy: 1
-    on_ft: elm
-
-- diepm/vim-rest-console:
-    lazy: 1
-    on_ft: rest
-
+# browser
 - tyru/open-browser.vim:
     lazy: 1
     on_source: twibill.vim
@@ -59,6 +49,8 @@
         - OpenBrowserSmartSearch
     on_map:
         - <Plug>(openbrowser
+
+# twitter
 - basyura/twibill.vim:
     lazy: 1
     on_source: TweetVim
@@ -78,3 +70,34 @@
         - TweetVimCommandSay
         - TweetVimCurrentLineSay
         - TweetVimClearIcon
+
+# }}}
+
+# filetype specific {{{
+- fatih/vim-go:
+    lazy: 1
+    on_ft: go
+- zchee/deoplete-go:
+    lazy: 1
+    on_ft: go
+
+- ElmCast/elm-vim:
+    lazy: 1
+    on_ft: elm
+
+- diepm/vim-rest-console:
+    lazy: 1
+    on_ft: rest
+# }}}
+
+- tpope/vim-sleuth:
+
+- easymotion/vim-easymotion:
+
+- kana/vim-smartchr:
+    lazy: 1
+    on_i: 1
+
+- tyru/vim-altercmd:
+
+# vim: foldmethod=marker
