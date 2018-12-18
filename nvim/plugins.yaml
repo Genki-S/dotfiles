@@ -100,4 +100,8 @@
 
 - tyru/vim-altercmd:
 
+- tyru/caw.vim:
+    lazy: 1
+    on_map: <Plug>(caw
+
 # vim: foldmethod=marker
