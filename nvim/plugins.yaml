@@ -104,4 +104,9 @@
     lazy: 1
     on_map: <Plug>(caw
 
+- AndrewRadev/splitjoin.vim:
+    lazy: 1
+    on_map:
+        - <Plug>Splitjoin
+
 # vim: foldmethod=marker
