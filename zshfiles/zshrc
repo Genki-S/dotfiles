@@ -4,6 +4,7 @@ rcfiles=(
   prompt.zsh
   history.zsh
   zle.zsh
+  completion.zsh
   git.zsh
   nvim.zsh
 )
