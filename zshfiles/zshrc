@@ -46,6 +46,9 @@ fpath+=($HOME/dotfiles/submodules/zsh-completions/src)
 
 # }}}
 
+# Load local zshrc
+[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+
 autoload -Uz compinit
 compinit
 

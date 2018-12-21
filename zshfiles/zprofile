@@ -5,4 +5,7 @@ path=(
 
 eval "$(anyenv init -)"
 
+# Load local zprofile
+[ -f $HOME/.zprofile.local ] && source $HOME/.zprofile.local
+
 # vim:filetype=zsh

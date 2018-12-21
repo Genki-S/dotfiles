@@ -6,3 +6,6 @@ for f in $envfiles
 do
   source $HOME/dotfiles/zshfiles/envfiles/$f
 done
+
+# Load local zshenv
+[ -f $HOME/.zshenv.local ] && source $HOME/.zshenv.local
