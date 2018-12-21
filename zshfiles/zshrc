@@ -18,6 +18,8 @@ done
 # Regard '-' and '/' as word stops (better backword-kill-word behavior)
 WORDCHARS=$(echo $WORDCHARS | fold -w 1 | grep -v '/' | grep -v '-' | paste -s -d' ' | sed 's/ //g')
 
+setopt auto_pushd
+
 alias org='tmux rename-window org; ORGMODE=1 emacs -nw ~/org/dashboard.org'
 
 # }}}

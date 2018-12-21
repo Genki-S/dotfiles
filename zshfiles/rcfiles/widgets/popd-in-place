@@ -1,0 +1,10 @@
+# vim: filetype=zsh
+
+() {
+  if [[ `dirs -p | wc -l` -eq 1 ]]; then
+    read-from-minibuffer -k 1 "directory stack empty"
+  else
+    popd > /dev/null
+    zle reset-prompt
+  fi
+}
