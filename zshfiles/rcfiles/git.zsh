@@ -32,4 +32,16 @@ alias gsdrop='git stash drop'
 alias tigb='tig master..HEAD' # see branch commits
 # }}}
 
+# Stolen from oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh/blob/97c03841691021f916c46b2fd2d089d7970400aa/lib/git.zsh#L61-L74
+function git_current_branch() {
+  local ref
+  ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
+  local ret=$?
+  if [[ $ret != 0 ]]; then
+    [[ $ret == 128 ]] && return  # no git repo.
+    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+  fi
+  echo ${ref#refs/heads/}
+}
+
 # vim:foldmethod=marker
