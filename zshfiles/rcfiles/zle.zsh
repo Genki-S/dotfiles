@@ -30,3 +30,4 @@ bindkey ' ' magic-space
 bindkey '^z' foreground
 bindkey '^r' interactive-reverse-i-search
 bindkey '^o' popd-in-place
+bindkey '^I' expand-or-complete-with-dots
