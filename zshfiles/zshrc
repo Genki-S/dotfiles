@@ -5,6 +5,7 @@ rcfiles=(
   history.zsh
   zle.zsh
   completion.zsh
+  hooks.zsh
   git.zsh
   nvim.zsh
 )
