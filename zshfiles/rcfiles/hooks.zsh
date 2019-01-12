@@ -5,6 +5,13 @@
 #   https://github.com/alloy/terminal-notifier
 
 REPORTTIME_SECONDS=3
+NOTIFY_EXCLUDE_COMMANDS=(
+  nvim
+  git
+  tig
+  fg
+  man
+)
 
 notify-preexec-hook() {
   zsh_notifier_cmd="$1"
@@ -18,6 +25,9 @@ notify-precmd-hook() {
   fi
 
   local raw_cmd=${zsh_notifier_raw_cmd%% *}
+  if [ ${NOTIFY_EXCLUDE_COMMANDS[(i)${raw_cmd}]} -le ${#NOTIFY_EXCLUDE_COMMANDS} ]; then
+    return
+  fi
 
   local time_taken
   time_taken=$(( `date +%s` - ${zsh_notifier_time}  ))
