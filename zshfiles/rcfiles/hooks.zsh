@@ -46,13 +46,13 @@ notify-precmd-hook() {
         local sound=${NOTIFY_SUCCESS_SOUNDS[${idx}]}
         # double fork (so that this won't be counted as background job of current shell)
         # https://stackoverflow.com/a/20338327
-        ( ffplay -nodisp -autoexit "$sound" &> /dev/null & )
+        ( ffplay -nodisp -autoexit -volume 20 "$sound" &> /dev/null & )
       fi
       if [[ ${#NOTIFY_FAILURE_SOUNDS} -gt 0 && $exit_code -ne 0 ]]; then
         local len=${#NOTIFY_FAILURE_SOUNDS}
         local idx=$(( $[${RANDOM}%${len}] + 1 ))
         local sound=${NOTIFY_FAILURE_SOUNDS[${idx}]}
-        ( ffplay -nodisp -autoexit "$sound" &> /dev/null & )
+        ( ffplay -nodisp -autoexit -volume 20 "$sound" &> /dev/null & )
       fi
     fi
   fi
