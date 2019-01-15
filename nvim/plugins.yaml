@@ -91,6 +91,10 @@
     on_ft: rest
 # }}}
 
+- autozimu/LanguageClient-neovim:
+    rev: next
+    build: 'bash install.sh'
+
 - tpope/vim-sleuth:
 
 - easymotion/vim-easymotion:
