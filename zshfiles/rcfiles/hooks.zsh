@@ -11,6 +11,9 @@ NLCF_EXCLUDE_COMMANDS=(
   tig
   fg
   man
+  tmux
+  htop
+  ssh
 )
 
 NLCF_SUCCESS_SOUNDS=()
