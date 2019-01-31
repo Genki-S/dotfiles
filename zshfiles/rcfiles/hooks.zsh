@@ -71,7 +71,7 @@ nlcf-precmd-hook() {
 
 
 preexec_functions+=(nlcf-preexec-hook)
-precmd_functions+=(nlcf-precmd-hook ring)
+precmd_functions+=(nlcf-precmd-hook)
 
 PERIOD=60
 periodic_functions+=(norg-periodic-hook)
