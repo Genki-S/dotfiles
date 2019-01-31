@@ -1,3 +1,11 @@
+# NORG: Notify if Emacs (org-mode) is not open {{{
+norg-periodic-hook () {
+  if ! pgrep 'emacs' &> /dev/null ; then
+    my-notification "org-mode is not open" "org-mode is not open, open one to track my work"
+  fi
+}
+# }}}
+
 # NLCF: Notify Long-running Command Finish {{{
 # Got ideas from these:
 #   http://superuser.com/questions/553564/is-there-a-way-to-make-zsh-run-a-command-after-reporttime
@@ -61,7 +69,11 @@ nlcf-precmd-hook() {
 }
 # }}}
 
+
 preexec_functions+=(nlcf-preexec-hook)
 precmd_functions+=(nlcf-precmd-hook ring)
+
+PERIOD=60
+periodic_functions+=(norg-periodic-hook)
 
 # vim: foldmethod=marker
