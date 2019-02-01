@@ -114,4 +114,10 @@
     on_map:
         - <Plug>Splitjoin
 
+- sk1418/QFGrep:
+    lazy: 1
+    on_map:
+        - <Plug>QFGrep
+        - <Plug>QFRestore
+
 # vim: foldmethod=marker
