@@ -15,6 +15,14 @@ set smartcase
 " for padding
 set signcolumn=yes
 
+" unimpaired-like mappings: https://github.com/tpope/vim-unimpaired/blob/master/plugin/unimpaired.vim
+let s:unimpaired_prev = "["
+let s:unimpaired_next = "]"
+execute 'nnoremap <silent> ' . s:unimpaired_prev . 'q <Cmd>cprevious<CR>'
+execute 'nnoremap <silent> ' . s:unimpaired_next . 'q <Cmd>cnext<CR>'
+execute 'nnoremap <silent> ' . s:unimpaired_prev . 'l <Cmd>lprevious<CR>'
+execute 'nnoremap <silent> ' . s:unimpaired_next . 'l <Cmd>lnext<CR>'
+
 execute 'source ' . g:nvim_config_dir . '/init-dein.vim'
 
 let local_init = g:nvim_config_dir . '/init.local.vim'
