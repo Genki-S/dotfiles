@@ -54,6 +54,13 @@ mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() 
     Clipboard.write('[[' + window.location.href + '][' + title + ']]');
 });
 
+mapkey('ym', "#7Copy current page's URL & title in markdown format", function() {
+    var title = document.title.replace(/[\[\]]+/g, '');
+    const locationParts = window.location.href.split('/');
+    const lastElement = locationParts[locationParts.length-1].split('#')[0].split('?')[0];
+    Clipboard.write('[' + lastElement + '](' + window.location.href + ')');
+});
+
 // useful for e.g. copying JIRA keys
 // stole from https://github.com/kalbasit/dotfiles/blob/master/overlays/all/surfingkeys-config/surfingkeys.js
 function copyLastElementInPath() {
