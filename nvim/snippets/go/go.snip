@@ -1,0 +1,67 @@
+snippet     ff
+abbr        fmt.Printf(...)
+options     head
+  fmt.Printf("${1} = %+v\n", $1)
+  ${0}
+
+snippet     pl
+abbr        fmt.Println(...)
+options     head
+  fmt.Println("${1}")
+  ${0}
+
+snippet     fun
+abbr        func Func(...) [error] { ... }
+options     head
+  func ${1:Do}(${2}) ${3:error }{
+    ${0}
+  }
+
+snippet     meth
+abbr        func (self Type) Method(...) [error] { ... }
+options     head
+  func (${1:self} ${2:Type}) ${3:Do}(${4}) ${5:error }{
+    ${0}
+  }
+
+snippet     ife
+abbr        if err != nil { ... }
+options     head
+  if err != nil {
+    ${0}
+  }
+
+snippet     forr
+abbr        for k, v := range items { ... }
+options     head
+  for ${2:k}, ${3:v} := range ${1} {
+    ${0}
+  }
+
+snippet     struct
+abbr        type X struct
+options     head
+  type ${1} struct {
+    ${0}
+  }
+
+snippet     ctx
+abbr        ctx context.Context
+  ctx context.Context
+
+snippet     cb
+abbr        context.Background()
+  context.Background()
+
+snippet     cc
+abbr        context with cancel
+options     head
+  ctx, ${1:cancel} := context.WithCancel(${2:context.Background()})
+  defer $1()
+
+snippet     ct
+abbr        context with timeout
+options     head
+  ctx, ${1:cancel} := context.WithTimeout(${2:context.Background()}, ${3:timeout})
+  ${4:defer $1()}
+
