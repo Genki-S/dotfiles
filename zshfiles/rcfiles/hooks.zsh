@@ -49,7 +49,7 @@ nlcf-precmd-hook() {
         local sound=${NLCF_SUCCESS_SOUNDS[${idx}]}
         # double fork (so that this won't be counted as background job of current shell)
         # https://stackoverflow.com/a/20338327
-        ( ffplay -nodisp -autoexit -volume 20 "$sound" &> /dev/null & )
+        ( ffplay -nodisp -autoexit -volume 10 "$sound" &> /dev/null & )
       fi
       if [[ ${#NLCF_FAILURE_SOUNDS} -gt 0 && $exit_code -ne 0 ]]; then
         local len=${#NLCF_FAILURE_SOUNDS}
