@@ -60,6 +60,9 @@ PreCommit:
   W3cCss:
     enabled: true
   W3cHtml:
+    enabled: true
+  GoVet:
+    enabled: true
 
   # Original
   LineLength:
@@ -145,10 +148,6 @@ PreCommit:
   GoTest:
     enabled: true
     description: 'Checking if Go test passes'
-    required_executable: 'go'
-  GoVet:
-    enabled: true
-    description: 'Checking if Go vet passes'
     required_executable: 'go'
 
 PrePush:
