@@ -13,7 +13,6 @@
 	email = cfhoyuk.reccos.nelg@gmail.com
 
 [core]
-	editor = vim
 	excludesfile = ~/.gitignore_global
 
 [push]

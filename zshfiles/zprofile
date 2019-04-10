@@ -5,6 +5,11 @@ path=(
 
 eval "$(anyenv init -)"
 
+# about EDITOR and VISUAL: https://unix.stackexchange.com/a/4861
+export VISUAL="nvim"
+export EDITOR="$VISUAL"
+export GIT_EDITOR="$VISUAL"
+
 # Load local zprofile
 [ -f $HOME/.zprofile.local ] && source $HOME/.zprofile.local
 
