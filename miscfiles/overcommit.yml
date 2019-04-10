@@ -63,6 +63,12 @@ PreCommit:
     enabled: true
   GoVet:
     enabled: true
+  ShellCheck:
+    enabled: true
+  YamlLint:
+    enabled: true
+  YamlSyntax:
+    enabled: true
 
   # Original
   LineLength:
