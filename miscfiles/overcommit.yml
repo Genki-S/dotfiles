@@ -69,6 +69,8 @@ PreCommit:
     enabled: true
   YamlSyntax:
     enabled: true
+  FixMe:
+    enabled: true
 
   # Original
   LineLength:
