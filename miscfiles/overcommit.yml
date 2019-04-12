@@ -135,10 +135,10 @@ PreCommit:
     include:
       - '**/*.java'
     target: 'errorprone'
-  Gometalinter:
+  GolangciLint:
     enabled: true
-    description: 'Linting with gometalinter'
-    required_executable: 'gometalinter'
+    description: 'Linting with golangci-lint'
+    required_executable: 'golangci-lint'
     include:
       - '**/*.go'
   NoDebugPrint:
