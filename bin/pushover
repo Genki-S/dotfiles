@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+  echo "Usage: $0 MESSAGE"
+  exit 1
+fi
+
+message=$1
+
+if [[ -z "$PUSHOVER_DOTFILES_API_KEY" ]]; then
+  echo "PUSHOVER_DOTFILES_API_KEY should be set" >&2
+fi
+
+if [[ -z "$PUSHOVER_USER_KEY" ]]; then
+  echo "PUSHOVER_USER_KEY should be set" >&2
+fi
+
+curl -s \
+  --form-string "token=$PUSHOVER_DOTFILES_API_KEY" \
+  --form-string "user=$PUSHOVER_USER_KEY" \
+  --form-string "message=$message" \
+  https://api.pushover.net/1/messages.json
