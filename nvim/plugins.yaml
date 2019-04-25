@@ -35,6 +35,14 @@
 - tpope/vim-rhubarb:
 - shumphrey/fugitive-gitlab.vim:
 
+# grep
+- mhinz/vim-grepper:
+    lazy: 1
+    on_cmd:
+        - Grepper
+    on_map:
+        - <Plug>(GrepperOperator)
+
 # tmux
 - jpalardy/vim-slime:
     lazy: 1
