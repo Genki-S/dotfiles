@@ -29,29 +29,14 @@
 	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
 	trustExitCode = true
 
-[github]
-	user = Genki-S
-
 [color "diff"]
 	new = cyan
-
-[include]
-	path = ~/.gitconfig.local
-
-[hub]
-	protocol = https
 
 [init]
 	templatedir = ~/.git_template_dir
 
-[ghi]
-	token = !security find-internet-password -a Genki-S -s github.com -l 'ghi token' -w
-
 [rerere]
 	enabled = true
-
-[include]
-	path = ~/.gitconfig_local
 
 [diff]
 	tool = vimdiff
@@ -61,3 +46,6 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+
+[include]
+	path = ~/.gitconfig.local
