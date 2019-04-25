@@ -253,14 +253,17 @@
 (add-hook 'org-pomodoro-finished-hook
           (lambda ()
             (call-process "activate-org")
+            (call-process "pushover" nil nil nil "org-pomodoro: Pomodoro Finished!")
             (call-process "my-notification" nil nil nil "Pomodoro Finished!" (concat "\nPomodoro finished, go back to your emacs.\n\n\n\n\n" lorem) "--urgency" "critical")))
 (add-hook 'org-pomodoro-killed-hook
           (lambda ()
             (call-process "activate-org")
+            (call-process "pushover" nil nil nil "org-pomodoro: Pomodoro Killed!")
             (call-process "my-notification" nil nil nil "Pomodoro Killed!" (concat "\nPomodoro killed, go back to your emacs.\n\n\n\n\n" lorem) "--urgency" "critical")))
 (add-hook 'org-pomodoro-break-finished-hook
           (lambda ()
             (call-process "activate-org")
+            (call-process "pushover" nil nil nil "org-pomodoro: Pomodoro break finished!")
             (call-process "my-notification" nil nil nil "Pomodoro break finished!" (concat "\nPomodoro break finished, go back to your emacs.\n\n\n\n\n" lorem) "--urgency" "critical")))
 (run-at-time nil 5 'genki/org-notify-no-pomodoro)
 
