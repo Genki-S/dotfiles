@@ -113,7 +113,8 @@
     rev: next
     build: 'bash install.sh'
     lazy: 1
-    # TODO: add on_ft for languages I want to use lsp
+    on_ft:
+        - python
 
 - tpope/vim-sleuth:
 
