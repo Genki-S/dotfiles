@@ -1,3 +1,6 @@
+unmap('j')
+unmap('k')
+
 map('<Ctrl-n>', 'R') // next tab
 map('<Ctrl-p>', 'E') // prev tab
 // TODO: maybe use mapkey to free R/E mappings
@@ -10,8 +13,12 @@ mapkey('<Ctrl-i>', '#4Go forward in history', function() {
 }, {repeatIgnore: true});
 
 // scrolls {{{
-map('<Ctrl-e>', 'j')
-map('<Ctrl-y>', 'k')
+mapkey('<Ctrl-y>', '#2Scroll up', function() {
+    Normal.scroll('up')
+}, {repeatIgnore: true})
+mapkey('<Ctrl-e>', '#2Scroll down', function() {
+    Normal.scroll('down')
+}, {repeatIgnore: true})
 mapkey('<Ctrl-d>', '#2Scroll a page down', function() {
     Normal.scroll('pageDown')
 }, {repeatIgnore: true});
