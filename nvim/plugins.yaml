@@ -58,6 +58,8 @@
         - OpenBrowserSmartSearch
     on_map:
         - <Plug>(openbrowser
+    on_ft:
+        - markdown # for previm
 
 # twitter
 - basyura/twibill.vim:
@@ -79,6 +81,12 @@
         - TweetVimCommandSay
         - TweetVimCurrentLineSay
         - TweetVimClearIcon
+
+# markdown
+- previm/previm:
+    lazy: 1
+    on_ft:
+        - markdown
 
 # }}}
 
