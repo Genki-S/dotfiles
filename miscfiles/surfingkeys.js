@@ -53,6 +53,8 @@ mapkey(',r', '#11Reload settings', () => {
 settings.hintAlign = 'left';
 // open new tabs to the right of the current one
 settings.newTabPosition = "right"
+// no hint-style tab selection (always use omnibar, for consistency)
+settings.tabsThreshold = 0
 // }}}
 
 // copies {{{
