@@ -15,6 +15,16 @@ set smartcase
 " for padding
 set signcolumn=yes
 
+" search experience (/, ?)
+" see :help 'incsearch'
+set nohlsearch
+augroup vimrc-incsearch-highlight
+	autocmd!
+	autocmd CmdlineEnter /,\? :set hlsearch
+	autocmd CmdlineLeave /,\? :set nohlsearch
+augroup END
+
+
 " unimpaired-like mappings: https://github.com/tpope/vim-unimpaired/blob/master/plugin/unimpaired.vim
 let s:unimpaired_prev = "["
 let s:unimpaired_next = "]"
