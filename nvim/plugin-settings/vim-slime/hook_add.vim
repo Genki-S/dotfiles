@@ -7,9 +7,16 @@ nmap <Leader>s <SID>[slime]
 xnoremap <SID>[slime] <Nop>
 xmap <Leader>s <SID>[slime]
 
-xmap <silent> <SID>[slime]s <Plug>SlimeRegionSend
-nmap <silent> <SID>[slime]s <Plug>SlimeLineSend
-nmap <silent> <SID>[slime]p <Plug>SlimeParagraphSend
-nmap <silent> <SID>[slime]m <Plug>SlimeMotionSend
-nmap <silent> <SID>[slime]a <Cmd>%SlimeSend<CR>
-nmap <silent> <SID>[slime]c <Plug>SlimeConfig
+function! s:my_slime_config() abort
+	:SlimeConfig
+	echomsg "[vim-slime hook_add] mapping keys for slime"
+	map <buffer> <silent> <CR> <Plug>SlimeLineSend
+	xmap <silent> <SID>[slime]s <Plug>SlimeRegionSend
+	nmap <silent> <SID>[slime]s <Plug>SlimeLineSend
+	nmap <silent> <SID>[slime]p <Plug>SlimeParagraphSend
+	nmap <silent> <SID>[slime]m <Plug>SlimeMotionSend
+	nmap <silent> <SID>[slime]a <Cmd>%SlimeSend<CR>
+endfunction
+
+command! -nargs=0 MySlimeConfig call s:my_slime_config()
+nnoremap <silent> <SID>[slime]c :MySlimeConfig<CR>

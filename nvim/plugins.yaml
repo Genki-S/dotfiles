@@ -47,6 +47,8 @@
 - jpalardy/vim-slime:
     lazy: 1
     on_map: <Plug>Slime
+    on_cmd:
+        - SlimeConfig
 
 # browser
 - tyru/open-browser.vim:
