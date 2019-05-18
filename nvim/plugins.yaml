@@ -141,4 +141,9 @@
         - <Plug>QFGrep
         - <Plug>QFRestore
 
+- t9md/vim-quickhl:
+    lazy: 1
+    on_map:
+        - <Plug>(quickhl
+
 # vim: foldmethod=marker
