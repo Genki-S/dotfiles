@@ -1,9 +1,12 @@
+// unfortunate, but this is the best way at the moment
+// map <C-h> & <C-l> (prev, next tab) on Vivaldi
+settings.blacklistPattern = /.*docs\.google\.com.*/i
+
 unmap('j')
 unmap('k')
-
-map('<Ctrl-n>', 'R') // next tab
-map('<Ctrl-p>', 'E') // prev tab
-// TODO: maybe use mapkey to free R/E mappings
+unmap('R') // next tab
+unmap('E') // prev tab
+unmap('<Ctrl-h>') // mouse over elements
 
 mapkey('<Ctrl-o>', '#4Go back in history', function() {
     history.go(-1);
