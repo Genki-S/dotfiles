@@ -27,6 +27,9 @@ augroup END
 " Required for operations modifying multiple buffers like rename across buffers.
 set hidden
 
+" :h persistent-undo
+set undofile
+
 " unimpaired-like mappings: https://github.com/tpope/vim-unimpaired/blob/master/plugin/unimpaired.vim
 let s:unimpaired_prev = "["
 let s:unimpaired_next = "]"
