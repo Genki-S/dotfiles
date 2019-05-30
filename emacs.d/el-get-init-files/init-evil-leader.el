@@ -14,6 +14,10 @@
   "e" '(lambda () (interactive) (if (eq major-mode 'org-agenda-mode)
                                   (org-agenda-set-effort)
                                   (org-set-effort)))
+  "t" '(lambda () (interactive) (if (eq major-mode 'org-agenda-mode)
+                                  ; TODO: preserve time information of current SCHEDULED value
+                                  (org-agenda-schedule nil "+0")
+                                  (org-schedule nil "+0")))
   "c" 'org-capture
   "j" 'org-next-item
   "k" 'org-previous-item
