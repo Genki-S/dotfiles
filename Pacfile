@@ -20,6 +20,8 @@ bzr
 mu
 jq
 
+atool
+
 # bluetooth
 bluez
 bluez-utils
