@@ -35,5 +35,6 @@ fi
 
 fcitx &
 unclutter &
+compton &
 
 exec i3

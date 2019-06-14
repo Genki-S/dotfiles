@@ -27,6 +27,7 @@ bluez-utils
 # GUI
 xorg
 i3
+compton
 rxvt-unicode
 # https://wiki.archlinux.org/index.php/X_resources
 xorg-xrdb

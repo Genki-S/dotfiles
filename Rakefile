@@ -111,6 +111,7 @@ task :deploy do
   # TODO: Do this better ($HOME/.config is becoming the standard recently)
   my_ln("#{DOTDIR}/miscfiles/get-shit-done.ini", "#{HOME}/.config/get-shit-done.ini")
   my_ln("#{DOTDIR}/nvim", "#{HOME}/.config/nvim")
+  my_ln("#{DOTDIR}/miscfiles/compton", "#{HOME}/.config/compton")
 end
 
 desc 'Update submodules'
