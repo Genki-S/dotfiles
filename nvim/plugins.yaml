@@ -1,6 +1,5 @@
 # Shougoware {{{
 - Shougo/denite.nvim:
-- Shougo/deoplete.nvim:
 - Shougo/neosnippet.vim:
     lazy: 1
     on_i: 1
@@ -115,6 +114,15 @@
     lazy: 1
     on_ft:
         - python
+
+- neoclide/coc.nvim:
+    rev: release
+    depends:
+        - vim-altercmd
+
+- idbrii/vim-tagimposter:
+    on_cmd:
+        - TagImposterAnticipateJump
 
 - tpope/vim-sleuth:
 
