@@ -108,13 +108,6 @@
     on_ft: rest
 # }}}
 
-- autozimu/LanguageClient-neovim:
-    rev: next
-    build: 'bash install.sh'
-    lazy: 1
-    on_ft:
-        - python
-
 - neoclide/coc.nvim:
     rev: release
     depends:
