@@ -92,13 +92,6 @@
 # }}}
 
 # filetype specific {{{
-- fatih/vim-go:
-    lazy: 1
-    on_ft: go
-- zchee/deoplete-go:
-    lazy: 1
-    on_ft: go
-
 - ElmCast/elm-vim:
     lazy: 1
     on_ft: elm
