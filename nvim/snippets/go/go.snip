@@ -1,3 +1,5 @@
+source go/go.vim
+
 snippet     ff
 abbr        fmt.Printf(...)
 options     head
@@ -65,3 +67,6 @@ options     head
   ctx, ${1:cancel} := context.WithTimeout(${2:context.Background()}, ${3:timeout})
   ${4:defer $1()}
 
+snippet json
+abbr \`json:key\`
+  \`json:"${1:`g:Neosnippet_go_json_tagname()`}"\`
