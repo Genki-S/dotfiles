@@ -70,3 +70,11 @@ options     head
 snippet json
 abbr \`json:key\`
   \`json:"${1:`g:Neosnippet_go_json_tagname()`}"\`
+
+snippet     switch
+abbr        switch {}
+options     head
+  switch ${1:#:v} {
+  case ${2:#:condition}:
+    ${0:TARGET}
+  }
