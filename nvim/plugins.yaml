@@ -1,5 +1,6 @@
 # Shougoware {{{
 - Shougo/denite.nvim:
+- Shougo/deoplete.nvim:
 - Shougo/neosnippet.vim:
     lazy: 1
     on_i: 1
@@ -101,10 +102,9 @@
     on_ft: rest
 # }}}
 
-- neoclide/coc.nvim:
-    rev: release
-    depends:
-        - vim-altercmd
+- autozimu/LanguageClient-neovim:
+    rev: next
+    build: 'bash install.sh'
 
 - idbrii/vim-tagimposter:
     on_cmd:
