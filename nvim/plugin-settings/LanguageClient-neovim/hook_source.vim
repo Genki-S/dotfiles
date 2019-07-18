@@ -24,7 +24,7 @@ function! s:start_language_client(ft) abort
   LanguageClientStart
 endfunction
 
-augroup vimrc_LanguageClient-neovim
+augroup vimrc_LanguageClient-neovim_starting
   autocmd!
   autocmd FileType * call s:start_language_client(&ft)
 augroup END
@@ -39,6 +39,18 @@ function! s:show_documentation()
     execute 'help ' . expand('<cword>')
   endif
 endfunction
+" }}}
+
+" BufWritePre (formatting, organizing import, etc.) {{{
+function! s:bufwritepre() abort
+  " TODO: organizing import for certain filetypes
+  call LanguageClient#textDocument_formatting_sync()
+endfunction
+
+augroup vimrc_LanguageClient-neovim_bufwritepre
+  autocmd!
+  autocmd BufWritePre * call s:bufwritepre()
+augroup END
 " }}}
 
 nnoremap <silent> <C-]> <Cmd>TagImposterAnticipateJump <Bar> call LanguageClient#textDocument_definition()<CR>
