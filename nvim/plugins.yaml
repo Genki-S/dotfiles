@@ -93,7 +93,7 @@
 # }}}
 
 # filetype specific {{{
-- ElmCast/elm-vim:
+- andys8/vim-elm-syntax:
     lazy: 1
     on_ft: elm
 
