@@ -1,6 +1,8 @@
 {
     "initializationOptions": {
         "runtime": "node",
-        "elmFormatPath": "elm-format"
+        "elmPath": "elm",
+        "elmFormatPath": "elm-format",
+        "elmTestPath": "elm-test"
     }
 }
