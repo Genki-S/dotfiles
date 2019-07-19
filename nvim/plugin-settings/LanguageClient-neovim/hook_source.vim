@@ -12,32 +12,16 @@ let s:lsp_enabled_filetypes = keys(g:LanguageClient_serverCommands)
 let g:LanguageClient_loadSettings = 1
 let s:script_dir = resolve(expand('<sfile>:p:h'))
 
-function! s:start_language_client(ft) abort
-  if (index(s:lsp_enabled_filetypes, &filetype) < 0)
+function! s:start_language_client() abort
+  if (!has_key(g:LanguageClient_serverCommands, &filetype))
     return
   endif
 
-  let config_file_name = a:ft . ".json"
-  let config_file_path = join([s:script_dir, "languageserver-settings", a:ft . ".json"], "/")
+  let config_file_name = &filetype . ".json"
+  let config_file_path = join([s:script_dir, "languageserver-settings", &filetype . ".json"], "/")
   " I wish this was buffer local variable
   let g:LanguageClient_settingsPath = config_file_path
   LanguageClientStart
-endfunction
-
-augroup vimrc_LanguageClient-neovim_starting
-  autocmd!
-  autocmd FileType * call s:start_language_client(&ft)
-augroup END
-" }}}
-
-" Use K to show documentation in preview window {{{
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(s:lsp_enabled_filetypes, &filetype) >= 0)
-    call LanguageClient#textDocument_hover()
-  else
-    execute 'help ' . expand('<cword>')
-  endif
 endfunction
 " }}}
 
@@ -46,13 +30,20 @@ function! s:bufwritepre() abort
   " TODO: organizing import for certain filetypes
   call LanguageClient#textDocument_formatting_sync()
 endfunction
-
-augroup vimrc_LanguageClient-neovim_bufwritepre
-  autocmd!
-  autocmd BufWritePre * call s:bufwritepre()
-augroup END
 " }}}
 
-nnoremap <silent> <C-]> <Cmd>TagImposterAnticipateJump <Bar> call LanguageClient#textDocument_definition()<CR>
+function! s:lc_maps() abort
+  if has_key(g:LanguageClient_serverCommands, &filetype)
+    nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
+    nnoremap <silent> <C-]> <Cmd>TagImposterAnticipateJump <Bar> call LanguageClient#textDocument_definition()<CR>
+  endif
+endfunction
+
+augroup vimrc_LanguageClient-neovim
+  autocmd!
+  autocmd FileType * call s:start_language_client()
+  autocmd FileType * call s:lc_maps()
+  autocmd BufWritePre * call s:bufwritepre()
+augroup END
 
 " vim: foldmethod=marker
