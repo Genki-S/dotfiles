@@ -21,6 +21,14 @@
 - thinca/vim-textobj-between:
     lazy: 1
     on_map: <Plug>(textobj-between-
+- kana/vim-textobj-function:
+    lazy: 1
+    on_map: <Plug>(textobj-function-
+- haya14busa/vim-textobj-function-syntax:
+    lazy: 1
+    on_map: <Plug>(textobj-function-
+    depends:
+        - vim-textobj-function
 # }}}
 
 # visual {{{
