@@ -1,0 +1,83 @@
+snippet module
+options head
+  module ${1:`substitute(substitute(expand('%:r'), '[/\\]','.','g'),'^\%(\l*\.\)\?','','')`} exposing (${2:...})
+  ${0}
+
+snippet import
+options head
+abbr    import
+alias   imp
+  import ${1:String}
+  ${0}
+
+snippet importAs
+options head
+abbr    import ... as ...
+alias   impa
+  import ${1} as ${2}
+  ${0}
+
+snippet importExposing
+options head
+abbr    import ... exposing (..)
+alias   impe
+  import ${1:Html} exposing (${2:..})
+  ${0}
+
+snippet importAsExposing
+options head
+abbr    import ... as ... exposing (..)
+alias   impae
+  import ${1:Html} as ${2} exposing (${2:..})
+  ${0}
+
+snippet case
+abbr    case ... of
+  case ${1:#:expression} of
+    ${2:#:value} ->
+      ${3:TARGET}
+
+snippet if
+abbr    if ... then ... else ...
+  if ${1:#:condition} then
+    ${2}
+  else
+    ${3}
+
+snippet     let
+abbr        let ... in ...
+options     head
+  let
+    ${1} =
+      ${2}
+  in
+  ${0}
+
+snippet     fn
+abbr        zero-argument function
+options     head
+  ${1:fn} : ${2:a}
+  $1 =
+    ${0}
+
+snippet     fn1
+abbr        one-argument function
+options     head
+  ${1:fn} : ${2:a} -> ${3:b}
+  $1 ${4} =
+    ${0}
+
+snippet     fn2
+abbr        two-arguments function
+options     head
+  ${1:fn} : ${2:a} -> ${3:b} -> ${4:c}
+  $1 ${5} =
+    ${0}
+
+snippet     fn3
+abbr        three-arguments function
+options     head
+snippet fn3
+  ${1:fn} : ${2:a} -> ${3:b} -> ${4:c} -> ${5:d}
+  $1 ${6} =
+    ${0}
