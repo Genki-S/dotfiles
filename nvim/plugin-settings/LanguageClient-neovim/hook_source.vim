@@ -35,8 +35,8 @@ endfunction
 function! s:lc_maps() abort
   if has_key(g:LanguageClient_serverCommands, &filetype)
     nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
-    nnoremap <silent> <C-]> <Cmd>TagImposterAnticipateJump <Bar> call LanguageClient#textDocument_definition()<CR>
-    nnoremap <silent> <CR> <Cmd>call LanguageClient#textDocument_codeAction()<CR>
+    nnoremap <buffer> <silent> <C-]> <Cmd>TagImposterAnticipateJump <Bar> call LanguageClient#textDocument_definition()<CR>
+    nnoremap <buffer> <silent> <CR> <Cmd>call LanguageClient#textDocument_codeAction()<CR>
   endif
 endfunction
 
