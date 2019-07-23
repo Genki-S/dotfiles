@@ -8,11 +8,10 @@ let g:LanguageClient_serverCommands = {
 
 let s:lsp_enabled_filetypes = keys(g:LanguageClient_serverCommands)
 
-" Starting LanguageClient {{{
 let g:LanguageClient_loadSettings = 1
 let s:script_dir = resolve(expand('<sfile>:p:h'))
 
-function! s:start_language_client() abort
+function! s:lc_buffer_setup() abort
   if (!has_key(g:LanguageClient_serverCommands, &filetype))
     return
   endif
@@ -22,29 +21,17 @@ function! s:start_language_client() abort
   " I wish this was buffer local variable
   let g:LanguageClient_settingsPath = config_file_path
   LanguageClientStart
-endfunction
-" }}}
 
-" BufWritePre (formatting, organizing import, etc.) {{{
-function! s:bufwritepre() abort
-  " TODO: organizing import for certain filetypes
-  call LanguageClient#textDocument_formatting_sync()
-endfunction
-" }}}
+  nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
+  nnoremap <buffer> <silent> <C-]> <Cmd>TagImposterAnticipateJump <Bar> call LanguageClient#textDocument_definition()<CR>
+  nnoremap <buffer> <silent> <CR> <Cmd>call LanguageClient#textDocument_codeAction()<CR>
 
-function! s:lc_maps() abort
-  if has_key(g:LanguageClient_serverCommands, &filetype)
-    nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
-    nnoremap <buffer> <silent> <C-]> <Cmd>TagImposterAnticipateJump <Bar> call LanguageClient#textDocument_definition()<CR>
-    nnoremap <buffer> <silent> <CR> <Cmd>call LanguageClient#textDocument_codeAction()<CR>
-  endif
+  autocmd BufWritePre <buffer> call LanguageClient#textDocument_formatting_sync()
 endfunction
 
 augroup vimrc_LanguageClient-neovim
   autocmd!
-  autocmd FileType * call s:start_language_client()
-  autocmd FileType * call s:lc_maps()
-  autocmd BufWritePre * call s:bufwritepre()
+  autocmd FileType * call s:lc_buffer_setup()
 augroup END
 
 " vim: foldmethod=marker
