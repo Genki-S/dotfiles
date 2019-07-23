@@ -149,4 +149,14 @@
     on_map:
         - <Plug>(quickhl
 
+- tpope/vim-dispatch:
+    lazy: 1
+    on_cmd:
+        - Make
+        - Copen
+        - Dispatch
+        - FocusDispatch
+        - AbortDispatch
+        - Start
+
 # vim: foldmethod=marker
