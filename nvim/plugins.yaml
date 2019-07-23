@@ -115,6 +115,7 @@
     build: 'bash install.sh'
 
 - idbrii/vim-tagimposter:
+    lazy: 1
     on_cmd:
         - TagImposterAnticipateJump
 
