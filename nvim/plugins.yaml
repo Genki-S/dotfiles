@@ -159,4 +159,15 @@
         - AbortDispatch
         - Start
 
+- janko/vim-test:
+    depends:
+        - vim-dispatch
+    lazy: 1
+    on_cmd:
+        - TestNearest
+        - TestFile
+        - TestSuite
+        - TestLast
+        - TestVisit
+
 # vim: foldmethod=marker
