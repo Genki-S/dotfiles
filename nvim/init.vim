@@ -30,6 +30,15 @@ set hidden
 " :h persistent-undo
 set undofile
 
+augroup vimrc-misc
+	autocmd!
+	" :h last-position-jump
+	autocmd BufReadPost *
+				\ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+				\ |   exe "normal! g`\""
+				\ | endif
+augroup END
+
 " unimpaired-like mappings: https://github.com/tpope/vim-unimpaired/blob/master/plugin/unimpaired.vim
 let s:unimpaired_prev = "["
 let s:unimpaired_next = "]"
