@@ -159,9 +159,19 @@
         - AbortDispatch
         - Start
 
+- tpope/vim-projectionist:
+    lazy: 1
+    # I'm only using alternate feature for now
+    on_cmd:
+        - A
+        - AS
+        - AV
+        - AT
+
 - janko/vim-test:
     depends:
         - vim-dispatch
+        - vim-projectionist
     lazy: 1
     on_cmd:
         - TestNearest
