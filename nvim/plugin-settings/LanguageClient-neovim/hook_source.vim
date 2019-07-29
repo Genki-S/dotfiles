@@ -1,3 +1,6 @@
+nnoremap <SID>[LC] <Nop>
+nmap <Leader>l <SID>[LC]
+
 " let g:LanguageClient_loggingFile = expand('~/.tmp/vim/LanguageClient.log')
 " let g:LanguageClient_loggingLevel = 'DEBUG'
 
@@ -31,7 +34,7 @@ function! s:lc_buffer_setup() abort
 
   nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
   nnoremap <buffer> <silent> <C-]> <Cmd>TagImposterAnticipateJump <Bar> call LanguageClient#textDocument_definition()<CR>
-  nnoremap <buffer> <silent> <CR> <Cmd>call LanguageClient#textDocument_codeAction()<CR>
+  nnoremap <buffer> <silent> <SID>[LC]a <Cmd>call LanguageClient#textDocument_codeAction()<CR>
 
   autocmd BufWritePre <buffer> call <SID>lc_format()
 endfunction
