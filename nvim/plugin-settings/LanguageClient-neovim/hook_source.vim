@@ -11,6 +11,13 @@ let s:lsp_enabled_filetypes = keys(g:LanguageClient_serverCommands)
 let g:LanguageClient_loadSettings = 1
 let s:script_dir = resolve(expand('<sfile>:p:h'))
 
+let g:vimrc_LangugageClient_formatOnSave = 1
+function! s:lc_format() abort
+  if g:vimrc_LangugageClient_formatOnSave
+    call LanguageClient#textDocument_formatting_sync()
+  endif
+endfunction
+
 function! s:lc_buffer_setup() abort
   if (!has_key(g:LanguageClient_serverCommands, &filetype))
     return
@@ -26,7 +33,7 @@ function! s:lc_buffer_setup() abort
   nnoremap <buffer> <silent> <C-]> <Cmd>TagImposterAnticipateJump <Bar> call LanguageClient#textDocument_definition()<CR>
   nnoremap <buffer> <silent> <CR> <Cmd>call LanguageClient#textDocument_codeAction()<CR>
 
-  autocmd BufWritePre <buffer> call LanguageClient#textDocument_formatting_sync()
+  autocmd BufWritePre <buffer> call <SID>lc_format()
 endfunction
 
 augroup vimrc_LanguageClient-neovim
