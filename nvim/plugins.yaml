@@ -108,6 +108,10 @@
 - diepm/vim-rest-console:
     lazy: 1
     on_ft: rest
+
+- mhinz/vim-lookup:
+    lazy: 1
+    on_ft: vim
 # }}}
 
 - autozimu/LanguageClient-neovim:
