@@ -7,6 +7,7 @@ nmap <Leader>l <SID>[LC]
 let g:LanguageClient_serverCommands = {
       \ 'elm': ['elm-language-server', '--stdio'],
       \ 'go': ['gopls'],
+      \ 'python': ['pyls'],
       \ }
 
 let s:lsp_enabled_filetypes = keys(g:LanguageClient_serverCommands)
