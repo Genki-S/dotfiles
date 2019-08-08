@@ -8,6 +8,7 @@ let g:LanguageClient_serverCommands = {
       \ 'elm': ['elm-language-server', '--stdio'],
       \ 'go': ['gopls'],
       \ 'python': ['pyls'],
+      \ 'javascript': ['javascript-typescript-stdio'],
       \ }
 
 let s:lsp_enabled_filetypes = keys(g:LanguageClient_serverCommands)

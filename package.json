@@ -21,6 +21,7 @@
     "eslint": "^2.11.1",
     "git-guilt": "^0.1.1",
     "htmlhint": "^0.9.13",
+    "javascript-typescript-langserver": "^2.11.3",
     "js-beautify": "^1.5.4",
     "jscs": "^3.0.3",
     "jshint": "^2.9.2",
