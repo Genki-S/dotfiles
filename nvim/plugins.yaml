@@ -184,4 +184,12 @@
         - TestLast
         - TestVisit
 
+- tpope/vim-abolish:
+    lazy: 1
+    on_cmd:
+        - Abolish
+        - Subvert
+    on_map:
+        - <Plug>(abolish-coerce-word)
+
 # vim: foldmethod=marker
