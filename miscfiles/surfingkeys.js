@@ -1,7 +1,56 @@
+// settings {{{
 // unfortunate, but this is the best way at the moment
 // map <C-h> & <C-l> (prev, next tab) on Vivaldi
 settings.blacklistPattern = /.*docs\.google\.com.*/i
+// show hints to the left of elements (same as vimperator)
+settings.hintAlign = 'left';
+// open new tabs to the right of the current one
+settings.newTabPosition = "right"
+// no hint-style tab selection (always use omnibar, for consistency)
+settings.tabsThreshold = 0
+// }}}
 
+// set theme {{{
+settings.theme = `
+.sk_theme {
+    font-family: Input Sans Condensed, Charcoal, sans-serif;
+    font-size: 10pt;
+    background: #24272e;
+    color: #abb2bf;
+}
+.sk_theme tbody {
+    color: #fff;
+}
+.sk_theme input {
+    color: #d0d0d0;
+}
+.sk_theme .url {
+    color: #61afef;
+}
+.sk_theme .annotation {
+    color: #56b6c2;
+}
+.sk_theme .omnibar_highlight {
+    color: #528bff;
+}
+.sk_theme .omnibar_timestamp {
+    color: #e5c07b;
+}
+.sk_theme .omnibar_visitcount {
+    color: #98c379;
+}
+.sk_theme #sk_omnibarSearchResult>ul>li:nth-child(odd) {
+    background: #303030;
+}
+.sk_theme #sk_omnibarSearchResult>ul>li.focused {
+    background: #3e4452;
+}
+#sk_status, #sk_find {
+    font-size: 20pt;
+}`;
+// }}}
+
+// mappings {{{
 unmap('j')
 unmap('k')
 unmap('R') // next tab
@@ -50,15 +99,6 @@ mapkey(',r', '#11Reload settings', () => {
     });
     Front.showBanner('settings were reloaded');
 })
-
-// settings {{{
-// show hints to the left of elements (same as vimperator)
-settings.hintAlign = 'left';
-// open new tabs to the right of the current one
-settings.newTabPosition = "right"
-// no hint-style tab selection (always use omnibar, for consistency)
-settings.tabsThreshold = 0
-// }}}
 
 // copies {{{
 mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() {
@@ -151,45 +191,6 @@ mapkey('P', '#1Open URL from clipboard in a new tab', () => {
 imap('<Ctrl-f>', '<Alt-f>')
 imap('<Ctrl-b>', '<Alt-b>')
 imap('<Ctrl-w>', '<Alt-w>')
-
-// set theme {{{
-settings.theme = `
-.sk_theme {
-    font-family: Input Sans Condensed, Charcoal, sans-serif;
-    font-size: 10pt;
-    background: #24272e;
-    color: #abb2bf;
-}
-.sk_theme tbody {
-    color: #fff;
-}
-.sk_theme input {
-    color: #d0d0d0;
-}
-.sk_theme .url {
-    color: #61afef;
-}
-.sk_theme .annotation {
-    color: #56b6c2;
-}
-.sk_theme .omnibar_highlight {
-    color: #528bff;
-}
-.sk_theme .omnibar_timestamp {
-    color: #e5c07b;
-}
-.sk_theme .omnibar_visitcount {
-    color: #98c379;
-}
-.sk_theme #sk_omnibarSearchResult>ul>li:nth-child(odd) {
-    background: #303030;
-}
-.sk_theme #sk_omnibarSearchResult>ul>li.focused {
-    background: #3e4452;
-}
-#sk_status, #sk_find {
-    font-size: 20pt;
-}`;
 // }}}
 
 var inlineQuery = {
