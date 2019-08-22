@@ -208,4 +208,101 @@ var inlineQuery = {
   }
 }
 Front.registerInlineQuery(inlineQuery)
+
+
+// search aliases {{{
+
+// stole from https://github.com/b0o/surfingkeys-conf
+var processSearches = (searches, searchleader) => Object.values(searches).forEach((s) => {
+  if (typeof Front === "undefined" || typeof addSearchAliasX === "undefined" || typeof mapkey === "undefined") {
+    return
+  }
+  addSearchAliasX(s.alias, s.name, s.search, searchleader, s.compl, s.callback)
+  mapkey(`${searchleader}${s.alias}`, `#8Search ${s.name}`, () => Front.openOmnibar({ type: "SearchEngine", extra: s.alias }))
+  mapkey(`c${searchleader}${s.alias}`, `#8Search ${s.name} with clipboard contents`, () => {
+    Clipboard.read((c) => {
+      Front.openOmnibar({ type: "SearchEngine", pref: c.data, extra: s.alias })
+    })
+  })
+})
+
+const searchleader = "s"
+
+const searches = {}
+
+// Arch Linux Wiki
+searches.a = {
+  alias:  "a",
+  name:   "archwiki",
+  search: "https://wiki.archlinux.org/index.php?go=go&search=",
+  compl:  "https://wiki.archlinux.org/api.php?action=opensearch&format=json&formatversion=2&namespace=0&limit=10&suggest=true&search=",
+}
+searches.a.callback = response => JSON.parse(response.text)[1]
+
+// Google
+searches.g = {
+  alias:  "g",
+  name:   "google",
+  search: "https://www.google.com/search?q=",
+  compl:  "https://www.google.com/complete/search?client=chrome-omni&gs_ri=chrome-ext&oit=1&cp=1&pgcl=7&q=",
+}
+
+// Mozilla Developer Network (MDN)
+searches.m = {
+  alias:  "m",
+  name:   "mdn",
+  search: "https://developer.mozilla.org/en-US/search?q=",
+  compl:  "https://developer.mozilla.org/en-US/search.json?q=",
+}
+searches.m.callback = (response) => {
+  const res = JSON.parse(response.text)
+  return res.documents.map((s) => {
+    let excerpt = escape(s.excerpt)
+    if (excerpt.length > 240) {
+      excerpt = `${excerpt.slice(0, 240)}…`
+    }
+    res.query.split(" ").forEach((q) => {
+      excerpt = excerpt.replace(new RegExp(q, "gi"), "<strong>$&</strong>")
+    })
+    const title = escape(s.title)
+    const slug = escape(s.slug)
+    return createSuggestionItem(`
+      <div>
+        <div class="title"><strong>${title}</strong></div>
+        <div style="font-size:0.8em"><em>${slug}</em></div>
+        <div>${excerpt}</div>
+      </div>
+    `, { url: s.url })
+  })
+}
+
+// YouTube
+searches.y = {
+  alias:  "y",
+  name:   "youtube",
+  search: "https://www.youtube.com/search?q=",
+  // compl:  `https://www.googleapis.com/youtube/v3/search?maxResults=20&part=snippet&type=video,channel&key=${keys.google_yt}&safeSearch=none&q=`,
+}
+searches.y.callback = response => JSON.parse(response.text).items
+  .map((s) => {
+    switch (s.id.kind) {
+    case "youtube#channel":
+      return createURLItem(
+        `${s.snippet.channelTitle}: ${s.snippet.description}`,
+        `https://youtube.com/channel/${s.id.channelId}`,
+      )
+    case "youtube#video":
+      return createURLItem(
+        ` ▶ ${s.snippet.title}`,
+        `https://youtu.be/${s.id.videoId}`,
+      )
+    default:
+      return null
+    }
+  }).filter(s => s !== null)
+
+processSearches(searches, searchleader)
+// }}}
+
+
 // vim: foldmethod=marker
