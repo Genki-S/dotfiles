@@ -8,6 +8,7 @@ rcfiles=(
   hooks.zsh
   git.zsh
   nvim.zsh
+  k8s.zsh
 )
 for f in $rcfiles
 do
