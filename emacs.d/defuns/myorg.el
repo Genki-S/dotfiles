@@ -47,4 +47,5 @@
 ; http://stackoverflow.com/questions/6997387/how-to-archive-all-the-done-tasks-using-a-single-command/7015844#7015844
 (defun genki/org-archive-done-tasks ()
   (interactive)
-  (org-map-entries 'org-archive-subtree "/DONE" 'agenda))
+  (org-map-entries 'org-archive-subtree "/DONE" 'agenda)
+  (org-map-entries 'org-archive-subtree "/CANCELLED" 'agenda))
