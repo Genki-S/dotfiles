@@ -39,5 +39,6 @@
     - Xresources.d
     - Xmodmap
     - surfingkeys.js
+    - pylintrc
 - emacs.d
 - clicoder.d

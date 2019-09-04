@@ -1,0 +1,8 @@
+[MESSAGES CONTROL]
+
+enable =
+    useless-suppression
+
+disable =
+    invalid-name,
+    missing-docstring,
