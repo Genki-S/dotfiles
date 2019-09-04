@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+org_dir=$HOME/org
+
+target_files=(
+  inbox.org
+  next.org
+  someday.org
+  scheduled.org
+)
+
+heading="File:\t"
+todos="TODOs:\t"
+
+for f in $target_files
+do
+  filepath=$org_dir/$f
+  n_todos=$(grep -c '^* TODO' $filepath)
+  heading="${heading}${f}\t"
+  todos="${todos}${n_todos}\t"
+done
+
+echo $heading
+echo $todos
