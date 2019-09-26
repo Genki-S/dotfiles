@@ -34,7 +34,7 @@ options     head
 snippet     forr
 abbr        for range
 options     head
-  for ${1:v} := range ${2:#:iterator} {
+  for ${1:_}, ${2:v} := range ${3:#:iterator} {
     ${0:TARGET}
   }
 
