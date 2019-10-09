@@ -11,7 +11,7 @@ autoload -U colors && colors
 () {
   local return_status='%(?..%{$fg[red]%}%(?..✘)%{$reset_color%}[%?] )'
   local background_jobs='%(1j.%{$fg[yellow]%}Job[%j]%{$reset_color%} .)'
-  local kube_context='(kube: $(kubectl config current-context 2> /dev/null)) '
+  local kube_context='(kube: $(kubectl config current-context 2> /dev/null)@$(kubectl config view --minify 2> /dev/null | grep namespace | sed "s/^ *namespace: //")) '
   local cwd='%{$fg[green]%}[ ${PWD/#$HOME/~} ]%{$reset_color%} '
   local user_host_time='%{$fg[magenta]%}%n%{$reset_color%} on %{$fg[yellow]%}%m%{$reset_color%} at %{$fg[white]%}%D %*%{$reset_color%}'
   #local git_status='$(git_super_status) '
