@@ -1,26 +1,41 @@
-# aliases {{{
-alias k='kubectl'
+function() { # Setup kubernetes aliases
+  alias k='kubectl'
 
-alias kg='k get'
-alias kgp='k get pods'
-alias kgd='k get deployments'
-alias kgn='k get nodes'
-alias kgs='k get secrets'
+  function() { # Setup "op resource" type aliases
+    typeset -A operation_by_alias
+    operation_by_alias=(
+      g get
+      d describe
+      del delete
+    )
 
-alias kd='k describe'
-alias kdp='k describe pod'
-alias kdd='k describe deployment'
-alias kdn='k describe node'
+    typeset -A resource_by_alias
+    resource_by_alias=(
+      p pod
+      d deployment
+      n node
+      s service
+    )
 
-alias kdel='k delete'
-alias kdelp='k delete pod'
-alias kdeld='k delete deployment'
+    for op_alias in "${(@k)operation_by_alias}"
+    do
+      local op=${operation_by_alias[$op_alias]}
+      alias k${op_alias}="k ${op}"
+      for resource_alias in "${(@k)resource_by_alias}"
+      do
+        local resource=${resource_by_alias[$resource_alias]}
+        alias k${op_alias}${resource_alias}="k ${op} ${resource}"
+      done
+    done
+  }
 
-alias kx='k exec'
-
-alias kl='k logs'
-alias kr='k run'
-alias kc='k config'
-alias kap='k apply'
-alias kat='k attach'
-# }}}
+  function() { # Setup other form of aliases
+    alias kx='k exec'
+    alias kl='k logs'
+    alias kr='k run'
+    alias kc='k config'
+    alias kap='k apply'
+    alias kapf='k apply -f'
+    alias kat='k attach'
+  }
+}
