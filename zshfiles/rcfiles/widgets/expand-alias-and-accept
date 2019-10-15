@@ -25,5 +25,6 @@
     BUFFER="${expanded_cmd}${BUFFER#$cmd}"
   done
 
+  unfunction expand_alias
   zle accept-line
 }
