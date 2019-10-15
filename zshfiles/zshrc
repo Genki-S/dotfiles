@@ -40,8 +40,12 @@ bindkey -M emacs '^N' history-substring-search-down
 
 # Fish-like auto suggestions from https://github.com/zsh-users/zsh-autosuggestions
 source $HOME/dotfiles/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
 # to see all colors: for code in {000..255}; do print -P -- "$code: %F{$code}Test%f"; done
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
+# let my custom widgets also clear the autosuggest
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(
+  expand-alias-and-accept
+)
 
 # More completions from https://github.com/zsh-users/zsh-completions
 fpath+=($HOME/dotfiles/submodules/zsh-completions/src)
