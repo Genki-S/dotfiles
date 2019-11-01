@@ -141,6 +141,13 @@
     lazy: 1
     on_map:
         - <Plug>Splitjoin
+- AndrewRadev/sideways.vim:
+    lazy: 1
+    on_map:
+        - <Plug>SidewaysArgumentTextobj
+    on_cmd:
+        - SidewaysLeft
+        - SidewaysRight
 
 - sk1418/QFGrep:
     lazy: 1
