@@ -160,7 +160,7 @@ snippet     method
 abbr        func (self Type) Method(...) [error] { ... }
 alias       meth
 options     head
-  func (${1:self} ${2:Type}) ${3:Do}(${4}) ${5:error }{
+  func (`g:Neosnippet_go_method_receiver()`) ${3:Do}(${4}) ${5:error }{
     ${0}
   }
 

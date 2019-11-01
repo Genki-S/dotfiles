@@ -61,3 +61,40 @@ function! g:Neosnippet_go_iferr() abort
 
   return '${1:' . join(rets, ", ") . '${2\}}'
 endfunction
+
+
+function! g:Neosnippet_go_method_receiver() abort
+  " TODO: commonize code with g:Neosnippet_go_iferr ?
+  let re_func = '\vfunc'
+  let re_type = '%(%([.A-Za-z0-9*]|\[|\]|%(%(struct)|%(interface)\{\}))+)'
+  let re_rcvr = '\s*\((\w+\s+' . re_type . ')\)?'
+  let re_name = '%(\s*\w+)?'
+  let re_arg  = '\(%(\w+%(\s+%(\.\.\.)?' . re_type . ')?\s*,?\s*)*\)'
+
+  let re_ret_v = '%(\w+)'
+  let re_ret  = '%(\s*\(?(\s*\*?[a-zA-Z0-9_. ,]+)\)?\s*)?'
+  let re_ret_body = '%(' . re_ret_v . '|%(' . re_ret_v  . '\s*' . re_type . ')|' . re_type . '\s*,?\s*)*'
+  let re_ret  = '%(\s*\(?\s*%(' . re_ret_body . ')\)?\s*)?'
+  let re = re_func . re_rcvr . re_name . re_arg . re_ret . '\{'
+
+  let lnum = line('.')
+  let rcvr = ""
+  while lnum > 0
+    let lnum -= 1
+
+    let ma = matchlist(getline(lnum), re)
+    if empty(ma)
+      continue
+    endif
+    let rcvr = ma[1]
+    break
+  endwhile
+
+  if rcvr =~ '\v^\s*$'
+    return '${1:self} ${2:Type}'
+  endif
+
+  let rcvr_parts = split(rcvr, '\s\+')
+
+  return '${1:' . rcvr_parts[0] . '} ${2:' . rcvr_parts[1] . '}'
+endfunction
