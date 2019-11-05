@@ -26,18 +26,11 @@ function! g:Neosnippet_go_iferr() abort
   let re_ret  = '%(\s*\(?\s*(' . re_ret_body . ')\)?\s*)?'
   let re = re_func . re_rcvr . re_name . re_arg . re_ret . '\{'
 
-  let lnum = line('.')
   let ret = ""
-  while lnum > 0
-    let lnum -= 1
-
-    let ma = matchlist(getline(lnum), re)
-    if empty(ma)
-      continue
-    endif
+  let ma = s:find_first_line_match(re, 'up')
+  if !empty(ma)
     let ret = ma[1]
-    break
-  endwhile
+  endif
 
   if ret =~ '\v^\s*$'
     return '${1}'
@@ -77,18 +70,16 @@ function! g:Neosnippet_go_method_receiver() abort
   let re_ret  = '%(\s*\(?\s*%(' . re_ret_body . ')\)?\s*)?'
   let re = re_func . re_rcvr . re_name . re_arg . re_ret . '\{'
 
-  let lnum = line('.')
   let rcvr = ""
-  while lnum > 0
-    let lnum -= 1
-
-    let ma = matchlist(getline(lnum), re)
-    if empty(ma)
-      continue
-    endif
+  let ma = s:find_first_line_match(re, 'up')
+  if !empty(ma)
     let rcvr = ma[1]
-    break
-  endwhile
+  else
+    let ma = s:find_first_line_match(re, 'down')
+    if !empty(ma)
+      let rcvr = ma[1]
+    endif
+  endif
 
   if rcvr =~ '\v^\s*$'
     return '${1:self} ${2:Type}'
@@ -97,4 +88,31 @@ function! g:Neosnippet_go_method_receiver() abort
   let rcvr_parts = split(rcvr, '\s\+')
 
   return '${1:' . rcvr_parts[0] . '} ${2:' . rcvr_parts[1] . '}'
+endfunction
+
+
+function! s:find_first_line_match(re, direction) abort
+  if a:direction != 'up' && a:direction != 'down'
+    throw 'direction argument should be either "up" or "down"'
+  endif
+
+  let lnum_increment = -1
+  let s:condition = {lnum -> lnum > 0}
+  if a:direction == 'down'
+    let lnum_increment = 1
+    let s:condition = {lnum -> lnum < line('$')}
+  endif
+
+  let lnum = line('.')
+  let rcvr = ""
+  while s:condition(lnum)
+    let lnum += lnum_increment
+
+    let ma = matchlist(getline(lnum), a:re)
+    if !empty(ma)
+      return ma
+    endif
+  endwhile
+
+  return []
 endfunction
