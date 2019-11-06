@@ -94,3 +94,6 @@
 [submodule "submodules/aur/unclutter-xfixes-git"]
 	path = submodules/aur/unclutter-xfixes-git
 	url = https://aur.archlinux.org/unclutter-xfixes-git.git
+[submodule "submodules/diff-so-fancy"]
+	path = submodules/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy
