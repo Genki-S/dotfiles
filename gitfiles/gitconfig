@@ -23,13 +23,12 @@
 	autosetuprebase = always
 
 [merge]
-	tool = splice
+	tool = vimdiff
 	ff = false
 	conflictStyle = diff3
 
-[mergetool "splice"]
-	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-	trustExitCode = true
+[mergetool "vimdiff"]
+	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
 [color "diff"]
 	new = cyan
