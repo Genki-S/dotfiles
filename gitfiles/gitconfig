@@ -25,6 +25,7 @@
 [merge]
 	tool = splice
 	ff = false
+	conflictStyle = diff3
 
 [mergetool "splice"]
 	cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
