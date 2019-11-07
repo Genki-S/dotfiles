@@ -7,6 +7,8 @@
 	review = !tig --reverse -w $(git branch-root)..HEAD
 	# http://mattn.kaoriya.net/software/git/20140708105946.htm
 	pr-setup = config --add remote.origin.fetch +refs/pull/*/head:refs/remotes/origin/pr/*
+	# https://github.com/so-fancy/diff-so-fancy/blob/master/pro-tips.md
+	patch = !git --no-pager diff --no-color
 
 [user]
 	name = Genki Sugimoto
