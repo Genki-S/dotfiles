@@ -196,5 +196,35 @@ snippet     json
 abbr        \`json:key\`
   \`json:"${1:`g:Neosnippet_go_json_tagname()`}"\`
 
+snippet     req
+abbr        http request
+options     head
+  req, err := http.NewRequest(${1:http.MethodGet}, ${2:url}, ${3:nil})
+  if err != nil {
+    return err
+  }
+  req = req.WithContext(ctx)
+
+  req.Header.Set(${4:key}, ${5:value})
+  q := req.URL.Query()
+  q.Add("${6:key}", "${7:val}")
+  req.URL.RawQuery = q.Encode()
+
+  resp, err := ${8:httpClient}.Do(req)
+  if err != nil {
+    return err
+  }
+  defer resp.Body.Close()
+
+  body, err := ioutil.ReadAll(resp.Body)
+  if err != nil {
+    return err
+  }
+  if resp.StatusCode != http.StatusOK {
+    return errors.New("got status " + resp.Status + " with response body: " + string(body))
+  }
+
+  ${0}
+
 
 # vim: foldmethod=marker
