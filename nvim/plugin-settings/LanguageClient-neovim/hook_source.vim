@@ -4,6 +4,9 @@ nmap <Leader>l <SID>[LC]
 " let g:LanguageClient_loggingFile = expand('~/.tmp/vim/LanguageClient.log')
 " let g:LanguageClient_loggingLevel = 'DEBUG'
 
+" 2 secs is the max I can wait
+let g:LanguageClient_waitOutputTimeout = 2
+
 let g:LanguageClient_serverCommands = {
       \ 'elm': ['elm-language-server', '--stdio'],
       \ 'go': ['gopls'],
