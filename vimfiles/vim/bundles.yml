@@ -323,7 +323,7 @@
 # Unite {{{
 - Shougo/unite.vim:
 # don't make it lazy so that neomru can register files
-- Shougo/neomru.vim:
+# - Shougo/neomru.vim:
 - Shougo/unite-outline:
 - tsukkee/unite-help:
 - ujihisa/unite-rake:
