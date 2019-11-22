@@ -36,10 +36,19 @@ Installs in `~/vendor`.
 
 - [moovweb/gvm](https://github.com/moovweb/gvm)
 - [brigade/overcommit](https://github.com/brigade/overcommit)
-- Install executables for overcommit config
 - Install cargo for Rust packages
 - [Go, Ruby, PythonでGNU GLOBAL(gtags)+α - Qiita](http://qiita.com/sona-tar/items/672df1259a76f082ce42)
 - Install [tinytacoteam/zazu](https://github.com/tinytacoteam/zazu)
+
+#### Install executables for overcommit config
+
+Install npm packages via `package.json` in this repo:
+
+```
+cat package.json | jq '.dependencies | keys[]' | sed 's/^"//' | sed 's/"$//' | xargs npm install -g
+```
+
+Install rubygems via `bundle install`.
 
 ## Known issues
 
