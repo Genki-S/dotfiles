@@ -58,6 +58,13 @@
     on_cmd:
         - SlimeConfig
 
+# syntax checkers etc.
+- vim-syntastic/syntastic:
+    lazy: 1
+    on_cmd:
+        - SyntasticReset
+        - SyntasticCheck
+
 # browser
 - tyru/open-browser.vim:
     lazy: 1

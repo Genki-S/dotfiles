@@ -4,6 +4,9 @@ nmap <Leader>l <SID>[LC]
 " let g:LanguageClient_loggingFile = expand('~/.tmp/vim/LanguageClient.log')
 " let g:LanguageClient_loggingLevel = 'DEBUG'
 
+" I prefer running diagnostics manually via syntastic
+let g:LanguageClient_diagnosticsEnable = 0
+
 " 2 secs is the max I can wait
 let g:LanguageClient_waitOutputTimeout = 2
 
@@ -42,6 +45,14 @@ function! s:lc_buffer_setup() abort
   nnoremap <buffer> <silent> <SID>[LC]a <Cmd>call LanguageClient#textDocument_codeAction()<CR>
 
   autocmd BufWritePre <buffer> call <SID>lc_format()
+endfunction
+
+function! s:settagstack_curpos() abort
+  let pos = getpos('.')
+  let pos[0] = bufnr('%')
+  let tagname = bufname('%')
+  let newtag = [{'tagname': tagname, 'from': pos}]
+  call settagstack(win_getid(), {'items': newtag}, 'r')
 endfunction
 
 augroup vimrc_LanguageClient-neovim
