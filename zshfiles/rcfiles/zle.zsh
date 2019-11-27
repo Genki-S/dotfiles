@@ -31,5 +31,6 @@ bindkey ' ' magic-space
 bindkey '^z' foreground
 bindkey '^r' interactive-reverse-i-search
 bindkey '^o' popd-in-place
-bindkey '^I' expand-or-complete-with-dots
-bindkey '^J' expand-alias-and-accept
+bindkey '^i' expand-or-complete-with-dots
+bindkey '^j' expand-alias-and-accept
+bindkey '^q' push-input

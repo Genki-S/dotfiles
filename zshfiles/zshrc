@@ -1,5 +1,9 @@
 # TODO: Remove dotfiles/zshfiles.old altogether once the new dotfiles/zshfiles is fully setup
 
+# Disable flow control (ctrl+s, ctrl+q) to enable using these keys in zle/vim/etc.
+# https://github.com/tomsquest/dotfiles/blob/master/zsh/bindkey.zsh
+stty -ixon -ixoff
+
 rcfiles=(
   prompt.zsh
   history.zsh
