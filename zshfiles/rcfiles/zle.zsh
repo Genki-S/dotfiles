@@ -1,9 +1,10 @@
 # Use emacs bindings in insert mode, but provide some vi-like bindings
 bindkey -e
 bindkey '^[' vi-cmd-mode
+# reduce delay to enter vi-cmd-mode : https://dougblack.io/words/zsh-vi-mode.html
+export KEYTIMEOUT=1
 
-
-() {
+() { # Load my widgets
   local dependencies=(
     read-from-minibuffer
   )
