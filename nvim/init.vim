@@ -47,6 +47,10 @@ execute 'nnoremap <silent> ' . s:unimpaired_next . 'q <Cmd>cnext<CR>'
 execute 'nnoremap <silent> ' . s:unimpaired_prev . 'l <Cmd>lprevious<CR>'
 execute 'nnoremap <silent> ' . s:unimpaired_next . 'l <Cmd>lnext<CR>'
 
+" save with <C-S>
+nnoremap <C-S> <Cmd>w<CR>
+nnoremap <Leader><C-S> <Cmd>noautocmd w<CR>
+
 execute 'source ' . g:nvim_config_dir . '/init-dein.vim'
 
 let local_init = g:nvim_config_dir . '/init.local.vim'
