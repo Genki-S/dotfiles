@@ -25,7 +25,9 @@ AlterCommand ev tabedit $MYVIMRC
 AlterCommand ep tabedit $HOME/dotfiles/nvim/plugins.yaml
 AlterCommand eft execute 'tabedit $HOME/dotfiles/nvim/ftplugin/'.&filetype.'.vim'
 
-
 " for plugins
 AlterCommand tw TweetVimSay
 AlterCommand nse NeoSnippetEdit
+
+" Misc.
+AlterCommand pre Precommit

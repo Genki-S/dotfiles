@@ -51,6 +51,10 @@ execute 'nnoremap <silent> ' . s:unimpaired_next . 'l <Cmd>lnext<CR>'
 nnoremap <C-S> <Cmd>w<CR>
 nnoremap <Leader><C-S> <Cmd>noautocmd w<CR>
 
+" Run pre-commit hooks (via overcommit) and load the result to quickfix
+" (requires tpope/vim-dispatch)
+command! Precommit compiler pre-commit | Make
+
 execute 'source ' . g:nvim_config_dir . '/init-dein.vim'
 
 let local_init = g:nvim_config_dir . '/init.local.vim'
