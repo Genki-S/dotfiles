@@ -33,7 +33,7 @@ set undofile
 augroup vimrc-misc
 	autocmd!
 	" :h last-position-jump
-	autocmd BufReadPost *
+	autocmd BufWinEnter *
 				\ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
 				\ |   exe "normal! g`\""
 				\ | endif
