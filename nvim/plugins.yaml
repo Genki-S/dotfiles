@@ -129,6 +129,8 @@
     lazy: 1
     on_cmd:
         - TagImposterAnticipateJump
+    on_func:
+        - tagimposter#setup
 
 - tpope/vim-sleuth:
 
