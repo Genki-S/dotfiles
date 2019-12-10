@@ -6,22 +6,10 @@ typeset -U path cdpath manpath fpath
 #  -: follow symlink
 #  /: directory
 
-if [ -z "$ANYENV_INITIALIZED" ]; then
-  # setup anyenv, this is slow, but has to be done only once (anyenv exports its variables)
-  path=(
-    $HOME/.anyenv/bin
-    $path
-  )
-  eval "$(anyenv init -)"
-  export ANYENV_INITIALIZED="yes"
-fi
-
-
 # misc. paths
 path=(
   $HOME/dotfiles/bin(N/)
-  $(go env GOPATH)/bin(N/)
-  $HOME/.cargo/bin
+  $HOME/.cargo/bin(N/)
   $path
 )
 

@@ -4,6 +4,22 @@
 # https://github.com/tomsquest/dotfiles/blob/master/zsh/bindkey.zsh
 stty -ixon -ixoff
 
+if [ -z "$ANYENV_INITIALIZED" ]; then
+  # setup anyenv, this is slow, but has to be done only once (anyenv exports its variables)
+  path=(
+    $HOME/.anyenv/bin
+    $path
+  )
+  eval "$(anyenv init -)"
+  export ANYENV_INITIALIZED="yes"
+fi
+path=(
+  $(go env GOPATH)/bin(N/)
+  $path
+)
+# export PATH so that subprocesses can use executables installed through anyenv
+export PATH
+
 rcfiles=(
   prompt.zsh
   history.zsh
