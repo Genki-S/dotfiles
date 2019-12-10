@@ -6,6 +6,14 @@ typeset -U path cdpath manpath fpath
 #  -: follow symlink
 #  /: directory
 
+# setup anyenv
+path=(
+  $HOME/.anyenv/bin
+  $path
+)
+eval "$(anyenv init -)"
+
+# misc. paths
 path=(
   $HOME/dotfiles/bin(N/)
   $(go env GOPATH)/bin(N/)
@@ -20,4 +28,3 @@ path=(
   # reject world-writable directories (^W)
   ${^path}(N-/^W)
 )
-

@@ -1,3 +1,5 @@
+# zshenv is loaded by all kind of shells (login, non-login, interactive, non-interactive) (man 1 zsh)
+
 # Load all config files
 envfiles=(
   path.zsh

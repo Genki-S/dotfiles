@@ -1,9 +1,4 @@
-path=(
-  $HOME/.anyenv/bin
-  $path
-)
-
-eval "$(anyenv init -)"
+# zpofile is loaded only for login shell, after zshenv (man 1 zsh)
 
 # about EDITOR and VISUAL: https://unix.stackexchange.com/a/4861
 export VISUAL="nvim"
