@@ -4,7 +4,6 @@ brew 'vim', args: ['with-lua']
 brew 'emacs', args: ['with-d-bus']
 brew 'zsh'
 brew 'tmux'
-brew 'reattach-to-user-namespace'
 brew 'ctags'
 brew 'coreutils'
 brew 'the_silver_searcher'

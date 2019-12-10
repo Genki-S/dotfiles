@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 if is_mac; then
-  reattach-to-user-namespace pbpaste
+  pbpaste
 else
   xclip -sel clip -o
 fi
