@@ -6,12 +6,16 @@ typeset -U path cdpath manpath fpath
 #  -: follow symlink
 #  /: directory
 
-# setup anyenv
-path=(
-  $HOME/.anyenv/bin
-  $path
-)
-eval "$(anyenv init -)"
+if [ -z "$ANYENV_INITIALIZED" ]; then
+  # setup anyenv, this is slow, but has to be done only once (anyenv exports its variables)
+  path=(
+    $HOME/.anyenv/bin
+    $path
+  )
+  eval "$(anyenv init -)"
+  export ANYENV_INITIALIZED="yes"
+fi
+
 
 # misc. paths
 path=(
