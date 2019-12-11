@@ -79,6 +79,8 @@ PreCommit:
     exclude:
       - '**/*.png'
       - '**/*.json'
+      - '**/*.lock'
+      - '**/*.svg'
     warn_length: 80
     error_length: 128
   Pmd:
