@@ -2,15 +2,14 @@
 
 # magic-space changes behavior based on LBUFFER
 
-__fasd_fzy() {
-	local dir="$(fasd_cd -d | sort -n -r | awk '{print $2}' | fzy)"
-	LBUFFER="cd $dir"
-	zle reset-prompt
-	zle accept-line
-}
-
-__cd_find_fzy() {
-	local dir="$(find . -type d | fzy)"
+__cd_fzy() {
+	# combine output from fasd_cd and find, then select with fzy
+	local dir="$({ fasd_cd -d | sort -n -r | awk '{print $2}' ; find . -maxdepth 5 -type d ; } 2> /dev/null | fzy)"
+	if [ -z "$dir" ]; then
+		LBUFFER=""
+		zle reset-prompt
+		return
+	fi
 	LBUFFER="cd $dir"
 	zle reset-prompt
 	zle accept-line
@@ -41,11 +40,9 @@ __vim_fzy() {
 }
 
 case "${LBUFFER}" in
+	# "j" for "j"ump
 	j)
-		__fasd_fzy
-		;;
-	jf)
-		__cd_find_fzy
+		__cd_fzy
 		;;
 	gbs)
 		# "g"it "b"ranch" "s"elect
