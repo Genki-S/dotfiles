@@ -45,6 +45,8 @@ setopt auto_pushd
 
 alias org='tmux rename-window org; ORGMODE=1 emacs -nw ~/org/dashboard.org'
 
+# "j"ump to "d"otfiles
+alias jd='cd $HOME/dotfiles'
 # }}}
 
 # Plugins {{{
