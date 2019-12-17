@@ -30,7 +30,6 @@
     "semistandard": "^8.0.0",
     "textlint": "^6.8.0",
     "textlint-rule-ginger": "^0.1.6",
-    "textlint-rule-spellchecker": "^0.1.4",
-    "tldr": "^3.3.2"
+    "textlint-rule-spellchecker": "^0.1.4"
   }
 }
