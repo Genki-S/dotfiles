@@ -1,0 +1,5 @@
+# Start with specific vm driver and allocated resources
+minikube start --vm-driver=kvm2 --cpus 4 --memory 16384
+
+# Use the docker daemon inside Minikube: https://minikube.sigs.k8s.io/docs/tasks/docker_daemon/
+eval $(minikube docker-env)
