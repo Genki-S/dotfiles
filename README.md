@@ -39,6 +39,7 @@ Installs in `~/vendor`.
 - Install cargo for Rust packages
 - [Go, Ruby, PythonでGNU GLOBAL(gtags)+α - Qiita](http://qiita.com/sona-tar/items/672df1259a76f082ce42)
 - Install [tinytacoteam/zazu](https://github.com/tinytacoteam/zazu)
+- Install [cheat/cheat](https://github.com/cheat/cheat)
 
 #### Install executables for overcommit config
 
