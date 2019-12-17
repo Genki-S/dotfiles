@@ -14,6 +14,7 @@ if [ -z "$ANYENV_INITIALIZED" ]; then
   export ANYENV_INITIALIZED="yes"
 fi
 path=(
+  $HOME/bin
   $(go env GOPATH)/bin(N/)
   $path
 )
