@@ -76,6 +76,7 @@ alias diff-so-fancy="$HOME/dotfiles/submodules/diff-so-fancy/diff-so-fancy"
 
 # cheat: https://github.com/cheat/cheat
 export CHEAT_CONFIG_PATH="$HOME/dotfiles/miscfiles/cheat-conf.yaml"
+alias c="cheat"
 # }}}
 
 # Load local zshrc
