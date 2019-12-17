@@ -28,6 +28,7 @@ AlterCommand eft execute 'tabedit $HOME/dotfiles/nvim/ftplugin/'.&filetype.'.vim
 " for plugins
 AlterCommand tw TweetVimSay
 AlterCommand nse NeoSnippetEdit
+AlterCommand qr QuickRun
 
 " Misc.
 AlterCommand pre Precommit

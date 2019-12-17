@@ -208,4 +208,9 @@
     on_map:
         - <Plug>(abolish-coerce-word)
 
+- thinca/vim-quickrun:
+    lazy: 1
+    on_cmd:
+        - QuickRun
+
 # vim: foldmethod=marker
