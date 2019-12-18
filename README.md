@@ -10,14 +10,6 @@
 
 TODO: remove downloads of non-essentials and speed up
 
-### Install vendor applications
-
-```
-vim -u ~/dotfiles/vendor/neovendor.vim
-```
-
-Installs in `~/vendor`.
-
 ## Manual Installations
 
 ### Mac Apps

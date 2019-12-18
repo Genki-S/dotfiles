@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# TODO: install pmd automatically
-~/vendor/pmd/bin/run.sh pmd $@

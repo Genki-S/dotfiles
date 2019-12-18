@@ -1,3 +1,0 @@
-#!/bin/bash
-
-java -jar $HOME/dotfiles/emacs.d/vendor/plantuml.jar $*
