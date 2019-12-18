@@ -4,6 +4,8 @@
 - Shougo/neosnippet.vim:
     lazy: 1
     on_i: 1
+    on_ft:
+        - neosnippet
 - Shougo/defx.nvim:
     lazy: 1
     on_cmd: Defx
