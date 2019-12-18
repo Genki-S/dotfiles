@@ -164,6 +164,10 @@ mapkey('gn', '#10Jump to vim-like mark in new tab.', function(mark) {
 var PassThroughOnce = (function() {
     var self = new Mode("PassThroughOnce", "pass through once");
     self.addEventListener('keydown', function(event) {
+        if (event.key == 'Control' || event.key == 'Shift') {
+          // don't exit PassThroughOnce when only modifier keys are pressed
+          return
+        }
         // prevent this event to be handled by Surfingkeys' other listeners
         event.sk_suppressed = true;
         self.exit();
