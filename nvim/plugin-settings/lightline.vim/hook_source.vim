@@ -1,17 +1,19 @@
 let g:lightline = {}
 
 let g:lightline.active = {
-			\ 'left': [ [ 'quickfix', 'mode', 'paste' ],
+			\ 'left': [ [ 'quickfix', 'loclist', 'mode', 'paste' ],
 			\           [ 'readonly', 'filename', 'modified' ] ],
 			\ 'right': [ [ 'lineinfo' ],
 			\            [ 'percent' ],
 			\            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
 
 let g:lightline.component_expand = {
-			\ 'quickfix': 'MyLightlineQuickfix' }
+			\ 'quickfix': 'MyLightlineQuickfix',
+			\ 'loclist': 'MyLightlineLoclist' }
 
 let g:lightline.component_type = {
-			\ 'quickfix': 'error' }
+			\ 'quickfix': 'error',
+			\ 'loclist': 'warning' }
 
 function! MyLightlineQuickfix()
 	let qflist = getqflist()
@@ -20,4 +22,13 @@ function! MyLightlineQuickfix()
 		return ''
 	endif
 	return "[ QF: " . len(qflist) . " item(s) ]"
+endfunction
+
+function! MyLightlineLoclist()
+	let loclist = getloclist(0)
+	call filter(loclist, 'v:val.valid != 0')
+	if len(loclist) == 0
+		return ''
+	endif
+	return "[ LOC: " . len(loclist) . " item(s) ]"
 endfunction
