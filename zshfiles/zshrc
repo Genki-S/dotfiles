@@ -1,5 +1,17 @@
 # TODO: Remove dotfiles/zshfiles.old altogether once the new dotfiles/zshfiles is fully setup
 
+# First of all, jump into tmux session automatically {{{
+() {
+  local auto_tmux_session_name="default"
+  if [ -z $TMUX ]; then
+    tmux attach-session -t "$auto_tmux_session_name" 2> /dev/null
+    if [ $? -ne 0 ]; then
+      tmux new-session -s "$auto_tmux_session_name"
+    fi
+  fi
+}
+# }}}
+
 # Disable flow control (ctrl+s, ctrl+q) to enable using these keys in zle/vim/etc.
 # https://github.com/tomsquest/dotfiles/blob/master/zsh/bindkey.zsh
 stty -ixon -ixoff
