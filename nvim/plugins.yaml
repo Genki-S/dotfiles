@@ -213,4 +213,12 @@
     on_cmd:
         - QuickRun
 
+- rhysd/devdocs.vim:
+    lazy: 1
+    on_cmd:
+        - DevDocs
+        - DevDocsAll
+    on_map:
+        - <Plug>(devdocs-
+
 # vim: foldmethod=marker
