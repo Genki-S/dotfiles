@@ -23,7 +23,9 @@
   "k" 'org-previous-item
   "h" 'org-up-element
   ">" 'org-demote-subtree
-  "<" 'org-promote-subtree)
+  "<" 'org-promote-subtree
+  ";" 'eval-expression
+  "x" 'execute-extended-command)
 
 (evil-leader/set-key
   "pp" 'org-pomoboard/plan-tomorrow

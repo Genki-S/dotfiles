@@ -8,9 +8,6 @@
 (define-key evil-normal-state-map " " 'universal-argument)
 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
 
-(define-key evil-normal-state-map ",;" 'eval-expression)
-(define-key evil-normal-state-map ",x" 'execute-extended-command)
-
 (define-key evil-motion-state-map (kbd "C-u") 'evil-scroll-up)
 
 ;; for org-mode
