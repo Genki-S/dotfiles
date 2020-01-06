@@ -2,6 +2,11 @@
 
 # First of all, jump into tmux session automatically {{{
 () {
+  if [[ -o login ]]; then
+    # Likely I don't want to drop into tmux session in login shell. Typically I just do `startx` from login shell.
+    # Creating tmux session from login shell could leave a weird shell session (e.g. not having `DISPLAY` env variable)
+    return
+  fi
   local auto_tmux_session_name="default"
   if [ -z $TMUX ]; then
     tmux attach-session -t "$auto_tmux_session_name" 2> /dev/null
