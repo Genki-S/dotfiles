@@ -9,6 +9,7 @@ autoload -U colors && colors
 #GIT_PROMPT_EXECUTABLE='haskell'
 
 () {
+  local cmd_indicator='%{$fg_bold[red]%}$([ "$KEYMAP" = "vicmd" ] && echo "CMD")%{$reset_color%}'
   local return_status='%(?..%{$fg[red]%}%(?..✘)%{$reset_color%}[%?] )'
   local background_jobs='%(1j.%{$fg[yellow]%}Job[%j]%{$reset_color%} .)'
   local kube_context='(kube: $(kubectl config current-context 2> /dev/null)@$(kubectl config view --minify 2> /dev/null | grep namespace | sed "s/^ *namespace: //")) '
@@ -17,7 +18,7 @@ autoload -U colors && colors
   #local git_status='$(git_super_status) '
   local git_status=''
   PROMPT="
-${return_status}${background_jobs}${cwd}${kube_context}${git_status}${user_host_time}
+${cmd_indicator}${return_status}${background_jobs}${cwd}${kube_context}${git_status}${user_host_time}
 %# "
 }
 

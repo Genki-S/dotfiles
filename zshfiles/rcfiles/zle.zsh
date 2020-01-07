@@ -27,6 +27,12 @@ export KEYTIMEOUT=1
   done
 }
 
+# Reset prompt when keymap is changed (e.g. entering into vicmd mode)
+function zle-keymap-select {
+	zle reset-prompt
+}
+zle -N zle-keymap-select
+
 bindkey ' ' magic-space
 bindkey '^z' foreground
 bindkey '^r' interactive-reverse-i-search
