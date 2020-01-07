@@ -4,7 +4,14 @@
 
 __cd_fzy() {
 	# combine output from fasd_cd and find, then select with fzy
-	local dir="$({ fasd_cd -d | sort -n -r | awk '{print $2}' ; timeout 0.1s find . -maxdepth 5 -type d ; } 2> /dev/null | fzy)"
+	local fasd_dirs="$(fasd_cd -d | sort -n -r | awk '{print $2}')"
+	local find_dirs
+	find_dirs="$(timeout 0.1s find . -maxdepth 5 -type d)"
+	if [ $? -ne 0 ]; then
+		echo "" 1>&2
+		echo "WARN: find timed out" 1>&2
+	fi
+	local dir="$({ echo $fasd_dirs; echo $find_dirs } | fzy)"
 	___zle_cd "$dir"
 }
 
