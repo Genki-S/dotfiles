@@ -44,5 +44,6 @@ function git_current_branch() {
   fi
   echo ${ref#refs/heads/}
 }
+alias gcb="git_current_branch"
 
 # vim:foldmethod=marker
