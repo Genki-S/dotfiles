@@ -52,3 +52,6 @@
 
 [include]
 	path = ~/.gitconfig.local
+
+[github]
+	user = Genki-S

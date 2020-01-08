@@ -223,4 +223,13 @@
     on_map:
         - <Plug>(devdocs-
 
+- mattn/webapi-vim:
+    lazy: 1
+- mattn/gist-vim:
+    lazy: 1
+    depends:
+        - webapi-vim
+    on_cmd:
+        - Gist
+
 # vim: foldmethod=marker
