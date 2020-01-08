@@ -38,6 +38,9 @@ path=(
 # export PATH so that subprocesses can use executables installed through anyenv
 export PATH
 
+# custom completions are installed in $HOME/completions
+fpath+=($HOME/completions)
+
 rcfiles=(
   prompt.zsh
   history.zsh
