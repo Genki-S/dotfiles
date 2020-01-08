@@ -7,6 +7,7 @@
 - `rake install`
 - open up another shell (which should be zsh)
 - `rake bundle_up`
+- `./setup/install-released-binaries.zsh`
 
 TODO: remove downloads of non-essentials and speed up
 
