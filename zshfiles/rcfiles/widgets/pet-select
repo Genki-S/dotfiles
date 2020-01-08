@@ -1,0 +1,8 @@
+# vim: filetype=zsh
+
+# pet-select selects snippet from pet and inserts to BUFFER
+# https://github.com/knqyf263/pet#zsh
+
+BUFFER=$(pet search --query "$LBUFFER")
+CURSOR=$#BUFFER
+zle redisplay

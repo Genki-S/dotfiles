@@ -78,6 +78,13 @@ alias crontab='crontab -i'
 eval "$(fasd --init auto)"
 eval "$(direnv hook zsh)"
 
+# https://github.com/knqyf263/pet#register-the-previous-command-easily
+function pet-prev() {
+  PREV=$(fc -lrn | head -n 1)
+  pet new "$PREV"
+  pet edit
+}
+
 # Syntax highlighting from https://github.com/zsh-users/zsh-syntax-highlighting
 source $HOME/dotfiles/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

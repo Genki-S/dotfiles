@@ -40,3 +40,5 @@ bindkey '^o' popd-in-place
 bindkey '^i' expand-or-complete-with-dots
 bindkey '^j' expand-alias-and-accept
 bindkey '^q' push-input
+# "s" for "s"nippet
+bindkey '^s' pet-select
