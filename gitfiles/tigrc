@@ -5,8 +5,8 @@ bind tree B !hub browse -- tree/%(commit)/%(directory)
 bind blob B !hub browse -- tree/%(commit)/%(file)
 
 # Line
-bind generic L !sh -c "git log --format=%h\ %s -n 1 %(commit) | copy"
+bind generic L !zsh -i -c "git log --format=%h\ %s -n 1 %(commit) | copy"
 # Hash
-bind generic H !sh -c "git log --format=%h -n 1 %(commit) | copy"
+bind generic H !zsh -i -c "printf '%s' %(commit) | copy"
 # Open GitHub/GitLab (TODO)
 bind generic O !sh -c "$HOME/dotfiles/bin/git-browse-origin %(commit)"
