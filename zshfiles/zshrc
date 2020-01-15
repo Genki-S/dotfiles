@@ -7,7 +7,7 @@
     # Creating tmux session from login shell could leave a weird shell session (e.g. not having `DISPLAY` env variable)
     return
   fi
-  local auto_tmux_session_name="default"
+  local auto_tmux_session_name="0-default"
   if [ -z $TMUX ]; then
     tmux attach-session -t "$auto_tmux_session_name" 2> /dev/null
     if [ $? -ne 0 ]; then
