@@ -7,6 +7,11 @@
 (define-key evil-normal-state-map ":" 'evil-repeat-find-char)
 (define-key evil-normal-state-map " " 'universal-argument)
 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+(define-key evil-normal-state-map (kbd "C-w C-h") 'evil-window-left)
+(define-key evil-normal-state-map (kbd "C-w C-j") 'evil-window-down)
+(define-key evil-normal-state-map (kbd "C-w C-k") 'evil-window-up)
+(define-key evil-normal-state-map (kbd "C-w C-l") 'evil-window-right)
+(define-key evil-normal-state-map (kbd "C-s") 'save-buffer)
 
 (define-key evil-motion-state-map (kbd "C-u") 'evil-scroll-up)
 
