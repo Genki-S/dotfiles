@@ -18,7 +18,7 @@
   "homepage": "https://github.com/Genki-S/dotfiles",
   "dependencies": {
     "csslint": "^0.10.0",
-    "eslint": "^2.11.1",
+    "eslint": "^6.6.0",
     "git-guilt": "^0.1.1",
     "htmlhint": "^0.9.13",
     "javascript-typescript-langserver": "^2.11.3",
