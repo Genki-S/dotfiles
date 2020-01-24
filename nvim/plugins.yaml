@@ -121,6 +121,10 @@
 - mhinz/vim-lookup:
     lazy: 1
     on_ft: vim
+
+- MaxMEllon/vim-jsx-pretty:
+    lazy: 1
+    on_ft: javascript
 # }}}
 
 - autozimu/LanguageClient-neovim:
