@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# This script is used with https://github.com/Genki-S/tmux-watch
+# This script will do all the watching work I want.
+
+set -uo pipefail
+
+# throwing away "-p"
+shift
+pane_id=$1
+
+notify_patterns=(
+  # sudo prompt
+  '^\[sudo\]'
+  # shell prompt (useful to get notified when long-running process is finished)
+  '[#$%]\s*$'
+  # yes / no
+  'yes\s*/\s*no'
+  'y\s*/\s*n'
+)
+
+last_line=""
+while read line; do
+  if [[ -n "$line" ]]; then
+    last_line="$line"
+  fi
+done < <(tmux capture-pane -p -J -t $pane_id)
+
+for pat in "${notify_patterns[@]}"; do
+  if [[ ${last_line,,} =~ ${pat,,} ]]; then
+    notify-send "tmux detected notify patterns: PANE $pane_id: CONTENT: $last_line"
+    pushover "tmux detected notify patterns: PANE $pane_id: CONTENT: $last_line" > /dev/null
+    # tell tmux-watch to stop watching
+    exit 1
+  fi
+done

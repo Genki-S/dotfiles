@@ -100,3 +100,6 @@
 [submodule "submodules/cheatsheets"]
 	path = submodules/cheatsheets
 	url = https://github.com/cheat/cheatsheets
+[submodule "submodules/tmux-watch"]
+	path = submodules/tmux-watch
+	url = https://github.com/Genki-S/tmux-watch
