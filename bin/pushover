@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 if [[ $# -ne 1 ]]; then
   echo "Usage: $0 MESSAGE"
   exit 1
@@ -9,10 +11,12 @@ message=$1
 
 if [[ -z "$PUSHOVER_DOTFILES_API_KEY" ]]; then
   echo "PUSHOVER_DOTFILES_API_KEY should be set" >&2
+  exit 1
 fi
 
 if [[ -z "$PUSHOVER_USER_KEY" ]]; then
   echo "PUSHOVER_USER_KEY should be set" >&2
+  exit 1
 fi
 
 curl -s \
