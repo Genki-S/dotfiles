@@ -40,6 +40,7 @@ declare -a aurpkgs=(
   "ruby-build"
   "ttf-migu"
   "ttf-ricty"
+  "ttf-cica"
   "urlview"
   "vivaldi"
   "ncurses5-compat-libs"  # needed by vivaldi-ffmpeg-codecs

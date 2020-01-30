@@ -103,3 +103,6 @@
 [submodule "submodules/tmux-watch"]
 	path = submodules/tmux-watch
 	url = https://github.com/Genki-S/tmux-watch
+[submodule "submodules/aur/ttf-cica"]
+	path = submodules/aur/ttf-cica
+	url = https://aur.archlinux.org/ttf-cica.git
