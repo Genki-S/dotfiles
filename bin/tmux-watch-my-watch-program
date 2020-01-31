@@ -9,7 +9,7 @@ set -uo pipefail
 shift
 pane_id=$1
 
-notify_patterns=(
+patterns=(
   # sudo prompt
   '^\[sudo\]'
   # shell prompt (useful to get notified when long-running process is finished)
@@ -19,6 +19,13 @@ notify_patterns=(
   'y\s*/\s*n'
 )
 
+messages=(
+ 'sudo prompt detected'
+ 'you got your shell prompt back'
+ 'yes/no prompt detected'
+ 'yes/no prompt detected'
+)
+
 last_line=""
 while read line; do
   if [[ -n "$line" ]]; then
@@ -26,11 +33,15 @@ while read line; do
   fi
 done < <(tmux capture-pane -p -J -t $pane_id)
 
-for pat in "${notify_patterns[@]}"; do
+for i in "${!patterns[@]}"; do
+  pat=${patterns[$i]}
+  msg=${messages[$i]}
   if [[ ${last_line,,} =~ ${pat,,} ]]; then
-    notify-send "tmux detected notify patterns: PANE $pane_id: CONTENT: $last_line"
-    pushover "tmux detected notify patterns: PANE $pane_id: CONTENT: $last_line" > /dev/null
+    notify-send "tmux-watch: $msg (PANE $pane_id)"
+    pushover "tmux-watch: $msg (PANE $pane_id)" > /dev/null
     # tell tmux-watch to stop watching
     exit 1
   fi
 done
+
+exit 0
