@@ -40,7 +40,7 @@ for i in "${!patterns[@]}"; do
     notify-send "tmux-watch: $msg (PANE $pane_id)"
     pushover "tmux-watch: $msg (PANE $pane_id)" > /dev/null
     # tell tmux-watch to stop watching
-    exit 1
+    exit 42
   fi
 done
 
