@@ -46,6 +46,9 @@ execute 'nnoremap <silent> ' . s:unimpaired_prev . 'q <Cmd>cprevious<CR>'
 execute 'nnoremap <silent> ' . s:unimpaired_next . 'q <Cmd>cnext<CR>'
 execute 'nnoremap <silent> ' . s:unimpaired_prev . 'l <Cmd>lprevious<CR>'
 execute 'nnoremap <silent> ' . s:unimpaired_next . 'l <Cmd>lnext<CR>'
+" the <Space> mappings doesn't preserve cursor position, but this is good enough
+execute 'nnoremap <silent> ' . s:unimpaired_prev . '<Space> O<Esc>j'
+execute 'nnoremap <silent> ' . s:unimpaired_next . '<Space> o<Esc>k'
 
 " save with <C-S>
 nnoremap <C-S> <Cmd>w<CR>
