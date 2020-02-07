@@ -106,3 +106,6 @@
 [submodule "submodules/aur/ttf-cica"]
 	path = submodules/aur/ttf-cica
 	url = https://aur.archlinux.org/ttf-cica.git
+[submodule "submodules/aur/tmux-xpanes"]
+	path = submodules/aur/tmux-xpanes
+	url = https://aur.archlinux.org/tmux-xpanes.git
