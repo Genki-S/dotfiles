@@ -125,6 +125,14 @@
 - MaxMEllon/vim-jsx-pretty:
     lazy: 1
     on_ft: javascript
+
+- mattn/emmet-vim:
+    lazy: 1
+    on_ft:
+        - html
+        - css
+        - javascript
+        - jsx
 # }}}
 
 - autozimu/LanguageClient-neovim:
