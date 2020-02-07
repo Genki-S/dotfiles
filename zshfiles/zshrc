@@ -72,6 +72,11 @@ alias jd='cd $HOME/dotfiles'
 alias sudo='sudo '
 # safety net for disaster with `crontab -r`: https://qiita.com/kawaz/items/1620300551b5b3f2eccc#comment-809ad0ec7730802516a9
 alias crontab='crontab -i'
+
+function mkcd () {
+	mkdir -p "$@" && eval cd "\"\$$#\""
+}
+
 # }}}
 
 # Plugins {{{
