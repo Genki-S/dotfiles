@@ -41,7 +41,8 @@
   (kbd "O") 'org-agenda-clock-out
   (kbd "J") 'org-agenda-clock-goto
   (kbd "r") 'org-agenda-redo
-  (kbd "q") 'org-agenda-quit)
+  (kbd "q") 'org-agenda-quit
+  (kbd "C-s") 'org-save-all-org-buffers)
 
 ;; esc quits everything (https://github.com/davvil/.emacs.d/blob/master/init.el)
 (defun minibuffer-keyboard-quit ()
