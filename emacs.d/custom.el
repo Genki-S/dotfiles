@@ -51,6 +51,7 @@
  '(org-log-into-drawer t)
  '(org-outline-path-complete-in-steps nil)
  '(org-pomodoro-expiry-time 40)
+ '(org-pomodoro-play-sounds nil)
  '(org-refile-use-outline-path (quote file))
  '(org-startup-indented t)
  '(org-startup-truncated nil))
