@@ -1,6 +1,8 @@
 # aliases {{{
 alias g='git'
 alias ga='git add'
+alias gb='git branch'
+alias gba='git branch -a'
 alias gs='git status --branch --show-stash --untracked-files --renames'
 alias gco='git checkout'
 alias gcm='git checkout master'
