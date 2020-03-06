@@ -8,3 +8,6 @@ urxvt.visualBell: false
 
 urxvt.font: xft:Cica:pixelsize=16:antialias=true:hinting=true
 urxvt.boldFont: xft:Cica:pixelsize=16:antialias=true:hinting=true
+
+! paste with Alt-v
+urxvt.keysym.M-v: eval:paste_clipboard
