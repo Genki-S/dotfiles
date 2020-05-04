@@ -109,3 +109,6 @@
 [submodule "submodules/aur/tmux-xpanes"]
 	path = submodules/aur/tmux-xpanes
 	url = https://aur.archlinux.org/tmux-xpanes.git
+[submodule "submodules/sankaku"]
+	path = submodules/sankaku
+	url = git@github.com:Genki-S/sankaku
