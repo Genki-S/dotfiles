@@ -226,5 +226,19 @@ options     head
 
   ${0}
 
+snippet     lock
+abbr        lock with RWMutex
+options     head
+  ${1:lock}.Lock()
+  defer $1.Unlock()
+  ${0}
+
+snippet     rlock
+abbr        rlock with RWMutex
+options     head
+  ${1:lock}.RLock()
+  defer $1.RUnlock()
+  ${0}
+
 
 # vim: foldmethod=marker
