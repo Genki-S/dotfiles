@@ -112,3 +112,6 @@
 [submodule "submodules/sankaku"]
 	path = submodules/sankaku
 	url = git@github.com:Genki-S/sankaku
+[submodule "submodules/aur/git-delta"]
+	path = submodules/aur/git-delta
+	url = https://aur.archlinux.org/git-delta.git
