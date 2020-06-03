@@ -19,8 +19,6 @@
     - ctags
     - latexmkrc
     - tmux.conf
-    - vimperator
-    - vimperatorrc
     - inputrc
     - editrc
     - offlineimaprc

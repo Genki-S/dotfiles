@@ -2,10 +2,6 @@
 	path = submodules/gitignore
 	url = http://github.com/github/gitignore
 	branch = master
-[submodule "submodules/vimperator-plugins"]
-	path = submodules/vimperator-plugins
-	url = http://github.com/vimpr/vimperator-plugins.git
-	branch = master
 [submodule "submodules/yadr"]
 	path = submodules/yadr
 	url = https://github.com/skwp/dotfiles
@@ -51,13 +47,6 @@
 [submodule "submodules/stdkeep"]
 	path = submodules/stdkeep
 	url = https://github.com/Genki-S/stdkeep
-[submodule "submodules/vimperator-labs"]
-	path = submodules/vimperator-labs
-	url = https://github.com/vimperator/vimperator-labs
-[submodule "submodules/caisui-vimperator"]
-	path = submodules/caisui-vimperator
-	url = https://github.com/Genki-S/vimperator
-	branch = dirty_fixes
 [submodule "submodules/git-hooks"]
 	path = submodules/git-hooks
 	url = git@github.com:git-hooks/git-hooks.git

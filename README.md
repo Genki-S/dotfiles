@@ -20,7 +20,6 @@ TODO: remove downloads of non-essentials and speed up
 
 ### Firefox Addons
 
-- Vimperator
 - Firebug
 - dotjs
 - Text Link
