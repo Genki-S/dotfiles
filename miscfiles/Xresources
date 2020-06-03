@@ -1,5 +1,3 @@
-#include ".Xresources.d/solarized"
-
 ! http://malkalech.com/urxvt_terminal_emulator
 
 urxvt.scrollBar: false

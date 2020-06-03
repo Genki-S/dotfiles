@@ -34,7 +34,6 @@
 # }}}
 
 # visual {{{
-- altercation/vim-colors-solarized:
 - itchyny/lightline.vim:
 # }}}
 

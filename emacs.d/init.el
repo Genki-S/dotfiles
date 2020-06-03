@@ -83,7 +83,6 @@
     org-pomodoro
     wc-mode
     mu4e
-    color-theme-solarized
     helm
     yasnippet
     company-mode
@@ -117,12 +116,6 @@
 
 ;; Setup global key-bindings
 (require 'setup-global-bindings)
-
-;; color
-;; https://github.com/sellout/emacs-color-theme-solarized
-(load-theme 'solarized t)
-(set-frame-parameter nil 'background-mode 'dark)
-(set-terminal-parameter nil 'background-mode 'dark)
 
 ;; my scripts
 (setq my-scripts-dir (expand-file-name "my-scripts" user-emacs-directory))
