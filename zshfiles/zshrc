@@ -110,9 +110,6 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(
 # More completions from https://github.com/zsh-users/zsh-completions
 fpath+=($HOME/dotfiles/submodules/zsh-completions/src)
 
-# diff-so-fancy: https://github.com/so-fancy/diff-so-fancy
-alias diff-so-fancy="$HOME/dotfiles/submodules/diff-so-fancy/diff-so-fancy"
-
 # cheat: https://github.com/cheat/cheat
 export CHEAT_CONFIG_PATH="$HOME/dotfiles/miscfiles/cheat-conf.yaml"
 alias c="cheat"
