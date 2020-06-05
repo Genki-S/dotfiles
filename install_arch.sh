@@ -47,6 +47,7 @@ declare -a aurpkgs=(
   "vivaldi-ffmpeg-codecs" # to support H.264 on vivaldi
   "unclutter-xfixes-git"
   "tmux-xpanes"
+  "git-delta"
 )
 for aurpkg in "${aurpkgs[@]}"; do
   (cd $HOME/dotfiles/submodules/aur/$aurpkg && makepkg -si)
