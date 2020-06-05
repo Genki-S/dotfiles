@@ -48,6 +48,7 @@ declare -a aurpkgs=(
   "unclutter-xfixes-git"
   "tmux-xpanes"
   "git-delta"
+  "ghq-bin"
 )
 for aurpkg in "${aurpkgs[@]}"; do
   (cd $HOME/dotfiles/submodules/aur/$aurpkg && makepkg -si)

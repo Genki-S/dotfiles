@@ -93,3 +93,6 @@
 [submodule "submodules/aur/git-delta"]
 	path = submodules/aur/git-delta
 	url = https://aur.archlinux.org/git-delta.git
+[submodule "submodules/aur/ghq-bin"]
+	path = submodules/aur/ghq-bin
+	url = https://aur.archlinux.org/ghq-bin.git
