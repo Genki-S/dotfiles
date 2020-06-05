@@ -1,5 +1,6 @@
 # Shougoware {{{
 - Shougo/denite.nvim:
+    rev: 3f90067b8c866eb085d648850400e7fc7783ba01
 - Shougo/deoplete.nvim:
 - Shougo/neosnippet.vim:
     lazy: 1
