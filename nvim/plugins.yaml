@@ -133,6 +133,11 @@
         - css
         - javascript
         - jsx
+
+- rodjek/vim-puppet:
+    lazy: 1
+    on_ft:
+        - puppet
 # }}}
 
 - autozimu/LanguageClient-neovim:
