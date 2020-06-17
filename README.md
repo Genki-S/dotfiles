@@ -84,7 +84,6 @@ WIP
   - sudo apt-get build-dep emacs24
   - wget -O- http://ftp.gnu.org/gnu/emacs/emacs-24.5.tar.xz | tar xJf -
   - sudo apt-get install bzr
-  - sudo apt-get build-dep mu4e
 - sudo apt-get install tig
 - sudo apt-get install espeak
 - sudo add-apt-repository:

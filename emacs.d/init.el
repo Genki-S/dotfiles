@@ -82,7 +82,6 @@
     xml-rpc-el
     org-pomodoro
     wc-mode
-    mu4e
     helm
     yasnippet
     company-mode
@@ -112,7 +111,6 @@
 ;; Setup extensions
 (if (getenv "ORGMODE")
   (require 'setup-org))
-(require 'setup-mail)
 
 ;; Setup global key-bindings
 (require 'setup-global-bindings)

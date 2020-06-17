@@ -2,7 +2,6 @@
 (require 'org-habit)
 (require 'org-checklist)
 (require 'org-id)
-(require 'org-mu4e)
 ; (require 'org-helpers)
 ; (require 'org-export)
 
