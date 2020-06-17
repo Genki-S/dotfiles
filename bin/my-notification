@@ -15,13 +15,13 @@ fi
 
 notify_send=$(which notify-send)
 if [ -x "$notify_send" ]; then
-  notify-send "$title" "$body" $rest
+  timeout '0.1s' notify-send "$title" "$body" $rest
   exit
 fi
 
 osascript=$(which osascript)
 if [ -x "$osascript" ]; then
-  osx-notification "$title" "$body" $rest
+  timeout '0.1s' osx-notification "$title" "$body" $rest
 fi
 
 echo "No notification system found"
