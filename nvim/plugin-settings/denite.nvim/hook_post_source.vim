@@ -29,6 +29,8 @@ function! s:denite_filter_my_settings() abort
 	" let <CR> in filter buffer invoke the 'do_action' (note the <CR> after `<Plug>(denite_filter_update)`)
 	imap <silent><buffer> <CR> <Plug>(denite_filter_update)<CR>
 	" move cursor in denite buffer while in filter buffer
+	setlocal complete=""
+	call deoplete#custom#buffer_option('auto_complete', v:false)
 	inoremap <silent><buffer> <C-n> <Esc>
 				\:call denite#move_to_parent()<CR>
 				\:call cursor(line('.')+1,0)<CR>
