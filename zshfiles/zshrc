@@ -59,7 +59,7 @@ done
 # Misc. {{{
 
 # Regard some characters as word stops (better backword-kill-word behavior)
-WORDCHARS=$(echo $WORDCHARS | fold -w 1 | grep -v '/' | grep -v '-' | grep -v '=' | grep -v '.' | paste -s -d' ' | sed 's/ //g')
+WORDCHARS='*?[]~&;!#$%^(){}<>'
 
 setopt auto_pushd
 
