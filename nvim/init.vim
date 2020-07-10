@@ -63,6 +63,10 @@ let g:go_highlight_trailing_whitespace_error = 0
 
 execute 'source ' . g:nvim_config_dir . '/init-dein.vim'
 
+" colorscheme
+set termguicolors
+colorscheme tender
+
 let local_init = g:nvim_config_dir . '/init.local.vim'
 if filereadable(local_init)
 	execute 'source ' . g:nvim_config_dir . '/init.local.vim'

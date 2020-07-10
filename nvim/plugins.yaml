@@ -35,6 +35,7 @@
 # }}}
 
 # visual {{{
+- jacoborus/tender.vim:
 - itchyny/lightline.vim:
 # }}}
 
