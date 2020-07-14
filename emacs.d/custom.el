@@ -53,6 +53,7 @@
  '(org-pomodoro-expiry-time 40)
  '(org-pomodoro-play-sounds nil)
  '(org-refile-use-outline-path (quote file))
+ '(org-startup-folded t)
  '(org-startup-indented t)
  '(org-startup-truncated nil))
 (custom-set-faces
