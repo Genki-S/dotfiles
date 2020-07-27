@@ -42,3 +42,7 @@ bindkey '^j' expand-alias-and-accept
 bindkey '^q' push-input
 # "s" for "s"nippet
 bindkey '^s' pet-select
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
