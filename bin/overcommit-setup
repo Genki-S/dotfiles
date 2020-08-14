@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ln -s /home/genki/dotfiles/gitfiles/overcommit_hooks .git-hooks
-ln -s /home/genki/dotfiles/miscfiles/overcommit.yml .overcommit.yml
+ln -s $HOME/dotfiles/gitfiles/overcommit_hooks .git-hooks
+ln -s $HOME/dotfiles/miscfiles/overcommit.yml .overcommit.yml
 overcommit --install
 overcommit --sign
