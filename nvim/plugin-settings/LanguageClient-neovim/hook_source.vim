@@ -44,6 +44,7 @@ function! s:lc_buffer_setup() abort
   nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
   nnoremap <buffer> <silent> <C-]> <Cmd>TagImposterAnticipateJump <Bar> call LanguageClient#textDocument_definition()<CR>
   nnoremap <buffer> <silent> <SID>[LC]a <Cmd>call LanguageClient#textDocument_codeAction()<CR>
+  nnoremap <buffer> <silent> <SID>[LC]r <Cmd>call LanguageClient#textDocument_rename()<CR>
 
   autocmd BufWritePre <buffer> call <SID>lc_format()
 endfunction
