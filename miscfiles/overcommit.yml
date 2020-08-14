@@ -141,6 +141,8 @@ PreCommit:
     enabled: true
     description: 'Linting with golangci-lint'
     required_executable: 'golangci-lint'
+    command: ['golangci-lint', 'run']
+    flags: ['--out-format=line-number', '--print-issued-lines=false']
     include:
       - '**/*.go'
   NoDebugPrint:
