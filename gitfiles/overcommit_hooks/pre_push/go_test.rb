@@ -1,14 +1,7 @@
 module Overcommit::Hook::PrePush
   class GoTest < Base
     def run
-      execute(['go'], args: ['install', './...'])
-
-      result = execute(['go'], args: ['list', './...'])
-      return [:fail, result.stdout + result.stderr] unless result.success?
-      all_pkgs = result.stdout.split("\n")
-      pkgs = all_pkgs - all_pkgs.grep(/vendor/)
-
-      result = execute(command, args: ['test', '-race', '-timeout', '2s'] + pkgs)
+      result = execute(command, args: ['-race', '-timeout', '2s', './...'])
       return :pass if result.success?
 
       output = result.stdout + result.stderr

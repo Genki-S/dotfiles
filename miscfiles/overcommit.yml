@@ -159,6 +159,7 @@ PreCommit:
     description: 'Running precommit hook in package.json'
   GoTest:
     enabled: true
+    command: ['go', 'test']
     description: 'Checking if Go test passes'
     required_executable: 'go'
 
@@ -169,6 +170,7 @@ PrePush:
     required_executable: 'ant'
   GoTest:
     enabled: true
+    command: ['go', 'test']
     description: 'Checking if Go test passes'
     required_executable: 'go'
   CleanGitStatus:
