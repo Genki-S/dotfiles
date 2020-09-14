@@ -17,6 +17,9 @@
 - rhysd/vim-operator-surround:
     lazy: 1
     on_map: <Plug>(operator-surround-
+- tek/vim-operator-assign:
+    lazy: 1
+    on_map: <Plug>(operator-assign)
 # }}}
 
 # textobj-user {{{
