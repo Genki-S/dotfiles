@@ -253,4 +253,6 @@
     on_cmd:
         - Gist
 
+- MarcWeber/vim-addon-local-vimrc:
+
 # vim: foldmethod=marker
