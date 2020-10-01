@@ -83,6 +83,9 @@
         - <Plug>(openbrowser
     on_ft:
         - markdown # for previm
+    on_func:
+        - openbrowser#open
+        - openbrowser#_keymapping_smart_search
 
 # twitter
 - basyura/twibill.vim:
