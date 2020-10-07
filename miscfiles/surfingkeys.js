@@ -100,6 +100,17 @@ mapkey(',r', '#11Reload settings', () => {
     Front.showBanner('settings were reloaded');
 })
 
+mapkey(',<', '#3Move current tab to leftmost', function() {
+    RUNTIME('moveTab', {
+        step: -99
+    });
+});
+mapkey(',>', '#3Move current tab to rightmost', function() {
+    RUNTIME('moveTab', {
+        step: 99
+    });
+});
+
 // copies {{{
 mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() {
     var title = document.title.replace(/[\[\]]+/g, '');
