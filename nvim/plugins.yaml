@@ -26,7 +26,9 @@
 - kana/vim-textobj-user: # only autoload files, no need to make this lazy
 - thinca/vim-textobj-between:
     lazy: 1
-    on_map: <Plug>(textobj-between-
+    on_map:
+        x: <Plug>(textobj-between-
+        o: <Plug>(textobj-between-
 - kana/vim-textobj-function:
     lazy: 1
     on_map: <Plug>(textobj-function-
