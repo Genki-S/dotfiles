@@ -249,9 +249,19 @@
 ;; org-pomodoro
 (defvar lorem "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 (define-key global-map "\C-cp" 'org-pomodoro)
+
+(defun play-sound-with-ffplay-bg (sound)
+  "Play sound file with ffplay in background"
+  (if sound
+    (start-process "org-pomodoro-ffplay" "foo" "ffplay" "-nodisp" "-autoexit" "-volume" "100" sound)))
+
+(add-hook 'org-pomodoro-started-hook
+          (lambda ()
+            (play-sound-with-ffplay-bg (getenv "ORG_POMODORO_START_SOUND"))))
 (add-hook 'org-pomodoro-finished-hook
           (lambda ()
             (call-process "activate-org")
+            (play-sound-with-ffplay-bg (getenv "ORG_POMODORO_FINISH_SOUND"))
             (call-process "pushover" nil nil nil "org-pomodoro: Pomodoro Finished!")
             (call-process "my-notification" nil nil nil "Pomodoro Finished!" (concat "\nPomodoro finished, go back to your emacs.\n\n\n\n\n" lorem) "--urgency" "critical")))
 (add-hook 'org-pomodoro-killed-hook
