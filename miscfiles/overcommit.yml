@@ -162,6 +162,10 @@ PreCommit:
     command: ['go', 'test']
     description: 'Checking if Go test passes'
     required_executable: 'go'
+  PlaySound:
+    enabled: true
+    description: 'Just play sound'
+    required_executable: 'ffplay'
 
 PrePush:
   AntTest:
