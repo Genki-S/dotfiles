@@ -35,7 +35,7 @@ fi
 
 fcitx &
 unclutter &
-compton &
+picom &
 [ -f ~/.fehbg ] && ~/.fehbg &
 
 exec i3
