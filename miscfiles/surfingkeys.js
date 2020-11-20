@@ -120,8 +120,7 @@ mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() 
 mapkey('ym', "#7Copy current page's URL & title in markdown format", function() {
     var title = document.title.replace(/[\[\]]+/g, '');
     const locationParts = window.location.href.split('/');
-    const lastElement = locationParts[locationParts.length-1].split('#')[0].split('?')[0];
-    Clipboard.write('[' + lastElement + '](' + window.location.href + ')');
+    Clipboard.write('[' + title + '](' + window.location.href + ')');
 });
 
 // useful for e.g. copying JIRA keys
