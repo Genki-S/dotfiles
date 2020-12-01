@@ -142,5 +142,4 @@ key_bindings:
   - { key: V,        mods: Alt,       action: Paste            }
   - { key: Key0,     mods: Alt,       action: ResetFontSize    }
   - { key: Equals,   mods: Alt,       action: IncreaseFontSize }
-  - { key: Subtract, mods: Alt,       action: DecreaseFontSize }
   - { key: Minus,    mods: Alt,       action: DecreaseFontSize }
