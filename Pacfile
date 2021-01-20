@@ -12,7 +12,7 @@ python
 go
 nodejs
 npm
-rust
+rustup
 
 fasd
 hub
