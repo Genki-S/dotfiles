@@ -5,6 +5,9 @@
 ! Super_R to Mode_switch
 keycode 134 = Mode_switch NoSymbol Super_R
 
+! Mode_switch + [ to Escape
+keycode  34 = bracketleft braceleft Escape braceleft
+
 ! Mode_switch + hjkl to arrow keys
 keycode  43 = h H Left H
 keycode  44 = j J Down J
