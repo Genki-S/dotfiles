@@ -167,6 +167,12 @@ PreCommit:
     enabled: true
     description: 'Just play sound'
     required_executable: 'ffplay'
+  CargoTest:
+    enabled: true
+    description: 'Run tests with cargo'
+    required_executable: 'cargo'
+    flags: ['test']
+    include: 'src/**/*.rs'
 
 PrePush:
   AntTest:
