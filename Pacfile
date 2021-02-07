@@ -13,6 +13,7 @@ go
 nodejs
 npm
 rustup
+rust-analyzer
 
 fasd
 hub

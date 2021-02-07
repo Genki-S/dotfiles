@@ -15,7 +15,7 @@ let g:LanguageClient_serverCommands = {
       \ 'go': ['gopls'],
       \ 'python': ['pyls'],
       \ 'javascript': ['javascript-typescript-stdio'],
-      \ 'rust': ['rls'],
+      \ 'rust': ['rust-analyzer'],
       \ }
 
 let s:lsp_enabled_filetypes = keys(g:LanguageClient_serverCommands)
