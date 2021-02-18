@@ -190,6 +190,13 @@
     on_cmd:
         - SidewaysLeft
         - SidewaysRight
+- AndrewRadev/switch.vim:
+    lazy: 1
+    on_cmd:
+        - Switch
+        - SwitchReverse
+    on_func:
+        - switch#Switch
 
 - sk1418/QFGrep:
     lazy: 1
