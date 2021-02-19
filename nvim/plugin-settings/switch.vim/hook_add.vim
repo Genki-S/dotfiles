@@ -11,6 +11,7 @@ augroup END
 
 function! s:setup_rust_mappings() abort
 	nnoremap <buffer> -o <Cmd>call g:Switch_rust_option()<CR>
+	nnoremap <buffer> -s <Cmd>call g:Switch_rust_string()<CR>
 endfunction
 
 let s:rust_option_definitions = 
@@ -21,6 +22,18 @@ let s:rust_option_definitions =
       \   },
       \ ]
 
+let s:rust_string_definitions = 
+      \ [
+      \   {
+      \     '\("[^"]*"\)': 'String::from(\1)',
+      \     'String::from(\("[^"]*"\))': '\1',
+      \   },
+      \ ]
+
 function! g:Switch_rust_option() abort
   call switch#Switch({'definitions': s:rust_option_definitions})
+endfunction
+
+function! g:Switch_rust_string() abort
+  call switch#Switch({'definitions': s:rust_string_definitions})
 endfunction
