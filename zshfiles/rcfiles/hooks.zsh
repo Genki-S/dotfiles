@@ -7,6 +7,7 @@
 REPORTTIME_SECONDS=3
 NLCF_EXCLUDE_COMMANDS=(
   nvim
+  myvim
   git
   tig
   fg
