@@ -1,12 +1,12 @@
 get github.com/tools/godep
-get github.com/motemen/ghq
+get github.com/x-motemen/ghq
 get github.com/peco/peco/cmd/peco
 get github.com/ericchiang/pup
 get github.com/peco/migemogrep
 get golang.org/x/tools/cmd/goimports
 get golang.org/x/tools/cmd/guru
 get golang.org/x/tools/cmd/gorename
-get github.com/golang/lint/golint
+get golang.org/x/lint
 get github.com/rogpeppe/godef
 get github.com/kisielk/errcheck
 get github.com/jstemmer/gotags
@@ -15,6 +15,6 @@ get github.com/fatih/motion
 get github.com/zmb3/gogetdoc
 get github.com/josharian/impl
 get github.com/direnv/direnv
-get -u github.com/haya14busa/reviewdog/cmd/reviewdog
-get -u golang.org/x/tools/cmd/gopls
+get -u github.com/reviewdog/reviewdog/cmd/reviewdog
+get golang.org/x/tools/gopls@latest
 get -u github.com/golangci/golangci-lint/cmd/golangci-lint

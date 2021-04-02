@@ -5,7 +5,7 @@ module Overcommit::Hook::PrePush
       return :pass if result.success?
 
       output = result.stdout + result.stderr
-      if output.include?('no Go files in')
+      if output.include?('cannot find main module')
           return [:warn, output]
       end
       [:fail, output]
