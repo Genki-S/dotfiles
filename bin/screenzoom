@@ -1,0 +1,5 @@
+#!/bin/sh
+# stolen from https://gist.github.com/nkreer/cca0ef25077dfa8cbfbc2f84a59a498d
+import -window root /tmp/Screenshot.png
+feh /tmp/Screenshot.png --zoom 220
+rm /tmp/Screenshot.png
