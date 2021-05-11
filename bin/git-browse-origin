@@ -1,13 +1,25 @@
 #!/bin/bash
 
-COMMIT=$1
+set -eo pipefail
 
-URL_BASE=`git config --get remote.origin.url | sed -e 's|git@|https://|' -e 's|:|/|g' -e 's|///|://|' -e 's|.git$||'`
+commit=$1
 
-URL=$URL_BASE
+url=""
+origin=$(git config --get remote.origin.url)
 
-if [ -n "$COMMIT" ]; then
-  URL="$URL/commit/$COMMIT"
+if [[ $origin =~ ^git@[^:]+:.*$ ]]; then
+  url=$(echo $origin | sed -e 's|:|/|' -e 's|^git@|https://|' -e 's|.git$||')
+elif [[ $origin =~ ^ssh://git@.*$ ]]; then
+  url=$(echo $origin | sed -e 's|^ssh://git@|https://|' -e 's|.git$||')
 fi
 
-$HOME/dotfiles/bin/my-open $URL
+if [[ -z "$url" ]]; then
+  >&2 echo "failed to convert git remote url to http(s) url: $(origin)"
+  exit 1
+fi
+
+if [ -n "$commit" ]; then
+  url="$url/commit/$commit"
+fi
+
+$HOME/dotfiles/bin/my-open $url
