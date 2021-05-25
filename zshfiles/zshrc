@@ -1,4 +1,7 @@
 # TODO: Remove dotfiles/zshfiles.old altogether once the new dotfiles/zshfiles is fully setup
+echo "zshrc starting"
+
+zmodload zsh/zprof
 
 # First of all, jump into tmux session automatically {{{
 () {
@@ -33,6 +36,7 @@ fi
 path=(
   $HOME/bin
   $(go env GOPATH)/bin(N/)
+  $HOME/.krew/bin(N/)
   $path
 )
 # export PATH so that subprocesses can use executables installed through anyenv
@@ -120,5 +124,14 @@ alias c="cheat"
 
 autoload -Uz compinit
 compinit
+
+# Profile zsh startup time
+() {
+  local prof_dir="$HOME/.tmp/profiling/zsh"
+  rm -f $prof_dir/*
+  local prof_file="$prof_dir/`date +%Y-%m-%d_%H:%M:%S`"
+  zprof > $prof_file
+  cat $prof_file
+}
 
 # vim:foldmethod=marker
