@@ -1,0 +1,31 @@
+# vim: filetype=zsh
+
+# magic-leader triggers useful things with leader key
+# only works when LBUFFER is empty (i.e. when leader is first entered)
+
+if [[ -n "$LBUFFER" ]]; then
+  zle self-insert
+  return
+fi
+
+__kubernetes_switch_context() {
+  local contexts="$(kubectl config get-contexts | tail -n +2 | sed 's/^\*//' | sed 's/^\s*//' | sed 's/\s.*$//')"
+  local selected="$(echo $contexts | fzy)"
+  if [ -z "$selected" ]; then
+    zle reset-prompt
+    return
+  fi
+  LBUFFER="kubectl config use-context $selected"
+  zle reset-prompt
+  zle accept-line
+}
+
+local REPLY
+read-from-minibuffer -k 1 "magic-leader: "
+case "${REPLY}" in
+  k)
+    __kubernetes_switch_context
+    ;;
+  *)
+    zle -M "magic-leader: no action registered for key '$REPLY'"
+esac

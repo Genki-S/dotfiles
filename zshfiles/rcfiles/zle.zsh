@@ -34,6 +34,7 @@ function zle-keymap-select {
 zle -N zle-keymap-select
 
 bindkey ' ' magic-space
+bindkey ',' magic-leader
 bindkey '^z' foreground
 bindkey '^r' interactive-reverse-i-search
 bindkey '^o' popd-in-place
