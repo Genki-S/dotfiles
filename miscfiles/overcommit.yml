@@ -41,19 +41,9 @@ PreCommit:
     # enabled: true
   ImageOptim:
     enabled: true
-  Jscs:
-    enabled: true
-  JsHint:
-    enabled: true
-  JsLint:
-    enabled: true
-  # Jsl:
-    # enabled: true
   JsonSyntax:
     enabled: true
   Mdl:
-    enabled: true
-  SemiStandard:
     enabled: true
   TrailingWhitespace:
     enabled: true
