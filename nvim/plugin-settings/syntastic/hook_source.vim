@@ -5,3 +5,6 @@ let g:syntastic_mode_map = {
       \ 'active_filetypes': [],
       \ 'passive_filetypes': []
       \}
+
+let g:syntastic_typescript_checkers = ["eslint"]
+let g:syntastic_typescriptreact_checkers = ["typescript/eslint"]
