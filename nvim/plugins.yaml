@@ -155,6 +155,11 @@
     lazy: 1
     on_ft:
         - rust
+
+- jvirtanen/vim-hcl:
+    lazy: 1
+    on_ft:
+        - hcl
 # }}}
 
 - autozimu/LanguageClient-neovim:
