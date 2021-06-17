@@ -160,6 +160,10 @@
     lazy: 1
     on_ft:
         - hcl
+- hashivim/vim-terraform:
+    lazy: 1
+    on_ft:
+        - terraform
 # }}}
 
 - autozimu/LanguageClient-neovim:
