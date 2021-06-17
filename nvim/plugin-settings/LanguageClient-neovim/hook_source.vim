@@ -16,6 +16,7 @@ let g:LanguageClient_serverCommands = {
       \ 'python': ['pyls'],
       \ 'javascript': ['javascript-typescript-stdio'],
       \ 'rust': ['rust-analyzer'],
+      \ 'ruby': ['solargraph', 'stdio'],
       \ }
 
 let s:lsp_enabled_filetypes = keys(g:LanguageClient_serverCommands)
