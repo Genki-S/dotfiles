@@ -1,0 +1,13 @@
+{
+    "yaml": {
+        "completion": true,
+        "hover": true,
+        "validate": true,
+        "schemas": {
+            "kubernetes": "/*"
+        },
+        "format": {
+            "enable": false
+        }
+    }
+}
