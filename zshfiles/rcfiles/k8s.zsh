@@ -36,6 +36,7 @@ function() { # Setup kubernetes aliases
     alias kc='k config'
     alias kap='k apply'
     alias kapf='k apply -f'
+    alias kdelf='k delete -f'
     alias kat='k attach'
     alias kns='k config set-context --current --namespace'
   }
