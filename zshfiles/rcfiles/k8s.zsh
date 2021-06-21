@@ -41,3 +41,14 @@ function() { # Setup kubernetes aliases
     alias kns='k config set-context --current --namespace'
   }
 }
+
+# kubectl exec & get a shell
+function kxsh {
+  local pod=$1
+  local shell=${2:-/bin/bash}
+  if [ -z "$pod" ]; then
+    >&2 echo "usage: kxsh POD <SHELL>"
+  fi
+  echo "running: kubectl exec -it $pod -- $shell"
+  kubectl exec -it $pod -- $shell
+}
