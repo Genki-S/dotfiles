@@ -284,4 +284,9 @@
 
 - MarcWeber/vim-addon-local-vimrc:
 
+- preservim/tagbar:
+    lazy: 1
+    on_cmd:
+        - TagbarToggle
+
 # vim: foldmethod=marker
