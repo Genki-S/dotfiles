@@ -1,0 +1,19 @@
+snippet     dov
+abbr        do |v| ... end
+  do |${1:v}|
+    ${0}
+  end
+
+snippet     stdin
+abbr        read lines from stdin
+options     head
+  ARGF.each do |line|
+    ${0}
+  end
+
+snippet     filel
+abbr        read lines from file
+options     head
+  File.readlines('${1:#:filepath}').each do |${2:line}|
+    ${0}
+  end

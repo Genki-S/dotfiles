@@ -1,0 +1,41 @@
+snippet     l
+abbr        let v = ...;
+options     head
+  let ${1:var} = ${2:val};
+
+snippet     lm
+abbr        let mut v = ...;
+options     head
+  let mut ${1:var} = ${2:val};
+
+snippet     ife
+abbr        if let Err(e) = do() { ... }
+options     head
+  if let Err(${1:e}) = ${2:do}(${3}) {
+    ${0}
+  }
+
+snippet     fori
+abbr        for v in ...
+options     head
+  for ${1:line} in ${2:s.lines()} {
+    ${0}
+  }
+
+snippet     tests
+abbr        #[cfg(test)] mod tests { ... }
+options     head
+  #[cfg(test)]
+  mod tests {
+    use super::*;
+
+    ${0}
+  }
+
+snippet     test
+abbr        #[test] fn test() { ... }
+options     head
+  #[test]
+  fn ${1:test_do}() {
+    ${0}
+  }
