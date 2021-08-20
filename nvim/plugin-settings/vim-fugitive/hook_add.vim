@@ -2,8 +2,8 @@ nnoremap <SID>[fugitive] <Nop>
 nmap <Leader>g <SID>[fugitive]
 
 nnoremap <SID>[fugitive]<Space> :Git 
-nnoremap <SID>[fugitive]s :Gstatus<CR>
-nnoremap <SID>[fugitive]c :Gcommit<CR>
+nnoremap <SID>[fugitive]s :Git<CR>
+nnoremap <SID>[fugitive]c :Git commit<CR>
 nnoremap <SID>[fugitive]C :Git commit --amend<CR>
 nnoremap <SID>[fugitive]g :Ggrep 
 nnoremap <SID>[fugitive]l :Glog 
@@ -16,5 +16,5 @@ nnoremap <SID>[fugitive]d :Gdiff
 nnoremap <SID>[fugitive]D :Gdiff master<CR>
 nnoremap <SID>[fugitive]mv :Gmove 
 nnoremap <SID>[fugitive]rm :Gremove<CR>
-nnoremap <SID>[fugitive]b :Gblame -w<CR>
-nnoremap <SID>[fugitive]B :Gblame -w -C -C<CR>
+nnoremap <SID>[fugitive]b :Git blame -w<CR>
+nnoremap <SID>[fugitive]B :Git blame -w -C -C<CR>
