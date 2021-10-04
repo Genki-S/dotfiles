@@ -78,8 +78,10 @@ alias sudo='sudo '
 alias crontab='crontab -i'
 
 function mkcd () {
-	mkdir -p "$@" && eval cd "\"\$$#\""
+  mkdir -p "$@" && eval cd "\"\$$#\""
 }
+
+alias tf='terraform'
 
 # }}}
 
