@@ -192,6 +192,9 @@ bar {
 # TODO: show the feh screen as fullscreen by default
 bindsym $mod+z exec "$HOME/dotfiles/bin/screenzoom"
 
+# dunst (desktop notification)
+bindsym $mod+q exec "dunstctl close"
+
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used their favorite modifier (alt or windows)
