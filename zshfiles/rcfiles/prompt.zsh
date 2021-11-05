@@ -13,10 +13,7 @@ psvar=()
 #   1: current value of $AWS_DEFAULT_REGION
 
 update-aws-region-precmd() {
-  psvar[1]="$(aws configure get region)"
-  if [ -n "$AWS_DEFAULT_REGION" ]; then
-    psvar[1]="$AWS_DEFAULT_REGION"
-  fi
+  psvar[1]="$AWS_DEFAULT_REGION"
 }
 
 precmd_functions+=(update-aws-region-precmd)
