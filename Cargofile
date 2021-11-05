@@ -1,1 +1,2 @@
 install --force ripgrep
+install --force tv-cli
