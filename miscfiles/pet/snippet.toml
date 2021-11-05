@@ -1,0 +1,4 @@
+[[snippets]]
+  description = "AWS EC2 instances in table view"
+  command = "aws ec2 describe-instances | jq '.Reservations[].Instances[] | { Name: .Tags[] | select(.Key==\"Name\") | .Value, InstanceId: .InstanceId, State: .State.Name, Type: .InstanceType }' | jq -s | tv"
+  output = ""
