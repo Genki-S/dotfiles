@@ -63,7 +63,7 @@ done
 # Misc. {{{
 
 # Regard some characters as word stops (better backword-kill-word behavior)
-WORDCHARS='*?[]~&;!#$%^(){}<>'
+WORDCHARS='*?[]~&;!#$%^(){}<>|'
 
 setopt auto_pushd
 
