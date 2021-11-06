@@ -35,6 +35,21 @@ function! s:lc_format() abort
   endif
 endfunction
 
+" ref: https://github.com/idbrii/vim-tagimposter/commit/394d9833b21e733fff0a30b3547b61019757e074
+function! s:lc_prejump() abort
+  let from = [bufnr('%'), line('.'), col('.'), 0]
+  let tagname = expand('<cword>')
+  let stack = gettagstack()
+  if stack.curidx > 1
+    let stack.items = stack.items[0:stack.curidx-2]
+  else
+    let stack.items = []
+  endif
+  let stack.items += [{'from': from, 'tagname': tagname}]
+  let stack.curidx = len(stack.items)
+  call settagstack(win_getid(), stack)
+endfunction
+
 function! s:lc_buffer_setup() abort
   if (!has_key(g:LanguageClient_serverCommands, &filetype))
     return
@@ -47,7 +62,7 @@ function! s:lc_buffer_setup() abort
   LanguageClientStart
 
   nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
-  nnoremap <buffer> <silent> <C-]> <Cmd>TagImposterAnticipateJump <Bar> call LanguageClient#textDocument_definition()<CR>
+  nnoremap <buffer> <silent> <C-]> <Cmd>call <SID>lc_prejump() <Bar> call LanguageClient#textDocument_definition()<CR>
   nnoremap <buffer> <silent> <SID>[LC]a <Cmd>call LanguageClient#textDocument_codeAction()<CR>
   nnoremap <buffer> <silent> <SID>[LC]r <Cmd>call LanguageClient#textDocument_rename()<CR>
 

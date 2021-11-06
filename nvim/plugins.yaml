@@ -170,13 +170,6 @@
     rev: next
     build: 'bash install.sh'
 
-- idbrii/vim-tagimposter:
-    lazy: 1
-    on_cmd:
-        - TagImposterAnticipateJump
-    on_func:
-        - tagimposter#setup
-
 - tpope/vim-sleuth:
 
 - easymotion/vim-easymotion:
