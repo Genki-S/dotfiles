@@ -50,6 +50,16 @@ function! s:lc_prejump() abort
   call settagstack(win_getid(), stack)
 endfunction
 
+" Enables non-realtime, one-off ('ish) diagnostics
+function! s:lc_toggle_diagnostics() abort
+  LanguageClientStop
+  let g:LanguageClient_diagnosticsEnable = 1 - g:LanguageClient_diagnosticsEnable
+  " TODO: most likely, LanguageClient-neovim stores the pid of languageserver it
+  " spawns. Monitor that pid rather than doing this hacky sleep.
+  sleep 1
+  LanguageClientStart
+endfunction
+
 function! s:lc_buffer_setup() abort
   if (!has_key(g:LanguageClient_serverCommands, &filetype))
     return
@@ -65,6 +75,7 @@ function! s:lc_buffer_setup() abort
   nnoremap <buffer> <silent> <C-]> <Cmd>call <SID>lc_prejump() <Bar> call LanguageClient#textDocument_definition()<CR>
   nnoremap <buffer> <silent> <SID>[LC]a <Cmd>call LanguageClient#textDocument_codeAction()<CR>
   nnoremap <buffer> <silent> <SID>[LC]r <Cmd>call LanguageClient#textDocument_rename()<CR>
+  nnoremap <buffer> <silent> <SID>[LC]d <Cmd>call <SID>lc_toggle_diagnostics()<CR>
 
   autocmd BufWritePre <buffer> call <SID>lc_format()
 endfunction
