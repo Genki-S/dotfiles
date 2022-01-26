@@ -7,6 +7,11 @@
 # Vim stuffs
 .vimrc.local
 .projections.json
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
 
 # Git stuff
 .overcommit.yml
@@ -39,49 +44,32 @@ bazel-testlogs
 # Misc.
 .envrc
 
-# INJECT_START:"#{ENV['HOME']}/dotfiles/submodules/gitignore/Global/OSX.gitignore"
-.DS_Store
-.AppleDouble
-.LSOverride
+### Uncomment the following for Mac
+#.DS_Store
+#.AppleDouble
+#.LSOverride
+#
+## Icon must ends with two \r.
+#Icon
+#
+## Thumbnails
+#._*
+#
+## Files that might appear on external disk
+#.Spotlight-V100
+#.Trashes
 
-# Icon must ends with two \r.
-Icon
-
-# Thumbnails
-._*
-
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-# INJECT_END
-
-# INJECT_START:"#{ENV['HOME']}/dotfiles/submodules/gitignore/Global/SASS.gitignore"
-### Sass Ignores - "Sassy CSS" http://sass-lang.com/
-*.sass-cache
-# INJECT_END
-
-# INJECT_START:"#{ENV['HOME']}/dotfiles/submodules/gitignore/Global/Tags.gitignore"
-# Ignore tags created by etags, ctags, gtags (GNU global) and cscope
-TAGS
-!TAGS/
-tags
-!tags/
-gtags.files
-GTAGS
-GRTAGS
-GPATH
-cscope.files
-cscope.out
-cscope.in.out
-cscope.po.out
-
-# INJECT_END
-
-# INJECT_START:"#{ENV['HOME']}/dotfiles/submodules/gitignore/Global/vim.gitignore"
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-*.un~
-Session.vim
-.netrwhist
-*~
-# INJECT_END
+### Uncomment the following if using tags
+## Ignore tags created by etags, ctags, gtags (GNU global) and cscope
+#TAGS
+#!TAGS/
+#tags
+#!tags/
+#gtags.files
+#GTAGS
+#GRTAGS
+#GPATH
+#cscope.files
+#cscope.out
+#cscope.in.out
+#cscope.po.out

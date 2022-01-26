@@ -12,7 +12,6 @@ task :install => [
   :install_ruby,
   :init_submodules,
   :update_submodules,
-  :update_injection,
   :brew_essentials,
   :orgmode,
   :deploy,
@@ -25,7 +24,6 @@ desc 'Do the best for unix.'
 task :install_unix => [
   :init_submodules,
   :update_submodules,
-  :update_injection,
   :orgmode,
   :deploy,
   :chsh ] do
@@ -219,16 +217,6 @@ task :ruby_dict do
         file.write(methods.uniq.sort.join("\n"))
       end
     end
-  end
-end
-
-desc 'Update files with injection of other files'
-task :update_injection do
-  files_with_injection = run %{
-    ag --files-with-matches 'INJECT_START' --ignore 'Rakefile' --ignore 'bin/inject'
-  }
-  files_with_injection.split.each do |fname|
-    run %{ #{DOTDIR}/bin/inject #{fname} }
   end
 end
 
