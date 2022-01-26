@@ -38,9 +38,6 @@
 [submodule "submodules/git-hooks"]
 	path = submodules/git-hooks
 	url = git@github.com:git-hooks/git-hooks.git
-[submodule "submodules/checkstyle"]
-	path = submodules/checkstyle
-	url = https://github.com/checkstyle/checkstyle
 [submodule "submodules/zsh-autosuggestions"]
 	path = submodules/zsh-autosuggestions
 	url = git://github.com/zsh-users/zsh-autosuggestions
