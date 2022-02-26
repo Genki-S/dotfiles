@@ -16,7 +16,7 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
-	pager = delta --plus-style="syntax #012800" --minus-style="normal #340001" --theme='Monokai Extended'
+	pager = delta
 
 [push]
 	default = upstream
