@@ -51,6 +51,11 @@ execute 'nnoremap <silent> ' . s:unimpaired_next . 'od <Cmd>diffoff<CR>'
 " the <Space> mappings doesn't preserve cursor position, but this is good enough
 execute 'nnoremap <silent> ' . s:unimpaired_prev . '<Space> O<Esc>j'
 execute 'nnoremap <silent> ' . s:unimpaired_next . '<Space> o<Esc>k'
+" 'o' mappings are for options in official unimpaired, but this is what I like
+execute 'nnoremap <silent> ' . s:unimpaired_prev . 'oq <Cmd>copen<CR>'
+execute 'nnoremap <silent> ' . s:unimpaired_next . 'oq <Cmd>cclose<CR>'
+execute 'nnoremap <silent> ' . s:unimpaired_prev . 'ol <Cmd>lopen<CR>'
+execute 'nnoremap <silent> ' . s:unimpaired_next . 'ol <Cmd>lclose<CR>'
 
 " save with <C-S>
 nnoremap <C-S> <Cmd>w<CR>
