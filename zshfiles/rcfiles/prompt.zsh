@@ -13,7 +13,11 @@ psvar=()
 #   1: current value of $AWS_DEFAULT_REGION
 
 update-aws-region-precmd() {
-  psvar[1]="$AWS_DEFAULT_REGION"
+  psvar[1]="$AWS_PROFILE"
+  psvar[2]="$AWS_DEFAULT_REGION"
+  if [ -n "$AWS_REGION" ]; then
+    psvar[2]="$AWS_REGION"
+  fi
 }
 
 precmd_functions+=(update-aws-region-precmd)
@@ -24,12 +28,12 @@ precmd_functions+=(update-aws-region-precmd)
   local return_status='%(?..%{$fg[red]%}%(?..✘)%{$reset_color%}[%?] )'
   local background_jobs='%(1j.%{$fg[yellow]%}Job[%j]%{$reset_color%} .)'
   local kube_context='(kube: $(kubectl config current-context 2> /dev/null)@$(kubectl config view --minify 2> /dev/null | grep namespace | sed "s/^ *namespace: //")) '
-  local aws_region='%(1V.(aws: %1v) .)'
+  local aws_context='%(1V.(aws: %1v @ %2v) .)'
   local cwd='%{$fg[green]%}[ ${PWD/#$HOME/~} ]%{$reset_color%} '
   local user_host_time='%{$fg[magenta]%}%n%{$reset_color%} on %{$fg[yellow]%}%m%{$reset_color%} at %{$fg[white]%}%D %*%{$reset_color%}'
   #local git_status='$(git_super_status) '
   local git_status=''
   PROMPT="
-${cmd_indicator}${return_status}${background_jobs}${cwd}${kube_context}${aws_region}${git_status}${user_host_time}
+${cmd_indicator}${return_status}${background_jobs}${cwd}${kube_context}${aws_context}${git_status}${user_host_time}
 %# "
 }
