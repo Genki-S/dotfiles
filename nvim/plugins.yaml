@@ -282,4 +282,11 @@
     on_cmd:
         - TagbarToggle
 
+- junegunn/vim-easy-align:
+    lazy: 1
+    on_cmd:
+        - EasyAlign
+    on_map:
+        - <Plug>(EasyAlign)
+
 # vim: foldmethod=marker
