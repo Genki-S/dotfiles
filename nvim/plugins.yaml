@@ -4,9 +4,10 @@
 - Shougo/deoplete.nvim:
 - Shougo/neosnippet.vim:
     lazy: 1
-    on_i: 1
     on_ft:
         - neosnippet
+    on_event:
+        - InsertEnter
 - Shougo/defx.nvim:
     lazy: 1
     on_cmd: Defx
@@ -176,7 +177,8 @@
 
 - kana/vim-smartchr:
     lazy: 1
-    on_i: 1
+    on_event:
+        - InsertEnter
 
 - tyru/vim-altercmd:
 
