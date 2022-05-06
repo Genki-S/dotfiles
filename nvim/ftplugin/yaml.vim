@@ -31,6 +31,7 @@ endfunction
 setlocal foldmethod=expr
 setlocal foldexpr=YamlFolds()
 setlocal foldtext=YamlFoldText()
+setlocal foldlevel=9999
 
 function! YamlTree()
     let l:list = []
