@@ -291,4 +291,6 @@
     on_map:
         - <Plug>(EasyAlign)
 
+- lukas-reineke/indent-blankline.nvim:
+
 # vim: foldmethod=marker
