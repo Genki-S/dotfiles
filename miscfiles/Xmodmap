@@ -1,5 +1,5 @@
 ! ref: https://wiki.archlinux.org/index.php/xmodmap
-! tip: use `xve` to check the keycode
+! tip: use `xev` to check the keycode
 ! tip: use `xmodmap -pke` to see keymap table
 
 ! Super_R to Mode_switch
