@@ -21,6 +21,7 @@ let g:LanguageClient_serverCommands = {
       \ 'rust': ['rust-analyzer'],
       \ 'ruby': ['solargraph', 'stdio'],
       \ 'yaml': ['yaml-language-server', '--stdio'],
+      \ 'terraform': ['terraform-ls', 'serve'],
       \ }
 
 let s:lsp_enabled_filetypes = keys(g:LanguageClient_serverCommands)
