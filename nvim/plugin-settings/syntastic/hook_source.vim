@@ -9,3 +9,4 @@ let g:syntastic_mode_map = {
 let g:syntastic_typescript_checkers = ["eslint"]
 let g:syntastic_typescriptreact_checkers = ["typescript/eslint"]
 let g:syntastic_yaml_checkers = ["yamllint"]
+let g:syntastic_python_checkers = ["mypy"]
