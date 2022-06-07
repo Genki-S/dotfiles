@@ -39,4 +39,6 @@ picom &
 [ -f ~/.fehbg ] && ~/.fehbg &
 redshift -l 35.6852:139.7528 &
 
+[ -f ~/.xinitrc.local ] && source ~/.xinitrc.local
+
 exec i3
