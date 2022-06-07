@@ -58,82 +58,82 @@ unmap('E') // prev tab
 unmap('<Ctrl-h>') // mouse over elements
 
 mapkey('<Ctrl-o>', '#4Go back in history', function() {
-    history.go(-1);
-}, {repeatIgnore: true});
+  history.go(-1);
+}, { repeatIgnore: true });
 mapkey('<Ctrl-i>', '#4Go forward in history', function() {
-    history.go(1);
-}, {repeatIgnore: true});
+  history.go(1);
+}, { repeatIgnore: true });
 
 // scrolls {{{
 mapkey('<Ctrl-y>', '#2Scroll up', function() {
-    Normal.scroll('up')
-}, {repeatIgnore: true})
+  Normal.scroll('up')
+}, { repeatIgnore: true })
 mapkey('<Ctrl-e>', '#2Scroll down', function() {
-    Normal.scroll('down')
-}, {repeatIgnore: true})
+  Normal.scroll('down')
+}, { repeatIgnore: true })
 mapkey('<Ctrl-d>', '#2Scroll a page down', function() {
-    Normal.scroll('pageDown')
-}, {repeatIgnore: true});
+  Normal.scroll('pageDown')
+}, { repeatIgnore: true });
 mapkey('<Ctrl-f>', '#2Scroll a full page down', function() {
-    Normal.scroll('fullPageDown')
-}, {repeatIgnore: true});
+  Normal.scroll('fullPageDown')
+}, { repeatIgnore: true });
 mapkey('<Ctrl-u>', '#2Scroll a page up', function() {
-    Normal.scroll('pageUp')
-}, {repeatIgnore: true});
+  Normal.scroll('pageUp')
+}, { repeatIgnore: true });
 mapkey('<Ctrl-b>', '#2Scroll a full page up', function() {
-    Normal.scroll('fullPageUp')
-}, {repeatIgnore: true});
+  Normal.scroll('fullPageUp')
+}, { repeatIgnore: true });
 // }}}
 
 map('F', 'gf'); // open a link in new tab
 
 mapkey('R', '#4Reload the page skipping the cache', () => {
-    RUNTIME('reloadTab', {
-        nocache: true
-    });
+  RUNTIME('reloadTab', {
+    nocache: true
+  });
 });
 
 mapkey(',r', '#11Reload settings', () => {
-    RUNTIME('loadSettingsFromUrl', {
-        url: 'file://<%= ENV["HOME"] %>/.surfingkeys.js'
-    });
-    Front.showBanner('settings were reloaded');
+  RUNTIME('loadSettingsFromUrl', {
+    url: 'file://<%= ENV["HOME"] %>/.surfingkeys.js'
+  });
+  Front.showBanner('settings were reloaded');
 })
 
 mapkey(',<', '#3Move current tab to leftmost', function() {
-    RUNTIME('moveTab', {
-        step: -99
-    });
+  RUNTIME('moveTab', {
+    step: -99
+  });
 });
 mapkey(',>', '#3Move current tab to rightmost', function() {
-    RUNTIME('moveTab', {
-        step: 99
-    });
+  RUNTIME('moveTab', {
+    step: 99
+  });
 });
 
 // copies {{{
 mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() {
-    var title = document.title.replace(/[\[\]]+/g, '');
-    Clipboard.write('[[' + window.location.href + '][' + title + ']]');
+  var title = document.title.replace(/[\[\]]+/g, '');
+  Clipboard.write('[[' + window.location.href + '][' + title + ']]');
 });
 
 mapkey('ym', "#7Copy current page's URL & title in markdown format", function() {
-    var title = document.title.replace(/[\[\]]+/g, '');
-    const locationParts = window.location.href.split('/');
-    Clipboard.write('[' + title + '](' + window.location.href + ')');
+  var title = document.title.replace(/[\[\]]+/g, '');
+  const locationParts = window.location.href.split('/');
+  Clipboard.write('[' + title + '](' + window.location.href + ')');
 });
 
 // useful for e.g. copying JIRA keys
 // stole from https://github.com/kalbasit/dotfiles/blob/master/overlays/all/surfingkeys-config/surfingkeys.js
 function copyLastElementInPath() {
-    const locationParts = window.location.href.split('/');
-    const lastElement = locationParts[locationParts.length-1].split('#')[0].split('?')[0];
-    if (!lastElement) {
-        Front.showBanner(`No last element was found.`);
-        return;
-    }
-    Clipboard.write(lastElement);
-    Front.showBanner(`Copied ${lastElement} to the clipboard.`);
+  const locationParts = window.location.href.split('/');
+  const lastElement = locationParts[locationParts.length - 1].split('#')[0].split('?')[0];
+  if (!lastElement) {
+    Front.showBanner(`No last element was found.`);
+    return;
+  }
+  Clipboard.write(lastElement);
+  Front.showBanner(`Copied ${lastElement} to the clipboard.`);
 }
 mapkey('yl', '#7Copy the last element of the path in the URL', copyLastElementInPath)
 // }}}
@@ -141,63 +141,63 @@ mapkey('yl', '#7Copy the last element of the path in the URL', copyLastElementIn
 // vimperator compatibility {{{
 // qmarks
 var overlayedGlobalMarks = {
-    'm': 'https://mail.google.com',
-    'n': 'http://www.nicovideo.jp/ranking?header',
-    's': 'https://www.google.com/calendar/render?pli=1',
-    'r': 'http://feedly.com/#my',
-    'a': 'http://www.amazon.co.jp/',
-    'g': 'https://github.com/',
-    't': 'https://twitter.com/',
-    'y': 'https://youtube.com/',
-    'p': 'http://getpocket.com/a/queue/'
+  'm': 'https://mail.google.com',
+  'n': 'http://www.nicovideo.jp/ranking?header',
+  's': 'https://www.google.com/calendar/render?pli=1',
+  'r': 'https://www.rakuten.co.jp/',
+  'a': 'http://www.amazon.co.jp/',
+  'g': 'https://github.com/',
+  't': 'https://twitter.com/',
+  'y': 'https://youtube.com/',
+  'p': 'http://getpocket.com/a/queue/'
 };
 mapkey('gn', '#10Jump to vim-like mark in new tab.', function(mark) {
-    var priorityURL = overlayedGlobalMarks[mark];
-    if (priorityURL === undefined) {
-        // fallback to Surfingkeys default jump
-        Normal.jumpVIMark(mark, true);
-        return;
-    }
-    var markInfo = {
-        url: priorityURL,
-        scrollLeft: 0,
-        scrollTop: 0
-    };
-    markInfo.tab = {
-        tabbed: true,
-        active: true
-    };
-    RUNTIME("openLink", markInfo);
+  var priorityURL = overlayedGlobalMarks[mark];
+  if (priorityURL === undefined) {
+    // fallback to Surfingkeys default jump
+    Normal.jumpVIMark(mark, true);
+    return;
+  }
+  var markInfo = {
+    url: priorityURL,
+    scrollLeft: 0,
+    scrollTop: 0
+  };
+  markInfo.tab = {
+    tabbed: true,
+    active: true
+  };
+  RUNTIME("openLink", markInfo);
 });
 
 // "ignore" feature
 var PassThroughOnce = (function() {
-    var self = new Mode("PassThroughOnce", "pass through once");
-    self.addEventListener('keydown', function(event) {
-        if (event.key == 'Control' || event.key == 'Shift') {
-          // don't exit PassThroughOnce when only modifier keys are pressed
-          return
-        }
-        // prevent this event to be handled by Surfingkeys' other listeners
-        event.sk_suppressed = true;
-        self.exit();
-    })
-    return self;
+  var self = new Mode("PassThroughOnce", "pass through once");
+  self.addEventListener('keydown', function(event) {
+    if (event.key == 'Control' || event.key == 'Shift') {
+      // don't exit PassThroughOnce when only modifier keys are pressed
+      return
+    }
+    // prevent this event to be handled by Surfingkeys' other listeners
+    event.sk_suppressed = true;
+    self.exit();
+  })
+  return self;
 })();
 mapkey('i', '#0enter PassThroughOnce mode to temporarily suppress SurfingKeys', function() {
-    PassThroughOnce.enter()
+  PassThroughOnce.enter()
 });
 
 // open URL from clipboard
 mapkey('p', '#3Open URL from clipboard', () => {
-    Clipboard.read(response => {
-        window.location.href = response.data;
-    });
+  Clipboard.read(response => {
+    window.location.href = response.data;
+  });
 });
 mapkey('P', '#1Open URL from clipboard in a new tab', () => {
-    Clipboard.read(response => {
-        window.open(response.data);
-    });
+  Clipboard.read(response => {
+    window.open(response.data);
+  });
 })
 // }}}
 
@@ -246,27 +246,27 @@ const searches = {}
 
 // Arch Linux Wiki
 searches.a = {
-  alias:  "a",
-  name:   "archwiki",
+  alias: "a",
+  name: "archwiki",
   search: "https://wiki.archlinux.org/index.php?go=go&search=",
-  compl:  "https://wiki.archlinux.org/api.php?action=opensearch&format=json&formatversion=2&namespace=0&limit=10&suggest=true&search=",
+  compl: "https://wiki.archlinux.org/api.php?action=opensearch&format=json&formatversion=2&namespace=0&limit=10&suggest=true&search=",
 }
 searches.a.callback = response => JSON.parse(response.text)[1]
 
 // Google
 searches.g = {
-  alias:  "g",
-  name:   "google",
+  alias: "g",
+  name: "google",
   search: "https://www.google.com/search?q=",
-  compl:  "https://www.google.com/complete/search?client=chrome-omni&gs_ri=chrome-ext&oit=1&cp=1&pgcl=7&q=",
+  compl: "https://www.google.com/complete/search?client=chrome-omni&gs_ri=chrome-ext&oit=1&cp=1&pgcl=7&q=",
 }
 
 // Mozilla Developer Network (MDN)
 searches.m = {
-  alias:  "m",
-  name:   "mdn",
+  alias: "m",
+  name: "mdn",
   search: "https://developer.mozilla.org/en-US/search?q=",
-  compl:  "https://developer.mozilla.org/en-US/search.json?q=",
+  compl: "https://developer.mozilla.org/en-US/search.json?q=",
 }
 searches.m.callback = (response) => {
   const res = JSON.parse(response.text)
@@ -292,26 +292,26 @@ searches.m.callback = (response) => {
 
 // YouTube
 searches.y = {
-  alias:  "y",
-  name:   "youtube",
+  alias: "y",
+  name: "youtube",
   search: "https://www.youtube.com/search?q=",
   // compl:  `https://www.googleapis.com/youtube/v3/search?maxResults=20&part=snippet&type=video,channel&key=${keys.google_yt}&safeSearch=none&q=`,
 }
 searches.y.callback = response => JSON.parse(response.text).items
   .map((s) => {
     switch (s.id.kind) {
-    case "youtube#channel":
-      return createURLItem(
-        `${s.snippet.channelTitle}: ${s.snippet.description}`,
-        `https://youtube.com/channel/${s.id.channelId}`,
-      )
-    case "youtube#video":
-      return createURLItem(
-        ` ▶ ${s.snippet.title}`,
-        `https://youtu.be/${s.id.videoId}`,
-      )
-    default:
-      return null
+      case "youtube#channel":
+        return createURLItem(
+          `${s.snippet.channelTitle}: ${s.snippet.description}`,
+          `https://youtube.com/channel/${s.id.channelId}`,
+        )
+      case "youtube#video":
+        return createURLItem(
+          ` ▶ ${s.snippet.title}`,
+          `https://youtu.be/${s.id.videoId}`,
+        )
+      default:
+        return null
     }
   }).filter(s => s !== null)
 
