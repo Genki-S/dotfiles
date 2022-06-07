@@ -1,0 +1,82 @@
+snippet     p
+abbr        println!
+    println!("${1:\{:?\}}", ${2});${0}
+
+snippet     fm
+abbr        format!
+    format!("${1:\{\}}", ${2});${0}
+
+snippet     l
+abbr        let
+    let ${1} = ${2:TARGET};${0}
+
+snippet     if
+abbr        if {}
+    if ${1:#:condition} {
+        ${0:TARGET}
+    }
+
+snippet     ifl
+abbr        if let = ... {}
+    if let ${1:#:pattern} = ${2:#:var} {
+        ${0:TARGET}
+    }
+
+snippet     ifs
+abbr        if let Some(v) = ... {}
+    if let Some(${1:v}) = ${2:#:option} {
+        ${0:TARGET}
+    }
+
+snippet     ma
+abbr        match v { }
+options     head
+    match ${1:v} {
+        ${2:#:pattern} => ${0:TARGET}
+    }
+
+snippet     tests
+abbr        test setup
+options     head
+    #[cfg(test)]
+    mod tests {
+        use super::*;
+
+        ${0:TARGET}
+    }
+
+snippet     test
+abbr        test case
+options     head
+    #[test]
+    fn ${1:#:test_name}() {
+        ${0:TARGET}
+    }
+
+snippet     dd
+abbr        Default::default()
+    Default::default()
+
+snippet     disp
+abbr        impl fmt::Display for ...
+options     head
+    impl fmt::Display for ${1} {
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            ${2:write!(f, "\{:?\}", self)}
+        }
+    }
+
+snippet     d
+abbr        derive
+options     head
+    #[derive(${1})]${0:TARGET}
+
+
+snippet     from
+abbr        impl From...
+options     head
+    impl From<${1}> for ${2} {
+        fn from(${3}: $1) -> Self {
+            ${0:TARGET}
+        }
+    }
