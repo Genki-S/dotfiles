@@ -12,6 +12,9 @@ set tabstop=2
 set ignorecase
 set smartcase
 
+" mostly used for viewing docs with LanguageClient-neovim
+set previewheight=30
+
 " for padding
 set signcolumn=yes
 

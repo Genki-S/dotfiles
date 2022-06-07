@@ -7,6 +7,9 @@ nmap <Leader>l <SID>[LC]
 " I prefer running diagnostics manually via syntastic
 let g:LanguageClient_diagnosticsEnable = 0
 
+" floating window is really not for me
+let g:LanguageClient_useFloatingHover = 0
+
 " 2 secs is the max I can wait
 let g:LanguageClient_waitOutputTimeout = 2
 
