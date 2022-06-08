@@ -1,4 +1,29 @@
 [[snippets]]
   description = "AWS EC2 instances in table view"
-  command = "aws ec2 describe-instances | jq '.Reservations[].Instances[] | { Name: .Tags[] | select(.Key==\"Name\") | .Value, InstanceId: .InstanceId, State: .State.Name, Type: .InstanceType }' | jq -s | tv"
+  command = "aws ec2 describe-instances | jq '.Reservations[].Instances[] | { Name: .Tags[] | select(.Key==\"Name\") | .Value, InstanceId: .InstanceId, State: .State.Name, PrivIP: .PrivateIpAddress, Type: .InstanceType, LaunchTime: .LaunchTime }' | jq -s | tv"
+  output = ""
+
+[[snippets]]
+  description = "AWS AutoScalingGroups in table view"
+  command = "aws autoscaling describe-auto-scaling-groups | jq '.AutoScalingGroups[] | { Name: .AutoScalingGroupName, Min: .MinSize, Max: .MaxSize, Desired: .DesiredCapacity }' | jq -s | tv"
+  output = ""
+
+[[snippets]]
+  description = "AWS ASG: set desired capacity"
+  command = "aws autoscaling set-desired-capacity --auto-scaling-group-name=\"$ASG_NAME\" --desired-capacity=3"
+  output = ""
+
+[[snippets]]
+  description = "AWS Route53 Hosted Zones in table view"
+  command = "aws route53 list-hosted-zones | jq '.HostedZones[] | { Name: .Name, ID: .Id, Comment: .Config.Comment }' | jq -s | tv"
+  output = ""
+
+[[snippets]]
+  description = "AWS Route53 List Resource Record Sets in table view"
+  command = "aws route53 list-resource-record-sets --hosted-zone-id \"$ID\" | jq '.ResourceRecordSets[] | { Name: .Name, Type: .Type, ResourceRecords: .ResourceRecords | map(.Value) | join(\"\\n\") }' | jq -s | tv"
+  output = ""
+
+[[snippets]]
+  description = "AWS ASG describe activities"
+  command = "aws autoscaling describe-scaling-activities --auto-scaling-group-name=\"$ASG_NAME\" --output=table --query 'Activities[*].{Status:StatusCode,Activity:Description,Progress:Progress,Start:StartTime,End:EndTime}' --max-items 12"
   output = ""
