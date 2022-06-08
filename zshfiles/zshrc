@@ -82,6 +82,10 @@ function mkcd () {
 }
 
 alias tf='terraform'
+alias tfi='tf init'
+alias tfp='tf plan'
+alias tfa='tf apply'
+alias tfw='tf workspace'
 
 # }}}
 
