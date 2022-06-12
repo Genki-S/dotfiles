@@ -293,4 +293,11 @@
 
 - lukas-reineke/indent-blankline.nvim:
 
+- simnalamburt/vim-mundo:
+    lazy: 1
+    on_cmd:
+        - MundoShow
+        - MundoHide
+        - MundoToggle
+
 # vim: foldmethod=marker
