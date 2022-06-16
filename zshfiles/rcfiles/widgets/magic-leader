@@ -20,11 +20,36 @@ __kubernetes_switch_context() {
   zle accept-line
 }
 
+__kubernetes_switch_namespace() {
+  # TODO: show this on minibuffer
+  LBUFFER="# collecting namespaces..."
+  zle reset-prompt
+  local namespaces="$(kubectl get namespaces | tail -n +2 | awk '{ print $1 }')"
+  LBUFFER=""
+  local selected="$(echo $namespaces | fzy)"
+  if [ -z "$selected" ]; then
+    zle reset-prompt
+    return
+  fi
+  # LBUFFER="kubectl config set-context --current --namespace $selected"
+  LBUFFER="kns $selected"
+  zle reset-prompt
+  zle accept-line
+}
+
 local REPLY
 read-from-minibuffer -k 1 "magic-leader: "
 case "${REPLY}" in
   k)
-    __kubernetes_switch_context
+    read-from-minibuffer -k 1 "k8s ([c]ontext, [n]amespace): "
+    case "${REPLY}" in
+      c)
+        __kubernetes_switch_context
+        ;;
+      n)
+        __kubernetes_switch_namespace
+        ;;
+    esac
     ;;
   *)
     zle -M "magic-leader: no action registered for key '$REPLY'"
