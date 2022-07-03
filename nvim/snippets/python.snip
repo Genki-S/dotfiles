@@ -1,0 +1,13 @@
+snippet     ifmain
+abbr        if __name__ == '__main__': ...
+alias       main
+options     head
+  if __name__ == '__main__':
+    ${0:pass}
+
+snippet     class
+abbr        class Class(...): ...
+options     head
+  class ${1:#:name}(${2:object}):
+    def __init__(self, ${3}):
+      ${0:pass}
