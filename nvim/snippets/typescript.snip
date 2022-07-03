@@ -1,0 +1,49 @@
+snippet     l
+abbr        console.log
+options     head
+  console.log(${1})
+  ${0}
+
+snippet     i
+abbr        interface
+options     head
+  interface ${1:InterfaceName} {
+    ${2:field}: ${3:type};
+  }
+  ${0}
+
+snippet     ei
+abbr        export interface
+options     head
+  export interface ${1:InterfaceName} {
+    ${2:field}: ${3:type};
+  }
+  ${0}
+
+snippet     f
+abbr        function
+options     head
+  function ${1:functionName}(${2:#:args}) {
+    ${0}
+  }
+
+snippet     ef
+abbr        export function
+options     head
+  export function ${1:functionName}(${2:#:args}) {
+    ${0}
+  }
+
+snippet     af
+abbr        async function
+options     head
+  async function ${1:functionName}(${2:#:args}) {
+    ${0}
+  }
+
+snippet     eaf
+abbr        export async function
+options     head
+  export async function ${1:functionName}(${2:#:args}) {
+    ${0}
+  }
