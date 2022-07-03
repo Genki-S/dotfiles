@@ -145,7 +145,11 @@
         - html
         - css
         - javascript
+        - javascriptreact
         - jsx
+        - typescript
+        - typescriptreact
+        - tsx
 
 - rodjek/vim-puppet:
     lazy: 1
