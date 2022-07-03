@@ -196,6 +196,14 @@ snippet     json
 abbr        \`json:key\`
   \`json:"${1:`g:Neosnippet_go_json_tagname()`}"\`${0}
 
+snippet     itoa
+abbr        strconv.Itoa
+  strconv.Itoa(${1})${0}
+
+snippet     atoi
+abbr        strconv.Atoi
+  strconv.Atoi(${1})${0}
+
 snippet     req
 abbr        http request
 options     head
