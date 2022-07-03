@@ -38,8 +38,8 @@ let s:rust_string_definitions =
 let s:typescript_promise_definitions = 
       \ [
       \   {
-      \     '\(\(\k\|[<>]\)\+\)': 'Promise<\1>',
-      \     'Promise<\(\(\k\|[<>]\)\+\)>': '\1',
+      \     '\(\(\k\|[.<>]\)\+\)': 'Promise<\1>',
+      \     'Promise<\(\(\k\|[.<>]\)\+\)>': '\1',
       \   },
       \ ]
 
