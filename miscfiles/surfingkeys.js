@@ -1,13 +1,21 @@
+// Tips:
+// - map <C-h> & <C-l> (prev, next tab) on Vivaldi (so that it works on tabs with Surfingkeys disabled)
+
 // settings {{{
 // unfortunate, but this is the best way at the moment
-// map <C-h> & <C-l> (prev, next tab) on Vivaldi
-settings.blacklistPattern = /.*docs\.google\.com.*/i
+settings.blocklistPattern = /.*docs\.google\.com.*/i
 // show hints to the left of elements (same as vimperator)
-settings.hintAlign = 'left';
+settings.hintAlign = 'left'
+// wait explicit input when there's only one hint
+settings.hintExplicit = true
+// focus to the left tab after closing current tab
+settings.focusAfterClosed = 'left'
 // open new tabs to the right of the current one
-settings.newTabPosition = "right"
+settings.newTabPosition = 'right'
 // no hint-style tab selection (always use omnibar, for consistency)
 settings.tabsThreshold = 0
+// TODO: try this (default is 100)
+// settings.omnibarHistoryCacheSize = 1000
 // }}}
 
 // set theme {{{
@@ -51,91 +59,90 @@ settings.theme = `
 // }}}
 
 // mappings {{{
-unmap('j')
-unmap('k')
-unmap('R') // next tab
-unmap('E') // prev tab
-unmap('<Ctrl-h>') // mouse over elements
+api.unmap('u') // use '?' for usage
+api.unmap('R') // next tab
+api.unmap('E') // prev tab
+api.unmap('<Ctrl-h>') // mouse over elements
 
-mapkey('<Ctrl-o>', '#4Go back in history', function() {
+api.mapkey('<Ctrl-o>', '#4Go back in history', function() {
   history.go(-1);
 }, { repeatIgnore: true });
-mapkey('<Ctrl-i>', '#4Go forward in history', function() {
+api.mapkey('<Ctrl-i>', '#4Go forward in history', function() {
   history.go(1);
 }, { repeatIgnore: true });
 
 // scrolls {{{
-mapkey('<Ctrl-y>', '#2Scroll up', function() {
-  Normal.scroll('up')
+api.mapkey('<Ctrl-y>', '#2Scroll up', function() {
+  api.Normal.scroll('up')
 }, { repeatIgnore: true })
-mapkey('<Ctrl-e>', '#2Scroll down', function() {
-  Normal.scroll('down')
+api.mapkey('<Ctrl-e>', '#2Scroll down', function() {
+  api.Normal.scroll('down')
 }, { repeatIgnore: true })
-mapkey('<Ctrl-d>', '#2Scroll a page down', function() {
-  Normal.scroll('pageDown')
-}, { repeatIgnore: true });
-mapkey('<Ctrl-f>', '#2Scroll a full page down', function() {
-  Normal.scroll('fullPageDown')
-}, { repeatIgnore: true });
-mapkey('<Ctrl-u>', '#2Scroll a page up', function() {
-  Normal.scroll('pageUp')
-}, { repeatIgnore: true });
-mapkey('<Ctrl-b>', '#2Scroll a full page up', function() {
-  Normal.scroll('fullPageUp')
-}, { repeatIgnore: true });
+api.mapkey('<Ctrl-d>', '#2Scroll a page down', function() {
+  api.Normal.scroll('pageDown')
+}, { repeatIgnore: true })
+api.mapkey('<Ctrl-f>', '#2Scroll a full page down', function() {
+  api.Normal.scroll('fullPageDown')
+}, { repeatIgnore: true })
+api.mapkey('<Ctrl-u>', '#2Scroll a page up', function() {
+  api.Normal.scroll('pageUp')
+}, { repeatIgnore: true })
+api.mapkey('<Ctrl-b>', '#2Scroll a full page up', function() {
+  api.Normal.scroll('fullPageUp')
+}, { repeatIgnore: true })
 // }}}
 
-map('F', 'gf'); // open a link in new tab
+api.map('F', 'gf') // open a link in new tab
 
-mapkey('R', '#4Reload the page skipping the cache', () => {
-  RUNTIME('reloadTab', {
+api.mapkey('R', '#4Reload the page skipping the cache', () => {
+  api.RUNTIME('reloadTab', {
     nocache: true
-  });
-});
-
-mapkey(',r', '#11Reload settings', () => {
-  RUNTIME('loadSettingsFromUrl', {
-    url: 'file://<%= ENV["HOME"] %>/.surfingkeys.js'
-  });
-  Front.showBanner('settings were reloaded');
+  })
 })
 
-mapkey(',<', '#3Move current tab to leftmost', function() {
-  RUNTIME('moveTab', {
+api.mapkey(',r', '#11Reload settings', () => {
+  api.RUNTIME('loadSettingsFromUrl', {
+    url: 'file://<%= ENV["HOME"] %>/.surfingkeys.js'
+  })
+  api.Front.showBanner('settings were reloaded');
+})
+
+api.mapkey(',<', '#3Move current tab to leftmost', function() {
+  api.RUNTIME('moveTab', {
     step: -99
-  });
-});
-mapkey(',>', '#3Move current tab to rightmost', function() {
-  RUNTIME('moveTab', {
+  })
+})
+api.mapkey(',>', '#3Move current tab to rightmost', function() {
+  api.RUNTIME('moveTab', {
     step: 99
-  });
-});
+  })
+})
 
 // copies {{{
-mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() {
+api.mapkey('yo', "#7Copy current page's URL & title in org-mode format", function() {
   var title = document.title.replace(/[\[\]]+/g, '');
-  Clipboard.write('[[' + window.location.href + '][' + title + ']]');
-});
+  api.Clipboard.write('[[' + window.location.href + '][' + title + ']]');
+})
 
-mapkey('ym', "#7Copy current page's URL & title in markdown format", function() {
+api.mapkey('ym', "#7Copy current page's URL & title in markdown format", function() {
   var title = document.title.replace(/[\[\]]+/g, '');
   const locationParts = window.location.href.split('/');
-  Clipboard.write('[' + title + '](' + window.location.href + ')');
-});
+  api.Clipboard.write('[' + title + '](' + window.location.href + ')');
+})
 
 // useful for e.g. copying JIRA keys
 // stole from https://github.com/kalbasit/dotfiles/blob/master/overlays/all/surfingkeys-config/surfingkeys.js
 function copyLastElementInPath() {
-  const locationParts = window.location.href.split('/');
-  const lastElement = locationParts[locationParts.length - 1].split('#')[0].split('?')[0];
+  const locationParts = window.location.href.split('/')
+  const lastElement = locationParts[locationParts.length - 1].split('#')[0].split('?')[0]
   if (!lastElement) {
-    Front.showBanner(`No last element was found.`);
-    return;
+    api.Front.showBanner(`No last element was found.`)
+    return
   }
-  Clipboard.write(lastElement);
-  Front.showBanner(`Copied ${lastElement} to the clipboard.`);
+  api.Clipboard.write(lastElement)
+  api.Front.showBanner(`Copied ${lastElement} to the clipboard.`)
 }
-mapkey('yl', '#7Copy the last element of the path in the URL', copyLastElementInPath)
+api.mapkey('yl', '#7Copy the last element of the path in the URL', copyLastElementInPath)
 // }}}
 
 // vimperator compatibility {{{
@@ -150,61 +157,64 @@ var overlayedGlobalMarks = {
   't': 'https://twitter.com/',
   'y': 'https://youtube.com/',
   'p': 'http://getpocket.com/a/queue/'
-};
-mapkey('gn', '#10Jump to vim-like mark in new tab.', function(mark) {
+}
+api.mapkey('gn', '#10Jump to vim-like mark in new tab.', function(mark) {
   var priorityURL = overlayedGlobalMarks[mark];
   if (priorityURL === undefined) {
     // fallback to Surfingkeys default jump
-    Normal.jumpVIMark(mark, true);
-    return;
+    api.Normal.jumpVIMark(mark, true)
+    return
   }
   var markInfo = {
     url: priorityURL,
     scrollLeft: 0,
     scrollTop: 0
-  };
+  }
   markInfo.tab = {
     tabbed: true,
     active: true
-  };
-  RUNTIME("openLink", markInfo);
-});
+  }
+  api.RUNTIME("openLink", markInfo)
+})
 
 // "ignore" feature
-var PassThroughOnce = (function() {
-  var self = new Mode("PassThroughOnce", "pass through once");
-  self.addEventListener('keydown', function(event) {
-    if (event.key == 'Control' || event.key == 'Shift') {
-      // don't exit PassThroughOnce when only modifier keys are pressed
-      return
-    }
-    // prevent this event to be handled by Surfingkeys' other listeners
-    event.sk_suppressed = true;
-    self.exit();
-  })
-  return self;
-})();
-mapkey('i', '#0enter PassThroughOnce mode to temporarily suppress SurfingKeys', function() {
-  PassThroughOnce.enter()
-});
+// var PassThroughOnce = (function() {
+//   var self = new Mode("PassThroughOnce", "pass through once");
+//   self.addEventListener('keydown', function(event) {
+//     if (event.key == 'Control' || event.key == 'Shift') {
+//       // don't exit PassThroughOnce when only modifier keys are pressed
+//       return
+//     }
+//     // prevent this event to be handled by Surfingkeys' other listeners
+//     event.sk_suppressed = true;
+//     self.exit();
+//   })
+//   return self;
+// })();
+// mapkey('i', '#0enter PassThroughOnce mode to temporarily suppress SurfingKeys', function() {
+//   PassThroughOnce.enter()
+// });
+
+// try using ephemeral PassThrough mode; TODO: consider if PassThroughOnce is still useful
+api.map('i', 'p')
+api.unmap('p')
 
 // open URL from clipboard
-mapkey('p', '#3Open URL from clipboard', () => {
-  Clipboard.read(response => {
-    window.location.href = response.data;
-  });
-});
-mapkey('P', '#1Open URL from clipboard in a new tab', () => {
-  Clipboard.read(response => {
-    window.open(response.data);
-  });
+api.mapkey('p', '#3Open URL from clipboard', () => {
+  api.Clipboard.read(response => {
+    window.location.href = response.data
+  })
+})
+api.mapkey('P', '#1Open URL from clipboard in a new tab', () => {
+  api.Clipboard.read(response => {
+    window.open(response.data)
+  })
 })
 // }}}
 
 // insert mode mappings
-imap('<Ctrl-f>', '<Alt-f>')
-imap('<Ctrl-b>', '<Alt-b>')
-imap('<Ctrl-w>', '<Alt-w>')
+api.iunmap(':') // disable emoji completion
+
 // }}}
 
 var inlineQuery = {
@@ -221,27 +231,14 @@ var inlineQuery = {
     return content;
   }
 }
-Front.registerInlineQuery(inlineQuery)
+api.Front.registerInlineQuery(inlineQuery)
 
 
 // search aliases {{{
 
-// stole from https://github.com/b0o/surfingkeys-conf
-var processSearches = (searches, searchleader) => Object.values(searches).forEach((s) => {
-  if (typeof Front === "undefined" || typeof addSearchAliasX === "undefined" || typeof mapkey === "undefined") {
-    return
-  }
-  addSearchAliasX(s.alias, s.name, s.search, searchleader, s.compl, s.callback)
-  mapkey(`${searchleader}${s.alias}`, `#8Search ${s.name}`, () => Front.openOmnibar({ type: "SearchEngine", extra: s.alias }))
-  mapkey(`c${searchleader}${s.alias}`, `#8Search ${s.name} with clipboard contents`, () => {
-    Clipboard.read((c) => {
-      Front.openOmnibar({ type: "SearchEngine", pref: c.data, extra: s.alias })
-    })
-  })
-})
+// https://github.com/brookhong/Surfingkeys/blob/master/docs/API.md#addsearchalias
 
 const searchleader = "s"
-
 const searches = {}
 
 // Arch Linux Wiki
@@ -315,7 +312,9 @@ searches.y.callback = response => JSON.parse(response.text).items
     }
   }).filter(s => s !== null)
 
-processSearches(searches, searchleader)
+Object.values(searches).forEach((s) => {
+  api.addSearchAlias(s.alias, s.name, s.search, searchleader, s.compl, s.callback)
+})
 // }}}
 
 
