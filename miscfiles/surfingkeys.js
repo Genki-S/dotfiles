@@ -59,6 +59,8 @@ settings.theme = `
 // }}}
 
 // mappings {{{
+api.unmap('j') // useful on Gmail, not using for scrolling
+api.unmap('k') // ditto
 api.unmap('u') // use '?' for usage
 api.unmap('R') // next tab
 api.unmap('E') // prev tab
