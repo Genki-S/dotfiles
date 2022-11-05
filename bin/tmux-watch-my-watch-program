@@ -3,7 +3,7 @@
 # This script is used with https://github.com/Genki-S/tmux-watch
 # This script will do all the watching work I want.
 
-set -uo pipefail
+set -o pipefail
 
 # throwing away "-p"
 shift
@@ -13,7 +13,10 @@ patterns=(
   # sudo prompt
   '^\[sudo\]'
   # shell prompt (useful to get notified when long-running process is finished)
-  '^.*[#$%]\s*$'
+  ## % prompt is for zsh, most likely I'm on my own zsh so assuming no preceding characters before % prompt
+  '^[%]\s*$'
+  ## for when I'm not on my own shell, likely ssh'ing to somewhere
+  '^.*[#$]\s*$'
   # yes / no
   'yes\s*/\s*no'
   'y\s*/\s*n'
