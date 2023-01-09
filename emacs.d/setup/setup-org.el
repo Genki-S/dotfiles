@@ -274,7 +274,7 @@
             (call-process "activate-org")
             (call-process "pushover" nil nil nil "org-pomodoro: Pomodoro break finished!")
             (call-process "my-notification" nil nil nil "Pomodoro break finished!" (concat "\nPomodoro break finished, go back to your emacs.\n\n\n\n\n" lorem) "--urgency" "critical")))
-(run-at-time nil 180 'genki/org-notify-no-pomodoro)
+; (run-at-time nil 180 'genki/org-notify-no-pomodoro)
 
 ;; org-habit
 ;; show habits in the future
