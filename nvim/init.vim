@@ -51,6 +51,8 @@ execute 'nnoremap <silent> ' . s:unimpaired_prev . 'l <Cmd>lprevious<CR>'
 execute 'nnoremap <silent> ' . s:unimpaired_next . 'l <Cmd>lnext<CR>'
 execute 'nnoremap <silent> ' . s:unimpaired_prev . 'od <Cmd>diffthis<CR>'
 execute 'nnoremap <silent> ' . s:unimpaired_next . 'od <Cmd>diffoff<CR>'
+execute 'nnoremap <silent> ' . s:unimpaired_prev . 'os <Cmd>setlocal spell<CR>'
+execute 'nnoremap <silent> ' . s:unimpaired_next . 'os <Cmd>setlocal nospell<CR>'
 " the <Space> mappings doesn't preserve cursor position, but this is good enough
 execute 'nnoremap <silent> ' . s:unimpaired_prev . '<Space> O<Esc>j'
 execute 'nnoremap <silent> ' . s:unimpaired_next . '<Space> o<Esc>k'
