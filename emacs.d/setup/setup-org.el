@@ -200,8 +200,8 @@
          "* TODO %? :idea:\n")
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
          (file "~/org/templates/journal.txt"))
-        ("w" "Workout" entry (file+datetree "~/org/journal.org")
-         "* %?  :workout:\n%U")
+        ("w" "Weekly Review" entry (file+datetree "~/org/journal.org")
+         (file "~/org/templates/weekly_review.txt"))
         ("7" "750 words" entry (file+datetree "~/org/journal.org")
          "* %?\n%U" :clock-in t :clock-resume t)))
 
@@ -288,6 +288,13 @@
 (add-hook 'org-agenda-mode-hook 'evil-normal-state)
 ;; start with insert state in capture modes
 (add-hook 'org-capture-mode-hook 'genki/org-capture-buffer-setup)
+;; notify home assistant for journal finish
+;; not using 'org-capture-prepare-finalize-hook because it fails if the
+;; capture buffer lives long before closed for unknown reason
+(add-hook 'org-capture-mode-hook
+          (lambda ()
+            (when (equal (org-capture-get :key) "j")
+              (genki/home-assistant-webhook (getenv "HOME_ASSISTANT_JOURNAL_FINISH_WEBHOOK_ID")))))
 
 ;; auto sync with MobileOrg
 ; TODO make this run in background
