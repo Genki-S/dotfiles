@@ -8,3 +8,7 @@ nnoremap <silent> <SID>[test]f :<C-u>TestFile<CR>
 nnoremap <silent> <SID>[test]s :<C-u>TestSuite<CR>
 nnoremap <silent> <SID>[test]l :<C-u>TestLast<CR>
 nnoremap <silent> <SID>[test]v :<C-u>TestVisit<CR>
+
+let test#custom_runners = {
+  \ 'Gdscript': ['Gut']
+\ }
