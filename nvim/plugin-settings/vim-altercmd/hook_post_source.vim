@@ -6,6 +6,8 @@ AlterCommand tn tabnew
 AlterCommand qt tabclose
 AlterCommand ps PluginSetting
 
+AlterCommand cclear call setqflist([]) \\| cclose \\| call lightline#update()
+
 " f: fold
 " h stands for 'hand'
 AlterCommand fmh setlocal foldmethod=manual
