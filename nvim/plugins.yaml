@@ -169,6 +169,12 @@
     lazy: 1
     on_ft:
         - terraform
+
+- habamax/vim-godot:
+    lazy: 1
+    on_ft:
+        - gdscript
+        - gsl
 # }}}
 
 - autozimu/LanguageClient-neovim:
