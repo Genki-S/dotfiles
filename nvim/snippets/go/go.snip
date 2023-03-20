@@ -248,5 +248,16 @@ options     head
   defer $1.RUnlock()
   ${0}
 
+snippet     getEnvOrPanic
+abbr        getEnvOrPanic
+options     head
+  func getEnvOrPanic(key string) string {
+    val, ok := os.LookupEnv(key)
+    if !ok {
+      panic(fmt.Sprintf("env var %s is not defined", key))
+    }
+    return val
+  }
+  ${0}
 
 # vim: foldmethod=marker

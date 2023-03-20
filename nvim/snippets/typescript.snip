@@ -8,7 +8,7 @@ snippet     i
 abbr        interface
 options     head
   interface ${1:InterfaceName} {
-    ${2:field}: ${3:type};
+    ${2:field}: ${3:type}
   }
   ${0}
 
@@ -16,7 +16,7 @@ snippet     ei
 abbr        export interface
 options     head
   export interface ${1:InterfaceName} {
-    ${2:field}: ${3:type};
+    ${2:field}: ${3:type}
   }
   ${0}
 
@@ -46,4 +46,15 @@ abbr        export async function
 options     head
   export async function ${1:functionName}(${2:#:args}) {
     ${0}
+  }
+
+snippet     sw
+abbr        switch
+options     head
+  switch (${1:#:let}) {
+    case ${2:#:val}:
+      ${0:TARGET}
+      break
+    default:
+      throw new Error(`unexpected case`)
   }
