@@ -5,18 +5,27 @@ let g:switch_mapping = ""
 nnoremap -- <Cmd>Switch<CR>
 
 augroup vimrc_switch
-	autocmd!
-	autocmd FileType rust call s:setup_rust_mappings()
-	autocmd FileType typescript call s:setup_typescript_mappings()
+  autocmd!
+  autocmd FileType rust call s:setup_rust_mappings()
+  autocmd FileType typescript call s:setup_typescript_mappings()
+  autocmd FileType gdscript call s:setup_gdscript_mappings()
 augroup END
 
 function! s:setup_rust_mappings() abort
-	nnoremap <buffer> -o <Cmd>call g:Switch_rust_option()<CR>
-	nnoremap <buffer> -s <Cmd>call g:Switch_rust_string()<CR>
+  nnoremap <buffer> -o <Cmd>call g:Switch_rust_option()<CR>
+  nnoremap <buffer> -s <Cmd>call g:Switch_rust_string()<CR>
 endfunction
 
 function! s:setup_typescript_mappings() abort
-	nnoremap <buffer> -p <Cmd>call g:Switch_typescript_promise()<CR>
+  nnoremap <buffer> -p <Cmd>call g:Switch_typescript_promise()<CR>
+endfunction
+
+function! s:setup_gdscript_mappings() abort
+  let b:switch_custom_definitions = 
+	\ [
+	\   ['assert_true', 'assert_false'],
+	\   ['assert_null', 'assert_not_null'],
+	\ ]
 endfunction
 
 let s:rust_option_definitions = 
