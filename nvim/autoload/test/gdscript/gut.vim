@@ -20,5 +20,5 @@ endfunction
 
 " Returns the executable of your test runner
 function! test#gdscript#gut#executable() abort
-  return 'godot -d --path ' . getcwd() . ' -s addons/gut/gut_cmdln.gd'
+  return 'gut-runner-quickfix -d --path ' . getcwd() . ' -s addons/gut/gut_cmdln.gd -gdisable_colors'
 endfunction

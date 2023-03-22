@@ -12,3 +12,6 @@ nnoremap <silent> <SID>[test]v :<C-u>TestVisit<CR>
 let test#custom_runners = {
   \ 'Gdscript': ['Gut']
 \ }
+
+let g:dispatch_compilers = {}
+let g:dispatch_compilers['gut-runner-quickfix'] = 'gut_runner_quickfix'
