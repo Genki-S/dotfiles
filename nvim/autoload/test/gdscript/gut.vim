@@ -10,7 +10,20 @@ function! test#gdscript#gut#build_position(type, position) abort
   endif
 
   let file = fnamemodify(a:position['file'], ':t')
-  return ['-gselect=' . file]
+  if a:type ==# 'file'
+    return ['-gselect=' . file]
+  endif
+
+  if a:type ==# 'nearest'
+    let test_name = s:nearest_test(a:position)
+    if empty(test_name)
+      return ['-gselect=' . file]
+    else
+      return ['-gselect=' . file, '-gunit_test_name='.test_name]
+    endif
+  endif
+
+  throw "unexpected test run type '" . a:type . "'"
 endfunction
 
 " Returns processed args (if you need to do any processing)
@@ -21,4 +34,13 @@ endfunction
 " Returns the executable of your test runner
 function! test#gdscript#gut#executable() abort
   return 'gut-runner-quickfix -d --path ' . getcwd() . ' -s addons/gut/gut_cmdln.gd -gdisable_colors'
+endfunction
+
+function! s:nearest_test(position) abort
+  let match = test#base#nearest_test(a:position, { 'test': ['\v^\s*func (test_\w+)'], 'namespace': [] })
+  if has_key(match, 'test')
+    return match['test'][0]
+  else
+    return ''
+  endif
 endfunction
