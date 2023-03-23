@@ -14,7 +14,7 @@ set cpo-=C
 
 " this format depends on $HOME/dotfiles/bin/gut_output_to_quickfix.py
 " TODO: parse warning lines
-CompilerSet errorformat=%f:%l:%o\ %m
+CompilerSet errorformat=%f:%l:%m
 
 let &cpo = s:cpo_save
 unlet s:cpo_save
