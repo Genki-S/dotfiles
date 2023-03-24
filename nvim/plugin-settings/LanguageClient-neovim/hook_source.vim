@@ -77,6 +77,8 @@ function! s:lc_buffer_setup() abort
 
   nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
   nnoremap <buffer> <silent> <C-]> <Cmd>call <SID>lc_prejump() <Bar> call LanguageClient#textDocument_definition()<CR>
+  nnoremap <buffer> <silent> <C-w><C-]> <Cmd>split <Bar> call <SID>lc_prejump() <Bar> call LanguageClient#textDocument_definition()<CR>
+  nnoremap <buffer> <silent> <C-w><C-t><C-]> <Cmd>tabnew %:p <Bar> call <SID>lc_prejump() <Bar> call LanguageClient#textDocument_definition()<CR>
   nnoremap <buffer> <silent> <SID>[LC]a <Cmd>call LanguageClient#textDocument_codeAction()<CR>
   nnoremap <buffer> <silent> <SID>[LC]r <Cmd>call LanguageClient#textDocument_rename()<CR>
   nnoremap <buffer> <silent> <SID>[LC]d <Cmd>call <SID>lc_toggle_diagnostics()<CR>
