@@ -39,8 +39,10 @@ function! s:lc_format() abort
   endif
 endfunction
 
+let g:my_LanguageClient_jumped = v:false
 " ref: https://github.com/idbrii/vim-tagimposter/commit/394d9833b21e733fff0a30b3547b61019757e074
 function! s:lc_prejump() abort
+  let g:my_LanguageClient_jumped = v:true
   let from = [bufnr('%'), line('.'), col('.'), 0]
   let tagname = expand('<cword>')
   let stack = gettagstack()
@@ -52,6 +54,14 @@ function! s:lc_prejump() abort
   let stack.items += [{'from': from, 'tagname': tagname}]
   let stack.curidx = len(stack.items)
   call settagstack(win_getid(), stack)
+endfunction
+
+function! s:lc_center_cursor_after_jump() abort
+  if g:my_LanguageClient_jumped == v:false
+    return
+  endif
+  let g:my_LanguageClient_jumped = v:false
+  normal! zz
 endfunction
 
 " Enables non-realtime, one-off ('ish) diagnostics
@@ -97,6 +107,7 @@ endfunction
 augroup vimrc_LanguageClient-neovim
   autocmd!
   autocmd FileType * call s:lc_buffer_setup()
+  autocmd BufWinEnter * call s:lc_center_cursor_after_jump()
 augroup END
 
 " vim: foldmethod=marker
