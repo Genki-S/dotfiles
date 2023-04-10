@@ -310,4 +310,9 @@
         - MundoHide
         - MundoToggle
 
+- tommcdo/vim-exchange:
+    lazy: 1
+    on_map:
+        - <Plug>(Exchange
+
 # vim: foldmethod=marker
