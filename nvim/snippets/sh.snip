@@ -1,6 +1,23 @@
+snippet if
+	if [ ${1:#:condition} ]; then
+		${0:TARGET}
+	fi
+
 snippet     fora
 abbr        for x in array
 options     head
   for ${1:elem} in "\${${2:array}[@]}"; do
     ${0:TARGET}
   done
+
+snippet     err
+abbr        echo to stderr
+options     head
+  >&2 echo "${1:msg}"
+
+
+snippet     tmpdir
+options     head
+  tmpdir=$(mktemp -d)
+  trap "rm -rf $tmpdir" EXIT
+  ${0}
