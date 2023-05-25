@@ -92,6 +92,9 @@ api.mapkey('<Ctrl-u>', '#2Scroll a page up', function() {
 api.mapkey('<Ctrl-b>', '#2Scroll a full page up', function() {
   api.Normal.scroll('fullPageUp')
 }, { repeatIgnore: true })
+api.mapkey('<Space>', '#2Scroll a page down', function() {
+  api.Normal.scroll('pageDown')
+}, { repeatIgnore: true })
 // }}}
 
 api.map('F', 'gf') // open a link in new tab
