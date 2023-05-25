@@ -64,6 +64,7 @@ api.unmap('k') // ditto
 api.unmap('u') // use '?' for usage
 api.unmap('R') // next tab
 api.unmap('E') // prev tab
+api.unmap('x') // close current tab: with Vivaldi workspace, surfingkeys doesn't activate expected tab after closing tab. So I'm mapping x on Vivaldi keyboard shortcut config.
 api.unmap('<Ctrl-h>') // mouse over elements
 
 api.mapkey('<Ctrl-o>', '#4Go back in history', function() {
