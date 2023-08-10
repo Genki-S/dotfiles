@@ -1,6 +1,11 @@
 [[snippets]]
   description = "AWS EC2 instances in table view"
-  command = "aws ec2 describe-instances | jq '.Reservations[].Instances[] | { Name: .Tags[] | select(.Key==\"Name\") | .Value, InstanceId: .InstanceId, State: .State.Name, PrivIP: .PrivateIpAddress, Type: .InstanceType, LaunchTime: .LaunchTime }' | jq -s | tv"
+  command = "aws ec2 describe-instances | jq '.Reservations[].Instances[] | { Name: .Tags[] | select(.Key==\"Name\") | .Value, InstanceId: .InstanceId, State: .State.Name, PrivIP: .PrivateIpAddress, Type: .InstanceType, AZ: .Placement.AvailabilityZone, LaunchTime: .LaunchTime }' | jq -s | tv"
+  output = ""
+
+[[snippets]]
+  description = "AWS EC2 instances in table view (with tags)"
+  command = "aws ec2 describe-instances | jq '.Reservations[].Instances[] | { Name: .Tags[] | select(.Key==\"Name\") | .Value, InstanceId: .InstanceId, State: .State.Name, PrivIP: .PrivateIpAddress, Type: .InstanceType, LaunchTime: .LaunchTime, Tags: .Tags | map([.Key,.Value]) | map(join(\"=\")) | join(\"\\n\") }' | jq -s | tv"
   output = ""
 
 [[snippets]]
@@ -26,4 +31,9 @@
 [[snippets]]
   description = "AWS ASG describe activities"
   command = "aws autoscaling describe-scaling-activities --auto-scaling-group-name=\"$ASG_NAME\" --output=table --query 'Activities[*].{Status:StatusCode,Activity:Description,Progress:Progress,Start:StartTime,End:EndTime}' --max-items 12"
+  output = ""
+
+[[snippets]]
+  description = "AWS Terminate Instance in AutoScalingGroup"
+  command = "aws autoscaling terminate-instance-in-auto-scaling-group --instance-id $INSTANCE_ID --no-should-decrement-desired-capacity"
   output = ""
