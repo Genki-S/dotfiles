@@ -93,7 +93,7 @@ function! s:lc_buffer_setup() abort
   let g:LanguageClient_settingsPath = config_file_path
   LanguageClientStart
 
-  nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
+  nnoremap <buffer> <silent> K <Cmd>call LanguageClient#textDocument_hover()<cr>
   nnoremap <buffer> <silent> <C-]> <Cmd>call <SID>lc_prejump() <Bar> call <SID>GotoDefinition()<CR>
   nnoremap <buffer> <silent> <C-w><C-]> <Cmd>split <Bar> call <SID>lc_prejump() <Bar> call <SID>GotoDefinition()<CR>
   nnoremap <buffer> <silent> <C-w><C-t><C-]> <Cmd>tabnew %:p <Bar> call <SID>lc_prejump() <Bar> call <SID>GotoDefinition()<CR>
