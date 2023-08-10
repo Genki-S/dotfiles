@@ -20,6 +20,8 @@ patterns=(
   # yes / no
   'yes\s*/\s*no'
   'y\s*/\s*n'
+  # Terraform
+  '^\s*Enter a value:$'
 )
 
 messages=(
@@ -27,6 +29,7 @@ messages=(
  'you got your shell prompt back'
  'yes/no prompt detected'
  'yes/no prompt detected'
+ '"Enter a value" prompt detected'
 )
 
 last_line=""
