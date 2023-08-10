@@ -18,3 +18,4 @@ get github.com/direnv/direnv
 get -u github.com/reviewdog/reviewdog/cmd/reviewdog
 get golang.org/x/tools/gopls@latest
 get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+get github.com/jstemmer/gotags@master
