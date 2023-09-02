@@ -112,6 +112,7 @@ task :deploy do
   my_ln("#{DOTDIR}/nvim", "#{HOME}/.config/nvim")
   my_ln("#{DOTDIR}/miscfiles/picom", "#{HOME}/.config/picom")
   my_ln("#{DOTDIR}/miscfiles/pet", "#{HOME}/.config/pet")
+  my_ln("#{DOTDIR}/miscfiles/pipewire", "#{HOME}/.config/pipewire")
 end
 
 desc 'Update submodules'
