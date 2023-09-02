@@ -36,6 +36,10 @@ set hidden
 " :h persistent-undo
 set undofile
 
+" prevent LanguageClient-neovim + deoplete combination from showing too-large
+" preview window when selecting completion candidate
+set completeopt-=preview
+
 augroup vimrc-misc
 	autocmd!
 	" :h last-position-jump
