@@ -119,6 +119,10 @@
     lazy: 1
     on_ft:
         - markdown
+- mikeboiko/vim-markdown-folding:
+    lazy: 1
+    on_ft:
+        - markdown
 
 # }}}
 
