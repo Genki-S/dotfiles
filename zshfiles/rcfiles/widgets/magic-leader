@@ -37,6 +37,25 @@ __kubernetes_switch_namespace() {
   zle accept-line
 }
 
+__aws_switch_region() {
+  local regions=("ap-northeast-1" "ap-northeast-2" "ap-northeast-3" "ap-south-1" "ap-southeast-1" "ap-southeast-2")
+  regions+=("eu-central-1" "eu-north-1" "eu-west-1" "eu-west-2" "eu-west-3") 
+  regions+=("us-east-1" "us-east-2" "us-west-1" "us-west-2")
+  regions+=("ca-central-1" "sa-east-1")
+
+  zle reset-prompt
+  LBUFFER=""
+  local selected="$(echo ${(F)regions} | fzy)"
+  if [ -z "$selected" ]; then
+    zle reset-prompt
+    return
+  fi
+  # LBUFFER="kubectl config set-context --current --namespace $selected"
+  LBUFFER="export AWS_REGION=$selected"
+  zle reset-prompt
+  zle accept-line
+}
+
 local REPLY
 read-from-minibuffer -k 1 "magic-leader: "
 case "${REPLY}" in
@@ -48,6 +67,14 @@ case "${REPLY}" in
         ;;
       n)
         __kubernetes_switch_namespace
+        ;;
+    esac
+    ;;
+  a)
+    read-from-minibuffer -k 1 "aws ([r]egion): "
+    case "${REPLY}" in
+      r)
+        __aws_switch_region
         ;;
     esac
     ;;
