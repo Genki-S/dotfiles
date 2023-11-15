@@ -4,6 +4,11 @@
   output = ""
 
 [[snippets]]
+  description = "AWS Volumes in table view"
+  command = "aws ec2 describe-volumes | jq '.Volumes[] | { Id: .VolumeId, Type: .VolumeType, IOPS: .Iops, Throughput: .Throughput, AttachedInstanceIds: .Attachments | map(.InstanceId) | join(\",\") }' | jq -s | tv"
+  output = ""
+
+[[snippets]]
   description = "AWS EC2 instances in table view (with tags)"
   command = "aws ec2 describe-instances | jq '.Reservations[].Instances[] | { Name: .Tags[] | select(.Key==\"Name\") | .Value, InstanceId: .InstanceId, State: .State.Name, PrivIP: .PrivateIpAddress, Type: .InstanceType, LaunchTime: .LaunchTime, Tags: .Tags | map([.Key,.Value]) | map(join(\"=\")) | join(\"\\n\") }' | jq -s | tv"
   output = ""
@@ -16,6 +21,11 @@
 [[snippets]]
   description = "AWS ASG: set desired capacity"
   command = "aws autoscaling set-desired-capacity --auto-scaling-group-name=\"$ASG_NAME\" --desired-capacity=3"
+  output = ""
+
+[[snippets]]
+  description = "AWS ASG: set min capacity"
+  command = "aws autoscaling update-auto-scaling-group --auto-scaling-group-name=\"$ASG_NAME\" --min-size=0"
   output = ""
 
 [[snippets]]
@@ -35,5 +45,5 @@
 
 [[snippets]]
   description = "AWS Terminate Instance in AutoScalingGroup"
-  command = "aws autoscaling terminate-instance-in-auto-scaling-group --instance-id $INSTANCE_ID --no-should-decrement-desired-capacity"
+  command = "aws autoscaling terminate-instance-in-auto-scaling-group --no-should-decrement-desired-capacity --instance-id $INSTANCE_ID"
   output = ""
