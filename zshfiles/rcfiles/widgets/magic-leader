@@ -56,6 +56,22 @@ __aws_switch_region() {
   zle accept-line
 }
 
+__aws_switch_profile() {
+  # TODO: show this on minibuffer
+  LBUFFER="# collecting aws profiles..."
+  zle reset-prompt
+  local profiles="$(aws configure list-profiles)"
+  LBUFFER=""
+  local selected="$(echo $profiles | fzy)"
+  if [ -z "$selected" ]; then
+    zle reset-prompt
+    return
+  fi
+  LBUFFER="export AWS_PROFILE=$selected"
+  zle reset-prompt
+  zle accept-line
+}
+
 local REPLY
 read-from-minibuffer -k 1 "magic-leader: "
 case "${REPLY}" in
@@ -71,10 +87,13 @@ case "${REPLY}" in
     esac
     ;;
   a)
-    read-from-minibuffer -k 1 "aws ([r]egion): "
+    read-from-minibuffer -k 1 "aws ([r]egion, [p]rofile): "
     case "${REPLY}" in
       r)
         __aws_switch_region
+        ;;
+      p)
+        __aws_switch_profile
         ;;
     esac
     ;;
