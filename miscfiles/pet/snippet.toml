@@ -4,6 +4,11 @@
   output = ""
 
 [[snippets]]
+  description = "xpanes: SSM to AWS Instances"
+  command = "xpanes -c \"AWS_PROFILE=$AWS_PROFILE AWS_REGION=$AWS_REGION aws ssm start-session --target {}\" $(aws ec2 describe-instances | jq -r \".Reservations[].Instances[] | { Name: .Tags[] | select(.Key==\\\"Name\\\") | .Value, InstanceId: .InstanceId } | select(.Name | test(\\\"$NAME_FILTER\\\")) | .InstanceId\")"
+  output = ""
+
+[[snippets]]
   description = "AWS Volumes in table view"
   command = "aws ec2 describe-volumes | jq '.Volumes[] | { Id: .VolumeId, Type: .VolumeType, IOPS: .Iops, Throughput: .Throughput, AttachedInstanceIds: .Attachments | map(.InstanceId) | join(\",\") }' | jq -s | tv"
   output = ""
