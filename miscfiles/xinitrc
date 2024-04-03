@@ -42,7 +42,7 @@ export XMODIFIERS=@im=fcitx5
 fcitx5 &
 unclutter &
 picom &
-[ -f ~/.fehbg ] && ~/.fehbg &
+set-random-wallpaper &
 redshift -l 35.6852:139.7528 &
 
 [ -f ~/.xinitrc.local ] && source ~/.xinitrc.local
