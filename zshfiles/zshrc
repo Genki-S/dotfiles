@@ -60,6 +60,9 @@ do
   source $HOME/dotfiles/zshfiles/rcfiles/$f
 done
 
+# nvim is the editor
+which nvim &>/dev/null && EDITOR=nvim
+
 # Misc. {{{
 
 # Regard some characters as word stops (better backword-kill-word behavior)
