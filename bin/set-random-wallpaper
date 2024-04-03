@@ -4,5 +4,5 @@ set -euo pipefail
 
 find $HOME/Pictures/Wallpapers/ -name "*.png" | sort -R | tail -n 1 | while read file
 do
-  feh --no-fehbg --bg-scale "$file"
+  feh --no-fehbg --bg-fill "$file"
 done
