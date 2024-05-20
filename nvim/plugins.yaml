@@ -185,6 +185,7 @@
     rev: next
     build: 'bash install.sh'
 
+# shiftwidth, expandtab, etc.
 - tpope/vim-sleuth:
 
 - easymotion/vim-easymotion:
