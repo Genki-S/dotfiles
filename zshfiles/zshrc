@@ -69,6 +69,7 @@ which nvim &>/dev/null && EDITOR=nvim
 WORDCHARS='*?[]~&;!#$%^(){}<>|'
 
 setopt auto_pushd
+setopt autocd
 
 alias org='tmux rename-window org; ORGMODE=1 emacs -nw ~/org/dashboard.org'
 
