@@ -1,8 +1,10 @@
 # vim: filetype=zsh
 
+# https://github.com/junegunn/fzf/wiki/Examples#command-history
+
 () {
   local query="$BUFFER"
-  BUFFER=$( fc -l 1 | sed 's/ *[0-9]* *//' | tac | fzy --query "$query" )
+  BUFFER=$( fc -l 1 | sed 's/ *[0-9]* *//' | fzf --height 40% --reverse --no-sort --tac --query "$query" )
   CURSOR=$#BUFFER # move cursor
   zle reset-prompt
 }
