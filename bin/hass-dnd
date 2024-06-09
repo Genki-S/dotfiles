@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -euo pipefail
+
+to=${1:-on}
+
+if [ "$to" != "on" -a "$to" != "off" ]; then
+  >&2 echo 'target state should be either "on" or "off" '
+  exit 1
+fi
+
+curl -XPOST \
+  -H "Authorization: Bearer $HASS_TOKEN" \
+  -H "Content-Type: application/json" \
+  "$HASS_URL/api/states/input_boolean.do_not_disturb" \
+  -d "{ \"state\": \"$to\" }"
