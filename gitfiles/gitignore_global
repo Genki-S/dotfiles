@@ -1,10 +1,4 @@
-# *env stuff
-.go-version
-.ruby-version
-.python-version
-.node-version
-
-# Vim stuffs
+# Vim
 .vimrc.local
 .projections.json
 [._]*.s[a-w][a-z]
@@ -13,26 +7,26 @@
 Session.vim
 .netrwhist
 
-# Git stuff
+# Git
 .overcommit.yml
 .git-hooks
 
-# Ruby stuffs
+# Ruby
 .patrol
 
-# Rails stuffs
+# Rails
 Gemfile.local*
 Guardfile
 config/environments/genki.rb
 
-# Java stuffs
+# Java
 .classpath
 .project
 *.eml
 *.userlibraries
 .idea
 
-## Bazel
+# Bazel
 BUILD
 WORKSPACE
 bazel-bin
@@ -40,6 +34,9 @@ bazel-genfiles
 bazel-jobsearch-be-ricky
 bazel-out
 bazel-testlogs
+
+# C/CPP
+.ccls-cache
 
 # Misc.
 .envrc
