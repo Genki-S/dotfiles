@@ -14,6 +14,8 @@ let g:LanguageClient_useFloatingHover = 0
 let g:LanguageClient_waitOutputTimeout = 2
 
 let g:LanguageClient_serverCommands = {
+      \ 'c': ['clangd'],
+      \ 'cpp': ['clangd'],
       \ 'elm': ['elm-language-server', '--stdio'],
       \ 'go': ['gopls'],
       \ 'python': ['pyls'],
@@ -34,7 +36,10 @@ let s:script_dir = resolve(expand('<sfile>:p:h'))
 
 let g:vimrc_LangugageClient_formatOnSave = 1
 function! s:lc_format() abort
-  if g:vimrc_LangugageClient_formatOnSave
+  if g:vimrc_LangugageClient_formatOnSave &&
+     \ (exists("b:vimrc_LangugageClient_formatOnSave") ?
+     \ b:vimrc_LangugageClient_formatOnSave
+     \ : v:true)
     call LanguageClient#textDocument_formatting_sync()
   endif
 endfunction
@@ -115,6 +120,7 @@ endfunction
 augroup vimrc_LanguageClient-neovim
   autocmd!
   autocmd FileType * call s:lc_buffer_setup()
+  autocmd FileType c let b:vimrc_LangugageClient_formatOnSave = 0
 augroup END
 
 " vim: foldmethod=marker
