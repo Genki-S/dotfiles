@@ -46,6 +46,85 @@
 # visual {{{
 - jacoborus/tender.vim:
 - itchyny/lightline.vim:
+- lukas-reineke/indent-blankline.nvim:
+# }}}
+
+# code reading / navigation {{{
+- easymotion/vim-easymotion:
+- sk1418/QFGrep:
+    lazy: 1
+    on_map:
+        - <Plug>QFGrep
+        - <Plug>QFRestore
+- t9md/vim-quickhl:
+    lazy: 1
+    on_map:
+        - <Plug>(quickhl
+- tpope/vim-projectionist:
+    lazy: 1
+    # I'm only using alternate feature for now
+    on_cmd:
+        - A
+        - AS
+        - AV
+        - AT
+- preservim/tagbar:
+    lazy: 1
+    on_cmd:
+        - TagbarToggle
+# }}}
+
+# code writing / editing {{{
+- kana/vim-smartchr:
+    lazy: 1
+    on_event:
+        - InsertEnter
+- tyru/caw.vim:
+    lazy: 1
+    on_map: <Plug>(caw
+- AndrewRadev/splitjoin.vim:
+    lazy: 1
+    on_map:
+        - <Plug>Splitjoin
+- AndrewRadev/sideways.vim:
+    lazy: 1
+    on_map:
+        - <Plug>SidewaysArgumentTextobj
+    on_cmd:
+        - SidewaysLeft
+        - SidewaysRight
+- AndrewRadev/switch.vim:
+    lazy: 1
+    on_cmd:
+        - Switch
+        - SwitchReverse
+    on_func:
+        - switch#Switch
+- tpope/vim-abolish:
+    lazy: 1
+    on_cmd:
+        - Abolish
+        - Subvert
+    on_map:
+        - <Plug>(abolish-coerce-word)
+- junegunn/vim-easy-align:
+    lazy: 1
+    on_cmd:
+        - EasyAlign
+    on_map:
+        - <Plug>(EasyAlign)
+- simnalamburt/vim-mundo:
+    lazy: 1
+    on_cmd:
+        - MundoShow
+        - MundoHide
+        - MundoToggle
+- tommcdo/vim-exchange:
+    lazy: 1
+    on_map:
+        - <Plug>(Exchange
+# shiftwidth, expandtab, etc.
+- tpope/vim-sleuth:
 # }}}
 
 # communicating with outer world {{{
@@ -54,6 +133,16 @@
 - tpope/vim-fugitive:
 - tpope/vim-rhubarb:
 - shumphrey/fugitive-gitlab.vim:
+
+# GitHub
+- mattn/webapi-vim:
+    lazy: 1
+- mattn/gist-vim:
+    lazy: 1
+    depends:
+        - webapi-vim
+    on_cmd:
+        - Gist
 
 # grep
 - mhinz/vim-grepper:
@@ -181,56 +270,10 @@
         - gsl
 # }}}
 
+# IDE'ish {{{
 - autozimu/LanguageClient-neovim:
     rev: next
     build: 'bash install.sh'
-
-# shiftwidth, expandtab, etc.
-- tpope/vim-sleuth:
-
-- easymotion/vim-easymotion:
-
-- kana/vim-smartchr:
-    lazy: 1
-    on_event:
-        - InsertEnter
-
-- tyru/vim-altercmd:
-
-- tyru/caw.vim:
-    lazy: 1
-    on_map: <Plug>(caw
-
-- AndrewRadev/splitjoin.vim:
-    lazy: 1
-    on_map:
-        - <Plug>Splitjoin
-- AndrewRadev/sideways.vim:
-    lazy: 1
-    on_map:
-        - <Plug>SidewaysArgumentTextobj
-    on_cmd:
-        - SidewaysLeft
-        - SidewaysRight
-- AndrewRadev/switch.vim:
-    lazy: 1
-    on_cmd:
-        - Switch
-        - SwitchReverse
-    on_func:
-        - switch#Switch
-
-- sk1418/QFGrep:
-    lazy: 1
-    on_map:
-        - <Plug>QFGrep
-        - <Plug>QFRestore
-
-- t9md/vim-quickhl:
-    lazy: 1
-    on_map:
-        - <Plug>(quickhl
-
 - tpope/vim-dispatch:
     lazy: 1
     on_cmd:
@@ -240,16 +283,6 @@
         - FocusDispatch
         - AbortDispatch
         - Start
-
-- tpope/vim-projectionist:
-    lazy: 1
-    # I'm only using alternate feature for now
-    on_cmd:
-        - A
-        - AS
-        - AV
-        - AT
-
 - janko/vim-test:
     depends:
         - vim-dispatch
@@ -261,20 +294,10 @@
         - TestSuite
         - TestLast
         - TestVisit
-
-- tpope/vim-abolish:
-    lazy: 1
-    on_cmd:
-        - Abolish
-        - Subvert
-    on_map:
-        - <Plug>(abolish-coerce-word)
-
 - thinca/vim-quickrun:
     lazy: 1
     on_cmd:
         - QuickRun
-
 - rhysd/devdocs.vim:
     lazy: 1
     on_cmd:
@@ -282,42 +305,10 @@
         - DevDocsAll
     on_map:
         - <Plug>(devdocs-
+# }}}
 
-- mattn/webapi-vim:
-    lazy: 1
-- mattn/gist-vim:
-    lazy: 1
-    depends:
-        - webapi-vim
-    on_cmd:
-        - Gist
+- tyru/vim-altercmd:
 
 - MarcWeber/vim-addon-local-vimrc:
-
-- preservim/tagbar:
-    lazy: 1
-    on_cmd:
-        - TagbarToggle
-
-- junegunn/vim-easy-align:
-    lazy: 1
-    on_cmd:
-        - EasyAlign
-    on_map:
-        - <Plug>(EasyAlign)
-
-- lukas-reineke/indent-blankline.nvim:
-
-- simnalamburt/vim-mundo:
-    lazy: 1
-    on_cmd:
-        - MundoShow
-        - MundoHide
-        - MundoToggle
-
-- tommcdo/vim-exchange:
-    lazy: 1
-    on_map:
-        - <Plug>(Exchange
 
 # vim: foldmethod=marker
