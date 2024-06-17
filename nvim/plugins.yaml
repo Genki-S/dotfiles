@@ -72,6 +72,17 @@
     lazy: 1
     on_cmd:
         - TagbarToggle
+- nvim-treesitter/nvim-treesitter:
+    lazy: 1
+    # TODO: automate :TSUpdate
+- nvim-treesitter/nvim-treesitter-context:
+    lazy: 1
+    depends:
+        - nvim-treesitter
+    on_cmd:
+        - TSContextEnable
+        - TSContextDisable
+        - TSContextToggle
 # }}}
 
 # code writing / editing {{{
