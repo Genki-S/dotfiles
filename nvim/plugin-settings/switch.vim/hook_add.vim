@@ -4,6 +4,13 @@ let g:switch_mapping = ""
 " Use double '-' for global & default switch behavior
 nnoremap -- <Cmd>Switch<CR>
 
+" Custom global definitions
+let g:switch_custom_definitions =
+        \ [
+        \   ['present', 'absent'],
+        \ ]
+
+" Custom filetype-specific buffer definitions
 augroup vimrc_switch
   autocmd!
   autocmd FileType rust call s:setup_rust_mappings()
