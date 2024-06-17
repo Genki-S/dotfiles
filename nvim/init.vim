@@ -80,13 +80,31 @@ nnoremap <Leader><C-S> <Cmd>noautocmd w<CR>
 " (requires tpope/vim-dispatch)
 command! Precommit compiler pre-commit | Make
 
+function! s:set_extra_whitespace_match(insert) abort
+	let l:ignored = ["defx"]
+	if index(l:ignored, &ft) != -1
+		match ExtraWhitespace //
+		return
+	endif
+	if a:insert
+		match ExtraWhitespace /\s\+\%#\@<!$/
+	else
+		match ExtraWhitespace /\s\+$/
+	endif
+endfunction
+
 " highlight trailing whitespace: https://vim.fandom.com/wiki/Highlight_unwanted_spaces
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+augroup vimrc-highlight-whitespace
+	autocmd!
+	autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+	autocmd BufWinEnter * call <SID>set_extra_whitespace_match(v:false)
+	autocmd InsertEnter * call <SID>set_extra_whitespace_match(v:true)
+	autocmd InsertLeave * call <SID>set_extra_whitespace_match(v:false)
+	autocmd BufWinLeave * call clearmatches()
+
+	" I'm not happy with this special handling but it works at least
+	autocmd FileType defx call <SID>set_extra_whitespace_match(v:false)
+augroup END
 
 " dein
 execute 'source ' . g:nvim_config_dir . '/init-dein.vim'
