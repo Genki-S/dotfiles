@@ -80,6 +80,15 @@ nnoremap <Leader><C-S> <Cmd>noautocmd w<CR>
 " (requires tpope/vim-dispatch)
 command! Precommit compiler pre-commit | Make
 
+" highlight trailing whitespace: https://vim.fandom.com/wiki/Highlight_unwanted_spaces
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" dein
 execute 'source ' . g:nvim_config_dir . '/init-dein.vim'
 
 " colorscheme
