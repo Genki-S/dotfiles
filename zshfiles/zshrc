@@ -71,6 +71,8 @@ WORDCHARS='*?[]~&;!#$%^(){}<>|'
 setopt auto_pushd
 setopt autocd
 
+alias x='xdg-open'
+
 alias org='tmux rename-window org; ORGMODE=1 emacs -nw ~/org/dashboard.org'
 
 # "j"ump to "d"otfiles
