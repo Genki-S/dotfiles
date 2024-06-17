@@ -62,7 +62,7 @@ endfunction
 function s:GotoDefinitionHandler(output) abort
   " TODO: cleanup the tagstack when definition is not found
   if has_key(a:output, 'error')
-    echoerr "ERROR finding definition"
+    echoerr "ERROR finding definition: " . string(a:output['error'])
   elseif (has_key(a:output, 'result') && empty(a:output['result']))
     echomsg "definition not found"
   else
