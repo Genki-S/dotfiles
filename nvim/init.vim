@@ -80,9 +80,6 @@ nnoremap <Leader><C-S> <Cmd>noautocmd w<CR>
 " (requires tpope/vim-dispatch)
 command! Precommit compiler pre-commit | Make
 
-" syntax configuration
-let g:go_highlight_trailing_whitespace_error = 0
-
 execute 'source ' . g:nvim_config_dir . '/init-dein.vim'
 
 " colorscheme
