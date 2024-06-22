@@ -59,6 +59,8 @@ function! s:lc_prejump() abort
   call settagstack(win_getid(), stack)
 endfunction
 
+let s:prevpos = []
+
 function s:GotoDefinitionHandler(output) abort
   " TODO: cleanup the tagstack when definition is not found
   if has_key(a:output, 'error')
@@ -69,10 +71,16 @@ function s:GotoDefinitionHandler(output) abort
     " show the definition at the center of the window for easy locating &
     " consistent behavior
     normal! zz
+
+    " if we were at the definition already, show references instead
+    if getpos(".") == s:prevpos
+      call LanguageClient#textDocument_references()
+    endif
   endif
 endfunction
 
 function! s:GotoDefinition() abort
+  let s:prevpos = getpos(".")
   " https://github.com/hongyuanjia/space-vim/blob/a7f5414bb4b582609383d910fa4ed07bb3e6949e/core/autoload/spacevim/lang/util.vim#L150
   call LanguageClient#textDocument_definition({'handle': v:true}, function('s:GotoDefinitionHandler'))
 endfunction
