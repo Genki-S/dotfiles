@@ -23,7 +23,7 @@ for line in sys.stdin:
     lines.append(line)
 
 for i, line in enumerate(lines):
-    if line.startswith("*** Run Summary ***"):
+    if line.startswith("= Run Summary"):
         break
 
     if line.startswith("res://"):
@@ -44,4 +44,8 @@ for i, line in enumerate(lines):
         if nl.strip().startswith("at line"):
             lnum = nl.strip().removeprefix("at line ").strip()
         print(qfformat(context, msg, lnum=lnum))
+        continue
+    if line.strip().startswith("[Orphans]"):
+        msg = line.strip().removeprefix("[Orphans]:").strip()
+        print(qfformat(context, msg))
         continue

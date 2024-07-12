@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Run Gut the Godot Unit Test, then parse the output to make it quickfix friendly
+
+godot "$@" | python $HOME/dotfiles/bin/gut_output_to_quickfix.py
