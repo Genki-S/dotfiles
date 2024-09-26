@@ -89,3 +89,9 @@
 [submodule "submodules/aur/ghq-bin"]
 	path = submodules/aur/ghq-bin
 	url = https://aur.archlinux.org/ghq-bin.git
+[submodule "submodules/neovim"]
+	path = submodules/neovim
+	url = https://github.com/neovim/neovim
+[submodule "submodules/anyenv"]
+	path = submodules/anyenv
+	url = https://github.com/anyenv/anyenv
