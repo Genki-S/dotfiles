@@ -1,5 +1,5 @@
 " TODO: automate virtualenv creation
-let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim/bin/python'
+let g:python3_host_prog = $PYENV_ROOT.'/versions/py3nvim/bin/python'
 
 noremap ; :
 noremap : ;
