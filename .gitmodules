@@ -40,7 +40,7 @@
 	url = git@github.com:git-hooks/git-hooks.git
 [submodule "submodules/zsh-autosuggestions"]
 	path = submodules/zsh-autosuggestions
-	url = git://github.com/zsh-users/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "submodules/aur/rbenv"]
 	path = submodules/aur/rbenv
 	url = https://aur.archlinux.org/rbenv.git
