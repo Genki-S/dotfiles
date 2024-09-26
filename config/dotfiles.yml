@@ -38,6 +38,6 @@
     - Xmodmap
     - surfingkeys.js
     - pylintrc
-    - alacritty.yml
+    - alacritty.toml
 - emacs.d
 - clicoder.d
