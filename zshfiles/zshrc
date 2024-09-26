@@ -61,7 +61,11 @@ do
 done
 
 # nvim is the editor
-which nvim &>/dev/null && EDITOR=nvim
+if which nvim &>/dev/null; then
+  export VISUAL=nvim
+  export EDITOR="$VISUAL"
+  export GIT_EDITOR="$VISUAL"
+fi
 
 # Misc. {{{
 
