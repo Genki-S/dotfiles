@@ -104,6 +104,10 @@ function zh() {
   fi
 }
 
+# global aliases
+alias -g G="| grep -i"
+alias -g V="| grep -v"
+
 # }}}
 
 # Plugins {{{
