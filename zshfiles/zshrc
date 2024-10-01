@@ -84,7 +84,7 @@ alias sudo='sudo '
 # safety net for disaster with `crontab -r`: https://qiita.com/kawaz/items/1620300551b5b3f2eccc#comment-809ad0ec7730802516a9
 alias crontab='crontab -i'
 
-function mkcd () {
+function mkcd() {
   mkdir -p "$@" && eval cd "\"\$$#\""
 }
 
@@ -93,6 +93,14 @@ alias tfi='tf init'
 alias tfp='tf plan'
 alias tfa='tf apply'
 alias tfw='tf workspace'
+
+function zh() {
+  if [[ $EDITOR =~ vim ]]; then
+    $EDITOR +'normal G' $HOME/.zsh_history
+  else
+    $EDITOR $HOME/.zsh_history
+  fi
+}
 
 # }}}
 
