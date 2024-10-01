@@ -78,6 +78,8 @@ alias org='tmux rename-window org; ORGMODE=1 emacs -nw ~/org/dashboard.org'
 
 # "j"ump to "d"otfiles
 alias jd='cd $HOME/dotfiles'
+# jump to downloads
+alias jdl='cd $HOME/Downloads'
 
 # expand the command after `sudo` as alias: https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
 alias sudo='sudo '
