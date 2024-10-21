@@ -59,6 +59,11 @@ let s:dein_install_dir = g:nvim_config_dir . '/dein'
 let s:dein_repo = s:dein_install_dir . '/repos/github.com/Shougo/dein.vim'
 execute 'set runtimepath+=' . s:dein_repo
 
+" install dein for the first time
+if !isdirectory(s:dein_repo)
+  execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo
+endif
+
 " Generate deinrc if necessary
 let s:plugins_definition_file = g:nvim_config_dir . '/plugins.yaml'
 let s:deinrc = g:nvim_config_dir . '/deinrc-generated.vim'

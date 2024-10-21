@@ -61,7 +61,11 @@ do
 done
 
 # nvim is the editor
-which nvim &>/dev/null && EDITOR=nvim
+if which nvim &>/dev/null; then
+  export VISUAL=nvim
+  export EDITOR="$VISUAL"
+  export GIT_EDITOR="$VISUAL"
+fi
 
 # Misc. {{{
 
@@ -74,13 +78,15 @@ alias org='tmux rename-window org; ORGMODE=1 emacs -nw ~/org/dashboard.org'
 
 # "j"ump to "d"otfiles
 alias jd='cd $HOME/dotfiles'
+# jump to downloads
+alias jdl='cd $HOME/Downloads'
 
 # expand the command after `sudo` as alias: https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
 alias sudo='sudo '
 # safety net for disaster with `crontab -r`: https://qiita.com/kawaz/items/1620300551b5b3f2eccc#comment-809ad0ec7730802516a9
 alias crontab='crontab -i'
 
-function mkcd () {
+function mkcd() {
   mkdir -p "$@" && eval cd "\"\$$#\""
 }
 
@@ -89,6 +95,18 @@ alias tfi='tf init'
 alias tfp='tf plan'
 alias tfa='tf apply'
 alias tfw='tf workspace'
+
+function zh() {
+  if [[ $EDITOR =~ vim ]]; then
+    $EDITOR +'normal G' $HOME/.zsh_history
+  else
+    $EDITOR $HOME/.zsh_history
+  fi
+}
+
+# global aliases
+alias -g G="| grep -i"
+alias -g V="| grep -v"
 
 # }}}
 

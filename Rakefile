@@ -114,6 +114,7 @@ task :deploy do
   my_ln("#{DOTDIR}/miscfiles/pet", "#{HOME}/.config/pet")
   my_ln("#{DOTDIR}/miscfiles/pipewire", "#{HOME}/.config/pipewire")
   my_ln("#{DOTDIR}/systemd-user", "#{HOME}/.config/systemd/user")
+  my_ln("#{DOTDIR}/submodules/anyenv", "#{HOME}/.anyenv")
 end
 
 desc 'Update submodules'
@@ -310,7 +311,7 @@ end
 
 def my_ln(src, dst, sudo = false)
   run %{ rm #{dst} } if File.symlink?(dst)
-  raise %{File "#{dst}" exists and not a symlink.} if File.exists?(dst)
+  raise %{File "#{dst}" exists and not a symlink.} if File.exist?(dst)
   dir = File.dirname(dst)
   FileUtils.mkdir_p(dir) unless File.directory?(dir)
   run %{ #{sudo ? 'sudo' : ''} ln -s #{src} #{dst} }

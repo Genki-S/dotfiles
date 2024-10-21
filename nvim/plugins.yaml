@@ -194,7 +194,7 @@
     on_event:
         - InsertEnter
 
-- tyru/vim-altercmd:
+- kana/vim-altercmd:
 
 - tyru/caw.vim:
     lazy: 1

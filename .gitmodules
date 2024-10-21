@@ -40,7 +40,7 @@
 	url = git@github.com:git-hooks/git-hooks.git
 [submodule "submodules/zsh-autosuggestions"]
 	path = submodules/zsh-autosuggestions
-	url = git://github.com/zsh-users/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "submodules/aur/rbenv"]
 	path = submodules/aur/rbenv
 	url = https://aur.archlinux.org/rbenv.git
@@ -89,3 +89,9 @@
 [submodule "submodules/aur/ghq-bin"]
 	path = submodules/aur/ghq-bin
 	url = https://aur.archlinux.org/ghq-bin.git
+[submodule "submodules/neovim"]
+	path = submodules/neovim
+	url = https://github.com/neovim/neovim
+[submodule "submodules/anyenv"]
+	path = submodules/anyenv
+	url = https://github.com/anyenv/anyenv
