@@ -5,7 +5,7 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gs='git status --branch --show-stash --untracked-files --renames'
 alias gco='git checkout'
-alias gcm='git checkout master'
+alias gcm='git checkout `git_main_branch`'
 alias gd='git diff --color --ignore-all-space'
 alias gdc='git diff --color --ignore-all-space --cached'
 alias gf='git fetch'
@@ -23,7 +23,7 @@ alias gcame='git commit --amend'
 alias gt='git tag'
 alias grb='git rebase --autostash --autosquash'
 alias grbi='grb -i'
-alias grbim='grbi master'
+alias grbim='grbi `git_main_branch'
 alias grbc='git rebase --continue'
 alias grbs='git rebase --skip'
 alias grba='git rebase --abort'
@@ -34,7 +34,7 @@ alias gsp='git stash pop --index'
 alias gsdrop='git stash drop'
 
 # tig
-alias tigb='tig master..HEAD' # see branch commits
+alias tigb='tig `git_main_branch`..HEAD' # see branch commits
 # }}}
 
 # Stolen from oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh/blob/97c03841691021f916c46b2fd2d089d7970400aa/lib/git.zsh#L61-L74
@@ -49,5 +49,9 @@ function git_current_branch() {
   echo ${ref#refs/heads/}
 }
 alias gcb="git_current_branch"
+
+function git_main_branch() {
+  git remote show origin | sed -n '/HEAD branch/s/.*: //p'
+}
 
 # vim:foldmethod=marker
