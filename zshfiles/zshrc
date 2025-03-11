@@ -140,7 +140,6 @@ compinit
 # Profile zsh startup time
 () {
   local prof_dir="$HOME/.tmp/profiling/zsh"
-  rm -f $prof_dir/*
   local prof_file="$prof_dir/`date +%Y-%m-%d_%H:%M:%S`"
   zprof > $prof_file
   cat $prof_file
