@@ -1,5 +1,5 @@
 " TODO: automate virtualenv creation
-let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim/bin/python'
+let g:python3_host_prog = $PYENV_ROOT.'/versions/py3nvim/bin/python'
 
 noremap ; :
 noremap : ;
@@ -75,6 +75,10 @@ execute 'nnoremap <silent> ' . s:unimpaired_next . 'u <Cmd>MundoHide<CR>'
 " save with <C-S>
 nnoremap <C-S> <Cmd>w<CR>
 nnoremap <Leader><C-S> <Cmd>noautocmd w<CR>
+" changing tabs (I don't redraw screen with <C-L>)
+nnoremap <C-H> gT
+nnoremap <C-L> gt
+
 
 " Run pre-commit hooks (via overcommit) and load the result to quickfix
 " (requires tpope/vim-dispatch)

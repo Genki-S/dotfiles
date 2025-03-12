@@ -1,6 +1,13 @@
 // Tips:
 // - map <C-h> & <C-l> (prev, next tab) on Vivaldi (so that it works on tabs with Surfingkeys disabled)
 
+api.mapkey(',,', 'debug', function() {
+  console.log(api)
+  api.RUNTIME('getTabs', {queryInfo: {currentWindow: true}}, response => {
+    console.log(response);
+  });
+}, { repeatIgnore: true });
+
 // settings {{{
 // unfortunate, but this is the best way at the moment
 settings.blocklistPattern = /.*docs\.google\.com.*/i

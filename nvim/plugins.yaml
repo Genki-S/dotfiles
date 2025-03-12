@@ -285,6 +285,52 @@
 - autozimu/LanguageClient-neovim:
     rev: next
     build: 'bash install.sh'
+
+- tpope/vim-sleuth:
+
+- easymotion/vim-easymotion:
+
+- kana/vim-smartchr:
+    lazy: 1
+    on_event:
+        - InsertEnter
+
+- kana/vim-altercmd:
+
+- tyru/caw.vim:
+    lazy: 1
+    on_map: <Plug>(caw
+
+- AndrewRadev/splitjoin.vim:
+    lazy: 1
+    on_map:
+        - <Plug>Splitjoin
+- AndrewRadev/sideways.vim:
+    lazy: 1
+    on_map:
+        - <Plug>SidewaysArgumentTextobj
+    on_cmd:
+        - SidewaysLeft
+        - SidewaysRight
+- AndrewRadev/switch.vim:
+    lazy: 1
+    on_cmd:
+        - Switch
+        - SwitchReverse
+    on_func:
+        - switch#Switch
+
+- sk1418/QFGrep:
+    lazy: 1
+    on_map:
+        - <Plug>QFGrep
+        - <Plug>QFRestore
+
+- t9md/vim-quickhl:
+    lazy: 1
+    on_map:
+        - <Plug>(quickhl
+
 - tpope/vim-dispatch:
     lazy: 1
     on_cmd:

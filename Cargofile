@@ -1,3 +1,4 @@
+install --force alacritty
 install --force ripgrep
 install --force git-delta
 install --force tv-cli
