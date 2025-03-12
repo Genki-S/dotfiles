@@ -1,0 +1,32 @@
+snippet     if
+options     head
+  if ${1:condition}:
+    ${2:pass}
+
+snippet     fori
+abbr        for i in N
+options     head
+  for i in ${1:N}:
+    ${0}
+
+snippet     forr
+abbr        for i in range(N, M) # (N to M-1)
+options     head
+  for i in range(${1:N}, ${2:M}):
+    ${0}
+
+snippet     fors
+abbr        for i in array.size()
+options     head
+  for i in ${1:array}.size():
+    ${0}
+
+snippet     fore
+abbr        for item in array
+options     head
+  for ${1:item} in ${2:array}:
+    ${0}
+
+snippet     sleep
+options     head
+  await get_tree().create_timer(${1:seconds}).timeout

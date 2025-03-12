@@ -1,7 +1,7 @@
 snippet if
-	if [ ${1:#:condition} ]; then
-		${0:TARGET}
-	fi
+  if [ ${1:#:condition} ]; then
+    ${0:TARGET}
+  fi
 
 snippet     fora
 abbr        for x in array
@@ -9,6 +9,36 @@ options     head
   for ${1:elem} in "\${${2:array}[@]}"; do
     ${0:TARGET}
   done
+
+snippet     fori
+abbr        for i in range
+options     head
+  for i in $(seq ${1:0} ${2:N}); do
+    ${0:TARGET}
+  done
+
+snippet     forl
+abbr        for each line of command output
+options     head
+  while read -r ${2:line}; do
+    ${0:TARGET}
+  done <<<$(${1:command})
+
+snippet while
+alias wh
+  while ${1:#:condition} ; do
+    ${0:TARGET}
+  done
+
+snippet     case
+options     head
+  case "$${1:{name\}}" in
+    ${2:pattern*})
+      ${0}
+      ;;
+    *)
+      ${3:echo "$$1 Didn't match anything"}
+  esac
 
 snippet     err
 abbr        echo to stderr
@@ -18,6 +48,10 @@ options     head
 
 snippet     tmpdir
 options     head
-  tmpdir=$(mktemp -d)
+  tmpdir="$(mktemp -d)"
   trap "rm -rf $tmpdir" EXIT
   ${0}
+
+snippet     scriptdir
+options     head
+  scriptdir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )

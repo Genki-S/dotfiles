@@ -44,6 +44,14 @@ options     head
       ${0:TARGET}
     }
 
+snippet     ifel
+options     head
+    if ${1:#:condition} {
+      ${2}
+    } else {
+      ${3}
+    }
+
 snippet     iferr
 alias       ife
 options     head
@@ -69,7 +77,7 @@ options     head
     ${0:TARGET}
   }
 
-snippet     functest
+snippet     test
 abbr        func Test... (t *testing.T) { ... }
 alias       test
 options     head
@@ -79,7 +87,7 @@ options     head
     }
   }
 
-snippet     funcbench
+snippet     bench
 abbr        func Benchmark... (b *testing.B) { ... }
 alias       bench
 options     head
@@ -89,7 +97,17 @@ options     head
     }
   }
 
-snippet     testtable
+snippet     fuzz
+abbr        func Fuzz...(f *testing.F) { ... }
+options     head
+  func Fuzz${1}(${2:f *testing.F}) {
+    f.Fuzz(func(t *testing.T, ${3:b []byte}) {
+      ${4}
+    })
+  }
+
+# test table
+snippet     tt
 abbr        var test = {...}{...} for {t.Run(){...}}
 options     head
   var tests = []struct {
@@ -147,14 +165,12 @@ options     head
 snippet     ff
 abbr        fmt.Printf(...)
 options     head
-  fmt.Printf("${1} = %+v\n", $1)
-  ${0}
+  fmt.Printf("${1} = %+v\n", $1)${0}
 
 snippet     fln
 abbr        fmt.Println(...)
 options     head
-  fmt.Println("${1}")
-  ${0}
+  fmt.Println("${1}")${0}
 
 snippet     method
 abbr        func (self Type) Method(...) [error] { ... }
@@ -259,5 +275,27 @@ options     head
     return val
   }
   ${0}
+
+snippet     sort
+options     head
+  sort.Slice(${1:slice}, func(i, j int) bool {
+    return $1[i].${2:field} < $1[j].$2
+  })
+  ${0}
+
+snippet     sortr
+abbr        sort reverse
+options     head
+  sort.Sort(sort.Reverse(sort.IntSlice(${1:slice})))
+
+snippet     sorti
+options     head
+  sort.Ints(${1:intSlice})
+  ${0}
+
+snippet     dd
+abbr        dbg(...)
+options     head
+  dbg("${1} = %+v\n", $1)${0}
 
 # vim: foldmethod=marker

@@ -11,3 +11,12 @@ options     head
   class ${1:#:name}(${2:object}):
     def __init__(self, ${3}):
       ${0:pass}
+
+snippet     env
+abbr        os.getenv
+  os.getenv('${1:ENV_NAME}')
+
+snippet     err
+abbr        print to stderr
+options     head
+  print('${1}', file=sys.stderr)

@@ -48,6 +48,13 @@ options     head
     ${0}
   }
 
+snippet     forr
+abbr        for each dictionary item
+options     head
+  for (const [${1:key}, ${2:value}] of Object.entries(${3:dict})) {
+    ${0}
+  }
+
 snippet     sw
 abbr        switch
 options     head
@@ -58,3 +65,25 @@ options     head
     default:
       throw new Error(`unexpected case`)
   }
+
+snippet     try
+abbr        try-catch
+options     head
+  try {
+    ${1}
+  } catch (e) {
+    if (e instanceof Error) {
+      console.log(e.stack)
+    }
+    if (e instanceof ${2:TypeError}) {
+      ${3}
+    } else {
+      throw new Error('${4:context}', { cause: e })
+    }
+  }
+  ${0}
+
+snippet     sleep
+options     head
+  await new Promise(resolve => setTimeout(resolve, ${1:1000}))
+  ${0}
