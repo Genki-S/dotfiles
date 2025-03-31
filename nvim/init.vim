@@ -49,29 +49,6 @@ augroup vimrc-misc
 				\ | endif
 augroup END
 
-" unimpaired-like mappings: https://github.com/tpope/vim-unimpaired/blob/master/plugin/unimpaired.vim
-let s:unimpaired_prev = "["
-let s:unimpaired_next = "]"
-execute 'nnoremap <silent> ' . s:unimpaired_prev . 'q <Cmd>cprevious<CR>'
-execute 'nnoremap <silent> ' . s:unimpaired_next . 'q <Cmd>cnext<CR>'
-execute 'nnoremap <silent> ' . s:unimpaired_prev . 'l <Cmd>lprevious<CR>'
-execute 'nnoremap <silent> ' . s:unimpaired_next . 'l <Cmd>lnext<CR>'
-execute 'nnoremap <silent> ' . s:unimpaired_prev . 'od <Cmd>diffthis<CR>'
-execute 'nnoremap <silent> ' . s:unimpaired_next . 'od <Cmd>diffoff<CR>'
-execute 'nnoremap <silent> ' . s:unimpaired_prev . 'os <Cmd>setlocal spell<CR>'
-execute 'nnoremap <silent> ' . s:unimpaired_next . 'os <Cmd>setlocal nospell<CR>'
-" the <Space> mappings doesn't preserve cursor position, but this is good enough
-execute 'nnoremap <silent> ' . s:unimpaired_prev . '<Space> O<Esc>j'
-execute 'nnoremap <silent> ' . s:unimpaired_next . '<Space> o<Esc>k'
-" 'o' mappings are for options in official unimpaired, but this is what I like
-execute 'nnoremap <silent> ' . s:unimpaired_prev . 'oq <Cmd>copen<CR>'
-execute 'nnoremap <silent> ' . s:unimpaired_next . 'oq <Cmd>cclose<CR>'
-execute 'nnoremap <silent> ' . s:unimpaired_prev . 'ol <Cmd>lopen<CR>'
-execute 'nnoremap <silent> ' . s:unimpaired_next . 'ol <Cmd>lclose<CR>'
-" for plugins, probably better to map here than in plugin config file
-execute 'nnoremap <silent> ' . s:unimpaired_prev . 'u <Cmd>MundoShow<CR>'
-execute 'nnoremap <silent> ' . s:unimpaired_next . 'u <Cmd>MundoHide<CR>'
-
 " save with <C-S>
 nnoremap <C-S> <Cmd>w<CR>
 nnoremap <Leader><C-S> <Cmd>noautocmd w<CR>

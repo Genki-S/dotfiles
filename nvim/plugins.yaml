@@ -366,6 +366,8 @@
 
 - tyru/vim-altercmd:
 
+- tpope/vim-unimpaired:
+
 - MarcWeber/vim-addon-local-vimrc:
 
 # vim: foldmethod=marker
