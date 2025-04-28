@@ -49,3 +49,7 @@ for i, line in enumerate(lines):
         msg = line.strip().removeprefix("[Orphans]:").strip()
         print(qfformat(context, msg))
         continue
+
+print("=== RAW OUTPUT ===")
+for i, line in enumerate(lines):
+    print(line.strip())
