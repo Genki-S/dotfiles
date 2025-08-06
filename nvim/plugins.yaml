@@ -282,6 +282,8 @@
 # }}}
 
 # IDE'ish {{{
+- Exafunction/windsurf.vim:
+
 - autozimu/LanguageClient-neovim:
     rev: next
     build: 'bash install.sh'

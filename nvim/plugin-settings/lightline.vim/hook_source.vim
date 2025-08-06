@@ -1,7 +1,7 @@
 let g:lightline = {}
 
 let g:lightline.active = {
-			\ 'left': [ [ 'quickfix', 'loclist', 'mode', 'paste' ],
+			\ 'left': [ [ 'quickfix', 'loclist', 'windsurf', 'mode', 'paste' ],
 			\           [ 'readonly', 'filename', 'modified' ] ],
 			\ 'right': [ [ 'lineinfo' ],
 			\            [ 'percent' ],
@@ -9,7 +9,8 @@ let g:lightline.active = {
 
 let g:lightline.component_expand = {
 			\ 'quickfix': 'MyLightlineQuickfix',
-			\ 'loclist': 'MyLightlineLoclist' }
+			\ 'loclist': 'MyLightlineLoclist',
+			\ 'windsurf': 'MyWindsurfStatus' }
 
 let g:lightline.component_type = {
 			\ 'quickfix': 'error',
@@ -31,4 +32,8 @@ function! MyLightlineLoclist()
 		return ''
 	endif
 	return "[ LOC: " . len(loclist) . " item(s) ]"
+endfunction
+
+function! MyWindsurfStatus()
+	return "AI:" . codeium#GetStatusString()
 endfunction
