@@ -1,0 +1,36 @@
+[Unit]
+Description=Whisper Daemon
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+TimeoutStartSec=0
+TimeoutStopSec=30
+
+# Load environment variables from config file
+EnvironmentFile=%h/.config/whisper-daemon/config.env
+
+# Remove any existing container with the same name
+ExecStartPre=-/usr/bin/docker stop whisper-daemon
+ExecStartPre=-/usr/bin/docker rm whisper-daemon
+
+# Start the container
+ExecStart=/usr/bin/docker run --rm --name whisper-daemon \
+  -p ${PORT}:${PORT} \
+  --device /dev/snd:/dev/snd \
+  --group-add audio \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+  -e DISPLAY=${DISPLAY} \
+  -e MIC_NAME=${MIC_NAME} \
+  -e PORT=${PORT} \
+  -e PAUSE_TIME=${PAUSE_TIME} \
+  -e HALLUCINATE_THRESHOLD=${HALLUCINATE_THRESHOLD} \
+  whisper-daemon
+
+# Stop the container
+ExecStop=/usr/bin/docker stop whisper-daemon
+
+[Install]
+WantedBy=default.target

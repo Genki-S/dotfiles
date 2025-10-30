@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  whisper-daemon:
+    build: .
+    ports:
+      - "${PORT:-8000}:${PORT:-8000}"
+    devices:
+      - /dev/snd:/dev/snd  # Mount sound devices
+    volumes:
+      - /run/user/1000/pulse:/run/user/1000/pulse  # PulseAudio socket (if using PulseAudio)
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw  # X11 socket for display
+    environment:
+      - MIC_NAME=${MIC_NAME:-}
+      - PORT=${PORT:-8000}
+      - PAUSE_TIME=${PAUSE_TIME:-1.5}
+      - HALLUCINATE_THRESHOLD=${HALLUCINATE_THRESHOLD:-400}
+      - PULSE_RUNTIME_PATH=/run/user/1000/pulse
+      - DISPLAY=${DISPLAY}
+    privileged: false
+    # Add audio group access
+    group_add:
+      - audio
+    user: "1000:1000"
