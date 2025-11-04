@@ -40,7 +40,7 @@ WHISPER_DAEMON_URL="http://localhost:6423"
 notify-send "Voice Dictation" "🎤 Listening..." &
 
 # Call whisper-daemon API
-response=$(curl -s -X POST "$WHISPER_DAEMON_URL/transcribe-mic" 2>/dev/null)
+response=$(curl -s --connect-timeout 0.2 --max-time 30 -X POST "$WHISPER_DAEMON_URL/transcribe-mic" 2>/dev/null)
 
 if [ $? -ne 0 ] || [ -z "$response" ]; then
     notify-send "Voice Dictation Error" "❌ Failed to connect to whisper-daemon" --urgency=critical
