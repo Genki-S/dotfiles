@@ -44,6 +44,7 @@ async def startup_event():
 
     mic = WhisperMic(
         mic_index=mic_index,
+        english=True,
         pause=pause_time,
         hallucinate_threshold=hallucinate_threshold
     )
