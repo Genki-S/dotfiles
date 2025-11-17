@@ -6,4 +6,4 @@ Type=simple
 ExecStart=%h/dotfiles/bin/set-random-wallpaper
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
