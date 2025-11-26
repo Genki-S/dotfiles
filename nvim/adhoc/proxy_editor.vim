@@ -11,14 +11,21 @@ function! s:SendBufferToTmux()
     return
   endif
 
-  let buffer_text = join(getline(1, '$'), "\n")
+  let lines = getline(1, '$')
 
-  if len(buffer_text) == 0
+  if len(lines) == 1 && len(lines[0]) == 0
     return
   endif
 
-  call system("tmux load-buffer -", buffer_text)
-  call system("tmux paste-buffer -d -t " . shellescape(g:pxe_target_pane))
+  " use random tmux buffer so that it doesn't accidentally pick up the one I use elsewhere
+  let bufname = "pxe-" . system('cat /dev/urandom | tr -dc A-Za-z0-9 | head -c 4')
+
+  " paste line-by-line so that AI agent can get escaped newlines
+  for l in lines
+    call system("tmux load-buffer -b " . bufname . " -", l)
+    call system("tmux paste-buffer -b " . bufname . " -d -t " . shellescape(g:pxe_target_pane))
+    call system("tmux send-keys -t " . shellescape(g:pxe_target_pane) . " '\\' Enter")
+  endfor
 
   call system("tmux send-keys -t " . shellescape(g:pxe_target_pane) . " Enter")
 endfunction
