@@ -22,7 +22,10 @@ function! s:SendBufferToTmux()
 
   " paste line-by-line so that AI agent can get escaped newlines
   for l in lines
-    call system("tmux load-buffer -b " . bufname . " -", l)
+    " sanitize control characters
+    " (in Amp, tab triggers message navigation mode and stop accepting input as text)
+    let sanitized_line = substitute(l, '\t', '\\t', 'g')
+    call system("tmux load-buffer -b " . bufname . " -", sanitized_line)
     call system("tmux paste-buffer -b " . bufname . " -d -t " . shellescape(g:pxe_target_pane))
     call system("tmux send-keys -t " . shellescape(g:pxe_target_pane) . " '\\' Enter")
   endfor
