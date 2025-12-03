@@ -1,3 +1,6 @@
+# systemd services must be enabled manually per computer
+systemd-user/default.target.wants
+
 vimfiles/vim/bundles/*
 !vimfiles/vim/bundles/NeoBundle.lock
 vimfiles/vim/neobundlefile_compiled.vim
