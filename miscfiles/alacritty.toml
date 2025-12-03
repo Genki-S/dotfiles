@@ -46,3 +46,9 @@ mods = "Alt"
 action = "DecreaseFontSize"
 key = "Minus"
 mods = "Alt"
+
+# https://www.reddit.com/r/ClaudeAI/comments/1m83if0/you_can_use_shiftenter_to_add_new_lines_in_claude/
+[[keyboard.bindings]]
+chars = "\u001b\r"
+key = "Return"
+mods = "Shift"
