@@ -61,7 +61,7 @@ function! s:SendAndClearBuffer()
   %delete
 endfunction
 
-inoremap <Leader><CR> <Esc>:call <SID>SendAndClearBuffer()<CR>i
+inoremap <Leader><CR> <C-G>u<Esc>:call <SID>SendAndClearBuffer()<CR>i
 nnoremap <Leader><CR> :call <SID>SendAndClearBuffer()<CR>i
 
 if g:pxe_target_agent == "kilocode"
