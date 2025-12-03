@@ -27,6 +27,7 @@ let g:LanguageClient_serverCommands = {
       \ 'ruby': ['solargraph', 'stdio'],
       \ 'yaml': ['yaml-language-server', '--stdio'],
       \ 'terraform': ['terraform-ls', 'serve'],
+      \ 'gdscript': ['tcp://127.0.0.1:6005'],
       \ }
 
 let s:lsp_enabled_filetypes = keys(g:LanguageClient_serverCommands)
@@ -108,6 +109,7 @@ function! s:lc_buffer_setup() abort
 
   nnoremap <buffer> <silent> K <Cmd>call LanguageClient#textDocument_hover()<cr>
   nnoremap <buffer> <silent> <C-]> <Cmd>call <SID>lc_prejump() <Bar> call <SID>GotoDefinition()<CR>
+  nnoremap <buffer> <silent> <Leader><C-]> <Cmd>call <SID>lc_prejump() <Bar> call LanguageClient#textDocument_implementation()<CR>
   nnoremap <buffer> <silent> <C-w><C-]> <Cmd>split <Bar> call <SID>lc_prejump() <Bar> call <SID>GotoDefinition()<CR>
   nnoremap <buffer> <silent> <C-w><C-t><C-]> <Cmd>tabnew %:p <Bar> call <SID>lc_prejump() <Bar> call <SID>GotoDefinition()<CR>
   nnoremap <buffer> <silent> <SID>[LC]a <Cmd>call LanguageClient#textDocument_codeAction()<CR>
@@ -129,6 +131,7 @@ augroup vimrc_LanguageClient-neovim
   autocmd!
   autocmd FileType * call s:lc_buffer_setup()
   autocmd FileType c let b:vimrc_LangugageClient_formatOnSave = 0
+  autocmd FileType gdscript let b:vimrc_LangugageClient_formatOnSave = 0
 augroup END
 
 " vim: foldmethod=marker

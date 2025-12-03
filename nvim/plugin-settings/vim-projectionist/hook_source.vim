@@ -10,12 +10,12 @@ let g:projectionist_heuristics = {
 			\   },
 			\ },
 			\ 'project.godot': {
-			\   '*.gd': {
+			\   'src/**/*.gd': {
 			\     'alternate': 'test/unit/{dirname}/test_{basename}.gd',
 			\     'type': 'source'
 			\   },
 			\   'test/unit/**/test_*.gd': {
-			\     'alternate': '{dirname}/{basename}.gd',
+			\     'alternate': 'src/{dirname}/{basename}.gd',
 			\     'type': 'test'
 			\   },
 			\ }}

@@ -29,10 +29,11 @@ endfunction
 
 function! s:setup_gdscript_mappings() abort
   let b:switch_custom_definitions = 
-	\ [
-	\   ['assert_true', 'assert_false'],
-	\   ['assert_null', 'assert_not_null'],
-	\ ]
+        \ [
+        \   ['assert_true', 'assert_false'],
+        \   ['assert_null', 'assert_not_null'],
+        \   ['assert_signal_emitted', 'assert_signal_not_emitted'],
+        \ ]
 endfunction
 
 let s:rust_option_definitions = 
