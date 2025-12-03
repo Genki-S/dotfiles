@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# create tmux setup for amp and nvim as a proxy editor
+# create tmux setup for kilo and nvim as a proxy editor
 
 if [ -z $TMUX ]; then
   echo "Must be used within a tmux session" >&2
@@ -15,15 +15,15 @@ fi
 
 session=$(tmux display-message -p '#S')
 window_id=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 2 | head -n 1)
-window="vamp-${window_id}"
+window="vkilo-${window_id}"
 
 tmux rename-window "$window"
 tmux split-window -h
 tmux resize-pane -t "$session:$window.1" -x "70%"
 
 # Send commands to each pane
-tmux send-keys -t "$session:$window.1" "amp" Enter
-editor_cmd="nvim -c \"let g:pxe_target_agent='amp'\" -c \"let g:pxe_target_pane='${session}:${window}.1'\" -S ~/.config/nvim/adhoc/proxy_editor.vim -c startinsert"
+tmux send-keys -t "$session:$window.1" "kilocode" Enter
+editor_cmd="nvim -c \"let g:pxe_target_agent='kilocode'\" -c \"let g:pxe_target_pane='${session}:${window}.1'\" -S ~/.config/nvim/adhoc/proxy_editor.vim -c startinsert"
 tmux send-keys -t "$session:$window.2" "$editor_cmd" Enter
 
 tmux select-pane -t "$session:$window.2"
