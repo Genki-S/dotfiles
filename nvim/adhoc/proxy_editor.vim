@@ -16,9 +16,14 @@ if !exists('g:pxe_target_agent')
 endif
 
 function! s:SendString(s, accept)
+  let s = a:s
+  if g:pxe_target_agent == "amp"
+    " somehow amp drops the first character :/
+    let s = "|" . a:s
+  endif
   " use random tmux buffer so that it doesn't accidentally pick up the one I use elsewhere
   let bufname = "pxe-" . system('cat /dev/urandom | tr -dc A-Za-z0-9 | head -c 4')
-  call system("tmux load-buffer -b " . bufname . " -", a:s)
+  call system("tmux load-buffer -b " . bufname . " -", s)
   call system("tmux paste-buffer -b " . bufname . " -d -t " . shellescape(g:pxe_target_pane))
   if a:accept
     call s:SendAccept()
