@@ -15,6 +15,7 @@ function() { # Setup kubernetes aliases
       d deployment
       n node
       s service
+      sec secret
     )
 
     for op_alias in "${(@k)operation_by_alias}"
