@@ -1,5 +1,8 @@
 # systemd services must be enabled manually per computer
 systemd-user/default.target.wants
+systemd-user/timers.target.wants
+# ignore config overrides (meant for per-host overrides)
+systemd-user/*.d/
 
 vimfiles/vim/bundles/*
 !vimfiles/vim/bundles/NeoBundle.lock

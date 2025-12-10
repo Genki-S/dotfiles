@@ -1,0 +1,9 @@
+[Unit]
+Description=Timer for periodic-service
+
+[Timer]
+# default, can be overwritten with ~/dotfiles/systemd-user/periodic-service.timer.d/schedule.conf
+OnCalendar=hourly
+
+[Install]
+WantedBy=timers.target
