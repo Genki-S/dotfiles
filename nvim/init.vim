@@ -55,6 +55,8 @@ nnoremap <Leader><C-S> <Cmd>noautocmd w<CR>
 " changing tabs (I don't redraw screen with <C-L>)
 nnoremap <C-H> gT
 nnoremap <C-L> gt
+" copy filepath
+nnoremap <silent><Leader><C-G> <Cmd>let @+ = expand('%') \| echomsg "copied filepath to clipboard: " . expand('%')<CR>
 
 
 " Run pre-commit hooks (via overcommit) and load the result to quickfix
