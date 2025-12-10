@@ -33,6 +33,7 @@ endfunction
 function! s:SendNewline()
   if g:pxe_target_agent == "amp"
     call system("tmux send-keys -t " . shellescape(g:pxe_target_pane) . " '\\' Enter")
+    return
   endif
   " fallback to Shift + Enter
   call system("tmux send-keys -t " . shellescape(g:pxe_target_pane) . " \u001b\r")
