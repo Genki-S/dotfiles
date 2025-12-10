@@ -9,4 +9,10 @@ function myvim() {
 
 alias v='myvim'
 
+# Usage: vw EXECUTABLE
+# vim `which EXECUTABLE`
+function vw () {
+	$EDITOR `which $*`
+}
+
 # vim:foldmethod=marker
