@@ -32,6 +32,7 @@ alias gss='git stash save --include-untracked'
 alias gsd='git stash show --color' # d for diff
 alias gsp='git stash pop --index'
 alias gsdrop='git stash drop'
+alias groot="git rev-parse --show-toplevel"
 
 # tig
 alias tigb='tig `git_main_branch`..HEAD' # see branch commits
@@ -53,5 +54,43 @@ alias gcb="git_current_branch"
 function git_main_branch() {
   git remote show origin | sed -n '/HEAD branch/s/.*: //p'
 }
+alias gmb="git_main_branch"
+
+function git_browse() {
+  local remote_url=$(git remote get-url origin 2>/dev/null)
+  if [[ -z "$remote_url" ]]; then
+    echo "No origin remote found" >&2
+    return 1
+  fi
+
+  local ref="${1:-}"
+  if [[ -z "$ref" ]]; then
+    ref=$(git symbolic-ref --short HEAD 2>/dev/null)
+    if [[ -z "$ref" ]]; then
+      ref=$(git rev-parse --short HEAD)
+    fi
+  fi
+
+  # Convert remote URL to browse URL
+  local browse_url
+  if [[ "$remote_url" =~ ^git@([^:]+):(.+)\.git$ ]]; then
+    browse_url="https://${match[1]}/${match[2]}/tree/${ref}"
+  elif [[ "$remote_url" =~ ^git@([^:]+):(.+)$ ]]; then
+    browse_url="https://${match[1]}/${match[2]}/tree/${ref}"
+  elif [[ "$remote_url" =~ ^https?://([^/]+)/(.+)\.git$ ]]; then
+    browse_url="https://${match[1]}/${match[2]}/tree/${ref}"
+  elif [[ "$remote_url" =~ ^https?://([^/]+)/(.+)$ ]]; then
+    browse_url="https://${match[1]}/${match[2]}/tree/${ref}"
+  else
+    echo "Unsupported remote URL format: $remote_url" >&2
+    return 1
+  fi
+
+  echo "Opening: $browse_url"
+  xdg-open "$browse_url" 2>/dev/null || open "$browse_url" 2>/dev/null
+}
+alias gbw="git_browse"
+alias gbwm="git_browse `git_main_branch`"
+alias gbwb="git_browse `git_current_branch`"
 
 # vim:foldmethod=marker
