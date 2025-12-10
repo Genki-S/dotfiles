@@ -17,10 +17,6 @@ endif
 
 function! s:SendString(s, accept)
   let s = a:s
-  if g:pxe_target_agent == "amp"
-    " somehow amp drops the first character :/
-    let s = "|" . a:s
-  endif
   " use random tmux buffer so that it doesn't accidentally pick up the one I use elsewhere
   let bufname = "pxe-" . system('cat /dev/urandom | tr -dc A-Za-z0-9 | head -c 4')
   call system("tmux load-buffer -b " . bufname . " -", s)
@@ -47,6 +43,11 @@ function! s:SendBuffer()
   let lines = getline(1, '$')
   if len(lines) == 1 && len(lines[0]) == 0
     return
+  endif
+
+  if g:pxe_target_agent == "amp"
+    " somehow amp sometimes drops the first character :/
+    let lines[0] = "|" . lines[0]
   endif
 
   " paste line-by-line so that AI agent can get escaped newlines
