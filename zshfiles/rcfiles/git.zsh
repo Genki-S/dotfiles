@@ -77,6 +77,10 @@ function git_browse() {
     browse_url="https://${match[1]}/${match[2]}/tree/${ref}"
   elif [[ "$remote_url" =~ ^git@([^:]+):(.+)$ ]]; then
     browse_url="https://${match[1]}/${match[2]}/tree/${ref}"
+  elif [[ "$remote_url" =~ ^ssh://git@([^/]+)/(.+)\.git$ ]]; then
+    browse_url="https://${match[1]}/${match[2]}/tree/${ref}"
+  elif [[ "$remote_url" =~ ^ssh://git@([^/]+)/(.+)$ ]]; then
+    browse_url="https://${match[1]}/${match[2]}/tree/${ref}"
   elif [[ "$remote_url" =~ ^https?://([^/]+)/(.+)\.git$ ]]; then
     browse_url="https://${match[1]}/${match[2]}/tree/${ref}"
   elif [[ "$remote_url" =~ ^https?://([^/]+)/(.+)$ ]]; then
