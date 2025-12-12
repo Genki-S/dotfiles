@@ -9,7 +9,7 @@ if [[ -n "$LBUFFER" ]]; then
 fi
 
 __kubernetes_switch_context() {
-  local contexts="$(kubectl config get-contexts | tail -n +2 | sed 's/^\*//' | sed 's/^\s*//' | sed 's/\s.*$//')"
+  local contexts="$(bkt --ttl=12h --stale=60s -- kubectl config get-contexts | tail -n +2 | sed 's/^\*//' | sed 's/^\s*//' | sed 's/\s.*$//')"
   local selected="$(echo $contexts | fzy)"
   if [ -z "$selected" ]; then
     zle reset-prompt
@@ -24,7 +24,7 @@ __kubernetes_switch_namespace() {
   # TODO: show this on minibuffer
   LBUFFER="# collecting namespaces..."
   zle reset-prompt
-  local namespaces="$(kubectl get namespaces | tail -n +2 | awk '{ print $1 }')"
+  local namespaces="$(bkt --ttl=12h --stale=60s -- kubectl get namespaces | tail -n +2 | awk '{ print $1 }')"
   LBUFFER=""
   local selected="$(echo $namespaces | fzy)"
   if [ -z "$selected" ]; then
@@ -60,7 +60,7 @@ __aws_switch_profile() {
   # TODO: show this on minibuffer
   LBUFFER="# collecting aws profiles..."
   zle reset-prompt
-  local profiles="$(aws configure list-profiles)"
+  local profiles="$(bkt --ttl=12h --stale=60s -- aws configure list-profiles)"
   LBUFFER=""
   local selected="$(echo $profiles | fzy)"
   if [ -z "$selected" ]; then
