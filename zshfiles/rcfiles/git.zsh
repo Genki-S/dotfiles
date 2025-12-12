@@ -93,8 +93,8 @@ function git_browse() {
   echo "Opening: $browse_url"
   xdg-open "$browse_url" 2>/dev/null || open "$browse_url" 2>/dev/null
 }
-alias gbw="git_browse"
-alias gbwm="git_browse `git_main_branch`"
-alias gbwb="git_browse `git_current_branch`"
+alias gbw='git_browse'
+alias gbwm='git_browse `git_main_branch`'
+alias gbwb='git_browse `git_current_branch`'
 
 # vim:foldmethod=marker
