@@ -45,9 +45,19 @@ augroup vimrc-misc
 	autocmd WinEnter * checktime
 	" :h last-position-jump
 	autocmd BufWinEnter *
-				\ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-				\ |   exe "normal! g`\""
-				\ | endif
+		\ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit' |
+		\   exe "normal! g`\"" |
+		\ endif
+	" Auto make directories on save
+	autocmd BufWritePre,FileWritePre *
+		\ if !isdirectory(expand("<afile>:p:h")) |
+		\   call mkdir(expand("<afile>:p:h"), "p") |
+		\ endif
+	" Auto chmod +x
+	autocmd BufWritePost *
+		\ if getline(1) =~ "^#!" && getline(1) =~ "/bin/" |
+		\   execute "silent !chmod a+x" expand("<afile>:p") |
+		\ endif
 augroup END
 
 " save with <C-S>
