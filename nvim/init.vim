@@ -42,6 +42,7 @@ set completeopt-=preview
 
 augroup vimrc-misc
 	autocmd!
+	autocmd WinEnter * checktime
 	" :h last-position-jump
 	autocmd BufWinEnter *
 				\ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
