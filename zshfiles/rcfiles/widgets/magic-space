@@ -20,6 +20,15 @@ __ghq_cd_fzy() {
 	___zle_cd "$dir"
 }
 
+__inner_cd_fzy() {
+	git_root="$(git rev-parse --show-toplevel)"
+	local dir="$(find "$git_root" -mindepth 1 -maxdepth 5 \
+		-name '.git' -prune -o -type d \
+		| sed "s!^$git_root/!!" \
+		| fzy)"
+	___zle_cd "$git_root/$dir"
+}
+
 ___zle_cd() {
 	local dir="$1"
 	if [ -z "$dir" ]; then
@@ -64,6 +73,10 @@ case "${LBUFFER}" in
 	# "g"hq "j"ump
 	gj)
 		__ghq_cd_fzy
+		;;
+	# "i"n-project "j"ump
+	ij)
+		__inner_cd_fzy
 		;;
 	# "g"it "b"ranch" "s"elect
 	gbs)
