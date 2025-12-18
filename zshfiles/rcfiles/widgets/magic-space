@@ -45,7 +45,7 @@ __git_checkout_fzy() {
 }
 
 __vim_fzy() {
-	local file=$(find . | fzy)
+	local file=$(find . -maxdepth 5 -type f | fzy)
 	if [ -z "$file" ]; then
 		zle reset-prompt
 		return
