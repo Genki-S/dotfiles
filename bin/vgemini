@@ -1,0 +1,3 @@
+#!/bin/bash
+
+proxy-editor "gemini" "gemini"
