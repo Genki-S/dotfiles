@@ -23,14 +23,14 @@ fi
 
 session=$(tmux display-message -p '#S')
 window_id=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 2 | head -n 1)
-window="v${NAME}-${window_id}"
+window="${NAME}-${window_id}"
 
 tmux rename-window "$window"
 tmux split-window -h
 tmux resize-pane -t "$session:$window.1" -x "70%"
 
 # Send commands to each pane
-tmux send-keys -t "$session:$window.1" "$AGENT" Enter
+tmux send-keys -t "$session:$window.1" "export AI_SESSION_NAME='${window}'; $AGENT" Enter
 editor_cmd="nvim -c \"let g:pxe_target_agent='$NAME'\" -c \"let g:pxe_target_pane='${session}:${window}.1'\" -S ~/.config/nvim/adhoc/proxy_editor.vim -c startinsert"
 tmux send-keys -t "$session:$window.2" "$editor_cmd" Enter
 
