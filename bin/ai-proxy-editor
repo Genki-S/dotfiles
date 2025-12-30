@@ -34,4 +34,8 @@ tmux send-keys -t "$session:$window.1" "export AI_SESSION_NAME='${window}'; $AGE
 editor_cmd="nvim -c \"let g:pxe_target_agent='$NAME'\" -c \"let g:pxe_target_pane='${session}:${window}.1'\" -S ~/.config/nvim/adhoc/proxy_editor.vim -c startinsert"
 tmux send-keys -t "$session:$window.2" "$editor_cmd" Enter
 
+# Set silence monitoring and bell
+tmux setw     -t "$session:$window" monitor-silence 15
+tmux set-hook -t "$session:$window" alert-silence 'run-shell "echo -e \"\a\""'
+
 tmux select-pane -t "$session:$window.2"
