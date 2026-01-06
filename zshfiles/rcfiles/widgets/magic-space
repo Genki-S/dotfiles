@@ -22,10 +22,20 @@ __ghq_cd_fzy() {
 
 __inner_cd_fzy() {
 	git_root="$(git rev-parse --show-toplevel)"
-	local dir="$(find "$git_root" -mindepth 1 -maxdepth 5 \
-		-name '.git' -prune -o -type d \
-		| sed "s!^$git_root/!!" \
-		| fzy)"
+	local dir
+	if [ -f "$git_root/.gitignore" ]; then
+		dir="$(find "$git_root" -mindepth 1 -maxdepth 5 \
+			-name '.git' -prune -o -type d -print \
+			| git -C "$git_root" check-ignore --no-index -v -n --stdin 2>/dev/null \
+			| sed -n 's/^::\t//p' \
+			| sed "s!^$git_root/!!" \
+			| fzy)"
+	else
+		dir="$(find "$git_root" -mindepth 1 -maxdepth 5 \
+			-name '.git' -prune -o -type d \
+			| sed "s!^$git_root/!!" \
+			| fzy)"
+	fi
 	___zle_cd "$git_root/$dir"
 }
 
