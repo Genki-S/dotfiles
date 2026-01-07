@@ -36,6 +36,6 @@ tmux send-keys -t "$session:$window.2" "$editor_cmd" Enter
 
 # Set silence monitoring and bell
 tmux setw     -t "$session:$window" monitor-silence 15
-tmux set-hook -t "$session:$window" alert-silence 'run-shell "echo -e \"\a\""'
+tmux set-hook -t "$session:$window" alert-silence 'run-shell "printf \"\a\""'
 
 tmux select-pane -t "$session:$window.2"
