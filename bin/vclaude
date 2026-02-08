@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ai-proxy-editor "claude" "claude"
