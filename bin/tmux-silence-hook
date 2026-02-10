@@ -1,0 +1,51 @@
+#!/bin/bash
+
+set -euo pipefail
+
+on_exit() {
+    local exit_code=$?
+    if [ $exit_code -ne 0 ]; then
+        notify-send -u critical "tmux-silence-hoook Failed" "Command: '$BASH_COMMAND'\nLine: $1\nExit Code: $exit_code"
+    fi
+}
+trap 'on_exit $LINENO' EXIT
+
+if [[ $# -ne 3 ]]; then
+    echo "Usage: $0 <session_name> <window_id> <pane_id>" >&2
+    notify-send "tmux-silence-hook" "wrong arguments: $*"
+    exit 1
+fi
+
+session="$1"
+window="$2"
+pane="$3"
+
+# notify-send "Tmux Silence" "Session: $session\nWindow: $window\nPane: $pane"
+
+ai_agent_hook() {
+    agent="$(tmux display-message -t "$session:$window" -p "#{q:@ai_proxy_editor_agent}")"
+    if [[ -z "$agent" ]]; then
+        return
+    fi
+
+    # Capture some last lines of the pane content for pane 1 (agent should be running there)
+    last_lines=$(tmux capture-pane -p -t "$session:$window.1" | tail -n 30)
+
+    if [[ "$agent" == "gemini" ]]; then
+        if echo "$last_lines" | grep -q -i "keep trying"; then
+            tmux send-keys -t "$session:$window.1" Enter
+            # clear silence flag to monitor next silence (it resets flag on all windows, but there's no window-specific option)
+            tmux kill-session -C -t "$session"
+            return
+        fi
+    fi
+
+    cache_file="$HOME/.cache/tmux-silence-hook/ai-agent/${session}_${window}"
+    mkdir -p "$(dirname $cache_file)"
+    if ! diff -qN "$cache_file" <(printf '%s' "$last_lines") > /dev/null; then
+        notify-send "$agent Awaits You" "$agent on $session:$window awaits your next prompt"
+    fi
+    printf '%s' "$last_lines" > "$cache_file"
+}
+
+ai_agent_hook
