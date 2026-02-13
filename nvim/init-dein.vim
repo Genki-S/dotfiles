@@ -70,6 +70,8 @@ let s:deinrc = g:nvim_config_dir . '/deinrc-generated.vim'
 if getftime(s:plugins_definition_file) > getftime(s:deinrc)
   silent !generate-deinrc
   let g:dein#_base_path = s:dein_install_dir
+  let g:dein#_cache_path = ''
+  " let g:dein#_is_sudo = v:false
   call dein#clear_state()
 endif
 
