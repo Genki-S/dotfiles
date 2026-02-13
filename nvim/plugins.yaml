@@ -83,6 +83,10 @@
         - TSContextEnable
         - TSContextDisable
         - TSContextToggle
+- sindrets/diffview.nvim:
+    lazy: 1
+    on_cmd:
+        - DiffviewOpen
 # }}}
 
 # code writing / editing {{{
