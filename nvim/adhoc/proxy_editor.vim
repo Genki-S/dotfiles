@@ -36,7 +36,7 @@ function! s:SendNewline()
 endfunction
 
 function! s:SendAccept()
-  sleep 100m
+  sleep 200m
   call system("tmux send-keys -t " . shellescape(g:pxe_target_pane) . " Enter")
 endfunction
 
