@@ -68,7 +68,8 @@ nnoremap <C-H> gT
 nnoremap <C-L> gt
 " copy filepath
 nnoremap <silent><Leader><C-G> <Cmd>let @+ = expand('%') \| echomsg "copied filepath to clipboard: " . expand('%')<CR>
-
+" remove trailing whitespaces
+nnoremap <silent><Leader><Space> <Cmd>let _s=@/ \| let _v=winsaveview() \| %s/\s\+$//e \| let @/=_s \| call winrestview(_v)<CR>
 
 " Run pre-commit hooks (via overcommit) and load the result to quickfix
 " (requires tpope/vim-dispatch)
