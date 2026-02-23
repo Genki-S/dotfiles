@@ -69,9 +69,11 @@ let s:plugins_definition_file = g:nvim_config_dir . '/plugins.yaml'
 let s:deinrc = g:nvim_config_dir . '/deinrc-generated.vim'
 if getftime(s:plugins_definition_file) > getftime(s:deinrc)
   silent !generate-deinrc
+  " HACK: define some variables dein#clear_state assumes to exist
+  " (probably defined somewhere in dein#load_state or alike)
   let g:dein#_base_path = s:dein_install_dir
   let g:dein#_cache_path = ''
-  " let g:dein#_is_sudo = v:false
+  let g:dein#_is_sudo = v:false
   call dein#clear_state()
 endif
 
