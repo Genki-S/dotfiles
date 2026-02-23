@@ -74,7 +74,9 @@ if getftime(s:plugins_definition_file) > getftime(s:deinrc)
   let g:dein#_base_path = s:dein_install_dir
   let g:dein#_cache_path = ''
   let g:dein#_is_sudo = v:false
+  let g:dein#ftplugin = {}
   call dein#clear_state()
+  call dein#recache_runtimepath()
 endif
 
 " Required:
