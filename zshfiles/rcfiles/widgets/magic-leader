@@ -24,7 +24,7 @@ __kubernetes_switch_namespace() {
   # TODO: show this on minibuffer
   LBUFFER="# collecting namespaces..."
   zle reset-prompt
-  local namespaces="$(bkt --ttl=12h --stale=60s -- kubectl get namespaces | tail -n +2 | awk '{ print $1 }')"
+  local namespaces="$(bkt --ttl=12h --stale=60s -- kubectl --context "$(kubectl config current-context)" get namespaces | tail -n +2 | awk '{ print $1 }')"
   LBUFFER=""
   local selected="$(echo $namespaces | fzy)"
   if [ -z "$selected" ]; then
