@@ -46,11 +46,6 @@ function! s:SendBuffer()
     return
   endif
 
-  if g:pxe_target_agent == "amp"
-    " somehow amp sometimes drops the first character :/
-    let lines[0] = "|" . lines[0]
-  endif
-
   " paste line-by-line so that AI agent can get escaped newlines
   for l in lines
     " sanitize control characters
