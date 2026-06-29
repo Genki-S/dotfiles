@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if [[ $# -ne 1 ]]; then
+  echo "Usage: rv <URL>" >&2
+  exit 1
+fi
+
+url="$1"
+
+host="$(echo "$url" | sed -n 's|^https\?://\([^/]*\)/.*|\1|p')"
+if [[ -z "$host" ]]; then
+  echo "Error: Could not parse host from URL: $url" >&2
+  exit 1
+fi
+
+gitlab_hosts=("gitlab.com")
+if [[ -n "${GITLAB_HOST:-}" ]]; then
+  gitlab_hosts+=("$GITLAB_HOST")
+fi
+
+# TODO: Add github_hosts and dispatch to rv-github
+
+for gh in "${gitlab_hosts[@]}"; do
+  if [[ "$host" == "$gh" ]]; then
+    exec rv-gitlab "$url"
+  fi
+done
+
+# Heuristic: GitLab MR URLs contain /-/merge_requests/
+if [[ "$url" =~ /-/merge_requests/ ]]; then
+  exec rv-gitlab "$url"
+fi
+
+echo "Error: Cannot determine hosting service for host: $host" >&2
+echo "Hint: Set GITLAB_HOST for custom GitLab domains" >&2
+exit 1

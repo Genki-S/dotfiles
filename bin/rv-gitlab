@@ -1,0 +1,57 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if [[ $# -ne 1 ]]; then
+  echo "Usage: rv-gitlab <MR_URL>" >&2
+  exit 1
+fi
+
+url="$1"
+
+# Expected format: https://<host>/<group>/<project>/-/merge_requests/<iid>[/...]
+if [[ ! "$url" =~ ^https?://([^/]+)/(.+)/-/merge_requests/([0-9]+) ]]; then
+  echo "Error: Not a valid GitLab MR URL: $url" >&2
+  exit 1
+fi
+
+host="${BASH_REMATCH[1]}"
+project_path="${BASH_REMATCH[2]}"
+mr_iid="${BASH_REMATCH[3]}"
+
+ghq_root="$(ghq root)"
+repo_dir="${ghq_root}/${host}/${project_path}"
+
+if [[ ! -d "$repo_dir" ]]; then
+  echo "Repo not found locally, cloning via ghq..."
+  ghq get "git@${host}:${project_path}.git"
+fi
+
+if [[ -z "${GITLAB_TOKEN:-}" ]]; then
+  echo "Error: GITLAB_TOKEN is not set" >&2
+  exit 1
+fi
+
+encoded_project="$(printf '%s' "$project_path" | jq -sRr @uri)"
+api_url="https://${host}/api/v4/projects/${encoded_project}/merge_requests/${mr_iid}"
+
+mr_json="$(curl -sf --header "PRIVATE-TOKEN: ${GITLAB_TOKEN}" "$api_url")"
+if [[ -z "$mr_json" ]]; then
+  echo "Error: Failed to fetch MR info from $api_url" >&2
+  exit 1
+fi
+
+source_branch="$(echo "$mr_json" | jq -r '.source_branch')"
+if [[ -z "$source_branch" || "$source_branch" == "null" ]]; then
+  echo "Error: Could not determine source branch from MR" >&2
+  exit 1
+fi
+
+echo "MR !${mr_iid}: branch '${source_branch}'"
+
+cd "$repo_dir"
+git fetch origin "$source_branch"
+git switch -c "$source_branch" --track "origin/${source_branch}" 2>/dev/null \
+  || git switch "$source_branch"
+
+echo "Ready for review in: $repo_dir"
