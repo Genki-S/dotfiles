@@ -40,11 +40,43 @@ function! s:SendAccept()
   call system("tmux send-keys -t " . shellescape(g:pxe_target_pane) . " Enter")
 endfunction
 
+function! s:RecordPrompt(lines)
+  let state_home = empty($XDG_STATE_HOME) ? expand('~/.local/state') : expand($XDG_STATE_HOME)
+  let history_dir = state_home . '/ai-proxy-editor'
+  let history_file = history_dir . '/history.yaml'
+  let timestamp = strftime('%Y-%m-%dT%H:%M:%S%z')
+  let timestamp = substitute(timestamp, '\([+-]\d\d\)\(\d\d\)$', '\1:\2', '')
+  let entry = [
+        \ '---',
+        \ 'timestamp: ' . json_encode(timestamp),
+        \ 'cwd: ' . json_encode(getcwd()),
+        \ 'agent: ' . json_encode(g:pxe_target_agent),
+        \ 'prompt: |-',
+        \ ]
+  call extend(entry, map(copy(a:lines), '"  " . v:val'))
+
+  try
+    call mkdir(history_dir, 'p', 0700)
+    call writefile([], history_file, 'a')
+    call setfperm(history_file, 'rw-------')
+    call system(['flock', history_file . '.lock', 'tee', '-a', history_file], join(entry, "\n") . "\n")
+    if v:shell_error
+      throw 'flock exited with status ' . v:shell_error
+    endif
+  catch
+    echohl ErrorMsg
+    echomsg 'Failed to record prompt history in ' . history_file . ': ' . v:exception
+    echohl None
+  endtry
+endfunction
+
 function! s:SendBuffer()
   let lines = getline(1, '$')
   if len(lines) == 1 && len(lines[0]) == 0
     return
   endif
+
+  call s:RecordPrompt(lines)
 
   " paste line-by-line so that AI agent can get escaped newlines
   for l in lines
