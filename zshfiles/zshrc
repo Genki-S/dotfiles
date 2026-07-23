@@ -107,6 +107,15 @@ function zh() {
   fi
 }
 
+function ph() {
+  local history_file="${XDG_STATE_HOME:-$HOME/.local/state}/ai-proxy-editor/history.yaml"
+  if [[ $EDITOR =~ vim ]]; then
+    $EDITOR +'normal G' "$history_file"
+  else
+    $EDITOR "$history_file"
+  fi
+}
+
 # global aliases
 alias -g G="| grep -i"
 alias -g V="| grep -v"
