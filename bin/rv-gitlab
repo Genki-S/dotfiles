@@ -51,7 +51,11 @@ echo "MR !${mr_iid}: branch '${source_branch}'"
 
 cd "$repo_dir"
 git fetch origin "$source_branch"
-git switch -c "$source_branch" --track "origin/${source_branch}" 2>/dev/null \
-  || git switch "$source_branch"
+if git show-ref --verify --quiet "refs/heads/${source_branch}"; then
+  git switch "$source_branch"
+  git branch --set-upstream-to="origin/${source_branch}" "$source_branch"
+else
+  git switch --create "$source_branch" --track "origin/${source_branch}"
+fi
 
 echo "Ready for review in: $repo_dir"
