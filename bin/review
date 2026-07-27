@@ -3,7 +3,7 @@
 set -euo pipefail
 
 if [[ $# -ne 1 ]]; then
-  echo "Usage: rv <URL>" >&2
+  echo "Usage: review <URL>" >&2
   exit 1
 fi
 
@@ -20,17 +20,17 @@ if [[ -n "${GITLAB_HOST:-}" ]]; then
   gitlab_hosts+=("$GITLAB_HOST")
 fi
 
-# TODO: Add github_hosts and dispatch to rv-github
+# TODO: Add github_hosts and dispatch to review-github
 
 for gh in "${gitlab_hosts[@]}"; do
   if [[ "$host" == "$gh" ]]; then
-    exec rv-gitlab "$url"
+    exec review-gitlab "$url"
   fi
 done
 
 # Heuristic: GitLab MR URLs contain /-/merge_requests/
 if [[ "$url" =~ /-/merge_requests/ ]]; then
-  exec rv-gitlab "$url"
+  exec review-gitlab "$url"
 fi
 
 echo "Error: Cannot determine hosting service for host: $host" >&2

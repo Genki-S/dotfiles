@@ -3,7 +3,7 @@
 set -euo pipefail
 
 if [[ $# -ne 1 ]]; then
-  echo "Usage: rv-gitlab <MR_URL>" >&2
+  echo "Usage: review-gitlab <MR_URL>" >&2
   exit 1
 fi
 
@@ -23,8 +23,8 @@ ghq_root="$(ghq root)"
 repo_dir="${ghq_root}/${host}/${project_path}"
 
 if [[ ! -d "$repo_dir" ]]; then
-  echo "Repo not found locally, cloning via ghq..."
-  ghq get "git@${host}:${project_path}.git"
+  echo "Repo not found locally, cloning via ghq..." >&2
+  ghq get "git@${host}:${project_path}.git" >&2
 fi
 
 if [[ -z "${GITLAB_TOKEN:-}" ]]; then
@@ -47,15 +47,16 @@ if [[ -z "$source_branch" || "$source_branch" == "null" ]]; then
   exit 1
 fi
 
-echo "MR !${mr_iid}: branch '${source_branch}'"
+echo "MR !${mr_iid}: branch '${source_branch}'" >&2
 
 cd "$repo_dir"
-git fetch origin "$source_branch"
+git fetch origin "$source_branch" >&2
 if git show-ref --verify --quiet "refs/heads/${source_branch}"; then
-  git switch "$source_branch"
-  git branch --set-upstream-to="origin/${source_branch}" "$source_branch"
+  git switch "$source_branch" >&2
+  git branch --set-upstream-to="origin/${source_branch}" "$source_branch" >&2
 else
-  git switch --create "$source_branch" --track "origin/${source_branch}"
+  git switch --create "$source_branch" --track "origin/${source_branch}" >&2
 fi
 
-echo "Ready for review in: $repo_dir"
+echo "Ready for review in: $repo_dir" >&2
+printf '%s\n' "$repo_dir"

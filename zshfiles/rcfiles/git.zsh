@@ -97,4 +97,10 @@ alias gbw='git_browse'
 alias gbwm='git_browse `git_main_branch`'
 alias gbwb='git_browse `git_current_branch`'
 
+function rv() {
+  local repo_dir
+  repo_dir="$(review "$@")" || return
+  builtin cd -- "$repo_dir"
+}
+
 # vim:foldmethod=marker
