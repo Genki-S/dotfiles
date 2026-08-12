@@ -108,7 +108,8 @@ execute 'source ' . g:nvim_config_dir . '/init-dein.vim'
 set termguicolors
 colorscheme tender
 
-let local_init = g:nvim_config_dir . '/init.local.vim'
-if filereadable(local_init)
-	execute 'source ' . g:nvim_config_dir . '/init.local.vim'
+" Machine-local settings apply globally; vim-addon-local-vimrc handles project-local settings separately.
+let machine_local_vimrc = expand('~/.vimrc.machine-local')
+if filereadable(machine_local_vimrc)
+	execute 'source' fnameescape(machine_local_vimrc)
 endif
