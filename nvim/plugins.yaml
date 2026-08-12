@@ -195,6 +195,7 @@
         - markdown # for previm
     on_func:
         - MyOpenBrowser
+        - MyOpenBrowserRaw
         - openbrowser#open
         - openbrowser#smart_search
 
