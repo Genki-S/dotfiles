@@ -194,8 +194,9 @@
     on_ft:
         - markdown # for previm
     on_func:
+        - MyOpenBrowser
         - openbrowser#open
-        - openbrowser#_keymapping_smart_search
+        - openbrowser#smart_search
 
 # twitter
 - basyura/twibill.vim:

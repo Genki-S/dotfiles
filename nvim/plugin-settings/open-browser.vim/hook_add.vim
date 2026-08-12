@@ -1,2 +1,2 @@
-nmap <C-c><C-o> <Plug>(openbrowser-smart-search)
-vmap <C-c><C-o> <Plug>(openbrowser-smart-search)
+nnoremap <C-c><C-o> <Cmd>call g:MyOpenBrowser(expand('<cWORD>'))<CR>
+xnoremap <C-c><C-o> <Cmd>call g:MyOpenBrowser()<CR>
