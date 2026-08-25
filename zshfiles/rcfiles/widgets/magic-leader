@@ -72,6 +72,61 @@ __aws_switch_profile() {
   zle accept-line
 }
 
+__aws_ssm_start_session() {
+  if [[ -z "${AWS_PROFILE:-}" ]]; then
+    zle -M "easy ssm: AWS_PROFILE is not set"
+    return
+  fi
+  if [[ -z "${AWS_REGION:-}" ]]; then
+    zle -M "easy ssm: AWS_REGION is not set"
+    return
+  fi
+
+  setopt localoptions pipefail
+  LBUFFER="# collecting ec2 instances..."
+  zle reset-prompt
+  local instances
+  instances="$(aws ec2 describe-instances | jq -r '
+    .Reservations[].Instances[] |
+    [
+      ((.Tags // [] | map(select(.Key == "Name")) | first | .Value) // "-"),
+      .InstanceId,
+      .State.Name,
+      .PrivateIpAddress,
+      .InstanceType,
+      .Placement.AvailabilityZone,
+      .LaunchTime
+    ] | @tsv
+  ' | column -t -s $'\t')"
+  if [[ $? -ne 0 ]]; then
+    LBUFFER=""
+    zle reset-prompt
+    zle -M "easy ssm: failed to list EC2 instances"
+    return
+  fi
+  LBUFFER=""
+  if [[ -z "$instances" ]]; then
+    zle reset-prompt
+    zle -M "easy ssm: no EC2 instances found"
+    return
+  fi
+
+  local selected="$(print -r -- "$instances" | fzy)"
+  if [[ -z "$selected" ]]; then
+    zle reset-prompt
+    return
+  fi
+  local instance_id="$(print -r -- "$selected" | awk '{ for (i = 1; i <= NF; i++) if ($i ~ /^i-[[:xdigit:]]+$/) { print $i; exit } }')"
+  if [[ -z "$instance_id" ]]; then
+    zle reset-prompt
+    zle -M "easy ssm: could not read the selected instance ID"
+    return
+  fi
+  LBUFFER="aws ssm start-session --target $instance_id"
+  zle reset-prompt
+  zle accept-line
+}
+
 local REPLY
 read-from-minibuffer -k 1 "magic-leader: "
 case "${REPLY}" in
@@ -87,13 +142,16 @@ case "${REPLY}" in
     esac
     ;;
   a)
-    read-from-minibuffer -k 1 "aws ([r]egion, [p]rofile): "
+    read-from-minibuffer -k 1 "aws ([r]egion, [p]rofile, [s]sm): "
     case "${REPLY}" in
       r)
         __aws_switch_region
         ;;
       p)
         __aws_switch_profile
+        ;;
+      s)
+        __aws_ssm_start_session
         ;;
     esac
     ;;
