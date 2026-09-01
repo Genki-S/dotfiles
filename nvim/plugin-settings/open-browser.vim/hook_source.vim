@@ -5,6 +5,10 @@ function! s:query(args) abort
 endfunction
 
 function! g:MyOpenBrowser(...) abort
+  if openbrowser#_keymap_open(a:0 ? 'n' : 'v', 1)
+    return
+  endif
+
   let l:query = s:query(a:000)
   let l:candidate = substitute(l:query, '[,:]\+$', '', '')
   let l:jira_domain = get(g:, 'my_openbrowser_jira_domain', '')
