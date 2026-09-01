@@ -10,7 +10,7 @@ function! g:MyOpenBrowser(...) abort
   endif
 
   let l:query = s:query(a:000)
-  let l:candidate = substitute(l:query, '[,:]\+$', '', '')
+  let l:candidate = substitute(l:query, '^[^[:alnum:]_]\+\|[^[:alnum:]_]\+$', '', 'g')
   let l:jira_domain = get(g:, 'my_openbrowser_jira_domain', '')
 
   if !empty(l:jira_domain) && l:candidate =~# '^[A-Z]\+-[0-9]\+$'
