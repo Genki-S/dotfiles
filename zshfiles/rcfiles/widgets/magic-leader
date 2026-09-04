@@ -86,7 +86,7 @@ __aws_ssm_start_session() {
   LBUFFER="# collecting ec2 instances..."
   zle reset-prompt
   local instances
-  instances="$(aws ec2 describe-instances | jq -r '
+  instances="$(aws ec2 describe-instances --filters Name=instance-state-name,Values=running | jq -r '
     .Reservations[].Instances[] |
     [
       ((.Tags // [] | map(select(.Key == "Name")) | first | .Value) // "-"),
